@@ -15,16 +15,36 @@ h1, h2, h3, h4 {
   font-family: "Muli", sans-serif;
   line-height: 1.5; }
 
-h1 {
-  color: #0095AF;
-  text-transform: uppercase; }
-  h1 a,
-  h1 a:visited {
-    text-decoration: none;
-    color: #0095AF; }
-
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   display: block; }
+
+.sidenav {
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 20;
+  left: 0;
+  background-color: #E6E6E6;
+  overflow-x: hidden;
+  padding-top: 20px; }
+  .sidenav a {
+    text-decoration: none;
+    color: #0095AF;
+    display: block; }
+  .sidenav a.item {
+    padding: 10px 8px 5px 15px;
+    font-size: large;
+    font-weight: 600; }
+  .sidenav div.subitems {
+    display: none; }
+  .sidenav a.subitem {
+    padding: 4px 8px 5px 22px;
+    font-size: normal; }
+
+div#doc-container {
+  margin-left: 180px;
+  padding-top: 30px; }
 
 header {
   height: 350px;

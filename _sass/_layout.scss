@@ -12,15 +12,15 @@ h1, h2, h3, h4 {
 	font-family: $heading-font;
 	line-height: 1.5;
 }
-h1 {
-	color: $main;
-  text-transform: uppercase;
-	a,
-	a:visited {
-		text-decoration: none;
-		color: $main;
-	}
-}
+// h1 {
+// 	color: $main;
+//   text-transform: uppercase;
+// 	a,
+// 	a:visited {
+// 		text-decoration: none;
+// 		color: $main;
+// 	}
+// }
 // h2 {
 // 	font-size: 2em;
 // }
@@ -58,11 +58,52 @@ h1 {
 // }
 
 
-
+// NAVBAR
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     display: block;
 }
 
+// SIDEBAR
+.sidenav {
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 20;
+  left: 0;
+  background-color: $base;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+	a {
+		text-decoration: none;
+		color: $main;
+		display: block;
+	}
+
+	a.item {
+		// top right bottom left
+	  padding: 10px 8px 5px 15px;
+	  font-size: large;
+		font-weight: 600;
+	}
+
+	div.subitems {
+		display: none;
+	}
+
+	a.subitem {
+	  padding: 4px 8px 5px 22px;
+	  font-size: normal;
+	}
+}
+
+div#doc-container {
+  margin-left: 180px;
+  padding-top: 30px;
+}
+
+// HEADER
 header {
   height: 350px;
   background-color: $base;

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="sidenav">
+  <!-- Pull navigation from _data/docs.yml -->
+  {% for item in site.data.docs.docs %}
+    <!-- <a class="item" href="" onclick="nav('#{{ item.id }}');">{{ item.title }}</a> -->
+    <a class="item" data-toggle="collapse" href="#{{ item.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+      {{ item.title }}
+    </a>
+    <div class="collapse" id="{{ item.id }}">
+      {% for subitem in item.subitems %}
+        <a class="subitem" href="{{ subitem.url }}">{{ subitem.page }}</a>
+      {% endfor %}
+    </div>
+
+
+  {% endfor %}
+</div>
+
+<div class="container" id="doc-container">
+
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+
+</div>
+
+<script>
+function nav(id) {
+  alert(id)
+  $(id).slideToggle();
+//   var e = document.getElementById(id);
+//   if(e.style.display == 'block')
+//     e.style.display == 'none';
+//   else e.style.display == 'block';
+}
+
+</script>
