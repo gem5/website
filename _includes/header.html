@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+		<img src="/assets/img/gem5ColorLong.gif" alt="" height=40px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{{ site.data.documentation.title }}
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					{% for item in site.data.documentation.docs %}
+						<a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+					{% endfor %}
+				</div>
+			</li>
+
+			<li class="nav-item">
+        <a class="nav-link" href="#">Getting Started</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contributing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+</header>
