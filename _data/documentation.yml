@@ -1,5 +1,19 @@
 title: Documentation
 
 docs:
-  - title: Documentation
-    url: /introduction
+  - title: Getting Started
+    id: gettingstarted
+    subitems:
+      - page: Introduction
+        url: /introduction
+      - page: Dependencies
+        url: /dependencies
+      - page: Source Code
+        url: /sourcecode
+  - title: Debugging
+    id: debugging
+    subitems:
+      - page: Piece 1
+        url: /piece1
+      - page: Piece 2
+        url: /piece2

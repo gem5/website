@@ -10,7 +10,7 @@
 	<!-- SITE FAVICON -->
 	<link rel="shortcut icon" type="image/gif" href="assets/img/gem5ColorVert.gif"/>
 
-	<link rel="canonical" href="http://localhost:4000/blog/">
+	<link rel="canonical" href="http://localhost:4000/piece1/">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 
@@ -40,7 +40,7 @@
         <a class="nav-link" href="/help">Help</a>
       </li>
 
-			<li class="nav-item dropdown ">
+			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Documentation
 				</a>
@@ -66,14 +66,43 @@
 </nav>
 
 	<main>
-		<h2>Blog</h2>
+		<div class="sidenav">
+  <!-- Pull navigation from _data/documentation.yml -->
+  
+    <a class="item" data-toggle="collapse" href="#gettingstarted" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Getting Started
+    </a>
+    <div class="collapse " id="gettingstarted">
+      
+        <a class="subitem " href="/introduction">Introduction</a>
+      
+        <a class="subitem " href="/dependencies">Dependencies</a>
+      
+        <a class="subitem " href="/sourcecode">Source Code</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#debugging" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Debugging
+    </a>
+    <div class="collapse show" id="debugging">
+      
+        <a class="subitem active" href="/piece1">Piece 1</a>
+      
+        <a class="subitem " href="/piece2">Piece 2</a>
+      
+    </div>
+  
+</div>
 
-		<time>Nov 29, 2015</time>
-		<h3><a href="/jekyll/update/2015/11/29/welcome-to-jekyll.html">Welcome to Jekyll!</a></h3>
+<div class="container" id="doc-container">
+
+  <h1>Piece 1</h1>
+  <h2 id="how-to-debug">How to debug</h2>
+<p>first figure out the problem</p>
 
 
-<p>subscribe <a href="/feed.xml">via RSS</a></p>
-
+</div>
 
 		<footer>
 	<p></p>

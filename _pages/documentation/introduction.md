@@ -1,9 +1,8 @@
 ---
 layout: documentation
 title: Introduction
+id: gettingstarted
 permalink: /introduction/
 ---
 ## Hello there
-Contact content goes here.
-
-My e-mail is [email@something.com](mailto:email@something.com).
+Intro to getting started

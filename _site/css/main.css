@@ -20,7 +20,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 
 .sidenav {
   height: 100%;
-  width: 170px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 20;
@@ -36,15 +36,16 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     padding: 10px 8px 5px 15px;
     font-size: large;
     font-weight: 600; }
-  .sidenav div.subitems {
-    display: none; }
   .sidenav a.subitem {
-    padding: 4px 8px 5px 22px;
+    padding: 4px 8px 5px 30px;
     font-size: normal; }
+  .sidenav a.active {
+    font-weight: 600; }
 
 div#doc-container {
-  margin-left: 180px;
-  padding-top: 30px; }
+  margin-left: 210px;
+  padding-top: 30px;
+  width: auto; }
 
 header {
   height: 350px;

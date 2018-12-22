@@ -7,31 +7,31 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home {% if page.title == "Home" %}<span class="sr-only">(current)</span>{% endif %}</a>
+      <li class="nav-item {% if page.title == "Home" %}active{% endif %}">
+        <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item {% if page.title == "Help" %}active{% endif %}">
         <a class="nav-link" href="/help">Help</a>
       </li>
 
-			<li class="nav-item dropdown">
+			<li class="nav-item dropdown {% if page.layout == "documentation" %}active{% endif %}">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					{{ site.data.documentation.title }}
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					{% for item in site.data.documentation.docs %}
-						<a class="dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+            <a class="dropdown-item" href="{{ item.subitems[0].url }}">{{ item.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
 
-			<li class="nav-item">
+			<li class="nav-item {% if page.title == "Publications" %}active{% endif %}">
         <a class="nav-link" href="#">Publications</a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
         <a class="nav-link" href="#">Contributing</a>
       </li>
     </ul>
