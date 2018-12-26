@@ -59,40 +59,41 @@ h1, h2, h3, h4 {
 
 
 // NAVBAR
+.navbar {
+	z-index: 1;
+}
+
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     display: block;
 }
+
 
 // SIDEBAR
 .sidenav {
   height: 100%;
   width: 200px;
   position: fixed;
-  z-index: 1;
+  // z-index: -1;
   top: 20;
   left: 0;
   background-color: $base;
   overflow-x: hidden;
   padding-top: 20px;
-
 	a {
 		text-decoration: none;
 		color: $main;
 		display: block;
 	}
-
 	a.item {
 		// top right bottom left
 	  padding: 10px 8px 5px 15px;
 	  font-size: large;
 		font-weight: 600;
 	}
-
 	a.subitem {
 	  padding: 4px 8px 5px 30px;
 	  font-size: normal;
 	}
-
 	a.active {
 		font-weight: 600;
 	}
@@ -102,6 +103,34 @@ div#doc-container {
   margin-left: 210px;
   padding-top: 30px;
 	width: auto;
+}
+
+
+// BUTTONS
+.btn-outline-primary {
+	border-color: $main;
+	color: $main;
+	border-width: 2px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+		background-color: $main;
+		border-color: $main;
+}
+
+.btn-primary {
+	background-color: $main;
+	border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+// .btn-primary:visited,
+.btn-primary:focus {
+		background-color: grey;
 }
 
 // HEADER
@@ -116,22 +145,48 @@ header {
     color: $main;
     font-size: large;
   }
-  .btn-outline-primary {
-    border-color: $main;
-    color: $main;
-    border-width: 2px;
-    margin: 10px;
-  }
-
-  .btn-outline-primary:hover,
-  .btn-outline-primary:active,
-  .btn-outline-primary:visited,
-  .btn-outline-primary:focus {
-      background-color: $main;
-      border-color: $main;
-  }
+	// BUTTONS
+	.btn-outline-primary {
+		margin: 10px;
+	}
 }
 
+
+// CARD
+div.card {
+	width: 18rem;
+	min-height: 320px;
+	margin: auto;
+	margin-top: 5rem;
+	padding-top: 65px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	border-radius: 5px;
+
+  div.fav {
+		left: 6rem;
+		top: -2.8rem;
+		position: absolute;
+		background-color: white;
+		padding: 0px 18px;
+		border-radius: 50px;
+		border: 1px solid lightgrey;
+		font-size: 70px;
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+		// text-align: center;
+	}
+
+	h5.card-title {
+		text-transform: uppercase;
+		color: $main;
+		font-weight: 600;
+		font-size: 1.4rem;
+	}
+}
+
+div.card:hover {
+		box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+}
 
 // /* Aside */
 //

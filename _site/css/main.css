@@ -15,6 +15,9 @@ h1, h2, h3, h4 {
   font-family: "Muli", sans-serif;
   line-height: 1.5; }
 
+.navbar {
+  z-index: 1; }
+
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   display: block; }
 
@@ -22,7 +25,6 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   height: 100%;
   width: 200px;
   position: fixed;
-  z-index: 1;
   top: 20;
   left: 0;
   background-color: #E6E6E6;
@@ -47,6 +49,27 @@ div#doc-container {
   padding-top: 30px;
   width: auto; }
 
+.btn-outline-primary {
+  border-color: #0095AF;
+  color: #0095AF;
+  border-width: 2px; }
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+  background-color: #0095AF;
+  border-color: #0095AF; }
+
+.btn-primary {
+  background-color: #0095AF;
+  border: none; }
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: grey; }
+
 header {
   height: 350px;
   background-color: #E6E6E6;
@@ -59,16 +82,35 @@ header {
     color: #0095AF;
     font-size: large; }
   header .btn-outline-primary {
-    border-color: #0095AF;
-    color: #0095AF;
-    border-width: 2px;
     margin: 10px; }
-  header .btn-outline-primary:hover,
-  header .btn-outline-primary:active,
-  header .btn-outline-primary:visited,
-  header .btn-outline-primary:focus {
-    background-color: #0095AF;
-    border-color: #0095AF; }
+
+div.card {
+  width: 18rem;
+  min-height: 320px;
+  margin: auto;
+  margin-top: 5rem;
+  padding-top: 65px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px; }
+  div.card div.fav {
+    left: 6rem;
+    top: -2.8rem;
+    position: absolute;
+    background-color: white;
+    padding: 0px 18px;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    font-size: 70px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
+  div.card h5.card-title {
+    text-transform: uppercase;
+    color: #0095AF;
+    font-weight: 600;
+    font-size: 1.4rem; }
+
+div.card:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2); }
 
 /**
  * Syntax highlighting styles
