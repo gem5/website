@@ -22,9 +22,7 @@ h1.title {
   text-align: center;
   text-transform: uppercase; }
 
-a,
-a:visited {
-  text-decoration: none;
+a, a:hover {
   color: #0095AF; }
 
 pre code {
@@ -40,11 +38,20 @@ pre code {
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   display: block; }
 
+.sidenav-top {
+  width: 200px;
+  height: 71px;
+  background-color: #E6E6E6;
+  position: fixed;
+  top: 0px;
+  text-align: center; }
+  .sidenav-top img {
+    padding-top: 20px; }
+
 .sidenav {
   height: 100%;
   width: 200px;
   position: fixed;
-  top: 20;
   left: 0;
   background-color: #E6E6E6;
   overflow-x: hidden;

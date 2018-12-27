@@ -15,61 +15,14 @@ h1, h2, h3, h4 {
 	font-family: $heading-font;
 	line-height: 1.5;
 }
-// h1 {
-// 	color: $main;
-//   text-transform: uppercase;
-// 	a,
-// 	a:visited {
-// 		text-decoration: none;
-// 		color: $main;
-// 	}
-// }
-// h2 {
-// 	font-size: 2em;
-// }
-// a,
-// a:visited {
-// 	color: $link-color;
-// 	text-decoration: underline;
-// 	font-weight: bold;
-// }
-// a:hover {
-// 	color: $link-hover-color;
-// 	text-decoration: underline;
-// }
-// header {
-// 	background: $header;
-// 	padding: 0px 15px;
-// 	text-align: center;
-// 	margin: 50px 0 0;
-// 	height: 50vh;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// }
-// main {
-// 	padding: 0 15px;
-// 	max-width: $content-width;
-// 	margin: 0 auto;
-// }
-// time {
-// 	color: #898989;
-// }
-// .container {
-// 	max-width: $content-width;
-// 	margin: 0 auto;
-// }
 
 h1.title {
 	text-align: center;
 	// color: $main;
 	text-transform: uppercase;
-	// font-weight: 800;
 }
 
-a,
-a:visited {
-	text-decoration: none;
+a, a:hover {
 	color: $main;
 }
 
@@ -89,19 +42,28 @@ pre code {
 .navbar {
 	z-index: 1;
 }
-
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     display: block;
 }
 
 
 // SIDEBAR
+.sidenav-top {
+	width: 200px;
+	height: 71px;
+	background-color: $base;
+	position: fixed;
+	top: 0px;
+	text-align: center;
+	img {
+		padding-top: 20px;
+	}
+}
 .sidenav {
   height: 100%;
   width: 200px;
   position: fixed;
   // z-index: -1;
-  top: 20;
   left: 0;
   background-color: $base;
   overflow-x: hidden;

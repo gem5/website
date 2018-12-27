@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
+<div class="sidenav-top">
+  <img src="/assets/img/gem5ColorLong.gif" height="80">
+</div>
 <div class="sidenav">
+  [inst search box, or create search pg]
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
     <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %}" href="{{ it}}" role="button" aria-expanded="false" aria-controls="collapseExample">
