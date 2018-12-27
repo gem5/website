@@ -4,7 +4,7 @@ layout: default
 <div class="sidenav">
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
-    <a class="item" data-toggle="collapse" href="#{{ item.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %}" href="{{ it}}" role="button" aria-expanded="false" aria-controls="collapseExample">
       {{ item.title }}
     </a>
     <div class="collapse {% if page.id == item.id %}show{% endif %}" id="{{ item.id }}">

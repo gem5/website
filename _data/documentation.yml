@@ -3,6 +3,7 @@ title: Documentation
 docs:
   - title: Getting Started
     id: gettingstarted
+    url: /gettingstarted
     subitems:
       - page: Introduction
         url: /introduction

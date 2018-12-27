@@ -22,7 +22,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					{% for item in site.data.documentation.docs %}
-            <a class="dropdown-item" href="{{ item.subitems[0].url }}">{{ item.title }}</a>
+            <a class="dropdown-item" href="{% if item.url %}{{ item.url }}{% else %}{{ item.subitems[0].url }}{% endif %}">{{ item.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
@@ -32,7 +32,7 @@
       </li>
 
       <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
-        <a class="nav-link" href="#">Contributing</a>
+        <a class="nav-link" href="/contributing">Contributing</a>
       </li>
     </ul>
   </div>
