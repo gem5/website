@@ -56,6 +56,19 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   background-color: #E6E6E6;
   overflow-x: hidden;
   padding-top: 20px; }
+  .sidenav div.search input {
+    width: 90%;
+    padding: 3px;
+    padding-right: 25px; }
+  .sidenav div.search button {
+    color: #0095AF;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    position: absolute;
+    right: 10px;
+    margin: 3px 10px; }
   .sidenav a {
     text-decoration: none;
     color: #0095AF;
@@ -78,14 +91,16 @@ div#doc-container {
 .btn-outline-primary {
   border-color: #0095AF;
   color: #0095AF;
-  border-width: 2px; }
+  border-width: 2px;
+  border-radius: 5px; }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:active,
 .btn-outline-primary:visited,
 .btn-outline-primary:focus {
   background-color: #0095AF;
-  border-color: #0095AF; }
+  border-color: #0095AF;
+  cursor: pointer; }
 
 .btn-primary {
   color: white !important;
@@ -157,6 +172,30 @@ button#myBtn {
 
 #myBtn:hover {
   background-color: #0095AF; }
+
+div.search {
+  text-align: center; }
+  div.search label {
+    font-size: 24px;
+    color: #0095AF; }
+  div.search input#search-box {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+    margin-left: 8px;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: large;
+    width: 300px; }
+  div.search button {
+    padding: 4px 8px;
+    margin-left: 10px;
+    font-size: normal; }
+
+ul#search-results {
+  list-style-type: none; }
+  ul#search-results a {
+    text-decoration-color: black; }
 
 /**
  * Syntax highlighting styles

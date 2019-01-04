@@ -5,7 +5,13 @@ layout: default
   <img src="/assets/img/gem5ColorLong.gif" height="80">
 </div>
 <div class="sidenav">
-  [inst search box, or create search pg]
+  <div class="search">
+    <form action="/search" method="get">
+      <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
+      <input type="text" name="query">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
     <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %}" href="{{ it}}" role="button" aria-expanded="false" aria-controls="collapseExample">

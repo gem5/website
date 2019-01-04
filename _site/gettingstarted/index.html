@@ -73,13 +73,19 @@
   <img src="/assets/img/gem5ColorLong.gif" height="80">
 </div>
 <div class="sidenav">
-  [inst search box, or create search pg]
+  <div class="search">
+    <form action="/search" method="get">
+      <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
+      <input type="text" name="query">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
   <!-- Pull navigation from _data/documentation.yml -->
   
     <a class="item" href="/gettingstarted"" href="" role="button" aria-expanded="false" aria-controls="collapseExample">
       Getting Started
     </a>
-    <div class="collapse show" id="gettingstarted">
+    <div class="collapse " id="gettingstarted">
       
         <a class="subitem " href="/introduction">Introduction</a>
       

@@ -1,14 +1,17 @@
 # Site Settings
 title: gem5
-email: jingwlow@gmail.com
-
-description: >
-  A guide to getting started with Jekyll.
 baseurl: ""
 url: "http://localhost:4000"
+
 # Build Settings
 sass:
   sass_dir: _sass
+
 include: ['_pages']
+
 kramdown:
   input: GFM
+
+collections:
+  pages:
+    output: true
