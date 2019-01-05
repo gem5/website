@@ -14,10 +14,10 @@ layout: default
   </div>
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
-    <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %}" href="{{ it}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">
       {{ item.title }}
     </a>
-    <div class="collapse {% if page.id == item.id %}show{% endif %}" id="{{ item.id }}">
+    <div class="collapse {% if page.parent == item.id %}show{% endif %}" id="{{ item.id }}">
       {% for subitem in item.subitems %}
         <a class="subitem {% if subitem.page == page.title %}active{% endif %}" href="{{ subitem.url }}">{{ subitem.page }}</a>
       {% endfor %}

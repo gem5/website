@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Piece 1
-id: debugging
+parent: debugging
 permalink: /piece1/
 ---
 ## How to debug

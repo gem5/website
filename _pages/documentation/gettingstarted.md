@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Getting Started
-id: gettingstarted
+parent: gettingstarted
 permalink: /gettingstarted/
 ---
 ## First

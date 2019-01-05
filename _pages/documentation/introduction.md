@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Introduction
-id: gettingstarted
+parent: gettingstarted
 permalink: /introduction/
 ---
 ## Hello there
