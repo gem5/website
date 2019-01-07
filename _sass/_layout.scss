@@ -1,8 +1,11 @@
 html {
   scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%;
 }
 body {
 	margin: 0;
+  margin-bottom: 350px;
 	// color: $font-color;
 	font-family: $font-style;
 	// font-size: 1.1em;
@@ -27,7 +30,7 @@ a, a:hover {
 }
 
 
-// CODE BLOCK
+/**** CODE BLOCK ****/
 pre code {
 	color: white !important;
 	background-color: black;
@@ -38,7 +41,7 @@ pre code {
 }
 
 
-// NAVBAR
+/**** NAVBAR ****/
 .navbar {
 	z-index: 1;
 }
@@ -47,7 +50,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 }
 
 
-// SIDEBAR
+/**** SIDEBAR ****/
 .sidenav-top {
 	width: 200px;
 	height: 71px;
@@ -112,7 +115,7 @@ div#doc-container {
 }
 
 
-// BUTTONS
+/**** BUTTONS ****/
 .btn-outline-primary {
 	border-color: $main;
 	color: $main;
@@ -139,12 +142,15 @@ div#doc-container {
 		background-color: grey;
 }
 
-// HEADER
+
+/**** HEADER ****/
 header {
   height: 350px;
   background-color: $base;
   text-align: center;
   align-items: center;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+
   h1 {padding-top: 20px;}
   p {
     padding: 12px;
@@ -158,7 +164,7 @@ header {
 }
 
 
-// CARD
+/**** CARD ****/
 div.card {
 	width: 18rem;
 	min-height: 320px;
@@ -195,13 +201,20 @@ div.card:hover {
 }
 
 
-// TABLE OF CONTENTS
+/**** TABLE OF CONTENTS ****/
 ul#markdown-toc {
 
 }
 
+div.toc {
+  h1 {
+    margin-top: 100px;
+  }
+}
 
-// SCROLL TO TOP
+
+
+/**** SCROLL TO TOP ****/
 button#myBtn {
 	  display: none;
 	  position: fixed;
@@ -223,7 +236,7 @@ button#myBtn {
 }
 
 
-// SEARCH PAGE
+/**** SEARCH PAGE ****/
 div.search {
 	text-align: center;
 	label {
@@ -254,7 +267,20 @@ ul#search-results {
   }
 }
 
-// footer {
-// 	text-align: center;
-// 	padding: 40px;
-// }
+
+/**** FOOTER ****/
+footer {
+  min-height: 250px;
+  width: 100%;
+  padding-top: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: $base;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+  color: grey;
+  p {
+    line-height: 15px;
+  }
+	// text-align: center;
+	// padding: 40px;
+}

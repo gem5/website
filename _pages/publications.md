@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: toc
 title: Publications
 permalink: /publications/
 ---
@@ -12,15 +12,14 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 **TOC**
 
-<br><br>
-## Original Paper<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#original-paper"></span>
+
+# Original Paper<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#original-paper"></span>
 ---
 *   [**The gem5 Simulator**](http://dx.doi.org/10.1145/2024716.2024718). Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. May 2011, ACM SIGARCH Computer Architecture News.
 
 
 
-<br><br>
-## Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span>
+# Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span>
 ---
 ### GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span>
 
@@ -50,8 +49,7 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 
 
-<br><br>
-## Other Publications related to gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#other-publications-related-to-gem5"></span>
+# Other Publications related to gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#other-publications-related-to-gem5"></span>
 ---
 *   [**Enabling Realistic Logical Device Interface and Driver for NVM Express Enabled Full System Simulations**](http://simplessd.camelab.org). Donghyun Gouk, Jie Zhang and Myoungsoo Jung. IFIP International Conference on Network and Parallel Computing (NPC) and Invited for International Journal of Parallel Programming (IJPP), 2017
 
@@ -71,8 +69,7 @@ If you use gem5 in your research, we would appreciate a citation to the original
 *   [**The M5 Simulator: Modeling Networked Systems**](http://dx.doi.org/10.1109/MM.2006.82). N. L. Binkert, R. G. Dreslinski, L. R. Hsu, K. T. Lim, A. G. Saidi, S. K. Reinhardt. IEEE Micro, vol. 26, no. 4, pp. 52-60, July/August, 2006.
 *   [**Multifacet’s General Execution-driven Multiprocessor Simulator (GEMS) Toolset**](http://dx.doi.org/10.1145/1105734.1105747). Milo M.K. Martin, Daniel J. Sorin, Bradford M. Beckmann, Michael R. Marty, Min Xu, Alaa R. Alameldeen, Kevin E. Moore, Mark D. Hill, and David A. Wood. Computer Architecture News (CAN), September 2005.
 
-<br><br>
-## Publications using gem5 / m5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#publications-using-gem5-m5"></span>
+# Publications using gem5 / m5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#publications-using-gem5-m5"></span>
 ---
 ### 2017<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2017"></span>
 
@@ -400,7 +397,6 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 
 
-<br><br>
 # Derivative projects
 ---
 Below is a list of projects that are based on gem5, are extensions of gem5, or use gem5.

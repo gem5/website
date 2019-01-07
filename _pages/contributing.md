@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: toc
 title: Contributing
 permalink: /contributing/
 ---
@@ -25,8 +25,6 @@ The main method for contributing code to gem5 is via our code review website: [h
 
 
 
-
-<br><br>
 # High-level flow
 ---
 <pre>
@@ -72,7 +70,6 @@ After creating your change to gem5, you can post a review on our Gerrit code-rev
 
 
 
-<br><br>
 # Cloning the repo to contribute
 ---
 If you plan on contributing, it is strongly encouraged for you to clone the repository directly from our gerrit instance at [https://gem5.googlesource.com/](https://gem5.googlesource.com/).
@@ -93,7 +90,6 @@ None right now.
 
 
 
-<br><br>
 # Making changes to gem5
 ---
 It is strongly encouraged to use git branches when making changes to gem5. Additionally, keeping changes small and concise and only have a single logical change per commit.
@@ -133,7 +129,6 @@ Note: If you do not follow these guidelines, the gerrit review site will automat
 
 
 
-<br><br>
 # Posting a review
 ---
 If you have not signed up for an account on the Gerrit review site ([https://gem5-review.googlesource.com](https://gem5-review.googlesource.com)), you first have to create an account.
@@ -193,7 +188,6 @@ There are a number of options you can specify when uploading your changes to ger
 
 
 
-<br><br>
 # Reviewing patches
 ---
 Reviewing patches is done on our gerrit instance at [https://gem5-review.googlesource.com/](https://gem5-review.googlesource.com/).
@@ -224,7 +218,6 @@ Note: If you have posted a patch and don’t receive any reviews, you may need t
 
 
 
-<br><br>
 # Committing
 ---
 Each patch must meet the following criteria to be merged:
@@ -238,7 +231,6 @@ Once a patch meets the above criteria, the submitter of the patch will be able t
 
 
 
-<br><br>
 # Governance
 ---
 ## Overview

@@ -4,7 +4,7 @@ title: Help
 permalink: /help/
 ---
 
-About content goes here.
+Help content goes here.
 
 * A list item
 * Another list item

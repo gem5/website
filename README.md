@@ -25,6 +25,7 @@ Page <head> section and main navigation bar are here.
 Different layout templates used on the site.
 * default
 * page
+* toc
 * post
 * documentation
 
@@ -40,7 +41,7 @@ Images and javascript files.
 #### blog
 If a blog is created, this will store blog files.
 
-## Documentaion
+## Documentation
 #### Edit Documentation Navigation
 ##### Structure:
 Parent Topic:

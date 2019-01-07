@@ -6,10 +6,13 @@
   box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 100%; }
 
 body {
   margin: 0;
+  margin-bottom: 350px;
   font-family: "Open Sans", sans-serif; }
 
 h1, h2, h3, h4 {
@@ -25,6 +28,7 @@ h1.title {
 a, a:hover {
   color: #0095AF; }
 
+/**** CODE BLOCK ****/
 pre code {
   color: white !important;
   background-color: black;
@@ -32,12 +36,14 @@ pre code {
   padding: 20px;
   overflow-x: scroll; }
 
+/**** NAVBAR ****/
 .navbar {
   z-index: 1; }
 
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   display: block; }
 
+/**** SIDEBAR ****/
 .sidenav-top {
   width: 200px;
   height: 71px;
@@ -88,6 +94,7 @@ div#doc-container {
   padding-top: 30px;
   width: auto; }
 
+/**** BUTTONS ****/
 .btn-outline-primary {
   border-color: #0095AF;
   color: #0095AF;
@@ -112,11 +119,13 @@ div#doc-container {
 .btn-primary:focus {
   background-color: grey; }
 
+/**** HEADER ****/
 header {
   height: 350px;
   background-color: #E6E6E6;
   text-align: center;
-  align-items: center; }
+  align-items: center;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2); }
   header h1 {
     padding-top: 20px; }
   header p {
@@ -126,6 +135,7 @@ header {
   header .btn-outline-primary {
     margin: 10px; }
 
+/**** CARD ****/
 div.card {
   width: 18rem;
   min-height: 320px;
@@ -154,6 +164,11 @@ div.card {
 div.card:hover {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2); }
 
+/**** TABLE OF CONTENTS ****/
+div.toc h1 {
+  margin-top: 100px; }
+
+/**** SCROLL TO TOP ****/
 button#myBtn {
   display: none;
   position: fixed;
@@ -173,6 +188,7 @@ button#myBtn {
 #myBtn:hover {
   background-color: #0095AF; }
 
+/**** SEARCH PAGE ****/
 div.search {
   text-align: center; }
   div.search label {
@@ -196,6 +212,19 @@ ul#search-results {
   list-style-type: none; }
   ul#search-results a {
     text-decoration-color: black; }
+
+/**** FOOTER ****/
+footer {
+  min-height: 250px;
+  width: 100%;
+  padding-top: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: #E6E6E6;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  color: grey; }
+  footer p {
+    line-height: 15px; }
 
 /**
  * Syntax highlighting styles

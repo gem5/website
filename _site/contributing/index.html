@@ -74,7 +74,8 @@
 
   <h1 class="title">Contributing</h1>
   <br>
-  <h2 id="table-of-contents">Table of Contents</h2>
+  <div class="toc">
+    <h2 id="table-of-contents">Table of Contents</h2>
 <ul id="markdown-toc">
   <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
   <li><a href="#high-level-flow" id="markdown-toc-high-level-flow">High-level flow</a></li>
@@ -153,7 +154,6 @@
   <li><a href="https://git-scm.com/book">https://git-scm.com/book</a></li>
 </ul>
 
-<p><br /><br /></p>
 <h1 id="high-level-flow">High-level flow</h1>
 <hr />
 <pre>
@@ -197,7 +197,6 @@
 
 <p>After creating your change to gem5, you can post a review on our Gerrit code-review site: <a href="https://gem5-review.googlesource.com">https://gem5-review.googlesource.com</a>. Before being able to submit your code to the mainline of gem5, the code is reviewed by others in the community. Additionally, the maintainer for that part of the code must sign off on it.</p>
 
-<p><br /><br /></p>
 <h1 id="cloning-the-repo-to-contribute">Cloning the repo to contribute</h1>
 <hr />
 <p>If you plan on contributing, it is strongly encouraged for you to clone the repository directly from our gerrit instance at <a href="https://gem5.googlesource.com/">https://gem5.googlesource.com/</a>.</p>
@@ -219,7 +218,6 @@
 
 <p>None right now.</p>
 
-<p><br /><br /></p>
 <h1 id="making-changes-to-gem5">Making changes to gem5</h1>
 <hr />
 <p>It is strongly encouraged to use git branches when making changes to gem5. Additionally, keeping changes small and concise and only have a single logical change per commit.</p>
@@ -262,7 +260,6 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git commit --amend
 </code></pre></div></div>
 
-<p><br /><br /></p>
 <h1 id="posting-a-review">Posting a review</h1>
 <hr />
 <p>If you have not signed up for an account on the Gerrit review site (<a href="https://gem5-review.googlesource.com">https://gem5-review.googlesource.com</a>), you first have to create an account.</p>
@@ -329,7 +326,6 @@ chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 
 <p>There are a number of options you can specify when uploading your changes to gerrit (e.g., reviewers, labels). The gerrit documentation has more information. <a href="https://gerrit-review.googlesource.com/Documentation/user-upload.html">https://gerrit-review.googlesource.com/Documentation/user-upload.html</a></p>
 
-<p><br /><br /></p>
 <h1 id="reviewing-patches">Reviewing patches</h1>
 <hr />
 <p>Reviewing patches is done on our gerrit instance at <a href="https://gem5-review.googlesource.com/">https://gem5-review.googlesource.com/</a>.</p>
@@ -364,7 +360,6 @@ chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 
 <p>Note: If you have posted a patch and don’t receive any reviews, you may need to prod the reviewers. You can do this by adding a reply to your changeset review on gerrit. It is expected that at least the maintainer will supply a review for your patch.</p>
 
-<p><br /><br /></p>
 <h1 id="committing">Committing</h1>
 <hr />
 <p>Each patch must meet the following criteria to be merged:</p>
@@ -378,7 +373,6 @@ chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 
 <p>Once a patch meets the above criteria, the submitter of the patch will be able to merge the patch by pressing the “Submit” button on Gerrit. When the patch is submitted, it is merged into the public gem5 branch.</p>
 
-<p><br /><br /></p>
 <h1 id="governance">Governance</h1>
 <hr />
 <h2 id="overview">Overview</h2>
@@ -570,15 +564,12 @@ chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 
 <p>This document is based on the example (<a href="http://oss-watch.ac.uk/resources/meritocraticgovernancemodel">http://oss-watch.ac.uk/resources/meritocraticgovernancemodel</a>) by Ross Gardler and Gabriel Hanganu and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License</p>
 
+  </div>
 
 </div>
 
 <!-- button to scroll to top of page -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#9651;</button>
-
-		<footer>
-	<p></p>
-</footer>
 
 	</main>
 
@@ -606,5 +597,31 @@ chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 	</script>
 
 </body>
+
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/gettingstarted">Documentation</a></p>
+				<p><a href="#">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/help">Help</a></p>
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
 
 </html>
