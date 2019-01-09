@@ -39,9 +39,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown ">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +57,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					
-            <a class="dropdown-item" href="/gettingstarted">Getting Started</a>
+            <a class="dropdown-item" href="/introduction">Introduction</a>
 					
-            <a class="dropdown-item" href="/piece1">Debugging</a>
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
 					
 				</div>
 			</li>
 
-			<li class="nav-item ">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item active">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>
@@ -75,9 +86,8 @@
   <h1 class="title">Contributing</h1>
   <br>
   <div class="toc">
-    <h2 id="table-of-contents">Table of Contents</h2>
+    <h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
 <ul id="markdown-toc">
-  <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
   <li><a href="#high-level-flow" id="markdown-toc-high-level-flow">High-level flow</a></li>
   <li><a href="#cloning-the-repo-to-contribute" id="markdown-toc-cloning-the-repo-to-contribute">Cloning the repo to contribute</a>    <ul>
       <li><a href="#other-gem5-repositories" id="markdown-toc-other-gem5-repositories">Other gem5 repositories<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/cloning/#other-gem5-repositories"></span></a></li>
@@ -104,32 +114,10 @@
       <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
       <li><a href="#philosophy" id="markdown-toc-philosophy">Philosophy</a></li>
       <li><a href="#gem5-roadmap" id="markdown-toc-gem5-roadmap">gem5 Roadmap</a></li>
-      <li><a href="#roles-and-responsibilities" id="markdown-toc-roles-and-responsibilities">Roles And Responsibilities</a>        <ul>
-          <li><a href="#users" id="markdown-toc-users">Users<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#users"></span></a>            <ul>
-              <li><a href="#academic-researchers" id="markdown-toc-academic-researchers">Academic Researchers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#academic-researchers"></span></a></li>
-              <li><a href="#industry-researchers" id="markdown-toc-industry-researchers">Industry Researchers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#industry-researchers"></span></a></li>
-              <li><a href="#students" id="markdown-toc-students">Students<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#students"></span></a></li>
-            </ul>
-          </li>
-          <li><a href="#contributors" id="markdown-toc-contributors">Contributors<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#contributors"></span></a></li>
-          <li><a href="#committers" id="markdown-toc-committers">Committers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#committers"></span></a></li>
-          <li><a href="#project-management-committee" id="markdown-toc-project-management-committee">Project management committee<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#project-management-committee"></span></a>            <ul>
-              <li><a href="#members" id="markdown-toc-members">Members<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#members"></span></a></li>
-            </ul>
-          </li>
-          <li><a href="#pmc-chair" id="markdown-toc-pmc-chair">PMC Chair<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#pmc-chair"></span></a></li>
-        </ul>
-      </li>
+      <li><a href="#roles-and-responsibilities" id="markdown-toc-roles-and-responsibilities">Roles And Responsibilities</a></li>
       <li><a href="#support" id="markdown-toc-support">Support</a></li>
-      <li><a href="#contribution-process" id="markdown-toc-contribution-process">Contribution Process</a>        <ul>
-          <li><a href="#reviewing-patches-1" id="markdown-toc-reviewing-patches-1">Reviewing Patches<a id="reviewing" class="highlight"></a><span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#reviewing-patches-a-id-reviewing-a"></span></a></li>
-        </ul>
-      </li>
-      <li><a href="#decision-making-process" id="markdown-toc-decision-making-process">Decision Making Process</a>        <ul>
-          <li><a href="#lazy-consensus" id="markdown-toc-lazy-consensus">Lazy consensus<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#lazy-consensus"></span></a></li>
-          <li><a href="#voting" id="markdown-toc-voting">Voting<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#voting"></span></a></li>
-        </ul>
-      </li>
+      <li><a href="#contribution-process" id="markdown-toc-contribution-process">Contribution Process</a></li>
+      <li><a href="#decision-making-process" id="markdown-toc-decision-making-process">Decision Making Process</a></li>
     </ul>
   </li>
 </ul>

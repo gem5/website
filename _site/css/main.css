@@ -45,7 +45,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 
 /**** SIDEBAR ****/
 .sidenav-top {
-  width: 200px;
+  width: 250px;
   height: 71px;
   background-color: #E6E6E6;
   position: fixed;
@@ -55,13 +55,13 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     padding-top: 20px; }
 
 .sidenav {
-  height: 100%;
-  width: 200px;
+  height: 90%;
+  width: 250px;
   position: fixed;
   left: 0;
   background-color: #E6E6E6;
   overflow-x: hidden;
-  padding-top: 20px; }
+  padding: 20px 0; }
   .sidenav div.search input {
     width: 90%;
     padding: 3px;
@@ -90,8 +90,8 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     font-weight: 600; }
 
 div#doc-container {
-  margin-left: 210px;
-  padding-top: 30px;
+  margin-left: 250px;
+  padding: 30px 35px;
   width: auto; }
 
 /**** BUTTONS ****/
@@ -112,12 +112,14 @@ div#doc-container {
 .btn-primary {
   color: white !important;
   background-color: #0095AF;
-  border: none; }
+  border: none;
+  transition: 0.5s; }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: grey; }
+  background-color: #006a7c;
+  border-color: #006a7c; }
 
 /**** HEADER ****/
 header {
@@ -134,6 +136,12 @@ header {
     font-size: large; }
   header .btn-outline-primary {
     margin: 10px; }
+  header .btn-primary {
+    border: 2px #0095AF solid;
+    margin: 10px; }
+  header a:hover {
+    color: white;
+    text-decoration: none; }
 
 /**** CARD ****/
 div.card {
@@ -166,9 +174,14 @@ div.card:hover {
 
 /**** TABLE OF CONTENTS ****/
 div.toc h1 {
-  margin-top: 100px; }
+  margin-top: 100px;
+  font-size: 28px; }
+div.toc h2 {
+  font-size: 25px; }
+div.toc h3 {
+  font-size: 22px; }
 
-/**** SCROLL TO TOP ****/
+/**** SCROLL TO TOP BUTTON ****/
 button#myBtn {
   display: none;
   position: fixed;

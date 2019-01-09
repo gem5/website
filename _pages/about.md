@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+parent: about
 permalink: /about/
 ---
 

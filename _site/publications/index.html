@@ -39,9 +39,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown ">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +57,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					
-            <a class="dropdown-item" href="/gettingstarted">Getting Started</a>
+            <a class="dropdown-item" href="/introduction">Introduction</a>
 					
-            <a class="dropdown-item" href="/piece1">Debugging</a>
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
 					
 				</div>
 			</li>
 
-			<li class="nav-item active">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item ">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>
@@ -75,9 +86,8 @@
   <h1 class="title">Publications</h1>
   <br>
   <div class="toc">
-    <h2 id="table-of-contents">Table of Contents</h2>
+    <h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
 <ul id="markdown-toc">
-  <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
   <li><a href="#original-paper" id="markdown-toc-original-paper">Original Paper<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#original-paper"></span></a></li>
   <li><a href="#special-features-of-gem5" id="markdown-toc-special-features-of-gem5">Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span></a>    <ul>
       <li><a href="#gpus" id="markdown-toc-gpus">GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span></a></li>
@@ -108,23 +118,14 @@
     </ul>
   </li>
   <li><a href="#derivative-projects" id="markdown-toc-derivative-projects">Derivative projects</a>    <ul>
-      <li><a href="#mv5" id="markdown-toc-mv5">MV5</a>        <ul>
-          <li><a href="#features" id="markdown-toc-features">Features<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#features"></span></a></li>
-          <li><a href="#resources" id="markdown-toc-resources">Resources<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#resources"></span></a></li>
-        </ul>
-      </li>
-      <li><a href="#gem5-gpu" id="markdown-toc-gem5-gpu">gem5-gpu</a>        <ul>
-          <li><a href="#resources-1" id="markdown-toc-resources-1">Resources<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#resources-1"></span></a></li>
-        </ul>
-      </li>
+      <li><a href="#mv5" id="markdown-toc-mv5">MV5</a></li>
+      <li><a href="#gem5-gpu" id="markdown-toc-gem5-gpu">gem5-gpu</a></li>
     </ul>
   </li>
 </ul>
 
 <hr />
 <p>If you use gem5 in your research, we would appreciate a citation to the original paper in any publications you produce. Moreover, we would appreciate if you cite also the speacial features of gem5 which have been developed and contributed to the main line since the publication of the original paper in 2011. In other words, if you use feature X please also cite the according paper Y from the list below.</p>
-
-<p><strong>TOC</strong></p>
 
 <h1 id="original-paper">Original Paper<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#original-paper"></span></h1>
 <hr />
@@ -134,7 +135,7 @@
 
 <h1 id="special-features-of-gem5">Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span></h1>
 <hr />
-<h3 id="gpus">GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span></h3>
+<h2 id="gpus">GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span></h2>
 
 <ul>
   <li>
@@ -148,7 +149,7 @@
   </li>
 </ul>
 
-<h3 id="dram-controller-dram-power-estimation">DRAM Controller, DRAM Power Estimation<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#dram-controller-dram-power-estimation"></span></h3>
+<h2 id="dram-controller-dram-power-estimation">DRAM Controller, DRAM Power Estimation<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#dram-controller-dram-power-estimation"></span></h2>
 
 <ul>
   <li>
@@ -159,19 +160,19 @@
   </li>
 </ul>
 
-<h3 id="kvm">KVM<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#kvm"></span></h3>
+<h2 id="kvm">KVM<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#kvm"></span></h2>
 
 <ul>
   <li><a href="http://ieeexplore.ieee.org/document/7314164/"><strong>Full Speed Ahead: Detailed Architectural Simulation at Near-Native Speed</strong></a>. Andreas Sandberg, Nikos Nikoleris, Trevor E. Carlson, Erik Hagersten, Stefanos Kaxiras, David Black-Schaffer. 2015 IEEE International Symposium on Workload Characterization</li>
 </ul>
 
-<h3 id="elastic-traces">Elastic Traces<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#elastic-traces"></span></h3>
+<h2 id="elastic-traces">Elastic Traces<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#elastic-traces"></span></h2>
 
 <ul>
   <li><a href="https://doi.org/10.1109/SAMOS.2016.7818336"><strong>Exploring system performance using elastic traces: Fast, accurate and portable</strong></a>. Radhika Jagtap, Matthias Jung, Stephan Diestelhorst, Andreas Hansson, Norbert Wehn. IEEE International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS), 2016</li>
 </ul>
 
-<h3 id="systemc-couping">SystemC Couping<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#systemc-couping"></span></h3>
+<h2 id="systemc-couping">SystemC Couping<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#systemc-couping"></span></h2>
 
 <ul>
   <li><a href="http://samos-conference.com/Resources_Samos_Websites/Proceedings_Repository_SAMOS/2017/49_Final_Paper.pdf"><strong>System Simulation with gem5 and SystemC: The Keystone for Full Interoperability</strong></a>. C. Menard, M. Jung, J. Castrillon, N. Wehn. IEEE International Conference on Embedded Computer Systems Architectures Modeling and Simulation (SAMOS), July, 2017</li>
@@ -208,7 +209,7 @@
 
 <h1 id="publications-using-gem5--m5">Publications using gem5 / m5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#publications-using-gem5-m5"></span></h1>
 <hr />
-<h3 id="2017">2017<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2017"></span></h3>
+<h2 id="2017">2017<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2017"></span></h2>
 
 <ul>
   <li>
@@ -222,7 +223,7 @@
   </li>
 </ul>
 
-<h3 id="2016">2016<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2016"></span></h3>
+<h2 id="2016">2016<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2016"></span></h2>
 
 <ul>
   <li>
@@ -254,7 +255,7 @@
   </li>
 </ul>
 
-<h3 id="2015">2015<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2015"></span></h3>
+<h2 id="2015">2015<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2015"></span></h2>
 
 <ul>
   <li>
@@ -289,7 +290,7 @@
   </li>
 </ul>
 
-<h3 id="2014">2014<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2014"></span></h3>
+<h2 id="2014">2014<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2014"></span></h2>
 
 <ul>
   <li>
@@ -312,7 +313,7 @@
   </li>
 </ul>
 
-<h3 id="2013">2013<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2013"></span></h3>
+<h2 id="2013">2013<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2013"></span></h2>
 
 <ul>
   <li><a href="http://doi.acm.org/10.1145/2485922.2485923"><strong>Continuous Real-World Inputs Can Open Up Alternative Accelerator Designs</strong></a>. Bilel Belhadj, Antoine Joubert, Zheng Li, Rodolphe Héliot, and Olivier Temam. ISCA ‘13</li>
@@ -325,7 +326,7 @@
   <li><a href="http://doi.ieeecomputersociety.org/10.1109/MM.2013.73"><strong>Limits of Parallelism and Boosting in Dim Silicon</strong></a>. Nathaniel Pinckney, Ronald G. Dreslinski, Korey Sewell, David Fick, Trevor Mudge, Dennis Sylvester, David Blaauw, IEEE Micro, vol. 33, no. 5, pp. 30-37, Sept.-Oct., 2013</li>
 </ul>
 
-<h3 id="2012">2012<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2012"></span></h3>
+<h2 id="2012">2012<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2012"></span></h2>
 
 <ul>
   <li><em>Hardware Prefetchers for Emerging Parallel Applications</em>, Biswabandan Panda, Shankar Balachandran. In the proceedings of the IEEE/ACM Parallel Architectures and Compilation Techniques,PACT, Minneapolis, October 2012.</li>
@@ -336,14 +337,14 @@
   <li><a href="http://www.cse.psu.edu/~axj936/docs/Revive-DAC-2012.pdf"><strong>Cache Revive: Architecting Volatile STT-RAM Caches for Enhanced Performance in CMPs</strong></a>. Adwait Jog, Asit Mishra, Cong Xu, Yuan Xie, V. Narayanan, Ravi Iyer, Chita Das. In the proceedings oF the IEEE/ACM Design Automation Conference (DAC), San Francisco, CA, June 2012.</li>
 </ul>
 
-<h3 id="2011">2011<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2011"></span></h3>
+<h2 id="2011">2011<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2011"></span></h2>
 
 <ul>
   <li><a href="https://doi.org/10.1109/IISWC.2011.6114205"><strong>Full-System Analysis and Characterization of Interactive Smartphone Applications</strong></a>. A. Gutierrez, R.G. Dreslinski, T.F. Wenisch, T. Mudge, A. Saidi, C. Emmons, and N. Paver. In the proceeding of the IEEE International Symposium on Workload Characterization (IISWC), pages 81-90, Austin, TX, November 2011.</li>
   <li><em>Universal Rules Guided Design Parameter Selection for Soft Error Resilient Processors,</em> L. Duan, Y. Zhang, B. Li, and L. Peng. Proceedings of the International Symposium on Performance Analysis of Systems and Software(ISPASS), Austin, TX, April 2011.</li>
 </ul>
 
-<h3 id="2010">2010<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2010"></span></h3>
+<h2 id="2010">2010<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2010"></span></h2>
 
 <ul>
   <li><em>Using Hardware Vulnerability Factors to Enhance AVF Analysis,</em> V. Sridharan, D. R. Kaeli. Proceedings of the International Symposium on Computer Architecture (ISCA-37), Saint-Malo, France, June 2010.</li>
@@ -353,7 +354,7 @@
   <li><em>A Simulation of Cache Sub-banking and Block Buffering as Power Reduction Techniques for Multiprocessor Cache Design,</em> Jestoni V. Zarsuela, Anastacia Alvarez, Joy Alinda Reyes, Computer Modeling and Simulation, International Conference on, pp. 515-520, 2010 12th International Conference on Computer Modelling and Simulation, 2010</li>
 </ul>
 
-<h3 id="2009">2009<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2009"></span></h3>
+<h2 id="2009">2009<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2009"></span></h2>
 
 <ul>
   <li><em>Efﬁcient Implementation of Decoupling Capacitors in 3D Processor-DRAM Integrated Computing Systems.</em> Q. Wu, J. Lu, K. Rose, and T. Zhang. Great Lakes Symposium on VLSI. 2009.</li>
@@ -390,7 +391,7 @@
   <li><em>Enhancing LTP-Driven Cache Management Using Reuse Distance Information.</em> W. Lieu, D. Yeung. Journal of Instruction-Level Parallelism 11 (2009).</li>
 </ul>
 
-<h3 id="2008">2008<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2008"></span></h3>
+<h2 id="2008">2008<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2008"></span></h2>
 
 <ul>
   <li><em>Analyzing the Impact of Data Prefetching on Chip MultiProcessors.</em> N. Fukumoto, T. Mihara, K. Inoue, and K. Murakami. Asia-Pacific Computer Systems Architecture Conference. 2008.</li>
@@ -470,7 +471,7 @@
   <li><em>An approach for adaptive DRAM temperature and power management</em>. Song Liu, S. O. Memik, Y. Zhang, and G. Memik. Proceedings of the 22nd annual international conference on Supercomputing. 2008.</li>
 </ul>
 
-<h3 id="2007">2007<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2007"></span></h3>
+<h2 id="2007">2007<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2007"></span></h2>
 
 <ul>
   <li><em>Modeling and Characterizing Power Variability in Multicore Architectures.</em> K. Meng, F. Huebbers, R, Joseph, and Y. Ismail. ISPASS-2007.</li>
@@ -548,7 +549,7 @@
   <li><em>Extending Multicore Architectures to Exploit Hybrid Parallelism in Single-thread Applications</em>. H. Zhong, S. A. Lieberman, S. A. Mahlke. Proc. 13th Intl. Symposium on High Performance Computer Architecture (HPCA). February 2007.</li>
 </ul>
 
-<h3 id="2006">2006<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2006"></span></h3>
+<h2 id="2006">2006<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2006"></span></h2>
 
 <ul>
   <li>
@@ -604,7 +605,7 @@
   </li>
 </ul>
 
-<h3 id="2005">2005<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2005"></span></h3>
+<h2 id="2005">2005<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2005"></span></h2>
 
 <ul>
   <li>
@@ -639,7 +640,7 @@
   </li>
 </ul>
 
-<h3 id="2004">2004<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2004"></span></h3>
+<h2 id="2004">2004<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2004"></span></h2>
 
 <ul>
   <li>
@@ -665,7 +666,7 @@
   </li>
 </ul>
 
-<h3 id="2003">2003<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2003"></span></h3>
+<h2 id="2003">2003<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2003"></span></h2>
 
 <ul>
   <li><em>The Impact of Resource Partitioning on SMT Processors</em>. S. E. Raasch and S. K. Reinhardt. Proc. 12th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), pp. 15-25, Sept.
@@ -681,7 +682,7 @@
   <li><em>Design, Implementation and Use of the MIRV Experimental Compiler for Computer Architecture Research</em>. D. A. Greene. Dissertation at the Universtiy of Michigan, 2003. [<a href="http://www.eecs.umich.edu/~tnm/theses/daveg.pdg">http://www.eecs.umich.edu/~tnm/theses/daveg.pdg</a>“&gt;pdf ]</li>
 </ul>
 
-<h3 id="2002">2002<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2002"></span></h3>
+<h2 id="2002">2002<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2002"></span></h2>
 
 <ul>
   <li><em>A Scalable Instruction Queue Design Using Dependence Chains</em>. S. E. Raasch, N. L. Binkert, and S. K. Reinhardt. Proc. 29th Annual Int’l Symp. on Computer Architecture (ISCA), pp. 318-329, May 2002. <a href="http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.pdf">pdf</a> <a href="http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.ps">ps</a> <a href="http://www.eecs.umich1111/~stever/pubs/isca02_segiq.ps.gz">ps.gz</a></li>

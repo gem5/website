@@ -39,9 +39,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown ">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +57,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					
-            <a class="dropdown-item" href="/gettingstarted">Getting Started</a>
+            <a class="dropdown-item" href="/introduction">Introduction</a>
 					
-            <a class="dropdown-item" href="/piece1">Debugging</a>
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
 					
 				</div>
 			</li>
 
-			<li class="nav-item ">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item ">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>
@@ -72,8 +83,9 @@
 		<header>
   <img src="assets/img/gem5ColorVert.gif" height="200px;">
   <p>Modular platform for computer-system architecture research</p>
-  <button type="button" class="btn btn-outline-primary">Get Started</button>
-  <button type="button" class="btn btn-outline-primary">Download</button>
+  <a href="/building"><button type="button" class="btn btn-primary" href="">Get Started</button></a>
+  <a href="https://gem5.googlesource.com/public/gem5"><button type="button" class="btn btn-outline-primary">Source</button></a>
+  <a href="https://gem5-review.googlesource.com/"><button type="button" class="btn btn-outline-primary">Code Review</button></a>
 </header>
 
 <div class="container">

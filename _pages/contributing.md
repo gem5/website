@@ -4,6 +4,7 @@ title: Contributing
 permalink: /contributing/
 ---
 ## Table of Contents
+{:.no_toc}
 * TOC
 {:toc}
 

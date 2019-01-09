@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>gem5</title>
+
+	<!-- SITE FAVICON -->
+	<link rel="shortcut icon" type="image/gif" href="/assets/img/gem5ColorVert.gif"/>
+
+	<link rel="canonical" href="http://localhost:4000/debugging/">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- FAVICON -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+		<img src="/assets/img/gem5ColorLong.gif" alt="gem5" height=45px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown active">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					
+            <a class="dropdown-item" href="/introduction">Introduction</a>
+					
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
+					
+				</div>
+			</li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<main>
+		<div class="sidenav-top">
+  <img src="/assets/img/gem5ColorLong.gif" height="80">
+</div>
+<div class="sidenav">
+  <div class="search">
+    <form action="/search" method="get">
+      <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
+      <input type="text" name="query">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <!-- Pull navigation from _data/documentation.yml -->
+  
+    <a class="item" href="/introduction" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Introduction
+    </a>
+    <div class="collapse " id="introdution">
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt1" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Getting Started
+    </a>
+    <div class="collapse " id="pt1">
+      
+        <a class="subitem " href="/building">Building gem5</a>
+      
+        <a class="subitem " href="/simple_config">Creating a simple configuration script</a>
+      
+        <a class="subitem " href="/cache_config">Adding cache to configuration script</a>
+      
+        <a class="subitem " href="/gem5_stats">Understanding gem5 statistics and output</a>
+      
+        <a class="subitem " href="/example_configs">Using the default configuration scripts</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt2" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modifying/Extending
+    </a>
+    <div class="collapse show" id="pt2">
+      
+        <a class="subitem " href="/environment">Setting up your development environment</a>
+      
+        <a class="subitem " href="/helloobject">Creating a very simple SimObject</a>
+      
+        <a class="subitem active" href="/debugging">Debugging gem5</a>
+      
+        <a class="subitem " href="/events">Event-driven programming</a>
+      
+        <a class="subitem " href="/parameters">Adding parameters to SimObjects and more events</a>
+      
+        <a class="subitem " href="/memoryobject">Creating SimObjects in the memory system</a>
+      
+        <a class="subitem " href="/simplecache">Creating a simple cache object</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt3" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modeling Cache Coherence with Ruby
+    </a>
+    <div class="collapse " id="pt3">
+      
+        <a class="subitem " href="/intro">Introduction to Ruby</a>
+      
+        <a class="subitem " href="/cache-intro">MSI example cache protocol</a>
+      
+        <a class="subitem " href="/cache-declarations">Declaring a state machine</a>
+      
+        <a class="subitem " href="/cache-in-ports">In port code blocks</a>
+      
+        <a class="subitem " href="/cache-actions">Action code blocks</a>
+      
+        <a class="subitem " href="/cache-transitions">Transition code blocks</a>
+      
+        <a class="subitem " href="/directory">MSI Directory implementation</a>
+      
+        <a class="subitem " href="/MSIbuilding">Compiling a SLICC protocol</a>
+      
+        <a class="subitem " href="/configuration">Configuring a simple Ruby system</a>
+      
+        <a class="subitem " href="/running">Running the simple Ruby system</a>
+      
+        <a class="subitem " href="/MSIdebugging">Debugging SLICC Protocols</a>
+      
+        <a class="subitem " href="/simple-MI_example">Configuring for a standard protocol</a>
+      
+    </div>
+  
+</div>
+
+<div class="container" id="doc-container">
+
+  <!-- <h1>Debugging gem5</h1> -->
+  <dl>
+  <dt>authors</dt>
+  <dd>Jason Lowe-Power</dd>
+</dl>
+
+<h1 id="debugging-gem5">Debugging gem5</h1>
+
+<p>In the previous chapters &lt;hello-simobject-chapter&gt; we covered how to
+create a very simple SimObject. In this chapter, we will replace the
+simple print to <code class="highlighter-rouge">stdout</code> with gem5’s debugging support.</p>
+
+<p>gem5 provides support for <code class="highlighter-rouge">printf</code>-style tracing/debugging of your code
+via <em>debug flags</em>. These flags allow every component to have many
+debug-print statements, without all of them enabled at the same time.
+When running gem5, you can specify which debug flags to enable from the
+command line.</p>
+
+<h2 id="using-debug-flags">Using debug flags</h2>
+
+<p>For instance, when running the first simple.py script from
+simple-config-chapter, if you enable the <code class="highlighter-rouge">DRAM</code> debug flag, you get the
+following output. Note that this generates <em>a lot</em> of output to the
+console (about 7 MB).</p>
+
+<p>``` {.sourceCode .sh}
+build/X86/gem5.opt –debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    gem5 Simulator System.  http://gem5.org
+    DRAM device capacity (gem5 is copyrighted software; use the --copyright option for details.
+
+    gem5 compiled Jan  3 2017 16:03:38
+    gem5 started Jan  3 2017 16:09:53
+    gem5 executing on chinook, pid 19223
+    command line: build/X86/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py
+
+    Global frequency set at 1000000000000 ticks per second
+          0: system.mem_ctrl: Memory capacity 536870912 (536870912) bytes
+          0: system.mem_ctrl: Row buffer size 8192 bytes with 128 columns per row buffer
+          0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+    Beginning simulation!
+    info: Entering event queue @ 0.  Starting simulation...
+          0: system.mem_ctrl: recvTimingReq: request ReadReq addr 400 size 8
+          0: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+          0: system.mem_ctrl: Address: 400 Rank 0 Bank 0 Row 0
+          0: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+          0: system.mem_ctrl: Adding to read queue
+          0: system.mem_ctrl: Request scheduled immediately
+          0: system.mem_ctrl: Single request, going to a free rank
+          0: system.mem_ctrl: Timing access to addr 400, rank/bank/row 0 0 0
+          0: system.mem_ctrl: Activate at tick 0
+          0: system.mem_ctrl: Activate bank 0, rank 0 at tick 0, now got 1 active
+          0: system.mem_ctrl: Access to 400, ready at 46250 bus busy until 46250.
+      46250: system.mem_ctrl: processRespondEvent(): Some req has reached its readyTime
+      46250: system.mem_ctrl: number of read entries for rank 0 is 0
+      46250: system.mem_ctrl: Responding to Address 400..   46250: system.mem_ctrl: Done
+      77000: system.mem_ctrl: recvTimingReq: request ReadReq addr 400 size 8
+      77000: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+      77000: system.mem_ctrl: Address: 400 Rank 0 Bank 0 Row 0
+      77000: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+      77000: system.mem_ctrl: Adding to read queue
+      77000: system.mem_ctrl: Request scheduled immediately
+      77000: system.mem_ctrl: Single request, going to a free rank
+      77000: system.mem_ctrl: Timing access to addr 400, rank/bank/row 0 0 0
+      77000: system.mem_ctrl: Access to 400, ready at 101750 bus busy until 101750.
+     101750: system.mem_ctrl: processRespondEvent(): Some req has reached its readyTime
+     101750: system.mem_ctrl: number of read entries for rank 0 is 0
+     101750: system.mem_ctrl: Responding to Address 400..  101750: system.mem_ctrl: Done
+     132000: system.mem_ctrl: recvTimingReq: request ReadReq addr 400 size 8
+     132000: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+     132000: system.mem_ctrl: Address: 400 Rank 0 Bank 0 Row 0
+     132000: system.mem_ctrl: Read queue limit 32, current size 0, entries needed 1
+     132000: system.mem_ctrl: Adding to read queue
+     132000: system.mem_ctrl: Request scheduled immediately
+     132000: system.mem_ctrl: Single request, going to a free rank
+     132000: system.mem_ctrl: Timing access to addr 400, rank/bank/row 0 0 0
+     132000: system.mem_ctrl: Access to 400, ready at 156750 bus busy until 156750.
+     156750: system.mem_ctrl: processRespondEvent(): Some req has reached its readyTime
+     156750: system.mem_ctrl: number of read entries for rank 0 is 0
+
+Or, you may want to debug based on the exact instruction the CPU is
+executing. For this, the `Exec` debug flag may be useful. This debug
+flags shows details of how each instruction is executed by the simulated
+CPU.
+
+``` {.sourceCode .sh}
+build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jan  3 2017 16:03:38
+gem5 started Jan  3 2017 16:11:47
+gem5 executing on chinook, pid 19234
+command line: build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py
+
+Global frequency set at 1000000000000 ticks per second
+      0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+warn: ClockedObject: More than one power state change request encountered within the same simulation tick
+Beginning simulation!
+info: Entering event queue @ 0.  Starting simulation...
+  77000: system.cpu T0 : @_start    : xor   rbp, rbp
+  77000: system.cpu T0 : @_start.0  :   XOR_R_R : xor   rbp, rbp, rbp : IntAlu :  D=0x0000000000000000
+ 132000: system.cpu T0 : @_start+3    : mov r9, rdx
+ 132000: system.cpu T0 : @_start+3.0  :   MOV_R_R : mov   r9, r9, rdx : IntAlu :  D=0x0000000000000000
+ 187000: system.cpu T0 : @_start+6    : pop rsi
+ 187000: system.cpu T0 : @_start+6.0  :   POP_R : ld   t1, SS:[rsp] : MemRead :  D=0x0000000000000001 A=0x7fffffffee30
+ 250000: system.cpu T0 : @_start+6.1  :   POP_R : addi   rsp, rsp, 0x8 : IntAlu :  D=0x00007fffffffee38
+ 250000: system.cpu T0 : @_start+6.2  :   POP_R : mov   rsi, rsi, t1 : IntAlu :  D=0x0000000000000001
+ 360000: system.cpu T0 : @_start+7    : mov rdx, rsp
+ 360000: system.cpu T0 : @_start+7.0  :   MOV_R_R : mov   rdx, rdx, rsp : IntAlu :  D=0x00007fffffffee38
+ 415000: system.cpu T0 : @_start+10    : and    rax, 0xfffffffffffffff0
+ 415000: system.cpu T0 : @_start+10.0  :   AND_R_I : limm   t1, 0xfffffffffffffff0 : IntAlu :  D=0xfffffffffffffff0
+ 415000: system.cpu T0 : @_start+10.1  :   AND_R_I : and   rsp, rsp, t1 : IntAlu :  D=0x0000000000000000
+ 470000: system.cpu T0 : @_start+14    : push   rax
+ 470000: system.cpu T0 : @_start+14.0  :   PUSH_R : st   rax, SS:[rsp + 0xfffffffffffffff8] : MemWrite :  D=0x0000000000000000 A=0x7fffffffee28
+ 491000: system.cpu T0 : @_start+14.1  :   PUSH_R : subi   rsp, rsp, 0x8 : IntAlu :  D=0x00007fffffffee28
+ 546000: system.cpu T0 : @_start+15    : push   rsp
+ 546000: system.cpu T0 : @_start+15.0  :   PUSH_R : st   rsp, SS:[rsp + 0xfffffffffffffff8] : MemWrite :  D=0x00007fffffffee28 A=0x7fffffffee20
+ 567000: system.cpu T0 : @_start+15.1  :   PUSH_R : subi   rsp, rsp, 0x8 : IntAlu :  D=0x00007fffffffee20
+ 622000: system.cpu T0 : @_start+16    : mov    r15, 0x40a060
+ 622000: system.cpu T0 : @_start+16.0  :   MOV_R_I : limm   r8, 0x40a060 : IntAlu :  D=0x000000000040a060
+ 732000: system.cpu T0 : @_start+23    : mov    rdi, 0x409ff0
+ 732000: system.cpu T0 : @_start+23.0  :   MOV_R_I : limm   rcx, 0x409ff0 : IntAlu :  D=0x0000000000409ff0
+ 842000: system.cpu T0 : @_start+30    : mov    rdi, 0x400274
+ 842000: system.cpu T0 : @_start+30.0  :   MOV_R_I : limm   rdi, 0x400274 : IntAlu :  D=0x0000000000400274
+ 952000: system.cpu T0 : @_start+37    : call   0x9846
+ 952000: system.cpu T0 : @_start+37.0  :   CALL_NEAR_I : limm   t1, 0x9846 : IntAlu :  D=0x0000000000009846
+ 952000: system.cpu T0 : @_start+37.1  :   CALL_NEAR_I : rdip   t7, %ctrl153,  : IntAlu :  D=0x00000000004001ba
+ 952000: system.cpu T0 : @_start+37.2  :   CALL_NEAR_I : st   t7, SS:[rsp + 0xfffffffffffffff8] : MemWrite :  D=0x00000000004001ba A=0x7fffffffee18
+ 973000: system.cpu T0 : @_start+37.3  :   CALL_NEAR_I : subi   rsp, rsp, 0x8 : IntAlu :  D=0x00007fffffffee18
+ 973000: system.cpu T0 : @_start+37.4  :   CALL_NEAR_I : wrip   , t7, t1 : IntAlu :
+1042000: system.cpu T0 : @__libc_start_main    : push   r15
+1042000: system.cpu T0 : @__libc_start_main.0  :   PUSH_R : st   r15, SS:[rsp + 0xfffffffffffffff8] : MemWrite :  D=0x0000000000000000 A=0x7fffffffee10
+1063000: system.cpu T0 : @__libc_start_main.1  :   PUSH_R : subi   rsp, rsp, 0x8 : IntAlu :  D=0x00007fffffffee10
+1118000: system.cpu T0 : @__libc_start_main+2    : movsxd   rax, rsi
+1118000: system.cpu T0 : @__libc_start_main+2.0  :   MOVSXD_R_R : sexti   rax, rsi, 0x1f : IntAlu :  D=0x0000000000000001
+1173000: system.cpu T0 : @__libc_start_main+5    : mov  r15, r9
+1173000: system.cpu T0 : @__libc_start_main+5.0  :   MOV_R_R : mov   r15, r15, r9 : IntAlu :  D=0x0000000000000000
+1228000: system.cpu T0 : @__libc_start_main+8    : push r14
+</code></pre></div></div>
+
+<p>In fact, the <code class="highlighter-rouge">Exec</code> flag is actually an agglomeration of multiple debug
+flags. You can see this, and all of the available debug flags, by
+running gem5 with the <code class="highlighter-rouge">--debug-help</code> parameter.</p>
+
+<p>``` {.sourceCode .sh}
+build/X86/gem5.opt –debug-help</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    Base Flags:
+    Activity: None
+    AddrRanges: None
+    Annotate: State machine annotation debugging
+    AnnotateQ: State machine annotation queue debugging
+    AnnotateVerbose: Dump all state machine annotation details
+    BaseXBar: None
+    Branch: None
+    Bridge: None
+    CCRegs: None
+    CMOS: Accesses to CMOS devices
+    Cache: None
+    CachePort: None
+    CacheRepl: None
+    CacheTags: None
+    CacheVerbose: None
+    Checker: None
+    Checkpoint: None
+    ClockDomain: None
+    ...
+    Compound Flags:
+    AnnotateAll: All Annotation flags
+        Annotate, AnnotateQ, AnnotateVerbose
+    CacheAll: None
+        Cache, CachePort, CacheRepl, CacheVerbose, HWPrefetch
+    DiskImageAll: None
+        DiskImageRead, DiskImageWrite
+    ...
+    XBar: None
+        BaseXBar, CoherentXBar, NoncoherentXBar, SnoopFilter    XBar: None
+        BaseXBar, CoherentXBar, NoncoherentXBar, SnoopFilter
+
+Adding a new debug flag
+-----------------------
+
+In the previous chapters \&lt;hello-simobject-chapter\&gt;, we used a simple
+`std::cout` to print from our SimObject. While it is possible to use the
+normal C/C++ I/O in gem5, it is highly discouraged. So, we are now going
+to replace this and use gem5's debugging facilities instead.
+
+When creating a new debug flag, we first have to declare it in a
+SConscript file. Add the following to the SConscript file in the
+directory with your hello object code (src/learning\_gem5/).
+
+``` {.sourceCode .python}
+DebugFlag('Hello')
+</code></pre></div></div>
+
+<p>This declares a debug flag of “Hello”. Now, we can use this in debug
+statements in our SimObject.</p>
+
+<p>By declaring the flag in the SConscript file, a debug header is
+automatically generated that allows us to use the debug flag. The header
+file is in the <code class="highlighter-rouge">debug</code> directory and has the same name (and
+capitalization) as what we declare in the SConscript file. Therefore, we
+need to include the automatically generated header file in any files
+where we plan to use the debug flag.</p>
+
+<p>In the <code class="highlighter-rouge">hello_object.cc</code> file, we need to include the header file.</p>
+
+<p>``` {.sourceCode .c++}
+#include “debug/Hello.hh”</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Now that we have included the necessary header file, let's replace the
+`std::cout` call with a debug statement like so.
+
+``` {.sourceCode .c++}
+DPRINTF(Hello, "Created the hello object\n");
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">DPRINTF</code> is a C++ macro. The first parameter is a <em>debug flag</em> that has
+been declared in a SConscript file. We can use the flag <code class="highlighter-rouge">Hello</code> since we
+declared it in the <code class="highlighter-rouge">src/learning_gem5/SConscript</code> file. The rest of the
+arguments are variable and can be anything you would pass to a <code class="highlighter-rouge">printf</code>
+statement.</p>
+
+<p>Now, if you recompile gem5 and run it with the “Hello” debug flag, you
+get the following result.</p>
+
+<p><code class="highlighter-rouge">{.sourceCode .sh}
+build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
+</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jan  4 2017 09:40:10
+gem5 started Jan  4 2017 09:41:01
+gem5 executing on chinook, pid 29078
+command line: build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
+
+Global frequency set at 1000000000000 ticks per second
+      0: hello: Created the hello object
+Beginning simulation!
+info: Entering event queue @ 0.  Starting simulation...
+Exiting @ tick 18446744073709551615 because simulate() limit reached
+</code></pre></div></div>
+
+<p>You can find the updated SConcript file
+here &lt;../_static/scripts/part2/debugging/SConscript&gt; and the updated
+hello object code
+here &lt;../_static/scripts/part2/debugging/hello_object.cc&gt;.</p>
+
+<h2 id="debug-output">Debug output</h2>
+
+<p>For each dynamic <code class="highlighter-rouge">DPRINTF</code> execution, three things are printed to
+<code class="highlighter-rouge">stdout</code>. First, the current tick when the <code class="highlighter-rouge">DPRINTF</code> is executed.
+Second, the <em>name of the SimObject</em> that called <code class="highlighter-rouge">DPRINTF</code>. This name is
+usually the Python variable name from the Python config file. However,
+the name is whatever the SimObject <code class="highlighter-rouge">name()</code> function returns. Finally,
+you see whatever format string you passed to the <code class="highlighter-rouge">DPRINTF</code> function.</p>
+
+<p>You can control where the debug output goes with the <code class="highlighter-rouge">--debug-file</code>
+parameter. By default, all of the debugging output is printed to
+<code class="highlighter-rouge">stdout</code>. However, you can redirect the output to any file. The file is
+stored relative to the main gem5 output directory, not the current
+working directory.</p>
+
+<h2 id="using-functions-other-than-dprintf">Using functions other than DPRINTF</h2>
+
+<p><code class="highlighter-rouge">DPRINTF</code> is the most commonly used debugging function in gem5. However,
+gem5 provides a number of other functions that are useful in specific
+circumstances.</p>
+
+<blockquote>
+  <p>These functions are like the previous functions :cppDDUMP,
+:cppDPRINTF, and :cppDPRINTFR except they do not take a flag as a
+parameter. Therefore, these statements will <em>always</em> print whenever
+debugging is enabled.</p>
+</blockquote>
+
+<p>All of these functions are only enabled if you compile gem5 in “opt” or
+“debug” mode. All other modes use empty placeholder macros for the above
+functions. Therefore, if you want to use debug flags, you must use
+either “gem5.opt” or “gem5.debug”.</p>
+
+
+</div>
+
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+	  // When the user scrolls down 20px from the top of the document, show the button
+	  window.onscroll = function() {scrollFunction()};
+
+	  function scrollFunction() {
+	      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+	          document.getElementById("myBtn").style.display = "block";
+	      } else {
+	          document.getElementById("myBtn").style.display = "none";
+	      }
+	  }
+
+	  // When the user clicks on the button, scroll to the top of the document
+	  function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	  }
+	</script>
+
+</body>
+
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/gettingstarted">Documentation</a></p>
+				<p><a href="#">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/help">Help</a></p>
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+</html>

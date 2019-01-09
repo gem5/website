@@ -39,9 +39,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown active">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +57,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					
-            <a class="dropdown-item" href="/gettingstarted">Getting Started</a>
+            <a class="dropdown-item" href="/introduction">Introduction</a>
 					
-            <a class="dropdown-item" href="/piece1">Debugging</a>
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
 					
 				</div>
 			</li>
 
-			<li class="nav-item ">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item ">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>
@@ -82,27 +93,79 @@
   </div>
   <!-- Pull navigation from _data/documentation.yml -->
   
-    <a class="item" href="/gettingstarted" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Getting Started
+    <a class="item" href="/introduction" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Introduction
     </a>
-    <div class="collapse show" id="gettingstarted">
-      
-        <a class="subitem active" href="/introduction">Introduction</a>
-      
-        <a class="subitem " href="/dependencies">Dependencies</a>
-      
-        <a class="subitem " href="/sourcecode">Source Code</a>
+    <div class="collapse " id="introdution">
       
     </div>
   
-    <a class="item" data-toggle="collapse" href="#debugging" role="button" aria-expanded="false" aria-controls="collapseExample">
-      Debugging
+    <a class="item" data-toggle="collapse" href="#pt1" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Getting Started
     </a>
-    <div class="collapse " id="debugging">
+    <div class="collapse " id="pt1">
       
-        <a class="subitem " href="/piece1">Piece 1</a>
+        <a class="subitem " href="/building">Building gem5</a>
       
-        <a class="subitem " href="/piece2">Piece 2</a>
+        <a class="subitem " href="/simple_config">Creating a simple configuration script</a>
+      
+        <a class="subitem " href="/cache_config">Adding cache to configuration script</a>
+      
+        <a class="subitem " href="/gem5_stats">Understanding gem5 statistics and output</a>
+      
+        <a class="subitem " href="/example_configs">Using the default configuration scripts</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt2" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modifying/Extending
+    </a>
+    <div class="collapse " id="pt2">
+      
+        <a class="subitem " href="/environment">Setting up your development environment</a>
+      
+        <a class="subitem " href="/helloobject">Creating a very simple SimObject</a>
+      
+        <a class="subitem " href="/debugging">Debugging gem5</a>
+      
+        <a class="subitem " href="/events">Event-driven programming</a>
+      
+        <a class="subitem " href="/parameters">Adding parameters to SimObjects and more events</a>
+      
+        <a class="subitem " href="/memoryobject">Creating SimObjects in the memory system</a>
+      
+        <a class="subitem " href="/simplecache">Creating a simple cache object</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt3" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modeling Cache Coherence with Ruby
+    </a>
+    <div class="collapse " id="pt3">
+      
+        <a class="subitem " href="/intro">Introduction to Ruby</a>
+      
+        <a class="subitem " href="/cache-intro">MSI example cache protocol</a>
+      
+        <a class="subitem " href="/cache-declarations">Declaring a state machine</a>
+      
+        <a class="subitem " href="/cache-in-ports">In port code blocks</a>
+      
+        <a class="subitem " href="/cache-actions">Action code blocks</a>
+      
+        <a class="subitem " href="/cache-transitions">Transition code blocks</a>
+      
+        <a class="subitem " href="/directory">MSI Directory implementation</a>
+      
+        <a class="subitem " href="/MSIbuilding">Compiling a SLICC protocol</a>
+      
+        <a class="subitem " href="/configuration">Configuring a simple Ruby system</a>
+      
+        <a class="subitem " href="/running">Running the simple Ruby system</a>
+      
+        <a class="subitem " href="/MSIdebugging">Debugging SLICC Protocols</a>
+      
+        <a class="subitem " href="/simple-MI_example">Configuring for a standard protocol</a>
       
     </div>
   
@@ -110,9 +173,45 @@
 
 <div class="container" id="doc-container">
 
-  <h1>Introduction</h1>
-  <h2 id="hello-there">Hello there</h2>
-<p>Intro to getting started</p>
+  <!-- <h1>Introduction</h1> -->
+  <dl>
+  <dt>authors</dt>
+  <dd>Jason Lowe-Power</dd>
+</dl>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This is an intro to this tutorial. It says lots of interesting things.</p>
+
+<p>The goal of this document is to give you, the reader, a thorough
+introduction on how to use gem5 and the gem5 codebase. The purpose of
+this document is not to provide a detailed description of every feature
+in gem5. After reading this document, you should feel comfortable using
+gem5 in the classroom and for computer architecture research.
+Additionally, you should be able to modify and extend gem5 and then
+contribute your improvements to the main gem5 repository.</p>
+
+<p>This document is colored by my personal experiences with gem5 over the
+past six years as a graduate student at the University of
+Wisconsin-Madison. The examples presented are just one way to do it.
+Unlike Python, whose mantra is “There should be one– and preferably
+only one –obvious way to do it.” (from The Zen of Python. See
+<code class="highlighter-rouge">import this</code>), in gem5 there are a number of different ways to
+accomplish the same thing. Thus, many of the examples presented in this
+book are my opinion of the best way to do things.</p>
+
+<p>One important lesson I have learned (the hard way) is when using complex
+tools like gem5, it is important to actually understand how it works
+before using it.</p>
+
+<p>Finish the previous paragraph about how it is a good idea to understand
+what your tools are actually doing.</p>
+
+<p>should add a list of terms. Things like “simulated system” vs “host
+system”, etc.</p>
+
+<p>You can find the source for this book on github at
+<a href="https://github.com/powerjg/learning_gem5">https://github.com/powerjg/learning_gem5</a>.</p>
 
 
 </div>

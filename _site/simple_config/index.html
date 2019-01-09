@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>gem5</title>
+
+	<!-- SITE FAVICON -->
+	<link rel="shortcut icon" type="image/gif" href="/assets/img/gem5ColorVert.gif"/>
+
+	<link rel="canonical" href="http://localhost:4000/simple_config/">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- FAVICON -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+		<img src="/assets/img/gem5ColorLong.gif" alt="gem5" height=45px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown active">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					
+            <a class="dropdown-item" href="/introduction">Introduction</a>
+					
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
+					
+				</div>
+			</li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<main>
+		<div class="sidenav-top">
+  <img src="/assets/img/gem5ColorLong.gif" height="80">
+</div>
+<div class="sidenav">
+  <div class="search">
+    <form action="/search" method="get">
+      <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
+      <input type="text" name="query">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <!-- Pull navigation from _data/documentation.yml -->
+  
+    <a class="item" href="/introduction" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Introduction
+    </a>
+    <div class="collapse " id="introdution">
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt1" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Getting Started
+    </a>
+    <div class="collapse show" id="pt1">
+      
+        <a class="subitem " href="/building">Building gem5</a>
+      
+        <a class="subitem active" href="/simple_config">Creating a simple configuration script</a>
+      
+        <a class="subitem " href="/cache_config">Adding cache to configuration script</a>
+      
+        <a class="subitem " href="/gem5_stats">Understanding gem5 statistics and output</a>
+      
+        <a class="subitem " href="/example_configs">Using the default configuration scripts</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt2" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modifying/Extending
+    </a>
+    <div class="collapse " id="pt2">
+      
+        <a class="subitem " href="/environment">Setting up your development environment</a>
+      
+        <a class="subitem " href="/helloobject">Creating a very simple SimObject</a>
+      
+        <a class="subitem " href="/debugging">Debugging gem5</a>
+      
+        <a class="subitem " href="/events">Event-driven programming</a>
+      
+        <a class="subitem " href="/parameters">Adding parameters to SimObjects and more events</a>
+      
+        <a class="subitem " href="/memoryobject">Creating SimObjects in the memory system</a>
+      
+        <a class="subitem " href="/simplecache">Creating a simple cache object</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt3" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modeling Cache Coherence with Ruby
+    </a>
+    <div class="collapse " id="pt3">
+      
+        <a class="subitem " href="/intro">Introduction to Ruby</a>
+      
+        <a class="subitem " href="/cache-intro">MSI example cache protocol</a>
+      
+        <a class="subitem " href="/cache-declarations">Declaring a state machine</a>
+      
+        <a class="subitem " href="/cache-in-ports">In port code blocks</a>
+      
+        <a class="subitem " href="/cache-actions">Action code blocks</a>
+      
+        <a class="subitem " href="/cache-transitions">Transition code blocks</a>
+      
+        <a class="subitem " href="/directory">MSI Directory implementation</a>
+      
+        <a class="subitem " href="/MSIbuilding">Compiling a SLICC protocol</a>
+      
+        <a class="subitem " href="/configuration">Configuring a simple Ruby system</a>
+      
+        <a class="subitem " href="/running">Running the simple Ruby system</a>
+      
+        <a class="subitem " href="/MSIdebugging">Debugging SLICC Protocols</a>
+      
+        <a class="subitem " href="/simple-MI_example">Configuring for a standard protocol</a>
+      
+    </div>
+  
+</div>
+
+<div class="container" id="doc-container">
+
+  <!-- <h1>Creating a simple configuration script</h1> -->
+  <dl>
+  <dt>authors</dt>
+  <dd>Jason Lowe-Power</dd>
+</dl>
+
+<h1 id="creating-a-simple-configuration-script">Creating a simple configuration script</h1>
+
+<p>This chapter of the tutorial will walk you through how to set up a
+simple simulation script for gem5 and to run gem5 for the first time.
+It’s assumed that you’ve completed the first chapter of the tutorial and
+have successfully built gem5 with an executable <code class="highlighter-rouge">build/X86/gem5.opt</code>.</p>
+
+<p>Our configuration script is going to model a very simple system. We’ll
+have just one simple CPU core. This CPU core will be connected to a
+system-wide memory bus. And we’ll have a single DDR3 memory channel,
+also connected to the memory bus.</p>
+
+<h2 id="gem5-configuration-scripts">gem5 configuration scripts</h2>
+
+<p>The gem5 binary takes, as a parameter, a python script which sets up and
+executes the simulation. In this script, you create a system to
+simulate, create all of the components of the system, and specify all of
+the parameters for the system components. Then, from the script, you can
+begin the simulation.</p>
+
+<p>This script is completely user-defined. You can choose to use any valid
+Python code in the configuration scripts. This book provides on example
+of a style that relies heavily classes and inheritance in Python. As a
+gem5 user, it’s up to you how simple or complicated to make your
+configuration scripts.</p>
+
+<p>There are a number of example configuration scripts that ship with gem5
+in <code class="highlighter-rouge">configs/examples</code>. Most of these scripts are all-encompassing and
+allow users to specify almost all options on the command line. Instead
+of starting with these complex script, in this book we are going to
+start with the most simple script that can run gem5 and build from
+there. Hopefully, by the end of this section you’ll have a good idea of
+how simulation scripts work.</p>
+
+<blockquote>
+  <p><strong>An aside on SimObjects</strong></p>
+
+  <p>gem5’s modular design is built around the <strong>SimObject</strong> type. Most of
+the components in the simulated system are SimObjects: CPUs, caches,
+memory controllers, buses, etc. gem5 exports all of these objects from
+their <code class="highlighter-rouge">C++</code> implementation to python. Thus, from the python
+configuration script you can create any SimObject, set its parameters,
+and specify the interactions between SimObjects.</p>
+
+  <p>See <a href="http://www.gem5.org/SimObjects">http://www.gem5.org/SimObjects</a> for more information.</p>
+</blockquote>
+
+<h2 id="creating-a-config-file">Creating a config file</h2>
+
+<p>Let’s start by creating a new config file and opening it:</p>
+
+<p>``` {.sourceCode .sh}
+mkdir configs/tutorial
+touch configs/tutorial/simple.py</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+This is just a normal python file that will be executed by the embedded
+python in the gem5 executable. Therefore, you can use any features and
+libraries available in python.
+
+The first thing we'll do in this file is import the m5 library and all
+SimObjects that we've compiled.
+
+``` {.sourceCode .python}
+import m5
+from m5.objects import *
+</code></pre></div></div>
+
+<p>Next, we’ll create the first SimObject: the system that we are going to
+simulate. The <code class="highlighter-rouge">System</code> object will be the parent of all the other
+objects in our simulated system. The <code class="highlighter-rouge">System</code> object contains a lot of
+functional (not timing-level) information, like the physical memory
+ranges, the root clock domain, the root voltage domain, the kernel (in
+full-system simulation), etc. To create the system SimObject, we simply
+instantiate it like a normal python class:</p>
+
+<p>``` {.sourceCode .python}
+system = System()</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Now that we have a reference to the system we are going to simulate,
+let's set the clock on the system. We first have to create a clock
+domain. Then we can set the clock frequency on that domain. Setting
+parameters on a SimObject is exactly the same as setting members of an
+object in python, so we can simply set the clock to 1 GHz, for instance.
+Finally, we have to specify a voltage domain for this clock domain.
+Since we don't care about system power right now, we'll just use the
+default options for the voltage domain.
+
+``` {.sourceCode .python}
+system.clk_domain = SrcClockDomain()
+system.clk_domain.clock = '1GHz'
+system.clk_domain.voltage_domain = VoltageDomain()
+</code></pre></div></div>
+
+<p>Once we have a system, let’s set up how the memory will be simulated. We
+are going to use <em>timing</em> mode for the memory simulation. You will
+almost always use timing mode for the memory simulation, except in
+special cases like fast-forwarding and restoring from a checkpoint. We
+will also set up a single memory range of size 512 MB, a very small
+system. Note that in the python configuration scripts, whenever a size
+is required you can specify that size in common vernacular and units
+like <code class="highlighter-rouge">'512MB'</code>. Similarly, with time you can use time units (e.g.,
+<code class="highlighter-rouge">'5ns'</code>). These will automatically be converted to a common
+representation, respectively.</p>
+
+<p>``` {.sourceCode .python}
+system.mem_mode = ‘timing’
+system.mem_ranges = [AddrRange(‘512MB’)]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Now, we can create a CPU. We'll start with the most simple timing-based
+CPU in gem5, *TimingSimpleCPU*. This CPU model executes each instruction
+in a single clock cycle to execute, except memory requests, which flow
+through the memory system. To create the CPU you can simply just
+instantiate the object:
+
+``` {.sourceCode .python}
+system.cpu = TimingSimpleCPU()
+</code></pre></div></div>
+
+<p>Next, we’re going to create the system-wide memory bus:</p>
+
+<p>``` {.sourceCode .python}
+system.membus = SystemXBar()</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Now that we have a memory bus, let's connect the cache ports on the CPU
+to it. In this case, since the system we want to simulate doesn't have
+any caches, we will connect the I-cache and D-cache ports directly to
+the membus. In this example system, we have no caches.
+
+``` {.sourceCode .python}
+system.cpu.icache_port = system.membus.slave
+system.cpu.dcache_port = system.membus.slave
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>An aside on gem5 ports</strong></p>
+
+  <p>To connect memory system components together, gem5 uses a port
+abstraction. Each memory object can have two kinds of ports, <em>master
+ports</em> and <em>slave ports</em>. Requests are sent from a master port to a
+slave port, and responses are sent from a slave port to a master port.
+When connecting ports, you must connect a master port to a slave port.</p>
+
+  <p>Connecting ports together is easy to do from the python configuration
+files. You can simply set the master port <code class="highlighter-rouge">=</code> to the slave port and
+they will be connected. For instance:</p>
+
+  <p><code class="highlighter-rouge">{.sourceCode .python}
+memobject1.master = memobject2.slave
+</code></p>
+
+  <p>The master and slave can be on either side of the <code class="highlighter-rouge">=</code> and the same
+connection will be made. After making the connection, the master can
+send requests to the slave port. There is a lot of magic going on
+behind the scenes to set up the connection, the details of which are
+unimportant for most users.</p>
+
+  <p>We will discuss ports and MemObject in more detail in
+memoryobject-chapter.</p>
+</blockquote>
+
+<p>Next, we need to connect up a few other ports to make sure that our
+system will function correctly. We need to create an I/O controller on
+the CPU and connect it to the memory bus. Also, we need to connect a
+special port in the system up to the membus. This port is a
+functional-only port to allow the system to read and write memory.</p>
+
+<p>Connecting the PIO and interrupt ports to the memory bus is an
+x86-specific requirement. Other ISAs (e.g., ARM) do not require these 3
+extra lines.</p>
+
+<p>``` {.sourceCode .python}
+system.cpu.createInterruptController()
+system.cpu.interrupts[0].pio = system.membus.master
+system.cpu.interrupts[0].int_master = system.membus.slave
+system.cpu.interrupts[0].int_slave = system.membus.master</p>
+
+<p>system.system_port = system.membus.slave</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Next, we need to create a memory controller and connect it to the
+membus. For this system, we'll use a simple DDR3 controller and it will
+be responsible for the entire memory range of our system.
+
+``` {.sourceCode .python}
+system.mem_ctrl = DDR3_1600_8x8()
+system.mem_ctrl.range = system.mem_ranges[0]
+system.mem_ctrl.port = system.membus.master
+</code></pre></div></div>
+
+<p>After those final connections, we’ve finished instantiating our
+simulated system! Our system should look like simple-config-fig.</p>
+
+<p><img src="../_static/figures/simple_config.png" alt="A simple system configuration without
+caches." /></p>
+
+<p>Next, we need to set up the process we want the CPU to execute. Since we
+are executing in syscall emulation mode (SE mode), we will just point
+the CPU at the compiled executable. We’ll execute a simple “Hello world”
+program. There’s already one that is compiled that ships with gem5, so
+we’ll use that. You can specify any application built for x86 and that’s
+been statically compiled.</p>
+
+<blockquote>
+  <p><strong>Full system vs syscall emulation</strong></p>
+
+  <p>gem5 can run in two different modes called “syscall emulation” and
+“full system” or SE and FS modes. In full system mode (covered later
+full-system-part), gem5 emulates the entire hardware system and runs
+an unmodified kernel. Full system mode is similar to running a virtual
+machine.</p>
+
+  <p>Syscall emulation mode, on the other hand, does not emulate all of the
+devices in a system and focuses on simulating the CPU and memory
+system. Syscall emulation is much easier to configure since you are
+not required to instantiate all of the hardware devices required in a
+real system. However, syscall emulation only emulates Linux system
+calls, and thus only models user-mode code.</p>
+
+  <p>If you do not need to model the operating system for your research
+questions, and you want extra performance, you should use SE mode.
+However, if you need high fidelity modeling of the system, or OS
+interaction like page table walks are important, then you should use
+FS mode.</p>
+</blockquote>
+
+<p>First, we have to create the process (another SimObject). Then we set
+the processes command to the command we want to run. This is a list
+similar to argv, with the executable in the first position and the
+arguments to the executable in the rest of the list. Then we set the CPU
+to use the process as it’s workload, and finally create the functional
+execution contexts in the CPU.</p>
+
+<p>``` {.sourceCode .python}
+process = Process()
+process.cmd = [‘tests/test-progs/hello/bin/x86/linux/hello’]
+system.cpu.workload = process
+system.cpu.createThreads()</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+The final thing we need to do is instantiate the system and begin
+execution. First, we create the `Root` object. Then we instantiate the
+simulation. The instantiation process goes through all of the SimObjects
+we've created in python and creates the `C++` equivalents.
+
+As a note, you don't have to instantiate the python class then specify
+the parameters explicitly as member variables. You can also pass the
+parameters as named arguments, like the `Root` object below.
+
+``` {.sourceCode .python}
+root = Root(full_system = False, system = system)
+m5.instantiate()
+</code></pre></div></div>
+
+<p>Finally, we can kick off the actual simulation! As a side now, gem5 is
+now using Python 3-style <code class="highlighter-rouge">print</code> functions, so <code class="highlighter-rouge">print</code> is no longer a
+statement and must be called as a function.</p>
+
+<p>``` {.sourceCode .python}
+print(“Beginning simulation!”)
+exit_event = m5.simulate()</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+And once simulation finishes, we can inspect the state of the system.
+
+``` {.sourceCode .python}
+print('Exiting @ tick {} because {}'
+      .format(m5.curTick(), exit_event.getCause()))
+</code></pre></div></div>
+
+<h2 id="running-gem5">Running gem5</h2>
+
+<p>Now that we’ve created a simple simulation script (the full version of
+which can be found at gem5/configs/learning_gem5/part1/simple.py) we’re
+ready to run gem5. gem5 can take many parameters, but requires just one
+positional argument, the simulation script. So, we can simply run gem5
+from the root gem5 directory as:</p>
+
+<p><code class="highlighter-rouge">{.sourceCode .sh}
+build/X86/gem5.opt configs/tutorial/simple.py
+</code></p>
+
+<p>The output should be:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Mar 16 2018 10:24:24
+gem5 started Mar 16 2018 15:53:27
+gem5 executing on amarillo, pid 41697
+command line: build/X86/gem5.opt configs/tutorial/simple.py
+
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+0: system.remote_gdb: listening for remote gdb on port 7000
+Beginning simulation!
+info: Entering event queue @ 0.  Starting simulation...
+Hello world!
+Exiting @ tick 507841000 because exiting with last active thread context
+</code></pre></div></div>
+
+<p>Parameters in the configuration file can be changed and the results
+should be different. For instance, if you double the system clock, the
+simulation should finish faster. Or, if you change the DDR controller to
+DDR4, the performance should be better.</p>
+
+<p>Additionally, you can change the CPU model to <code class="highlighter-rouge">MinorCPU</code> to model an
+in-order CPU, or <code class="highlighter-rouge">DerivO3CPU</code> to model an out-of-order CPU. However,
+note that <code class="highlighter-rouge">DerivO3CPU</code> currently does not work with simple.py, because
+<code class="highlighter-rouge">DerivO3CPU</code> requires a system with separate instruction and data caches
+(<code class="highlighter-rouge">DerivO3CPU</code> does work with the configuration in the next section).</p>
+
+<p>Next, we will add caches to our configuration file to model a more
+complex system.</p>
+
+
+</div>
+
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+	  // When the user scrolls down 20px from the top of the document, show the button
+	  window.onscroll = function() {scrollFunction()};
+
+	  function scrollFunction() {
+	      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+	          document.getElementById("myBtn").style.display = "block";
+	      } else {
+	          document.getElementById("myBtn").style.display = "none";
+	      }
+	  }
+
+	  // When the user clicks on the button, scroll to the top of the document
+	  function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	  }
+	</script>
+
+</body>
+
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/gettingstarted">Documentation</a></p>
+				<p><a href="#">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/help">Help</a></p>
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+</html>

@@ -11,9 +11,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item {% if page.title == "Help" %}active{% endif %}">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown {% if page.layout == "documentation" %}active{% endif %}">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,12 +34,12 @@
 				</div>
 			</li>
 
-			<li class="nav-item {% if page.title == "Publications" %}active{% endif %}">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item {% if page.title == "Search" %}active{% endif %}">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>

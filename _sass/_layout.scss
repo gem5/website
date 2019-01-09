@@ -52,7 +52,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 
 /**** SIDEBAR ****/
 .sidenav-top {
-	width: 200px;
+	width: $sidenav-width;
 	height: 71px;
 	background-color: $base;
 	position: fixed;
@@ -63,14 +63,14 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 	}
 }
 .sidenav {
-  height: 100%;
-  width: 200px;
+  height: 90%;
+  width: $sidenav-width;
   position: fixed;
   // z-index: -1;
   left: 0;
   background-color: $base;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding: 20px 0;
 	div.search {
     input {
       width: 90%;
@@ -109,8 +109,8 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 }
 
 div#doc-container {
-  margin-left: 210px;
-  padding-top: 30px;
+  margin-left: $sidenav-width;
+  padding: 30px 35px;
 	width: auto;
 }
 
@@ -134,12 +134,14 @@ div#doc-container {
 	color: white !important;
 	background-color: $main;
 	border: none;
+  transition: 0.5s;
 }
 .btn-primary:hover,
 .btn-primary:active,
 // .btn-primary:visited,
 .btn-primary:focus {
-		background-color: grey;
+		background-color: #006a7c;
+    border-color: #006a7c;
 }
 
 
@@ -161,6 +163,14 @@ header {
 	.btn-outline-primary {
 		margin: 10px;
 	}
+  .btn-primary {
+    border: 2px $main solid;
+    margin: 10px;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 
@@ -209,12 +219,19 @@ ul#markdown-toc {
 div.toc {
   h1 {
     margin-top: 100px;
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 22px;
   }
 }
 
 
 
-/**** SCROLL TO TOP ****/
+/**** SCROLL TO TOP BUTTON ****/
 button#myBtn {
 	  display: none;
 	  position: fixed;
@@ -281,6 +298,4 @@ footer {
   p {
     line-height: 15px;
   }
-	// text-align: center;
-	// padding: 40px;
 }

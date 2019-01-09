@@ -39,9 +39,16 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <li class="nav-item ">
-        <a class="nav-link" href="/help">Help</a>
-      </li>
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
 
 			<li class="nav-item dropdown ">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,19 +57,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					
-            <a class="dropdown-item" href="/gettingstarted">Getting Started</a>
+            <a class="dropdown-item" href="/introduction">Introduction</a>
 					
-            <a class="dropdown-item" href="/piece1">Debugging</a>
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/intro">Modeling Cache Coherence with Ruby</a>
 					
 				</div>
 			</li>
 
-			<li class="nav-item active">
-        <a class="nav-link" href="/publications">Publications</a>
-      </li>
-
       <li class="nav-item ">
         <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
       </li>
     </ul>
   </div>
