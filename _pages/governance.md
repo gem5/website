@@ -4,8 +4,6 @@ title: Governance
 parent: about
 permalink: /governance/
 ---
-## Table of Contents
-{:.no_toc}
 * TOC
 {:toc}
 
