@@ -3,8 +3,6 @@ layout: default
 ---
 <div class="sidenav-top">
   <img src="/assets/img/gem5ColorLong.gif" height="80">
-</div>
-<div class="sidenav">
   <div class="search">
     <form action="/search" method="get">
       <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
@@ -12,6 +10,8 @@ layout: default
       <button type="submit" name="submit"><i class="fa fa-search"></i></button>
     </form>
   </div>
+</div>
+<div class="sidenav">
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
     <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">

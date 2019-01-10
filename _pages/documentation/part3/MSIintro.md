@@ -1,3 +1,9 @@
+---
+layout: documentation
+title: Introduction to Ruby
+parent: pt3
+permalink: /MSIintro/
+---
 authors
 :   Jason Lowe-Power
 

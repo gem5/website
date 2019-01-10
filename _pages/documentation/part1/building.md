@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Building
+title: Building gem5
 parent: pt1
 permalink: /building/
 ---

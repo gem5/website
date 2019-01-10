@@ -46,35 +46,39 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 /**** SIDEBAR ****/
 .sidenav-top {
   width: 250px;
-  height: 71px;
+  height: 130px;
   background-color: #E6E6E6;
   position: fixed;
   top: 0px;
   text-align: center; }
   .sidenav-top img {
-    padding-top: 20px; }
+    padding-top: 12px;
+    padding-bottom: 8px; }
+  .sidenav-top div.search {
+    padding-top: 5px; }
+    .sidenav-top div.search input {
+      width: 88%;
+      padding: 3px;
+      padding-right: 25px; }
+    .sidenav-top div.search button {
+      color: #0095AF;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0px;
+      position: absolute;
+      right: 10px;
+      margin: 3px 10px; }
 
 .sidenav {
-  height: 90%;
+  height: 80%;
+  top: 130px;
   width: 250px;
   position: fixed;
   left: 0;
   background-color: #E6E6E6;
   overflow-x: hidden;
-  padding: 20px 0; }
-  .sidenav div.search input {
-    width: 90%;
-    padding: 3px;
-    padding-right: 25px; }
-  .sidenav div.search button {
-    color: #0095AF;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0px;
-    position: absolute;
-    right: 10px;
-    margin: 3px 10px; }
+  padding-bottom: 25px; }
   .sidenav a {
     text-decoration: none;
     color: #0095AF;
@@ -172,15 +176,40 @@ div.card {
 div.card:hover {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2); }
 
-/**** TABLE OF CONTENTS ****/
-div.toc h1 {
-  margin-top: 100px;
-  font-size: 28px; }
-div.toc h2 {
-  font-size: 25px; }
-div.toc h3 {
-  font-size: 22px; }
+div.toc {
+  margin-right: 280px; }
+  div.toc h1 {
+    margin-top: 100px;
+    font-size: 28px; }
+  div.toc h2 {
+    font-size: 25px; }
+  div.toc h3 {
+    font-size: 22px; }
 
+/**** TABLE OF CONTENTS ****/
+ul#markdown-toc {
+  position: absolute;
+  right: 20px;
+  border: 2px grey solid;
+  border-radius: 15px;
+  width: 280px;
+  padding: 5px 12px;
+  line-height: 30px;
+  list-style-type: none; }
+  ul#markdown-toc li {
+    list-style-type: none;
+    border-bottom: 1px grey solid; }
+    ul#markdown-toc li ul {
+      padding-left: 25px !important; }
+      ul#markdown-toc li ul li {
+        border: none; }
+
+@media (max-width: 800px) {
+  ul#markdown-toc {
+    position: static; }
+
+  div.toc {
+    margin-right: 0px; } }
 /**** SCROLL TO TOP BUTTON ****/
 button#myBtn {
   display: none;

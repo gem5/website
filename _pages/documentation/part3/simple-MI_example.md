@@ -1,3 +1,9 @@
+---
+layout: documentation
+title: Configuring for a standard protocol
+parent: pt3
+permalink: /simple-MI_example/
+---
 authors
 :   Jason Lowe-Power
 

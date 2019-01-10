@@ -41,7 +41,7 @@ docs:
     id: pt3
     subitems:
       - page: Introduction to Ruby
-        url: /intro
+        url: /MSIintro
       - page: MSI example cache protocol
         url: /cache-intro
       - page: Declaring a state machine

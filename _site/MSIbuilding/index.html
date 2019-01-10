@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>gem5</title>
+
+	<!-- SITE FAVICON -->
+	<link rel="shortcut icon" type="image/gif" href="/assets/img/gem5ColorVert.gif"/>
+
+	<link rel="canonical" href="http://localhost:4000/MSIbuilding/">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- FAVICON -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+		<img src="/assets/img/gem5ColorLong.gif" alt="gem5" height=45px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown active">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					
+            <a class="dropdown-item" href="/introduction">Introduction</a>
+					
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/MSIintro">Modeling Cache Coherence with Ruby</a>
+					
+				</div>
+			</li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<main>
+		<div class="sidenav-top">
+  <img src="/assets/img/gem5ColorLong.gif" height="80">
+  <div class="search">
+    <form action="/search" method="get">
+      <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
+      <input type="text" name="query">
+      <button type="submit" name="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+<div class="sidenav">
+  <!-- Pull navigation from _data/documentation.yml -->
+  
+    <a class="item" href="/introduction" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Introduction
+    </a>
+    <div class="collapse " id="introdution">
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt1" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Getting Started
+    </a>
+    <div class="collapse " id="pt1">
+      
+        <a class="subitem " href="/building">Building gem5</a>
+      
+        <a class="subitem " href="/simple_config">Creating a simple configuration script</a>
+      
+        <a class="subitem " href="/cache_config">Adding cache to configuration script</a>
+      
+        <a class="subitem " href="/gem5_stats">Understanding gem5 statistics and output</a>
+      
+        <a class="subitem " href="/example_configs">Using the default configuration scripts</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt2" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modifying/Extending
+    </a>
+    <div class="collapse " id="pt2">
+      
+        <a class="subitem " href="/environment">Setting up your development environment</a>
+      
+        <a class="subitem " href="/helloobject">Creating a very simple SimObject</a>
+      
+        <a class="subitem " href="/debugging">Debugging gem5</a>
+      
+        <a class="subitem " href="/events">Event-driven programming</a>
+      
+        <a class="subitem " href="/parameters">Adding parameters to SimObjects and more events</a>
+      
+        <a class="subitem " href="/memoryobject">Creating SimObjects in the memory system</a>
+      
+        <a class="subitem " href="/simplecache">Creating a simple cache object</a>
+      
+    </div>
+  
+    <a class="item" data-toggle="collapse" href="#pt3" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Modeling Cache Coherence with Ruby
+    </a>
+    <div class="collapse show" id="pt3">
+      
+        <a class="subitem " href="/MSIintro">Introduction to Ruby</a>
+      
+        <a class="subitem " href="/cache-intro">MSI example cache protocol</a>
+      
+        <a class="subitem " href="/cache-declarations">Declaring a state machine</a>
+      
+        <a class="subitem " href="/cache-in-ports">In port code blocks</a>
+      
+        <a class="subitem " href="/cache-actions">Action code blocks</a>
+      
+        <a class="subitem " href="/cache-transitions">Transition code blocks</a>
+      
+        <a class="subitem " href="/directory">MSI Directory implementation</a>
+      
+        <a class="subitem active" href="/MSIbuilding">Compiling a SLICC protocol</a>
+      
+        <a class="subitem " href="/configuration">Configuring a simple Ruby system</a>
+      
+        <a class="subitem " href="/running">Running the simple Ruby system</a>
+      
+        <a class="subitem " href="/MSIdebugging">Debugging SLICC Protocols</a>
+      
+        <a class="subitem " href="/simple-MI_example">Configuring for a standard protocol</a>
+      
+    </div>
+  
+</div>
+
+<div class="container" id="doc-container">
+
+  <!-- <h1>Compiling a SLICC protocol</h1> -->
+  <dl>
+  <dt>authors</dt>
+  <dd>Jason Lowe-Power</dd>
+</dl>
+
+<h1 id="compiling-a-slicc-protocol">Compiling a SLICC protocol</h1>
+
+<h2 id="the-slicc-file">The SLICC file</h2>
+
+<p>Now that we have finished implementing the protocol, we need to compile
+it. You can download the complete SLICC files below:</p>
+
+<ul>
+  <li>MSI-cache.sm &lt;../../_static/scripts/part3/MSI_protocol/MSI-cache.sm&gt;</li>
+  <li>MSI-dir.sm &lt;../../_static/scripts/part3/MSI_protocol/MSI-dir.sm&gt;</li>
+  <li>MSI-msg.sm &lt;../../_static/scripts/part3/MSI_protocol/MSI-msg.sm&gt;</li>
+</ul>
+
+<p>Before building the protocol, we need to create one more file:
+<code class="highlighter-rouge">MSI.slicc</code>. This file tells the SLICC compiler which state machine
+files to compile for this protocol. The first line contains the name of
+our protocol. Then, the file has a number of <code class="highlighter-rouge">include</code> statements. Each
+<code class="highlighter-rouge">include</code> statement has a file name. This filename can come from any of
+the <code class="highlighter-rouge">protocol_dirs</code> directories. We declared the current directory as
+part of the <code class="highlighter-rouge">protocol_dirs</code> in the SConsopts file
+(<code class="highlighter-rouge">protocol_dirs.append(str(Dir('.').abspath))</code>). The other directory is
+<code class="highlighter-rouge">src/mem/protocol/</code>. These files are included like C++h header files.
+Effectively, all of the files are processed as one large SLICC file.
+Thus, any files that declare types that are used in other files must
+come before the files they are used in (e.g., <code class="highlighter-rouge">MSI-msg.sm</code> must come
+before <code class="highlighter-rouge">MSI-cache.sm</code> since <code class="highlighter-rouge">MSI-cache.sm</code> uses the <code class="highlighter-rouge">RequestMsg</code> type).</p>
+
+<p>``` {.sourceCode .c++}
+protocol “MSI”;
+include “RubySlicc_interfaces.slicc”;
+include “MSI-msg.sm”;
+include “MSI-cache.sm”;
+include “MSI-dir.sm”;</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+You can download the fill file
+here \&lt;../../\_static/scripts/part3/MSI\_protocol/MSI.slicc\&gt;
+
+Compiling a protocol with SCons
+-------------------------------
+
+Most SCons defaults (found in `build_opts/`) specify the protocol as
+`MI_example`, an example, but poor performing protocol. Therefore, we
+cannot simply use a default build name (e.g., `X86` or `ARM`). We have
+to specify the SCons options on the command line. The command line below
+will build our new protocol with the X86 ISA.
+
+``` {.sourceCode .sh}
+scons build/X86_MSI/gem5.opt --default=X86 PROTOCOL=MSI SLICC_HTML=True
+</code></pre></div></div>
+
+<p>This command will build <code class="highlighter-rouge">gem5.opt</code> in the directory <code class="highlighter-rouge">build/X86_MSI</code>. You
+can specify <em>any</em> directory here. This command line has two new
+parameters: <code class="highlighter-rouge">--default</code> and <code class="highlighter-rouge">PROTOCOL</code>. First, <code class="highlighter-rouge">--default</code> specifies
+which file to use in <code class="highlighter-rouge">build_opts</code> for defaults for all of the SCons
+variables (e.g., <code class="highlighter-rouge">ISA</code>, <code class="highlighter-rouge">CPU_MODELS</code>). Next, <code class="highlighter-rouge">PROTOCOL</code> <em>overrides</em> any
+default for the <code class="highlighter-rouge">PROTOCOL</code> SCons variable in the default specified.
+Thus, we are telling SCons to specifically compile our new protocol, not
+whichever protocol was specified in <code class="highlighter-rouge">build_opts/X86</code>.</p>
+
+<p>There is one more variable on this command line to build gem5:
+<code class="highlighter-rouge">SLICC_HTML=True</code>. When you specify this on the building command line,
+SLICC will generate the HTML tables for your protocol. You can find the
+HTML tables in <code class="highlighter-rouge">&lt;build directory&gt;/mem/protocol/html</code>. By default, the
+SLICC compiler skips building the HTML tables because it impacts the
+performance of compiling gem5, especially when compiling on a network
+file system.</p>
+
+<p>After gem5 finishes compiling, you will have a gem5 binary with your new
+protocol! If you want to build another protocol into gem5, you have to
+change the <code class="highlighter-rouge">PROTOCOL</code> SCons variable. Thus, it is a good idea to use a
+different build directory for each protocol, especially if you will be
+comparing protocols.</p>
+
+<p>When building your protocol, you will likely encounter errors in your
+SLICC code reported by the SLICC compiler. Most errors include the file
+and line number of the error. Sometimes, this line number is the line
+<em>after</em> the error occurs. In fact, the line number can be far below the
+actual error. For instance, if the curly brackets do not match
+correctly, the error will report the last line in the file as the
+location.</p>
+
+
+</div>
+
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+	  // When the user scrolls down 20px from the top of the document, show the button
+	  window.onscroll = function() {scrollFunction()};
+
+	  function scrollFunction() {
+	      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+	          document.getElementById("myBtn").style.display = "block";
+	      } else {
+	          document.getElementById("myBtn").style.display = "none";
+	      }
+	  }
+
+	  // When the user clicks on the button, scroll to the top of the document
+	  function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	  }
+	</script>
+
+</body>
+
+<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/gettingstarted">Documentation</a></p>
+				<p><a href="#">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/help">Help</a></p>
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+
+</html>

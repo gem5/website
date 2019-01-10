@@ -3,12 +3,9 @@ layout: toc
 title: Publications
 permalink: /publications/
 ---
-## Table of Contents
-{:.no_toc}
 * TOC
 {:toc}
 
----
 If you use gem5 in your research, we would appreciate a citation to the original paper in any publications you produce. Moreover, we would appreciate if you cite also the speacial features of gem5 which have been developed and contributed to the main line since the publication of the original paper in 2011\. In other words, if you use feature X please also cite the according paper Y from the list below.
 
 

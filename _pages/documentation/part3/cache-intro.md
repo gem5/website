@@ -1,3 +1,9 @@
+---
+layout: documentation
+title: MSI example cache protocol
+parent: pt3
+permalink: /cache-intro/
+---
 authors
 :   Jason Lowe-Power
 
@@ -81,5 +87,3 @@ Actions
 Transitions
 :   Specify actions to execute given a starting state and an event and
     the final state. This is the meat of the state machine definition.
-
-
