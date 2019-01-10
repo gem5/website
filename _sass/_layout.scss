@@ -150,7 +150,14 @@ div#doc-container {
   div.edit {
     text-align: right;
   }
+}
 
+div.navbuttons {
+  // margin: 0 50px;
+  text-align: center;
+  button {
+    margin: 10px;
+  }
 }
 
 

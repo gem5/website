@@ -28,4 +28,60 @@ layout: default
 <div class="container" id="doc-container">
   <div class="edit"><a href="{{ site.sourceurl }}{{ page.path }}">Edit this page</a></div>
   {{ content }}
+  <br>
+
+  <!-- RETRIVE PREVIOUS PAGE LINK -->
+  {% for item in site.data.documentation.docs %}
+    {% if page.parent == item.id %}
+      {% assign previous = "none" %}
+      {% for subitem in item.subitems %}
+        {% if page.title == subitem.page %}
+          {% break %}
+        {% else %}
+          {% assign previous = subitem.url %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- RETRIEVE NEXT PAGE LINK -->
+  {% for item in site.data.documentation.docs %}
+    {% if page.parent == item.id %}
+      {% assign next = "none" %}
+      {% for subitem in item.subitems reversed %}
+        {% if page.title == subitem.page %}
+          {% break %}
+        {% else %}
+          {% assign next = subitem.url %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+
+  <div class="navbuttons">
+    {% if previous != "none"%}
+      <a href="{{ previous }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
+    {% endif %}
+
+    {% if next != "none"%}
+      <a href="{{ next }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
+    {% endif %}
+  </div>
+  <!--
+  <div class="navbuttons">
+    <div class="row">
+      <div class="col">
+      {% if previous != "none"%}
+        <a href="{{ previous }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
+      {% endif %}
+      </div>
+
+      <div class="col">
+      {% if next != "none"%}
+        <a href="{{ next }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
+      {% endif %}
+      </div>
+    </div>
+  </div> -->
 </div>

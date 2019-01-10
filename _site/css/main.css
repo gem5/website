@@ -127,6 +127,11 @@ div#doc-container {
   div#doc-container div.edit {
     text-align: right; }
 
+div.navbuttons {
+  text-align: center; }
+  div.navbuttons button {
+    margin: 10px; }
+
 /**** HEADER ****/
 header {
   height: 350px;
