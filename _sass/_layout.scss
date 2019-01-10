@@ -50,6 +50,38 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 }
 
 
+
+/**** BUTTONS ****/
+.btn-outline-primary {
+	border-color: $main;
+	color: $main;
+	border-width: 2px;
+	border-radius: 5px;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
+		background-color: $main;
+		border-color: $main;
+		cursor: pointer;
+}
+.btn-primary {
+	color: white !important;
+	background-color: $main;
+	border: none;
+  transition: 0.5s;
+}
+.btn-primary:hover,
+.btn-primary:active,
+// .btn-primary:visited,
+.btn-primary:focus {
+		background-color: #006a7c;
+    border-color: #006a7c;
+}
+
+
+
 /**** SIDEBAR ****/
 .sidenav-top {
 	width: $sidenav-width;
@@ -115,36 +147,10 @@ div#doc-container {
   margin-left: $sidenav-width;
   padding: 30px 35px;
 	width: auto;
-}
+  div.edit {
+    text-align: right;
+  }
 
-
-/**** BUTTONS ****/
-.btn-outline-primary {
-	border-color: $main;
-	color: $main;
-	border-width: 2px;
-	border-radius: 5px;
-}
-.btn-outline-primary:hover,
-.btn-outline-primary:active,
-.btn-outline-primary:visited,
-.btn-outline-primary:focus {
-		background-color: $main;
-		border-color: $main;
-		cursor: pointer;
-}
-.btn-primary {
-	color: white !important;
-	background-color: $main;
-	border: none;
-  transition: 0.5s;
-}
-.btn-primary:hover,
-.btn-primary:active,
-// .btn-primary:visited,
-.btn-primary:focus {
-		background-color: #006a7c;
-    border-color: #006a7c;
 }
 
 

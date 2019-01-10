@@ -510,15 +510,15 @@ If you use gem5 in your research, we would appreciate a citation to the original
 				<p><a href="/about">About</a></p>
 				<p><a href="/publications">Publications</a></p>
 				<p><a href="/contributing">Contributing</a></p>
+				<p><a href="/governance">Governance</a></p>
 			</div><br>
 
 			<div class="col-12 col-sm-4">
-				<p><a href="/gettingstarted">Documentation</a></p>
-				<p><a href="#">Source</a></p>
+				<p><a href="/introduction">Documentation</a></p>
+				<p><a href="https://gem5.googlesource.com/public/gem5">Source</a></p>
 			</div><br>
 
 			<div class="col-12 col-sm-4">
-				<p><a href="/help">Help</a></p>
 				<p><a href="/search">Search</a></p>
 				<p><a href="#">Mailing Lists</a></p>
 			</div>

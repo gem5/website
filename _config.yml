@@ -1,6 +1,6 @@
 # Site Settings
 title: gem5
-baseurl: ""
+sourceurl: "https://github.com/cm-jingwenlow/cm-jingwenlow.github.io/tree/master/"
 url: "http://cm-jingwenlow.github.io"
 
 # Build Settings
