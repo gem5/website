@@ -34,13 +34,15 @@ layout: default
   {% for item in site.data.documentation.docs %}
     {% if page.parent == item.id %}
       {% assign previous = "none" %}
-      {% for subitem in item.subitems %}
-        {% if page.title == subitem.page %}
-          {% break %}
-        {% else %}
-          {% assign previous = subitem.url %}
-        {% endif %}
-      {% endfor %}
+      {% if item.subitems %}
+        {% for subitem in item.subitems %}
+          {% if page.title == subitem.page %}
+            {% break %}
+          {% else %}
+            {% assign previous = subitem.url %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 
@@ -48,40 +50,26 @@ layout: default
   {% for item in site.data.documentation.docs %}
     {% if page.parent == item.id %}
       {% assign next = "none" %}
-      {% for subitem in item.subitems reversed %}
-        {% if page.title == subitem.page %}
-          {% break %}
-        {% else %}
-          {% assign next = subitem.url %}
-        {% endif %}
-      {% endfor %}
+      {% if item.subitems %}
+        {% for subitem in item.subitems reversed %}
+          {% if page.title == subitem.page %}
+            {% break %}
+          {% else %}
+            {% assign next = subitem.url %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 
 
   <div class="navbuttons">
-    {% if previous != "none"%}
+    {% if previous != "none" %}
       <a href="{{ previous }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
     {% endif %}
 
-    {% if next != "none"%}
+    {% if next != "none" %}
       <a href="{{ next }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
     {% endif %}
   </div>
-  <!--
-  <div class="navbuttons">
-    <div class="row">
-      <div class="col">
-      {% if previous != "none"%}
-        <a href="{{ previous }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
-      {% endif %}
-      </div>
-
-      <div class="col">
-      {% if next != "none"%}
-        <a href="{{ next }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
-      {% endif %}
-      </div>
-    </div>
-  </div> -->
 </div>

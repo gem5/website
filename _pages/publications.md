@@ -1,6 +1,7 @@
 ---
 layout: toc
 title: Publications
+parent: about
 permalink: /publications/
 ---
 * TOC
