@@ -172,7 +172,7 @@
 </div>
 
 <div class="container" id="doc-container">
-  <div class="edit"><a href="https://github.com/cm-jingwenlow/cm-jingwenlow.github.io/tree/master/_pages/documentation/part1/example_configs.md">Edit this page</a></div>
+  <div class="edit"><a href="https://github.com/new-website/tree/master/_pages/documentation/part1/example_configs.md">Edit this page</a></div>
   <dl>
   <dt>authors</dt>
   <dd>Jason Lowe-Power</dd>
@@ -301,47 +301,48 @@ configuration script with <code class="highlighter-rouge">--help</code>, or read
 
 <p>First, let’s simply run the hello world program without any parameters:</p>
 
-<p>``` {.sourceCode .sh}
-build/X86/gem5.opt configs/example/se.py –cmd=tests/test-progs/hello/bin/x86/linux/hello</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-And we get the following as output:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello
+</code></pre></div></div>
 
-    gem5 Simulator System.  http://gem5.org
-    gem5 is copyrighted software; use the --copyright option for details.
+<p>And we get the following as output:</p>
 
-    gem5 compiled Jan 14 2015 16:11:34
-    gem5 started Feb  2 2015 15:22:24
-    gem5 executing on mustardseed.cs.wisc.edu
-    command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello
-    Global frequency set at 1000000000000 ticks per second
-    warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
-    **** REAL SIMULATION ****
-    info: Entering event queue @ 0.  Starting simulation...
-    Hello world!
-    Exiting @ tick 5942000 because target called exit()
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
 
-However, this isn't a very interesting simulation at all! By default,
-gem5 uses the atomic CPU and uses atomic memory accesses, so there's no
+gem5 compiled Jan 14 2015 16:11:34
+gem5 started Feb  2 2015 15:22:24
+gem5 executing on mustardseed.cs.wisc.edu
+command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+Hello world!
+Exiting @ tick 5942000 because target called exit()
+</code></pre></div></div>
+
+<p>However, this isn’t a very interesting simulation at all! By default,
+gem5 uses the atomic CPU and uses atomic memory accesses, so there’s no
 real timing data reported! To confirm this, you can look at
-m5out/config.ini. The CPU is shown on line 46:
+m5out/config.ini. The CPU is shown on line 46:</p>
 
-    [system.cpu]
-    type=AtomicSimpleCPU
-    children=apic_clk_domain dtb interrupts isa itb tracer workload
-    branchPred=Null
-    checker=Null
-    clk_domain=system.cpu_clk_domain
-    cpu_id=0
-    do_checkpoint_insts=true
-    do_quiesce=true
-    do_statistics_insts=true
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[system.cpu]
+type=AtomicSimpleCPU
+children=apic_clk_domain dtb interrupts isa itb tracer workload
+branchPred=Null
+checker=Null
+clk_domain=system.cpu_clk_domain
+cpu_id=0
+do_checkpoint_insts=true
+do_quiesce=true
+do_statistics_insts=true
+</code></pre></div></div>
 
-To actually run gem5 in timing mode, let's specify a CPU type. While
-we're at it, we can also specify sizes for the L1 caches.
+<p>To actually run gem5 in timing mode, let’s specify a CPU type. While
+we’re at it, we can also specify sizes for the L1 caches.</p>
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB
 </code></pre></div></div>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
@@ -367,61 +368,61 @@ Even though we specified the size of the caches, we didn’t specify that
 the system should use caches, so they weren’t created. The correct
 command line should be:</p>
 
-<p>``` {.sourceCode .sh}
-build/X86/gem5.opt configs/example/se.py –cmd=tests/test-progs/hello/bin/x86/linux/hello –cpu-type=TimingSimpleCPU –l1d_size=64kB –l1i_size=16kB –caches</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    gem5 Simulator System.  http://gem5.org
-    gem5 is copyrighted software; use the --copyright option for details.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches
+</code></pre></div></div>
 
-    gem5 compiled Jan 14 2015 16:11:34
-    gem5 started Feb  2 2015 15:29:20
-    gem5 executing on mustardseed.cs.wisc.edu
-    command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches
-    Global frequency set at 1000000000000 ticks per second
-    warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
-    **** REAL SIMULATION ****
-    info: Entering event queue @ 0.  Starting simulation...
-    Hello world!
-    Exiting @ tick 29480500 because target called exit()
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
 
-On the last line, we see that the total time went from 344986500 ticks
+gem5 compiled Jan 14 2015 16:11:34
+gem5 started Feb  2 2015 15:29:20
+gem5 executing on mustardseed.cs.wisc.edu
+command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches
+Global frequency set at 1000000000000 ticks per second
+warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+Hello world!
+Exiting @ tick 29480500 because target called exit()
+</code></pre></div></div>
+
+<p>On the last line, we see that the total time went from 344986500 ticks
 to 29480500, much faster! Looks like caches are probably enabled now.
-But, it's always a good idea to double check the `config.ini` file.
+But, it’s always a good idea to double check the <code class="highlighter-rouge">config.ini</code> file.</p>
 
-    [system.cpu.dcache]
-    type=BaseCache
-    children=tags
-    addr_ranges=0:18446744073709551615
-    assoc=2
-    clk_domain=system.cpu_clk_domain
-    demand_mshr_reserve=1
-    eventq_index=0
-    forward_snoops=true
-    hit_latency=2
-    is_top_level=true
-    max_miss_count=0
-    mshrs=4
-    prefetch_on_access=false
-    prefetcher=Null
-    response_latency=2
-    sequential_access=false
-    size=65536
-    system=system
-    tags=system.cpu.dcache.tags
-    tgts_per_mshr=20
-    two_queue=false
-    write_buffers=8
-    cpu_side=system.cpu.dcache_port
-    mem_side=system.membus.slave[2]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[system.cpu.dcache]
+type=BaseCache
+children=tags
+addr_ranges=0:18446744073709551615
+assoc=2
+clk_domain=system.cpu_clk_domain
+demand_mshr_reserve=1
+eventq_index=0
+forward_snoops=true
+hit_latency=2
+is_top_level=true
+max_miss_count=0
+mshrs=4
+prefetch_on_access=false
+prefetcher=Null
+response_latency=2
+sequential_access=false
+size=65536
+system=system
+tags=system.cpu.dcache.tags
+tgts_per_mshr=20
+two_queue=false
+write_buffers=8
+cpu_side=system.cpu.dcache_port
+mem_side=system.membus.slave[2]
+</code></pre></div></div>
 
-Some common options `se.py` and `fs.py`
----------------------------------------
+<h2 id="some-common-options-sepy-and-fspy">Some common options <code class="highlighter-rouge">se.py</code> and <code class="highlighter-rouge">fs.py</code></h2>
 
-All of the possible options are printed when you run:
+<p>All of the possible options are printed when you run:</p>
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt configs/example/se.py --help
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/X86/gem5.opt configs/example/se.py --help
 </code></pre></div></div>
 
 <p>Below is a few important options from that list.</p>

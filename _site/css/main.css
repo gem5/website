@@ -126,6 +126,8 @@ div#doc-container {
   width: auto; }
   div#doc-container div.edit {
     text-align: right; }
+  div#doc-container img {
+    width: 80%; }
 
 div.navbuttons {
   text-align: center; }

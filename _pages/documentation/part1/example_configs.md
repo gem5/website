@@ -135,7 +135,7 @@ configuration script with `--help`, or read the script's source code.
 
 First, let's simply run the hello world program without any parameters:
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello
 ```
 
@@ -175,7 +175,7 @@ m5out/config.ini. The CPU is shown on line 46:
 To actually run gem5 in timing mode, let's specify a CPU type. While
 we're at it, we can also specify sizes for the L1 caches.
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB
 ```
 
@@ -201,7 +201,7 @@ Even though we specified the size of the caches, we didn't specify that
 the system should use caches, so they weren't created. The correct
 command line should be:
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches
 ```
 
@@ -255,7 +255,7 @@ Some common options `se.py` and `fs.py`
 
 All of the possible options are printed when you run:
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/example/se.py --help
 ```
 

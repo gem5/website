@@ -4,8 +4,8 @@ Website for gem5 documentation, written in Jekyll.
 ## Development
 Clone repository, bundle Gemfile
 ```
-git clone https://github.com/cm-jingwenlow/cm-jingwenlow.github.io.git
-cd cm-jingwenlow.github.io.git
+git clone https://github.com/gem5/new-website.git
+cd new-website
 bundle
 ```
 Run Jekyll server
@@ -23,11 +23,11 @@ Page <head> section and main navigation bar are here.
 
 #### _layouts
 Different layout templates used on the site.
-* default
-* page
-* toc
-* post
-* documentation
+* default: base layout
+* page: any regular page
+* toc: a page that requires table of contents
+* post: blog page
+* documentation: documentation page
 
 #### _pages
 All pages (other than the index.html home page) should be placed in this folder. There is a subfolder /documentation where pages meant for documentation part of the site can be kept. This is purely for organization and ease of finding things. Reorganizing the _pages folder should not affect the site.

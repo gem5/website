@@ -59,7 +59,7 @@ Creating a config file
 
 Let's start by creating a new config file and opening it:
 
-``` {.sourceCode .sh}
+```
 mkdir configs/tutorial
 touch configs/tutorial/simple.py
 ```
@@ -71,7 +71,7 @@ libraries available in python.
 The first thing we'll do in this file is import the m5 library and all
 SimObjects that we've compiled.
 
-``` {.sourceCode .python}
+```
 import m5
 from m5.objects import *
 ```
@@ -84,7 +84,7 @@ ranges, the root clock domain, the root voltage domain, the kernel (in
 full-system simulation), etc. To create the system SimObject, we simply
 instantiate it like a normal python class:
 
-``` {.sourceCode .python}
+```
 system = System()
 ```
 
@@ -97,7 +97,7 @@ Finally, we have to specify a voltage domain for this clock domain.
 Since we don't care about system power right now, we'll just use the
 default options for the voltage domain.
 
-``` {.sourceCode .python}
+```
 system.clk_domain = SrcClockDomain()
 system.clk_domain.clock = '1GHz'
 system.clk_domain.voltage_domain = VoltageDomain()
@@ -114,7 +114,7 @@ like `'512MB'`. Similarly, with time you can use time units (e.g.,
 `'5ns'`). These will automatically be converted to a common
 representation, respectively.
 
-``` {.sourceCode .python}
+```
 system.mem_mode = 'timing'
 system.mem_ranges = [AddrRange('512MB')]
 ```
@@ -125,13 +125,13 @@ in a single clock cycle to execute, except memory requests, which flow
 through the memory system. To create the CPU you can simply just
 instantiate the object:
 
-``` {.sourceCode .python}
+```
 system.cpu = TimingSimpleCPU()
 ```
 
 Next, we're going to create the system-wide memory bus:
 
-``` {.sourceCode .python}
+```
 system.membus = SystemXBar()
 ```
 
@@ -140,7 +140,7 @@ to it. In this case, since the system we want to simulate doesn't have
 any caches, we will connect the I-cache and D-cache ports directly to
 the membus. In this example system, we have no caches.
 
-``` {.sourceCode .python}
+```
 system.cpu.icache_port = system.membus.slave
 system.cpu.dcache_port = system.membus.slave
 ```
@@ -157,7 +157,7 @@ system.cpu.dcache_port = system.membus.slave
 > files. You can simply set the master port `=` to the slave port and
 > they will be connected. For instance:
 >
-> ``` {.sourceCode .python}
+> ```
 > memobject1.master = memobject2.slave
 > ```
 >
@@ -180,7 +180,7 @@ Connecting the PIO and interrupt ports to the memory bus is an
 x86-specific requirement. Other ISAs (e.g., ARM) do not require these 3
 extra lines.
 
-``` {.sourceCode .python}
+```
 system.cpu.createInterruptController()
 system.cpu.interrupts[0].pio = system.membus.master
 system.cpu.interrupts[0].int_master = system.membus.slave
@@ -193,7 +193,7 @@ Next, we need to create a memory controller and connect it to the
 membus. For this system, we'll use a simple DDR3 controller and it will
 be responsible for the entire memory range of our system.
 
-``` {.sourceCode .python}
+```
 system.mem_ctrl = DDR3_1600_8x8()
 system.mem_ctrl.range = system.mem_ranges[0]
 system.mem_ctrl.port = system.membus.master
@@ -240,7 +240,7 @@ arguments to the executable in the rest of the list. Then we set the CPU
 to use the process as it's workload, and finally create the functional
 execution contexts in the CPU.
 
-``` {.sourceCode .python}
+```
 process = Process()
 process.cmd = ['tests/test-progs/hello/bin/x86/linux/hello']
 system.cpu.workload = process
@@ -256,7 +256,7 @@ As a note, you don't have to instantiate the python class then specify
 the parameters explicitly as member variables. You can also pass the
 parameters as named arguments, like the `Root` object below.
 
-``` {.sourceCode .python}
+```
 root = Root(full_system = False, system = system)
 m5.instantiate()
 ```
@@ -265,14 +265,14 @@ Finally, we can kick off the actual simulation! As a side now, gem5 is
 now using Python 3-style `print` functions, so `print` is no longer a
 statement and must be called as a function.
 
-``` {.sourceCode .python}
+```
 print("Beginning simulation!")
 exit_event = m5.simulate()
 ```
 
 And once simulation finishes, we can inspect the state of the system.
 
-``` {.sourceCode .python}
+```
 print('Exiting @ tick {} because {}'
       .format(m5.curTick(), exit_event.getCause()))
 ```
@@ -286,7 +286,7 @@ ready to run gem5. gem5 can take many parameters, but requires just one
 positional argument, the simulation script. So, we can simply run gem5
 from the root gem5 directory as:
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/tutorial/simple.py
 ```
 

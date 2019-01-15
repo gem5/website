@@ -172,7 +172,7 @@
 </div>
 
 <div class="container" id="doc-container">
-  <div class="edit"><a href="https://github.com/cm-jingwenlow/cm-jingwenlow.github.io/tree/master/_pages/documentation/part1/cache_config.md">Edit this page</a></div>
+  <div class="edit"><a href="https://github.com/new-website/tree/master/_pages/documentation/part1/cache_config.md">Edit this page</a></div>
   <dl>
   <dt>authors</dt>
   <dd>Jason Lowe-Power</dd>
@@ -180,15 +180,14 @@
 
 <h1 id="adding-cache-to-the-configuration-script">Adding cache to the configuration script</h1>
 
-<p>Using the
-previous configuration script as a starting point &lt;simple-config-chapter&gt;,
+<p>Using the <a href="/simple_config">previous configuration script as a starting point</a>,
 this chapter will walk through a more complex configuration. We will add
 a cache hierarchy to the system as shown in
-the figure below &lt;advanced-config-fig&gt;. Additionally, this chapter
+the figure below. Additionally, this chapter
 will cover understanding the gem5 statistics output and adding command
 line parameters to your scripts.</p>
 
-<p><img src="../_static/figures/advanced_config.png" alt="A system configuration with a two-level cache
+<p><img src="../assets/img/advanced_config.png" alt="A system configuration with a two-level cache
 hierarchy." /></p>
 
 <h2 id="creating-cache-objects">Creating cache objects</h2>
@@ -250,15 +249,14 @@ create a new file, <code class="highlighter-rouge">caches.py</code>, in the same
 <code class="highlighter-rouge">configs/tutorial</code>. The first step is to import the SimObject(s) we are
 going to extend in this file.</p>
 
-<p>``` {.sourceCode .python}
-from m5.objects import Cache</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Next, we can treat the BaseCache object just like any other Python class
-and extend it. We can name the new cache anything we want. Let's start
-by making an L1 cache.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from m5.objects import Cache
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-class L1Cache(Cache):
+<p>Next, we can treat the BaseCache object just like any other Python class
+and extend it. We can name the new cache anything we want. Let’s start
+by making an L1 cache.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class L1Cache(Cache):
     assoc = 2
     tag_latency = 2
     data_latency = 2
@@ -277,17 +275,16 @@ BaseCache.</p>
 have default values in the <code class="highlighter-rouge">BaseCache</code> SimObject. Next, let’s two more
 sub-classes of L1Cache, an L1DCache and L1ICache</p>
 
-<p>``` {.sourceCode .python}
-class L1ICache(L1Cache):
-    size = ‘16kB’</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class L1ICache(L1Cache):
+    size = '16kB'
 
-<p>class L1DCache(L1Cache):
-    size = ‘64kB’</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Let's also create an L2 cache with some reasonable parameters.
+class L1DCache(L1Cache):
+    size = '64kB'
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-class L2Cache(Cache):
+<p>Let’s also create an L2 cache with some reasonable parameters.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class L2Cache(Cache):
     size = '256kB'
     assoc = 8
     tag_latency = 20
@@ -310,20 +307,19 @@ class.</p>
 to the cache and <code class="highlighter-rouge">connectBus</code> to connect the cache to a bus. We need to
 add the following code to the <code class="highlighter-rouge">L1Cache</code> class.</p>
 
-<p>``` {.sourceCode .python}
-def connectCPU(self, cpu):
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def connectCPU(self, cpu):
     # need to define this in a base class!
-    raise NotImplementedError</p>
+    raise NotImplementedError
 
-<p>def connectBus(self, bus):
-    self.mem_side = bus.slave</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Next, we have to define a separate `connectCPU` function for the
+def connectBus(self, bus):
+    self.mem_side = bus.slave
+</code></pre></div></div>
+
+<p>Next, we have to define a separate <code class="highlighter-rouge">connectCPU</code> function for the
 instruction and data caches, since the I-cache and D-cache ports have a
-different names. Our `L1ICache` and `L1DCache` classes now become:
+different names. Our <code class="highlighter-rouge">L1ICache</code> and <code class="highlighter-rouge">L1DCache</code> classes now become:</p>
 
-``` {.sourceCode .python}
-class L1ICache(L1Cache):
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class L1ICache(L1Cache):
     size = '16kB'
 
     def connectCPU(self, cpu):
@@ -339,54 +335,50 @@ class L1DCache(L1Cache):
 <p>Finally, let’s add functions to the <code class="highlighter-rouge">L2Cache</code> to connect to the
 memory-side and CPU-side bus, respectively.</p>
 
-<p>``` {.sourceCode .python}
-def connectCPUSideBus(self, bus):
-    self.cpu_side = bus.master</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def connectCPUSideBus(self, bus):
+    self.cpu_side = bus.master
 
-<p>def connectMemSideBus(self, bus):
-    self.mem_side = bus.slave</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-The full file can be found in the gem5 source at
-`gem5/configs/learning_gem5/part1/caches.py`.
+def connectMemSideBus(self, bus):
+    self.mem_side = bus.slave
+</code></pre></div></div>
 
-Adding caches the simple config file
-------------------------------------
+<p>The full file can be found in the gem5 source at
+<code class="highlighter-rouge">gem5/configs/learning_gem5/part1/caches.py</code>.</p>
 
-Now, let's add the caches we just created to the configuration script we
-created in the last chapter \&lt;simple-config-chapter\&gt;.
+<h2 id="adding-caches-the-simple-config-file">Adding caches the simple config file</h2>
 
-First, let's copy the script to a new name.
+<p>Now, let’s add the caches we just created to the configuration script we
+created in the last chapter &lt;simple-config-chapter&gt;.</p>
 
-``` {.sourceCode .sh}
-cp simple.py two_level.py
+<p>First, let’s copy the script to a new name.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp simple.py two_level.py
 </code></pre></div></div>
 
 <p>First, we need to import the names from the <code class="highlighter-rouge">caches.py</code> file into the
 namespace. We can add the following to the top of the file (after the
 m5.objects import), as you would with any Python source.</p>
 
-<p>``` {.sourceCode .python}
-from caches import *</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Now, after creating the CPU, let's create the L1 caches:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from caches import *
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-system.cpu.icache = L1ICache()
+<p>Now, after creating the CPU, let’s create the L1 caches:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system.cpu.icache = L1ICache()
 system.cpu.dcache = L1DCache()
 </code></pre></div></div>
 
 <p>And connect the caches to the CPU ports with the helper function we
 created.</p>
 
-<p>``` {.sourceCode .python}
-system.cpu.icache.connectCPU(system.cpu)
-system.cpu.dcache.connectCPU(system.cpu)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Also, You need to *remove* the previous lines which connected the cache
-ports directly to the memory bus.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system.cpu.icache.connectCPU(system.cpu)
+system.cpu.dcache.connectCPU(system.cpu)
+</code></pre></div></div>
 
-``` {.sourceCode .python}
--system.cpu.icache_port = system.membus.slave
+<p>Also, You need to <em>remove</em> the previous lines which connected the cache
+ports directly to the memory bus.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-system.cpu.icache_port = system.membus.slave
 -system.cpu.dcache_port = system.membus.slave
 </code></pre></div></div>
 
@@ -395,17 +387,16 @@ cache only expects a single port to connect to it. Therefore, we need to
 create an L2 bus to connect our L1 caches to the L2 cache. The, we can
 use our helper function to connect the L1 caches to the L2 bus.</p>
 
-<p>``` {.sourceCode .python}
-system.l2bus = L2XBar()</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system.l2bus = L2XBar()
 
-<p>system.cpu.icache.connectBus(system.l2bus)
-system.cpu.dcache.connectBus(system.l2bus)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Next, we can create out L2 cache and connect it to the L2 bus and the
-memory bus.
+system.cpu.icache.connectBus(system.l2bus)
+system.cpu.dcache.connectBus(system.l2bus)
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-system.l2cache = L2Cache()
+<p>Next, we can create out L2 cache and connect it to the L2 bus and the
+memory bus.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system.l2cache = L2Cache()
 system.l2cache.connectCPUSideBus(system.l2bus)
 
 system.l2cache.connectMemSideBus(system.membus)
@@ -435,27 +426,26 @@ the online Python documentation.</p>
 <p>To add options to our two-level cache configuration, after importing our
 caches, let’s add some options.</p>
 
-<p>``` {.sourceCode .python}
-from optparse import OptionParser</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from optparse import OptionParser
 
-<p>parser = OptionParser()
-parser.add_option(‘–l1i_size’, help=”L1 instruction cache size”)
-parser.add_option(‘–l1d_size’, help=”L1 data cache size”)
-parser.add_option(‘–l2_size’, help=”Unified L2 cache size”)</p>
+parser = OptionParser()
+parser.add_option('--l1i_size', help="L1 instruction cache size")
+parser.add_option('--l1d_size', help="L1 data cache size")
+parser.add_option('--l2_size', help="Unified L2 cache size")
 
-<p>(options, args) = parser.parse_args()</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Now, you can run
-`build/X86/gem5.opt configs/tutorial/two_level_opts.py --help` which
-will display the options you just added.
+(options, args) = parser.parse_args()
+</code></pre></div></div>
 
-Next, we need to pass these options onto the caches that we create in
-the configuration script. To do this, we'll simply change two\_level.py
+<p>Now, you can run
+<code class="highlighter-rouge">build/X86/gem5.opt configs/tutorial/two_level_opts.py --help</code> which
+will display the options you just added.</p>
+
+<p>Next, we need to pass these options onto the caches that we create in
+the configuration script. To do this, we’ll simply change two_level.py
 to pass the options into the caches as a parameter to their constructor
-and add an appropriate constructor, next.
+and add an appropriate constructor, next.</p>
 
-``` {.sourceCode .python}
-system.cpu.icache = L1ICache(options)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system.cpu.icache = L1ICache(options)
 system.cpu.dcache = L1DCache(options)
 ...
 system.l2cache = L2Cache(options)
@@ -472,19 +462,18 @@ fail and the result will be
 instantiate the cache object. So, in <code class="highlighter-rouge">L1Cache</code> we need to add the
 following after the static class members.</p>
 
-<p>``` {.sourceCode .python}
-def <strong>init</strong>(self, options=None):
-    super(L1Cache, self).<strong>init</strong>()
-    pass</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-Next, in the `L1ICache`, we need to use the option that we created
-(`l1i_size`) to set the size. In the following code, there is guards for
-if `options` is not passed to the `L1ICache` constructor and if no
-option was specified on the command line. In these cases, we'll just use
-the default we've already specified for the size.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def __init__(self, options=None):
+    super(L1Cache, self).__init__()
+    pass
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-def __init__(self, options=None):
+<p>Next, in the <code class="highlighter-rouge">L1ICache</code>, we need to use the option that we created
+(<code class="highlighter-rouge">l1i_size</code>) to set the size. In the following code, there is guards for
+if <code class="highlighter-rouge">options</code> is not passed to the <code class="highlighter-rouge">L1ICache</code> constructor and if no
+option was specified on the command line. In these cases, we’ll just use
+the default we’ve already specified for the size.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def __init__(self, options=None):
     super(L1ICache, self).__init__(options)
     if not options or not options.l1i_size:
         return
@@ -493,17 +482,16 @@ def __init__(self, options=None):
 
 <p>We can use the same code for the <code class="highlighter-rouge">L1DCache</code>:</p>
 
-<p>``` {.sourceCode .python}
-def <strong>init</strong>(self, options=None):
-    super(L1DCache, self).<strong>init</strong>(options)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def __init__(self, options=None):
+    super(L1DCache, self).__init__(options)
     if not options or not options.l1d_size:
         return
-    self.size = options.l1d_size</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-And the unified `L2Cache`:
+    self.size = options.l1d_size
+</code></pre></div></div>
 
-``` {.sourceCode .python}
-def __init__(self, options=None):
+<p>And the unified <code class="highlighter-rouge">L2Cache</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def __init__(self, options=None):
     super(L2Cache, self).__init__()
     if not options or not options.l2_size:
         return
@@ -513,9 +501,8 @@ def __init__(self, options=None):
 <p>With these changes, you can now pass the cache sizes into your script
 from the command line like below.</p>
 
-<p><code class="highlighter-rouge">{.sourceCode .sh}
-build/X86/gem5.opt configs/tutorial/two_level_opts.py --l2_size='1MB' --l1d_size='128kB'
-</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>build/X86/gem5.opt configs/tutorial/two_level_opts.py --l2_size='1MB' --l1d_size='128kB'
+</code></pre></div></div>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem5 Simulator System.  http://gem5.org
 gem5 is copyrighted software; use the --copyright option for details.

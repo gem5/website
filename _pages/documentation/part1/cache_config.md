@@ -10,16 +10,15 @@ authors
 Adding cache to the configuration script
 ========================================
 
-Using the
-previous configuration script as a starting point \<simple-config-chapter\>,
+Using the [previous configuration script as a starting point](/simple_config),
 this chapter will walk through a more complex configuration. We will add
 a cache hierarchy to the system as shown in
-the figure below \<advanced-config-fig\>. Additionally, this chapter
+the figure below. Additionally, this chapter
 will cover understanding the gem5 statistics output and adding command
 line parameters to your scripts.
 
 ![A system configuration with a two-level cache
-hierarchy.](../_static/figures/advanced_config.png)
+hierarchy.](../assets/img/advanced_config.png)
 
 Creating cache objects
 ----------------------
@@ -79,7 +78,7 @@ create a new file, `caches.py`, in the same directory as simple.py,
 `configs/tutorial`. The first step is to import the SimObject(s) we are
 going to extend in this file.
 
-``` {.sourceCode .python}
+```
 from m5.objects import Cache
 ```
 
@@ -87,7 +86,7 @@ Next, we can treat the BaseCache object just like any other Python class
 and extend it. We can name the new cache anything we want. Let's start
 by making an L1 cache.
 
-``` {.sourceCode .python}
+```
 class L1Cache(Cache):
     assoc = 2
     tag_latency = 2
@@ -107,7 +106,7 @@ We have extended `BaseCache` and set most of the parameters that do not
 have default values in the `BaseCache` SimObject. Next, let's two more
 sub-classes of L1Cache, an L1DCache and L1ICache
 
-``` {.sourceCode .python}
+```
 class L1ICache(L1Cache):
     size = '16kB'
 
@@ -117,7 +116,7 @@ class L1DCache(L1Cache):
 
 Let's also create an L2 cache with some reasonable parameters.
 
-``` {.sourceCode .python}
+```
 class L2Cache(Cache):
     size = '256kB'
     assoc = 8
@@ -141,7 +140,7 @@ To the L1 cache let's add two functions, `connectCPU` to connect a CPU
 to the cache and `connectBus` to connect the cache to a bus. We need to
 add the following code to the `L1Cache` class.
 
-``` {.sourceCode .python}
+```
 def connectCPU(self, cpu):
     # need to define this in a base class!
     raise NotImplementedError
@@ -154,7 +153,7 @@ Next, we have to define a separate `connectCPU` function for the
 instruction and data caches, since the I-cache and D-cache ports have a
 different names. Our `L1ICache` and `L1DCache` classes now become:
 
-``` {.sourceCode .python}
+```
 class L1ICache(L1Cache):
     size = '16kB'
 
@@ -171,7 +170,7 @@ class L1DCache(L1Cache):
 Finally, let's add functions to the `L2Cache` to connect to the
 memory-side and CPU-side bus, respectively.
 
-``` {.sourceCode .python}
+```
 def connectCPUSideBus(self, bus):
     self.cpu_side = bus.master
 
@@ -190,7 +189,7 @@ created in the last chapter \<simple-config-chapter\>.
 
 First, let's copy the script to a new name.
 
-``` {.sourceCode .sh}
+```
 cp simple.py two_level.py
 ```
 
@@ -198,13 +197,13 @@ First, we need to import the names from the `caches.py` file into the
 namespace. We can add the following to the top of the file (after the
 m5.objects import), as you would with any Python source.
 
-``` {.sourceCode .python}
+```
 from caches import *
 ```
 
 Now, after creating the CPU, let's create the L1 caches:
 
-``` {.sourceCode .python}
+```
 system.cpu.icache = L1ICache()
 system.cpu.dcache = L1DCache()
 ```
@@ -212,7 +211,7 @@ system.cpu.dcache = L1DCache()
 And connect the caches to the CPU ports with the helper function we
 created.
 
-``` {.sourceCode .python}
+```
 system.cpu.icache.connectCPU(system.cpu)
 system.cpu.dcache.connectCPU(system.cpu)
 ```
@@ -220,7 +219,7 @@ system.cpu.dcache.connectCPU(system.cpu)
 Also, You need to *remove* the previous lines which connected the cache
 ports directly to the memory bus.
 
-``` {.sourceCode .python}
+```
 -system.cpu.icache_port = system.membus.slave
 -system.cpu.dcache_port = system.membus.slave
 ```
@@ -230,7 +229,7 @@ cache only expects a single port to connect to it. Therefore, we need to
 create an L2 bus to connect our L1 caches to the L2 cache. The, we can
 use our helper function to connect the L1 caches to the L2 bus.
 
-``` {.sourceCode .python}
+```
 system.l2bus = L2XBar()
 
 system.cpu.icache.connectBus(system.l2bus)
@@ -240,7 +239,7 @@ system.cpu.dcache.connectBus(system.l2bus)
 Next, we can create out L2 cache and connect it to the L2 bus and the
 memory bus.
 
-``` {.sourceCode .python}
+```
 system.l2cache = L2Cache()
 system.l2cache.connectCPUSideBus(system.l2bus)
 
@@ -272,7 +271,7 @@ the online Python documentation.
 To add options to our two-level cache configuration, after importing our
 caches, let's add some options.
 
-``` {.sourceCode .python}
+```
 from optparse import OptionParser
 
 parser = OptionParser()
@@ -292,7 +291,7 @@ the configuration script. To do this, we'll simply change two\_level.py
 to pass the options into the caches as a parameter to their constructor
 and add an appropriate constructor, next.
 
-``` {.sourceCode .python}
+```
 system.cpu.icache = L1ICache(options)
 system.cpu.dcache = L1DCache(options)
 ...
@@ -310,7 +309,7 @@ fail and the result will be
 instantiate the cache object. So, in `L1Cache` we need to add the
 following after the static class members.
 
-``` {.sourceCode .python}
+```
 def __init__(self, options=None):
     super(L1Cache, self).__init__()
     pass
@@ -322,7 +321,7 @@ if `options` is not passed to the `L1ICache` constructor and if no
 option was specified on the command line. In these cases, we'll just use
 the default we've already specified for the size.
 
-``` {.sourceCode .python}
+```
 def __init__(self, options=None):
     super(L1ICache, self).__init__(options)
     if not options or not options.l1i_size:
@@ -332,7 +331,7 @@ def __init__(self, options=None):
 
 We can use the same code for the `L1DCache`:
 
-``` {.sourceCode .python}
+```
 def __init__(self, options=None):
     super(L1DCache, self).__init__(options)
     if not options or not options.l1d_size:
@@ -342,7 +341,7 @@ def __init__(self, options=None):
 
 And the unified `L2Cache`:
 
-``` {.sourceCode .python}
+```
 def __init__(self, options=None):
     super(L2Cache, self).__init__()
     if not options or not options.l2_size:
@@ -353,7 +352,7 @@ def __init__(self, options=None):
 With these changes, you can now pass the cache sizes into your script
 from the command line like below.
 
-``` {.sourceCode .sh}
+```
 build/X86/gem5.opt configs/tutorial/two_level_opts.py --l2_size='1MB' --l1d_size='128kB'
 ```
 

@@ -22,7 +22,7 @@ for more details.
 On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
-``` {.sourceCode .sh}
+```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
 ```
 
@@ -34,7 +34,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         Git should be installed by default on most platforms. However,
         to install Git in Ubuntu use
 
-        ``` {.sourceCode .sh}
+        ```
         sudo apt-get install git
         ```
 
@@ -44,7 +44,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
         On Ubuntu, you can install a development environment with
 
-        ``` {.sourceCode .sh}
+        ```
         sudo apt-get install build-essential
         ```
 
@@ -55,7 +55,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
         To get SCons on Ubuntu use
 
-        ``` {.sourceCode .sh}
+        ```
         sudo apt-get install scons
         ```
 
@@ -63,7 +63,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     :   gem5 relies on the Python development libraries. To install
         these on Ubuntu use
 
-        ``` {.sourceCode .sh}
+        ```
         sudo apt-get install python-dev
         ```
 
@@ -76,7 +76,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         not a required package, unless you plan on using it for trace
         generation and playback.
 
-        ``` {.sourceCode .sh}
+        ```
         sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
         ```
 
@@ -86,7 +86,7 @@ Getting the code
 Change directories to where you want to download the gem5 source. Then,
 to clone the repository, use the `git clone` command.
 
-``` {.sourceCode .sh}
+```
 git clone https://gem5.googlesource.com/public/gem5
 ```
 
@@ -119,7 +119,7 @@ want to compile all of the CPU models. You can look at the file
 can also specify these options on the command line to override any
 default.
 
-``` {.sourceCode .sh}
+```
 scons build/X86/gem5.opt -j9
 ```
 
@@ -261,6 +261,6 @@ Just installing the M4 macro package may not solve this issue. You may
 nee to also install all of the `autoconf` tools. On Ubuntu, you can use
 the following command.
 
-``` {.sourceCode .sh}
+```
 sudo apt-get install automake
 ```
