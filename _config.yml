@@ -1,7 +1,7 @@
 # Site Settings
 title: gem5
-sourceurl: "https://github.com/new-website/tree/master/"
-url: "http://gem5.github.io/new-website"
+sourceurl: "https://github.com/gem5/new-website/tree/master/"
+url: "http://gem5.github.io/new-website/"
 
 # Build Settings
 sass:

@@ -5,7 +5,7 @@ html {
 }
 body {
 	margin: 0;
-  margin-bottom: 350px;
+  // margin-bottom: 350px;
 	// color: $font-color;
 	font-family: $font-style;
 	// font-size: 1.1em;
@@ -114,7 +114,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 	}
 }
 .sidenav {
-  height: 80%;
+  height: calc(100vh - 130px);
   top: 130px;
   width: $sidenav-width;
   position: fixed;
@@ -165,7 +165,7 @@ div.navbuttons {
 
 /**** HEADER ****/
 header {
-  height: 350px;
+  min-height: 350px;
   background-color: $base;
   text-align: center;
   align-items: center;
@@ -335,8 +335,9 @@ ul#search-results {
 footer {
   min-height: 250px;
   width: 100%;
+  margin-top: 100px;
   padding-top: 40px;
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   background-color: $base;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
