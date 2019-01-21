@@ -5,7 +5,7 @@ html {
 }
 body {
 	margin: 0;
-  // margin-bottom: 350px;
+  margin-bottom: 350px;
 	// color: $font-color;
 	font-family: $font-style;
 	// font-size: 1.1em;
@@ -330,14 +330,19 @@ ul#search-results {
   }
 }
 
+div.blog {
+  img {
+    width: calc(100vw - 50px);
+  }
+}
 
 /**** FOOTER ****/
 footer {
   min-height: 250px;
   width: 100%;
-  margin-top: 100px;
+  // margin-top: 100px;
   padding-top: 40px;
-  // position: absolute;
+  position: absolute;
   bottom: 0;
   background-color: $base;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);

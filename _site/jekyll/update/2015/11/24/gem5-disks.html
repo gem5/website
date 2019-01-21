@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>gem5</title>
+
+	<!-- SITE FAVICON -->
+	<link rel="shortcut icon" type="image/gif" href="/assets/img/gem5ColorVert.gif"/>
+
+	<link rel="canonical" href="http://localhost:4000/jekyll/update/2015/11/24/gem5-disks.html">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- FAVICON -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+		<img src="/assets/img/gem5ColorLong.gif" alt="gem5" height=45px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					
+            <a class="dropdown-item" href="/introduction">Introduction</a>
+					
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/MSIintro">Modeling Cache Coherence with Ruby</a>
+					
+				</div>
+			</li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<main>
+		<br><br>
+<div class="container blog">
+  <h1>Creating disk images for gem5</h1>
+  <time>Nov 24, 2015 • Jason Lowe-Power</time>
+  <hr>
+  <p>When using gem5 in full-system mode, you have to have a disk image with
+the operating system and all of your data on it. This is just like
+having a physical disk in a physical machine. In this post, I’m going to
+walk through how to create a new disk and install a (semi-)current
+version of Ubuntu on the disk. By the end of this post, you should be
+able to create your own disk with whatever extra data and applications
+you want.</p>
+
+<p>This post assumes that you have already checked out a version of gem5
+and can build and run gem5 in full-system mode. The <a href="http://www.lowepower.com/jason/learning_gem5/">Learning
+gem5</a> documentation is a
+good place to start. This post uses the x86 ISA for gem5, and is mostly
+applicable to other ISAs. More details on setting up ARM systems can be
+found on the gem5 wiki:
+<a href="http://gem5.org/Ubuntu_Disk_Image_for_ARM_Full_System">http://gem5.org/Ubuntu_Disk_Image_for_ARM_Full_System</a>.</p>
+
+<p>In the future, this post may be folded into <a href="http://www.lowepower.com/jason/learning_gem5/">Learning
+gem5</a>.</p>
+
+<h2 id="creating-a-blank-disk-image">Creating a blank disk image</h2>
+
+<p>The first step is to create a blank disk image (usually a .img file).
+Luckily, the gem5 developers have already made this easy with a tool
+that is simple to use. To create a blank disk image, which is formatted
+with ext2 by default, simply run the following.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; util/gem5img.py init ubuntu-14.04.img 4096
+</code></pre></div></div>
+
+<p>This command creates a new image, called “ubuntu-14.04.img” that is 4096
+MB. This command may require you to enter the sudo password, if you
+don’t have permission to create loopback devices. <em>You should never run
+commands as the root user that you don’t understand! You should look at
+the file util/gem5img.py and ensure that it isn’t going to do anything
+malicious to your computer!</em></p>
+
+<p>We will be using util/gem5img.py heavily throughout this post, so you
+may want to understand it better. If you just run <code class="highlighter-rouge">util/gem5img.py</code>, it
+displays all of the possible commands.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage: %s [command] &lt;command arguments&gt;
+where [command] is one of
+    init: Create an image with an empty file system.
+    mount: Mount the first partition in the disk image.
+    umount: Unmount the first partition in the disk image.
+    new: File creation part of "init".
+    partition: Partition part of "init".
+    format: Formatting part of "init".
+Watch for orphaned loopback devices and delete them with
+losetup -d. Mounted images will belong to root, so you may need
+to use sudo to modify their contents
+</code></pre></div></div>
+
+<h2 id="copying-root-files-to-the-disk">Copying root files to the disk</h2>
+
+<p>Now that we have created a blank disk, we need to populate it with all
+of the OS files. Ubuntu distributes a set of files explicitly for this
+purpose. You can find the <a href="https://wiki.ubuntu.com/Core">Ubuntu core</a>
+distribution for 14.04 at
+<a href="http://cdimage.ubuntu.com/ubuntu-core/releases/14.04/release/">http://cdimage.ubuntu.com/ubuntu-core/releases/14.04/release/</a> Since I
+am simulating an x86 machine, I chose the file
+<code class="highlighter-rouge">ubuntu-core-14.04-core-amd64.tar.gz</code>. Download whatever image is
+appropriate for the system you are simulating.</p>
+
+<p>Next, we need to mount the blank disk and copy all of the files onto the
+disk.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir mnt
+../../util/gem5img.py mount ubuntu-14.04.img mnt
+wget http://cdimage.ubuntu.com/ubuntu-core/releases/14.04/release/ubuntu-core-14.04-core-amd64.tar.gz
+sudo tar xzvf ubuntu-core-14.04-core-amd64.tar.gz -C mnt
+</code></pre></div></div>
+
+<p>The next step is to copy a few required files from your working system
+onto the disk so we can chroot into the new disk. We need to copy
+<code class="highlighter-rouge">/etc/resolv.conf</code> onto the new disk.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo cp /etc/resolv.conf mnt/etc/
+</code></pre></div></div>
+
+<h2 id="setting-up-gem5-specific-files">Setting up gem5-specific files</h2>
+
+<h3 id="create-a-serial-terminal">Create a serial terminal</h3>
+
+<p>By default, gem5 uses the serial port to allow communication from the
+host system to the simulated system. To use this, we need to create a
+serial tty. Since Ubuntu uses upstart to control the init process, we
+need to add a file to /etc/init which will initialize our terminal.
+Also, in this file, we will add some code to detect if there was a
+script passed to the simulated system. If there is a script, we will
+execute the script instead of creating a terminal.</p>
+
+<p>Put the following code into a file called /etc/init/tty-gem5.conf</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ttyS0 - getty
+#
+# This service maintains a getty on ttyS0 from the point the system is
+# started until it is shut down again, unless there is a script passed to gem5.
+# If there is a script, the script is executed then simulation is stopped.
+
+start on stopped rc RUNLEVEL=[12345]
+stop on runlevel [!12345]
+
+console owner
+respawn
+script
+   # Create the serial tty if it doesn't already exist
+   if [ ! -c /dev/ttyS0 ]
+   then
+      mknod /dev/ttyS0 -m 660 /dev/ttyS0 c 4 64
+   fi
+
+   # Try to read in the script from the host system
+   /sbin/m5 readfile &gt; /tmp/script
+   chmod 755 /tmp/script
+   if [ -s /tmp/script ]
+   then
+      # If there is a script, execute the script and then exit the simulation
+      exec su root -c '/tmp/script' # gives script full privileges as root user in multi-user mode
+      /sbin/m5 exit
+   else
+      # If there is no script, login the root user and drop to a console
+      # Use m5term to connect to this console
+      exec /sbin/getty --autologin root -8 38400 ttyS0
+   fi
+end script
+</code></pre></div></div>
+
+<h3 id="setup-localhost">Setup localhost</h3>
+
+<p>We also need to set up the localhost loopback device if we are going to
+use any applications that use it. To do this, we need to add the
+following to the <code class="highlighter-rouge">/etc/hosts</code> file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>127.0.0.1 localhost
+::1 localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+</code></pre></div></div>
+
+<h3 id="update-fstab">Update fstab</h3>
+
+<p>Next, we need to create an entry in <code class="highlighter-rouge">/etc/fstab</code> for each partition we
+want to be able to access from the simulated system. Only one partition
+is absolutely required (<code class="highlighter-rouge">/</code>); however, you may want to add additional
+partitions, like a swap partition.</p>
+
+<p>The following should appear in the file <code class="highlighter-rouge">/etc/fstab</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# &lt;file system&gt;    &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;
+/dev/hda1      /       ext3        noatime     0 1
+</code></pre></div></div>
+
+<h3 id="copy-the-m5-binary-to-the-disk">Copy the <code class="highlighter-rouge">m5</code> binary to the disk</h3>
+
+<p>gem5 comes with an extra binary application that executes
+pseudo-instructions to allow the simulated system to interact with the
+host system. To build this binary, run <code class="highlighter-rouge">make -f Makefile.&lt;isa&gt;</code> in the
+<code class="highlighter-rouge">gem5/m5</code> directory, where <code class="highlighter-rouge">&lt;isa&gt;</code> is the ISA that you are simulating
+(e.g., x86). After this, you should have an <code class="highlighter-rouge">m5</code> binary file. Copy this
+file to /sbin on your newly created disk.</p>
+
+<p>After updating the disk with all of the gem5-specific files, unless you
+are going on to add more applications or copying additional files,
+unmount the disk image.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; util/gem5img.py umount mnt
+</code></pre></div></div>
+
+<h2 id="install-new-applications">Install new applications</h2>
+
+<p>The easiest way to install new applications on to your disk, is to use
+<code class="highlighter-rouge">chroot</code>. This program logically changes the root directory (“/”) to a
+different directory, mnt in this case. Before you can change the root,
+you first have to set up the special directories in your new root. To do
+this, we use <code class="highlighter-rouge">mount -o bind</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; sudo /bin/mount -o bind /sys mnt/sys
+&gt; sudo /bin/mount -o bind /dev mnt/dev
+&gt; sudo /bin/mount -o bind /proc mnt/proc
+</code></pre></div></div>
+
+<p>After binding those directories, you can now <code class="highlighter-rouge">chroot</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; sudo /usr/sbin/chroot mnt /bin/bash
+</code></pre></div></div>
+
+<p>At this point you will see a root prompt and you will be in the <code class="highlighter-rouge">/</code>
+directory of your new disk.</p>
+
+<p>You should update your repository information.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; apt-get update
+</code></pre></div></div>
+
+<p>You may want to add the universe repositories to your list with the
+following commands. Note: The first command is require in 14.04.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; apt-get install software-properties-common
+&gt; add-apt-repository universe
+&gt; apt-get update
+</code></pre></div></div>
+
+<p>Now, you are able to install any applications you could install on a
+native Ubuntu machine via <code class="highlighter-rouge">apt-get</code>.</p>
+
+<p>Remember, after you exit you need to unmount all of the directories we
+used bind on.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; sudo /bin/umount mnt/sys
+&gt; sudo /bin/umount mnt/proc
+&gt; sudo /bin/umount mnt/dev
+</code></pre></div></div>
+
+</div>
+
+	</main>
+	
+	<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+				<p><a href="/governance">Governance</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/introduction">Documentation</a></p>
+				<p><a href="http://gem5.org/Documentation">Old Documentation</a></p>
+				<p><a href="https://gem5.googlesource.com/public/gem5">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+				<p><a href="https://github.com/gem5/new-website/tree/master/">Source For This Site</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+	
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+	  // When the user scrolls down 20px from the top of the document, show the button
+	  window.onscroll = function() {scrollFunction()};
+
+	  function scrollFunction() {
+	      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+	          document.getElementById("myBtn").style.display = "block";
+	      } else {
+	          document.getElementById("myBtn").style.display = "none";
+	      }
+	  }
+
+	  // When the user clicks on the button, scroll to the top of the document
+	  function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	  }
+	</script>
+
+</body>
+
+
+</html>

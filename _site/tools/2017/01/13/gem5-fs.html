@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>gem5</title>
+
+	<!-- SITE FAVICON -->
+	<link rel="shortcut icon" type="image/gif" href="/assets/img/gem5ColorVert.gif"/>
+
+	<link rel="canonical" href="http://localhost:4000/tools/2017/01/13/gem5-fs.html">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- FAVICON -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+		<img src="/assets/img/gem5ColorLong.gif" alt="gem5" height=45px>
+	</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					About
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/about">About</a>
+          <a class="dropdown-item" href="/publications">Publications</a>
+          <a class="dropdown-item" href="/governance">Governance</a>
+				</div>
+			</li>
+
+			<li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!-- Pull navigation from _data/documentation.yml -->
+					
+            <a class="dropdown-item" href="/introduction">Introduction</a>
+					
+            <a class="dropdown-item" href="/building">Getting Started</a>
+					
+            <a class="dropdown-item" href="/environment">Modifying/Extending</a>
+					
+            <a class="dropdown-item" href="/MSIintro">Modeling Cache Coherence with Ruby</a>
+					
+				</div>
+			</li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/contributing">Contributing</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+
+			<li class="nav-item ">
+        <a class="nav-link" href="/search">Search</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<main>
+		<br><br>
+<div class="container blog">
+  <h1>Setting up gem5 full system</h1>
+  <time>Jan 13, 2017 • Jason Lowe-Power</time>
+  <hr>
+  <p>This is partially a followup to <a href="http://www.lowepower.com/jason/creating-disk-images-for-gem5.html">Creating disk images for
+gem5</a>
+and partially how to setup x86 full system for gem5. In this post, I’ll
+discuss how to create a disk image from scratch and start using it with
+gem5.</p>
+
+<p>It is important for computer architecture research to use the most
+up-to-date software on the systems we are simulating. Too much computer
+architecture research reports results using kernels from 5+ years ago or
+ancient system software Hopefully, this post will help others be able to
+keep up with the ever-changing system software. This way, researchers
+can use up-to-date versions of Linux and easily update their kernels.</p>
+
+<p>This post takes a different approach than <a href="http://www.lowepower.com/jason/creating-disk-images-for-gem5.html">Creating disk images for
+gem5</a>.
+Instead of using the gem5 tools, this post uses qemu to create, edit,
+and set up the disk for gem5 usage.</p>
+
+<p>This post assumes that you have installed qemu on your system. In
+Ubuntu, this can be done with</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+</code></pre></div></div>
+
+<p>I also assume you have downloaded and built gem5. All of the full system
+examples use the simple full system scripts that are covered in
+<a href="http://learning.gem5.org/book/part3/index.html">Learning gem5</a>.</p>
+
+<h2 id="step-1-create-an-empty-disk">Step 1: Create an empty disk</h2>
+
+<p>Using the qemu disk tools, create a blank raw disk image. In this case,
+I chose to create a disk named “ubuntu-test.img” that is 8GB.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-img create ubuntu-test.img 8G
+</code></pre></div></div>
+
+<h2 id="step-2-install-ubuntu-with-qemu">Step 2: Install ubuntu with qemu</h2>
+
+<p>Now that we have a blank disk, we are going to use qemu to install
+Ubuntu on the disk. I would encourage you to use the server version of
+Ubuntu since gem5 does not have great support for displays. Thus, the
+desktop environment isn’t very useful.</p>
+
+<p>First, you need to download the installation CD image from the <a href="https://www.ubuntu.com/download/server">Ubuntu
+website</a>.</p>
+
+<p>Next, use qemu to boot off of the CD image, and set the disk in the
+system to be the blank disk you created above. Ubuntu needs at least 1GB
+of memory to install correctly, so be sure to configure qemu to use at
+least 1GB memory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-system-x86_64 -hda ../gem5-fs-testing/ubuntu-test.img -cdrom ubuntu-16.04.1-server-amd64.iso -m 1024 -enable-kvm -boot d
+</code></pre></div></div>
+
+<p>With this, you can simply follow the on-screen directions to install
+Ubuntu to the disk image. The only gotcha in the installation is that
+gem5’s IDE drivers don’t seem to play nicely with logical paritions.
+Thus, during the Ubuntu install, be sure to manually partition the disk
+and remove any logical partitions. You don’t need any swap space on the
+disk anyway, unless you’re doing something specifically with swap space.</p>
+
+<h2 id="step-3-boot-up-and-install-needed-software">Step 3: Boot up and install needed software</h2>
+
+<p>Once you have installed Ubuntu on the disk, quit qemu and remove the
+<code class="highlighter-rouge">-boot d</code> option so that you are not booting off of the CD anymore. Now,
+you can again boot off of the main disk image you have installed Ubuntu
+on.</p>
+
+<p>Since we’re using qemu, you should have a network connection (although
+<a href="http://wiki.qemu.org/Documentation/Networking#User_Networking_.28SLIRP.29">ping won’t
+work</a>).
+When booting in qemu, you can just use <code class="highlighter-rouge">sudo apt-get install</code> and
+install any software you need on your disk.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-system-x86_64 -hda ../gem5-fs-testing/ubuntu-test.img -cdrom ubuntu-16.04.1-server-amd64.iso -m 1024 -enable-kvm
+</code></pre></div></div>
+
+<h2 id="step-4-build-a-kernel">Step 4: Build a kernel</h2>
+
+<p>Next, you need to build a Linux kernel. Unfortunately, the
+out-of-the-box Ubuntu kernel doesn’t play well with gem5. See the
+error below_.</p>
+
+<p>First, you need to download latest kernel from
+<a href="https://www.kernel.org/">kernel.org</a>. Then, to build the kernel, you
+are going to want to start with a known-good config file.
+The config file that I’m used for kernel version 4.8.13 can be
+downloaded <a href="{filename}files/config">here</a>. Then, you need to move the
+good config to <code class="highlighter-rouge">.config</code> and the run <code class="highlighter-rouge">make oldconfig</code> which starts the
+kernel configuration process with an existing config file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv &lt;good config&gt; .config
+make oldconfig
+</code></pre></div></div>
+
+<p>At this point you can select any extra drivers you want to build into
+the kernel. Note: You cannot use any kernel modules unless you are
+planning on copying the modules onto the guest disk at the correct
+location. All drivers must be built into the kernel binary.</p>
+
+<p>It may be possible to use modules by compiling the binary on the guest
+disk via qemu, but I have not tested this.</p>
+
+<p>Finally, you need to build the kernel.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make -j5
+</code></pre></div></div>
+
+<h2 id="step-5-update-init-script">Step 5: Update init script</h2>
+
+<p>By default, gem5 expects a modified init script which loads a script off
+of the host to execute in the guest. To use this feature, you need to
+follow the steps below.</p>
+
+<p>Alternatively, you can install the precompiled binaries for x86 found on
+my website: From qemu, you can run the following, which completes the
+above steps for you.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://cs.wisc.edu/~powerjg/files/gem5-guest-tools-x86.tgz
+tar xzvf gem5-guest-tools-x86.tgz
+cd gem5-guest-tools/
+sudo ./install
+</code></pre></div></div>
+
+<p>Now, you can use the <code class="highlighter-rouge">system.readfile</code> parameter in your Python config
+scripts. This file will automatically be loaded (by the <code class="highlighter-rouge">gem5init</code>
+script) and executed.</p>
+
+<h3 id="manually-installing-the-gem5-init-script">Manually installing the gem5 init script</h3>
+
+<p>First, build the m5 binary on the host.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd util/m5
+make -f Makefile.x86
+</code></pre></div></div>
+
+<p>Then, copy this binary to the guest and put it in <code class="highlighter-rouge">/sbin</code>. Also, create
+a link from <code class="highlighter-rouge">/sbin/gem5</code>.</p>
+
+<p>Then, to get the init script to execute when gem5 boots, create file
+/lib/systemd/system/gem5.service with the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=gem5 init script
+Documentation=http://gem5.org
+After=getty.target
+
+[Service]
+Type=idle
+ExecStart=/sbin/gem5init
+StandardOutput=tty
+StandardInput=tty-force
+StandardError=tty
+
+[Install]
+WantedBy=default.target
+</code></pre></div></div>
+
+<p>Enable the gem5 service and disable the ttyS0 service.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl enable gem5.service
+</code></pre></div></div>
+
+<p>Finally, create the init script that is executed by the service. In
+<code class="highlighter-rouge">/sbin/gem5init</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash -</span>
+
+<span class="nv">CPU</span><span class="o">=</span><span class="sb">`</span><span class="nb">cat</span> /proc/cpuinfo | <span class="nb">grep </span>vendor_id | head <span class="nt">-n</span> 1 | cut <span class="nt">-d</span> <span class="s1">' '</span> <span class="nt">-f2-</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">"Got CPU type: </span><span class="nv">$CPU</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$CPU</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">"M5 Simulator"</span> <span class="o">]</span><span class="p">;</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Not in gem5. Not loading script"</span>
+    <span class="nb">exit </span>0
+<span class="k">fi</span>
+
+<span class="c"># Try to read in the script from the host system</span>
+/sbin/m5 readfile <span class="o">&gt;</span> /tmp/script
+chmod 755 /tmp/script
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-s</span> /tmp/script <span class="o">]</span>
+<span class="k">then</span>
+    <span class="c"># If there is a script, execute the script and then exit the simulation</span>
+    su root <span class="nt">-c</span> <span class="s1">'/tmp/script'</span> <span class="c"># gives script full privileges as root user in multi-user mode</span>
+    sync
+    sleep 10
+    /sbin/m5 <span class="nb">exit
+</span><span class="k">fi
+</span><span class="nb">echo</span> <span class="s2">"No script found"</span>
+</code></pre></div></div>
+
+<h2 id="problems-and-some-solutions">Problems and (some) solutions</h2>
+
+<h3 id="failed-to-early-mount-api-filesystems">Failed to early mount API filesystems</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Write protecting the kernel read-only data: 8192k
+Freeing unused kernel memory: 1956K (ffff880001417000 - ffff880001600000)
+Freeing unused kernel memory: 456K (ffff88000178e000 - ffff880001800000)
+[!!!!!!] Failed to early mount API filesystems, freezing.
+</code></pre></div></div>
+
+<p>Solutions tried: Enable cgroups in the kernel. I think. Nope! I think
+this is the same as the problem below mount-problem_.</p>
+
+<h3 id="cant-mount-dev">Can’t mount /dev</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed to mount devtmpfs at /dev: No such device
+Freezing execution.
+</code></pre></div></div>
+
+<p>Something like the above (this was taken from arch linux boot). The
+problem is that that the right devfs is not compiled into the kernel.
+You need to make sure that devtmpfs is enabled.</p>
+
+<h3 id="panic-kvm-unexpected-exit-exit_reason-8">panic: KVM: Unexpected exit (exit_reason: 8)</h3>
+
+<p>Exit reason 8 is “shutdown”. See
+<a href="http://lxr.free-electrons.com/source/include/uapi/linux/kvm.h#L188">http://lxr.free-electrons.com/source/include/uapi/linux/kvm.h#L188</a>.
+This seems to happen when there is a triple fault:
+<a href="http://lxr.free-electrons.com/source/arch/x86/kvm/x86.c#L6498">http://lxr.free-electrons.com/source/arch/x86/kvm/x86.c#L6498</a></p>
+
+<p>I get this error every time I try to boot the unmodified Ubuntu kernel.
+I don’t know how to solve this problem. Instead of trying to solve the
+problem, I used a different config file for “oldconfig” when I compiled
+the kernel from scratch.</p>
+
+<h3 id="slow-boot">Slow boot</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ TIME ] Timed out waiting for device dev-di...\x2da115\x2de3f263d7b53a.device.
+[DEPEND] Dependency failed for /dev/disk/by-...382-f41d-4c99-a115-e3f263d7b53a.
+[DEPEND] Dependency failed for Swap.
+</code></pre></div></div>
+
+<p>This may happen if you have changed the disk without updating the fstab
+on the disk. To fix it, you can boot the disk in qemu and update fstab
+with the correct UUID.</p>
+
+<p>I ran into this when I was resizing the disk.</p>
+
+<h3 id="disk-is-too-small-for-what-you-want-to-do">Disk is too small for what you want to do</h3>
+
+<p>Resizing an iso is pretty easy. You can use the same method you would if
+you wanted to resize a partition on a regular hard drive.</p>
+
+<p>First, you need to resize the iso with qemu-image:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-img resize ubuntu-test.img +8G
+</code></pre></div></div>
+
+<p>Now, you have a disk that has 8 GB of free space at the end of the disk.
+You need to resize the partitions to use this free space. To do this, I
+suggest using gparted just like you would for a real hard drive.</p>
+
+<p>You can download a gparted ISO from <a href="http://gparted.org/livecd.php">http://gparted.org/livecd.php</a>.
+Once you download the ISO, you can boot it with qemu the same way as we
+booted the installation CD. Then, once its booted you can select the
+disk you want to modify and follow the howto
+(<a href="http://gparted.org/display-doc.php%3Fname%3Dhelp-manual">http://gparted.org/display-doc.php%3Fname%3Dhelp-manual</a>).</p>
+
+</div>
+
+	</main>
+	
+	<footer class="page-footer">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/about">About</a></p>
+				<p><a href="/publications">Publications</a></p>
+				<p><a href="/contributing">Contributing</a></p>
+				<p><a href="/governance">Governance</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/introduction">Documentation</a></p>
+				<p><a href="http://gem5.org/Documentation">Old Documentation</a></p>
+				<p><a href="https://gem5.googlesource.com/public/gem5">Source</a></p>
+			</div><br>
+
+			<div class="col-12 col-sm-4">
+				<p><a href="/search">Search</a></p>
+				<p><a href="#">Mailing Lists</a></p>
+				<p><a href="https://github.com/gem5/new-website/tree/master/">Source For This Site</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+
+	
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+	  // When the user scrolls down 20px from the top of the document, show the button
+	  window.onscroll = function() {scrollFunction()};
+
+	  function scrollFunction() {
+	      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
+	          document.getElementById("myBtn").style.display = "block";
+	      } else {
+	          document.getElementById("myBtn").style.display = "none";
+	      }
+	  }
+
+	  // When the user clicks on the button, scroll to the top of the document
+	  function topFunction() {
+	      document.body.scrollTop = 0;
+	      document.documentElement.scrollTop = 0;
+	  }
+	</script>
+
+</body>
+
+
+</html>

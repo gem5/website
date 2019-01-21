@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  margin-bottom: 350px;
   font-family: "Open Sans", sans-serif; }
 
 h1, h2, h3, h4 {
@@ -263,12 +264,15 @@ ul#search-results {
   ul#search-results a {
     text-decoration-color: black; }
 
+div.blog img {
+  width: calc(100vw - 50px); }
+
 /**** FOOTER ****/
 footer {
   min-height: 250px;
   width: 100%;
-  margin-top: 100px;
   padding-top: 40px;
+  position: absolute;
   bottom: 0;
   background-color: #E6E6E6;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
