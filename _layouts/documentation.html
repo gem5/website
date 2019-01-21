@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="sidenav-top">
-  <a href="/"><img src="/assets/img/gem5ColorLong.gif" height="80"></a>
+  <a href="/"><img src=""{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}"" height="80"></a>
   <div class="search">
     <form action="/search" method="get">
       <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
@@ -14,7 +14,7 @@ layout: default
 <div class="sidenav">
   <!-- Pull navigation from _data/documentation.yml -->
   {% for item in site.data.documentation.docs %}
-    <a class="item" {% if item.url %}href="{{ item.url }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="item" {% if item.url %}href="{{ item.url | prepend: site.baseurl }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">
       {{ item.title }}
     </a>
     <div class="collapse {% if page.parent == item.id %}show{% endif %}" id="{{ item.id }}">
@@ -65,11 +65,11 @@ layout: default
 
   <div class="navbuttons">
     {% if previous != "none" %}
-      <a href="{{ previous }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
+      <a href="{{ previous | prepend: site.baseurl }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
     {% endif %}
 
     {% if next != "none" %}
-      <a href="{{ next }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
+      <a href="{{ next | prepend: site.baseurl }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
     {% endif %}
   </div>
 </div>
