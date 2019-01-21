@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="sidenav-top">
-  <a href="/"><img src=""{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}"" height="80"></a>
+  <a href="/"><img src="{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}" height="80"></a>
   <div class="search">
     <form action="/search" method="get">
       <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
@@ -19,7 +19,7 @@ layout: default
     </a>
     <div class="collapse {% if page.parent == item.id %}show{% endif %}" id="{{ item.id }}">
       {% for subitem in item.subitems %}
-        <a class="subitem {% if subitem.page == page.title %}active{% endif %}" href="{{ subitem.url }}">{{ subitem.page }}</a>
+        <a class="subitem {% if subitem.page == page.title %}active{% endif %}" href="{{ subitem.url | prepend: site.baseurl }}">{{ subitem.page }}</a>
       {% endfor %}
     </div>
   {% endfor %}
