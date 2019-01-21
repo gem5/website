@@ -2,13 +2,20 @@
 layout: default
 ---
 <br><br>
-<div class="container">
-	<h1 class="title">Blog</h1>
-	{% for post in site.posts %}
-			<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-			<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-			<hr><br>
-	{% endfor %}
+<div class="container blog">
+	<h1 class="title">Blog</h1><br>
 
-	<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			{% for post in site.posts %}
+					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+					<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+					<br><hr><br>
+			{% endfor %}
+			<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
 </div>

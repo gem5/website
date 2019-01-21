@@ -7,8 +7,6 @@ permalink: /governance/
 * TOC
 {:toc}
 
----
-
 # Overview
 ---
 gem5 is a meritocratic, consensus-based community project. Anyone with an interest in the project can join the community, contribute to the project design and participate in the decision-making process. Historically, gem5 development has been carried out both in industry and in academia. This document describes how that participation takes place and how to set about earning merit within the project community.

@@ -264,6 +264,7 @@ ul#search-results {
   ul#search-results a {
     text-decoration-color: black; }
 
+/**** BLOG FORMATTING ****/
 div.blog img {
   width: 100%; }
 div.blog iframe {
@@ -282,6 +283,9 @@ footer {
   footer p {
     line-height: 15px; }
 
+@media (max-width: 576px) {
+  body {
+    margin-bottom: 575; } }
 /**
  * Syntax highlighting styles
  */
