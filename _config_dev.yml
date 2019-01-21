@@ -2,6 +2,7 @@
 title: gem5
 sourceurl: "https://github.com/gem5/new-website/tree/master/"
 url: "http://localhost:4000"
+baseurl: ""
 
 # Build Settings
 sass:

@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 20 Jan 2019 17:10:07 -0800</pubDate>
-    <lastBuildDate>Sun, 20 Jan 2019 17:10:07 -0800</lastBuildDate>
+    <pubDate>Mon, 21 Jan 2019 02:19:31 -0800</pubDate>
+    <lastBuildDate>Mon, 21 Jan 2019 02:19:31 -0800</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
     
       <item>
@@ -383,7 +383,7 @@ one from GCC 7.2 and one from clang 4.0.&lt;/p&gt;
   400b79:       c3                      retq
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;iframe width=&quot;100vw&quot; height=&quot;500&quot; src=&quot;/assets/img/gcc72-static-tage.html&quot; frameborder=&quot;0&quot;&gt;
+&lt;iframe height=&quot;500&quot; src=&quot;/assets/img/gcc72-static-tage.html&quot; frameborder=&quot;0&quot;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;However, clang generates the following code.&lt;/p&gt;
 
@@ -418,7 +418,7 @@ one from GCC 7.2 and one from clang 4.0.&lt;/p&gt;
   400b0f:       90                      nop
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;iframe width=&quot;750&quot; height=&quot;500&quot; src=&quot;/assets/img/clang-static-tage.html&quot; frameborder=&quot;0&quot;&gt;
+&lt;iframe height=&quot;500&quot; src=&quot;/assets/img/clang-static-tage.html&quot; frameborder=&quot;0&quot;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;Interestingly, the clang-compiled &lt;code class=&quot;highlighter-rouge&quot;&gt;spectre&lt;/code&gt; binary is not able to read
 the secret data! (At least not in gem5. It is able to read the secret
@@ -448,7 +448,7 @@ predictor chosen makes a big difference to how quickly the vulnerability
 happens. The trace below (with the same code as GCC 4.8 above) shows
 what happens when using the tournament branch predictor.&lt;/p&gt;
 
-&lt;iframe width=&quot;750&quot; height=&quot;500&quot; src=&quot;/assets/img/gcc-static-tourn.html&quot; frameborder=&quot;0&quot;&gt;
+&lt;iframe height=&quot;500&quot; src=&quot;/assets/img/gcc-static-tourn.html&quot; frameborder=&quot;0&quot;&gt;
 &lt;/iframe&gt;
 &lt;p&gt;Here, we see that the original branch misprediction comes much earlier
 than the jump instruction in &lt;code class=&quot;highlighter-rouge&quot;&gt;victim_function&lt;/code&gt; that is at address

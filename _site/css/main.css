@@ -265,7 +265,9 @@ ul#search-results {
     text-decoration-color: black; }
 
 div.blog img {
-  width: calc(100vw - 50px); }
+  width: 100%; }
+div.blog iframe {
+  width: 100%; }
 
 /**** FOOTER ****/
 footer {

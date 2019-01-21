@@ -3,7 +3,7 @@ layout: default
 ---
 <br><br>
 <div class="container">
-	<h1 class="title">Bloggg</h1>
+	<h1 class="title">Blog</h1>
 	{% for post in site.posts %}
 			<time>{{ post.date | date: "%b %-d, %Y" }}</time>
 			<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>

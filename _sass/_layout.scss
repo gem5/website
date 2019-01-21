@@ -331,9 +331,8 @@ ul#search-results {
 }
 
 div.blog {
-  img {
-    width: calc(100vw - 50px);
-  }
+  img {width: 100%;}
+  iframe {width: 100%;}
 }
 
 /**** FOOTER ****/

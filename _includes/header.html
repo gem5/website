@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item {% if page.title == "Home" %}active{% endif %}">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
       </li>
 
 			<li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
@@ -16,9 +16,9 @@
 					About
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/about">About</a>
-          <a class="dropdown-item" href="/publications">Publications</a>
-          <a class="dropdown-item" href="/governance">Governance</a>
+          <a class="dropdown-item" href="{{ "/about" | prepend: site.baseurl }}">About</a>
+          <a class="dropdown-item" href="{{ "/publications" | prepend: site.baseurl }}">Publications</a>
+          <a class="dropdown-item" href="{{ "/governance" | prepend: site.baseurl }}">Governance</a>
 				</div>
 			</li>
 
@@ -29,21 +29,21 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					{% for item in site.data.documentation.docs %}
-            <a class="dropdown-item" href="{% if item.url %}{{ item.url }}{% else %}{{ item.subitems[0].url }}{% endif %}">{{ item.title }}</a>
+            <a class="dropdown-item" href="{% if item.url %}{{ item.url | prepend: site.baseurl }}{% else %}{{ item.subitems[0].url }}{% endif %}">{{ item.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
 
       <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
-        <a class="nav-link" href="/contributing">Contributing</a>
+        <a class="nav-link" href="{{ "/contributing" | prepend: site.baseurl }}">Contributing</a>
       </li>
 
-      <li class="nav-item {% if page.title == "Blog" %}active{% endif %}">
-        <a class="nav-link" href="/blog">Blog</a>
+      <li class="nav-item {% if page.url == "/blog/" %}active{% endif %}">
+        <a class="nav-link" href="{{ "/blog" | prepend: site.baseurl }}">Blog</a>
       </li>
 
 			<li class="nav-item {% if page.title == "Search" %}active{% endif %}">
-        <a class="nav-link" href="/search">Search</a>
+        <a class="nav-link" href="{{ "/search" | prepend: site.baseurl }}">Search</a>
       </li>
     </ul>
   </div>

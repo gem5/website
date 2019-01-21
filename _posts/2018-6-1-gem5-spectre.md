@@ -375,7 +375,7 @@ one from GCC 7.2 and one from clang 4.0.
       400b78:       5d                      pop    %rbp                 
       400b79:       c3                      retq
 
-<iframe width="100vw" height="500" src="/assets/img/gcc72-static-tage.html" frameborder="0">
+<iframe height="500" src="/assets/img/gcc72-static-tage.html" frameborder="0">
 </iframe>
 However, clang generates the following code.
 
@@ -409,7 +409,7 @@ However, clang generates the following code.
       400b0e:       c3                      retq
       400b0f:       90                      nop
 
-<iframe width="750" height="500" src="/assets/img/clang-static-tage.html" frameborder="0">
+<iframe height="500" src="/assets/img/clang-static-tage.html" frameborder="0">
 </iframe>
 Interestingly, the clang-compiled `spectre` binary is not able to read
 the secret data! (At least not in gem5. It is able to read the secret
@@ -439,7 +439,7 @@ predictor chosen makes a big difference to how quickly the vulnerability
 happens. The trace below (with the same code as GCC 4.8 above) shows
 what happens when using the tournament branch predictor.
 
-<iframe width="750" height="500" src="/assets/img/gcc-static-tourn.html" frameborder="0">
+<iframe height="500" src="/assets/img/gcc-static-tourn.html" frameborder="0">
 </iframe>
 Here, we see that the original branch misprediction comes much earlier
 than the jump instruction in `victim_function` that is at address
