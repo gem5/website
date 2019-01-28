@@ -26,11 +26,14 @@ Different layout templates used on the site.
 * default: base layout
 * page: any regular page
 * toc: a page that requires table of contents
-* post: blog page
+* post: blog post page
 * documentation: documentation page
 
 #### _pages
 All pages (other than the index.html home page) should be placed in this folder. There is a subfolder /documentation where pages meant for documentation part of the site can be kept. This is purely for organization and ease of finding things. Reorganizing the _pages folder should not affect the site.
+
+#### _posts
+Holds blog posts.
 
 #### _sass
 All custom css is kept in _layout.scss.
@@ -39,7 +42,7 @@ All custom css is kept in _layout.scss.
 Images and javascript files.
 
 #### blog
-If a blog is created, this will store blog files.
+Holds index.html of blog page.
 
 ## Documentation
 #### Edit Documentation Navigation
@@ -94,3 +97,17 @@ Notes:
 `parent` should be the exact same as the id of its parent topic that is assigned to it in _data/documentation.yml file. (If the page is the parent topic, `parent` is the same as the id assigned to it in _data/documentation.yml file.)
 
 Place the file in _pages/documentation. Make sure to add the page to the documentation navigation, explained by the section above.
+
+## Blog
+Add blog page to _posts folder.
+Page must be named in this format:
+`yyyy-mm-dd-name-of-file.md`
+At the top of the page add:
+```
+---
+layout: post     // specify page layout
+title: How to Debug
+author: John
+date: yyyy-mm-dd
+---
+```
