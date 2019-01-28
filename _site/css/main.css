@@ -265,11 +265,32 @@ ul#search-results {
     text-decoration-color: black; }
 
 /**** BLOG FORMATTING ****/
-div.blog img {
-  width: 100%; }
-div.blog iframe {
+div.post img {
+  width: 80%; }
+div.post iframe {
   width: 100%; }
 
+div.blog img {
+  display: none; }
+
+div#posts {
+  margin-right: 180px; }
+
+div#contribute {
+  position: fixed;
+  right: 30px;
+  width: 180px; }
+  div#contribute h5 {
+    font-weight: 400; }
+  div#contribute hr {
+    margin-top: 8px; }
+
+@media (max-width: 800px) {
+  div#contribute {
+    position: static; }
+
+  div.toc {
+    margin-right: 0px; } }
 /**** FOOTER ****/
 footer {
   min-height: 250px;

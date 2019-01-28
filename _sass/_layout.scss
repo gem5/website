@@ -332,10 +332,41 @@ ul#search-results {
 
 
 /**** BLOG FORMATTING ****/
-div.blog {
-  img {width: 100%;}
+div.post {
+  img {width: 80%;}
   iframe {width: 100%;}
 }
+
+div.blog img{
+   display: none;
+}
+
+div#posts {
+  margin-right: 180px;
+}
+
+div#contribute {
+  position:fixed;
+  right: 30px;
+  // border: 2px $base solid;
+  // border-radius: 15px;
+  width: 180px;
+  // padding: 5px 12px;
+  // background-color: $base;
+  h5 {font-weight: 400;}
+  hr {margin-top: 8px;}
+}
+@media (max-width: 800px) {
+  div#contribute {
+    position: static;
+  }
+  div.toc {
+    margin-right: 0px;
+  }
+}
+
+
+
 
 /**** FOOTER ****/
 footer {

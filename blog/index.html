@@ -5,17 +5,22 @@ layout: default
 <div class="container blog">
 	<h1 class="title">Blog</h1><br>
 
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">
-			{% for post in site.posts %}
-					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-					<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-					<br><hr><br>
-			{% endfor %}
-			<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-		</div>
-		<div class="col-md-1"></div>
+
+	<div id="contribute">
+		<h5>Contribute</h5><hr>
+		<a href="{{ site.sourceurl}}"><p>Contribute to gem5 today</p></a><br>
 	</div>
+
+	<div id="posts">
+		{% for post in site.posts %}
+				<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+				<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+				<p>by {{ post.author }}</p>
+				<p>{{ post.content | truncate: 500 }}</p>
+				<a href="{{ post.url | prepend: site.baseurl }}"><p>Read more...</p></a>
+				<br><hr><br>
+		{% endfor %}
+		<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
 
 </div>

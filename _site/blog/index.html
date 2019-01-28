@@ -88,30 +88,76 @@
 <div class="container blog">
 	<h1 class="title">Blog</h1><br>
 
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">
-			
-					<time>Jun 1, 2018</time>
-					<h3><a href="/2018/06/01/gem5-spectre.html">Visualizing Spectre with gem5</a></h3>
-					<br><hr><br>
-			
-					<time>Jan 13, 2017</time>
-					<h3><a href="/tools/2017/01/13/gem5-fs.html">Setting up gem5 full system</a></h3>
-					<br><hr><br>
-			
-					<time>Nov 24, 2015</time>
-					<h3><a href="/jekyll/update/2015/11/24/gem5-disks.html">Creating disk images for gem5</a></h3>
-					<br><hr><br>
-			
-					<time>Jun 9, 2015</time>
-					<h3><a href="/2015/06/09/gem5-horrors.html">gem5 Horrors and what we can do about it</a></h3>
-					<br><hr><br>
-			
-			<p>subscribe <a href="/feed.xml">via RSS</a></p>
-		</div>
-		<div class="col-md-1"></div>
+
+	<div id="contribute">
+		<h5>Contribute</h5><hr>
+		<a href="https://github.com/gem5/new-website/tree/master/"><p>Contribute to gem5 today</p></a><br>
 	</div>
+
+	<div id="posts">
+		
+				<h3><a href="/2018/06/01/gem5-spectre.html">Visualizing Spectre with gem5</a></h3>
+				<time>Jun 1, 2018</time>
+				<p>by Jason Lowe-Power</p>
+				<p><p><a href="https://meltdownattack.com/">Spectre and Meltdown</a> took much of our
+community by surprise. I personally found these attacks fascinating
+because they didn’t rely on a <em>bug</em> in any particular hardware
+implementation, but leveraged undefined behavior. Specifically, Spectre
+and Meltdown can exfiltrate potentially secret memory data by detecting
+the effects of speculative instructions <em>that are later squashed</em>.</p>
+
+<p>Very cool!</p>
+
+<p>Out of order processors are ver...</p>
+				<a href="/2018/06/01/gem5-spectre.html"><p>Read more...</p></a>
+				<br><hr><br>
+		
+				<h3><a href="/tools/2017/01/13/gem5-fs.html">Setting up gem5 full system</a></h3>
+				<time>Jan 13, 2017</time>
+				<p>by Jason Lowe-Power</p>
+				<p><p>This is partially a followup to <a href="http://www.lowepower.com/jason/creating-disk-images-for-gem5.html">Creating disk images for
+gem5</a>
+and partially how to setup x86 full system for gem5. In this post, I’ll
+discuss how to create a disk image from scratch and start using it with
+gem5.</p>
+
+<p>It is important for computer architecture research to use the most
+up-to-date software on the systems we are simulating. Too much computer
+architecture research reports results using kernels fro...</p>
+				<a href="/tools/2017/01/13/gem5-fs.html"><p>Read more...</p></a>
+				<br><hr><br>
+		
+				<h3><a href="/jekyll/update/2015/11/24/gem5-disks.html">Creating disk images for gem5</a></h3>
+				<time>Nov 24, 2015</time>
+				<p>by Jason Lowe-Power</p>
+				<p><p>When using gem5 in full-system mode, you have to have a disk image with
+the operating system and all of your data on it. This is just like
+having a physical disk in a physical machine. In this post, I’m going to
+walk through how to create a new disk and install a (semi-)current
+version of Ubuntu on the disk. By the end of this post, you should be
+able to create your own disk with whatever extra data and applications
+you want.</p>
+
+<p>This post assumes that you have already checked out a ve...</p>
+				<a href="/jekyll/update/2015/11/24/gem5-disks.html"><p>Read more...</p></a>
+				<br><hr><br>
+		
+				<h3><a href="/2015/06/09/gem5-horrors.html">gem5 Horrors and what we can do about it</a></h3>
+				<time>Jun 9, 2015</time>
+				<p>by Jason Lowe-Power</p>
+				<p><p><img src="/assets/img/gem5-horrors.png" alt="image" /></p>
+
+<p>This post is a post which mostly follows the talk that I am giving at
+the <a href="http://gem5.org/User_workshop_2015">gem5 Users Workshop</a>. This post
+contains some more details on problems that I skipped in my talk and
+some references that I was not able to include in a presentation. You
+can view my presentation on Google Drive
+<a href="https://docs.google.com/presentation/d/1QGA5UVaVJkkMITF2TXCY_KlwmfWef1KBzfDP6ocbj7I/pub?...</p>
+				<a href="/2015/06/09/gem5-horrors.html"><p>Read more...</p></a>
+				<br><hr><br>
+		
+		<p>subscribe <a href="/feed.xml">via RSS</a></p>
+</div>
 
 </div>
 
@@ -140,7 +186,7 @@
 				<p>Help</p>
 				<p><a href="/search">Search</a></p>
 				<p><a href="#">Mailing Lists</a></p>
-				<p><a href="https://github.com/gem5/new-website/tree/master/">Source For This Site</a></p>
+				<p><a href="https://github.com/gem5/new-website/tree/master/">Website Source</a></p>
 			<br></div>
 
 		</div>
