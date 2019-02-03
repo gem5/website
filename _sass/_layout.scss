@@ -6,11 +6,10 @@ html {
 body {
 	margin: 0;
   margin-bottom: 350px;
-	// color: $font-color;
 	font-family: $font-style;
-	// font-size: 1.1em;
-	// line-height: 1.6;
-	// -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 576px) {
+  body {margin-bottom: 600px;}
 }
 h1, h2, h3, h4 {
 	font-weight: 600;

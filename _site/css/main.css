@@ -15,6 +15,9 @@ body {
   margin-bottom: 350px;
   font-family: "Open Sans", sans-serif; }
 
+@media (max-width: 576px) {
+  body {
+    margin-bottom: 600px; } }
 h1, h2, h3, h4 {
   font-weight: 600;
   color: #425469;
