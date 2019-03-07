@@ -111,3 +111,15 @@ author: John
 date: yyyy-mm-dd
 ---
 ```
+
+# Note on the old website
+
+To take snapshot of the old gem5 website (e.g., for use as a mirror) use the following:
+
+```
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://m5sim.org
+```
+
+I think we should probably use m5sim.org so we can grab all of the old FS files, etc.
+
+When tested with `gem5.org` it is about 500 MB.
