@@ -1,9 +1,9 @@
 title: Documentation
 
 docs:
-  - title: Introduction
-    id: introduction
-    url: /introduction
+  - title: Learning gem5
+    id: learning_gem5
+    url: /learning_gem5
 
   - title: Getting Started
     id: pt1
