@@ -3,9 +3,9 @@ layout: documentation
 title: Event-driven programming
 parent: pt2
 permalink: /events/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Event-driven programming
 ========================

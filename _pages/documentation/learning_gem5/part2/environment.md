@@ -3,9 +3,9 @@ layout: documentation
 title: Setting up your development environment
 parent: pt2
 permalink: /environment/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Setting up your development environment
 =======================================

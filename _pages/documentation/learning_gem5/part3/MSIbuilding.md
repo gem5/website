@@ -3,9 +3,9 @@ layout: documentation
 title: Compiling a SLICC protocol
 parent: pt3
 permalink: /MSIbuilding/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Compiling a SLICC protocol
 ==========================

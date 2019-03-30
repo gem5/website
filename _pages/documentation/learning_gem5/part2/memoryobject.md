@@ -3,9 +3,9 @@ layout: documentation
 title: Creating SimObjects in the memory system
 parent: pt2
 permalink: /memoryobject/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Creating SimObjects in the memory system
 ========================================

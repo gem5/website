@@ -3,9 +3,9 @@ layout: documentation
 title: Configuring a simple Ruby system
 parent: pt3
 permalink: /configuration/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Configuring a simple Ruby system
 ================================

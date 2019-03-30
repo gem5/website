@@ -3,9 +3,9 @@ layout: documentation
 title: Declaring a state machine
 parent: pt3
 permalink: /cache-declarations/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Declaring a state machine
 =========================

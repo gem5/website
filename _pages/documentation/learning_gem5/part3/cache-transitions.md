@@ -3,9 +3,9 @@ layout: documentation
 title: Transition code blocks
 parent: pt3
 permalink: /cache-transitions/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Transition code blocks
 ======================

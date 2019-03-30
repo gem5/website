@@ -3,9 +3,9 @@ layout: documentation
 title: Creating a simple cache object
 parent: pt2
 permalink: /simplecache/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Creating a simple cache object
 ==============================

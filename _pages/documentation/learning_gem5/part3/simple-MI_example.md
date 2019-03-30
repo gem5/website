@@ -3,9 +3,9 @@ layout: documentation
 title: Configuring for a standard protocol
 parent: pt3
 permalink: /simple-MI_example/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Configuring for a standard protocol
 ===================================

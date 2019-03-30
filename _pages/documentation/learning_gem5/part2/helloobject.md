@@ -3,9 +3,9 @@ layout: documentation
 title: Creating a very simple SimObject
 parent: pt2
 permalink: /helloobject/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Creating a *very* simple SimObject
 ==================================

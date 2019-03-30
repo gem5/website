@@ -2,10 +2,9 @@
 layout: documentation
 title: Introduction to Ruby
 parent: pt3
-permalink: /MSIintro/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Introduction to Ruby
 ====================

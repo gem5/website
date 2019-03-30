@@ -3,9 +3,8 @@ layout: documentation
 title: Building gem5
 parent: pt1
 permalink: /building/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
 
 Building gem5
 =============

@@ -3,9 +3,9 @@ layout: documentation
 title: Debugging SLICC Protocols
 parent: pt3
 permalink: /MSIdebugging/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Debugging SLICC Protocols
 =========================

@@ -3,9 +3,9 @@ layout: documentation
 title: Action code blocks
 parent: pt3
 permalink: /cache-actions/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Action code blocks
 ==================

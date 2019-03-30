@@ -3,9 +3,9 @@ layout: documentation
 title: Using the default configuration scripts
 parent: pt1
 permalink: /example_configs/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Using the default configuration scripts
 =======================================

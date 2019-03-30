@@ -3,9 +3,9 @@ layout: documentation
 title: Understanding gem5 statistics and output
 parent: pt1
 permalink: /gem5_stats/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Understanding gem5 statistics and output
 ========================================

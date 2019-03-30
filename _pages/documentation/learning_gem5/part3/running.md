@@ -3,9 +3,9 @@ layout: documentation
 title: Running the simple Ruby system
 parent: pt3
 permalink: /running/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Running the simple Ruby system
 ==============================

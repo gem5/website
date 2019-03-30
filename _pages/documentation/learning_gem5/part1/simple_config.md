@@ -3,9 +3,9 @@ layout: documentation
 title: Creating a simple configuration script
 parent: pt1
 permalink: /simple_config/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Creating a simple configuration script
 ======================================

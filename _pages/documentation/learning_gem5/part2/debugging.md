@@ -3,9 +3,9 @@ layout: documentation
 title: Debugging gem5
 parent: pt2
 permalink: /debugging/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Debugging gem5
 ==============

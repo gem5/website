@@ -25,8 +25,11 @@ layout: default
   {% endfor %}
 </div>
 
+
 <div class="container" id="doc-container">
   <div class="edit"><a href="{{ site.sourceurl }}{{ page.path }}">Edit this page</a></div>
+  {% if page.author %}<b>authors:</b><br>{{ page.author }}{% endif %}
+
   {{ content }}
   <br>
 

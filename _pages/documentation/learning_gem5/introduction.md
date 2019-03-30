@@ -3,9 +3,8 @@ layout: documentation
 title: Learning gem5
 parent: introduction
 permalink: /learning_gem5/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
 
 
 Introduction

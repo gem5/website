@@ -3,9 +3,9 @@ layout: documentation
 title: MSI Directory implementation
 parent: pt3
 permalink: /directory/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 MSI Directory implementation
 ============================

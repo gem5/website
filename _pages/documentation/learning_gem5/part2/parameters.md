@@ -3,9 +3,9 @@ layout: documentation
 title: Adding parameters to SimObjects and more events
 parent: pt2
 permalink: /parameters/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Adding parameters to SimObjects and more events
 ===============================================

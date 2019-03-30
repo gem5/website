@@ -3,9 +3,9 @@ layout: documentation
 title: MSI example cache protocol
 parent: pt3
 permalink: /cache-intro/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 MSI example cache protocol
 ==========================

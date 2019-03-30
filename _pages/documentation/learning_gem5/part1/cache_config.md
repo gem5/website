@@ -3,9 +3,9 @@ layout: documentation
 title: Adding cache to configuration script
 parent: pt1
 permalink: /cache_config/
+author: Jason Lowe-Power
 ---
-authors
-:   Jason Lowe-Power
+
 
 Adding cache to the configuration script
 ========================================
