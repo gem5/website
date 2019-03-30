@@ -43,6 +43,10 @@ pre code {
 /**** NAVBAR ****/
 .navbar {
 	z-index: 1;
+  
+  .navbar-brand {
+    padding: 0 !important;
+  }
 }
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     display: block;
@@ -94,7 +98,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     padding-bottom: 8px;
 	}
   div.search {
-    padding-top: 5px;
+    padding-top: 90px;
     input {
       width: 88%;
       padding: 3px;

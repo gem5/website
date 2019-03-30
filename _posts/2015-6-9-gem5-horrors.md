@@ -2,7 +2,7 @@
 layout: post
 title: gem5 Horrors and what we can do about it
 author: Jason Lowe-Power
-date:   2015-6-9
+date: 2015-6-9
 ---
 
 ![image](/assets/img/gem5-horrors.png)

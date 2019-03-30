@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="sidenav-top">
-  <a href="/"><img src="{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}" height="80"></a>
+  <!-- <a href="/"><img src="{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}" height="80"></a> -->
   <div class="search">
     <form action="/search" method="get">
       <!-- <label for="search-box"><i class="fa fa-search"></i></label> -->
@@ -28,8 +28,10 @@ layout: default
 
 <div class="container" id="doc-container">
   <div class="edit"><a href="{{ site.sourceurl }}{{ page.path }}">Edit this page</a></div>
-  {% if page.author %}<b>authors:</b><br>{{ page.author }}{% endif %}
+  {% if page.author %}<b>authors:</b> {{ page.author }}<br>{% endif %}
+  {% if page.date %}<b>last edited:</b> {{ page.date }}<br>{% endif %}
 
+  <br>
   {{ content }}
   <br>
 

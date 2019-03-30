@@ -15,5 +15,7 @@ kramdown:
   toc_levels: "1,2"
 
 collections:
-  pages:
+  documentation:
     output: true
+
+collections_dir: pages
