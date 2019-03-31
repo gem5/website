@@ -2,10 +2,12 @@
 layout: documentation
 title: Learning gem5
 parent: introduction
-permalink: /learning_gem5/
+permalink: /introduction/
 author: Jason Lowe-Power
 ---
-
+{%for pg in site.learning_gem5%}
+{{pg.title}}
+{%endfor%}
 
 Introduction
 ============

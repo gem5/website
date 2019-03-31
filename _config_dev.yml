@@ -15,7 +15,9 @@ kramdown:
   toc_levels: "1,2"
 
 collections:
-  documentation:
+  # documentation:
+  #   output: true
+  learning_gem5:
     output: true
 
 collections_dir: pages

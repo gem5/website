@@ -1,10 +1,66 @@
 title: Documentation
 
 docs:
-  - title: Learning gem5
-    id: learning_gem5
-    url: /learning_gem5
+  - title: Introduction
+    id: introduction
+    url: /introduction
 
-  - title: gem5 101
-    id: gem5_101
-    url: /gem5_101
+  - title: Getting Started
+    id: pt1
+    subitems:
+      - page: Building gem5
+        url: /building
+      - page: Creating a simple configuration script
+        url: /simple_config
+      - page: Adding cache to configuration script
+        url: /cache_config
+      - page: Understanding gem5 statistics and output
+        url: /gem5_stats
+      - page: Using the default configuration scripts
+        url: /example_configs
+
+  - title: Modifying/Extending
+    id: pt2
+    subitems:
+      - page: Setting up your development environment
+        url: /environment
+      - page: Creating a very simple SimObject
+        url: /helloobject
+      - page: Debugging gem5
+        url: /debugging
+      - page: Event-driven programming
+        url: /events
+      - page: Adding parameters to SimObjects and more events
+        url: /parameters
+      - page: Creating SimObjects in the memory system
+        url: /memoryobject
+      - page: Creating a simple cache object
+        url: /simplecache
+
+  - title: Modeling Cache Coherence with Ruby
+    id: pt3
+    subitems:
+      - page: Introduction to Ruby
+        url: /MSIintro
+      - page: MSI example cache protocol
+        url: /cache-intro
+      - page: Declaring a state machine
+        url: /cache-declarations
+      - page: In port code blocks
+        url: /cache-in-ports
+      - page: Action code blocks
+        url: /cache-actions
+      - page: Transition code blocks
+        url: /cache-transitions
+      - page: MSI Directory implementation
+        url: /directory
+      - page: Compiling a SLICC protocol
+        url: /MSIbuilding
+      - page: Configuring a simple Ruby system
+        url: /configuration
+      - page: Running the simple Ruby system
+        url: /running
+      - page: Debugging SLICC Protocols
+        url: /MSIdebugging
+      - page: Configuring for a standard protocol
+        url: /simple-MI_example
