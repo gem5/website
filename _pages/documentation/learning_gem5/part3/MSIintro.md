@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Introduction to Ruby
+doc: Learning gem5
 parent: pt3
 author: Jason Lowe-Power
 ---

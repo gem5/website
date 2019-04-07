@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Configuring a simple Ruby system
+doc: Learning gem5
 parent: pt3
 permalink: /configuration/
 author: Jason Lowe-Power

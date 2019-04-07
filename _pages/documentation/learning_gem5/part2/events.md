@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Event-driven programming
+doc: Learning gem5
 parent: pt2
 permalink: /events/
 author: Jason Lowe-Power

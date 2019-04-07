@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Declaring a state machine
+doc: Learning gem5
 parent: pt3
 permalink: /cache-declarations/
 author: Jason Lowe-Power

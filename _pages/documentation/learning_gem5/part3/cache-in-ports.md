@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: In port code blocks
+doc: Learning gem5
 parent: pt3
 permalink: /cache-in-ports/
 author: Jason Lowe-Power

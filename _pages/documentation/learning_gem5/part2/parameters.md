@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Adding parameters to SimObjects and more events
+doc: Learning gem5
 parent: pt2
 permalink: /parameters/
 author: Jason Lowe-Power

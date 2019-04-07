@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Action code blocks
+doc: Learning gem5
 parent: pt3
 permalink: /cache-actions/
 author: Jason Lowe-Power

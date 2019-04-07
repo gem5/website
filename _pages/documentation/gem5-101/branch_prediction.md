@@ -1,8 +1,10 @@
 ---
-title: "Branch prediction"
-date: 2018-05-12T23:01:19-04:00
-draft: false
-weight: 40
+layout: documentation
+title: Branch Prediction
+doc: gem5 101
+parent: introduction
+permalink: /branch_prediction/
+author: Jason Lowe-Power
 ---
 
 From the ISA, we now move on to the processor micro-architecture. Part
@@ -11,5 +13,3 @@ analyzes the performance of a pipelined implementation. Specifically,
 you will learn how the latency and bandwidth of different pipeline
 stages affect overall performance. Also, a sample usage of gem5
 pseudo-instructions is also included at no additional cost.
-
-

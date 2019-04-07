@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Adding cache to configuration script
+doc: Learning gem5
 parent: pt1
 permalink: /cache_config/
 author: Jason Lowe-Power

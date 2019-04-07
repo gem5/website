@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Debugging gem5
+doc: Learning gem5
 parent: pt2
 permalink: /debugging/
 author: Jason Lowe-Power

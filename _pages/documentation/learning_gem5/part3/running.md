@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Running the simple Ruby system
+doc: Learning gem5
 parent: pt3
 permalink: /running/
 author: Jason Lowe-Power

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Transition code blocks
+doc: Learning gem5
 parent: pt3
 permalink: /cache-transitions/
 author: Jason Lowe-Power

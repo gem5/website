@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Creating a simple cache object
+doc: Learning gem5
 parent: pt2
 permalink: /simplecache/
 author: Jason Lowe-Power

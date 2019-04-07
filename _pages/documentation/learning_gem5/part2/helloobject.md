@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Creating a very simple SimObject
+doc: Learning gem5
 parent: pt2
 permalink: /helloobject/
 author: Jason Lowe-Power

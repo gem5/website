@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Configuring for a standard protocol
+doc: Learning gem5
 parent: pt3
 permalink: /simple-MI_example/
 author: Jason Lowe-Power

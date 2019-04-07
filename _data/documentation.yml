@@ -66,22 +66,13 @@ docs:
           url: /MSIdebugging
         - page: Configuring for a standard protocol
           url: /simple-MI_example
+
   - title: gem5 101
     items:
-      - title: Introduction
-        id: introduction
-        url: /introduction
+      - title: gem5 101
+        id: gem5_101
+        url: /gem5_101
 
-      - title: Getting Started
-        id: pt1
-        subitems:
-          - page: Building gem5
-            url: /building
-          - page: Creating a simple configuration script
-            url: /simple_config
-          - page: Adding cache to configuration script
-            url: /cache_config
-          - page: Understanding gem5 statistics and output
-            url: /gem5_stats
-          - page: Using the default configuration scripts
-            url: /example_configs
+      - title: Branch Prediction
+        id: branch_prediction
+        url: /branch_prediction

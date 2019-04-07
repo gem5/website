@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Setting up your development environment
+doc: Learning gem5
 parent: pt2
 permalink: /environment/
 author: Jason Lowe-Power

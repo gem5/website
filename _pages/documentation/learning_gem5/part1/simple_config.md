@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Creating a simple configuration script
+doc: Learning gem5
 parent: pt1
 permalink: /simple_config/
 author: Jason Lowe-Power

@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: MSI example cache protocol
+doc: Learning gem5
 parent: pt3
 permalink: /cache-intro/
 author: Jason Lowe-Power
