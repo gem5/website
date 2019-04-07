@@ -1,13 +1,11 @@
 ---
 layout: documentation
 title: Learning gem5
+doc: Learning gem5
 parent: introduction
 permalink: /introduction/
 author: Jason Lowe-Power
 ---
-{%for pg in site.learning_gem5%}
-{{pg.title}}
-{%endfor%}
 
 Introduction
 ============

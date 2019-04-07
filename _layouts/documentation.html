@@ -13,7 +13,21 @@ layout: default
 </div>
 <div class="sidenav">
   <!-- Pull navigation from _data/documentation.yml -->
-  {% for item in site.data.documentation.docs %}
+  {% for doc in site.data.documentation.docs %}
+    {% if doc.title == page.doc %}
+    {% for item in doc.items %}
+      <a class="item" {% if item.url %}href="{{ item.url | prepend: site.baseurl }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">
+        {{ item.title }}
+      </a>
+      <div class="collapse {% if page.parent == item.id %}show{% endif %}" id="{{ item.id }}">
+        {% for subitem in item.subitems %}
+          <a class="subitem {% if subitem.page == page.title %}active{% endif %}" href="{{ subitem.url | prepend: site.baseurl }}">{{ subitem.page }}</a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    {% endif %}
+  {% endfor %}
+  <!-- {% for item in site.learning_gem5 %}
     <a class="item" {% if item.url %}href="{{ item.url | prepend: site.baseurl }}"{% else %}data-toggle="collapse" href="#{{ item.id }}"{% endif %} role="button" aria-expanded="false" aria-controls="collapseExample">
       {{ item.title }}
     </a>
@@ -22,7 +36,7 @@ layout: default
         <a class="subitem {% if subitem.page == page.title %}active{% endif %}" href="{{ subitem.url | prepend: site.baseurl }}">{{ subitem.page }}</a>
       {% endfor %}
     </div>
-  {% endfor %}
+  {% endfor %} -->
 </div>
 
 

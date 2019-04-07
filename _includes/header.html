@@ -29,7 +29,8 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					{% for item in site.data.documentation.docs %}
-            <a class="dropdown-item" href="{% if item.url %}{{ item.url | prepend: site.baseurl }}{% else %}{{ item.subitems[0].url | prepend: site.baseurl }}{% endif %}">{{ item.title }}</a>
+          <!-- {% if item.url %}{{ item.url | prepend: site.baseurl }}{% else %}{{ item.subitems[0].url | prepend: site.baseurl }}{% endif %} -->
+            <a class="dropdown-item" href="{{ item.items[0].url | prepend: site.baseurl }}">{{ item.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
