@@ -70,9 +70,22 @@ docs:
   - title: gem5 101
     items:
       - title: gem5 101
-        id: gem5_101
         url: /gem5_101
 
+      - title: Hello World
+        url: /hello_world
+
+      - title: Adding An Instruction
+        url: /adding_an_instruction
+
+      - title: CPU Models
+        url: /cpu_models
+
       - title: Branch Prediction
-        id: branch_prediction
         url: /branch_prediction
+
+      - title: Caches
+        url: /caches
+
+      - title: Multi Core
+        url: /multi_core

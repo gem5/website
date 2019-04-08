@@ -2,7 +2,6 @@
 layout: documentation
 title: Branch Prediction
 doc: gem5 101
-parent: introduction
 permalink: /branch_prediction/
 author: Jason Lowe-Power
 ---

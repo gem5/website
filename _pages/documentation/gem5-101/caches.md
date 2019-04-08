@@ -1,14 +1,15 @@
 ---
-title: "Caches"
+layout: documentation
+title: Caches
+doc: gem5 101
+permalink: /caches/
+author: Jason Lowe-Power
 date: 2018-05-12T23:01:31-04:00
-draft: false
-weight: 50
 ---
 
+## Part 5 Caches
 After looking at the processor core, we now turn our attention to the
 cache hierarchy. We continue our focus on experimentation, and consider
 tradeoffs in cache design such as replacement policies and
 set-associativity. Furthermore, we also learn more about the gem5
 simulator, and create our first simObject\!
-
-
