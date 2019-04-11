@@ -1,6 +1,11 @@
 ---
+layout: toc
 title: "Events"
+parent: events
+permalink: /events/
 ---
+* TOC
+{:toc}
 
 We have held a handful of tutorials on M5/gem5s at various conferences. Though
 the material in these tutorials can be out of date, the tutorial
