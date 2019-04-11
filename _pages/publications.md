@@ -44,7 +44,51 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 *   [**System Simulation with gem5 and SystemC: The Keystone for Full Interoperability**](http://samos-conference.com/Resources_Samos_Websites/Proceedings_Repository_SAMOS/2017/49_Final_Paper.pdf). C. Menard, M. Jung, J. Castrillon, N. Wehn. IEEE International Conference on Embedded Computer Systems Architectures Modeling and Simulation (SAMOS), July, 2017
 
+# Derivative projects
 
+Below is a list of projects that are based on gem5, are extensions of
+gem5, or use gem5.
+
+## gem5-gpu
+
+  - Merges 2 popular simulators: gem5 and GPGPU-Sim
+  - Simulates CPUs, GPUs, and the interactions between them
+  - Models a flexible memory system with support for heterogeneous
+    processors and coherence
+  - Supports full-system simulation through GPU driver emulation
+
+### Resources
+
+  - [Home Page](https://gem5-gpu.cs.wisc.edu)
+  - [Overview slides](http://gem5.org/wiki/images/7/7d/2012_12_gem5_gpu.pdf)
+  - [Mailing list](http://groups.google.com/group/gem5-gpu-dev)
+
+## MV5
+
+  - MV5 is a reconfigurable simulator for heterogeneous multicore
+    architectures. It is based on M5v2.0 beta 4.
+  - Typical usage: simulating data-parallel applications on SIMT cores
+    that operate over directory-based cache hierarchies. You can also
+    add out-of-order cores to have a heterogeneous system, and all
+    different types of cores can operate under the same address space
+    through the same cache hierarchy.
+  - Research projects based on MV5 have been published in ISCA'10,
+    ICCD'09, and IPDPS'10.
+
+### Features
+
+  - Single-Instruction, Multiple-Threads (SIMT) cores
+  - Directory-based Coherence Cache: MESI/MSI. (Not based on gems/ruby)
+  - Interconnect: Fully connected and 2D Mesh. (Not based on gems/ruby)
+  - Threading API/library in system emulation mode (No support for
+    full-system simulation. A benchmark suite using the thread API is
+    provided)
+
+### Resources
+
+  - [Home Page](https://sites.google.com/site/mv5sim/home)
+  - [Tutorial at ISPASS '11](https://sites.google.com/site/mv5sim/tutorial)
+  - [Google group](http://groups.google.com/group/mv5sim)
 
 # Other Publications related to gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#other-publications-related-to-gem5"></span>
 ---
@@ -391,41 +435,3 @@ If you use gem5 in your research, we would appreciate a citation to the original
 ## 2002<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2002"></span>
 
 *   _A Scalable Instruction Queue Design Using Dependence Chains_. S. E. Raasch, N. L. Binkert, and S. K. Reinhardt. Proc. 29th Annual Int’l Symp. on Computer Architecture (ISCA), pp. 318-329, May 2002. [pdf](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.pdf) [ps](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.ps) [ps.gz](http://www.eecs.umich1111/~stever/pubs/isca02_segiq.ps.gz)
-
-
-
-# Derivative projects
----
-Below is a list of projects that are based on gem5, are extensions of gem5, or use gem5.
-
-## MV5
-
-*   MV5 is a reconfigurable simulator for heterogeneous multicore architectures. It is based on M5v2.0 beta 4.
-*   Typical usage: simulating data-parallel applications on SIMT cores that operate over directory-based cache hierarchies. You can also add out-of-order cores to have a heterogeneous system, and all different types of cores can operate under the same address space through the same cache hierarchy.
-*   Research projects based on MV5 have been published in ISCA’10, ICCD’09, and IPDPS’10.
-
-### Features<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#features"></span>
-
-*   Single-Instruction, Multiple-Threads (SIMT) cores
-*   Directory-based Coherence Cache: MESI/MSI. (Not based on gems/ruby)
-*   Interconnect: Fully connected and 2D Mesh. (Not based on gems/ruby)
-*   Threading API/library in system emulation mode (No support for full-system simulation. A benchmark suite using the thread API is provided)
-
-### Resources<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#resources"></span>
-
-*   Home Page: [1](https://sites.google.com/site/mv5sim/home)
-*   Tutorial at ISPASS ‘11: [2](https://sites.google.com/site/mv5sim/tutorial)
-*   Google group: [3](http://groups.google.com/group/mv5sim)
-
-## gem5-gpu
-
-*   Merges 2 popular simulators: gem5 and gpgpu-sim
-*   Simulates CPUs, GPUs, and the interactions between them
-*   Models a flexible memory system with support for heterogeneous processors and coherence
-*   Supports full-system simulation through GPU driver emulation
-
-### Resources<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/projects/#resources-1"></span>
-
-*   Home Page: [4](https://gem5-gpu.cs.wisc.edu)
-*   Overview slides: [5](http://gem5.org/wiki/images/7/7d/2012_12_gem5_gpu.pdf)
-*   Mailing list: [6](http://groups.google.com/group/gem5-gpu-dev)
