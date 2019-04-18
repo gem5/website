@@ -6,13 +6,16 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <!-- LIST FOR NAVBAR -->
     <ul class="navbar-nav ml-auto">
+      <!-- HOME -->
       <li class="nav-item {% if page.title == "Home" %}active{% endif %}">
         <a class="nav-link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
       </li>
 
+      <!-- ABOUT -->
 			<li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
-				<a class="nav-link dropdown-toggle" href="/about" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					About
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -22,27 +25,30 @@
 				</div>
 			</li>
 
+      <!-- DOCUMENTATION -->
 			<li class="nav-item dropdown {% if page.layout == "documentation" %}active{% endif %}">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					{{ site.data.documentation.title }}
+				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Documentation
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<!-- Pull navigation from _data/documentation.yml -->
 					{% for item in site.data.documentation.docs %}
-          <!-- {% if item.url %}{{ item.url | prepend: site.baseurl }}{% else %}{{ item.subitems[0].url | prepend: site.baseurl }}{% endif %} -->
             <a class="dropdown-item" href="{{ item.items[0].url | prepend: site.baseurl }}">{{ item.title }}</a>
 					{% endfor %}
 				</div>
 			</li>
 
+      <!-- CONTRIBUTING -->
       <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
         <a class="nav-link" href="{{ "/contributing" | prepend: site.baseurl }}">Contributing</a>
       </li>
 
+      <!-- BLOG -->
       <li class="nav-item {% if page.url == "/blog/" %}active{% endif %}">
         <a class="nav-link" href="{{ "/blog" | prepend: site.baseurl }}">Blog</a>
       </li>
 
+      <!-- SEARCH -->
 			<li class="nav-item {% if page.title == "Search" %}active{% endif %}">
         <a class="nav-link" href="{{ "/search" | prepend: site.baseurl }}">Search</a>
       </li>

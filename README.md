@@ -44,6 +44,39 @@ Images and javascript files.
 #### blog
 Holds index.html of blog page.
 
+
+## Navigation
+To edit the navigation bar:
+Go to `_includes/header.html`
+Navigation element without submenu:
+```
+<li class="nav-item {% if page.title == "Home" %}active{% endif %}">
+  <a class="nav-link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
+</li>
+```
+Replace `Home` in `{% if page.title == "Home" %}` to your page's title.
+Replace `/` in `href="{{ "/" | prepend: site.baseurl }}"` to the page's permalink.
+Replace `Home` in `>Home</a>` with what you want the navbar to show.
+
+
+Navigation element with submenu:
+```
+<li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
+  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    About
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <a class="dropdown-item" href="{{ "/about" | prepend: site.baseurl }}">About</a>
+    <a class="dropdown-item" href="{{ "/publications" | prepend: site.baseurl }}">Publications</a>
+    <a class="dropdown-item" href="{{ "/governance" | prepend: site.baseurl }}">Governance</a>
+  </div>
+</li>
+```
+Replace `about` in `{% if page.parent == "about" %}` to a word that will represent the parent of all pages in the submenu. Make sure the frontmatter in those pages include parent: [your_parent_identifier].
+Replace the permalink and title in all the `<a></a>` submenu items.
+
+
+
 ## Documentation
 #### Edit Documentation Navigation
 ##### Structure:
