@@ -4,6 +4,13 @@ sourceurl: "https://github.com/gem5/new-website/tree/master/"
 url: "http://localhost:4000"
 baseurl: ""
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+
 # Build Settings
 sass:
   sass_dir: _sass
