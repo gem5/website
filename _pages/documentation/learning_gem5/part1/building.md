@@ -276,5 +276,5 @@ nee to also install all of the `autoconf` tools. On Ubuntu, you can use
 the following command.
 
 ```
-sudo apt install automake
+sudo apt-get install automake
 ```
