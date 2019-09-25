@@ -23,7 +23,7 @@ On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
 ```
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev libboost-all-dev python
 ```
 
 1.  git ([Git](https://git-scm.com/)):
@@ -78,6 +78,13 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
         ```
         sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+        ```
+
+6. [Boost](https://www.boost.org/)
+    :   The Boost library is a set of general purpose C++ libraries used by Gem5.
+
+        ```
+        sudo apt-get install libboost-all-dev
         ```
 
 Getting the code
