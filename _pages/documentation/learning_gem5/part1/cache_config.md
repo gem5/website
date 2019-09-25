@@ -49,7 +49,7 @@ that are used to configure Cache objects.
 > your results, use Ruby. Otherwise, if the coherence protocol isn't
 > important to you, use the classic caches.
 >
-> A long-term goal of gem5 is to unify these to cache models into a
+> A long-term goal of gem5 is to unify these two cache models into a
 > single holistic model.
 
 ### Cache
