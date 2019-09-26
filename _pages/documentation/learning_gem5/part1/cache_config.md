@@ -219,7 +219,7 @@ system.cpu.dcache.connectCPU(system.cpu)
 
 You need to *remove* the lines which connected the cache
 ports directly to the memory bus, replacing them with
-the following two lines/
+the following two lines:
 
 ```
 system.cpu.icache_port = system.membus.slave
