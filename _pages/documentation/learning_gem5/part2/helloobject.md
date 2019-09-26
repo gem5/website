@@ -58,6 +58,7 @@ and the C++ header that will define the C++ class for the SimObject.
 We can create a file, HelloObject.py, in `src/learning_gem5`
 
 ```python
+```
 from m5.params import *
 from m5.SimObject import SimObject
 
@@ -107,7 +108,11 @@ parameter type's name is "HelloObject\**Params*\*".
 
 The code required for our simple header file is listed below.
 
+<<<<<<< HEAD
 ```cpp
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 #ifndef __LEARNING_GEM5_HELLO_OBJECT_HH__
 #define __LEARNING_GEM5_HELLO_OBJECT_HH__
 
@@ -136,7 +141,11 @@ should use debug flags. In the [next chapter](debugging-chapter), we
 will modify this to use debug flags instead. However, for now, we'll
 simply use `std::cout` because it is simple.
 
+<<<<<<< HEAD
 ```cpp
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 #include "learning_gem5/hello_object.hh"
 
 #include <iostream>
@@ -155,7 +164,11 @@ declaration, namely, the `create` function. This function simply returns
 a new instantiation of the SimObject. Usually this function is very
 simple (as below).
 
+<<<<<<< HEAD
 ```cpp
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 HelloObject*
 HelloObjectParams::create()
 {
@@ -203,7 +216,11 @@ file with the name "SConscript" in the `src/learning_gem5` directory. In
 this file, you have to declare the SimObject and the `.cc` file. Below
 is the required code.
 
+<<<<<<< HEAD
 ```python
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 Import('*')
 
 SimObject('HelloObject.py')
@@ -236,7 +253,11 @@ object. All gem5 instances require a `Root` object.
 Walking through creating a *very* simple configuration script, first,
 import m5 and all of the objects you have compiled.
 
+<<<<<<< HEAD
 ```python
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 import m5
 from m5.objects import *
 ```
@@ -244,7 +265,11 @@ from m5.objects import *
 Next, you have to instantiate the `Root` object, as required by all gem5
 instances.
 
+<<<<<<< HEAD
 ```python
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 root = Root(full_system = False)
 ```
 
@@ -255,14 +280,22 @@ an instantiation of your object, you need to make sure that it is a
 child of the root object. Only SimObjects that are children of the
 `Root` object are instantiated in `C++`.
 
+<<<<<<< HEAD
 ```python
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 root.hello = HelloObject()
 ```
 
 Finally, you need to call `instantiate` on the `m5` module and actually
 run the simulation!
 
+<<<<<<< HEAD
 ```python
+=======
+```
+>>>>>>> Fixed some bad formatting of code segments. Also commented out some
 m5.instantiate()
 
 print("Beginning simulation!")
