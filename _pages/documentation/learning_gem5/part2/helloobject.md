@@ -136,7 +136,7 @@ should use debug flags. In the [next chapter](debugging-chapter), we
 will modify this to use debug flags instead. However, for now, we'll
 simply use `std::cout` because it is simple.
 
-```cpp
+``` {.sourceCode .c++}
 #include "learning_gem5/hello_object.hh"
 
 #include <iostream>
@@ -155,7 +155,7 @@ declaration, namely, the `create` function. This function simply returns
 a new instantiation of the SimObject. Usually this function is very
 simple (as below).
 
-```cpp
+``` {.sourceCode .c++}
 HelloObject*
 HelloObjectParams::create()
 {
@@ -163,8 +163,8 @@ HelloObjectParams::create()
 }
 ```
 
-[//]: # You can find the complete file
-[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
+You can find the complete file
+here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
 
 If you forget to add the create function for your SimObject, you will
 get a linker error when you compile. It will look something like the
