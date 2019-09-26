@@ -210,8 +210,8 @@ SimObject('HelloObject.py')
 Source('hello_object.cc')
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/SConscript\>.
+[//]: # You can find the complete file
+[//]: # here \<../\_static/scripts/part2/helloobject/SConscript\>.
 
 Step 4: (Re)-build gem5
 -----------------------
