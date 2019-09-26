@@ -41,7 +41,7 @@ events](events-chapter), and [parameters](parameters-chapter).
 > gem5, is to create a new branch to store your changes. Details on git
 > branches can be found in the Git book\_.
 >
-> ``` {.sourceCode .sh}
+> ```
 > git checkout -b hello-simobject
 > ```
 
@@ -57,7 +57,7 @@ and the C++ header that will define the C++ class for the SimObject.
 
 We can create a file, HelloObject.py, in `src/learning_gem5`
 
-``` {.sourceCode .python}
+```
 from m5.params import *
 from m5.SimObject import SimObject
 
@@ -66,8 +66,8 @@ class HelloObject(SimObject):
     cxx_header = "learning_gem5/hello_object.hh"
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/HelloObject.py\>.
+[//]: # You can find the complete file
+[//]: # [here](/_static/scripts/part2/helloobject/HelloObject.py)
 
 It is not required that the `type` be the same as the name of the class,
 but it is convention. The `type` is the C++ class that you are wrapping
@@ -107,7 +107,7 @@ parameter type's name is "HelloObject\**Params*\*".
 
 The code required for our simple header file is listed below.
 
-``` {.sourceCode .c++}
+```
 #ifndef __LEARNING_GEM5_HELLO_OBJECT_HH__
 #define __LEARNING_GEM5_HELLO_OBJECT_HH__
 
@@ -123,8 +123,8 @@ class HelloObject : public SimObject
 #endif // __LEARNING_GEM5_HELLO_OBJECT_HH__
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/hello\_object.hh\>.
+[//]: # You can find the complete file
+[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.hh\>.
 
 Next, we need to implement *two* functions in the `.cc` file, not just
 one. The first function, is the constructor for the `HelloObject`. Here
@@ -136,7 +136,7 @@ should use debug flags. In the [next chapter](debugging-chapter), we
 will modify this to use debug flags instead. However, for now, we'll
 simply use `std::cout` because it is simple.
 
-``` {.sourceCode .c++}
+```
 #include "learning_gem5/hello_object.hh"
 
 #include <iostream>
@@ -155,7 +155,7 @@ declaration, namely, the `create` function. This function simply returns
 a new instantiation of the SimObject. Usually this function is very
 simple (as below).
 
-``` {.sourceCode .c++}
+```
 HelloObject*
 HelloObjectParams::create()
 {
@@ -163,8 +163,8 @@ HelloObjectParams::create()
 }
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
+[//]: # You can find the complete file
+[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
 
 If you forget to add the create function for your SimObject, you will
 get a linker error when you compile. It will look something like the
@@ -203,7 +203,7 @@ file with the name "SConscript" in the `src/learning_gem5` directory. In
 this file, you have to declare the SimObject and the `.cc` file. Below
 is the required code.
 
-``` {.sourceCode .python}
+```
 Import('*')
 
 SimObject('HelloObject.py')
@@ -220,7 +220,7 @@ To compile and link your new files you simply need to recompile gem5.
 The below example assumes you are using the x86 ISA, but nothing in our
 object requires an ISA so, this will work with any of gem5's ISAs.
 
-``` {.sourceCode .sh}
+```
 scons build/X86/gem5.opt
 ```
 
@@ -236,7 +236,7 @@ object. All gem5 instances require a `Root` object.
 Walking through creating a *very* simple configuration script, first,
 import m5 and all of the objects you have compiled.
 
-``` {.sourceCode .python}
+```
 import m5
 from m5.objects import *
 ```
@@ -244,7 +244,7 @@ from m5.objects import *
 Next, you have to instantiate the `Root` object, as required by all gem5
 instances.
 
-``` {.sourceCode .python}
+```
 root = Root(full_system = False)
 ```
 
@@ -255,14 +255,14 @@ an instantiation of your object, you need to make sure that it is a
 child of the root object. Only SimObjects that are children of the
 `Root` object are instantiated in `C++`.
 
-``` {.sourceCode .python}
+```
 root.hello = HelloObject()
 ```
 
 Finally, you need to call `instantiate` on the `m5` module and actually
 run the simulation!
 
-``` {.sourceCode .python}
+```
 m5.instantiate()
 
 print("Beginning simulation!")
@@ -271,8 +271,8 @@ print('Exiting @ tick {} because {}'
       .format(m5.curTick(), exit_event.getCause()))
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/run\_hello.py\>.
+[//]: # You can find the complete file
+[//]: # here \<../\_static/scripts/part2/helloobject/run\_hello.py\>.
 
 The output should look something like the following
 
