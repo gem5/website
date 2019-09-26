@@ -285,7 +285,7 @@ parser.add_option('--l2_size', help="Unified L2 cache size")
 ```
 
 Now, you can run
-`build/X86/gem5.opt configs/tutorial/two_level_opts.py --help` which
+`build/X86/gem5.opt configs/tutorial/two_level.py --help` which
 will display the options you just added.
 
 Next, we need to pass these options onto the caches that we create in
