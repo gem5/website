@@ -163,8 +163,8 @@ HelloObjectParams::create()
 }
 ```
 
-You can find the complete file
-here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
+[//]: # You can find the complete file
+[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
 
 If you forget to add the create function for your SimObject, you will
 get a linker error when you compile. It will look something like the
@@ -236,7 +236,7 @@ object. All gem5 instances require a `Root` object.
 Walking through creating a *very* simple configuration script, first,
 import m5 and all of the objects you have compiled.
 
-```python
+```
 import m5
 from m5.objects import *
 ```
@@ -244,7 +244,7 @@ from m5.objects import *
 Next, you have to instantiate the `Root` object, as required by all gem5
 instances.
 
-```python
+```
 root = Root(full_system = False)
 ```
 
@@ -255,14 +255,14 @@ an instantiation of your object, you need to make sure that it is a
 child of the root object. Only SimObjects that are children of the
 `Root` object are instantiated in `C++`.
 
-```python
+```
 root.hello = HelloObject()
 ```
 
 Finally, you need to call `instantiate` on the `m5` module and actually
 run the simulation!
 
-```python
+```
 m5.instantiate()
 
 print("Beginning simulation!")
