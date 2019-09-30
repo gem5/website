@@ -108,11 +108,7 @@ parameter type's name is "HelloObject\**Params*\*".
 
 The code required for our simple header file is listed below.
 
-<<<<<<< HEAD
 ```cpp
-=======
-```
->>>>>>> Fixed some bad formatting of code segments. Also commented out some
 #ifndef __LEARNING_GEM5_HELLO_OBJECT_HH__
 #define __LEARNING_GEM5_HELLO_OBJECT_HH__
 
@@ -217,10 +213,14 @@ this file, you have to declare the SimObject and the `.cc` file. Below
 is the required code.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ```python
 =======
 ```
 >>>>>>> Fixed some bad formatting of code segments. Also commented out some
+=======
+```python
+>>>>>>> "replaying" -> "replacing"
 Import('*')
 
 SimObject('HelloObject.py')
