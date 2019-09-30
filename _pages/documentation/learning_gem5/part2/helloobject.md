@@ -203,7 +203,7 @@ file with the name "SConscript" in the `src/learning_gem5` directory. In
 this file, you have to declare the SimObject and the `.cc` file. Below
 is the required code.
 
-```
+```python
 Import('*')
 
 SimObject('HelloObject.py')
