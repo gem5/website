@@ -23,7 +23,7 @@ On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
 ```
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev libboost-all-dev python
 ```
 
 1.  git ([Git](https://git-scm.com/)):
@@ -35,7 +35,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         to install Git in Ubuntu use
 
         ```
-        sudo apt-get install git
+        sudo apt install git
         ```
 
 2.  gcc 4.8+
@@ -45,7 +45,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         On Ubuntu, you can install a development environment with
 
         ```
-        sudo apt-get install build-essential
+        sudo apt install build-essential
         ```
 
 3.  [SCons](http://www.scons.org/)
@@ -56,7 +56,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         To get SCons on Ubuntu use
 
         ```
-        sudo apt-get install scons
+        sudo apt install scons
         ```
 
 4.  Python 2.7+
@@ -64,7 +64,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         these on Ubuntu use
 
         ```
-        sudo apt-get install python-dev
+        sudo apt install python-dev
         ```
 
 5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+
@@ -77,7 +77,14 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         generation and playback.
 
         ```
-        sudo apt-get install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+        sudo apt install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+        ```
+
+6. [Boost](https://www.boost.org/)
+    :   The Boost library is a set of general purpose C++ libraries used by Gem5.
+
+        ```
+        sudo apt install libboost-all-dev
         ```
 
 Getting the code
@@ -262,5 +269,5 @@ nee to also install all of the `autoconf` tools. On Ubuntu, you can use
 the following command.
 
 ```
-sudo apt-get install automake
+sudo apt install automake
 ```

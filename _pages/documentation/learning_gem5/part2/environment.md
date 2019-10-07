@@ -34,7 +34,7 @@ The key takeaways from the style guide are:
 -   Use 4 spaces, not tabs
 -   Sort the includes
 -   Use capitalized camel case for class names, camel case for member
-    variables, and underscores for local variables.
+    variables and functions, and snake case for local variables.
 -   Document your code
 
 git branches

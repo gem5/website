@@ -49,7 +49,7 @@ that are used to configure Cache objects.
 > your results, use Ruby. Otherwise, if the coherence protocol isn't
 > important to you, use the classic caches.
 >
-> A long-term goal of gem5 is to unify these to cache models into a
+> A long-term goal of gem5 is to unify these two cache models into a
 > single holistic model.
 
 ### Cache
@@ -191,7 +191,7 @@ created in the last chapter \<simple-config-chapter\>.
 First, let's copy the script to a new name.
 
 ```
-cp simple.py two_level.py
+cp ./configs/tutorial/simple.py ./configs/tutorial/two_level.py
 ```
 
 First, we need to import the names from the `caches.py` file into the
@@ -217,12 +217,13 @@ system.cpu.icache.connectCPU(system.cpu)
 system.cpu.dcache.connectCPU(system.cpu)
 ```
 
-Also, You need to *remove* the previous lines which connected the cache
-ports directly to the memory bus.
+You need to *remove* the lines which connected the cache
+ports directly to the memory bus, replacing them with
+the following two lines/
 
 ```
--system.cpu.icache_port = system.membus.slave
--system.cpu.dcache_port = system.membus.slave
+system.cpu.icache_port = system.membus.slave
+system.cpu.dcache_port = system.membus.slave
 ```
 
 We can't directly connect the L1 caches to the L2 cache since the L2
@@ -237,7 +238,7 @@ system.cpu.icache.connectBus(system.l2bus)
 system.cpu.dcache.connectBus(system.l2bus)
 ```
 
-Next, we can create out L2 cache and connect it to the L2 bus and the
+Next, we can create our L2 cache and connect it to the L2 bus and the
 memory bus.
 
 ```
@@ -284,7 +285,7 @@ parser.add_option('--l2_size', help="Unified L2 cache size")
 ```
 
 Now, you can run
-`build/X86/gem5.opt configs/tutorial/two_level_opts.py --help` which
+`build/X86/gem5.opt configs/tutorial/two_level.py --help` which
 will display the options you just added.
 
 Next, we need to pass these options onto the caches that we create in
@@ -354,7 +355,7 @@ With these changes, you can now pass the cache sizes into your script
 from the command line like below.
 
 ```
-build/X86/gem5.opt configs/tutorial/two_level_opts.py --l2_size='1MB' --l1d_size='128kB'
+build/X86/gem5.opt configs/tutorial/two_level.py --l2_size='1MB' --l1d_size='128kB'
 ```
 
     gem5 Simulator System.  http://gem5.org
