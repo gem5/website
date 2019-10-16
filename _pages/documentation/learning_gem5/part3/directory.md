@@ -2,8 +2,8 @@
 layout: documentation
 title: MSI Directory implementation
 doc: Learning gem5
-parent: pt3
-permalink: /directory/
+parent: part3
+permalink: /documentation/learning_gem5/part3/directory/
 author: Jason Lowe-Power
 ---
 

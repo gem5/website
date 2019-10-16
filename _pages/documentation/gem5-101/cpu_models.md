@@ -2,7 +2,8 @@
 layout: documentation
 title: CPU Models
 doc: gem5 101
-permalink: /cpu_models/
+parent: gem5_101
+permalink: /gem5_101/cpu_models/
 author: Jason Lowe-Power
 ---
 

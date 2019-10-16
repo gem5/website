@@ -2,8 +2,8 @@
 layout: documentation
 title: Debugging SLICC Protocols
 doc: Learning gem5
-parent: pt3
-permalink: /MSIdebugging/
+parent: part3
+permalink: /documentation/learning_gem5/part3/MSIdebugging/
 author: Jason Lowe-Power
 ---
 

@@ -2,8 +2,8 @@
 layout: documentation
 title: Creating SimObjects in the memory system
 doc: Learning gem5
-parent: pt2
-permalink: /memoryobject/
+parent: part2
+permalink: /documentation/learning_gem5/part2/memoryobject/
 author: Jason Lowe-Power
 ---
 

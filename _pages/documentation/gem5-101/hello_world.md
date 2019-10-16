@@ -3,7 +3,8 @@ layout: documentation
 title: Hello World
 doc: gem5 101
 id: gem5_101
-permalink: /hello_world/
+parent: gem5_101
+permalink: /gem5_101/hello_world/
 author: Jason Lowe-Power
 ---
 

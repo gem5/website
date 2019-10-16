@@ -2,8 +2,8 @@
 layout: documentation
 title: Learning gem5
 doc: Learning gem5
-parent: introduction
-permalink: /introduction/
+parent: learning_gem5
+permalink: /documentation/learning_gem5/introduction/
 author: Jason Lowe-Power
 ---
 

@@ -2,8 +2,8 @@
 layout: documentation
 title: Debugging gem5
 doc: Learning gem5
-parent: pt2
-permalink: /debugging/
+parent: part2
+permalink: /documentation/learning_gem5/part2/debugging/
 author: Jason Lowe-Power
 ---
 

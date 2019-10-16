@@ -2,8 +2,8 @@
 layout: documentation
 title: Building gem5
 doc: Learning gem5
-parent: pt1
-permalink: /building/
+parent: part1
+permalink: /documentation/learning_gem5/part1/building/
 author: Jason Lowe-Power
 ---
 
