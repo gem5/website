@@ -2,8 +2,8 @@
 layout: documentation
 title: Using the default configuration scripts
 doc: Learning gem5
-parent: pt1
-permalink: /example_configs/
+parent: part1
+permalink: /documentation/learning_gem5/part1/example_configs/
 author: Jason Lowe-Power
 ---
 

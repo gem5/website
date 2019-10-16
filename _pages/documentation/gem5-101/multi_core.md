@@ -2,7 +2,8 @@
 layout: documentation
 title: Multi Core
 doc: gem5 101
-permalink: /multi_core/
+parent: gem5_101
+permalink: /gem5_101/multi_core/
 author: Jason Lowe-Power
 ---
 

@@ -2,8 +2,8 @@
 layout: documentation
 title: Understanding gem5 statistics and output
 doc: Learning gem5
-parent: pt1
-permalink: /gem5_stats/
+parent: part1
+permalink: /documentation/learning_gem5/part1/gem5_stats/
 author: Jason Lowe-Power
 ---
 

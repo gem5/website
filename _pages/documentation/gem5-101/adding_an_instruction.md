@@ -2,7 +2,8 @@
 layout: documentation
 title: Adding An Instruction
 doc: gem5 101
-permalink: /adding_an_instruction/
+parent: gem5_101
+permalink: /gem5_101/adding_an_instruction/
 author: Jason Lowe-Power
 date: 2018-05-12T23:00:45-04:00
 ---

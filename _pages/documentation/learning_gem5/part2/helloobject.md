@@ -2,8 +2,8 @@
 layout: documentation
 title: Creating a very simple SimObject
 doc: Learning gem5
-parent: pt2
-permalink: /helloobject/
+parent: part2
+permalink: /documentation/learning_gem5/part2/helloobject/
 author: Jason Lowe-Power
 ---
 
