@@ -2,8 +2,8 @@
 layout: documentation
 title: Adding parameters to SimObjects and more events
 doc: Learning gem5
-parent: pt2
-permalink: /parameters/
+parent: part2
+permalink: /documentation/learning_gem5/part2/parameters/
 author: Jason Lowe-Power
 ---
 

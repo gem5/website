@@ -2,8 +2,8 @@
 layout: documentation
 title: Event-driven programming
 doc: Learning gem5
-parent: pt2
-permalink: /events/
+parent: part2
+permalink: /documentation/learning_gem5/part2/events/
 author: Jason Lowe-Power
 ---
 

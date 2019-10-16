@@ -2,8 +2,8 @@
 layout: documentation
 title: Setting up your development environment
 doc: Learning gem5
-parent: pt2
-permalink: /environment/
+parent: part2
+permalink: /documentation/learning_gem5/part2/environment/
 author: Jason Lowe-Power
 ---
 

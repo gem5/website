@@ -2,8 +2,8 @@
 layout: documentation
 title: Compiling a SLICC protocol
 doc: Learning gem5
-parent: pt3
-permalink: /MSIbuilding/
+parent: part3
+permalink: /documentation/learning_gem5/part3/MSIbuilding/
 author: Jason Lowe-Power
 ---
 

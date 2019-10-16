@@ -2,7 +2,8 @@
 layout: documentation
 title: Caches
 doc: gem5 101
-permalink: /caches/
+parent: gem5_101
+permalink: /gem5_101/caches/
 author: Jason Lowe-Power
 date: 2018-05-12T23:01:31-04:00
 ---

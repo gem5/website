@@ -2,7 +2,8 @@
 layout: documentation
 title: Branch Prediction
 doc: gem5 101
-permalink: /branch_prediction/
+parent: gem5_101
+permalink: /gem5_101/branch_prediction/
 author: Jason Lowe-Power
 ---
 

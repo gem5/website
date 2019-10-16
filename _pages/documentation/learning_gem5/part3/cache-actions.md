@@ -2,8 +2,8 @@
 layout: documentation
 title: Action code blocks
 doc: Learning gem5
-parent: pt3
-permalink: /cache-actions/
+parent: part3
+permalink: /documentation/learning_gem5/part3/cache-actions/
 author: Jason Lowe-Power
 ---
 

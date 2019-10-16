@@ -2,7 +2,8 @@
 layout: documentation
 title: Introduction to Ruby
 doc: Learning gem5
-parent: pt3
+parent: part3
+permalink: /documentation/learning_gem5/part3/MSIintro/
 author: Jason Lowe-Power
 ---
 

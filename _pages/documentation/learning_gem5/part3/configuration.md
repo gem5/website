@@ -2,8 +2,8 @@
 layout: documentation
 title: Configuring a simple Ruby system
 doc: Learning gem5
-parent: pt3
-permalink: /configuration/
+parent: part3
+permalink: /documentation/learning_gem5/part3/configuration/
 author: Jason Lowe-Power
 ---
 

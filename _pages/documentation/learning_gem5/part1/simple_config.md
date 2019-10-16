@@ -2,8 +2,8 @@
 layout: documentation
 title: Creating a simple configuration script
 doc: Learning gem5
-parent: pt1
-permalink: /simple_config/
+parent: part1
+permalink: /documentation/learning_gem5/part1/simple_config/
 author: Jason Lowe-Power
 ---
 
