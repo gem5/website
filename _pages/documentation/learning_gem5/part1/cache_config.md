@@ -19,7 +19,7 @@ will cover understanding the gem5 statistics output and adding command
 line parameters to your scripts.
 
 ![A system configuration with a two-level cache
-hierarchy.](../assets/img/advanced_config.png)
+hierarchy.](/pages/static/figures/advanced_config.png)
 
 Creating cache objects
 ----------------------

@@ -204,7 +204,7 @@ After those final connections, we've finished instantiating our
 simulated system! Our system should look like simple-config-fig.
 
 ![A simple system configuration without
-caches.](../_static/figures/simple_config.png)
+caches.](/pages/static/figures/simple_config.png)
 
 Next, we need to set up the process we want the CPU to execute. Since we
 are executing in syscall emulation mode (SE mode), we will just point
