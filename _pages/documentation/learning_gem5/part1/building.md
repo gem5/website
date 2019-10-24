@@ -87,13 +87,6 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install libboost-all-dev
         ```
 
-6. [Boost](https://www.boost.org/)
-    :   The Boost library is a set of general purpose C++ libraries used by Gem5.
-
-        ```
-        sudo apt-get install libboost-all-dev
-        ```
-
 Getting the code
 ----------------
 
@@ -276,5 +269,5 @@ nee to also install all of the `autoconf` tools. On Ubuntu, you can use
 the following command.
 
 ```
-sudo apt-get install automake
+sudo apt install automake
 ```

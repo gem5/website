@@ -2,8 +2,8 @@
 layout: documentation
 title: Building gem5
 doc: Learning gem5
-parent: pt1
-permalink: /building/
+parent: part1
+permalink: /documentation/learning_gem5/part1/building/
 author: Jason Lowe-Power
 ---
 
@@ -78,6 +78,13 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
         ```
         sudo apt install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+        ```
+
+6. [Boost](https://www.boost.org/)
+    :   The Boost library is a set of general purpose C++ libraries used by Gem5.
+
+        ```
+        sudo apt install libboost-all-dev
 <<<<<<< HEAD
         ```
 
@@ -85,16 +92,9 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     :   The Boost library is a set of general purpose C++ libraries used by Gem5.
 
         ```
-        sudo apt install libboost-all-dev
+        sudo apt-get install libboost-all-dev
 =======
->>>>>>> Removed apt-get/apt inconsistency (just using apt now).
-        ```
-
-6. [Boost](https://www.boost.org/)
-    :   The Boost library is a set of general purpose C++ libraries used by Gem5.
-
-        ```
-        sudo apt install libboost-all-dev
+>>>>>>> c3a7677ff98b99682163f78f43af03ee057d4914
         ```
 
 Getting the code

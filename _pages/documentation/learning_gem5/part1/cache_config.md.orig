@@ -2,8 +2,8 @@
 layout: documentation
 title: Adding cache to configuration script
 doc: Learning gem5
-parent: pt1
-permalink: /cache_config/
+parent: part1
+permalink: /documentation/learning_gem5/part1/cache_config/
 author: Jason Lowe-Power
 ---
 
@@ -19,7 +19,7 @@ will cover understanding the gem5 statistics output and adding command
 line parameters to your scripts.
 
 ![A system configuration with a two-level cache
-hierarchy.](../assets/img/advanced_config.png)
+hierarchy.](/pages/static/figures/advanced_config.png)
 
 Creating cache objects
 ----------------------
@@ -223,7 +223,7 @@ ports directly to the memory bus, replacing them with
 the following two lines:
 =======
 the following two lines/
->>>>>>> "replaying" -> "replacing"
+>>>>>>> c3a7677ff98b99682163f78f43af03ee057d4914
 
 ```
 system.cpu.icache_port = system.membus.slave
