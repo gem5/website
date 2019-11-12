@@ -3,6 +3,7 @@ title: "ISCA2017 - distributed gem5"
 date: 2018-05-13T17:02:19-04:00
 draft: false
 weight: 10
+permalink: events/dist-gem5
 ---
 
 <big>

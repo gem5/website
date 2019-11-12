@@ -3,6 +3,7 @@ title: "ASPLOS 2008"
 date: 2018-05-13T18:51:37-04:00
 draft: false
 weight: 1000
+permalink: events/asplos-2008
 ---
 
 Using the M5 Simulator ASPLOS 2008 Tutorial Sunday March 2nd, 2008
