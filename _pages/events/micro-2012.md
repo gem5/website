@@ -1,8 +1,9 @@
 ---
-title: "MISCO 2012 - 1st user workshop"
+title: "MICRO 2012 - 1st user workshop"
 date: 2018-05-13T18:51:37-04:00
 draft: false
 weight: 100
+permalink: events/micro-2012
 ---
 
 <table>

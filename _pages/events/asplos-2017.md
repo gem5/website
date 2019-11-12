@@ -2,6 +2,7 @@
 title: "ASPLOS 2017"
 date: 2018-05-13T18:51:37-04:00
 draft: false
+permalink: events/asplos-2017
 ---
 
 Architectural Exploration with gem5

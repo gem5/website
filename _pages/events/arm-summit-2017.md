@@ -3,6 +3,7 @@ title: "ARM research summit 2017"
 date: 2018-05-13T18:51:37-04:00
 draft: false
 weight: 1000
+permalink: events/arm-summit-2017
 ---
 
 The [ARM Research Summit](https://developer.arm.com/research/summit) is

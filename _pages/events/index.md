@@ -1,8 +1,7 @@
 ---
 layout: toc
 title: "Events"
-parent: events
-permalink: /events/
+permalink: events/
 ---
 * TOC
 {:toc}
