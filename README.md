@@ -155,6 +155,9 @@ wget -e robots=off --mirror --convert-links --adjust-extension --page-requisites
 
 I think we should probably use m5sim.org so we can grab all of the old FS files, etc.
 
+Next time, I need to figure out how to skip certain pages.
+We don't need to download all of the user pages or the "talk" pages.
+
 When tested with `gem5.org` it is about 500 MB.
 
 For `reviews.gem5.org` you need to add `-e robots=off` to ignore the `robots.txt` file.
