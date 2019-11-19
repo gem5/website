@@ -33,7 +33,7 @@ change the status of the task from `Todo` to `In progress`. This helps the gem5
 development community understand which parts of the project are presently being
 worked on.
 
-**If, for whatever reason, you stop working on a task, please unassigned
+**If, for whatever reason, you stop working on a task, please unassigne
 yourself from the task and change the task's status back to `Todo`.**
 
 ## Obtaining the git repo
@@ -175,7 +175,7 @@ characters**.
 After this, a more detailed description of the commit can be added. This is
 inserted below the header, separated by an empty line. Including a description
 is optional but it's strongly recommended. The description may span multiple
-lines, and multiple paragraph. **No line in the description may exceed 75
+lines, and multiple paragraphs. **No line in the description may exceed 75
 characters.**
 
 Below is an example of how a gem5 commit message should be formatted:
@@ -183,7 +183,7 @@ Below is an example of how a gem5 commit message should be formatted:
 ```
 test,base: This commit tests some classes in the base component
 
-This is a more detailed description of the commit this can be as long as
+This is a more detailed description of the commit. This can be as long as
 is necessary to adequately describe the change.
 
 A description may spawn multiple paragraphs if desired.
@@ -213,7 +213,7 @@ At this stage you may receive an error if you're not registered to contribute
 to our Gerrit. To resolve this issue:
 
 1. Create an account at [](https://gem5-review.googlesource.com).
-2. Go `User Settings`.
+2. Go to `User Settings`.
 3. Select `Obtain password` (under `HTTP Credentials`).
 4. A new tab shall open, explaining how to authenticate your machine to make
 contributions to Gerrit. Follow these instructions and try pushing again.
@@ -230,7 +230,7 @@ as `In Review`. Adding a link to the change on Gerrit as a comment to the
 issue is also helpful.
 
 Through the Gerrit portal we strongly advise you add reviewers.
-Gerrit will automatically notify those you assign. The "maintainer" of the
+Gerrit will automatically notify those you assign. The "maintainers" of the
 components you have modified should be added as reviewers. These should
 correspond to the tags you included in the commit header. **Please consult
 [MAINTAINERS.md](
