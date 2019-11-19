@@ -89,3 +89,8 @@ docs:
 
       - title: Multi Core
         url: /documentation/gem5_101/multi_core
+  - title: Beginners guide to contributing
+    items:
+        - title: Beginners guide to contributing
+          id: contributing_beginners_guide
+          url: /documentation/contributing_beginners_guide
