@@ -1,8 +1,7 @@
 # Site Settings
 title: gem5
 sourceurl: "https://github.com/gem5/new-website/tree/master/"
-url: "http://gem5.github.io/new-website/"
-baseurl: "/new-website"
+url: "https://new.gem5.org/"
 
 defaults:
   -
