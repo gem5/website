@@ -6,10 +6,6 @@ weight: 10
 permalink: events/dist-gem5
 ---
 
-<big>
-
-<center>
-
 **Title: dist-gem5: Modeling and Simulating a Distributed Computer
 System Using Multiple Simulation**
 
@@ -19,13 +15,10 @@ System Using Multiple Simulation**
 ``Architecture,`` ``June`` ``24-28,`` ``2017,`` ``Toronto,`` ``ON,``
 ``Canada`**
 
-</center>
-
-</big>
-
 -----
 
-__TOC__
+* TOC
+{:toc}
 
 ## List of organisers/presenters
 
@@ -64,7 +57,7 @@ to dist-gem5 including relevant background knowledge.
 
 ## Objectives
 
-![Packet-forwarding-highlevel.png](Packet-forwarding-highlevel.png
+![Packet-forwarding-highlevel.png](/assets/img/events/dist-gem5/600px-Packet-forwarding-highlevel.png
 "Packet-forwarding-highlevel.png")
 
 More specifically, the tutorial will provide the following.
