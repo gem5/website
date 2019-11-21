@@ -31,7 +31,7 @@ C++, Python, and computer systems.
 # Slides
 
 The slides from the tutorial can be downloaded
-[here](:file:ASPLOS2017_gem5_tutorial.pdf "wikilink").
+[here](/assets/files/ASPLOS2017_gem5_tutorial.pdf).
 
 # Schedule
 
