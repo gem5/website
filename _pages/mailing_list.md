@@ -1,7 +1,7 @@
 ---
 layout: toc
 title: Mailing Lists
-permalink: /mailing-lists/
+permalink: /mailing_lists/
 ---
 
 There are two mailing lists for gem5:
