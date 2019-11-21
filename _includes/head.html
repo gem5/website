@@ -13,7 +13,9 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>gem5</title>
+	<title>
+		gem5{% if page.title And page.title != "" And page.title != nil%}: {{page.title}} {% endif %}
+	</title>
 
 	<!-- SITE FAVICON -->
 	<link rel="shortcut icon" type="image/gif" href="{{ "/assets/img/gem5ColorVert.gif" | prepend: site.baseurl }}"/>
