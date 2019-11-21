@@ -32,7 +32,3 @@ that your question complies with the [site guidelines](
 https://stackoverflow.com/help/asking) before posting. Interested users can opt
 to receive email notifications for such questions as explained at
 <https://meta.stackexchange.com/questions/25224/email-notifications-for-new-questions-matching-specific-tags>).
-
-Quora is occasionally used : <https://www.quora.com/topic/Gem5-Simulator>.
-While Stack Overflow is preferred, you can use Quora if your question is not on
-topic for Stack Overflow (e.g., a subjective question).
