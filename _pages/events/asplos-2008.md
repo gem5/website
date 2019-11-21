@@ -11,7 +11,7 @@ Using the M5 Simulator ASPLOS 2008 Tutorial Sunday March 2nd, 2008
 ## Introduction
 
 This half-day tutorial will introduce participants to the [M5 simulator
-system](Main_Page "wikilink"). M5 is a modular platform for computer
+system](/). M5 is a modular platform for computer
 system architecture research, encompassing system-level architecture as
 well as processor microarchitecture.
 
