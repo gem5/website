@@ -206,7 +206,7 @@ be fully merged into the gem5 source.
 To start this process, execute:
 
 ```
-git push original HEAD:refs/for/master
+git push origin HEAD:refs/for/master
 ```
 
 At this stage you may receive an error if you're not registered to contribute
