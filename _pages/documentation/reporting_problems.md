@@ -36,7 +36,7 @@ your issue is already on its way to being merged into the project.
 
 4. Make sure you're running with `gem5.opt` or `gem5.debug`, not `gem5.fast`.
 The `gem5.fast` binary compiles out assertion checking for speed, so a problem
-that causes a crash or an error on `m5.fast` may result in a more informative
+that causes a crash or an error on `gem5.fast` may result in a more informative
 assertion failure with `gem5.opt` or `gem5.debug`.
 
 5. If it seems appropriate, enable some debug flags (e.g.,`--debug-flags=Foo`
