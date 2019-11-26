@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Ruby
-permalink: documentation/general_docs/memory_system/ruby
+permalink: documentation/general_docs/memory_system/ruby/
 ---
 
 ## High level components of Ruby
@@ -24,11 +24,13 @@ highly configurable. Three key aspects of these models are:
 
 The following picture, taken from the GEMS tutorial in ISCA 2005, shows
 a high-level view of the main components in Ruby.
-![ruby_overview.jpg](ruby_overview.jpg "ruby_overview.jpg")
+![ruby_overview.jpg](/assets/img/Ruby_overview.jpg)
+
+For a tutorial-based approach to Ruby see [Part III of Learning gem5](/documentation/learning_gem5/part3/)
 
 ### SLICC + Coherence protocols:
 
-***[SLICC](SLICC "wikilink")*** stands for *Specification Language for
+***[SLICC](SLICC)*** stands for *Specification Language for
 Implementing Cache Coherence*. It is a domain specific language that is
 used for specifying cache coherence protocols. In essence, a cache
 coherence protocol behaves like a state machine. SLICC is used for
@@ -43,28 +45,28 @@ ports of the inter-connection network and queues the output at the
 output ports of the network, thus tying together the cache / memory
 controllers with the inter-connection network itself.
 
-![slicc_overview.jpg](slicc_overview.jpg "slicc_overview.jpg")
+![slicc_overview.jpg](/assets/img/Slicc_overview.jpg)
 
 The following cache coherence protocols are supported:
 
-1.  **[MI_example](MI_example "wikilink")**: example protocol, 1-level
+1.  **[MI_example](MI_example)**: example protocol, 1-level
     cache.
-2.  **[MESI_Two_Level](MESI_Two_Level "wikilink")**: single chip,
+2.  **[MESI_Two_Level](MESI_Two_Level)**: single chip,
     2-level caches, strictly-inclusive hierarchy.
-3.  **[MOESI_CMP_directory](MOESI_CMP_directory "wikilink")**:
+3.  **[MOESI_CMP_directory](MOESI_CMP_directory)**:
     multiple chips, 2-level caches, non-inclusive (neither strictly
     inclusive nor exclusive) hierarchy.
-4.  **[MOESI_CMP_token](MOESI_CMP_token "wikilink")**: 2-level caches.
+4.  **[MOESI_CMP_token](MOESI_CMP_token)**: 2-level caches.
     TODO.
-5.  **[MOESI_hammer](MOESI_hammer "wikilink")**: single chip, 2-level
+5.  **[MOESI_hammer](MOESI_hammer)**: single chip, 2-level
     private caches, strictly-exclusive hierarchy.
-6.  **[Garnet_standalone](Garnet_standalone "wikilink")**: protocol to
+6.  **[Garnet_standalone](Garnet_standalone)**: protocol to
     run the Garnet network in a standalone manner.
-7.  **[MESI Three Level](MESI_Three_Level "wikilink")**: 3-level caches,
-    strictly-inclusive hierarchy.
+7.  **MESI Three Level**: 3-level caches,
+    strictly-inclusive hierarchy. Based on MESI Two Level with an extra L0 cache.
 
 Commonly used notations and data structures in the protocols have been
-described in detail [here](Cache_Coherence_Protocols "wikilink").
+described in detail [here](cache-coherence-protocols).
 
 ### Protocol independent memory components
 
@@ -94,14 +96,14 @@ ban contention, DRAM refresh faithfully. It also models close-page
 policy for DRAM buffer.
 
 ***Each component is described in details
-[here](Coherence-Protocol-Independent_Memory_Components "wikilink").***
+[here](Coherence-Protocol-Independent_Memory_Components).***
 
 ### Interconnection Network
 
 The interconnection network connects the various components of the
 memory hierarchy (cache, memory, dma controllers) together.
 
-![Interconnection_network.jpg](Interconnection_network.jpg
+![Interconnection_network.jpg](/assets/img/Interconnection_network.jpg
 "Interconnection_network.jpg")
 
 The key components of an interconnection network are:
@@ -112,7 +114,7 @@ The key components of an interconnection network are:
 4.  **Router Microarchitecture**
 
 ***More details about the network model implementation are described
-[here](Interconnection_Network "wikilink").***
+[here](Interconnection_Network).***
 
 Alternatively, Interconnection network could be replaced with the
 external simulator [TOPAZ](http://www.atc.unican.es/topaz/). This
