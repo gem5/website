@@ -77,3 +77,9 @@ docs:
         - title: Beginners guide to contributing
           id: contributing_beginners_guide
           url: /documentation/contributing_beginners_guide
+
+  - title: Reporting Problems
+    items:
+        - title: Reporting Problems
+          id: reporting_problems
+          url: /documentation/reporting_problems
