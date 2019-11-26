@@ -1,4 +1,5 @@
 ---
+layout: documentation
 title: "MI example"
 permalink: documentation/general_docs/memory_system/ruby/MI_example
 ---

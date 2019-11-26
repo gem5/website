@@ -1,4 +1,5 @@
 ---
+layout: documentation
 title: "MOESI hammer"
 permalink: documentation/general_docs/memory_system/ruby/MOESI_hammer
 ---

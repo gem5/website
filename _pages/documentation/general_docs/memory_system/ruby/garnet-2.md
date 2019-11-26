@@ -58,36 +58,36 @@ The garnet networks can be enabled by adding **--network=garnet2.0**.
 
 Garnet2.0 uses the generic network parameters in Network.py:
 
-  -   - **number_of_virtual_networks**: This is the maximum number of
-        virtual networks. The actual number of active virtual networks
-        is determined by the protocol.
-      - **control_msg_size**: The size of control messages in bytes.
-        Default is 8. **m_data_msg_size** in Network.cc is set to the
-        block size in bytes + control_msg_size.
+- **number_of_virtual_networks**: This is the maximum number of
+  virtual networks. The actual number of active virtual networks
+  is determined by the protocol.
+- **control_msg_size**: The size of control messages in bytes.
+  Default is 8. **m_data_msg_size** in Network.cc is set to the
+  block size in bytes + control_msg_size.
 
 Additional parameters are specified in garnet2.0/GarnetNetwork.py:
 
-  -   - **ni_flit_size**: flit size in bytes. Flits are the
-        granularity at which information is sent from one router to the
-        other. Default is 16 (=\> 128 bits). \[This default value of 16
-        results in control messages fitting within 1 flit, and data
-        messages fitting within 5 flits\]. Garnet requires the
-        ni_flit_size to be the same as the bandwidth_factor (in
-        network/BasicLink.py) as it does not model variable bandwidth
-        within the network. This can also be set from the command line
-        with **--link-width-bits**.
-      - **vcs_per_vnet**: number of virtual channels (VC) per virtual
-        network. Default is 4. This can also be set from the command
-        line with **--vcs-per-vnet**.
-      - **buffers_per_data_vc**: number of flit-buffers per VC in the
-        data message class. Since data messages occupy 5 flits, this
-        value can lie between 1-5. Default is 4.
-      - **buffers_per_ctrl_vc**: number of flit-buffers per VC in the
-        control message class. Since control messages occupy 1 flit, and
-        a VC can only hold one message at a time, this value has to be
-        1. Default is 1.
-      - **routing_algorithm**: 0: Weight-based table (default), 1: XY,
-        2: Custom. More details below.
+- **ni_flit_size**: flit size in bytes. Flits are the
+  granularity at which information is sent from one router to the
+  other. Default is 16 (=\> 128 bits). \[This default value of 16
+  results in control messages fitting within 1 flit, and data
+  messages fitting within 5 flits\]. Garnet requires the
+  ni_flit_size to be the same as the bandwidth_factor (in
+  network/BasicLink.py) as it does not model variable bandwidth
+  within the network. This can also be set from the command line
+  with **--link-width-bits**.
+- **vcs_per_vnet**: number of virtual channels (VC) per virtual
+  network. Default is 4. This can also be set from the command
+  line with **--vcs-per-vnet**.
+- **buffers_per_data_vc**: number of flit-buffers per VC in the
+  data message class. Since data messages occupy 5 flits, this
+  value can lie between 1-5. Default is 4.
+- **buffers_per_ctrl_vc**: number of flit-buffers per VC in the
+  control message class. Since control messages occupy 1 flit, and
+  a VC can only hold one message at a time, this value has to be
+  1. Default is 1.
+- **routing_algorithm**: 0: Weight-based table (default), 1: XY,
+  2: Custom. More details below.
 
 ## Topology
 
@@ -103,26 +103,26 @@ implement custom routing algorithms, as described next. For instance, in
 a Mesh, the west to east links have src_outport set to "west" and
 dst_inport" set to "east".
 
-  - **Network Components**:
-      - **GarnetNetwork**: This is the top level object that
-        instantiates all network interfaces, routers, and links.
-        Topology.cc calls the methods to add "external links" between
-        NIs and routers, and "internal links" between routers.
-      - **NetworkInterface**: Each NI connects to one coherence
-        controller via MsgBuffer interfaces on one side. It has a link
-        to a router on the other. Every protocol message is put into a
-        one-flit control or multi (default=5)-flit data (depending on
-        its vnet), and injected into the router. Multiple NIs can
-        connect to the same router (for e.g., in the Mesh topology,
-        cache and dir controllers connect via individual NIs to the same
-        router).
-      - **Router**: The router manages arbitration for output links, and
-        flow control between routers.
-      - **NetworkLink**: Network links carry flits. They can be of one
-        of 3 types: EXT_OUT_ (router to NI), EXT_IN_ (NI to router),
-        and INT_ (internal router to router)
-      - **CreditLink**: Credit links carry VC/buffer credits between
-        routers for flow control.
+- **Network Components**:
+    - **GarnetNetwork**: This is the top level object that
+      instantiates all network interfaces, routers, and links.
+      Topology.cc calls the methods to add "external links" between
+      NIs and routers, and "internal links" between routers.
+    - **NetworkInterface**: Each NI connects to one coherence
+      controller via MsgBuffer interfaces on one side. It has a link
+      to a router on the other. Every protocol message is put into a
+      one-flit control or multi (default=5)-flit data (depending on
+      its vnet), and injected into the router. Multiple NIs can
+      connect to the same router (for e.g., in the Mesh topology,
+      cache and dir controllers connect via individual NIs to the same
+      router).
+    - **Router**: The router manages arbitration for output links, and
+      flow control between routers.
+    - **NetworkLink**: Network links carry flits. They can be of one
+      of 3 types: EXT_OUT_ (router to NI), EXT_IN_ (NI to router),
+      and INT_ (internal router to router)
+    - **CreditLink**: Credit links carry VC/buffer credits between
+      routers for flow control.
 
 ## Routing
 
@@ -315,4 +315,4 @@ information about free VCs, and number of buffers within each VC.**
 
 Garnet2.0 can be run in a standalone manner and fed with synthetic
 traffic. The details are described here: **[Garnet Synthetic
-Traffic](Garnet_Synthetic_Traffic "wikilink")**
+Traffic](garnet_synthetic_traffic "wikilink")**

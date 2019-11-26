@@ -1,4 +1,5 @@
 ---
+layout: documentation
 title: "MOESI CMP directory"
 permalink: documentation/general_docs/memory_system/ruby/MOESI_CMP_directory
 ---

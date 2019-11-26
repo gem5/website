@@ -1,4 +1,5 @@
 ---
+layout: documentation
 title: "MESI two level"
 permalink: documentation/general_docs/memory_system/ruby/MESI_Two_Level
 ---
