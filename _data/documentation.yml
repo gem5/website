@@ -84,22 +84,22 @@ docs:
           id: reporting_problems
           url: /documentation/reporting_problems
 
-  - title: General documentation
+  - title: Memory system
     items:
-      - title: Memory system
+      - page: Memory system
         url: /documentation/general_docs/memory_system/
-        subitems:
-          - page: Replacement Policies
-            url: /documentation/general_docs/memory_system/replacement_policies
-          - page: Indexing Policies
-            url: /documentation/general_docs/memory_system/indexing_policies
-          - page: Classic memory system coherence
-            url: /documentation/general_docs/memory_system/classic-coherence-protocol
-          - page: Classic caches
-            url: /documentation/general_docs/memory_system/classic_caches
+      - page: Replacement Policies
+        url: /documentation/general_docs/memory_system/replacement_policies
+      - page: Indexing Policies
+        url: /documentation/general_docs/memory_system/indexing_policies
+      - page: Classic memory system coherence
+        url: /documentation/general_docs/memory_system/classic-coherence-protocol
+      - page: Classic caches
+        url: /documentation/general_docs/memory_system/classic_caches
       - title: Ruby
-        url: /documentation/general_docs/memory_system/ruby/
         subitems:
+          - page: Ruby
+            url: /documentation/general_docs/memory_system/ruby/
           - page: Cache Coherence Protocols
             url: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols
           - page: Garnet 2.0
