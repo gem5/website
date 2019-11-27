@@ -106,7 +106,7 @@ docs:
             url: /documentation/general_docs/memory_system/ruby/garnet-2
           - page: MOESI CMP directory
             url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory
-          - page: Garnet 2.0
+          - page: Garnet Synthetic Traffic
             url: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic
           - page: SLICC
             url: /documentation/general_docs/memory_system/ruby/slicc

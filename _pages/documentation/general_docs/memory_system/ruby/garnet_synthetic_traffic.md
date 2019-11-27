@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: "Garnet 2.0"
+title: "Garnet Synthetic Traffic"
 permalink: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic/
 ---
 
