@@ -5,3 +5,5 @@ _site/
 
 # For Mac and images
 .DS_Store
+
+.venv
