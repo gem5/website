@@ -83,3 +83,8 @@ docs:
         - title: Reporting Problems
           id: reporting_problems
           url: /documentation/reporting_problems
+
+  - title: gem5 Doxygen
+    items:
+        - title: gem5 Doxygen
+          url: https://gem5.github.io/gem5-doxygen
