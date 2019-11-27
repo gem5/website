@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "MOESI hammer"
-permalink: documentation/general_docs/memory_system/ruby/MOESI_hammer
+permalink: /documentation/general_docs/memory_system/ruby/MOESI_hammer/
 ---
 
 This is an implementation of AMD's Hammer protocol, which is used in

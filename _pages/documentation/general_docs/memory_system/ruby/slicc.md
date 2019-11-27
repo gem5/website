@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "SLICC"
-permalink: documentation/general_docs/memory_system/ruby/slicc
+permalink: /documentation/general_docs/memory_system/ruby/slicc/
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Indexing Policies"
-permalink: documentation/general_docs/memory_system/indexing_policies
+permalink: /documentation/general_docs/memory_system/indexing_policies/
 ---
 
 Indexing policies determine the locations to which a block is mapped

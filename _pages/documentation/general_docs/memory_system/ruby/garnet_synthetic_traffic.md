@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Garnet 2.0"
-permalink: documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic
+permalink: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic/
 ---
 
 # Garnet Synthetic Traffic

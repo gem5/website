@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Cache Coherence Protocols"
-permalink: documentation/general_docs/memory_system/ruby/cache-coherence-protocols
+permalink: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols/
 ---
 
 ## Common Notations and Data Structures

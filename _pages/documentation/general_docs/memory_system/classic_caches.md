@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Classic caches"
-permalink: documentation/general_docs/memory_system/classic_caches
+permalink: /documentation/general_docs/memory_system/classic_caches/
 ---
 
 # Classic Caches

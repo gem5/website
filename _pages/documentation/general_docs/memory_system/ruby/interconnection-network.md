@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Interconnection network"
-permalink: documentation/general_docs/memory_system/ruby/interconnection-network
+permalink: /documentation/general_docs/memory_system/ruby/interconnection-network/
 ---
 
 The various components of the interconnection network model inside

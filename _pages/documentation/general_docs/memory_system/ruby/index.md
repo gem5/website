@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Ruby
-permalink: documentation/general_docs/memory_system/ruby/
+permalink: /documentation/general_docs/memory_system/ruby/
 ---
 
 ## High level components of Ruby

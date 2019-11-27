@@ -1,7 +1,7 @@
 ---
 title: "Classic memory system coherence"
 layout: documentation
-permalink: documentation/general_docs/memory_system/classic-coherence-protocol
+permalink: /documentation/general_docs/memory_system/classic-coherence-protocol/
 ---
 
 M5 2.0b4 introduced a substantially rewritten and streamlined cache

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "MOESI CMP token"
-permalink: documentation/general_docs/memory_system/ruby/MOESI_CMP_token
+permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token/
 ---
 
 ### Protocol Overview

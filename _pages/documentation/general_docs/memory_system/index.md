@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Memory system"
-permalink: documentation/general_docs/memory_system/
+permalink: /documentation/general_docs/memory_system/
 ---
 
 # Memory system

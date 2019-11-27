@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Garnet 2.0"
-permalink: documentation/general_docs/memory_system/ruby/garnet-2
+permalink: /documentation/general_docs/memory_system/ruby/garnet-2/
 ---
 
 **More details of the gem5 Ruby Interconnection Network are
