@@ -88,3 +88,9 @@ docs:
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
+
+  - title: Coding Style
+    items:
+        - title: Coding Style
+          id: coding_style
+          url: /documentation/coding_style
