@@ -178,6 +178,9 @@ is optional but it's strongly recommended. The description may span multiple
 lines, and multiple paragraphs. **No line in the description may exceed 75
 characters.**
 
+To improve the navigability of the gem5 project we would appreciate if commit
+messages include a link to the relevant Jira issue/issues.
+
 Below is an example of how a gem5 commit message should be formatted:
 
 ```
@@ -187,6 +190,8 @@ This is a more detailed description of the commit. This can be as long as
 is necessary to adequately describe the change.
 
 A description may spawn multiple paragraphs if desired.
+
+Jira Issue: https://gem5.atlassian.net/browse/GEM5-186
 ```
 
 If you feel the need to change your commit, add the necessary files then
@@ -312,4 +317,5 @@ Once this iterative process is complete. The patch may be merged. This is done
 via Gerrit (Simply click `Submit` within the relevant Gerrit page).
 
 As one last step, you should change the corresponding Jira issue status to
-`Done`.
+`Done` then link the Gerrit page as a comment on Jira as to provide evidence
+that the task has been completed.
