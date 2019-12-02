@@ -3,7 +3,7 @@ layout: page
 title: A beginners guide to contributing
 parent: documentation
 permalink: documentation/contributing_beginners_guide/
-author: Bobby R. ruce
+author: Bobby R. Bruce
 ---
 
 This document serves as a beginners guide to contributing to gem5. If questions
@@ -33,7 +33,7 @@ change the status of the task from `Todo` to `In progress`. This helps the gem5
 development community understand which parts of the project are presently being
 worked on.
 
-**If, for whatever reason, you stop working on a task, please unassigne
+**If, for whatever reason, you stop working on a task, please unassign
 yourself from the task and change the task's status back to `Todo`.**
 
 ## Obtaining the git repo
@@ -165,7 +165,7 @@ git commit
 
 The commit message must adhere to our style. The first line of the commit is
 the "header". The header starts with a tag (or tags, separated by a comma),
-then a colon. Which tags are used dependend on which components of gem5
+then a colon. Which tags are used depend on which components of gem5
 you have modified. **Please refer to the [MAINTAINERS.md](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/master/MAINTAINERS) for
 a comprehensive list of accepted tags**. After this colon a short description
@@ -298,13 +298,13 @@ If for some reason you no longer have your original workspace, you may pull
 the change by going to your change in Gerrit, clicking `Download` and executing
 one of the listed commands.
 
-When your new change is uploaded via the `git push` commad, the reviewers will
+When your new change is uploaded via the `git push` command, the reviewers will
 re-review the change to ensure you have incorporated their suggested
 improvements. The reviewers may suggest more improvements and, in this case,
 you will have to incorporate them using the same process as above. **This
 process is therefore iterative, and it may therefore take several cycles until
 the patch is in a state in which the reviewers are happy**. Please do not
-be detered, it is very common for a change to require several iterations.
+be deterred, it is very common for a change to require several iterations.
 
 ## Submit and merge
 
