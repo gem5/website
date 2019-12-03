@@ -104,3 +104,5 @@ docs:
             url: /documentation/debugging_and_testing/debugging/trace_based_debugging
           - page: Debugger-based Debugging
             url: /documentation/debugging_and_testing/debugging/debugger_based_debugging
+          - page: Debugging Simulated Code
+            url: /documentation/debugging_and_testing/debugging/debugging_simulated_code
