@@ -96,3 +96,9 @@ docs:
           url: /documentation/debugging_and_testing/directed_testers/garnet_synthetic_traffic
         - page: Ruby Random Tester
           url: /documentation/debugging_and_testing/directed_testers/ruby_random_tester
+
+    - title: Debugging
+      id: debugging
+      subitems:
+          - page: Trace-based Debugging
+            url: /documentation/debugging_and_testing/debugging/trace_based_debugging
