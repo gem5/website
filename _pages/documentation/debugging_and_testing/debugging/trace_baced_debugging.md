@@ -73,7 +73,7 @@ the time, pc, the address if it was a memory instruction, etc. These individual
 pieces of information can be turned on and off with the base debug flags Exec
 controls. For example, you can disable the use of function symbol names in
 place of absolute PC addresses (if they're available) by turning off the
-ExecSymbol flag (e.g., `--debug-flags=Exec`, `-ExecSymbol`).
+ExecSymbol flag (e.g., `--debug-flags=Exec,-ExecSymbol`).
 
 If some supposedly innocuous change has caused gem5 to stop working correctly,
 you can compare trace outputs from before and after the change using the
@@ -126,15 +126,15 @@ differ between the two runs.
 For example:
 
 ```
- % tracediff m5.opt --opt1 '--opt2|--opt3' --opt4
+ % tracediff gem5.opt --opt1 '--opt2|--opt3' --opt4
 # would compare these two runs:
-m5.opt --opt1 --opt2 --opt4
-m5.opt --opt1 --opt3 --opt4
+gem5.opt --opt1 --opt2 --opt4
+gem5.opt --opt1 --opt3 --opt4
 
 % tracediff 'path1|path2#/m5.opt' --opt1 --opt2
 # would compare these two runs:
-path1/m5.opt --opt1 --opt2
-path2/m5.opt --opt1 --opt2
+path1/gem5.opt --opt1 --opt2
+path2/gem5.opt --opt1 --opt2
 ```
 
 If you want to add arguments to one run only, just put a '|' in with text only
