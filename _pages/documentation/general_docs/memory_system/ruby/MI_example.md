@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/MI_example/
 author: Jason Lowe-Power
 ---
 
+# MI Example
+
 ### Protocol Overview
 
   - This is a simple cache coherence protocol that is used to illustrate

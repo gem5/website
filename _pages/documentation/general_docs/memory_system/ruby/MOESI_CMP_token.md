@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token/
 author: Jason Lowe-Power
 ---
 
+# MOESI CMP token
+
 ### Protocol Overview
 
   - This protocol also models a 2-level cache hierarchy.

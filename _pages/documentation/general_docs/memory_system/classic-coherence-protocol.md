@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/classic-coherence-protocol/
 author: Jason Lowe-Power
 ---
 
+# Classic Memory System coherence
+
 M5 2.0b4 introduced a substantially rewritten and streamlined cache
 model, including a new coherence protocol. (The old pre-2.0 cache model
 had been patched up to work with the new [Memory

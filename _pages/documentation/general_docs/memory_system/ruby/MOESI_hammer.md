@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/MOESI_hammer/
 author: Jason Lowe-Power
 ---
 
+# MOESI Hammer
+
 This is an implementation of AMD's Hammer protocol, which is used in
 AMD's Hammer chip (also know as the Opteron or Athlon 64). The protocol
 implements both the original a HyperTransport protocol, as well as the

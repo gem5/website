@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/MESI_Two_Level/
 author: Jason Lowe-Power
 ---
 
+# MESI Two Level
+
 ### **Protocol Overview**
 
   - This protocol models **two-level cache hierarchy**. The L1 cache is

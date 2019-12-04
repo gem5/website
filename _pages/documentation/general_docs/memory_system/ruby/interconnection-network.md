@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/interconnection-networ
 author: Jason Lowe-Power
 ---
 
+# Interconnection Network
+
 The various components of the interconnection network model inside
 gem5's ruby memory system are described here.
 

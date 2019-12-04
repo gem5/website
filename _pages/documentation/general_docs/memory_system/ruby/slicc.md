@@ -7,6 +7,7 @@ permalink: /documentation/general_docs/memory_system/ruby/slicc/
 author: Jason Lowe-Power
 ---
 
+# SLICC
 
 SLICC is a domain specific language for specifying cache coherence
 protocols. The SLICC compiler generates C++ code for different

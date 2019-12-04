@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/indexing_policies/
 author: Jason Lowe-Power
 ---
 
+# Replacement Policies
+
 Indexing policies determine the locations to which a block is mapped
 based on its address.
 

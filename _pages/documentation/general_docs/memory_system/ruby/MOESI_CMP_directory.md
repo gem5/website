@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory/
 author: Jason Lowe-Power
 ---
 
+# MOESI CMP Directory
+
 ### Protocol Overview
 
   - TODO: cache hierarchy

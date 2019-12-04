@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Ruby
+title: "Introduction"
 doc: Memory System
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/

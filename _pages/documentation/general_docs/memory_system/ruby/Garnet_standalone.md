@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/ruby/Garnet_standalone/
 author: Jason Lowe-Power
 ---
 
+# Garnet Standalone
+
 This is a dummy cache coherence protocol that is used to operate Garnet
 in a standalone manner. This protocol works in conjunction with the
 [Garnet Synthetic Traffic](garnet_synthetic_traffic "wikilink")

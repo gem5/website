@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/replacement_policies/
 author: Jason Lowe-Power
 ---
 
+# Replacement Policies
+
 Gem5 has multiple implemented replacement policies. Each one uses its
 specific replacement data to determine a replacement victim on
 evictions.
