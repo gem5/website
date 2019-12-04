@@ -90,7 +90,7 @@ you would like to enter the debugger:
 import pdb; pdb.set_trace()
 ```
 
-Note that the Python files under src are compiled in to the gem5 binary, so you
+Note that the Python files under `src` are compiled in to the gem5 binary, so you
 must rebuild the binary if you add this line (or make other changes) in these
 files. Alternatively, you can set the `M5_OVERRIDE_PY_SOURCE` environment
 variable to "true" (see `src/python/importer.py`).
