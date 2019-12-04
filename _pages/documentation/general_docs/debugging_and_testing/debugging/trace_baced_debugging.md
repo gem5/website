@@ -3,7 +3,7 @@ layout: documentation
 title: Trace-based Debugging
 doc: Debugging and Testing
 parent: debugging
-permalink: /documentation/debugging_and_testing/debugging/trace_based_debugging
+permalink: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
 author: Bobby R. Bruce
 ---
 

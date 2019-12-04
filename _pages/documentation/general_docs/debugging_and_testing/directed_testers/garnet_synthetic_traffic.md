@@ -3,7 +3,7 @@ layout: documentation
 title: Garnet Synthetic Traffic
 doc: Debugging and Testing
 parent: directed_testers
-permalink: /documentation/debugging_and_testing/directed_testers/garnet_synthetic_traffic/
+permalink: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic/
 author: Bobby R. Bruce
 ---
 

@@ -3,7 +3,7 @@ layout: documentation
 title: Ruby Random Tester
 doc: Debugging and Testing
 parent: directed_testers
-permalink: /documentation/debugging_and_testing/directed_testers/ruby_random_tester/
+permalink: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester/
 author: Bobby R. Bruce
 ---
 

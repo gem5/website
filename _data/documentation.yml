@@ -132,22 +132,22 @@ docs:
     items:
     - title: Debugging and Testing
       id: debugging_and_testing
-      url: /documentation/debugging_and_testing/debugging_and_testing
+      url: /documentation/general_docs/debugging_and_testing/debugging_and_testing
 
     - title: Directed Testers
       id: directed_testers
       subitems:
         - page: Garnet Synthetic Traffic
-          url: /documentation/debugging_and_testing/directed_testers/garnet_synthetic_traffic
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic
         - page: Ruby Random Tester
-          url: /documentation/debugging_and_testing/directed_testers/ruby_random_tester
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester
 
     - title: Debugging
       id: debugging
       subitems:
           - page: Trace-based Debugging
-            url: /documentation/debugging_and_testing/debugging/trace_based_debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
           - page: Debugger-based Debugging
-            url: /documentation/debugging_and_testing/debugging/debugger_based_debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
           - page: Debugging Simulated Code
-            url: /documentation/debugging_and_testing/debugging/debugging_simulated_code
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
