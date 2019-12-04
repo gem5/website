@@ -72,19 +72,94 @@ docs:
       - title: gem5 101
         url: /documentation/gem5_101/
 
-  - title: Beginners guide to contributing
-    items:
-        - title: Beginners guide to contributing
-          id: contributing_beginners_guide
-          url: /documentation/contributing_beginners_guide
-
   - title: Reporting Problems
     items:
         - title: Reporting Problems
           id: reporting_problems
           url: /documentation/reporting_problems
 
+  - title: Memory System
+    items:
+      - title: Memory System
+        url: /documentation/general_docs/memory_system/
+
+      - title: Replacement Policies
+        url: /documentation/general_docs/memory_system/replacement_policies
+
+      - title: Indexing Policies
+        url: /documentation/general_docs/memory_system/indexing_policies
+
+      - title: Classic memory system coherence
+        url: /documentation/general_docs/memory_system/classic-coherence-protocol
+
+      - title: Classic caches
+        url: /documentation/general_docs/memory_system/classic_caches
+
+      - title: Ruby
+        id: ruby
+        subitems:
+          - page: Ruby
+            url: /documentation/general_docs/memory_system/ruby/
+          - page: Cache Coherence Protocols
+            url: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols
+          - page: Garnet 2.0
+            url: /documentation/general_docs/memory_system/ruby/garnet-2
+          - page: MOESI CMP directory
+            url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory
+          - page: Garnet Synthetic Traffic
+            url: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic
+          - page: SLICC
+            url: /documentation/general_docs/memory_system/ruby/slicc
+          - page: MI example
+            url: /documentation/general_docs/memory_system/ruby/MI_example
+          - page: Garnet standalone
+            url: /documentation/general_docs/memory_system/ruby/Garnet_standalone
+          - page: Interconnection network
+            url: /documentation/general_docs/memory_system/ruby/interconnection-network
+          - page: MOESI hammer
+            url: /documentation/general_docs/memory_system/ruby/MOESI_hammer
+          - page: MOESI CMP token
+            url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token
+          - page: MESI two level
+            url: /documentation/general_docs/memory_system/ruby/MESI_Two_Level
+            
   - title: gem5 Doxygen
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
+
+
+  - title: M5ops
+    items:
+        - title: M5ops
+          url: /documentation/general_docs/M5ops
+  - title: Checkpoints
+    items:
+        - title: Checkpoints
+          url: /documentation/general_docs/Checkpoints
+
+
+  - title: Debugging and Testing
+    items:
+    - title: Debugging and Testing
+      id: debugging_and_testing
+      url: /documentation/general_docs/debugging_and_testing/debugging_and_testing
+
+    - title: Directed Testers
+      id: directed_testers
+      subitems:
+        - page: Garnet Synthetic Traffic
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic
+        - page: Ruby Random Tester
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester
+
+    - title: Debugging
+      id: debugging
+      subitems:
+          - page: Trace-based Debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
+          - page: Debugger-based Debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
+          - page: Debugging Simulated Code
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
+
