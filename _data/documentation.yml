@@ -72,6 +72,12 @@ docs:
       - title: gem5 101
         url: /documentation/gem5_101/
 
+  - title: Creating disk images
+    items:
+      - title: Creating disk images
+        id: disks
+        url: /documentation/disks
+
   - title: Beginners guide to contributing
     items:
         - title: Beginners guide to contributing
