@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "Classic caches"
+doc: Memory System
+parent: memory_system
 permalink: /documentation/general_docs/memory_system/classic_caches/
+author: Jason Lowe-Power
 ---
 
 # Classic Caches

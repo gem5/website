@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "MESI two level"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MESI_Two_Level/
+author: Jason Lowe-Power
 ---
 
 ### **Protocol Overview**

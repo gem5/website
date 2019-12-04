@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "SLICC"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/slicc/
+author: Jason Lowe-Power
 ---
 
 

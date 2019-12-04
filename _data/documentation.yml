@@ -84,19 +84,25 @@ docs:
           id: reporting_problems
           url: /documentation/reporting_problems
 
-  - title: Memory system
+  - title: Memory System
     items:
-      - page: Memory system
+      - title: Memory System
         url: /documentation/general_docs/memory_system/
-      - page: Replacement Policies
+
+      - title: Replacement Policies
         url: /documentation/general_docs/memory_system/replacement_policies
-      - page: Indexing Policies
+
+      - title: Indexing Policies
         url: /documentation/general_docs/memory_system/indexing_policies
-      - page: Classic memory system coherence
+
+      - title: Classic memory system coherence
         url: /documentation/general_docs/memory_system/classic-coherence-protocol
-      - page: Classic caches
+
+      - title: Classic caches
         url: /documentation/general_docs/memory_system/classic_caches
+
       - title: Ruby
+        id: ruby
         subitems:
           - page: Ruby
             url: /documentation/general_docs/memory_system/ruby/

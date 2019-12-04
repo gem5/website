@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "MOESI hammer"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MOESI_hammer/
+author: Jason Lowe-Power
 ---
 
 This is an implementation of AMD's Hammer protocol, which is used in

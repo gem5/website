@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "MI example"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MI_example/
+author: Jason Lowe-Power
 ---
 
 ### Protocol Overview

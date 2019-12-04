@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "Replacement Policies"
+doc: Memory System
+parent: memory_system
 permalink: /documentation/general_docs/memory_system/replacement_policies/
+author: Jason Lowe-Power
 ---
 
 Gem5 has multiple implemented replacement policies. Each one uses its

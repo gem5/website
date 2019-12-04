@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: Ruby
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/
+author: Jason Lowe-Power
 ---
 
 ## High level components of Ruby

@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "MOESI CMP token"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token/
+author: Jason Lowe-Power
 ---
 
 ### Protocol Overview

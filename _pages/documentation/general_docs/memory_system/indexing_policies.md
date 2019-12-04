@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "Indexing Policies"
+doc: Memory System
+parent: memory_system
 permalink: /documentation/general_docs/memory_system/indexing_policies/
+author: Jason Lowe-Power
 ---
 
 Indexing policies determine the locations to which a block is mapped

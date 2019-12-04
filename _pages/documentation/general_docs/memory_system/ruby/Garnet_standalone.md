@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "Garnet standalone"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/Garnet_standalone/
+author: Jason Lowe-Power
 ---
 
 This is a dummy cache coherence protocol that is used to operate Garnet

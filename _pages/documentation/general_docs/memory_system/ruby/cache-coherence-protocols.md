@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "Cache Coherence Protocols"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols/
+author: Jason Lowe-Power
 ---
 
 ## Common Notations and Data Structures

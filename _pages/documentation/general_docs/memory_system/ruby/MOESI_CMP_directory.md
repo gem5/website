@@ -1,7 +1,10 @@
 ---
 layout: documentation
 title: "MOESI CMP directory"
+doc: Memory System
+parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory/
+author: Jason Lowe-Power
 ---
 
 ### Protocol Overview
