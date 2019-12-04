@@ -128,6 +128,17 @@ docs:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
 
+
+  - title: M5ops
+    items:
+        - title: M5ops
+          url: /documentation/general_docs/M5ops
+  - title: Checkpoints
+    items:
+        - title: Checkpoints
+          url: /documentation/general_docs/Checkpoints
+
+
   - title: Debugging and Testing
     items:
     - title: Debugging and Testing
