@@ -103,15 +103,15 @@ There should be:
 
 
 For pointer and reference argument declarations, either of the following are acceptable:
-
-    FooType *fooPtr;
-    FooType &fooRef;
-
+```c++
+FooType *fooPtr;
+FooType &fooRef;
+```
 or
-
-    FooType* fooPtr;
-    FooType& fooRef;
-
+```c++
+FooType* fooPtr;
+FooType& fooRef;
+```
 However, style should be kept consistent within a file. If you are editing an existing file, please keep consistent with the existing code. If you are writing new code in a new file, feel free to choose the style of your preference. 
 
 ## Naming
@@ -187,12 +187,12 @@ Header files should never contain using namespace declarations at the top level.
 
 ## Documenting the code
 
-Each file/class/member should be documented using doxygen style comments.Doxygen allows users to quickly create documentation for our code by extracting the relavent information from the code and comments. It is able to document all the code structures including classes, namespaces, files, members, defines, etc. Most of these are quite simple to document, you only need to place a special documentation block before the declaration. The Doxygen documentation within gem5 is processed every night and the following web pages are generated: [Doxygen](http://www.gem5.org/docs/html/index.html) 
+Each file/class/member should be documented using doxygen style comments.Doxygen allows users to quickly create documentation for our code by extracting the relavent information from the code and comments. It is able to document all the code structures including classes, namespaces, files, members, defines, etc. Most of these are quite simple to document, you only need to place a special documentation block before the declaration. The Doxygen documentation within gem5 is processed every night and the following web pages are generated: [Doxygen](https://gem5.github.io/gem5-doxygen/) 
 
 ### Using Doxygen
 
 The special documentation blocks take the form of a javadoc style comment. A javadoc comment is a C style comment with 2 *'s at the start, like this:
-```java
+```c++
 /**
  * ...documentation...
  */
@@ -201,14 +201,14 @@ The special documentation blocks take the form of a javadoc style comment. A jav
 The intermediate asterisks are optional, but please use them to clearly delineate the documentation comments.
 
 The documentation within these blocks is made up of at least a brief description of the documented structure, that can be followed by a more detailed description and other documentation. The brief description is the first sentence of the comment. It ends with a period followed by white space or a new line. For example:
-```java
+```c++
 /**
  * This is the brief description. This is the start of the detailed 
  * description. Detailed Description continued.
  */
 ```
 If you need to have a period in the brief description, follow it with a backslash followed by a space.
-```java
+```c++
 /**
  * e.g.\ This is a brief description with an internal period.
  */
