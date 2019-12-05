@@ -151,3 +151,12 @@ docs:
             url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
           - page: Debugging Simulated Code
             url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
+
+  - title: CPU models
+    items:
+      - title: CPU models
+        id: cpu_models
+        url: /documentation/general_docs/cpu_models/
+
+      - title: Visualization
+        url: /documentation/general_docs/cpu_models/visualization
