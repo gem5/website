@@ -127,3 +127,27 @@ docs:
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
+
+  - title: Debugging and Testing
+    items:
+    - title: Debugging and Testing
+      id: debugging_and_testing
+      url: /documentation/general_docs/debugging_and_testing/debugging_and_testing
+
+    - title: Directed Testers
+      id: directed_testers
+      subitems:
+        - page: Garnet Synthetic Traffic
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic
+        - page: Ruby Random Tester
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester
+
+    - title: Debugging
+      id: debugging
+      subitems:
+          - page: Trace-based Debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
+          - page: Debugger-based Debugging
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
+          - page: Debugging Simulated Code
+            url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
