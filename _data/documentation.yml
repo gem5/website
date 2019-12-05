@@ -168,3 +168,11 @@ docs:
 
       - title: Coding Style
         url: /documentation/general_docs/development/coding_style
+
+  - title: Full System
+    items:
+      - title: Full System
+        url: /documentation/general_docs/fullsystem/
+
+      - title: m5 term
+        url: /documentation/general_docs/fullsystem/m5term
