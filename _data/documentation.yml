@@ -1,6 +1,11 @@
 title: Documentation
 
 docs:
+  - title: Compiling Workloads
+    items:
+      - title: Compiling Workloads
+        url: /documentation/general_docs/compiling_workloads/index
+
   - title: Learning gem5
     items:
     - title: Introduction
