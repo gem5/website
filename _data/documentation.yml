@@ -179,8 +179,17 @@ docs:
       - title: Compiling Workloads
         url: /documentation/general_docs/compiling_workloads/
 
+  - title: CPU Models
+    items:
+      - title: Execution Basics
+        url: /documentation/general_docs/cpu_models/execution_basics
+  
+  - title: Statistics
+    items:       
+      - title: Statistics
+        url: /documentation/general_docs/statistics/
+
   - title: gem5 Doxygen
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
-
