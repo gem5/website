@@ -72,11 +72,14 @@ docs:
       - title: gem5 101
         url: /documentation/gem5_101/
 
-  - title: Creating disk images
+  - title: General Docs
     items:
-      - title: Creating disk images
-        id: disks
-        url: /documentation/disks
+    - title: Full System
+      id: fullsystem
+      url: /documentation/general_docs/fullsystem
+      subitems:
+        - page: Creating Disk Images
+          url: /documentation/general_docs/fullsystem/disks
 
   - title: Beginners guide to contributing
     items:
