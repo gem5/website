@@ -4,7 +4,7 @@ docs:
   - title: Compiling Workloads
     items:
       - title: Compiling Workloads
-        url: /documentation/general_docs/compiling_workloads/index
+        url: /documentation/general_docs/compiling_workloads/
 
   - title: Learning gem5
     items:
