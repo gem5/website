@@ -160,3 +160,11 @@ docs:
 
       - title: Visualization
         url: /documentation/general_docs/cpu_models/visualization
+
+  - title: Development
+    items:
+      - title: Development
+        url: /documentation/general_docs/development/
+
+      - title: Coding Style
+        url: /documentation/general_docs/development/coding_style
