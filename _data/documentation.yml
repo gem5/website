@@ -91,6 +91,8 @@ docs:
         url: /documentation/general_docs/fullsystem/disks
       - title: Devices
         url: /documentation/general_docs/fullsystem/devices
+      - title: m5term
+        url: /documentation/general_docs/fullsystem/m5term
 
   - title: Memory System
     items:
@@ -150,6 +152,8 @@ docs:
         url: /documentation/general_docs/cpu_models/TraceCPU
     - title: Execution Basics
       url: /documentation/general_docs/cpu_models/execution_basics
+    - title: Visualization
+      url: /documentation/general_docs/cpu_models/visualization
 
   - title: M5ops
     items:
@@ -204,15 +208,20 @@ docs:
     items:
       - title: Compiling Workloads
         url: /documentation/general_docs/compiling_workloads/
-  
+
   - title: Statistics
-    items:       
+    items:
       - title: Statistics
         url: /documentation/general_docs/statistics/
+
+  - title: Development
+    items:
+      - title: Coding Style
+        url: documentation/general_docs/development/coding_style/
 
   - title: gem5 Doxygen
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
-            
+
 
