@@ -3,7 +3,6 @@ layout: page
 title: Creating disk images
 parent: documentation
 permalink: documentation/general_docs/fullsystem/disks
-author: Ayaz Akram
 ---
 
 In full-system mode, gem5 relies on a disk image with an installed operating system to run simulations.
