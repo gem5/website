@@ -3,7 +3,6 @@ layout: documentation
 title: Creating disk images
 parent: documentation
 permalink: documentation/general_docs/fullsystem/disks
-author: Ayaz Akram
 ---
 
 # Creating disk images for full system mode
