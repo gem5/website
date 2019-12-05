@@ -22,10 +22,10 @@ We no longer actively maintain that capability, however, and it does not current
 
 # ARM
 
-The ARM Architecture models within gem5 support an ARMv8-A profile of the ARM® architecture with multi-processor extensions. 
+The ARM Architecture models within gem5 support an [ARMv8-A](https://www.arm.com/products/processors/armv8-architecture.php) profile of the ARM® architecture with multi-processor extensions. 
 This includes both AArch32 and AArch64 state. 
-In AArch32, this include support for [Thumb®](http://www.arm.com/products/processors/technologies/instruction-set-architectures.php), Thumb-2, VFPv3 (32 double register variant) and [NEON™](http://www.arm.com/products/processors/technologies/neon.php), and Large Physical Address Extensions (LPAE). 
-Optional features of the architecture that are not currently supported are [TrustZone®](http://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](http://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](http://www.arm.com/products/processors/technologies/virtualization-extensions.php).
+In AArch32, this include support for [Thumb®](https://www.arm.com/products/processors/technologies/instruction-set-architectures.php), Thumb-2, VFPv3 (32 double register variant) and [NEON™](https://www.arm.com/products/processors/technologies/neon.php), and Large Physical Address Extensions (LPAE). 
+Optional features of the architecture that are not currently supported are [TrustZone®](https://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](https://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](https://www.arm.com/products/processors/technologies/virtualization-extensions.php).
 
 In full system mode gem5 is able to boot uni- or multi-processor Linux and bare metal applications built with ARM's compilers. 
 Newer Linux versions work out of the box (if used with gem5's DTBs) we also provide gem5-specific Linux kernels with custom configurations and custom drivers Additionally, statically linked Linux binaries can be run in ARM's syscall emulation mode.
