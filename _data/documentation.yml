@@ -81,11 +81,11 @@ docs:
 
 
   - title: Full System
-    id: fullsystem
-    url: /documentation/general_docs/fullsystem
-    subitems:
-      - page: Creating Disk Images
+    items:
+      - title: Creating Disk Images
         url: /documentation/general_docs/fullsystem/disks
+      - title: Devices
+        url: /documentation/general_docs/fullsystem/devices
 
   - title: Memory System
     items:
