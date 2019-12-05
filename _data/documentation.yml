@@ -1,6 +1,11 @@
 title: Documentation
 
 docs:
+  - title: Architecture Support
+    items:
+      - title: Architecture Support
+        url: /documentation/general_docs/architecture_support/index
+
   - title: Learning gem5
     items:
     - title: Introduction
