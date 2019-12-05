@@ -5,6 +5,8 @@ docs:
     items:
       - title: Architecture Support
         url: /documentation/general_docs/architecture_support/index
+      - title: ARM Implementation
+        url: /documentation/general_docs/architecture_support/arm_implementation
 
   - title: Learning gem5
     items:
