@@ -4,7 +4,8 @@ docs:
   - title: Architecture Support
     items:
       - title: Architecture Support
-        url: /documentation/general_docs/architecture_support/index
+        url: /documentation/general_docs/architecture_support/
+
       - title: ARM Implementation
         url: /documentation/general_docs/architecture_support/arm_implementation
 

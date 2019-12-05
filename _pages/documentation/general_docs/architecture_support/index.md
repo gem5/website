@@ -4,7 +4,6 @@ title: "Architecture Support"
 doc: Architecture Support
 parent: architecture_support
 permalink: /documentation/general_docs/architecture_support/
-author: "?"
 ---
 
 # Architecture Support
@@ -67,3 +66,4 @@ The features of the architecture that are exercised by Linux and standard Linux 
 
 
 ## RISC-V
+

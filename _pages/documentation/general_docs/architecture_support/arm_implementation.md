@@ -4,7 +4,6 @@ title: "ARM implementation"
 doc: ARM implementation
 parent: architecture_support
 permalink: /documentation/general_docs/architecture_support/arm_implementation
-author: "?"
 ---
 
 # ARM Implementation
@@ -13,7 +12,10 @@ author: "?"
 
 ## Supported features and modes
 
-The ARM Architecture models within gem5 support an [ARMv8-A](https://www.arm.com/products/processors/armv8-architecture.php) profile of the ARM® architecture allowing for multi-processor simulation of 64-bit ARM (AArch64) cores. Additionally, gem5 still support ARMv7-a profile of the ARM® architecture with multi-processor extensions for 32-bit simulation. Specifically, this include support for Thumb®, Thumb-2, VFPv3 (32 double register variant), [NEON™](https://www.arm.com/products/processors/technologies/neon.php), and [Large Physical Address Extensions (LPAE)](https://www.arm.com/products/processors/technologies/virtualization-extensions.php). Optional features of the architecture that are not currently supported are [TrustZone®](https://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](http://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](https://www.arm.com/products/processors/technologies/virtualization-extensions.php).
+The ARM Architecture models within gem5 support an [ARMv8-A](https://www.arm.com/products/processors/armv8-architecture.php) profile of the ARM® architecture allowing for multi-processor simulation of 64-bit ARM (AArch64) cores. 
+Additionally, gem5 still support ARMv7-a profile of the ARM® architecture with multi-processor extensions for 32-bit simulation. 
+Specifically, this include support for Thumb®, Thumb-2, VFPv3 (32 double register variant), [NEON™](https://www.arm.com/products/processors/technologies/neon.php), and [Large Physical Address Extensions (LPAE)](https://www.arm.com/products/processors/technologies/virtualization-extensions.php). 
+Optional features of the architecture that are not currently supported are [TrustZone®](https://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](http://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](https://www.arm.com/products/processors/technologies/virtualization-extensions.php).
 
 ## Pertinent Non-supported Features
 
@@ -45,3 +47,4 @@ For the AArch32 boot loader: The initial conditions of the bootloader running ar
 The bootloader works by reading the MPIDR register to determine the CPU number. 
 CPU0 jumps immediately to the kernel while CPUn enables their interrupt interface and and wait for an interrupt. 
 When CPU0 generates an IPI, CPUn reads the flags register until it is non-zero and then jumps to that address. 
+
