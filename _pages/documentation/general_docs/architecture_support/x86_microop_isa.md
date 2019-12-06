@@ -3,7 +3,6 @@ layout: documentation
 title: X86 Micro-op ISA
 parent: architecture_support
 permalink: documentation/general_docs/architecture_support/x86_microop_isa/
-author: Jared Barocsi
 ---
 
 # Register Ops
