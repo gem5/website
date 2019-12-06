@@ -174,6 +174,9 @@ docs:
       - title: ARM Implementation
         url: /documentation/general_docs/architecture_support/arm_implementation
 
+      - title: X86 microop ISA
+        url: /documentation/general_docs/architecture_support/x86_microop_isa/
+
   - title: Compiling Workloads
     items:
       - title: Compiling Workloads
