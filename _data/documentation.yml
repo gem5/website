@@ -151,3 +151,11 @@ docs:
             url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
           - page: Debugging Simulated Code
             url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
+
+    - title: Building
+      id: building
+      subitems:
+          - page: EXTRAS
+            url: /documentation/general_docs/building/EXTRAS
+            
+
