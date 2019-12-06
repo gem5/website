@@ -7,17 +7,17 @@ permalink: /documentation/general_docs/fullsystem/m5term
 ---
 # m5 term
 The m5term program allows the user to connect to the simulated console interface that full-system gem5 provides. Simply change into the util/term directory and build m5term:
-
-	% cd gem5/util/term 
-	% make
-	gcc  -o m5term term.c
-	% make install
-	sudo install -o root -m 555 m5term /usr/local/bin
-
+```
+% cd gem5/util/term 
+% make
+gcc  -o m5term term.c
+% make install
+sudo install -o root -m 555 m5term /usr/local/bin
+```
 The usage of m5term is:
-
-	./m5term <host> <port>
-
+```
+./m5term <host> <port>
+```
 	<host> is the host that is running gem5
 
 	<port> is the console port to connect to. gem5 defaults to
