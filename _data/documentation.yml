@@ -157,5 +157,16 @@ docs:
       subitems:
           - page: EXTRAS
             url: /documentation/general_docs/building/EXTRAS
+
+    - title: CPU-Models
+      id: CPU-Models
+      subitems:
+          - page: SimpleCPU
+            url: /documentation/CPU-Models/SimpleCPU
+          - page: O3CPU
+            url: /documentation/CPU-Models/O3CPU
+          - page: TraceCPU
+            url: /documentation/CPU-Models/TraceCPU
+
             
 
