@@ -79,6 +79,11 @@ docs:
           id: reporting_problems
           url: /documentation/reporting_problems
 
+  - title: Building
+    id: building
+    items:
+      - title: EXTRAS
+        url: /documentation/general_docs/building/EXTRAS
 
   - title: Full System
     items:
@@ -136,6 +141,7 @@ docs:
     items:
         - title: M5ops
           url: /documentation/general_docs/M5ops
+
   - title: Checkpoints
     items:
         - title: Checkpoints
@@ -196,3 +202,6 @@ docs:
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
+   
+            
+
