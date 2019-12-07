@@ -285,5 +285,5 @@ class InstObjParams(object):
                   snippets = {}, opt_args = []):
 ```
 
-The first three constructor arguments populate the object's `mnemonic`, `class\_name`, and (optionally) `base\_class` members. The fourth (optional) argument is a CodeBlock object; all of the members of the provided CodeBlock object are copied to the new object, making them accessible for template substitution. Any remaining arguments are interpreted as either additional instruction flags (appended to the `flags` list inherited from the CodeBlock argument, if any), or as an operation class (overriding any `op\_class` from the CodeBlock).
+The first three constructor arguments populate the object's `mnemonic`, `class_name`, and (optionally) `base_class` members. The fourth (optional) argument is a CodeBlock object; all of the members of the provided CodeBlock object are copied to the new object, making them accessible for template substitution. Any remaining arguments are interpreted as either additional instruction flags (appended to the `flags` list inherited from the CodeBlock argument, if any), or as an operation class (overriding any `op_class` from the CodeBlock).
 
