@@ -1,5 +1,5 @@
 ---
-layout: documetation
+layout: documentation
 title: Execution Basics
 permalink: /documentation/general_docs/cpu_models/execution_basics
 ---
