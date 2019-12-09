@@ -1,13 +1,6 @@
 title: Documentation
 
 docs:
-  - title: Architecture Support
-    items:
-      - title: Architecture Support
-        url: /documentation/general_docs/architecture_support/
-
-      - title: ARM Implementation
-        url: /documentation/general_docs/architecture_support/arm_implementation
 
   - title: Learning gem5
     items:
@@ -86,6 +79,14 @@ docs:
           id: reporting_problems
           url: /documentation/reporting_problems
 
+
+  - title: Full System
+    id: fullsystem
+    url: /documentation/general_docs/fullsystem
+    subitems:
+      - page: Creating Disk Images
+        url: /documentation/general_docs/fullsystem/disks
+
   - title: Memory System
     items:
       - title: Memory System
@@ -130,12 +131,6 @@ docs:
             url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token
           - page: MESI two level
             url: /documentation/general_docs/memory_system/ruby/MESI_Two_Level
-            
-  - title: gem5 Doxygen
-    items:
-        - title: gem5 Doxygen
-          url: https://gem5.github.io/gem5-doxygen
-
 
   - title: M5ops
     items:
@@ -171,7 +166,21 @@ docs:
           - page: Debugging Simulated Code
             url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
 
+  - title: Architecture Support
+    items:
+      - title: Architecture Support
+        url: /documentation/general_docs/architecture_support/
+
+      - title: ARM Implementation
+        url: /documentation/general_docs/architecture_support/arm_implementation
+
   - title: Compiling Workloads
     items:
       - title: Compiling Workloads
         url: /documentation/general_docs/compiling_workloads/
+
+  - title: gem5 Doxygen
+    items:
+        - title: gem5 Doxygen
+          url: https://gem5.github.io/gem5-doxygen
+
