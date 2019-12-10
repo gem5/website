@@ -192,7 +192,10 @@ docs:
         url: /documentation/general_docs/architecture_support/
 
       - title: ARM Implementation
-        url: /documentation/general_docs/architecture_support/arm_implementation
+        url: /documentation/general_docs/architecture_support/arm_implementation/
+
+      - title: ISA Parser
+        url: /documentation/general_docs/architecture_support/isa_parser/
 
       - title: X86 microop ISA
         url: /documentation/general_docs/architecture_support/x86_microop_isa/
