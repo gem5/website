@@ -93,9 +93,7 @@ WriteBuffer queue holds the following memory requests:
 * Uncached writes.
 * Writeback from evicted (& dirty) cache lines.
 
-gem5_MS_Fig3.PNG
-MSHR and Write Buffer Blocks
-
+![MSHR and Write Buffer Blocks](/assets/img/gem5_MS_Fig3.PNG)
 
 Each memory request is assigned to corresponding [MSHR](https://gem5.github.io/gem5-doxygen/classMSHR.html) object (READ or WRITE on diagram above) that represents particular block (cache line) of memory that has to be read or written in order to complete the command(s). As shown on gigure above, cached read/writes against the same cache line have a common [MSHR](https://gem5.github.io/gem5-doxygen/classMSHR.html) object and will be completed with a single memory access.
 
