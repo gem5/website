@@ -218,4 +218,7 @@ docs:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
             
-
+  - title: Power and Thermal model
+    items:
+        - title: Power and Thermal model
+          url: /documentation/general_docs/thermal_model
