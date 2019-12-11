@@ -207,9 +207,9 @@ docs:
     items:
       - title: Compiling Workloads
         url: /documentation/general_docs/compiling_workloads/
-  
+
   - title: Statistics
-    items:       
+    items:
       - title: Statistics
         url: /documentation/general_docs/statistics/
 
@@ -217,7 +217,7 @@ docs:
     items:
         - title: gem5 Doxygen
           url: https://gem5.github.io/gem5-doxygen
-            
+
   - title: Power and Thermal model
     items:
         - title: Power and Thermal model
