@@ -97,8 +97,8 @@ docs:
       - title: Memory System
         url: /documentation/general_docs/memory_system/
 
-     - title: gem5 Memory System
-       url: /documentation/general_docs/memory_system/gem5_memory_system
+      - title: gem5 Memory System
+        url: /documentation/general_docs/memory_system/gem5_memory_system
 
       - title: Replacement Policies
         url: /documentation/general_docs/memory_system/replacement_policies
