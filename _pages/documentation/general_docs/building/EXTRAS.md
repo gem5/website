@@ -1,9 +1,10 @@
 ---
 layout: documentation
-title: gem5 documentation
-doc: Building
-parent: building
+title: Building EXTRAS
+doc: gem5 documentation
+parent: building_extras
 permalink: /documentation/general_docs/building/
+authors: x
 ---
 
 # EXTRAS
