@@ -3,6 +3,10 @@ title: Documentation
 docs:
   - title: gem5 documentation
     items:
+    - title: Code Style
+      id: code_style
+      url: /documentation/general_docs/development/coding_style/
+
     - title: Building EXTRAS
       id: building_extras
       url: /documentation/general_docs/building/EXTRAS
@@ -122,11 +126,7 @@ docs:
     - title: Stats Package
       id: statistics
       url: /documentation/general_docs/statistics/
-
-    - title: Code Style
-      id: code_style
-      url: /documentation/general_docs/development/coding_style/
-
+ 
   - title: Learning gem5
     items:
     - title: Introduction

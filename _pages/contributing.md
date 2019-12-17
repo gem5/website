@@ -16,7 +16,7 @@ to the gem5 project.
 ## Determining what you can contribute
 
 The easiest way to see how you can contribute to gem5 is to check our Jira
-issue tracker: [](https://gem5.atlassian.net). From Jira you can check open
+issue tracker: <https://gem5.atlassian.net>. From Jira you can check open
 issues.
 
 Browse these open issues and see if there are any which you are capable of
@@ -37,9 +37,9 @@ yourself from the task and change the task's status back to `Todo`.**
 
 ## Obtaining the git repo
 
-The gem5 git repository is hosted at [](https://gem5.googlesource.com).
+The gem5 git repository is hosted at <https://gem5.googlesource.com>.
 **Please note: contributions made to other gem5 repos (e.g., our GitHub mirror)
-will not be considered. Please contribute to [](https://gem5.googlesource.com)
+will not be considered. Please contribute to <https://gem5.googlesource.com>
 exclusively.**
 
 To pull the gem5 git repo:
@@ -216,7 +216,7 @@ git push origin HEAD:refs/for/master
 At this stage you may receive an error if you're not registered to contribute
 to our Gerrit. To resolve this issue:
 
-1. Create an account at [](https://gem5-review.googlesource.com).
+1. Create an account at <https://gem5-review.googlesource.com>.
 2. Go to `User Settings`.
 3. Select `Obtain password` (under `HTTP Credentials`).
 4. A new tab shall open, explaining how to authenticate your machine to make
@@ -227,7 +227,7 @@ to Gerrit with this `Change-ID` is assumed to be part of this change.
 
 ## Code review
 
-Now, at [](https://gem5-review.googlesource.com), you can view the
+Now, at <https://gem5-review.googlesource.com>, you can view the
 change you have submitted (`Your` -> `Changes` -> `Outgoing reviews`). We
 suggest that, at this stage, you mark the corresponding Jira issue
 as `In Review`. Adding a link to the change on Gerrit as a comment to the
