@@ -42,8 +42,6 @@ pre code {
 
 /**** NAVBAR ****/
 .navbar {
-	z-index: 1;
-
   .navbar-brand {
     padding: 0 !important;
   }
@@ -90,15 +88,11 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 	width: $sidenav-width;
 	height: 130px;
 	background-color: $base;
-	position: fixed;
+  position: fixed;
 	top: 0px;
 	text-align: center;
-	img {
-		padding-top: 12px;
-    padding-bottom: 8px;
-	}
   div.search {
-    padding-top: 90px;
+    margin-top: 20px;
     input {
       width: 88%;
       padding: 3px;
@@ -114,7 +108,14 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
       right: 10px;
       margin: 3px 10px;
 		}
-	}
+  }
+  div.sidenav-brand {
+    height: 71px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    text-align: left;
+  }
 }
 .sidenav {
   height: calc(100vh - 130px);
