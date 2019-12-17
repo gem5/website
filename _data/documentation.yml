@@ -3,6 +3,10 @@ title: Documentation
 docs:
   - title: gem5 documentation
     items:
+    - title: gem5 documentation
+      id: gem5_documentation
+      url: /documentation
+
     - title: Code Style
       id: code_style
       url: /documentation/general_docs/development/coding_style/

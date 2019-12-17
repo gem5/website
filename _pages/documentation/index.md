@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: gem5 documentation
+doc: gem5 documentation
+parent: gem5_documentation
 permalink: /documentation/
 author: Jason Lowe-Power
 ---
