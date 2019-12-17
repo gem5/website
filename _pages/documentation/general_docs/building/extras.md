@@ -7,7 +7,7 @@ permalink: /documentation/general_docs/building/EXTRAS
 authors: Jason Lowe-Power
 ---
 
-# EXTRAS
+# Building EXTRAS
 The `EXTRAS` SCons option is a way to add functionality in gem5 without adding your files to the gem5 source tree. Specifically, it allows you to identify one or more directories that will get compiled in with gem5 as if they appeared under the 'src' part of the gem5 tree, without requiring the code to be actually located under 'src'. It's present to allow user to compile in additional functionality (typically additional SimObject classes) that isn't or can't be distributed with gem5. This is useful for maintaining local code that isn't suitable for incorporating into the gem5 source tree, or third-party code that can't be incorporated due to an incompatible license. Because the EXTRAS location is completely independent of the gem5 repository, you can keep the code under a different version control system as well.
 
 The main drawback of the EXTRAS feature is that, by itself, it only supports adding code to gem5, not modifying any of the base gem5 code. 
