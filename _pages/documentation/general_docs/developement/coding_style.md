@@ -3,7 +3,7 @@ layout: documentation
 title: "Coding Style"
 doc: gem5 documentation
 parent: development
-permalink: /documentation/general_docs/development/coding_style
+permalink: /documentation/general_docs/development/coding_style/
 ---
 # Coding Style
 
