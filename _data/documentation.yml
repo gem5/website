@@ -3,10 +3,6 @@ title: Documentation
 docs:
   - title: gem5 documentation
     items:
-    - title: gem5 101
-      id: gem5_101
-      url: /documentation/gem5_101/
-
     - title: Building EXTRAS
       id: building_extras
       url: /documentation/general_docs/building/EXTRAS
@@ -83,11 +79,11 @@ docs:
 
     - title: M5ops
       id: m5ops
-      url: /documentation/general_docs/M5ops
+      url: /documentation/general_docs/m5ops
 
     - title: Checkpoints
       id: checkpoints
-      url: /documentation/general_docs/Checkpoints
+      url: /documentation/general_docs/checkpoints
 
     - title: Directed Testers
       id: directed_testers
@@ -123,18 +119,14 @@ docs:
       id: compiling_workloads
       url: /documentation/general_docs/compiling_workloads/
 
-    - title: Statistics
+    - title: Stats Package
       id: statistics
       url: /documentation/general_docs/statistics/
 
-    - title: Development
+    - title: Code Style
       id: code_style
-      url: documentation/general_docs/development/coding_style/
+      url: /documentation/general_docs/development/coding_style/
 
-    - title: gem5 Doxygen
-      id: doxygen
-      url: https://gem5.github.io/gem5-doxygen
-                 
   - title: Learning gem5
     items:
     - title: Introduction
@@ -200,6 +192,15 @@ docs:
           url: /documentation/learning_gem5/part3/MSIdebugging
         - page: Configuring for a standard protocol
           url: /documentation/learning_gem5/part3/simple-MI_example
+    - title: gem5 101
+      id: gem5_101
+      url: /documentation/learning_gem5/gem5_101/
+
+  - title: gem5 Doxygen
+    items:
+       - title: gem5 Doxygen
+         id: doxygen
+         url: https://gem5.github.io/gem5-doxygen
 
   - title: Reporting Problems
     items:

@@ -6,7 +6,7 @@ parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/execution_basics
 ---
 
-# Predecoding #
+# Execution basic
 
 
 # StaticInsts #

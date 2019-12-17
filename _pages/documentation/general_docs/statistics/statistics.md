@@ -6,7 +6,7 @@ doc: gem5 documentation
 permalink: /documentation/general_docs/statistics/
 ---
 
-# Stats "Philosophy" --> Initialization #
+# Stats Package
 The philosophy of the stats package at the moment is to have a single base class called Stat which is merely a hook into every other aspect of the stat that may be important. Thus, this Stat base class has virtual functions to name, set precision for, set flags for, and initialize size for all the stats. For all Vector based stats, it is very important to do the initialization before using the stat so that appropriate storage allocation can occur. For all other stats, naming and flag setting is also important, but not as important for the actual proper execution of the binary. The way this is set up in the code is to have a regStats() pass in which all stats can be registered in the stats database and initialized.
 
 Thus, to add your own stats, just add them to the appropriate class' data member list, and be sure to initialize/register them in that class' regStats function.

@@ -7,7 +7,7 @@ permalink: /documentation/general_docs/memory_system/ruby/
 author: Jason Lowe-Power
 ---
 
-## High level components of Ruby
+# Ruby
 
 Ruby implements a detailed simulation model for the memory subsystem. It
 models inclusive/exclusive cache hierarchies with various replacement

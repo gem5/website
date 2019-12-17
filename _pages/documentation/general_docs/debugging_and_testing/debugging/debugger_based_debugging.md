@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/debugging_and_testing/debugging/debugger_
 author: Bobby R. Bruce
 ---
 
+# Debugger-based Debugging
+
 If traces alone are not sufficient, you'll need to inspect what gem5 is doing
 in detail using a debugger (e.g., gdb). You definitely want to use the
 `gem5.debug` binary if you reach this point. Ideally, looking at traces should
