@@ -3,7 +3,7 @@ layout: documentation
 title: "MOESI CMP directory"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory/
+permalink: /documentation/general_docs/ruby/MOESI_CMP_directory/
 author: Jason Lowe-Power
 ---
 

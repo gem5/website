@@ -43,29 +43,29 @@ docs:
       id: ruby
       subitems:
         - page: Ruby
-          url: /documentation/general_docs/memory_system/ruby/
+          url: /documentation/general_docs/ruby
         - page: Cache Coherence Protocols
-          url: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols
+          url: /documentation/general_docs/ruby/cache-coherence-protocols
         - page: Garnet 2.0
-          url: /documentation/general_docs/memory_system/ruby/garnet-2
+          url: /documentation/general_docs/ruby/garnet-2
         - page: MOESI CMP directory
-          url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory
+          url: /documentation/general_docs/ruby/MOESI_CMP_directory
         - page: Garnet Synthetic Traffic
-          url: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic
+          url: /documentation/general_docs/ruby/garnet_synthetic_traffic
         - page: SLICC
-          url: /documentation/general_docs/memory_system/ruby/slicc
+          url: /documentation/general_docs/ruby/slicc
         - page: MI example
-          url: /documentation/general_docs/memory_system/ruby/MI_example
+          url: /documentation/general_docs/ruby/MI_example
         - page: Garnet standalone
-          url: /documentation/general_docs/memory_system/ruby/Garnet_standalone
+          url: /documentation/general_docs/ruby/Garnet_standalone
         - page: Interconnection network
-          url: /documentation/general_docs/memory_system/ruby/interconnection-network
+          url: /documentation/general_docs/ruby/interconnection-network
         - page: MOESI hammer
-          url: /documentation/general_docs/memory_system/ruby/MOESI_hammer
+          url: /documentation/general_docs/ruby/MOESI_hammer
         - page: MOESI CMP token
-          url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token
+          url: /documentation/general_docs/ruby/MOESI_CMP_token
         - page: MESI two level
-          url: /documentation/general_docs/memory_system/ruby/MESI_Two_Level
+          url: /documentation/general_docs/ruby/MESI_Two_Level
 
     - title: CPU Models
       id: cpu_models

@@ -3,7 +3,7 @@ layout: documentation
 title: "Introduction"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/
+permalink: /documentation/general_docs/ruby/
 author: Jason Lowe-Power
 ---
 

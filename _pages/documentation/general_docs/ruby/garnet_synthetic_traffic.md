@@ -3,7 +3,7 @@ layout: documentation
 title: "Garnet Synthetic Traffic"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic/
+permalink: /documentation/general_docs/ruby/garnet_synthetic_traffic/
 author: Jason Lowe-Power
 ---
 

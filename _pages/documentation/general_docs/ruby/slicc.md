@@ -3,7 +3,7 @@ layout: documentation
 title: "SLICC"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/slicc/
+permalink: /documentation/general_docs/ruby/slicc/
 author: Jason Lowe-Power
 ---
 

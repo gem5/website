@@ -3,7 +3,7 @@ layout: documentation
 title: "MESI two level"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/MESI_Two_Level/
+permalink: /documentation/general_docs/ruby/MESI_Two_Level/
 author: Jason Lowe-Power
 ---
 

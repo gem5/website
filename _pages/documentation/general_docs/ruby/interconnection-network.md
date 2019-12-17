@@ -3,7 +3,7 @@ layout: documentation
 title: "Interconnection network"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/interconnection-network/
+permalink: /documentation/general_docs/ruby/interconnection-network/
 author: Jason Lowe-Power
 ---
 

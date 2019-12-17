@@ -3,7 +3,7 @@ layout: documentation
 title: "MOESI hammer"
 doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/MOESI_hammer/
+permalink: /documentation/general_docs/ruby/MOESI_hammer/
 author: Jason Lowe-Power
 ---
 
