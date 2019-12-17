@@ -225,7 +225,7 @@ to use sudo to modify their contents
 
 Now that we have created a blank disk, we need to populate it with all of the OS files.
 Ubuntu distributes a set of files explicitly for this purpose.
-You can find the [Ubuntu core](https://wiki.ubuntu.com/Core) distribution for 14.04 at <http://cdimage.ubuntu.com/ubuntu-core/releases/14.04/release/>. Since we are simulating an x86 machine, we will use `ubuntu-core-14.04-core-amd64.tar.gz`.
+You can find the [Ubuntu core](https://wiki.ubuntu.com/Core) distribution for 14.04 at <http://cdimage.ubuntu.com/releases/14.04/release/>. Since we are simulating an x86 machine, we will use `ubuntu-core-14.04-core-amd64.tar.gz`.
 Download whatever image is appropriate for the system you are simulating.
 
 Next, we need to mount the blank disk and copy all of the files onto the disk.

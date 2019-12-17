@@ -21,7 +21,7 @@ and regenerateAddr():
     determine its full original address.
 
 For further information on Cache Indexing Policies, please refer to the
-wikipedia articles on [Placement Policies](https://en.wikipedia.org/wiki/Cache_Placement_Policies%7CCache) and
+wikipedia articles on [Placement Policies](https://en.wikipedia.org/wiki/Cache_Placement_Policies) and
 [Associativity](https://en.wikipedia.org/wiki/CPU_cache#Associativity%7C).
 
 Set Associative {#set_associative}
@@ -42,7 +42,7 @@ The skewed associative indexing policy has a variable mapping based on a
 hash function, so a value x can be mapped to different sets, based on
 the way being used. Gem5 implements skewed caches as described in
 ["Skewed-Associative
-Caches", from Seznec et al](<https://www.researchgate.net/publication/220758754_Skewed-associative_Caches).
+Caches", from Seznec et al](https://www.researchgate.net/publication/220758754_Skewed-associative_Caches).
 
 Note that there are only a limited number of implemented hashing
 functions, so if the number of ways is higher than that number then a

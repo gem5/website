@@ -33,7 +33,7 @@ For a tutorial-based approach to Ruby see [Part III of Learning gem5](/documenta
 
 ### SLICC + Coherence protocols:
 
-***[SLICC](SLICC)*** stands for *Specification Language for
+***[SLICC](slicc)*** stands for *Specification Language for
 Implementing Cache Coherence*. It is a domain specific language that is
 used for specifying cache coherence protocols. In essence, a cache
 coherence protocol behaves like a state machine. SLICC is used for
@@ -98,9 +98,6 @@ simulated system. Memory Controller currently simple, but models DRAM
 ban contention, DRAM refresh faithfully. It also models close-page
 policy for DRAM buffer.
 
-***Each component is described in details
-[here](Coherence-Protocol-Independent_Memory_Components).***
-
 ### Interconnection Network
 
 The interconnection network connects the various components of the
@@ -120,16 +117,13 @@ The key components of an interconnection network are:
 [here](Interconnection_Network).***
 
 Alternatively, Interconnection network could be replaced with the
-external simulator [TOPAZ](http://www.atc.unican.es/topaz/). This
+external simulator [TOPAZ](https://github.com/ceunican/tpzsimul). This
 simulator is ready to run within gem5 and adds a significant number of
-[features](https://sites.google.com/site/atcgalerna/home-1/publications/files/NOCS-2012_Topaz.pdf?attredirects=0)
+features
 over original ruby network simulator. It includes, new advanced router
 micro-architectures, new topologies, precision-performance adjustable
-router models, mechanisms to speed-up network simulation, etc ... The
-presentation of the tool (and the reason why is not included in the gem5
-repostories) is
-[here](http://thread.gmane.org/gmane.comp.emulators.m5.users/9651)
-
+router models, mechanisms to speed-up network simulation, etc.
+ 
 ## Life of a memory request in Ruby
 
 In this section we will provide a high level overview of how a memory

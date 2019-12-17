@@ -9,9 +9,9 @@ author: Jason Lowe-Power
 
 # Garnet Synthetic Traffic
 
-The Garnet Synthetic Traffic provides a framework for simulating the [Garnet network](garnet-2) with controlled inputs. This is useful for network testing/debugging, or for network-only simulations with synthetic traffic.
+The Garnet Synthetic Traffic provides a framework for simulating the [Garnet network](/documentation/general_docs/ruby/garnet-2) with controlled inputs. This is useful for network testing/debugging, or for network-only simulations with synthetic traffic.
 
-**Note: The garnet synthetic traffic injector only works with the [Garnet_standalone](Garnet_standalone) coherence protocol.**
+**Note: The garnet synthetic traffic injector only works with the [Garnet_standalone](/documentation/general_docs/ruby/Garnet_standalone.md) coherence protocol.**
 
 ## Related files
 
@@ -23,7 +23,7 @@ The Garnet Synthetic Traffic provides a framework for simulating the [Garnet net
 
 ## How to run
 
-First build gem5 with the [Garnet_standalone](Garnet_standalone) coherence protocol. The Garnet_standalone protocol is ISA-agnostic, and hence we build it with the NULL ISA.
+First build gem5 with the [Garnet_standalone](/documentation/general_docs/ruby/Garnet_standalone.md) coherence protocol. The Garnet_standalone protocol is ISA-agnostic, and hence we build it with the NULL ISA.
 
 ```
 scons build/NULL/gem5.debug PROTOCOL=Garnet_standalone
