@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Interconnection network"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/interconnection-network/
 author: Jason Lowe-Power

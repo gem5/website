@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: Execution Basics
+doc: gem5 documentation
+parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/execution_basics
 ---
 

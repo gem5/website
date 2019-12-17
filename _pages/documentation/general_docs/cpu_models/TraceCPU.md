@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Trace CPU Model
+parent: cpu_models
+doc: gem5 documentation
 permalink: /documentation/general_docs/cpu_models/TraceCPU
-parent: CPU-Models
 ---
 # **TraceCPU**
  Table of Contents

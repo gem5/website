@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: Statistics
+parent: statistics
+doc: gem5 documentation
 permalink: /documentation/general_docs/statistics/
 ---
 

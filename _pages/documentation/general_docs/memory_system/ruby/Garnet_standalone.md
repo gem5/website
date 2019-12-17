@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Garnet standalone"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/Garnet_standalone/
 author: Jason Lowe-Power

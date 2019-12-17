@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "m5 term"
-doc: Full System
+doc: gem5 documentation
 parent: fullsystem
 permalink: /documentation/general_docs/fullsystem/m5term
 ---

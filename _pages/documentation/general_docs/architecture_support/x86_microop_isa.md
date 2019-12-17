@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: X86 Micro-op ISA
+doc: gem5 documentation
 parent: architecture_support
 permalink: documentation/general_docs/architecture_support/x86_microop_isa/
 ---

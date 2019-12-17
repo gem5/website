@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Classic caches"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/classic_caches/
 author: Jason Lowe-Power

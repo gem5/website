@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "MESI two level"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/MESI_Two_Level/
 author: Jason Lowe-Power

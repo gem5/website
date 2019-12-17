@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Garnet Synthetic Traffic"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic/
 author: Jason Lowe-Power

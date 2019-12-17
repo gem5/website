@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Debugging Simulated Code
-doc: Debugging and Testing
+doc: gem5 documentation
 parent: debugging
 permalink: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
 author: Bobby R. Bruce

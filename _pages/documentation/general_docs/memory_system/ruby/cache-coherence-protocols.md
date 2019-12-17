@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Cache Coherence Protocols"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
 permalink: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols/
 author: Jason Lowe-Power

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Memory system"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/
 author: Jason Lowe-Power

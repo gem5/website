@@ -1,7 +1,8 @@
 ---
 layout: documentation
 title: Creating disk images
-parent: documentation
+doc: gem5 documentation
+parent: fullsystem
 permalink: documentation/general_docs/fullsystem/disks
 ---
 

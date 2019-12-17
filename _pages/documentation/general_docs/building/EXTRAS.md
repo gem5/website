@@ -3,8 +3,8 @@ layout: documentation
 title: Building EXTRAS
 doc: gem5 documentation
 parent: building_extras
-permalink: /documentation/general_docs/building/
-authors: x
+permalink: /documentation/general_docs/building/EXTRAS
+authors: Jason Lowe-Power
 ---
 
 # EXTRAS

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Architecture Support"
-doc: Architecture Support
+doc: gem5 documentation
 parent: architecture_support
 permalink: /documentation/general_docs/architecture_support/
 ---

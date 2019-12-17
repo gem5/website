@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: Checkpoints
+doc: gem5 documentation
+parent: checkpoints
 permalink: /documentation/general_docs/checkpoints/
 ---
 

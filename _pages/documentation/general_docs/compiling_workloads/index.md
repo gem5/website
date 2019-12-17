@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Compiling Workloads"
-doc: Compiling Workloads
+doc: gem5 documentation
 parent: compiling_workloads
 permalink: /documentation/general_docs/compiling_workloads/
 author: "Hoa Nguyen"
