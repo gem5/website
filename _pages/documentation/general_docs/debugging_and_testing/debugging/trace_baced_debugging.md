@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Trace-based Debugging
-doc: Debugging and Testing
+doc: gem5 documentation
 parent: debugging
 permalink: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
 author: Bobby R. Bruce

@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: Simple CPU Models
-doc: CPU-Models
+doc: gem5 documentation
+parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/SimpleCPU
-parent: CPU-Models
 ---
 # **SimpleCPU**
 The SimpleCPU is a purely functional, in-order model that is suited for cases where a detailed model is not necessary. This can include warm-up periods, client systems that are driving a host, or just testing to make sure a program works.
@@ -28,12 +28,12 @@ The BaseSimpleCPU can not be run on its own. You must use one of the classes tha
 ## **AtomicSimpleCPU**
 The AtomicSimpleCPU is the version of SimpleCPU that uses atomic memory accesses (see [Memory systems](../general_docs/memory_system/index.md) for details). It uses the latency estimates from the atomic accesses to estimate overall cache access time. The AtomicSimpleCPU is derived from BaseSimpleCPU, and implements functions to read and write memory, and also to tick, which defines what happens every CPU cycle. It defines the port that is used to hook up to memory, and connects the CPU to the cache.
 
-![AtomicSimpleCPU](/new-website/assets/img/AtomicSimpleCPU.jpg)
+![AtomicSimpleCPU](/assets/img/AtomicSimpleCPU.jpg)
 
 ## **TimingSimpleCPU**
 The TimingSimpleCPU is the version of SimpleCPU that uses timing memory accesses (see [Memory systems](../general_docs/memory_system/index.md) for details). It stalls on cache accesses and waits for the memory system to respond prior to proceeding. Like the AtomicSimpleCPU, the TimingSimpleCPU is also derived from BaseSimpleCPU, and implements the same set of functions. It defines the port that is used to hook up to memory, and connects the CPU to the cache. It also defines the necessary functions for handling the response from memory to the accesses sent out.
 
-![TimingSimpleCPU](/new-website/assets/img/TimingSimpleCPU.jpg)
+![TimingSimpleCPU](/assets/img/TimingSimpleCPU.jpg)
 
 
 

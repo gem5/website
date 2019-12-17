@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: "MI example"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/MI_example/
+permalink: /documentation/general_docs/ruby/MI_example/
 author: Jason Lowe-Power
 ---
 

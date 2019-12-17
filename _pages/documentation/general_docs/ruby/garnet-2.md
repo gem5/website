@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: "Garnet 2.0"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/garnet-2/
+permalink: /documentation/general_docs/ruby/garnet-2/
 author: Jason Lowe-Power
 ---
 
@@ -37,9 +37,9 @@ following paper:
 ```
 
 Garnet2.0 provides a cycle-accurate micro-architectural implementation
-of an on-chip network router. It leverages the
-[Topology](interconnection-network#Topology "wikilink") and
-[Routing](interconnection-network#Routing "wikilink") infrastructure
+of an on-chip network router. It leverages the [Topology](
+/documentation/general_docs/ruby/interconnection-network#Topology) and [Routing](
+/documentation/general_docs/ruby/interconnection-network#Routing) frastructure
 provided by gem5's ruby memory system model. The default router is a
 state-of-the-art 1-cycle pipeline. There is support to add additional
 delay of any number of cycles in any router, by specifying it within the
@@ -95,7 +95,8 @@ Additional parameters are specified in garnet2.0/GarnetNetwork.py:
 ## Topology
 
 Garnet2.0 leverages the
-[Topology](interconnection-network#Topology "wikilink") infrastructure
+[Topology](/documentation/general_docs/ruby/interconnection-network#Topology)
+infrastructure
 provided by gem5's ruby memory system model. Any heterogeneous topology
 can be modeled. Each router in the topology file can be given an
 independent latency, which overrides the default. In addition, each link
@@ -130,7 +131,7 @@ dst_inport" set to "east".
 ## Routing
 
 Garnet2.0 leverages the
-[Routing](interconnection-network#Routing "wikilink") infrastructure
+[Routing](/documentation/general_docs/ruby/interconnection-network#Routing) infrastructure
 provided by gem5's ruby memory system model. The default routing
 algorithm is a deterministic table-based routing algorithm with shortest
 paths. Link weights can be used to prioritize certain links over others.
@@ -318,4 +319,4 @@ information about free VCs, and number of buffers within each VC.**
 
 Garnet2.0 can be run in a standalone manner and fed with synthetic
 traffic. The details are described here: **[Garnet Synthetic
-Traffic](garnet_synthetic_traffic "wikilink")**
+Traffic](/documentation/general_docs/ruby/garnet_synthetic_traffic)**

@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: Out of order CPU model
-doc: CPU-Models
+doc: gem5 documentation
+parent: cpu_models
 permalink: /documentation//general_docs/cpu_models/O3CPU
-parent: CPU-Models
 ---
 
 # **O3CPU**

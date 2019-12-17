@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Garnet Synthetic Traffic
-doc: Debugging and Testing
+doc: gem5 documentation
 parent: directed_testers
 permalink: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic/
 author: Bobby R. Bruce

@@ -1,17 +1,13 @@
 ---
 layout: documentation
 title: "Memory system"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/
 author: Jason Lowe-Power
 ---
 
 # Memory system
-
-```todo
-To do: Add links to classic caches and Ruby
-```
 
 M5's new memory system (introduced in the first 2.0 beta release) was
 designed with the following goals:

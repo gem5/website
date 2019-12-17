@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: M5ops
+doc: gem5 documentation
+parent: m5ops
 permalink: /documentation/general_docs/m5ops/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Coding Style"
-doc: Development
+doc: gem5 documentation
 parent: development
 permalink: /documentation/general_docs/development/coding_style
 ---

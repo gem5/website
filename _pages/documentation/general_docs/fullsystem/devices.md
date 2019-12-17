@@ -1,7 +1,8 @@
 ---
 layout: documentation
 title: Devices
-parent: documentation
+parent: fullsystem
+doc: gem5 documentation
 permalink: documentation/general_docs/fullsystem/devices
 ---
 

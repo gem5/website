@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: "Interconnection network"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/interconnection-network/
+permalink: /documentation/general_docs/ruby/interconnection-network/
 author: Jason Lowe-Power
 ---
 
@@ -215,4 +215,4 @@ Details of the new (2016) Garnet2.0 network are
 The interconnection networks can be run in a standalone manner and fed
 with synthetic traffic. We recommend doing this with garnet2.0.
 
-**[Running Garnet Standalone with Synthetic Traffic](garnet_synthetic_traffic)**
+**[Running Garnet Standalone with Synthetic Traffic](/documentation/general_docs/ruby/garnet_synthetic_traffic)**

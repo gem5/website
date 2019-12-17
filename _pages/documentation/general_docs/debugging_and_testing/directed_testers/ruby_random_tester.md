@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Ruby Random Tester
-doc: Debugging and Testing
+doc: gem5 documentation
 parent: directed_testers
 permalink: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester/
 author: Bobby R. Bruce

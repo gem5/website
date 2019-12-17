@@ -1,9 +1,9 @@
 ---
 layout: documentation
 title: "Garnet standalone"
-doc: Memory System
+doc: gem5 documentation
 parent: ruby
-permalink: /documentation/general_docs/memory_system/ruby/Garnet_standalone/
+permalink: /documentation/general_docs/ruby/Garnet_standalone/
 author: Jason Lowe-Power
 ---
 
@@ -11,7 +11,7 @@ author: Jason Lowe-Power
 
 This is a dummy cache coherence protocol that is used to operate Garnet
 in a standalone manner. This protocol works in conjunction with the
-[Garnet Synthetic Traffic](garnet_synthetic_traffic "wikilink")
+[Garnet Synthetic Traffic](/documentation/general_docs/ruby/garnet_synthetic_traffic)
 injector.
 
 ### Related Files
@@ -51,7 +51,7 @@ generates packets of the type **ReadReq**, **INST_FETCH**, and
 the RubyPort (in src/mem/ruby/system/RubyPort.hh/cc). These messages
 reach the cache controller via the Sequencer. The destination for these
 messages is determined by the traffic type, and embedded in the address.
-More details can be found [here](Ruby_Network_Test "wikilink").
+More details can be found [here](/documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester).
 
   - Main Operation:
       - The goal of the cache is only to act as a source node in the
@@ -96,4 +96,4 @@ More details can be found [here](Ruby_Network_Test "wikilink").
 
    This protocol assumes only 3 vnets.
   - It should only be used when running [Garnet Synthetic
-        Traffic](Garnet_Synthetic_Traffic).
+        Traffic](/documentation/general_docs/ruby/garnet_synthetic_traffic).
