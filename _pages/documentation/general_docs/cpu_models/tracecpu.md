@@ -36,12 +36,12 @@ The Trace CPU model plays back elastic traces, which are dependency and timing a
 **Trace generation and replay methodology**
 
 ![Methodology block diagram showing elastic trace generation using O3 CPU and replay using Trace CPU
-](/new-website/assets/img/Etrace_methodology.jpg) 
+](/assets/img/Etrace_methodology.jpg) 
 
 ## **Elastic Trace Generation**
 The Elastic Trace Probe Listener listens to Probe Points inserted in O3 CPU pipeline stages. It monitors each instruction and creates a dependency graph by recording data Read-After-Write dependencies and order dependencies between loads and stores. It writes the instruction fetch request trace and the elastic data memory request trace as two separate files as shown below.
 
-![Elastic trace file generation](/new-webisite/assets/img/Etraces_output.jpg)
+![Elastic trace file generation](/assets/img/Etraces_output.jpg)
 
 ### **Trace file formats**
 
@@ -126,11 +126,11 @@ sudo apt-get install libprotobuf-dev
 
 The execution trace generated above is then consumed by the Trace CPU as illustrated below.
 
-![Trace_cpu_top_level](/new-website/assets/img/Trace_cpu_top_level.jpg)
+![Trace_cpu_top_level](/assets/img/Trace_cpu_top_level.jpg)
 
 The Trace CPU model inherits from the Base CPU and interfaces with data and instruction L1 caches. A diagram of the Trace CPU explaining the major logic and control blocks is shown below.
 
-![Trace_CPU_details](/new-website/assets/img/Trace_cpu_details.jpg)
+![Trace_CPU_details](/assets/img/Trace_cpu_details.jpg)
 
 ### **Scripts and options**
 
