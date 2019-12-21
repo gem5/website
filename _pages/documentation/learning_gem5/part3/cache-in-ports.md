@@ -3,7 +3,7 @@ layout: documentation
 title: In port code blocks
 doc: Learning gem5
 parent: part3
-permalink: /cache-in-ports/
+permalink: documentation/learning_gem5/part3/cache-in-ports/
 author: Jason Lowe-Power
 ---
 

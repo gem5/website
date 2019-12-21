@@ -93,7 +93,7 @@ other modes are much simpler and use a simple callchain between the
 master and the slave.
 
 ![Simple master-slave interaction when both can accept the request and
-the response.](../_static/figures/master_slave_1.png)
+the response.](/_pages/static/figures/master_slave_1.png)
 
 As mentioned above, all of the port interfaces require a `PacketPtr` as
 a parameter. Each of these functions (`sendTimingReq`, `recvTimingReq`,
@@ -134,7 +134,7 @@ request or a response. master-slave-2-fig shows the case where the slave
 is busy when the original request was sent.
 
 ![Simple master-slave interaction when the slave is
-busy](../_static/figures/master_slave_2.png)
+busy](/_pages/static/figures/master_slave_2.png)
 
 In this case, the slave returns `false` from the `recvTimingReq`
 function. When a master receives false after calling `sendTimingReq`, it
@@ -150,7 +150,7 @@ the time the slave tries to send a response. In this case, the slave
 cannot call `sendTimingResp` until it receives a `recvRespRetry`.
 
 ![Simple master-slave interaction when the master is
-busy](../_static/figures/master_slave_3.png)
+busy](/_pages/static/figures/master_slave_3.png)
 
 Importantly, in both of these cases, the retry codepath can be a single
 call stack. For instance, when the master calls `sendRespRetry`,
@@ -171,7 +171,7 @@ CPU. In the next chapter \<simplecache-chapter\>, we will add the logic
 to make this object a cache.
 
 ![System with a simple memory object which sits between a CPU and the
-memory bus.](../_static/figures/simple_memobj.png)
+memory bus.](/pages/static/figures/simple_memobj.png)
 
 ### Declare the SimObject
 
