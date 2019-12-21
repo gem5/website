@@ -1,11 +1,13 @@
 ---
 layout: documentation
 title: Debugger-based Debugging
-doc: Debugging and Testing
+doc: gem5 documentation
 parent: debugging
 permalink: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
 author: Bobby R. Bruce
 ---
+
+# Debugger-based Debugging
 
 If traces alone are not sufficient, you'll need to inspect what gem5 is doing
 in detail using a debugger (e.g., gdb). You definitely want to use the

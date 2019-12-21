@@ -117,7 +117,9 @@ Membership of the PMC is by invitation from the existing PMC members. A nominati
 *   Andreas Sandberg
 *   Anthony Gutierrez
 *   Brad Beckmann
-*   Jason Lowe-Power
+*   Gabe Black
+*   Giacomo Travaglini
+*   Jason Lowe-Power (chair)
 *   Nathan Binkerg
 *   Steve Reinhardt
 

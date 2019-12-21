@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: ISA Parser
+doc: gem5 documentation
 parent: architecture_support
 permalink: documentation/general_docs/architecture_support/isa_parser/
 ---

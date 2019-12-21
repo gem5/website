@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Classic caches"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/classic_caches/
 author: Jason Lowe-Power
@@ -13,12 +13,12 @@ The default cache is a non-blocking cache with MSHR (miss status holding
 register) and WB (Write Buffer) for read and write misses. The Cache can
 also be enabled with prefetch (typically in the last level of cache).
 
-There are multiple possible [replacement policies](replacement_policies) and [indexing
-policies](indexing_policies) implemented in gem5. These define, respectively, the possible
+There are multiple possible [replacement policies](/documentation/general_docs/memory_system/replacement_policies) and [indexing
+policies](/documentation/general_docs/memory_system/indexing_policies) implemented in gem5. These define, respectively, the possible
 blocks that can be used for a block replacement given an address, and
 how to use the address information to find a block\'s location. By
-default the cache lines are replaced using [LRU (least recently used)](replacement_policies),
-and indexed with the [Set Associative](indexing_policies) policy.
+default the cache lines are replaced using [LRU (least recently used)](/documentation/general_docs/memory_system/replacement_policies),
+and indexed with the [Set Associative](/documentation/general_docs/memory_system/indexing_policies) policy.
 
 
 # Interconnects

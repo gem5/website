@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Classic memory system coherence"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/classic-coherence-protocol/
 author: Jason Lowe-Power

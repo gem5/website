@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "ARM implementation"
-doc: ARM implementation
+doc: gem5 documentation
 parent: architecture_support
 permalink: /documentation/general_docs/architecture_support/arm_implementation
 ---
@@ -12,10 +12,10 @@ permalink: /documentation/general_docs/architecture_support/arm_implementation
 
 ## Supported features and modes
 
-The ARM Architecture models within gem5 support an [ARMv8-A](https://www.arm.com/products/processors/armv8-architecture.php) profile of the ARM® architecture allowing for multi-processor simulation of 64-bit ARM (AArch64) cores. 
-Additionally, gem5 still support ARMv7-a profile of the ARM® architecture with multi-processor extensions for 32-bit simulation. 
-Specifically, this include support for Thumb®, Thumb-2, VFPv3 (32 double register variant), [NEON™](https://www.arm.com/products/processors/technologies/neon.php), and [Large Physical Address Extensions (LPAE)](https://www.arm.com/products/processors/technologies/virtualization-extensions.php). 
-Optional features of the architecture that are not currently supported are [TrustZone®](https://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](http://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](https://www.arm.com/products/processors/technologies/virtualization-extensions.php).
+The ARM Architecture models within gem5 support an [ARMv8-A](https://developer.arm.com/docs/den0024/latest/armv8-a-architecture-and-processors/armv8-a) profile of the ARM® architecture with multi-processor extensions. 
+This includes both AArch32 and AArch64 state.
+In AArch32, this include support for [Thumb®](https://www.embedded.com/introduction-to-arm-thumb/), Thumb-2, VFPv3 (32 double register variant) and [NEON™](https://developer.arm.com/architectures/instruction-sets/simd-isas/neon), and Large Physical Address Extensions (LPAE). 
+Optional features of the architecture that are not currently supported are [TrustZone®](https://developer.arm.com/ip-products/security-ip/trustzone), ThumbEE, [Jazelle®](https://en.wikipedia.org/wiki/Jazelle), and [Virtualization](https://developer.arm.com/docs/100942/0100/aarch64-virtualization).
 
 ## Pertinent Non-supported Features
 

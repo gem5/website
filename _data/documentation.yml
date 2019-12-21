@@ -1,7 +1,136 @@
 title: Documentation
 
 docs:
+  - title: gem5 documentation
+    items:
+    - title: gem5 documentation
+      id: gem5_documentation
+      url: /documentation
 
+    - title: Code Style
+      id: code_style
+      url: /documentation/general_docs/development/coding_style/
+
+    - title: Building EXTRAS
+      id: building_extras
+      url: /documentation/general_docs/building/EXTRAS
+
+    - title: Full System
+      id: fullsystem
+      subitems:
+        - page: Creating Disk Images
+          url: /documentation/general_docs/fullsystem/disks
+        - page: Devices
+          url: /documentation/general_docs/fullsystem/devices
+        - page: m5term
+          url: /documentation/general_docs/fullsystem/m5term
+
+    - title: Memory System
+      id: memory_system
+      subitems:
+        - page: Memory System
+          url: /documentation/general_docs/memory_system/
+
+        - page: Replacement Policies
+          url: /documentation/general_docs/memory_system/replacement_policies
+
+        - page: Indexing Policies
+          url: /documentation/general_docs/memory_system/indexing_policies
+
+        - page: Classic memory system coherence
+          url: /documentation/general_docs/memory_system/classic-coherence-protocol
+
+        - page: Classic caches
+          url: /documentation/general_docs/memory_system/classic_caches
+
+    - title: Ruby Memory System
+      id: ruby
+      subitems:
+        - page: Ruby
+          url: /documentation/general_docs/ruby
+        - page: Cache Coherence Protocols
+          url: /documentation/general_docs/ruby/cache-coherence-protocols
+        - page: Garnet 2.0
+          url: /documentation/general_docs/ruby/garnet-2
+        - page: MOESI CMP directory
+          url: /documentation/general_docs/ruby/MOESI_CMP_directory
+        - page: Garnet Synthetic Traffic
+          url: /documentation/general_docs/ruby/garnet_synthetic_traffic
+        - page: SLICC
+          url: /documentation/general_docs/ruby/slicc
+        - page: MI example
+          url: /documentation/general_docs/ruby/MI_example
+        - page: Garnet standalone
+          url: /documentation/general_docs/ruby/Garnet_standalone
+        - page: Interconnection network
+          url: /documentation/general_docs/ruby/interconnection-network
+        - page: MOESI hammer
+          url: /documentation/general_docs/ruby/MOESI_hammer
+        - page: MOESI CMP token
+          url: /documentation/general_docs/ruby/MOESI_CMP_token
+        - page: MESI two level
+          url: /documentation/general_docs/ruby/MESI_Two_Level
+
+    - title: CPU Models
+      id: cpu_models
+      subitems:
+        - page: SimpleCPU
+          url: /documentation/general_docs/cpu_models/SimpleCPU
+        - page: O3CPU
+          url: /documentation/general_docs/cpu_models/O3CPU
+        - page: TraceCPU
+          url: /documentation/general_docs/cpu_models/TraceCPU
+        - page: Execution Basics
+          url: /documentation/general_docs/cpu_models/execution_basics
+        - page: Visualization
+          url: /documentation/general_docs/cpu_models/visualization
+
+    - title: M5ops
+      id: m5ops
+      url: /documentation/general_docs/m5ops
+
+    - title: Checkpoints
+      id: checkpoints
+      url: /documentation/general_docs/checkpoints
+
+    - title: Directed Testers
+      id: directed_testers
+      subitems:
+        - page: Garnet Synthetic Traffic
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic
+        - page: Ruby Random Tester
+          url: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester
+
+    - title: Debugging
+      id: debugging
+      subitems:
+        - page: Trace-based Debugging
+          url: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
+        - page: Debugger-based Debugging
+          url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
+        - page: Debugging Simulated Code
+          url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
+
+    - title: Architecture Support
+      id: architecture_support
+      subitems:
+        - page: Architecture Support
+          url: /documentation/general_docs/architecture_support/
+        - page: ARM Implementation
+          url: /documentation/general_docs/architecture_support/arm_implementation/
+        - page: ISA Parser
+          url: /documentation/general_docs/architecture_support/isa_parser/
+        - page: X86 microop ISA
+          url: /documentation/general_docs/architecture_support/x86_microop_isa/
+
+    - title: Compiling Workloads
+      id: compiling_workloads
+      url: /documentation/general_docs/compiling_workloads/
+
+    - title: Stats Package
+      id: statistics
+      url: /documentation/general_docs/statistics/
+ 
   - title: Learning gem5
     items:
     - title: Introduction
@@ -67,11 +196,15 @@ docs:
           url: /documentation/learning_gem5/part3/MSIdebugging
         - page: Configuring for a standard protocol
           url: /documentation/learning_gem5/part3/simple-MI_example
+    - title: gem5 101
+      id: gem5_101
+      url: /documentation/learning_gem5/gem5_101/
 
-  - title: gem5 101
+  - title: gem5 Doxygen
     items:
-      - title: gem5 101
-        url: /documentation/gem5_101/
+       - title: gem5 Doxygen
+         id: doxygen
+         url: https://gem5.github.io/gem5-doxygen
 
   - title: Reporting Problems
     items:
@@ -79,146 +212,3 @@ docs:
           id: reporting_problems
           url: /documentation/reporting_problems
 
-  - title: Building
-    id: building
-    items:
-      - title: EXTRAS
-        url: /documentation/general_docs/building/EXTRAS
-
-  - title: Full System
-    items:
-      - title: Creating Disk Images
-        url: /documentation/general_docs/fullsystem/disks
-      - title: Devices
-        url: /documentation/general_docs/fullsystem/devices
-
-  - title: Memory System
-    items:
-      - title: Memory System
-        url: /documentation/general_docs/memory_system/
-
-      - title: gem5 Memory System
-        url: /documentation/general_docs/memory_system/gem5_memory_system
-
-      - title: Replacement Policies
-        url: /documentation/general_docs/memory_system/replacement_policies
-
-      - title: Indexing Policies
-        url: /documentation/general_docs/memory_system/indexing_policies
-
-      - title: Classic memory system coherence
-        url: /documentation/general_docs/memory_system/classic-coherence-protocol
-
-      - title: Classic caches
-        url: /documentation/general_docs/memory_system/classic_caches
-
-      - title: Ruby
-        id: ruby
-        subitems:
-          - page: Ruby
-            url: /documentation/general_docs/memory_system/ruby/
-          - page: Cache Coherence Protocols
-            url: /documentation/general_docs/memory_system/ruby/cache-coherence-protocols
-          - page: Garnet 2.0
-            url: /documentation/general_docs/memory_system/ruby/garnet-2
-          - page: MOESI CMP directory
-            url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_directory
-          - page: Garnet Synthetic Traffic
-            url: /documentation/general_docs/memory_system/ruby/garnet_synthetic_traffic
-          - page: SLICC
-            url: /documentation/general_docs/memory_system/ruby/slicc
-          - page: MI example
-            url: /documentation/general_docs/memory_system/ruby/MI_example
-          - page: Garnet standalone
-            url: /documentation/general_docs/memory_system/ruby/Garnet_standalone
-          - page: Interconnection network
-            url: /documentation/general_docs/memory_system/ruby/interconnection-network
-          - page: MOESI hammer
-            url: /documentation/general_docs/memory_system/ruby/MOESI_hammer
-          - page: MOESI CMP token
-            url: /documentation/general_docs/memory_system/ruby/MOESI_CMP_token
-          - page: MESI two level
-            url: /documentation/general_docs/memory_system/ruby/MESI_Two_Level
-
-  - title: CPU Models
-    id: cpu_models
-    items:
-    - title: CPU Models
-      subitems:
-      - page: SimpleCPU
-        url: /documentation/general_docs/cpu_models/SimpleCPU
-      - page: O3CPU
-        url: /documentation/general_docs/cpu_models/O3CPU
-      - page: TraceCPU
-        url: /documentation/general_docs/cpu_models/TraceCPU
-    - title: Execution Basics
-      url: /documentation/general_docs/cpu_models/execution_basics
-
-  - title: M5ops
-    items:
-        - title: M5ops
-          url: /documentation/general_docs/M5ops
-
-  - title: Checkpoints
-    items:
-        - title: Checkpoints
-          url: /documentation/general_docs/Checkpoints
-
-
-  - title: Debugging and Testing
-    items:
-    - title: Debugging and Testing
-      id: debugging_and_testing
-      url: /documentation/general_docs/debugging_and_testing/debugging_and_testing
-
-    - title: Directed Testers
-      id: directed_testers
-      subitems:
-        - page: Garnet Synthetic Traffic
-          url: /documentation/general_docs/debugging_and_testing/directed_testers/garnet_synthetic_traffic
-        - page: Ruby Random Tester
-          url: /documentation/general_docs/debugging_and_testing/directed_testers/ruby_random_tester
-
-    - title: Debugging
-      id: debugging
-      subitems:
-          - page: Trace-based Debugging
-            url: /documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging
-          - page: Debugger-based Debugging
-            url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
-          - page: Debugging Simulated Code
-            url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
-
-  - title: Architecture Support
-    items:
-      - title: Architecture Support
-        url: /documentation/general_docs/architecture_support/
-
-      - title: ARM Implementation
-        url: /documentation/general_docs/architecture_support/arm_implementation/
-
-      - title: ISA Parser
-        url: /documentation/general_docs/architecture_support/isa_parser/
-
-      - title: X86 microop ISA
-        url: /documentation/general_docs/architecture_support/x86_microop_isa/
-
-  - title: Compiling Workloads
-    items:
-      - title: Compiling Workloads
-        url: /documentation/general_docs/compiling_workloads/
-
-  - title: Statistics
-    items:
-      - title: Statistics
-        url: /documentation/general_docs/statistics/
-
-  - title: gem5 Doxygen
-    items:
-        - title: gem5 Doxygen
-          url: https://gem5.github.io/gem5-doxygen
-
-  - title: Power and Thermal model
-    items:
-        - title: Power and Thermal model
-          url: /documentation/general_docs/thermal_model

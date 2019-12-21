@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "Architecture Support"
-doc: Architecture Support
+doc: gem5 documentation
 parent: architecture_support
 permalink: /documentation/general_docs/architecture_support/
 ---
@@ -23,17 +23,17 @@ We no longer actively maintain that capability, however, and it does not current
 
 ## ARM
 
-The ARM Architecture models within gem5 support an [ARMv8-A](https://www.arm.com/products/processors/armv8-architecture.php) profile of the ARM® architecture with multi-processor extensions. 
+The ARM Architecture models within gem5 support an [ARMv8-A](https://developer.arm.com/docs/den0024/latest/armv8-a-architecture-and-processors/armv8-a) profile of the ARM® architecture with multi-processor extensions. 
 This includes both AArch32 and AArch64 state. 
-In AArch32, this include support for [Thumb®](https://www.arm.com/products/processors/technologies/instruction-set-architectures.php), Thumb-2, VFPv3 (32 double register variant) and [NEON™](https://www.arm.com/products/processors/technologies/neon.php), and Large Physical Address Extensions (LPAE). 
-Optional features of the architecture that are not currently supported are [TrustZone®](https://www.arm.com/products/processors/technologies/trustzone.php), ThumbEE, [Jazelle®](https://www.arm.com/products/processors/technologies/jazelle.php), and [Virtualization](https://www.arm.com/products/processors/technologies/virtualization-extensions.php).
+In AArch32, this include support for [Thumb®](https://www.embedded.com/introduction-to-arm-thumb/), Thumb-2, VFPv3 (32 double register variant) and [NEON™](https://developer.arm.com/architectures/instruction-sets/simd-isas/neon), and Large Physical Address Extensions (LPAE). 
+Optional features of the architecture that are not currently supported are [TrustZone®](https://developer.arm.com/ip-products/security-ip/trustzone), ThumbEE, [Jazelle®](https://en.wikipedia.org/wiki/Jazelle), and [Virtualization](https://developer.arm.com/docs/100942/0100/aarch64-virtualization).
 
 In full system mode gem5 is able to boot uni- or multi-processor Linux and bare metal applications built with ARM's compilers. 
 Newer Linux versions work out of the box (if used with gem5's DTBs) we also provide gem5-specific Linux kernels with custom configurations and custom drivers Additionally, statically linked Linux binaries can be run in ARM's syscall emulation mode.
 
 ## POWER
 
-Support for the POWER ISA within gem5 is currently limited to syscall emulation only and is based on the [POWER ISA v2.06 B Book](http://www.power.org/resources/downloads/PowerISA_V2.06B_V2_PUBLIC.pdf). 
+Support for the POWER ISA within gem5 is currently limited to syscall emulation only and is based on the [POWER ISA v2.06 B Book](http://kib.kiev.ua/x86docs/POWER/PowerISA_V2.06B_V2_PUBLIC.pdf).
 A big-endian, 32-bit processor is modeled. 
 Most common instructions are available (enough to run all the SPEC CPU2000 integer benchmarks). 
 Floating point instructions are available but support may be patchy. 
