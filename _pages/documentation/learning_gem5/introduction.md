@@ -22,7 +22,7 @@ past six years as a graduate student at the University of
 Wisconsin-Madison. The examples presented are just one way to do it.
 Unlike Python, whose mantra is "There should be one-- and preferably
 only one --obvious way to do it." (from The Zen of Python. See
-`import this`), in gem5 there are a number of different ways to
+[The Zen of Python](https://www.python.org/dev/peps/pep-0020/#the-zen-of-python){:target="_blank"}), in gem5 there are a number of different ways to
 accomplish the same thing. Thus, many of the examples presented in this
 book are my opinion of the best way to do things.
 
@@ -37,7 +37,7 @@ should add a list of terms. Things like "simulated system" vs "host
 system", etc.
 
 You can find the source for this book on github at
-https://github.com/gem5/new-website.
+[github.com/gem5/new-website](https://github.com/gem5/new-website){:target="_blank"}.
 
 ## What is gem5?
 
@@ -74,4 +74,4 @@ Most of the people on gem5-dev are also on gem5-users including all the main dev
 That helps you because they might be able to answer your question, and it also helps them because they'll be able to see the answers people send you.
 To find more information about the mailing lists, to sign up, or to look through archived posts visit [Mailing Lists](/mailing_lists).
 
-Before reporting a problem on the mailing list, please read [Reporting Problems](/reporting_problems).
+Before reporting a problem on the mailing list, please read [Reporting Problems](/documentation/reporting_problems).
