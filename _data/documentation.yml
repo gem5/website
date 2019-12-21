@@ -83,7 +83,7 @@ docs:
           url: /documentation/general_docs/cpu_models/O3CPU
         - page: TraceCPU
           url: /documentation/general_docs/cpu_models/TraceCPU
-        - page: Minor CPU
+        - page: Minor CPU Model
           url: /documentation/general_docs/cpu_models/minor_cpu
         - page: Execution Basics
           url: /documentation/general_docs/cpu_models/execution_basics
