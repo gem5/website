@@ -31,6 +31,9 @@ docs:
         - page: Memory System
           url: /documentation/general_docs/memory_system/
 
+        - page: gem5 Memory System
+          url: /documentation/general_docs/memory_system/gem5_memory_system
+
         - page: Replacement Policies
           url: /documentation/general_docs/memory_system/replacement_policies
 
@@ -80,6 +83,8 @@ docs:
           url: /documentation/general_docs/cpu_models/O3CPU
         - page: TraceCPU
           url: /documentation/general_docs/cpu_models/TraceCPU
+        - page: Minor CPU
+          url: /documentation/general_docs/cpu_models/minor_cpu
         - page: Execution Basics
           url: /documentation/general_docs/cpu_models/execution_basics
         - page: Visualization
@@ -122,6 +127,9 @@ docs:
           url: /documentation/general_docs/architecture_support/isa_parser/
         - page: X86 microop ISA
           url: /documentation/general_docs/architecture_support/x86_microop_isa/
+
+    - title: Thermal Model
+      url: /documentation/general_docs/thermal_model
 
     - title: Compiling Workloads
       id: compiling_workloads

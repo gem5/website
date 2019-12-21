@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: gem5 Power and Thermal Model
+doc: gem5 documentation
+parent: thermal_model
 permalink: /documentation/general_docs/thermal_model
 ---
 

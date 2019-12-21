@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: "gem5_memory_syste"
-doc: Memory System
+doc: gem5 documentation
 parent: memory_system
 permalink: /documentation/general_docs/memory_system/gem5_memory_system/
 author: Djordje Kovacevi
