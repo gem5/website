@@ -19,7 +19,7 @@ CPUs with corresponding L1 data caches and Simple Memory. It is created by
 running gem5 with the following parameters:
 
 ```
-configs/example/fs.py –caches –cpu-type=arm_detailed –num-cpus=2
+configs/example/fs.py –-caches –-cpu-type=arm_detailed –-num-cpus=2
 ```
 
 Gem5 uses Simulation Objects derived objects as basic blocks for building
