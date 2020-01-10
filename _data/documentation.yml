@@ -115,6 +115,8 @@ docs:
           url: /documentation/general_docs/debugging_and_testing/debugging/debugger_based_debugging
         - page: Debugging Simulated Code
           url: /documentation/general_docs/debugging_and_testing/debugging/debugging_simulated_code
+        - page: Reporting Problems
+          url: /documentation/reporting_problems
 
     - title: Architecture Support
       id: architecture_support
