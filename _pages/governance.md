@@ -28,7 +28,7 @@ Additionally, the gem5 community is committed to openness, transparency, and inc
 
 # gem5 Roadmap
 ---
-The roadmap for gem5 can be found on [Roadmap](Roadmap "wikilink") page. The roadmap document details the short and long term goals for the gem5 software. Users of all types are encouraged to contribute to this document and shape the future of gem5\. Users are especially encouraged to update the roadmap (and get consensus) before submitting large changes to gem5.
+The roadmap for gem5 can be found on [Roadmap](https://docs.google.com/document/d/1fv01HavfkIIqfcgZoKUpojkUKkWujxspRCcvS5cTfkk/edit?usp=sharing) page. The roadmap document details the short and long term goals for the gem5 software. Users of all types are encouraged to contribute to this document and shape the future of gem5\. Users are especially encouraged to update the roadmap (and get consensus) before submitting large changes to gem5.
 
 # Roles And Responsibilities
 ---
