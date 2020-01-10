@@ -36,17 +36,17 @@ The roadmap for gem5 can be found on [Roadmap](Roadmap "wikilink") page. The roa
 
 Users are community members who have a need for the project. They are the most important members of the community and without them the project would have no purpose. Anyone can be a user; there are no special requirements. There are currently three main categories of gem5 users: academic researchers, industry researchers, and students. Individuals may transition between categories, e.g., when a graduate student takes an industry internship, then returns to school; or when a student graduates and takes a job in industry. These three users are described below.
 
-### Academic Researchers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#academic-researchers"></span>
+### Academic Researchers
 
 This type of user primarily encompasses individuals that use gem5 in academic research. Examples include, but are not limited to, graduate students, research scientists, and post-graduates. This user often uses gem5 as a tool to discover and invent new computer architecture mechanisms. Academic Researchers often are first exposed to gem5 as Students (see below) and transition from Students to Academic Researchers over time.
 
 Because of these users’ goals, they primarily add new features to gem5. It is important to the gem5 community to encourage these users to contribute their work to the mainline gem5 repository. By encouraging these users to commit their research contributions, gem5 will make it much easier for other researchers to compare and contrast with other architectural techniques (see Philosophy section).
 
-### Industry Researchers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#industry-researchers"></span>
+### Industry Researchers
 
 This type of user primarily encompasses individuals working for companies that use gem5\. These users are distinguished from academic researchers in two ways. First, industry researchers are often part of a larger team, rather than working individually on gem5\. Second, industry researchers often want to incorporate proprietary information into private branches of gem5\. Therefore, industry researchers tend to have rather sophisticated software infrastructures built around gem5\. For these users, the stability of gem5 features and baseline source code is important. Another key consideration is the fidelity of the models, and their ability to accurately reflect realistic implementations. To enable industry participation, it is critical to maintain licensing terms that do not restrict or burden the use of gem5 in conjunction with proprietary IP.
 
-### Students<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#students"></span>
+### Students
 
 This type of user primarily encompasses individuals that are using gem5 in a classroom setting. These users typically have some foundation in computer architecture, but they have little or no background using simulation tools. Additionally, these users may not use gem5 for an extended period of time, after finishing their short-term goals (e.g., a semester-long class).
 
@@ -59,7 +59,7 @@ The project asks its users to participate in the project and community as much a
 
 Users who continue to engage with the project and its community will often become more and more involved. Such users may find themselves becoming contributors, as described in the next section.
 
-## Contributors<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#contributors"></span>
+## Contributors
 
 Contributors are community members who contribute in concrete ways to the project. Anyone can become a contributor, and contributions can take many forms. There are no specific skill requirements and no selection process.
 
@@ -82,7 +82,7 @@ Contributors engage with the project through the Review Board and mailing list, 
 
 As contributors gain experience and familiarity with the project, their profile within, and commitment to, the community will increase. At some stage, they may find themselves being nominated for committership.
 
-## Committers<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#committers"></span>
+## Committers
 
 Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committership allows contributors to more easily carry on with their project related activities by giving them direct access to the project’s resources. That is, they can make changes directly to project outputs, although they still have to submit code changes via Review Board. Additionally, committers are expected to have an ongoing record of contributions in terms of code, reviews, and/or discussion.
 
@@ -100,7 +100,7 @@ It is important to recognise that commitership is a privilege, not a right. That
 
 A committer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become a member of the PMC. This role is described below.
 
-## Project management committee<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#project-management-committee"></span>
+## Project management committee
 
 The project management committee consists of those individuals identified as ‘project owners’ on the development site. The PMC has additional responsibilities over and above those of a committer. These responsibilities ensure the smooth running of the project. PMC members are expected to review code contributions, participate in strategic planning, approve changes to the governance model and manage how the software is distributed and licensed.
 
@@ -110,7 +110,7 @@ Members of the PMC do not have significant authority over other members of the c
 
 Membership of the PMC is by invitation from the existing PMC members. A nomination will result in discussion and then a vote by the existing PMC members. PMC membership votes are subject to consensus approval of the current PMC members. Additions to the PMC require unanimous agreement of the PMC members. Removing someone from the PMC requires N-1 positive votes, where N is the number of PMC members not including the individual who is being voted out.
 
-### Members<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#members"></span>
+### Members
 
 *   Ali Saidi
 *   Andreas Hansson
@@ -123,7 +123,7 @@ Membership of the PMC is by invitation from the existing PMC members. A nominati
 *   Nathan Binkerg
 *   Steve Reinhardt
 
-## PMC Chair<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#pmc-chair"></span>
+## PMC Chair
 
 The PMC Chair is a single individual, voted for by the PMC members. Once someone has been appointed Chair, they remain in that role until they choose to retire, or the PMC casts a two-thirds majority vote to remove them.
 
@@ -139,7 +139,7 @@ Anyone, capable of showing respect to others, can contribute to the project, reg
 
 The developer mailing list is the most appropriate place for a contributor to ask for help when making their first contribution. See the [Submitting Contributions](/contributing) page on the gem5 wiki for details of the gem5 contribution process. Each new contribution should be submitted as a patch to our Review Board site. Then, other gem5 developers will review your patch, possibly asking for minor changes. After the patch has received consensus (see Decision Making Process), the patch is ready to be committed to the gem5 tree. For committers, this is as simple as pushing the changeset. For contributors, a committer should push the changeset for you. If a committer does not push the changeset within a reasonable window (a couple of days), send a friendly reminder email to the gem5-dev list. Before a patch is committed to gem5, it must receive at least 2 “Ship its” from reviewboard. If there are no reviews on a patch, users should send follow up emails to the gem5-dev list asking for reviews.
 
-## Reviewing Patches<a id="reviewing" class="highlight"></a><span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#reviewing-patches-a-id-reviewing-a"></span>
+## Reviewing Patches
 
 An important part of the contribution process is providing feedback on patches that other developers submit. The purpose of reviewing patches is to weed out obvious bugs and to ensure that the code in gem5 is of sufficient quality.
 
@@ -161,7 +161,7 @@ Decisions about the future of the project are made through discussion with all m
 
 In order to ensure that the project is not bogged down by endless discussion and continual voting, the project operates a policy of lazy consensus. This allows the majority of decisions to be made without resorting to a formal vote.
 
-## Lazy consensus<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#lazy-consensus"></span>
+## Lazy consensus
 
 Decision making typically involves the following steps:
 
@@ -178,7 +178,7 @@ Lazy consensus is a very important concept within the project. It is this proces
 
 For lazy consensus to be effective, it is necessary to allow at least two weeks before assuming that there are no objections to the proposal. This requirement ensures that everyone is given enough time to read, digest and respond to the proposal. This time period is chosen so as to be as inclusive as possible of all participants, regardless of their location and time commitments. For Review Board requests, if there are no reviews after two weeks, the submitter should send a reminder email to the mailing list. Reviewers may ask patch submitters to delay submitting a patch when they have a desire to review a patch and need more time to do so. As discussed in the Contributing Section, each patch should have at least two “Ship its” before it is committed.
 
-## Voting<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#voting"></span>
+## Voting
 
 Not all decisions can be made using lazy consensus. Issues such as those affecting the strategic direction or legal standing of the project must gain explicit approval in the form of a vote. Every member of the community is encouraged to express their opinions in all discussion and all votes. However, only project committers and/or PMC members (as defined above) have binding votes for the purposes of decision making. A separate document on the voting within a meritocratic governance model ([http://oss-watch.ac.uk/resources/meritocraticgovernancevoting](http://oss-watch.ac.uk/resources/meritocraticgovernancevoting)) describes in more detail how voting is conducted in projects following the practice established within the Apache Software Foundation.
 
