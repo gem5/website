@@ -73,6 +73,9 @@ docs:
           url: /documentation/general_docs/ruby/MOESI_CMP_token
         - page: MESI two level
           url: /documentation/general_docs/ruby/MESI_Two_Level
+        - page: Replacement Policies
+          url: /documentation/general_docs/memory_system/replacement_policies
+
 
     - title: CPU Models
       id: cpu_models
