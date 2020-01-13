@@ -102,23 +102,23 @@ This tutorial, held in March 2008 at ASPLOS XIII in Seattle, covered M5
 2.0 and included several small examples on creating SimObjects and
 adding parameters.
 
-  - [Slides](http://www.m5sim.org/dist/tutorials/asplos_pres.pdf)
-  - [Handouts](http://www.m5sim.org/dist/tutorials/asplos_hand.pdf)
+  - [Slides](http://dist.gem5.org/dist/tutorials/asplos_pres.pdf)
+  - [Handouts](http://dist.gem5.org/dist/tutorials/asplos_hand.pdf)
   - Video
-      - [Introduction](http://www.m5sim.org/dist/tutorials/introduction.mov)
+      - [Introduction](http://dist.gem5.org/dist/tutorials/introduction.mov)
         -- A brief overview of M5, its capabilities and concepts
-      - [Running](http://www.m5sim.org/dist/tutorials/running.mov) --
+      - [Running](http://dist.gem5.org/dist/tutorials/running.mov) --
         How to compile and run M5
       - [Full
-        System](http://www.m5sim.org/dist/tutorials/fullsystem.mov) --
+        System](http://dist.gem5.org/dist/tutorials/fullsystem.mov) --
         Full system benchmarks, disk images, and scripts
-      - [Objects](http://www.m5sim.org/dist/tutorials/objects.mov) -- An
+      - [Objects](http://dist.gem5.org/dist/tutorials/objects.mov) -- An
         overview of the various object models that are available out of
         the box
-      - [Extending](http://www.m5sim.org/dist/tutorials/extending.mov)
+      - [Extending](http://dist.gem5.org/dist/tutorials/extending.mov)
         -- M5 internals, defining new objects & parameters, statistics,
         ISA descriptions, ARM & X86 support, future development
-      - [Debugging](http://www.m5sim.org/dist/tutorials/debugging.mov)
+      - [Debugging](http://dist.gem5.org/dist/tutorials/debugging.mov)
         -- Facilities in M5 to aid debugging
   - [Description](asplos-2008)
 
@@ -127,8 +127,8 @@ adding parameters.
 This tutorial, held in June 2006 at ISCA 33 in Boston, was the first one
 to cover M5 2.0.
 
-  - [Slides](http://www.m5sim.org/dist/tutorials/isca_pres.pdf)
-  - [Handouts](http://www.m5sim.org/dist/tutorials/isca_hand.pdf)
+  - [Slides](http://dist.gem5.org/dist/tutorials/isca_pres.pdf)
+  - [Handouts](http://dist.gem5.org/dist/tutorials/isca_hand.pdf)
   - [Description](isca-2006)
 
 ## ISCA-32
@@ -136,5 +136,5 @@ to cover M5 2.0.
 Our first tutorial, held in June 2005 at ISCA 32 in Madison, is rather
 dated as it covered M5 1.X and not 2.0.
 
-  - [Slides](http://www.m5sim.org/dist/tutorials/tutorial.ppt)
-  - [Handouts](http://www.m5sim.org/dist/tutorials/tutorial.pdf)
+  - [Slides](http://dist.gem5.org/dist/tutorials/tutorial.ppt)
+  - [Handouts](http://dist.gem5.org/dist/tutorials/tutorial.pdf)
