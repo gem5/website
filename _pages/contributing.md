@@ -79,6 +79,8 @@ before the conditional statement (e.g., `for (...)`).
 same line, with the closing bracket on its own line (e.g.,
 `for (...) {\n ... \n}\n`). There should be a space between the condition(s)
 and the opening bracket.
+* C++ access modifies must be indented by two spaces, with method/variables
+defined within indented by four spaces.
 
 Below is a simple toy example of how a class should be formatted:
 
@@ -86,27 +88,27 @@ Below is a simple toy example of how a class should be formatted:
 #DEFINE EXAMPLE_MACRO 7
 class ExampleClass
 {
-    private:
-        int _fooBar;
-        int barFoo;
+  private:
+    int _fooBar;
+    int barFoo;
 
-    public:
-        int
-        getFooBar()
-        {
-            return _fooBar;
-        }
+  public:
+    int
+    getFooBar()
+    {
+        return _fooBar;
+    }
 
-        int
-        aFunction(int parameter_one, int parameter_two)
-        {
-            int local_variable = 0;
-            if (true) {
-                int local_variable = parameter_one + parameter_two + barFoo
-                                   + EXAMPLE_MACRO;
-            }
-            return local_variable;
+    int
+    aFunction(int parameter_one, int parameter_two)
+    {
+        int local_variable = 0;
+        if (true) {
+            int local_variable = parameter_one + parameter_two + barFoo
+                               + EXAMPLE_MACRO;
         }
+        return local_variable;
+    }
 
 }
 ```
