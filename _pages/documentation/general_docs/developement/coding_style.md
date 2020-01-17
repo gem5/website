@@ -24,6 +24,7 @@ Lines must be a maximum of 79 characters long.
 For control blocks (if, while, etc.), opening braces must be on the same line as the control keyword with a space between the closing parenthesis and the opening brace.
 
 * Exception: for multi-line expressions, the opening brace may be placed on a separate line to distinguish the control block from the statements inside the block.
+
 ```c++
 if (...) {
     ...
@@ -37,7 +38,9 @@ for (...;
     ...
 }
 ```
+
 'Else' keywords should follow the closing 'if' brace on the same line, as follows:
+
 ```c++
 if (...) {
     ...
@@ -47,6 +50,7 @@ if (...) {
     ...
 }
 ```
+
 Blocks that consist of a single statement that fits on a single line may optionally omit the braces. Braces are still required if the single statement spans multiple lines, or if the block is part of an else/if chain where other blocks have braces.
 
 ```c++
@@ -68,11 +72,13 @@ if (a > 0) {
     warn("underflow on a");
 }
 ```
+
 For function definitions or class declarations, the opening brace must be in the first column of the following line.
 
 In function definitions, the return type should be on one line, followed by the function name, left-justified, on the next line. As mentioned above, the opening brace should also be on a separate line following the function name.
 
 See examples below:
+
 ```c++
 int
 exampleFunc(...)
@@ -103,11 +109,14 @@ There should be:
 
 
 For pointer and reference argument declarations, either of the following are acceptable:
+
 ```c++
 FooType *fooPtr;
 FooType &fooRef;
 ```
+
 or
+
 ```c++
 FooType* fooPtr;
 FooType& fooRef;
@@ -121,6 +130,7 @@ Class and type names are mixed case, start with an uppercase letter, and do not 
 Local variables are lower case, with underscores separating words (e.g., local_variable). Function parameters should use underscores and be lower case.
 
 C preprocessor symbols (constants and macros) should be all caps with underscores. However, these are deprecated, and should be replaced with const variables and inline functions, respectively, wherever possible.
+
 ```c++
 class FooBarCPU
 {
@@ -143,6 +153,7 @@ class FooBarCPU
     }
 };
 ```
+
 ## #includes
 
 Whenever possible favor C++ includes over C include. E.g. choose cstdio, not stdio.h.
@@ -150,6 +161,7 @@ Whenever possible favor C++ includes over C include. E.g. choose cstdio, not std
 The block of #includes at the top of the file should be organized. We keep several sorted groups. This makes it easy to find #include and to avoid duplicate #includes.
 
 Always include Python.h first if you need that header. This is mandated by the integration guide. The next header file should be your main header file (e.g., for foo.cc you'd include foo.hh first). Having this header first ensures that it is independent and can be included in other places without missing dependencies.
+
 ```c++
 // Include Python.h first if you need it.
 #include <Python.h>
@@ -192,22 +204,26 @@ Each file/class/member should be documented using doxygen style comments.Doxygen
 ### Using Doxygen
 
 The special documentation blocks take the form of a javadoc style comment. A javadoc comment is a C style comment with 2 *'s at the start, like this:
+
 ```c++
 /**
  * ...documentation...
  */
- ```
+```
 
 The intermediate asterisks are optional, but please use them to clearly delineate the documentation comments.
 
 The documentation within these blocks is made up of at least a brief description of the documented structure, that can be followed by a more detailed description and other documentation. The brief description is the first sentence of the comment. It ends with a period followed by white space or a new line. For example:
+
 ```c++
 /**
  * This is the brief description. This is the start of the detailed
  * description. Detailed Description continued.
  */
 ```
+
 If you need to have a period in the brief description, follow it with a backslash followed by a space.
+
 ```c++
 /**
  * e.g.\ This is a brief description with an internal period.
@@ -224,6 +240,7 @@ Some other useful commands are @todo and @sa. @todo allows you to place reminder
 ### Example of Simple Documentation
 
 Here is a simple header file with doxygen comments added.
+
 ```c++
 /**
  * @file
@@ -269,9 +286,11 @@ class foo
 
 };
 ```
+
 ### Grouping
 
 Doxygen also allows for groups of classes and member (or other groups) to be declared. We can use these to create a listing of all statistics/global variables. Or just to comment about the memory hierarchy as a whole. You define a group using @defgroup and then add to it using @ingroup or @addgroup. For example:
+
 ```c++
 /**
  * @defgroup statistics Statistics group
@@ -313,7 +332,9 @@ class foo
 
 };
 ```
+
 This places stat1-3 in the statistics group and stat4 in the subgroup. There is a shorthand method to place objects in groups. You can use @{ and @} to mark the start and end of group inclusion. The example above can be rewritten as:
+
 ```c++
 /**
  * @defgroup statistics Statistics group
@@ -351,6 +372,7 @@ class foo
 
 };
 ```
+
 It remains to be seen what groups we can come up with.
 
 ### Other features
