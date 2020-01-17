@@ -55,7 +55,7 @@ yourself.
 
 Different tasks will require the project to be modified in different ways.
 Though, in all cases, our style-guide must be adhered to. The full style guide
-is outlined here: <http://gem5.org/Coding_Style>.
+is outlined [here](/documentation/general_docs/development/coding_style).
 
 As a high-level overview:
 
