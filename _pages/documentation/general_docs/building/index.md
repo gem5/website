@@ -55,12 +55,15 @@ tree, usually near the files they're associated with.
 Within the root of the gem5 directory, gem5 can be built with SCons using:
 
 ```
-scons build/{ISA}/gem5.{variant}
+scons build/{ISA}/gem5.{variant} -j {cpus}
 ```
 
-where `{ISA}` is the target Instruction Set Architecture, and `{variant}`
-specifies the compilation settings. For most intents and purposes `opt` is
-a good target for compilation.
+where `{ISA}` is the target (guest) Instruction Set Architecture, and
+`{variant}` specifies the compilation settings. For most intents and purposes
+`opt` is a good target for compilation. The `-j` flag is optional and allows
+for parallelization of compilation with `{cpus}` specifying the number of
+threads. A single-threaded compilation from scratch can take up to 2 hours on
+some systems. We therefore strongly advise allocating more threads if possible.
 
 The valid ISAs are:
 
@@ -109,10 +112,10 @@ These versions are summarized in the following table.
 |**prof**     |X            |                          |X                |
 |**perf**     |X            |                          |X                |
 
-For example, to build gem5 with `opt` and targeting x86:
+For example, to build gem5 on 4 threads with `opt` and targeting x86:
 
 ```
-scons build/X86/gem5.opt
+scons build/X86/gem5.opt -j 4
 ```
 
 ## Usage
