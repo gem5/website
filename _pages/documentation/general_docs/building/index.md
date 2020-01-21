@@ -11,20 +11,20 @@ authors: Bobby R. Bruce
 
 ## Dependencies
 
-* **git** : gem5 uses git for version control
+* **git** : gem5 uses git for version control.
 * **gcc 4.8+**: gcc is used to compiled gem5. Version 4.8+ must be used. We do
-presently support > Version 7. (Note: [Support for gcc 4 may be dropped](
-https://gem5.atlassian.net/browse/GEM5-218), and [version >7 may be
-supposed](https://gem5.atlassian.net/browse/GEM5-194) in future releases of
-gem5.
-* SCons : gem5 uses SCons as its build environment.
-* Python 2.7+ : gem5 replies on Python development libraries (due to the
+not presently support beyond Version 7. (Note:
+[Support for gcc 4 may be dropped](https://gem5.atlassian.net/browse/GEM5-218),
+and [version >7 may be supported](https://gem5.atlassian.net/browse/GEM5-194)
+in future releases of gem5.
+* **SCons** : gem5 uses SCons as its build environment.
+* **Python 2.7+** : gem5 replies on Python development libraries (due to the
 [retirement of Python 2](
 http://pyfound.blogspot.com/2019/12/python-2-sunset.html) we are [likely to
 migrate to Python 3 in future releases of gem5](
 https://gem5.atlassian.net/browse/GEM5-275).
-* protobuf 2.1+ : The protobuf library is used for trace generation and
-playback.
+* **protobuf 2.1+** (Optional): The protobuf library is used for trace
+generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
