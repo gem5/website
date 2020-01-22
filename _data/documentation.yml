@@ -11,9 +11,13 @@ docs:
       id: code_style
       url: /documentation/general_docs/development/coding_style/
 
-    - title: Building EXTRAS
-      id: building_extras
-      url: /documentation/general_docs/building/EXTRAS
+    - title: Building
+      id: building
+      subitems:
+        - page: Building
+          url: /documentation/general_docs/building
+        - page: Building EXTRAS
+          url: /documentation/general_docs/building/EXTRAS
 
     - title: Full System
       id: fullsystem
