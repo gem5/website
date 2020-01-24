@@ -36,8 +36,8 @@ what your tools are actually doing.
 should add a list of terms. Things like "simulated system" vs "host
 system", etc.
 
-You can find the source for this book on github at
-[github.com/gem5/new-website](https://github.com/gem5/new-website){:target="_blank"}.
+You can find the source for this book on our at
+<https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/_pages/documentation/learning_gem5/>.
 
 ## What is gem5?
 

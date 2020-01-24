@@ -1,6 +1,6 @@
 # Site Settings
 title: gem5
-sourceurl: "https://github.com/gem5/new-website/tree/master/"
+sourceurl: "https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/README.md"
 url: "http://localhost:4000"
 baseurl: ""
 

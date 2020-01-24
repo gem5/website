@@ -76,5 +76,6 @@ submit the fix to the gem5 source. Please see our
 on how to do this.
 
 If your issue is with the content of a gem5 document/tutorial being incorrect,
-then please consider creating a pull request and rectifying the issue yourself
---- <https://github.com/gem5/new-website>.
+then please consider submitting a change. Please consult our [README](
+https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/README.md)
+for more information on how to make contributions to the gem5 website.
