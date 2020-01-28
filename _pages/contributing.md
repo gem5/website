@@ -101,7 +101,7 @@ underscore (e.g., `_variableWithAccessor`).
 * Function brackets must be on their own line.
 * `for`/`if`/`while` branching operations must be followed by a white-space
 before the conditional statement (e.g., `for (...)`).
-* `for`/`if`/`while` branching operations' opening bracket must be on on the
+* `for`/`if`/`while` branching operations' opening bracket must be on the
 same line, with the closing bracket on its own line (e.g.,
 `for (...) {\n ... \n}\n`). There should be a space between the condition(s)
 and the opening bracket.
@@ -296,7 +296,7 @@ continuous integration system will give a `+1` to the "Verifier" score, and a
 `-1` if it did not execute successfully.
 
 Gerrit will permit a commit to be merged if at least one reviewer has given a
-`+2` to the "Reviewer" score; one maintainer has given a `+1` to the
+`+2` to the "Reviewer" score, one maintainer has given a `+1` to the
 "Maintainer" score, and the continuous integration system has given a `+1` to
 the "Verifier" score.
 
@@ -311,11 +311,9 @@ these comments and answer these questions. **All communications between
 reviewers and contributors should be done in a polite manner. Rude and/or
 dismissive remarks will not be tolerated.**
 
-When you understand what changes are required you should make your changes
-and upload them.
-
-Using the same workspace as before, make the necessary modifications to the
-gem5 repo, and amend the changes to the commit:
+When you understand what changes are required, using the same workspace as
+before, make the necessary modifications to the gem5 repo, and amend the
+changes to the commit:
 
 ```Shell
 git commit --amend
