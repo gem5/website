@@ -1,7 +1,7 @@
 # Site Settings
 title: gem5
 sourceurl: "https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/README.md"
-url: "https://new.gem5.org/"
+url: "https://www.gem5.org/"
 
 defaults:
   -
