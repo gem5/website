@@ -48,8 +48,34 @@ To pull the gem5 git repo:
 git clone https://gem5.googlesource.com/public/gem5
 ```
 
-This local repo can then be modified to incorporate the task you have assigned
-yourself.
+### master-as-stable / develop branch
+
+By default, the git repo will have the `master` branch checked-out. The
+`master` branch is considered the gem5 stable release branch. I.e., the HEAD
+of this branch contains the latest stable release of gem5. (execute `git tag`
+on the `master` branch to see the list of stable releases. A particular
+release may be checked out by executing `git checkout <release>`). As the
+`master` branch only contains officially released gem5 code **contributors
+should not develop changes on top of the `master` branch** they should instead
+**develop changes on top of the `develop` branch**.
+
+To checkout the `develop` branch:
+
+```Shell
+git checkout --track origin/develop
+```
+
+Changes may be made on this branch to incorporate changes assigned to yourself.
+
+As the develop branch is frequently updated, regularly obtain the latest
+`develop` branch by executing:
+
+```
+git pull --rebase
+```
+
+Conflicts may need resolved between your local changes and new changes on the
+`develop` branch.
 
 ## Making modifications
 
@@ -212,7 +238,7 @@ be fully merged into the gem5 source.
 To start this process, execute:
 
 ```
-git push origin HEAD:refs/for/master
+git push origin HEAD:refs/for/develop
 ```
 
 At this stage you may receive an error if you're not registered to contribute
@@ -297,7 +323,7 @@ git commit --amend
 Then push the new changes to Gerrit:
 
 ```Shell
-git push original HEAD:refs/for/master
+git push original HEAD:refs/for/develop
 ```
 
 If for some reason you no longer have your original workspace, you may pull
@@ -320,3 +346,7 @@ via Gerrit (Simply click `Submit` within the relevant Gerrit page).
 As one last step, you should change the corresponding Jira issue status to
 `Done` then link the Gerrit page as a comment on Jira as to provide evidence
 that the task has been completed.
+
+Stable releases of gem5 are published three times per year. Therefore, a change
+successfully submitted to the `develop` branch will be merged into the `master`
+branch within three to four months after submission.
