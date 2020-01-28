@@ -286,6 +286,7 @@ When a Maintainer gives a `+1` our continuous integration system will process
 the change. At the time of writing, the continuous integration system will run:
 
 ```
+scons build/NULL/unittests.opt
 cd tests
 python main.py run
 ```
