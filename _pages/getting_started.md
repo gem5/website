@@ -59,9 +59,23 @@ Now, you can start digging into how to use and extend gem5!
 
 ### What version of gem5 should I use?
 
-For now, the best version of gem5 to use is the most recent.
-Very soon, we will be creating a stable release channel for gem5.
-Until then, simply use the master branch on our Git repository.
+The gem5 git repository has two branches: `develop` and `master`. The `develop`
+branch contains the very latest gem5 changes **but is not stable**. It is
+frequently updated. **The `develop` branch should only be used when
+contributing the the gem5 project** (please see our [Contributing Guide](
+/contributing) for more information on how to submit code to gem5).
+
+The master branch contains stable gem5 code. The HEAD of the master branch
+points towards the latest gem5 release. We would advise researchers use the
+latest stable release of gem5 and report which version was used when publishing
+results (use `git describe` to see latest gem5 release version number).
+
+If replicating previous work, please find which version of gem5 was used. This
+version should be tagged on the `master` branch and can thereby be checked-out
+on a new branch using `git checkout -b {branch} {version}`.
+E.g., to checkout `v19.0.0` on a new branch called `version19`:
+`git checkout -b version19 v19.0.0`. A complete list of released gem5
+versions can be determined by executing `git tag` on the `master` branch.
 
 ### How should I cite gem5?
 
