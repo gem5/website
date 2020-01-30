@@ -28,6 +28,8 @@ docs:
           url: /documentation/general_docs/fullsystem/devices
         - page: m5term
           url: /documentation/general_docs/fullsystem/m5term
+        - page: Building Linux ARM Kernel
+          url: /documentation/general_docs/fullsystem/building_arm_kernel
 
     - title: Memory System
       id: memory_system
