@@ -34,13 +34,29 @@ git commit
 
 The commit message must adhere to our style. The first line of the commit
 is the "header". **The header line must not exceed 65 characters and adequately
-describe the change**.
+describe the change**. To be consistent with commits made to the gem5 gerrit,
+the header should start with a `website` tag followed by a colon.
 
 After this, a more detailed description of the commit can be included. This is
 inserted below the header, separated by an empty line. Including a description
 is optional but strongly recommended for complex changes. The description may
 span multiple lines, and multiple paragraphs. **No line in the description
-may exceed 75 characters**.
+may exceed 75 characters**. We also recommend adding reference to any relevant
+Jira issue (from the gem5 Jira: <https://gem5.atlassian.net>) so the context
+of a change can be more easily understood.
+
+Below is an example of how a gem5 website commit message should be formatted:
+
+```
+website: This is an example header
+
+This is a more detailed description of the commit. This can be as long as
+is necessary to adequately describe the change.
+
+A description may spawn multiple paragraphs if desired.
+
+Jira: https://gem5.atlassian.net/browse/GEM5-186
+```
 
 ## Submitting a contribution
 
