@@ -30,6 +30,8 @@ docs:
           url: /documentation/general_docs/fullsystem/m5term
         - page: Building Linux ARM Kernel
           url: /documentation/general_docs/fullsystem/building_arm_kernel
+        - page: Building Android Marshmallow
+          url: /documentation/general_docs/fullsystem/building_android_m
 
     - title: Memory System
       id: memory_system
