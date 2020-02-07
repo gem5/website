@@ -29,8 +29,8 @@ create a simple `Python` configuration script which instantiates our
 SimObject.
 
 In the next few chapters, we will take this simple SimObject and expand
-on it to include [debugging support](debugging-chapter), [dynamic
-events](events-chapter), and [parameters](parameters-chapter).
+on it to include [debugging support](../debugging), [dynamic
+events](../events), and [parameters](../parameters).
 
 > **Using git branches**
 >
@@ -55,7 +55,7 @@ SimObject, we are just going to start out with no parameters. Thus, we
 simply need to declare a new class for our SimObject and set it's name
 and the C++ header that will define the C++ class for the SimObject.
 
-We can create a file, HelloObject.py, in `src/learning_gem5`
+We can create a file, HelloObject.py, in `src/learning_gem5`.
 
 ```python
 from m5.params import *
@@ -124,7 +124,7 @@ class HelloObject : public SimObject
 ```
 
 [//]: # You can find the complete file
-[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.hh\>.
+[//]: # [here](/_pages/static/scripts/part2/helloobject/hello_object.hh).
 
 Next, we need to implement *two* functions in the `.cc` file, not just
 one. The first function, is the constructor for the `HelloObject`. Here
@@ -132,7 +132,7 @@ we simply pass the parameter object to the SimObject parent and print
 "Hello world!"
 
 Normally, you would **never** use `std::cout` in gem5. Instead, you
-should use debug flags. In the [next chapter](debugging-chapter), we
+should use debug flags. In the [next chapter](../debugging), we
 will modify this to use debug flags instead. However, for now, we'll
 simply use `std::cout` because it is simple.
 
@@ -164,7 +164,7 @@ HelloObjectParams::create()
 ```
 
 [//]: # You can find the complete file
-[//]: # here \<../\_static/scripts/part2/helloobject/hello\_object.cc\>.
+[//]: # [here](/_pages/static/scripts/part2/helloobject/hello_object.cc).
 
 If you forget to add the create function for your SimObject, you will
 get a linker error when you compile. It will look something like the
@@ -211,7 +211,7 @@ Source('hello_object.cc')
 ```
 
 [//]: # You can find the complete file
-[//]: # here \<../\_static/scripts/part2/helloobject/SConscript\>.
+[//]: # [here](/_pages/static/scripts/part2/helloobject/SConscript).
 
 Step 4: (Re)-build gem5
 -----------------------
@@ -236,7 +236,7 @@ object. All gem5 instances require a `Root` object.
 Walking through creating a *very* simple configuration script, first,
 import m5 and all of the objects you have compiled.
 
-```
+```python
 import m5
 from m5.objects import *
 ```
@@ -244,7 +244,7 @@ from m5.objects import *
 Next, you have to instantiate the `Root` object, as required by all gem5
 instances.
 
-```
+```python
 root = Root(full_system = False)
 ```
 
@@ -255,14 +255,14 @@ an instantiation of your object, you need to make sure that it is a
 child of the root object. Only SimObjects that are children of the
 `Root` object are instantiated in `C++`.
 
-```
+```python
 root.hello = HelloObject()
 ```
 
 Finally, you need to call `instantiate` on the `m5` module and actually
 run the simulation!
 
-```
+```python
 m5.instantiate()
 
 print("Beginning simulation!")
@@ -272,7 +272,7 @@ print('Exiting @ tick {} because {}'
 ```
 
 [//]: # You can find the complete file
-[//]: # here \<../\_static/scripts/part2/helloobject/run\_hello.py\>.
+[//]: # [here](/_pages/static/scripts/part2/helloobject/run_hello.py).
 
 The output should look something like the following
 

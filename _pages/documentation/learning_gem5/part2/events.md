@@ -33,7 +33,7 @@ Next, we add an `Event` instance. In this case, we will use an
 
 We also add a `startup()` function that will be explained below.
 
-``` {.sourceCode .c++}
+```cpp
 class HelloObject : public SimObject
 {
   private:
@@ -60,7 +60,7 @@ simple lambda function that calls a member function. However, it can be
 any function you want. Below, we captute `this` in the lambda (`[this]`)
 so we can call member functions of the instance of the class.
 
-``` {.sourceCode .c++}
+```cpp
 HelloObject::HelloObject(HelloObjectParams *params) :
     SimObject(params), event([this]{processEvent();}, name())
 {
@@ -71,7 +71,7 @@ HelloObject::HelloObject(HelloObjectParams *params) :
 We also must define the implementation of the process function. In this
 case, we'll simply print something if we are debugging.
 
-``` {.sourceCode .c++}
+```cpp
 void
 HelloObject::processEvent()
 {
@@ -93,7 +93,7 @@ SimObjects are allowed to schedule internal events. It does not get
 executed until the simulation begins for the first time (i.e. the
 `simulate()` function is called from a Python config file).
 
-``` {.sourceCode .c++}
+```cpp
 void
 HelloObject::startup()
 {
@@ -135,7 +135,7 @@ from the Python config files.
 To the HelloObject class declaration, add a member variable for the
 latency and number of times to fire.
 
-``` {.sourceCode .c++}
+```cpp
 class HelloObject : public SimObject
 {
   private:
@@ -157,7 +157,7 @@ class HelloObject : public SimObject
 Then, in the constructor add default values for the `latency` and
 `timesLeft`.
 
-``` {.sourceCode .c++}
+```cpp
 HelloObject::HelloObject(HelloObjectParams *params) :
     SimObject(params), event([this]{processEvent();}, name()),
     latency(100), timesLeft(10)
@@ -168,7 +168,7 @@ HelloObject::HelloObject(HelloObjectParams *params) :
 
 Finally, update `startup()` and `processEvent()`.
 
-``` {.sourceCode .c++}
+```cpp
 void
 HelloObject::startup()
 {
@@ -219,6 +219,6 @@ the following.
     Exiting @ tick 18446744073709551615 because simulate() limit reached
 
 You can find the updated header file
-here \<../\_static/scripts/part2/events/hello\_object.hh\> and the
+[here](/_pages/static/scripts/part2/events/hello_object.hh) and the
 implementation file
-here \<../\_static/scripts/part2/events/hello\_object.cc\>.
+[here](/_pages/static/scripts/part2/events/hello_object.cc).

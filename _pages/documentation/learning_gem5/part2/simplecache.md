@@ -12,19 +12,19 @@ Creating a simple cache object
 ==============================
 
 In this chapter, we will take the framework for a memory object we
-created in the last chapter \<memoryobject-chapter\> and add caching
+created in the [last chapter](../memoryobject) and add caching
 logic to it.
 
 SimpleCache SimObject
 ---------------------
 
 After creating the SConscript file, that you can download
-here \<../\_static/scripts/part2/simplecache/SConscript\>, we can create
+[here](/_pages/static/scripts/part2/simplecache/SConscript), we can create
 the SimObject Python file. We will call this simple memory object
 `SimpleCache` and create the SimObject Python file in
 `src/learning_gem5/simple_cache`.
 
-``` {.sourceCode .python}
+```python
 from m5.params import *
 from m5.proxy import *
 from MemObject import MemObject
@@ -44,7 +44,7 @@ class SimpleCache(MemObject):
 ```
 
 There are a couple of differences between this SimObject file and the
-one from the previous chapter \<memoryobject-chapter\>. First, we have a
+one from the [previous chapter](../memoryobject). First, we have a
 couple of extra parameters. Namely, a latency for cache accesses and the
 size of the cache. parameters-chapter goes into more detail about these
 kinds of SimObject parameters.
@@ -75,7 +75,7 @@ port, this cache can be connected into the system more flexibly than the
 Implementing the SimpleCache
 ----------------------------
 
-Most of the code for the `` `SimpleCache `` is the same as the
+Most of the code for the `SimpleCache` is the same as the
 `SimpleMemobj`. There are a couple of changes in the constructor and the
 key memory object functions.
 
@@ -83,7 +83,7 @@ First, we need to create the CPU side ports dynamically in the
 constructor and initialize the extra member functions based on the
 SimObject parameters.
 
-``` {.sourceCode .c++}
+```cpp
 SimpleCache::SimpleCache(SimpleCacheParams *params) :
     MemObject(params),
     latency(params->latency),
@@ -117,7 +117,7 @@ Next, we need to implement `getMasterPort` and `getSlavePort`. The
 `getSlavePort`, we now need to return the port based on the id
 requested.
 
-``` {.sourceCode .c++}
+```cpp
 BaseSlavePort&
 SimpleCache::getSlavePort(const std::string& if_name, PortID idx)
 {
@@ -152,7 +152,7 @@ needed amount of time. We schedule a new event for `latency` cycles in
 the future. The `clockEdge` function returns the *tick* that the *nth*
 cycle in the future occurs on.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleCache::handleRequest(PacketPtr pkt, int port_id)
 {
@@ -182,7 +182,7 @@ constructor so we do not need to worry about freeing the memory for the
 dynamically created object. The event code will automatically delete the
 object after the `process` function has executed.
 
-``` {.sourceCode .c++}
+```cpp
 class AccessEvent : public Event
 {
   private:
@@ -200,7 +200,7 @@ class AccessEvent : public Event
 
 Now, we need to implement the event handler, `accessTiming`.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleCache::accessTiming(PacketPtr pkt)
 {
@@ -234,7 +234,7 @@ on the CPU side immediately calls `sendTimingReq`. Then, we try to send
 retries to the CPU side ports if the `SimpleCache` can now receive
 requests and the ports need to be sent retries.
 
-``` {.sourceCode .c++}
+```cpp
 void SimpleCache::sendResponse(PacketPtr pkt)
 {
     int port = waitingPortId;
@@ -276,7 +276,7 @@ variable `outstandingPacket` so we can recover it when the `SimpleCache`
 receives a response. Then, we send the new packet across the memory side
 port.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleCache::accessTiming(PacketPtr pkt)
 {
@@ -329,7 +329,7 @@ to copy the new data to the outstandingPacket packet or write to the
 cache on a write. Then, we need to delete the new packet that we made in
 the miss handling logic.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleCache::handleResponse(PacketPtr pkt)
 {
@@ -362,7 +362,7 @@ cache contents. The simplest possible cache storage is a map (hashtable)
 that maps from addresses to data. Thus, we will add the following member
 to the `SimpleCache`.
 
-``` {.sourceCode .c++}
+```cpp
 std::unordered_map<Addr, uint8_t*> cacheStore;
 ```
 
@@ -386,7 +386,7 @@ with the data from the cache. The `setDataFromBlock` function performs
 the same offset calculation as the `writeDataToBlock` function, but
 writes the packet with the data from the pointer in the first parameter.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleCache::accessFunctional(PacketPtr pkt)
 {
@@ -428,7 +428,7 @@ to the newly allocated block. This data is guaranteed to be the size of
 the cache block since we made sure to make a new packet in the cache
 miss logic if the packet was smaller than a cache block.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleCache::insert(PacketPtr pkt)
 {
@@ -463,14 +463,14 @@ Creating a config file for the cache
 
 The last step in our implementation is to create a new Python config
 script that uses our cache. We can use the outline from the
-last chapter \<memoryobject-chapter\> as a starting point. The only
+[last chapter](../memoryobject) as a starting point. The only
 difference is we may want to set the parameters of this cache (e.g., set
 the size of the cache to `1kB`) and instead of using the named ports
 (`data_port` and `inst_port`), we just use the `cpu_side` port twice.
 Since `cpu_side` is a `VectorPort`, it will automatically create
 multiple port connections.
 
-``` {.sourceCode .python}
+```python
 import m5
 from m5.objects import *
 
@@ -489,7 +489,7 @@ system.cache.mem_side = system.membus.slave
 ```
 
 The Python config file can be downloaded
-here \<../\_static/scripts/part2/simplecache/simple\_cache.py\>
+[here](/_pages/static/scripts/part2/simplecache/simple_cache.py).
 
 Running this script should produce the expected output from the hello
 binary.
@@ -549,7 +549,7 @@ histogram of the time it takes to satisfy a miss. Finally, we'll add a
 special statistic called a `Formula` for the `hitRatio` that is a
 combination of other statistics (the number of hits and misses).
 
-``` {.sourceCode .c++}
+```cpp
 class SimpleCache : public MemObject
 {
   private:
@@ -577,7 +577,7 @@ need to initialize it with how many buckets we want in the histogram.
 Finally, for the formula, we simply need to write the formula down in
 code.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleCache::regStats()
 {
@@ -611,7 +611,7 @@ Finally, we need to use update the statistics in our code. In the
 and miss respectively. Additionally, on a miss, we save the current time
 so we can measure the latency.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleCache::accessTiming(PacketPtr pkt)
 {
@@ -631,7 +631,7 @@ histogram. For this, we use the `sample` function. This adds a single
 point to the histogram. This histogram automatically resizes the buckets
 to fit the data it receives.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleCache::handleResponse(PacketPtr pkt)
 {
@@ -642,10 +642,10 @@ SimpleCache::handleResponse(PacketPtr pkt)
 ```
 
 The complete code for the `SimpleCache` header file can be downloaded
-here \<../\_static/scripts/part2/simplecache/simple\_cache.hh\>, and the
+[here](/_pages/static/scripts/part2/simplecache/simple_cache.hh), and the
 complete code for the implementation of the `SimpleCache` can be
 downloaded
-here \<../\_static/scripts/part2/simplecache/simple\_cache.cc\>.
+[here](/_pages/static/scripts/part2/simplecache/simple_cache.cc).
 
 Now, if we run the above config file, we can check on the statistics in
 the `stats.txt` file. For the 1 KB case, we get the following
