@@ -29,7 +29,7 @@ into the `trigger` function, `cache_entry` is the cache entry passed
 into the `trigger` function, and `tbe` is the TBE passed into the
 `trigger` function.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendGetS, 'gS', desc="Send GetS to the directory") {
     enqueue(request_out, RequestMsg, 1) {
         out_msg.addr := address;
@@ -87,7 +87,7 @@ Note that get requests represent requests for data and put requests
 represent requests where we downgrading or evicting our copy of the
 data.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendGetM, "gM", desc="Send GetM to the directory") {
     enqueue(request_out, RequestMsg, 1) {
         out_msg.addr := address;
@@ -133,7 +133,7 @@ is needed so we know which other cache to send the data to.
 Additionally, in this action we use the `cache_entry` variable to get
 the data to send to the other cache.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendCacheDataToReq, "cdR", desc="Send cache data to requestor") {
     assert(is_valid(cache_entry));
     peek(forward_in, RequestMsg) {
@@ -153,7 +153,7 @@ Next, we specify actions for sending data to the directory and sending
 an invalidation ack to the original requestor on a forward request when
 this cache does not have the data.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendCacheDataToDir, "cdD", desc="Send the cache data to the dir") {
     enqueue(response_out, ResponseMsg, 1) {
         out_msg.addr := address;
@@ -190,12 +190,12 @@ Additionally, we have another example of making debugging easier in
 protocols: `APPEND_TRANSITION_COMMENT`. This function takes a string, or
 something that can easily be converted to a string (e.g., `int`) as a
 parameter. It modifies the *protocol trace* output, which we will
-discuss in the debugging section \<MSI-debugging-section\>. On each
+discuss in the [debugging section](../MSIdebugging). On each
 protocol trace line that executes this action it will print the total
 number of acks this cache is still waiting on. This is useful since the
 number of remaining acks is part of the cache block state.
 
-``` {.sourceCode .c++}
+```cpp
 action(decrAcks, "da", desc="Decrement the number of acks") {
     assert(is_valid(tbe));
     tbe.AcksOutstanding := tbe.AcksOutstanding - 1;
@@ -209,7 +209,7 @@ the directory with an ack count. For this action, we peek into the
 directory's response message to get the number of acks and store them in
 the (required to be valid) TBE.
 
-``` {.sourceCode .c++}
+```cpp
 action(storeAcks, "sa", desc="Store the needed acks to the TBE") {
     assert(is_valid(tbe));
     peek(response_in, ResponseMsg) {
@@ -225,7 +225,7 @@ interface between Ruby and the rest of gem5) of the new data. In the
 case of a store, we give the sequencer a pointer to the data block and
 the sequencer updates the data in-place.
 
-``` {.sourceCode .c++}
+```cpp
 action(loadHit, "Lh", desc="Load hit") {
     assert(is_valid(cache_entry));
     cacheMemory.setMRU(cache_entry);
@@ -307,7 +307,7 @@ to the TBE. This allows us to keep the data around even after removing
 the cache block until we are sure that this cache no longer are
 responsible for the data.
 
-``` {.sourceCode .c++}
+```cpp
 action(allocateCacheBlock, "a", desc="Allocate a cache block") {
     assert(is_invalid(cache_entry));
     assert(cacheMemory.cacheAvail(address));
@@ -356,7 +356,7 @@ time for the dequeue to take place. Delaying the dequeue for a cycle
 prevents the `in_port` logic from consuming another message from the
 same message buffer in a single cycle.
 
-``` {.sourceCode .c++}
+```cpp
 action(popMandatoryQueue, "pQ", desc="Pop the mandatory queue") {
     mandatory_in.dequeue(clockEdge());
 }
@@ -378,7 +378,7 @@ and all lower priority message buffer. Protocols using "z\_stall" are
 usually simpler, but lower performance since a stall on a high priority
 buffer can stall many requests that may not need to be stalled.
 
-``` {.sourceCode .c++}
+```cpp
 action(stall, "z", desc="Stall the incoming request") {
     // z_stall
 }

@@ -61,9 +61,9 @@ Unfortunately, the random tester's configuration is slightly different
 than when using normal CPUs. Thus, we need to use a different
 `MyCacheSystem` than before. You can download this different cache
 system file
-here \<../../\_static/scripts/part3/configs/test\_caches.py\> and you
+[here](/_pages/static/scripts/part3/configs/test_caches.py) and you
 can download the modified run script
-here \<../../\_static/scripts/part3/configs/ruby\_test.py\>. The test
+[here](/_pages/static/scripts/part3/configs/ruby_test.py). The test
 run script is mostly the same as the simple run script, but creates the
 `RubyRandomTester` instead of CPUs.
 
@@ -148,7 +148,7 @@ appears on that line. Specifically, the fields are:
     use this extra field to pass additional information to the trace --
     such as identifying the request as a load or store. For SLICC
     transitions, `APPEND_TRANSITION_COMMENT` often use this, as we
-    discussed previously \<MSI-actions-section\>.
+    [discussed previously](../cache-actions/).
 
 Generally, spaces are used to separate each of these fields (the space
 between the fields are added implicitly, you do not need to add them).
@@ -215,8 +215,8 @@ before sending the data to the requestor at the directory. Only if the
 requestor is the owner do we include the number of sharers. Otherwise,
 it doesn't matter at all and we just set the sharers to 0.
 
-::
-:   panic: Invalid transition system.caches.controllers0 time: 5332
+
+    panic: Invalid transition system.caches.controllers0 time: 5332
     addr: 0x4ac0 event: Inv state: SM\_AD
 
 First, let's look at where Inv is triggered. If you get an invalidate...
@@ -224,7 +224,7 @@ only then. Maybe it's that we are on the sharer list and shouldn't be?
 
 We can use protocol trace and grep to find what's going on.
 
-``` {.sourceCode .sh}
+```
 build/MSI/gem5.opt --debug-flags=ProtocolTrace configs/learning_gem5/part6/ruby_test.py | grep 0x4ac0
 ```
 
@@ -245,7 +245,7 @@ build/MSI/gem5.opt --debug-flags=ProtocolTrace configs/learning_gem5/part6/ruby_
 Maybe there is a sharer in the sharers list when there shouldn't be? We
 can add a defensive assert in clearOwner and setOwner.
 
-``` {.sourceCode .c++}
+```cpp
 action(setOwner, "sO", desc="Set the owner") {
     assert(getDirectoryEntry(address).Sharers.count() == 0);
     peek(request_in, RequestMsg) {
@@ -357,7 +357,7 @@ responses depend on memory and vice versa.
 Now, let's try with two CPUs. First thing I run into is an assert
 failure. I'm seeing the first assert in setState fail.
 
-``` {.sourceCode .c++}
+```cpp
 void setState(Addr addr, State state) {
     if (directory.isPresent(addr)) {
         if (state == State:M) {
@@ -378,7 +378,7 @@ run with protocol trace. First I added the following line just before
 the assert. Note that you are required to use the RubySlicc debug flag.
 This is the only debug flag included in the generated SLICC files.
 
-``` {.sourceCode .c++}
+```cpp
 DPRINTF(RubySlicc, "Owner %s\n", getDirectoryEntry(addr).Owner);
 ```
 
@@ -449,8 +449,7 @@ match as it should. Kind of like the deadlock, the data could have been
 corrupted in the ancient past. I believe the address is the last one in
 the protocol trace.
 
-::
-:   panic: Action/check failure: proc: 0 address: 19688 data: 0x779e6d0
+    panic: Action/check failure: proc: 0 address: 19688 data: 0x779e6d0
     byte\_number: 0 m\_value+byte\_number: 53 byte: 0 [19688, value: 53,
     status: Check\_Pending, initiating node: 0, store\_count: 4]Time:
     5843
@@ -460,7 +459,7 @@ this is the issue. Either way, it's a good idea to annotate the protocol
 trace with the ack information. To do this, we can add comments to the
 transition with APPEND\_TRANSITION\_COMMENT.
 
-``` {.sourceCode .c++}
+```cpp
 action(decrAcks, "da", desc="Decrement the number of acks") {
     assert(is_valid(tbe));
     tbe.Acks := tbe.Acks - 1;
@@ -480,22 +479,22 @@ was some non-zero elements.
 
     5382   1    L1Cache                 Inv      S>I      [0x4cc0, line 0x4cc0]
 
-> 5383: PerfectSwitch-1: Message: [ResponseMsg: addr = [0x4cc0, line
-> 0x4cc0] Type = InvAck Sender = L1Cache-1 Destination = [NetDest (16) 1
-> 0 - - - 0 - - - - - - - - - - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x35 0x36 0x37 0x61 0x6d 0x6e 0x6f 0x70 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ] MessageSize = Control Acks =
-> 0 ] ... ... ... 5389 0 Directory MemData M\_M\>M [0x4cc0, line 0x4cc0]
-> 5390: PerfectSwitch-2: incoming: 0 5390: PerfectSwitch-2: Message:
-> [ResponseMsg: addr = [0x4cc0, line 0x4cc0] Type = Data Sender =
-> Directory-0 Destination = [NetDest (16) 1 0 - - - 0 - - - - - - - - -
-> - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-> 0x0 ] MessageSize = Data Acks = 1 ]
+    > 5383: PerfectSwitch-1: Message: [ResponseMsg: addr = [0x4cc0, line
+    > 0x4cc0] Type = InvAck Sender = L1Cache-1 Destination = [NetDest (16) 1
+    > 0 - - - 0 - - - - - - - - - - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x35 0x36 0x37 0x61 0x6d 0x6e 0x6f 0x70 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ] MessageSize = Control Acks =
+    > 0 ] ... ... ... 5389 0 Directory MemData M\_M\    >M [0x4cc0, line 0x4cc0]
+    > 5390: PerfectSwitch-2: incoming: 0 5390: PerfectSwitch-2: Message:
+    > [ResponseMsg: addr = [0x4cc0, line 0x4cc0] Type = Data Sender =
+    > Directory-0 Destination = [NetDest (16) 1 0 - - - 0 - - - - - - - - -
+    > - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    > 0x0 ] MessageSize = Data Acks = 1 ]
 
 It seems that memory is not being updated correctly on the M-\>S
 transition. After lots of digging and using the MemoryAccess debug flag

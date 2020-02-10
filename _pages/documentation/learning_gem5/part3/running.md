@@ -17,7 +17,7 @@ As something interesting, below is a simple multithreaded program (note:
 as of this writing there is a bug in gem5 preventing this code from
 executing).
 
-``` {.sourceCode .c++}
+```cpp
 #include <iostream>
 #include <thread>
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 
 With the above code compiled as `threads`, we can run gem5!
 
-``` {.sourceCode .sh}
+```
 build/MSI/gem5.opt configs/learning_gem5/part6/simple_ruby.py
 ```
 

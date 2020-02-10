@@ -17,7 +17,7 @@ L1 cache controller for our MSI protocol.
 Create a file called `MSI-cache.sm` and the following code declares the
 state machine.
 
-``` {.sourceCode .c++}
+```cpp
 machine(MachineType:L1Cache, "MSI cache")
     : <parameters>
 {
@@ -60,7 +60,7 @@ machine.
 
 For our MSI L1 cache, we have the following parameters:
 
-``` {.sourceCode .c++}
+```cpp
 machine(MachineType:L1Cache, "MSI cache")
 : Sequencer *sequencer;
   CacheMemory *cacheMemory;
@@ -80,7 +80,7 @@ from other objects. The sequencer accepts requests from a CPU (or other
 master port) and converts the gem5 the packet into a `RubyRequest`.
 Finally, the `RubyRequest` is pushed onto the `mandatoryQueue` of the
 state machine. We will revisit the `mandatoryQueue` in
-in port section \<MSI-in-ports-section\>.
+the [in-port section](../cache-in-ports).
 
 Next, there is a `CacheMemory` object. This is what holds the cache data
 (i.e., cache entries). The exact implementation, size, etc. is
@@ -109,7 +109,7 @@ virtual networks are needed.
 
 The following code declares all of the needed message buffers.
 
-``` {.sourceCode .c++}
+```cpp
 machine(MachineType:L1Cache, "MSI cache")
 : Sequencer *sequencer;
   CacheMemory *cacheMemory;
@@ -163,7 +163,7 @@ files. If you look at the generated file L1Cache\_Controller.py, it will
 look very familiar. Note: This is a generated file and you should never
 modify generated files directly!
 
-``` {.sourceCode .python}
+```python
 from m5.params import *
 from m5.SimObject import SimObject
 from Controller import RubyController
@@ -191,7 +191,7 @@ instance, the transient state "IM\_AD" corresponds to moving from
 Invalid to Modified waiting on acks and data. These states come directly
 from the left column of Table 8.3 in Sorin et al.
 
-``` {.sourceCode .c++}
+```cpp
 state_declaration(State, desc="Cache states") {
     I,      AccessPermission:Invalid,
                 desc="Not present/Invalid";
@@ -247,7 +247,7 @@ Next, we need to declare all of the events that are triggered by
 incoming messages for this cache controller. These events come directly
 from the first row in Table 8.3 in Sorin et al.
 
-``` {.sourceCode .c++}
+```cpp
 enumeration(Event, desc="Cache events") {
     // From the processor/sequencer/mandatory queue
     Load,           desc="Load from processor";
@@ -290,7 +290,7 @@ in `src/mem/ruby/slicc_interface/AbstractCacheEntry.hh`. If you want to
 use any of the member functions of `AbstractCacheEntry`, you need to
 declare them here (this isn't used in this protocol).
 
-``` {.sourceCode .c++}
+```cpp
 structure(Entry, desc="Cache entry", interface="AbstractCacheEntry") {
     State CacheState,        desc="cache state";
     DataBlock DataBlk,       desc="Data in the block";
@@ -306,7 +306,7 @@ acks that this block is currently waiting for. The `AcksOutstanding` is
 used for the transitions where other controllers send acks instead of
 the data.
 
-``` {.sourceCode .c++}
+```cpp
 structure(TBE, desc="Entry for transient requests") {
     State TBEState,         desc="State of block";
     DataBlock DataBlk,      desc="Data for the block. Needed for MI_A";
@@ -322,7 +322,7 @@ functions that we will call on it. You can find the code for the
 the TBE structure defined above, which gets a little confusing, as we
 will see.
 
-``` {.sourceCode .c++}
+```cpp
 structure(TBETable, external="yes") {
   TBE lookup(Addr);
   void allocate(Addr);
@@ -356,7 +356,7 @@ This is a parameter that is actually part of the `AbstractController`,
 thus we need to use the C++ name for the variable since it doesn't have
 a SLICC name.
 
-``` {.sourceCode .c++}
+```cpp
 TBETable TBEs, template="<L1Cache_TBE>", constructor="m_number_of_TBEs";
 ```
 
@@ -365,9 +365,9 @@ ninja!
 
 Next, any functions that are part of AbstractController need to be
 declared, if we are going to use them in the rest of the file. In this
-case, we are only going to use `clockEdge()`
+case, we are only going to use `clockEdge()`:
 
-``` {.sourceCode .c++}
+```cpp
 Tick clockEdge();
 ```
 
@@ -377,7 +377,7 @@ available in action code-blocks. Action code blocks will be explained in
 detail in the action section \<MSI-actions-section\>. These may be
 needed when a transition has many actions.
 
-``` {.sourceCode .c++}
+```cpp
 void set_cache_entry(AbstractCacheEntry a);
 void unset_cache_entry();
 void set_tbe(TBE b);
@@ -388,7 +388,7 @@ Another useful function is `mapAddressToMachine`. This allows us to
 change the address mappings for banked directories or caches at runtime
 so we don't have to hardcode them in the SLICC file.
 
-``` {.sourceCode .c++}
+```cpp
 MachineID mapAddressToMachine(Addr addr, MachineType mtype);
 ```
 
@@ -401,7 +401,7 @@ would have been a better name). The cast is also necessary since we
 defined a specific `Entry` type in the file, but the `CacheMemory` holds
 the abstract type.
 
-``` {.sourceCode .c++}
+```cpp
 // Convenience function to look up the cache entry.
 // Needs a pointer so it will be a reference and can be updated in actions
 Entry getCacheEntry(Addr address), return_by_pointer="yes" {
@@ -442,7 +442,7 @@ protocols. There's a set of functions that are pure-virtual in
 :   Functionally write the data. Similarly, you may need to update the
     data in both the TBE and the cache entry.
 
-``` {.sourceCode .c++}
+```cpp
 State getState(TBE tbe, Entry cache_entry, Addr addr) {
     // The TBE state will override the state in cache memory, if valid
     if (is_valid(tbe)) { return tbe.TBEState; }

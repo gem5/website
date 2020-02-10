@@ -17,7 +17,7 @@ specifies what *events* to *trigger* on different incoming messages.
 
 However, before we get to the in ports, we must declare our out ports.
 
-``` {.sourceCode .c++}
+```cpp
 out_port(request_out, RequestMsg, requestToDir);
 out_port(response_out, ResponseMsg, responseToDirOrSibling);
 ```
@@ -66,7 +66,7 @@ messages to our L1 cache controller, the response from directory or
 other caches. Next we will break the code block down to explain each
 section.
 
-``` {.sourceCode .c++}
+```cpp
 in_port(response_in, ResponseMsg, responseFromDirOrSibling) {
     if (response_in.isReady(clockEdge())) {
         peek(response_in, ResponseMsg) {
@@ -118,7 +118,7 @@ the message buffer to see if there are any messages to be processed. If
 not, then this `in_port` code block is skipped and the next one is
 executed.
 
-``` {.sourceCode .c++}
+```cpp
 in_port(response_in, ResponseMsg, responseFromDirOrSibling) {
     if (response_in.isReady(clockEdge())) {
         . . .
@@ -146,7 +146,7 @@ our first debug statement, an *assert*. This is one of the ways to ease
 debugging of cache coherence protocols. It is encouraged to use asserts
 liberally to make debugging easier.
 
-``` {.sourceCode .c++}
+```cpp
 peek(response_in, ResponseMsg) {
     Entry cache_entry := getCacheEntry(in_msg.addr);
     TBE tbe := TBEs[in_msg.addr];
@@ -168,7 +168,7 @@ global definitions in header files in C/C++.
 
 In the `MSI-msg.sm` file, add the following code block:
 
-``` {.sourceCode .c++}
+```cpp
 structure(ResponseMsg, desc="Used for Dir->Cache and Fwd message responses",
           interface="Message") {
     Addr addr,                   desc="Physical address for this response";
@@ -209,7 +209,7 @@ invalidated their copy. Thus, we need to define an *enumeration*, the
 `CoherenceResponseType`, to use it in this message. Add the following
 code *before* the `ResponseMsg` declaration in the same file.
 
-``` {.sourceCode .c++}
+```cpp
 enumeration(CoherenceResponseType, desc="Types of response messages") {
     Data,       desc="Contains the most up-to-date data";
     InvAck,     desc="Message from another cache that they have inv. the blk";
@@ -239,14 +239,14 @@ and writes. Note: This functionality currently is very brittle and if
 there are messages in-flight for an address that is functionally read or
 written the functional access may fail.
 
-You can download the complete file `MSI-msg.sm`
-here \<../../\_static/scripts/part3/MSI\_protocol/MSI-msg.sm\>.
+You can download the complete `MSI-msg.sm` file 
+[here](/_pages/static/scripts/part3/MSI_protocol/MSI-msg.sm).
 
 Now that we have defined the data in the response message, we can look
 at how we choose which action to trigger in the `in_port` for response
 to the cache.
 
-``` {.sourceCode .c++}
+```cpp
 // If it's from the directory...
 if (machineIDToMachineType(in_msg.Sender) ==
             MachineType:Directory) {
@@ -355,7 +355,7 @@ It is possible to implement this as two different messages and request
 type enumerations, one for forward and one for normal requests, but it
 simplifies the code to use a single message and type.
 
-``` {.sourceCode .c++}
+```cpp
 enumeration(CoherenceRequestType, desc="Types of request messages") {
     GetS,       desc="Request from cache for a block with read permission";
     GetM,       desc="Request from cache for a block with write permission";
@@ -368,7 +368,7 @@ enumeration(CoherenceRequestType, desc="Types of request messages") {
 }
 ```
 
-``` {.sourceCode .c++}
+```cpp
 structure(RequestMsg, desc="Used for Cache->Dir and Fwd messages",  interface="Message") {
     Addr addr,                   desc="Physical address for this request";
     CoherenceRequestType Type,   desc="Type of request";
@@ -390,14 +390,11 @@ structure(RequestMsg, desc="Used for Cache->Dir and Fwd messages",  interface="M
 }
 ```
 
-You can download the complete file `MSI-msg.sm`
-here \<../../\_static/scripts/part3/MSI\_protocol/MSI-msg.sm\>.
-
 Now, we can specify the logic for the forward network `in_port`. This
 logic is straightforward and triggers a different event for each request
 type.
 
-``` {.sourceCode .c++}
+```cpp
 in_port(forward_in, RequestMsg, forwardFromDir) {
     if (forward_in.isReady(clockEdge())) {
         peek(forward_in, RequestMsg) {
@@ -431,7 +428,7 @@ not be cache-block aligned. It also has other members that may be useful
 in some protocols. However, for this simple protocol we only need the
 `LineAddress`.
 
-``` {.sourceCode .c++}
+```cpp
 in_port(mandatory_in, RubyRequest, mandatoryQueue) {
     if (mandatory_in.isReady(clockEdge())) {
         peek(mandatory_in, RubyRequest, block_on="LineAddress") {

@@ -17,9 +17,9 @@ The SLICC file
 Now that we have finished implementing the protocol, we need to compile
 it. You can download the complete SLICC files below:
 
--   MSI-cache.sm \<../../\_static/scripts/part3/MSI\_protocol/MSI-cache.sm\>
--   MSI-dir.sm \<../../\_static/scripts/part3/MSI\_protocol/MSI-dir.sm\>
--   MSI-msg.sm \<../../\_static/scripts/part3/MSI\_protocol/MSI-msg.sm\>
+-   [MSI-cache.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-cache.sm)
+-   [MSI-dir.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-dir.sm)
+-   [MSI-msg.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-msg.sm)
 
 Before building the protocol, we need to create one more file:
 `MSI.slicc`. This file tells the SLICC compiler which state machine
@@ -35,7 +35,7 @@ Thus, any files that declare types that are used in other files must
 come before the files they are used in (e.g., `MSI-msg.sm` must come
 before `MSI-cache.sm` since `MSI-cache.sm` uses the `RequestMsg` type).
 
-``` {.sourceCode .c++}
+```cpp
 protocol "MSI";
 include "RubySlicc_interfaces.slicc";
 include "MSI-msg.sm";
@@ -44,7 +44,7 @@ include "MSI-dir.sm";
 ```
 
 You can download the fill file
-here \<../../\_static/scripts/part3/MSI\_protocol/MSI.slicc\>
+[here](/_pages/static/scripts/part3/MSI_protocol/MSI.slicc).
 
 Compiling a protocol with SCons
 -------------------------------
@@ -55,7 +55,7 @@ cannot simply use a default build name (e.g., `X86` or `ARM`). We have
 to specify the SCons options on the command line. The command line below
 will build our new protocol with the X86 ISA.
 
-``` {.sourceCode .sh}
+```
 scons build/X86_MSI/gem5.opt --default=X86 PROTOCOL=MSI SLICC_HTML=True
 ```
 

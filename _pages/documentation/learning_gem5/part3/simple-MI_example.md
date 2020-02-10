@@ -26,9 +26,9 @@ For `MI_example`, we can use exactly the same runscript as before
 the classes needed for `MI_example`. There are only a couple of changes
 from `MSI`, mostly due to different naming schemes. You can download the
 file
-here  \<../\_static/scripts/part3/configs/ruby\_caches\_MI\_example.py\>
+[here](/_pages/static/scripts/part3/configs/ruby_caches_MI_example.py).
 
-``` {.sourceCode .python}
+```python
 class MyCacheSystem(RubySystem):
 
     def __init__(self):

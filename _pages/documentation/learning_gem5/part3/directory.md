@@ -19,7 +19,7 @@ just discusses a few more SLICC details and a few differences between
 directory controllers and cache controllers. Let's dive straight in and
 start modifying a new file `MSI-dir.sm`.
 
-``` {.sourceCode .c++}
+```cpp
 machine(MachineType:Directory, "Directory protocol")
 :
   DirectoryMemory * directory;
@@ -74,7 +74,7 @@ see below in the action section.
 After the parameters and message buffers, we need to declare all of the
 states, events, and other local structures.
 
-``` {.sourceCode .c++}
+```cpp
 state_declaration(State, desc="Directory states",
                   default="Directory_State_I") {
     // Stable states.
@@ -151,7 +151,7 @@ or, if it hasn't been allocated yet, this allocates the entry.
 Implementing it this way may save some host memory since this is lazily
 populated.
 
-``` {.sourceCode .c++}
+```cpp
 Tick clockEdge();
 
 Entry getDirectoryEntry(Addr addr), return_by_pointer = "yes" {
@@ -220,7 +220,7 @@ between the `in_port` in the directory and in the L1 cache is that the
 directory does not have a TBE or cache entry. Thus, we do not pass
 either into the `trigger` function.
 
-``` {.sourceCode .c++}
+```cpp
 out_port(forward_out, RequestMsg, forwardToCache);
 out_port(response_out, ResponseMsg, responseToCache);
 
@@ -294,7 +294,7 @@ different actions to send data to memory for both requests and responses
 since there are two different message buffers (virtual networks) that
 data might arrive on.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendMemRead, "r", desc="Send a memory read request") {
     peek(request_in, RequestMsg) {
         queueMemoryRead(in_msg.Requestor, address, toMemLatency);
@@ -327,7 +327,7 @@ except in SLICC only the `RubySlicc` debug flag is available.
 Next, we specify actions to update the sharers and owner of a particular
 block.
 
-``` {.sourceCode .c++}
+```cpp
 action(addReqToSharers, "aS", desc="Add requestor to sharer list") {
     peek(request_in, RequestMsg) {
         getDirectoryEntry(address).Sharers.add(in_msg.Requestor);
@@ -364,7 +364,7 @@ action(clearOwner, "cO", desc="Clear the owner") {
 The next set of actions send invalidates and forward requests to caches
 that the directory cannot deal with alone.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendInvToSharers, "i", desc="Send invalidate to all sharers") {
     peek(request_in, RequestMsg) {
         enqueue(forward_out, RequestMsg, 1) {
@@ -408,7 +408,7 @@ Now we have responses from the directory. Here we are peeking into the
 special buffer `responseFromMemory`. You can find the definition of
 `MemoryMsg` in `src/mem/protocol/RubySlicc_MemControl.sm`.
 
-``` {.sourceCode .c++}
+```cpp
 action(sendDataToReq, "d", desc="Send data from memory to requestor. May need to send sharer number, too") {
     peek(memQueue_in, MemoryMsg) {
         enqueue(response_out, ResponseMsg, 1) {
@@ -445,7 +445,7 @@ action(sendPutAck, "a", desc="Send the put ack") {
 
 Then, we have the queue management and stall actions.
 
-``` {.sourceCode .c++}
+```cpp
 action(popResponseQueue, "pR", desc="Pop the response queue") {
     response_in.dequeue(clockEdge());
 }
@@ -467,7 +467,7 @@ Finally, we have the transition section of the state machine file. These
 mostly come from Table 8.2 in Sorin et al., but there are some extra
 transitions to deal with the unknown memory latency.
 
-``` {.sourceCode .c++}
+```cpp
 transition({I, S}, GetS, S_m) {
     sendMemRead;
     addReqToSharers;
@@ -574,4 +574,4 @@ transition({MI_m, SS_m, S_m, M_m}, {GetS, GetM}) {
 ```
 
 You can download the complete `MSI-dir.sm` file
-here \<../../\_static/scripts/part3/MSI\_protocol/MSI-dir.sm\>.
+[here](/_pages/static/scripts/part3/MSI_protocol/MSI-dir.sm).

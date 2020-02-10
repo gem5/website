@@ -22,7 +22,7 @@ of directly connecting the CPU to the memory controllers.
 
 First, so we can test our *coherence* protocol, let's use two CPUs.
 
-``` {.sourceCode .python}
+```python
 system.cpu = [TimingSimpleCPU(), TimingSimpleCPU()]
 ```
 
@@ -31,7 +31,7 @@ to create the cache system and set up all of the caches. Add the
 following lines *after the CPU interrupts have been created, but before
 instantiating the system*.
 
-``` {.sourceCode .python}
+```python
 system.caches = MyCacheSystem()
 system.caches.setup(system, system.cpu, [system.mem_ctrl])
 ```
@@ -43,7 +43,7 @@ create a `setup` function that takes as parameters the CPUs in the
 system and the memory controllers.
 
 You can download the complete run script
-here \<../../\_static/scripts/part3/configs/simple\_ruby.py\>
+[here](_pages/static/scripts/part3/configs/simple_ruby.py).
 
 Cache system configuration
 --------------------------
@@ -65,7 +65,7 @@ type should have a unique version number. This is used to differentiate
 the individual machines. (Hopefully, in the future this requirement will
 be removed.)
 
-``` {.sourceCode .python}
+```python
 class L1Cache(L1Cache_Controller):
 
     _version = 0
@@ -77,7 +77,7 @@ class L1Cache(L1Cache_Controller):
 
 Next, we implement the constructor for the class.
 
-``` {.sourceCode .python}
+```python
 def __init__(self, system, ruby_system, cpu):
     super(L1Cache, self).__init__()
 
@@ -104,7 +104,7 @@ cache, which is a simple log operation. We also need to decide whether
 to send eviction notices to the CPU. Only if we are using the
 out-of-order CPU and using x86 or ARM ISA should we forward evictions.
 
-``` {.sourceCode .python}
+```python
 def getBlockSizeBits(self, system):
     bits = int(math.log(system.cache_line_size, 2))
     if 2**bits != system.cache_line_size.value:
@@ -136,7 +136,7 @@ same as the gem5 ports, but *message buffers are not currently
 implemented as gem5 ports*. In this protocol, we are assuming the
 message buffers are ordered for simplicity.
 
-``` {.sourceCode .python}
+```python
 def connectQueues(self, ruby_system):
     self.mandatoryQueue = MessageBuffer()
 
@@ -165,7 +165,7 @@ We set it the to the memory controller port. Similarly, in
 `connectQueues` we need to instantiate the special message buffer
 `responseFromMemory` like the `mandatoryQueue` in the L1 cache.
 
-``` {.sourceCode .python}
+```python
 class DirController(Directory_Controller):
 
     _version = 0
@@ -213,7 +213,7 @@ them in the constructor, there would be a circular dependence in the
 SimObject hierarchy which will cause infinite recursion in when the
 system in instantiated with `m5.instantiate`.
 
-``` {.sourceCode .python}
+```python
 class MyCacheSystem(RubySystem):
 
     def __init__(self):
@@ -255,7 +255,7 @@ we assume that there are only CPU sequencers so the first CPU is
 connected to the first sequencer, and so on. We also have to connect the
 TLBs and interrupt ports (if we are using x86).
 
-``` {.sourceCode .python}
+```python
 def setup(self, system, cpus, mem_ctrls):
     self.network = MyNetwork(self)
 
@@ -315,7 +315,7 @@ an external link from that router to the controller. Finally, we add all
 of the "internal" links. Each router is connected to all other routers
 to make the point-to-point network.
 
-``` {.sourceCode .python}
+```python
 class MyNetwork(SimpleNetwork):
 
     def __init__(self, ruby_system):
@@ -342,4 +342,4 @@ class MyNetwork(SimpleNetwork):
 ```
 
 You can download the complete `msi_caches.py` file
-here \<../../\_static/scripts/part3/configs/msi\_caches.py\>.
+[here](/_pages/static/scripts/part3/configs/msi_caches.py).

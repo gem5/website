@@ -31,7 +31,7 @@ Second, the transition block contains all of the actions to execute on
 this transition. For instance, a simple transition in the MSI protocol
 is transitioning out of Invalid on a Load.
 
-``` {.sourceCode .c++}
+```cpp
 transition(I, Load, IS_D) {
     allocateCacheBlock;
     allocateTBE;
@@ -55,7 +55,7 @@ could be used if we need to wait for acks from other caches. Next, we
 send a GetS request to the directory, and finally we pop the head entry
 off of the mandatory queue since we have fully handled it.
 
-``` {.sourceCode .c++}
+```cpp
 transition(IS_D, {Load, Store, Replacement, Inv}) {
     stall;
 }
@@ -77,7 +77,7 @@ below.
 Below is the rest of the transitions needed to implement the L1 cache
 from the MSI protocol.
 
-``` {.sourceCode .c++}
+```cpp
 transition(IS_D, {DataDirNoAcks, DataOwner}, S) {
     writeDataToCache;
     deallocateTBE;
@@ -201,4 +201,4 @@ transition(SI_A, Inv, II_A) {
 ```
 
 You can download the complete `MSI-cache.sm` file
-here \<../../\_static/scripts/part3/MSI\_protocol/MSI-cache.sm\>.
+[here](/_pages/static/scripts/part3/MSI_protocol/MSI-cache.sm).

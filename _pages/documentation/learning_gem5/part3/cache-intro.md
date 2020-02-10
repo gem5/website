@@ -16,32 +16,29 @@ a solid understanding of cache coherence. This section leans heavily on
 the great book *A Primer on Memory Consistency and Cache Coherence* by
 Daniel J. Sorin, Mark D. Hill, and David A. Wood which was published as
 part of the Synthesis Lectures on Computer Architecture in 2011
-([DOI:\`10.2200/S00346ED1V01Y201104CAC016](DOI:`10.2200/S00346ED1V01Y201104CAC016)
-\<<https://doi.org/10.2200/S00346ED1V01Y201104CAC016>\>\_).
+([DOI:10.2200/S00346ED1V01Y201104CAC016](https://doi.org/10.2200/S00346ED1V01Y201104CAC016)).
 If you are unfamiliar with cache coherence, I strongly advise reading that book before continuing.
 
 In this chapter, we will be implementing an MSI protocol.
 (An MSI protocol has three stable states, modified with read-write permission, shared with read-only permission, and invalid with no permissions.)
 We will implement this as a three-hop directory protocol (i.e., caches can send data directly to other caches without going through the directory).
-Details for the protocol can be found in Section 8.2 of the \*Primer on Memory Consistency and Cache Coherence\* (pages 141-149).
+Details for the protocol can be found in Section 8.2 of *A Primer on Memory Consistency and Cache Coherence* (pages 141-149).
 It will be helpful to print out Section 8.2 to reference as you are implementing the protocol.
 
-You can download an exceprt of Sorin et al. that contains Section 8.2 :download:here
-\<../../\_static/external/Sorin\_et-al\_Excerpt\_8.2.pdf\>.
+You can download an exceprt of Sorin et al. that contains Section 8.2 [here](/_pages/static/external/Sorin_et-al_Excerpt_8.2.pdf).
 
-First steps to writing a protocol
-\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~
+## First steps to writing a protocol
 
-Let's start by creating a new directory for our protocol: src/learning\_gem5/MSI\_protocol.
+Let's start by creating a new directory for our protocol at src/learning\_gem5/MSI\_protocol.
 In this directory, like in all gem5 source directories, we need to create a file for SCons to know what to compile.
-However, this time, instead of creating a SConscript\` file, we are
+However, this time, instead of creating a `SConscript` file, we are
 going to create a `SConsopts` file. (The `SConsopts` files are processed
 before the `SConscript` files and we need to run the SLICC compiler
 before SCons executes.)
 
 We need to create a `SConsopts` file with the following:
 
-``` {.sourceCode .python}
+```python
 Import('*')
 
 all_protocols.extend([
@@ -60,7 +57,7 @@ tells the SCons to look in the current directory for files to pass to
 the SLICC compiler.
 
 You can download the `SConsopts` file
-here \<../../\_static/scripts/part3/MSI\_protocol/SConsopts\>.
+[here](/_pages/static/scripts/part3/MSI\_protocol/SConsopts\).
 
 Writing a state machine file
 ----------------------------
