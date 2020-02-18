@@ -27,6 +27,12 @@ This tutorial covers the Arm Scalable Vector Extension (SVE) and how to
 use gem5 to explore system architecture designs of microarchitectures
 implementing SVE.
 
+## ASPLOS 2018: Learning gem5
+
+[Full-day gem5 tutorial at ASPLOS 2018](asplos-2018)
+
+This tutorial covers the basics of building gem5, running it, extending and contributing to gem5, and other advanced gem5 topics.
+
 ## Arm Research Starter Kit on System Modeling using gem5
 
 <https://github.com/arm-university/arm-gem5-rsk>
@@ -47,6 +53,10 @@ and the full user space ROCm stack.
 [ARM Research Summit 2017
 Workshop](arm-summit-2017) covers many
 advanced topics in gem5 such as Ruby, Garnet, and SystemC.
+
+## gem5 Tutorial and Coding Sprint at HPCA 2017
+
+[This tutorial](hpca-2017) introduces gem5 topics covered in the Learning gem5 book and paired junior software developers with seniors developers in a coding sprint to add features and bug fixes to the gem5 codebase using Gerrit.
 
 ## dist-gem5 at ISCA-44 (Toronto, 2017)
 
