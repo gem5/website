@@ -19,6 +19,14 @@ docs:
         - page: Building EXTRAS
           url: /documentation/general_docs/building/EXTRAS
 
+    - title: Doxygen
+      id: doxygen-docs
+      subitems:
+        - page: Develop Branch
+          url: http://doxygen.gem5.org/develop/index.html
+        - page: v19.0.0.0
+          url: http://doxygen.gem5.org/release/v19-0-0-0/index.html
+
     - title: Full System
       id: fullsystem
       subitems:
@@ -225,7 +233,7 @@ docs:
     items:
        - title: gem5 Doxygen
          id: doxygen
-         url: https://gem5.github.io/gem5-doxygen
+         url: http://doxygen.gem5.org/release/current/index.html
 
   - title: Reporting Problems
     items:
