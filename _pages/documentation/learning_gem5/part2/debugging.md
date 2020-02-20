@@ -11,7 +11,7 @@ author: Jason Lowe-Power
 Debugging gem5
 ==============
 
-In the previous chapters \<hello-simobject-chapter\> we covered how to
+In the [previous chapters](../helloobject) we covered how to
 create a very simple SimObject. In this chapter, we will replace the
 simple print to `stdout` with gem5's debugging support.
 
@@ -29,8 +29,8 @@ simple-config-chapter, if you enable the `DRAM` debug flag, you get the
 following output. Note that this generates *a lot* of output to the
 console (about 7 MB).
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50
+```sh
+    build/X86/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -90,8 +90,8 @@ executing. For this, the `Exec` debug flag may be useful. This debug
 flags shows details of how each instruction is executed by the simulated
 CPU.
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
+```sh
+    build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -151,8 +151,8 @@ In fact, the `Exec` flag is actually an agglomeration of multiple debug
 flags. You can see this, and all of the available debug flags, by
 running gem5 with the `--debug-help` parameter.
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt --debug-help
+```sh
+    build/X86/gem5.opt --debug-help
 ```
 
     Base Flags:
@@ -190,7 +190,7 @@ build/X86/gem5.opt --debug-help
 Adding a new debug flag
 -----------------------
 
-In the previous chapters \<hello-simobject-chapter\>, we used a simple
+In the [previous chapters](../helloobject), we used a simple
 `std::cout` to print from our SimObject. While it is possible to use the
 normal C/C++ I/O in gem5, it is highly discouraged. So, we are now going
 to replace this and use gem5's debugging facilities instead.
@@ -199,7 +199,7 @@ When creating a new debug flag, we first have to declare it in a
 SConscript file. Add the following to the SConscript file in the
 directory with your hello object code (src/learning\_gem5/).
 
-``` {.sourceCode .python}
+```python
 DebugFlag('Hello')
 ```
 
@@ -215,14 +215,14 @@ where we plan to use the debug flag.
 
 In the `hello_object.cc` file, we need to include the header file.
 
-``` {.sourceCode .c++}
+```cpp
 #include "debug/Hello.hh"
 ```
 
 Now that we have included the necessary header file, let's replace the
 `std::cout` call with a debug statement like so.
 
-``` {.sourceCode .c++}
+```cpp
 DPRINTF(Hello, "Created the hello object\n");
 ```
 
@@ -235,8 +235,8 @@ statement.
 Now, if you recompile gem5 and run it with the "Hello" debug flag, you
 get the following result.
 
-``` {.sourceCode .sh}
-build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
+```sh
+    build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -254,9 +254,9 @@ build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
     Exiting @ tick 18446744073709551615 because simulate() limit reached
 
 You can find the updated SConcript file
-here \<../\_static/scripts/part2/debugging/SConscript\> and the updated
+[here](/_pages/static/scripts/part2/debugging/SConscript) and the updated
 hello object code
-here \<../\_static/scripts/part2/debugging/hello\_object.cc\>.
+[here](/_pages/static/scripts/part2/debugging/hello_object.cc).
 
 Debug output
 ------------
@@ -281,8 +281,8 @@ Using functions other than DPRINTF
 gem5 provides a number of other functions that are useful in specific
 circumstances.
 
-> These functions are like the previous functions :cppDDUMP,
-> :cppDPRINTF, and :cppDPRINTFR except they do not take a flag as a
+> These functions are like the previous functions `:cppDDUMP`,
+> `:cppDPRINTF`, and `:cppDPRINTFR` except they do not take a flag as a
 > parameter. Therefore, these statements will *always* print whenever
 > debugging is enabled.
 

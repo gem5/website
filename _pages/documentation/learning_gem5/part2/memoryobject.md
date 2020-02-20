@@ -12,7 +12,7 @@ Creating SimObjects in the memory system
 ========================================
 
 In this chapter, we will create a simple memory object that sits between
-the CPU and the memory bus. In the next chapter \<simplecache-chapter\>
+the CPU and the memory bus. In the [next chapter](../simplecache)
 we will take this simple memory object and add some logic to it to make
 it a very simple blocking uniprocessor cache.
 
@@ -180,7 +180,7 @@ hello-simobject-chapter, the first step is to create a SimObject Python
 file. We will call this simple memory object `SimpleMemobj` and create
 the SimObject Python file in `src/learning_gem5/simple_memobj`.
 
-``` {.sourceCode .python}
+```python
 from m5.params import *
 from m5.proxy import *
 from MemObject import MemObject
@@ -209,18 +209,18 @@ use these names when implementing `SimpleMemobj` and defining the
 `getMasterPort` and `getSlavePort` functions.
 
 You can download the SimObject file
-here \<../\_static/scripts/part2/memoryobject/SimpleMemobj.py\>
+[here](/_pages/static/scripts/part2/memoryobject/SimpleMemobj.py).
 
 Of course, you also need to create a SConscript file in the new
 directory as well that declares the SimObject Python file. You can
 download the SConscript file
-here \<../\_static/scripts/part2/memoryobject/SConscript\>
+[here](/_pages/static/scripts/part2/memoryobject/SConscript).
 
 ### Define the SimpleMemobj class
 
 Now, we create a header file for `SimpleMemobj`.
 
-``` {.sourceCode .c++}
+```cpp
 class SimpleMemobj : public MemObject
 {
   private:
@@ -244,7 +244,7 @@ Let's start with the slave port, or the CPU-side port. We are going to
 inherit from the `SlavePort` class. The following is the required code
 to override all of the pure virtual functions in the `SlavePort` class.
 
-``` {.sourceCode .c++}
+```cpp
 class CPUSidePort : public SlavePort
 {
   private:
@@ -276,7 +276,7 @@ Next, we need to define a master port type. This will be the memory-side
 port which will forward request from the CPU-side to the rest of the
 memory system.
 
-``` {.sourceCode .c++}
+```cpp
 class MemSidePort : public MasterPort
 {
   private:
@@ -305,7 +305,7 @@ We also need to declare the two pure virtual functions in the
 functions are used by gem5 during the initialization phase to connect
 memory objects together via ports.
 
-``` {.sourceCode .c++}
+```cpp
 class SimpleMemobj : public MemObject
 {
   private:
@@ -331,7 +331,7 @@ class SimpleMemobj : public MemObject
 ```
 
 You can download the header file for the `SimpleMemobj`
-here \<../\_static/scripts/part2/memoryobject/simple\_memobj.hh\>
+[here](/_pages/static/scripts/part2/memoryobject/simple_memobj.hh).
 
 ### Implementing basic MemObject functions
 
@@ -341,7 +341,7 @@ Each port's constructor takes two parameters: the name and a pointer to
 its owner, as we defined in the header file. The name can be any string,
 but by convention, it is the same name as in the Python SimObject file.
 
-``` {.sourceCode .c++}
+```cpp
 SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
     MemObject(params),
     instPort(params->name + ".inst_port", this),
@@ -365,7 +365,7 @@ name to our parent. However, it will be an error if we try to connect a
 slave port to any other named port since the parent class has no ports
 defined.
 
-``` {.sourceCode .c++}
+```cpp
 BaseMasterPort&
 SimpleMemobj::getMasterPort(const std::string& if_name, PortID idx)
 {
@@ -382,7 +382,7 @@ either of the names we defined for our slave ports in the Python
 SimObject file. If the name is `"inst_port"`, then we return the
 instPort, and if the name is `data_port` we return the data port.
 
-``` {.sourceCode .c++}
+```cpp
 BaseSlavePort&
 SimpleMemobj::getSlavePort(const std::string& if_name, PortID idx)
 {
@@ -405,7 +405,7 @@ information to the main memory object (`SimpleMemobj`).
 Starting with two simple functions, `getAddrRanges` and `recvFunctional`
 simply call into the `SimpleMemobj`.
 
-``` {.sourceCode .c++}
+```cpp
 AddrRangeList
 SimpleMemobj::CPUSidePort::getAddrRanges() const
 {
@@ -424,7 +424,7 @@ simple. These implementations just pass through the request to the
 memory side. We can use `DPRINTF` calls here to track what is happening
 for debug purposes as well.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::handleFunctional(PacketPtr pkt)
 {
@@ -442,7 +442,7 @@ SimpleMemobj::getAddrRanges() const
 Similarly for the `MemSidePort`, we need to implement `recvRangeChange`
 and forward the request through the `SimpleMemobj` to the slave port.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::MemSidePort::recvRangeChange()
 {
@@ -450,7 +450,7 @@ SimpleMemobj::MemSidePort::recvRangeChange()
 }
 ```
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::sendRangeChange()
 {
@@ -475,7 +475,7 @@ stores whether we need to send a retry whenever the `SimpleMemobj`
 becomes free. Then, if the `SimpleMemobj` is blocked on a request, we
 set that we need to send a retry sometime in the future.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleMemobj::CPUSidePort::recvTimingReq(PacketPtr pkt)
 {
@@ -499,7 +499,7 @@ assume the `memPort` handles all of the flow control and always return
 `true` from `handleRequest` since we were successful in consuming the
 request.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleMemobj::handleRequest(PacketPtr pkt)
 {
@@ -527,7 +527,7 @@ the `blockedPacket` member function so it can send the packet later
 defensive code to make sure there is not a bug and we never try to
 overwrite the `blockedPacket` variable incorrectly.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::MemSidePort::sendPacket(PacketPtr pkt)
 {
@@ -542,7 +542,7 @@ Next, we need to implement the code to resend the packet. In this
 function, we try to resend the packet by calling the `sendPacket`
 function we wrote above.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::MemSidePort::recvReqRetry()
 {
@@ -561,7 +561,7 @@ The response codepath is similar to the receiving codepath. When the
 `MemSidePort` gets a response, we forward the response through the
 `SimpleMemobj` to the appropriate `CPUSidePort`.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleMemobj::MemSidePort::recvTimingResp(PacketPtr pkt)
 {
@@ -582,7 +582,7 @@ instruction or data packet and send it back across the appropriate port.
 Finally, since the object is now unblocked, we may need to notify the
 CPU side ports that they can now retry their requests that failed.
 
-``` {.sourceCode .c++}
+```cpp
 bool
 SimpleMemobj::handleResponse(PacketPtr pkt)
 {
@@ -612,7 +612,7 @@ in the `MemSidePort`, we can implement a `sendPacket` function in the
 master port. If this call fails and the peer port is currently blocked,
 then we store the packet to be sent later.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::CPUSidePort::sendPacket(PacketPtr pkt)
 {
@@ -628,7 +628,7 @@ We will send this blocked packet later when we receive a
 `recvRespRetry`. This function is exactly the same as the `recvReqRetry`
 above and simply tries to resend the packet, which may be blocked again.
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::CPUSidePort::recvRespRetry()
 {
@@ -649,7 +649,7 @@ retry is needed which we marked in `recvTimingReq` whenever the
 needed, this function calls `sendRetryReq`, which in turn calls
 `recvReqRetry` on the peer master port (the CPU in this case).
 
-``` {.sourceCode .c++}
+```cpp
 void
 SimpleMemobj::CPUSidePort::trySendRetry()
 {
@@ -662,7 +662,7 @@ SimpleMemobj::CPUSidePort::trySendRetry()
 ```
 
 You can download the implementation for the `SimpleMemobj`
-here \<../\_static/scripts/part2/memoryobject/simple\_memobj.cc\>
+[here](/_pages/static/scripts/part2/memoryobject/simple_memobj.cc).
 
 The following figure, memobj-api-figure, shows the relationships between
 the `CPUSidePort`, `MemSidePort`, and `SimpleMemobj`. This figure shows
@@ -672,25 +672,17 @@ the non-bold functions are the port interfaces to the peer ports. The
 colors highlight one API path through the object (e.g., receiving a
 request or updating the memory ranges).
 
-![](../_static/figures/memobj_api.png)
-
-> width
-> :   100 %
->
-> alt
-> :   Interaction between SimpleMemobj and its ports
->
-> Interaction between SimpleMemobj and its ports
+![Interaction between SimpleMemobj and its ports](/_pages/static/figures/memobj_api.png)
 
 For this simple memory object, packets are just forwarded from the
 CPU-side to the memory side. However, by modifying `handleRequest` and
 `handleResponse`, we can create rich featureful objects, like a cache in
-the next chapter \<simplecache-chapter\>.
+the [next chapter](../simplecache).
 
 ### Create a config file
 
 This is all of the code needed to implement a simple memory object! In
-the next chapter \<simplecache-chapter\>, we will take this framework
+the [next chapter](../simplecache), we will take this framework
 and add some caching logic to make this memory object into a simple
 cache. However, before that, let's look at the config file to add the
 SimpleMemobj to your system.
@@ -700,7 +692,7 @@ simple-config-chapter. However, instead of connecting the CPU directly
 to the memory bus, we are going to instantiate a `SimpleMemobj` and
 place it between the CPU and the memory bus.
 
-``` {.sourceCode .python}
+```python
 import m5
 from m5.objects import *
 
@@ -747,7 +739,7 @@ print 'Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause())
 ```
 
 You can download this config script
-here \<../\_static/scripts/part2/memoryobject/simple\_memobj.py\>
+[here](/_pages/static/scripts/part2/memoryobject/simple_memobj.py).
 
 Now, when you run this config file you get the following output.
 

@@ -26,11 +26,11 @@ fire the event in the `HelloObject`. To add a parameter, modify the
 (`src/learning_gem5/HelloObject.py`). Parameters are set by adding new
 statements to the Python class that include a `Param` type.
 
-For instance, the following code as a parameter `time_to_wait` which is
+For instance, the following code has a parameter `time_to_wait` which is
 a "Latency" parameter and `number_of_fires` which is an integer
 parameter.
 
-``` {.sourceCode .python}
+```python
 class HelloObject(SimObject):
     type = 'HelloObject'
     cxx_header = "learning_gem5/hello_object.hh"
@@ -67,7 +67,7 @@ Once you have declared these parameters in the SimObject file, you need
 to copy their values to your C++ class in its constructor. The following
 code shows the changes to the `HelloObject` constructor.
 
-``` {.sourceCode .c++}
+```cpp
 HelloObject::HelloObject(HelloObjectParams *params) :
     SimObject(params),
     event(*this),
@@ -93,7 +93,7 @@ above.
 To the HelloObject class declaration, add a member variable for the
 name.
 
-``` {.sourceCode .c++}
+```cpp
 class HelloObject : public SimObject
 {
   private:
@@ -131,7 +131,7 @@ This is because the `time_to_wait` parameter does not have a default
 value. Therefore, we need to update the Python config file
 (`run_hello.py`) to specify this value.
 
-``` {.sourceCode .python}
+```python
 root.hello = HelloObject(time_to_wait = '2us')
 ```
 
@@ -139,7 +139,7 @@ Or, we can specify `time_to_wait` as a member variable. Either option is
 exactly the same because the C++ objects are not created until
 `m5.instantiate()` is called.
 
-``` {.sourceCode .python}
+```python
 root.hello = HelloObject()
 root.hello.time_to_wait = '2us'
 ```
@@ -177,7 +177,7 @@ write the message.
 
 First, declare the SimObject in the SConscript file:
 
-``` {.sourceCode .python}
+```python
 Import('*')
 
 SimObject('HelloObject.py')
@@ -188,7 +188,7 @@ DebugFlag('Hello')
 ```
 
 The new SConscript file can be downloaded
-here \<../\_static/scripts/part2/parameters/SConscript\>
+[here](/_pages/static/scripts/part2/parameters/SConscript).
 
 Next, you need to declare the new SimObject in a SimObject Python file.
 Since the `GoodbyeObject` is highly related to the `HelloObject`, we
@@ -200,7 +200,7 @@ parameter is the size of a buffer and is a `MemorySize` parameter.
 Second is the `write_bandwidth` which specifies the speed to fill the
 buffer. Once the buffer is full, the simulation will exit.
 
-``` {.sourceCode .python}
+```python
 class GoodbyeObject(SimObject):
     type = 'GoodbyeObject'
     cxx_header = "learning_gem5/goodbye_object.hh"
@@ -212,11 +212,11 @@ class GoodbyeObject(SimObject):
 ```
 
 The updated `HelloObject.py` file can be downloaded
-here \<../\_static/scripts/part2/parameters/HelloObject.py\>
+[here](/_pages/static/scripts/part2/parameters/HelloObject.py).
 
 Now, we need to implement the `GoodbyeObject`.
 
-``` {.sourceCode .c++}
+```cpp
 #ifndef __LEARNING_GEM5_GOODBYE_OBJECT_HH__
 #define __LEARNING_GEM5_GOODBYE_OBJECT_HH__
 
@@ -269,7 +269,7 @@ class GoodbyeObject : public SimObject
 #endif // __LEARNING_GEM5_GOODBYE_OBJECT_HH__
 ```
 
-``` {.sourceCode .c++}
+```cpp
 #include "learning_gem5/goodbye_object.hh"
 
 #include "debug/Hello.hh"
@@ -340,9 +340,9 @@ GoodbyeObjectParams::create()
 ```
 
 The header file can be downloaded
-here \<../\_static/scripts/part2/parameters/goodbye\_object.hh\> and the
+[here](/_pages/static/scripts/part2/parameters/goodbye_object.hh) and the
 implementation can be downloaded
-here \<../\_static/scripts/part2/parameters/goodbye\_object.cc\>
+[here](/_pages/static/scripts/part2/parameters/goodbye_object.cc).
 
 The interface to this `GoodbyeObject` is simple a function `sayGoodbye`
 which takes a string as a parameter. When this function is called, the
@@ -371,7 +371,7 @@ First, we will also add a `GoodbyeObject` as a parameter to the
 as the `TypeName` of the `Param`. You can have a default, or not, just
 like a normal parameter.
 
-``` {.sourceCode .python}
+```python
 class HelloObject(SimObject):
     type = 'HelloObject'
     cxx_header = "learning_gem5/hello_object.hh"
@@ -384,12 +384,12 @@ class HelloObject(SimObject):
 ```
 
 The updated `HelloObject.py` file can be downloaded
-here \<../\_static/scripts/part2/parameters/HelloObject.py\>
+[here](/_pages/static/scripts/part2/parameters/HelloObject.py).
 
 Second, we will add a reference to a `GoodbyeObject` to the
 `HelloObject` class.
 
-``` {.sourceCode .c++}
+```cpp
 class HelloObject : public SimObject
 {
   private:
@@ -423,7 +423,7 @@ pointer as a SimObject via the parameters by using the `NULL` special
 Python SimObject. We should *panic* when this happens since it is not a
 case this object has been coded to accept.
 
-``` {.sourceCode .c++}
+```cpp
 #include "learning_gem5/part2/hello_object.hh"
 
 #include "base/misc.hh"
@@ -445,7 +445,7 @@ HelloObject::HelloObject(HelloObjectParams *params) :
 Once we have processed the number of event specified by the parameter,
 we should call the `sayGoodbye` function in the `GoodbyeObject`.
 
-``` {.sourceCode .c++}
+```cpp
 void
 HelloObject::processEvent()
 {
@@ -462,9 +462,9 @@ HelloObject::processEvent()
 ```
 
 You can find the updated header file
-here \<../\_static/scripts/part2/parameters/hello\_object.hh\> and the
+[here](/_pages/static/scripts/part2/parameters/hello_object.hh) and the
 implementation file
-here \<../\_static/scripts/part2/parameters/hello\_object.cc\>.
+[here](/_pages/static/scripts/part2/parameters/hello_object.cc).
 
 ### Updating the config script
 
@@ -473,7 +473,7 @@ a new config script, `hello_goodbye.py` and instantiate both the hello
 and the goodbye objects. For instance, one possible script is the
 following.
 
-``` {.sourceCode .python}
+```python
 import m5
 from m5.objects import *
 
@@ -490,7 +490,7 @@ print 'Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause())
 ```
 
 You can download this script
-here \<../\_static/scripts/part2/parameters/hello\_goodbye.py\>
+[here](/_pages/static/scripts/part2/parameters/hello_goodbye.py).
 
 Running this script generates the following output.
 
