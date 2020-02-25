@@ -137,8 +137,8 @@ Testing the just built kernel:
 There are two different bootloaders for gem5. One of 32-bit kernels and one for 64-bit kernels. They can be compiled using the following command:
 
 ```
-make -C system/arm/simple_bootloader
-make -C system/arm/aarch64_bootloader
+make -C system/arm/bootloader/arm
+make -C system/arm/bootloader/arm64
 ```
 
 Once you have compiled the binaries, put them in the binaries directory in your M5\_PATH.
