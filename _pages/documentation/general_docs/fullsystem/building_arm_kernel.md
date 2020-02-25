@@ -39,7 +39,7 @@ To checkout the kernel, execute the following command:
 git clone https://gem5.googlesource.com/arm/linux
 ```
 
-The repository contains a tag per gem5 kernel releases and working branches for major Linux revisions. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux project page) for a list of tags and branches. The clone command will, by default, check out the latest release branch. To checkout the v4.4 branch, execute the following in the repository:
+The repository contains a tag per gem5 kernel releases and working branches for major Linux revisions. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux) for a list of tags and branches. The clone command will, by default, check out the latest release branch. To checkout the v4.4 branch, execute the following in the repository:
 ```
 git checkout -b gem5/v4.4
 ```
@@ -86,7 +86,7 @@ To checkout the aarch32 kernel, execute the following command:
 git clone https://gem5.googlesource.com/arm/linux-arm-legacy
 ```
 
-The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm-legacy project page) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
+The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm-legacy) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
 
 ```
 git checkout -b TAGNAME
@@ -115,7 +115,7 @@ To checkout the aarch64 kernel, execute the following command:
 git clone https://gem5.googlesource.com/arm/linux-arm64-legacy
 ```
 
-The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm64-legacy project page) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
+The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm64-legacy) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
 
 ```
 git checkout -b TAGNAME
