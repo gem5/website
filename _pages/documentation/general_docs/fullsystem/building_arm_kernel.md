@@ -39,9 +39,9 @@ To checkout the kernel, execute the following command:
 git clone https://gem5.googlesource.com/arm/linux
 ```
 
-The repository contains a tag per gem5 kernel releases and working branches for major Linux revisions. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux) for a list of tags and branches. The clone command will, by default, check out the latest release branch. To checkout the v4.4 branch, execute the following in the repository:
+The repository contains a tag per gem5 kernel releases and working branches for major Linux revisions. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux) for a list of tags and branches. The clone command will, by default, check out the latest release branch. To checkout the v4.14 branch, execute the following in the repository:
 ```
-git checkout -b gem5/v4.4
+git checkout -b gem5/v4.14
 ```
 
 ## AArch32
