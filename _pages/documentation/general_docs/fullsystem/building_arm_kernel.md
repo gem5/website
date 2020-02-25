@@ -10,6 +10,8 @@ permalink: /documentation/general_docs/fullsystem/building_arm_kernel
 
 This page contains instructions for building up-to-date kernels for gem5 running on ARM. 
 
+If you don't want to build the Kernel on your own you could still [download a prebuilt version](./guest_binaries/)
+
 ## Prerequisites
 These instructions are for running headless systems. That is a more "server" style system where there is no frame-buffer. The description has been created using the latest known-working tag in the repositories linked below, however the tables in each section list previous tags that are known to work. To built the kernels on an x86 host you'll need ARM cross compilers and the device tree compiler. If you're running a reasonably new version of Ubuntu or Debian you can get required software through apt:
 
