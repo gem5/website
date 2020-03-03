@@ -3,7 +3,7 @@ layout: documentation
 title: "ARM implementation"
 doc: gem5 documentation
 parent: architecture_support
-permalink: /documentation/general_docs/architecture_support/arm_implementation
+permalink: /documentation/general_docs/architecture_support/arm_implementation/
 ---
 
 # ARM Implementation
