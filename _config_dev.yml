@@ -20,6 +20,7 @@ include: ['_pages']
 kramdown:
   input: GFM
   toc_levels: "1,2"
+  auto_id: true
 
 collections:
   documentation:
