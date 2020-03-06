@@ -102,7 +102,7 @@ participating.
 
 [ISCA 2011](isca-2011)
 
-  - [Slides](http://www.gem5.org/dist/tutorials/isca_pres_2011.pdf)
+  - [Slides](http://dist.gem5.org/dist/tutorials/isca_pres_2011.pdf)
   - Podcasts/video coming soon provided there are no technical
     difficulties
 
