@@ -8,7 +8,8 @@ permalink: /documentation/general_docs/architecture_support/
 
 # Architecture Support
 
-**Note:** The information in this page is outdated, and so are the hyperlinks.  
+{: .outdated-notice}
+The information and hyperlinks in this page may not be accurate.
 
 ## Alpha
 
