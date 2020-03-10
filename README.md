@@ -241,6 +241,21 @@ Notes:
 
 Place the file in _pages/documentation. Make sure to add the page to the documentation navigation, explained by the section above.
 
+#### Indicating outdated information
+
+To flag information in a page as valid, use an outdated notice in the .md file of that page:
+
+```
+{: .outdated-notice}
+This page is outdated!
+```
+
+This will be replaced by a warning element containing the text "**Note: This page is outdated.**", followed by the content succeeding the notice - in this case, "This page is outdated!". In this way, you can add additional information explaining why or how the page is outdated, and general tips on what to do to mitigate this issue.
+
+Notes:
+
+Make sure that the text following `{: .outdated-notice}` is not used as a title, heading, or any other important Markdown element, as it will be incorporated into the outdated notice and break formatting.
+
 ## Blog
 
 Add blog page to _posts folder.
