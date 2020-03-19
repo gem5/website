@@ -94,20 +94,20 @@ gem5 although for information about Ruby you should look at the ISCA 38
 tutorial. We recorded video of the tutorial which is available
     below.
 
-  - [Slides](http://gem5.org/dist/tutorials/hipeac2012/gem5_hipeac.pdf)
-  - [Overview](http://gem5.org/dist/tutorials/hipeac2012/01.overview.m4v)
-  - [Introduction](http://gem5.org/dist/tutorials/hipeac2012/02.introduction.m4v)
-  - [Basics](http://gem5.org/dist/tutorials/hipeac2012/03.basics.m4v)
+  - [Slides](http://dist.gem5.org/dist/tutorials/hipeac2012/gem5_hipeac.pdf)
+  - [Overview](http://dist.gem5.org/dist/tutorials/hipeac2012/01.overview.m4v)
+  - [Introduction](http://dist.gem5.org/dist/tutorials/hipeac2012/02.introduction.m4v)
+  - [Basics](http://dist.gem5.org/dist/tutorials/hipeac2012/03.basics.m4v)
   - [Running
-    Experiments](http://gem5.org/dist/tutorials/hipeac2012/04.running_experiment.m4v)
-  - [Debugging](http://gem5.org/dist/tutorials/hipeac2012/05.debugging.m4v)
-  - [Memory](http://gem5.org/dist/tutorials/hipeac2012/06.memory.m4v)
+    Experiments](http://dist.gem5.org/dist/tutorials/hipeac2012/04.running_experiment.m4v)
+  - [Debugging](http://dist.gem5.org/dist/tutorials/hipeac2012/05.debugging.m4v)
+  - [Memory](http://dist.gem5.org/dist/tutorials/hipeac2012/06.memory.m4v)
   - [CPU
-    Models](http://gem5.org/dist/tutorials/hipeac2012/07.cpu_models.m4v)
+    Models](http://dist.gem5.org/dist/tutorials/hipeac2012/07.cpu_models.m4v)
   - [Common
-    Tasks](http://gem5.org/dist/tutorials/hipeac2012/08.common_tasks.m4v)
-  - [Configuration](http://gem5.org/dist/tutorials/hipeac2012/09.configuration.m4v)
-  - [Conclusion](http://gem5.org/dist/tutorials/hipeac2012/10.conclusions.m4v)
+    Tasks](http://dist.gem5.org/dist/tutorials/hipeac2012/08.common_tasks.m4v)
+  - [Configuration](http://dist.gem5.org/dist/tutorials/hipeac2012/09.configuration.m4v)
+  - [Conclusion](http://dist.gem5.org/dist/tutorials/hipeac2012/10.conclusions.m4v)
 
 ## ISCA 38
 
