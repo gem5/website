@@ -32,7 +32,7 @@ Please contact Jason (jason@lowepower.com) or create a PR if you find any errors
 
 ## gem5 API documentation
 
-You can find the doxygen-based documentation here: <https://gem5.github.io/gem5-doxygen/>
+You can find the doxygen-based documentation here: <http://doxygen.gem5.org/release/current/index.html>
 
 ## Other general gem5 documentation
 

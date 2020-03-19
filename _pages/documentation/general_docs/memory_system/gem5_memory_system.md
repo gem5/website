@@ -33,7 +33,7 @@ and snoop queries appear on the slave port.
 
 ## CPU
 
-Data [Cache](https://gem5.github.io/gem5-doxygen/classCache.html) object
+Data [Cache](http://doxygen.gem5.org/release/current/classcache.html) object
 implements a standard cache structure:
 
 ![DCache Simulation Objet](/assets/img/gem5_MS_Fig2.PNG)
@@ -65,13 +65,13 @@ memory types.
 
 ## Data Cache Object
 
-Data [Cache](https://gem5.github.io/gem5-doxygen/classCache.html) object
+Data [Cache](http://doxygen.gem5.org/release/current/classCache.html) object
 implements a standard cache structure:
 
 **Cached memory reads** that match particular cache tag (with Valid & Read
 flags) will be completed (by sending ReadResp to CPU) after a configurable
 time. Otherwise, the request is forwarded to Miss Status and Handling Register
-([MSHR](https://gem5.github.io/gem5-doxygen/classMSHR.html)) block.
+([MSHR](http://doxygen.gem5.org/release/current/classMSHR.html)) block.
 
 **Cached memory writes** that match particular cache tag (with Valid, Read &
 Write flags) will be completed (by sending WriteResp CPU) after the same
@@ -79,36 +79,36 @@ configurable time. Otherwise, the request is forwarded to Miss Status and
 Handling Register(MSHR) block.
 
 **Uncached memory reads** are forwarded to [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) block.
+http://doxygen.gem5.org/release/current/classMSHR.html) block.
 
 **Uncached memory writes** are forwarded to WriteBuffer block.
 
 **Evicted (& dirty) cache lines** are forwarded to WriteBuffer block.
 
 CPU’s access to Data [Cache](
-https://gem5.github.io/gem5-doxygen/classCache.html) is blocked if any of the
+http://doxygen.gem5.org/release/current/classCache.html) is blocked if any of the
 following is true:
 
-* [MSHR](https://gem5.github.io/gem5-doxygen/classMSHR.html) block is full.
+* [MSHR](http://doxygen.gem5.org/release/current/classMSHR.html) block is full.
 (The size of MSHR’s buffer is configurable.)
 * Writeback block is full. (The size of the block’s buffer is configurable.)
 * The number of outstanding memory accesses against the same memory cache line
 has reached configurable threshold value – see [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) and Write Buffer for
+http://doxygen.gem5.org/release/current/classMSHR.html) and Write Buffer for
 details.
 
-Data [Cache](https://gem5.github.io/gem5-doxygen/classCache.html) in block
+Data [Cache](http://doxygen.gem5.org/release/current/classCache.html) in block
 state will reject any request from slave port (from CPU) regardless of whether
 it would result in cache hit or miss. Note that incoming messages on master
 port (response messages and snoop requests) are never rejected.
 
-[Cache](https://gem5.github.io/gem5-doxygen/classCache.html) hit on uncachable
+[Cache](http://doxygen.gem5.org/release/current/classCache.html) hit on uncachable
 memory region (unpredicted behaviour according to ARM ARM) will invalidate
 cache line and fetch data from memory.
 
 ### Tags & Data Block
 
-[Cache](https://gem5.github.io/gem5-doxygen/classCache.html) lines (referred as
+[Cache](http://doxygen.gem5.org/release/current/classCache.html) lines (referred as
 blocks in source code) are organised into sets with configurable associativity
 and size. They have the following status flags:
 
@@ -127,7 +127,7 @@ and Write flags are set.
 ### MSHR and Write Buffer Queues
 
 Miss Status and Handling Register ([MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html)) queue holds the list of
+http://doxygen.gem5.org/release/current/classMSHR.html)) queue holds the list of
 CPU’s outstanding memory requests that require read access to lower memory
 level. They are:
 
@@ -143,11 +143,11 @@ WriteBuffer queue holds the following memory requests:
 ![MSHR and Write Buffer Blocks](/assets/img/gem5_MS_Fig3.PNG)
 
 Each memory request is assigned to corresponding [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) object (READ or WRITE on
+http://doxygen.gem5.org/release/current/classMSHR.html) object (READ or WRITE on
 diagram above) that represents particular block (cache line) of memory that has
 to be read or written in order to complete the command(s). As shown on gigure
 above, cached read/writes against the same cache line have a common [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) object and will be
+http://doxygen.gem5.org/release/current/classMSHR.html) object and will be
 completed with a single memory access.
 
 The size of the block (and therefore the size of read/write access to lower
@@ -156,7 +156,7 @@ memory) is:
 * The size of cache line for cached access & writeback;
 * As specified in CPU instruction for uncached access.
 
-In general, Data [Cache](https://gem5.github.io/gem5-doxygen/classCache.html)
+In general, Data [Cache](http://doxygen.gem5.org/release/current/classCache.html)
 model distinguishes between just two memory types:
 
 * Normal Cached memory. It is always treated as write back, read and write
@@ -168,13 +168,13 @@ uncached memory)
 
 An unique order number is assigned to each CPU read/write request(as they
 appear on slave port). Order numbers of [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) objects are copied from the
+http://doxygen.gem5.org/release/current/classMSHR.html) objects are copied from the
 first assigned read/write.
 
 Memory read/writes from each of these two queues are executed in order
 (according to the assigned order number). When both queues are not empty the
 model will execute memory read from [MSHR](
-https://gem5.github.io/gem5-doxygen/classMSHR.html) block unless WriteBuffer is
+http://doxygen.gem5.org/release/current/classMSHR.html) block unless WriteBuffer is
 full. It will, however, always preserve the order of read/writes on the same
 (or overlapping) memory cache line (block).
 

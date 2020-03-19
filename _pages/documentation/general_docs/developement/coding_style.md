@@ -199,7 +199,7 @@ Header files should never contain using namespace declarations at the top level.
 
 ## Documenting the code
 
-Each file/class/member should be documented using doxygen style comments.Doxygen allows users to quickly create documentation for our code by extracting the relavent information from the code and comments. It is able to document all the code structures including classes, namespaces, files, members, defines, etc. Most of these are quite simple to document, you only need to place a special documentation block before the declaration. The Doxygen documentation within gem5 is processed every night and the following web pages are generated: [Doxygen](https://gem5.github.io/gem5-doxygen/)
+Each file/class/member should be documented using doxygen style comments.Doxygen allows users to quickly create documentation for our code by extracting the relavent information from the code and comments. It is able to document all the code structures including classes, namespaces, files, members, defines, etc. Most of these are quite simple to document, you only need to place a special documentation block before the declaration. The Doxygen documentation within gem5 is processed every night and the following web pages are generated: [Doxygen](http://doxygen.gem5.org/release/current/index.html)
 
 ### Using Doxygen
 
