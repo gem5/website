@@ -19,11 +19,20 @@ There are two ways of downloading them:
 
 Here follows a list of prebuilt binaries to be downloaded by just clicking the link:
 
-### Arm FS Binaries (Kernel/Disk images)
+### Arm FS Binaries
 
-##### Latest Linux Kernel/Disk Image (**recommended**)
+##### Latest Linux Kernel Image / Bootloader (**recommended**)
+
+The tarball below contains a set of binaries: the Linux kernel and a set of bootloaders
 
 * <http://dist.gem5.org/dist/current/arm/aarch-system-201901106.tar.bz2>
+
+##### Latest Linux Disk Images (**recommended**)
+
+* <http://dist.gem5.org/dist/current/arm/disks/aarch64-ubuntu-trusty-headless.img.bz2>
+* <http://dist.gem5.org/dist/current/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
+* <http://dist.gem5.org/dist/current/arm/disks/linaro-minimal-aarch64.img.bz2>
+* <http://dist.gem5.org/dist/current/arm/disks/linux-aarch32-ael.img.bz2>
 
 ##### Old Linux Kernel/Disk Image
 
