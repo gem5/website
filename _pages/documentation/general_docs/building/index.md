@@ -13,16 +13,19 @@ authors: Bobby R. Bruce
 
 * **git** : gem5 uses git for version control.
 * **gcc 4.8+**: gcc is used to compiled gem5. Version 4.8+ must be used. We do
-not presently support beyond Version 7. (Note:
+not presently support beyond Version 7. Please note,
 [Support for gcc 4 may be dropped](https://gem5.atlassian.net/browse/GEM5-218),
 and [version >7 may be supported](https://gem5.atlassian.net/browse/GEM5-194)
 in future releases of gem5.
+    * **Clang**: Clang can also be used. At present, we support Clang 3.9 to
+Clang 7 (inclusive). [Support for Clang >7 may be supported](
+https://gem5.atlassian.net/browse/GEM5-394) in future releases of gem5.
 * **SCons** : gem5 uses SCons as its build environment.
 * **Python 2.7+** : gem5 replies on Python development libraries (due to the
 [retirement of Python 2](
 http://pyfound.blogspot.com/2019/12/python-2-sunset.html) we are [likely to
 migrate to Python 3 in future releases of gem5](
-https://gem5.atlassian.net/browse/GEM5-275).
+https://gem5.atlassian.net/browse/GEM5-275)).
 * **protobuf 2.1+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
