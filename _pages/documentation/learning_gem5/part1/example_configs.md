@@ -260,4 +260,57 @@ All of the possible options are printed when you run:
 build/X86/gem5.opt configs/example/se.py --help
 ```
 
-Below is a few important options from that list.
+Below are a few important options from that list:
+
+
+* `--cpu-type=CPU_TYPE`
+
+    * The type of cpu to run with. This is an important parameter to always set. The default is atomic, which doesn’t perform a timing simulation.
+
+* `--sys-clock=SYS_CLOCK`
+
+    * Top-level clock for blocks running at system speed.
+
+* `--cpu-clock=CPU_CLOCK`
+
+    * Clock for blocks running at CPU speed. This is separate from the system clock above.
+
+* `--mem-type=MEM_TYPE`
+
+    * Type of memory to use. Options include different DDR memories, and the ruby memory controller.
+
+* `--caches`
+
+    * Perform the simulation with classic caches.
+
+* `--l2cache`
+
+    * Perform the simulation with an L2 cache, if using classic caches.
+
+* `--ruby`
+
+    * Use Ruby instead of the classic caches as the cache system simulation.
+
+* `-m TICKS, --abs-max-tick=TICKS`
+
+    * Run to absolute simulated tick specified including ticks from a restored checkpoint. This is useful if you only want simulate for a certain amount of simulated time.
+
+* `-I MAXINSTS, --maxinsts=MAXINSTS`
+
+    * Total number of instructions to simulate (default: run forever). This is useful if you want to stop simulation after a certain number of instructions has been executed.
+
+* `-c CMD, --cmd=CMD`
+
+    * The binary to run in syscall emulation mode.
+
+* `-o OPTIONS, --options=OPTIONS`
+
+    * The options to pass to the binary, use ” ” around the entire string. This is useful when you are running a command which takes options. You can pass both arguments and options (e.g., –whatever) through this variable.
+
+* `--output=OUTPUT`
+
+    * Redirect stdout to a file. This is useful if you want to redirect the output of the simulated application to a file instead of printing to the screen. Note: to redirect gem5 output, you have to pass a parameter before the configuration script.
+
+* `--errout=ERROUT`
+
+    * Redirect stderr to a file. Similar to above.
