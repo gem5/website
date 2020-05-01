@@ -49,8 +49,7 @@ not presently support beyond Version 7. Please note,
 and [version >7 may be supported](https://gem5.atlassian.net/browse/GEM5-194)
 in future releases of gem5.
     * **Clang**: Clang can also be used. At present, we support Clang 3.9 to
-Clang 7 (inclusive). [Support for Clang >7 may be supported](
-https://gem5.atlassian.net/browse/GEM5-394) in future releases of gem5.
+Clang 9 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment.
 * **Python** : gem5 relies on Python development libraries. As of gem5 version
 20, gem5 can be compiled and run in environments using either Python 2.7 or
