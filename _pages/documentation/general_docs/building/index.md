@@ -32,6 +32,8 @@ generation and playback.
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
+### Setup on Ubuntu
+
 If compiling gem5 on Debian, Ubuntu, or related Linux distributions, you may
 install all these dependencies using APT:
 
@@ -40,6 +42,44 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     python-dev python libboost-all-dev
 ```
+
+### Docker
+
+For users struggling to setup an environment to build and run gem5, we provide
+the following Docker Images:
+
+Ubuntu 18.04 with all optional dependencies:
+[gcr.io/gem5-test/ubuntu-18.04_all-dependencies](
+https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies).
+
+Ubuntu 18.04 with the minimum set of dependencies:
+[gcr.io/gem5-test/ubuntu-18.04_min-dependencies](
+https://gcr.io/gem5-test/ubuntu-18.04_min-dependencies).
+
+To obtain a docker image:
+
+```
+docker pull <image>
+```
+
+E.g., for Ubuntu 18.04 with all optional dependencies:
+
+```
+docker pull gcr.io/gem5-test/ubuntu-18.04_all-dependencies
+```
+
+Then, to work within this enviornment, we suggest using the following:
+
+```
+docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
+```
+
+Where `<gem5 directory>` is the full path of the gem5 in your file system, and
+`<image>` is the image pulled (e.g.,
+`gcr.io/gem5-test/ubuntu-18.04_all-dependencies`).
+
+From this environment, you will be able to build and run gem5 from the `/gem5`
+directory.
 
 ## Getting the code
 
