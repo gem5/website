@@ -38,7 +38,7 @@ install all these dependencies using APT:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python-dev python libboost-all-dev
+    python-dev python-six python libboost-all-dev
 ```
 
 This will create an environment which uses Python 2.
