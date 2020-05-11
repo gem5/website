@@ -61,13 +61,17 @@ This will create an environment which uses Python 3.
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
-Ubuntu 18.04 with all optional dependencies:
+Ubuntu 18.04 with all optional dependencies (Python 2):
 [gcr.io/gem5-test/ubuntu-18.04_all-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies).
 
-Ubuntu 18.04 with the minimum set of dependencies:
+Ubuntu 18.04 with the minimum set of dependencies (Python 2):
 [gcr.io/gem5-test/ubuntu-18.04_min-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_min-dependencies).
+
+Ubuntu 20.04 with all optional dependencies (Python 3):
+[gcr.io/gem5-test/ubuntu-20.04_all-dependencies](
+https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies).
 
 To obtain a docker image:
 
