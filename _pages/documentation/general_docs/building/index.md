@@ -21,20 +21,18 @@ in future releases of gem5.
 Clang 7 (inclusive). [Support for Clang >7 may be supported](
 https://gem5.atlassian.net/browse/GEM5-394) in future releases of gem5.
 * **SCons** : gem5 uses SCons as its build environment.
-* **Python 2.7+** : gem5 replies on Python development libraries (due to the
-[retirement of Python 2](
-http://pyfound.blogspot.com/2019/12/python-2-sunset.html) we are [likely to
-migrate to Python 3 in future releases of gem5](
-https://gem5.atlassian.net/browse/GEM5-275)).
+* **Python** : gem5 relies on Python development libraries. As of gem5 version
+20, gem5 can be compiled and run in environments using either Python 2.7 or
+Python 3
 * **protobuf 2.1+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
-### Setup on Ubuntu
+### Setup on Ubuntu 18.04
 
-If compiling gem5 on Debian, Ubuntu, or related Linux distributions, you may
+If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
 install all these dependencies using APT:
 
 ```
@@ -42,6 +40,21 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     python-dev python libboost-all-dev
 ```
+
+This will create an environment which uses Python 2.
+
+### Setup on Ubuntu 20.04
+
+If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
+install all these dependencies using API:
+
+```
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    python3-dev python3-six python-is-python3 libboost-all-dev
+```
+
+This will create an environment which uses Python 3.
 
 ### Docker
 
