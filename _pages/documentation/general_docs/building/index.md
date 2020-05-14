@@ -9,6 +9,37 @@ authors: Bobby R. Bruce
 
 # Building gem5
 
+## Supported operating systems and environments
+
+gem5 has been designed with a Linux environment in mind. We test regularly
+on **Ubuntu 18.04** and **Ubuntu 20.04** to ensure gem5 functions well in
+these environments. Though **any Linux based OS should function if the correct
+dependencies are installed**. We ensure that gem5 is compilable with both gcc
+and clang (see [Dependencies](#dependencies)  below for compiler version
+information).
+
+**Mac OS should work when compiling using the clang compiler**, with all other
+dependencies installed. However, at present, we do not officially test our
+builds on Mac OS. **We therefore cannot guarantee the same stability for those
+wishing to compile and run gem5 in Mac OS as we can in Linux-based systems**.
+[In later versions of gem5, we hope to more effectively support Mac OS through
+improved testing](https://gem5.atlassian.net/browse/GEM5-538).
+
+As of gem5 20, **building and running gem5 in both Python 2 and Python 3 are
+supported**. When testing gem5 we primarily test using Ubuntu 18.04 with
+Python 2, and Ubuntu 20.04 with Python 3. We would therefore advice, if
+possible, for users to **utilize Python 2 in Ubuntu 18.04 and Python 3 in
+Ubuntu 20.04**. Though we shall eventually
+[drop support for Python 2](https://gem5.atlassian.net/browse/GEM5-347),
+(due to [its retirement](
+http://pyfound.blogspot.com/2019/12/python-2-sunset.html)), we do not intend to
+do so until we receive ample evidence our community has migrated to Python 3.
+
+If running gem5 in a suitable OS/environment is not possible, we have provided
+pre-prepared [Docker](https://www.docker.com/) images which may be used to
+compile and run gem5. Please see our [Docker](#docker) section below for more
+information on this.
+
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
