@@ -18,18 +18,11 @@ are formatted with two slides per page.
 
 ## ISCA 2020: 3rd gem5 Users' Workshop
 
-[More information on the workshop page.](isca-2020#3rd-gem5-users-workshop-afternoon)
+[More information on the workshop page.](isca-2020)
 
 The goal of the workshop is to provide a forum to discuss what is going on in the community, how we can best leverage each other's contributions, and how we can continue to make gem5 a successful community-supported simulation framework. The workshop will be a half day in the afternoon on May 30.
 
 Details on how to submit an abstract for a presentation can be found on the [workshop page](isca-2020).
-
-## ISCA 2020: Learning gem5 Tutorial
-
-[More information on the tutorial page.](isca-2020#learning-gem5-tutorial)
-
-This tutorial builds off of [Learning gem5](/documentation/learning_gem5/introduction) and will introduce architecture researchers to the inner workings of gem5.
-The goal of the tutorial is not to introduce attendees to every feature of gem5, but to give them a framework to succeed when using gem5 in their future research.
 
 ## ICS 2018: Vector Architecture Exploration with gem5
 
