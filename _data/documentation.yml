@@ -115,6 +115,12 @@ docs:
         - page: Visualization
           url: /documentation/general_docs/cpu_models/visualization
 
+    - title: GPU Models
+      id: gpu_models
+      subitems:
+        - page: GCN3
+          url: /documentation/general_docs/gpu_models/GCN3
+
     - title: M5ops
       id: m5ops
       url: /documentation/general_docs/m5ops
