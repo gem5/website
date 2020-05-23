@@ -27,6 +27,10 @@ docs:
         - page: v19.0.0.0
           url: http://doxygen.gem5.org/release/v19-0-0-0/index.html
 
+    - title: gem5 Resources
+      id: gem5_resources
+      url: /documentation/general_docs/gem5_resources
+
     - title: Full System
       id: fullsystem
       subitems:
