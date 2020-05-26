@@ -1,7 +1,40 @@
+ 
 ---
 layout: post
-title:  "gem5art annoucement"
+title:  "gem5art announcement"
 author: Hoa Nguyen
 date:   2020-05-26
 categories: project
 ---
+
+#gem5art
+
+<!-- TODO: add something along the line with this, avoid using cliche
+We are excited to announce gem5art project.
+-->
+
+## Introduction
+
+gem5art is a framework aiming to ... TODO
+
+## The Need for a gem5 Framework for Experiments
+
+The gem5 simulator provides rich support for a variety of hardware models and configurations with high complexity.
+However, this complexity comes with a compromise.
+Having such a tremendous amount of possibilities of using gem5 results in a lack of a standard approach for running gem5 experiments, which in turns results in a steep learning curve for using gem5 as well as making reproducing a gem5 experiment a highly non-trivial process.
+
+Setting up gem5 full system simulation is one example of highly non-trivial processes.
+A typical setup for a full system experiment requires the following inputs: a compiled Linux kernel, a disk image with a Linux distribution and the desired benchmark suite installed, a compiled gem5 executable and a gem5 system configuration.
+Each of the components of the above experiment is sensitive to time and environmental changes, and some of them requires a significant amount of time and attention to correctly produce the input.
+
+
+Even though we start  versioning gem5, we still are going to have several releases of gem5 a year. 
+
+Unlike many other areas of science, we have the luxury of having *carbon copies* of the inputs to our experiments along with a certain degree of *determinism* in the experiment process.
+Thus, it is desirable to have a systematic approach for producing and documenting a gem5 experiment, and more importantly, it is essential to have a standard approach for running gem5 experiments that allows throughout testing and reproducibility, both for ourselves and other researchers.
+
+## gem5art: Artifact, Reproducibility and Testing Framework for gem5
+
+## Show cases
+
+## Moving Forward
