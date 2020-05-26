@@ -72,21 +72,82 @@ author: Jason Lowe-Power
 
 #### **Stable States and Invariants**
 
-| Intra-chip Inclusion                                                                | Inter-chip Exclusion                                                                                                                                                                                    | States                                                                                                                                                     | Description                                                                                                                                                        |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **<span style="color:#808080">Not in any L1 or L2 at this chip</span>**             | **May be present at other chips**                                                                                                                                                                       | **NP/I**                                                                                                                                                   | The cache block at this chip is invalid.                                                                                                                           |
-| **<span style="color:#00CC99">Not in L2, but in 1 or more L1s at this chip</span>** | **May be present at other chips**                                                                                                                                                                       | **ILS**                                                                                                                                                    | The cache block is not present at L2 on this chip. It is shared locally by L1 nodes in this chip.                                                                  |
-| **ILO**                                                                             | The cache block is not present at L2 on this chip. Some L1 node in this chip is an owner of this cache block.                                                                                           |
-| **ILOS**                                                                            | The cache block is not present at L2 on this chip. Some L1 node in this chip is an owner of this cache block. There are also L1 sharers of this cache block in this chip.                               |
-| **Not present at any other chip**                                                   | **ILX**                                                                                                                                                                                                 | The cache block is not present at L2 on this chip. It is held in exclusive mode by some L1 node in this chip.                                              |
-| **ILOX**                                                                            | The cache block is not present at L2 on this chip. It is held exclusively by this chip and some L1 node in this chip is an owner of the block.                                                          |
-| **ILOSX**                                                                           | The cache block is not present at L2 on this chip. It is held exclusively by this chip. Some L1 node in this chip is an owner of the block. There are also L1 sharers of this cache block in this chip. |
-| **<span style="color:#99CCFF">In L2, but not in any L1 at this chip</span>**        | **May be present at other chips**                                                                                                                                                                       | **S**                                                                                                                                                      | The cache block is not present at L1 on this chip. It is held in shared mode at L2 on this chip and is also potentially shared across chips.                       |
-| **O**                                                                               | The cache block is not present at L1 on this chip. It is held in owned mode at L2 on this chip. It is also potentially shared across chips.                                                             |
-| **Not present at any other chip**                                                   | **M**                                                                                                                                                                                                   | The cache block is not present at L1 on this chip. It is present at L2 on this chip and is potentially modified.                                           |
-| **<span style="color:#CC99FF">Both in L2, and 1 or more L1s at this chip</span>**   | **May be present at other chips**                                                                                                                                                                       | **SLS**                                                                                                                                                    | The cache block is present at L2 in shared mode on this chip. There exists local L1 sharers of the block on this chip. It is also potentially shared across chips. |
-| **OLS**                                                                             | The cache block is present at L2 in owned mode on this chip. There exists local L1 sharers of the block on this chip. It is also potentially shared across chips.                                       |
-| **Not present at any other chip**                                                   | **OLSX**                                                                                                                                                                                                | The cache block is present at L2 in owned mode on this chip. There exists local L1 sharers of the block on this chip. It is held exclusively by this chip. |
+<table>
+<thead>
+<tr>
+<th> Intra-chip Inclusion </th>
+<th> Inter-chip Exclusion </th>
+<th> States </th>
+<th> Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> <b><span style="color:#808080">Not in any L1 or L2 at this chip</span></b> </td>
+<td> <b>May be present at other chips</b> </td>
+<td> <b>NP/I</b> </td>
+<td> The cache block at this chip is invalid.
+</td></tr>
+<tr>
+<td rowspan="6"> <b><span style="color:#00CC99">Not in L2, but in 1 or more L1s at this chip</span></b> </td>
+<td rowspan="3"><b>May be present at other chips</b> </td>
+<td> <b>ILS</b> </td>
+<td> The cache block is not present at L2 on this chip. It is shared locally by L1 nodes in this chip.
+</td></tr>
+<tr>
+<td> <b>ILO</b> </td>
+<td> The cache block is not present at L2 on this chip. Some L1 node in this chip is an owner of this cache block.
+</td></tr>
+<tr>
+<td> <b>ILOS</b> </td>
+<td> The cache block is not present at L2 on this chip. Some L1 node in this chip is an owner of this cache block. There are also L1 sharers of this cache block in this chip.
+</td></tr>
+<tr>
+<td rowspan="3"><b>Not present at any other chip</b> </td>
+<td> <b>ILX</b> </td>
+<td> The cache block is not present at L2 on this chip. It is held in exclusive mode by some L1 node in this chip.
+</td></tr>
+<tr>
+<td> <b>ILOX</b> </td>
+<td> The cache block is not present at L2 on this chip. It is held exclusively by this chip and some L1 node in this chip is an owner of the block.
+</td></tr>
+<tr>
+<td> <b>ILOSX</b> </td>
+<td> The cache block is not present at L2 on this chip. It is held exclusively by this chip. Some L1 node in this chip is an owner of the block. There are also L1 sharers of this cache block in this chip.
+</td></tr>
+<tr>
+<td rowspan="3"> <b><span style="color:#99CCFF">In L2, but not in any L1 at this chip</span></b> </td>
+<td rowspan="2"><b>May be present at other chips</b> </td>
+<td> <b>S</b> </td>
+<td> The cache block is not present at L1 on this chip. It is held in shared mode at L2 on this chip and is also potentially shared across chips.
+</td></tr>
+<tr>
+<td> <b>O</b> </td>
+<td> The cache block is not present at L1 on this chip. It is held in owned mode at L2 on this chip. It is also potentially shared across chips.
+</td></tr>
+<tr>
+<td> <b>Not present at any other chip</b> </td>
+<td> <b>M</b> </td>
+<td> The cache block is not present at L1 on this chip. It is present at L2 on this chip and is potentially modified.
+</td></tr>
+<tr>
+<td rowspan="3"> <b><span style="color:#CC99FF">Both in L2, and 1 or more L1s at this chip</span></b> </td>
+<td rowspan="2"><b>May be present at other chips</b> </td>
+<td> <b>SLS</b> </td>
+<td> The cache block is present at L2 in shared mode on this chip. There exists local L1 sharers of the block on this chip. It is also potentially shared across chips.
+</td></tr>
+<tr>
+<td> <b>OLS</b> </td>
+<td> The cache block is present at L2 in owned mode on this chip. There exists local L1 sharers of the block on this chip. It is also potentially shared across chips.
+</td></tr>
+<tr>
+<td> <b>Not present at any other chip</b> </td>
+<td> <b>OLSX</b> </td>
+<td> The cache block is present at L2 in owned mode on this chip. There exists local L1 sharers of the block on this chip. It is held exclusively by this chip.
+</td></tr>
+</tbody>
+</table>
 
 #### **FSM Abstraction**
 
