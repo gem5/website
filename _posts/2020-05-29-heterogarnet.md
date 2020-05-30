@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "HeteroGarnet - A Detailed Simulator for Diverse Interconnect Systems"
-author: Srikant Bharadqaj, Jieming Ying, Bradford Beckmann, and Tushar Krishna
+author: Srikant Bharadwaj, Jieming Ying, Bradford Beckmann, and Tushar Krishna
 date:   2020-05-27
 ---
 
