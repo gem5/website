@@ -17,16 +17,7 @@ We argue that the ideas of microkernel-based systems to split up the system into
 System Architecture
 -------------------
 <p align="center">
-  <img src="{{site.url}}/assets/img/blog/modular-and-secure-fig-1a.png"/>
-  <br>
-  <b>Figure 1a</b>
-
-  <br>
-  <br>
-
-  <img src="{{site.url}}/assets/img/blog/modular-and-secure-fig-1b.png"/>
-  <br>
-  <b>Figure1b</b>
+  <img src="{{site.url}}/assets/img/blog/modular-and-secure/modular-and-secure-fig-1.png"/>
 </p>
 
 
