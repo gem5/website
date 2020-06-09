@@ -28,6 +28,8 @@ docs:
           url: http://doxygen.gem5.org/release/v19-0-0-0/index.html
         - page: v20.0.0.0
           url: http://doxygen.gem5.org/release/v20-0-0-0/index.html
+        - page: v20.0.0.2
+          url: http://doxygen.gem5.org/release/v20-0-0-2/index.html
 
     - title: gem5 Resources
       id: gem5_resources
