@@ -53,7 +53,7 @@ how simulation scripts work.
 > configuration script you can create any SimObject, set its parameters,
 > and specify the interactions between SimObjects.
 >
-> See <http://www.gem5.org/SimObjects> for more information.
+> See [SimObject details](http://doxygen.gem5.org/release/current/classSimObject.html#details) for more information.
 
 Creating a config file
 ----------------------
@@ -168,8 +168,7 @@ system.cpu.dcache_port = system.membus.slave
 > behind the scenes to set up the connection, the details of which are
 > unimportant for most users.
 >
-> We will discuss ports and MemObject in more detail in
-> memoryobject-chapter.
+> We will discuss ports and MemObject in more detail in the [MemObject chapter](http://www.gem5.org/documentation/learning_gem5/part2/memoryobject/).
 
 Next, we need to connect up a few other ports to make sure that our
 system will function correctly. We need to create an I/O controller on
@@ -201,7 +200,7 @@ system.mem_ctrl.port = system.membus.master
 ```
 
 After those final connections, we've finished instantiating our
-simulated system! Our system should look like simple-config-fig.
+simulated system! Our system should look like the figure below.
 
 ![A simple system configuration without
 caches.](/pages/static/figures/simple_config.png)

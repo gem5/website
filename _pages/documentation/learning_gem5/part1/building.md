@@ -16,8 +16,7 @@ environment and build gem5.
 Requirements for gem5
 ---------------------
 
-See [gem5 requirements](http://gem5.org/Compiling_M5#Required_Software)
-for more details.
+See [gem5 requirements](http://www.gem5.org/documentation/general_docs/building#dependencies) for more details.
 
 On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
@@ -251,10 +250,7 @@ gem5.
 
 To fix this, you can force SCons to use your environment's Python
 version by running `` python `which scons` build/X86/gem5.opt `` instead
-of `scons build/X86/gem5.opt`. More information on this can be found on
-the gem5 wiki about non-default Python locations: [Using a non-default
-Python
-installation](http://www.gem5.org/Using_a_non-default_Python_installation).
+of `scons build/X86/gem5.opt`.
 
 ### M4 macro processor not installed
 

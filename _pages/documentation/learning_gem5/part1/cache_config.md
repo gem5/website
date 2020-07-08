@@ -11,7 +11,7 @@ author: Jason Lowe-Power
 Adding cache to the configuration script
 ========================================
 
-Using the [previous configuration script as a starting point](/simple_config),
+Using the [previous configuration script as a starting point](http://www.gem5.org/documentation/learning_gem5/part1/simple_config/),
 this chapter will walk through a more complex configuration. We will add
 a cache hierarchy to the system as shown in
 the figure below. Additionally, this chapter
@@ -182,11 +182,11 @@ def connectMemSideBus(self, bus):
 The full file can be found in the gem5 source at
 `gem5/configs/learning_gem5/part1/caches.py`.
 
-Adding caches the simple config file
+Adding caches to the simple config file
 ------------------------------------
 
 Now, let's add the caches we just created to the configuration script we
-created in the last chapter \<simple-config-chapter\>.
+created in the [last chapter]((http://www.gem5.org/documentation/learning_gem5/part1/simple_config/).
 
 First, let's copy the script to a new name.
 
@@ -217,9 +217,8 @@ system.cpu.icache.connectCPU(system.cpu)
 system.cpu.dcache.connectCPU(system.cpu)
 ```
 
-You need to *remove* the lines which connected the cache
-ports directly to the memory bus, replaying them with
-the following two lines.
+You need to *remove* the following two lines which connected the cache
+ports directly to the memory bus.
 
 ```
 system.cpu.icache_port = system.membus.slave

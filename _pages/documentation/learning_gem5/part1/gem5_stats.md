@@ -26,8 +26,6 @@ called `m5out`:
 :   A text representation of all of the gem5 statistics registered for
     the simulation.
 
-Where these files are created can be controlled by
-
 config.ini
 ----------
 
@@ -142,17 +140,16 @@ execution:
     sim_insts                                        5712                       # Number of instructions simulated
     sim_ops                                         10314                       # Number of ops (including micro ops) simulated
 
----------- Begin Simulation Statistics ----------sim\_seconds 0.000508
-\# Number of seconds simulated sim\_ticks 507841000 \# Number of ticks
-simulated final\_tick 507841000 \# Number of ticks from beginning of
-simulation (restored from checkpoints and never reset) sim\_freq
-1000000000000 \# Frequency of simulated ticks host\_inst\_rate 157744 \#
-Simulator instruction rate (inst/s) host\_op\_rate 284736 \# Simulator
-op (including micro ops) rate (op/s) host\_tick\_rate 14017997125 \#
-Simulator tick rate (ticks/s) host\_mem\_usage 642808 \# Number of bytes
-of host memory used host\_seconds 0.04 \# Real time elapsed on the host
-sim\_insts 5712 \# Number of instructions simulated sim\_ops 10313 \#
-Number of ops (including micro ops) simulated
+    ---------- Begin Simulation Statistics ----------
+    sim_seconds                                  0.000508                       # Number of seconds simulated 
+    sim_ticks                                   507841000                       # Number of ticks simulated
+    final_tick                                  507841000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset) 
+    sim_freq                                 1000000000000                       # Frequency of simulated ticks
+    host_inst_rate                                 157744                       # Simulator instruction rate (inst/s) host_op_rate                                   284736                       # Simulator op (including micro ops) rate (op/s)
+    host_tick_rate                            14017997125                       # Simulator tick rate (ticks/s)
+    host_mem_usage                                 642808                       # Number of bytes of host memory used host_seconds                                     0.04                       # Real time elapsed on the host
+    sim_insts                                        5712                       # Number of instructions simulated 
+    sim_ops                                         10313                       # Number of ops (including micro ops) simulated 
 
 The statistic dump begins with
 `---------- Begin Simulation Statistics ----------`. There may be

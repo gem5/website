@@ -30,13 +30,7 @@ One important lesson I have learned (the hard way) is when using complex
 tools like gem5, it is important to actually understand how it works
 before using it.
 
-Finish the previous paragraph about how it is a good idea to understand
-what your tools are actually doing.
-
-should add a list of terms. Things like "simulated system" vs "host
-system", etc.
-
-You can find the source for this book on our at
+You can find the source for this book at
 <https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/_pages/documentation/learning_gem5/>.
 
 ## What is gem5?
