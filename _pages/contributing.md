@@ -202,7 +202,7 @@ characters**.
 After this, a more detailed description of the commit can be added. This is
 inserted below the header, separated by an empty line. Including a description
 is optional but it's strongly recommended. The description may span multiple
-lines, and multiple paragraphs. **No line in the description may exceed 75
+lines, and multiple paragraphs. **No line in the description may exceed 72
 characters.**
 
 To improve the navigability of the gem5 project we would appreciate if commit
@@ -213,8 +213,8 @@ Below is an example of how a gem5 commit message should be formatted:
 ```
 test,base: This commit tests some classes in the base component
 
-This is a more detailed description of the commit. This can be as long as
-is necessary to adequately describe the change.
+This is a more detailed description of the commit. This can be as long
+as is necessary to adequately describe the change.
 
 A description may spawn multiple paragraphs if desired.
 

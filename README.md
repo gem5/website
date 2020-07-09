@@ -41,7 +41,7 @@ After this, a more detailed description of the commit can be included. This is
 inserted below the header, separated by an empty line. Including a description
 is optional but strongly recommended for complex changes. The description may
 span multiple lines, and multiple paragraphs. **No line in the description
-may exceed 75 characters**. We also recommend adding reference to any relevant
+may exceed 72 characters**. We also recommend adding reference to any relevant
 Jira issue (from the gem5 Jira: <https://gem5.atlassian.net>) so the context
 of a change can be more easily understood.
 
