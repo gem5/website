@@ -113,14 +113,14 @@ Membership of the PMC is by invitation from the existing PMC members. A nominati
 ### Members
 
 *   Ali Saidi
-*   Andreas Hansson
 *   Andreas Sandberg
-*   Anthony Gutierrez
 *   Brad Beckmann
+*   David Wood
 *   Gabe Black
 *   Giacomo Travaglini
 *   Jason Lowe-Power (chair)
-*   Nathan Binkerg
+*   Matt Sinclair
+*   Tony Gutierrez
 *   Steve Reinhardt
 
 ## PMC Chair
