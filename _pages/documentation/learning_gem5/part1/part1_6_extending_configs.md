@@ -2,7 +2,7 @@
 layout: documentation
 title: Extending gem5 to run ARM binaries 
 doc: Learning gem5
-parent: pt1
+parent: part1
 permalink: /documentation/learning_gem5/part1/extending_configs
 author: Julian T. Angeles 
 ---
