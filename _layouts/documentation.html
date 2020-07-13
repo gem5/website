@@ -72,15 +72,12 @@ layout: default
       {% endif %}
     {% endif %}
   {% endfor %}
-
-
   <div class="navbuttons">
-    {% if previous != "none" %}
-      <a href="{{ previous | prepend: site.baseurl }}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
+    {% if page.previous.url %}
+      <a class="prev" href="{{page.previous.url}}"><button type="button" class="btn btn-outline-primary">PREVIOUS</button></a>
     {% endif %}
-
-    {% if next != "none" %}
-      <a href="{{ next | prepend: site.baseurl }}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
+    {% if page.next.url %}
+     <a class="next" href="{{page.next.url}}"><button type="button" class="btn btn-outline-primary">NEXT</button></a>
     {% endif %}
   </div>
 </div>
