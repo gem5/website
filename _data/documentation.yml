@@ -197,6 +197,8 @@ docs:
           url: /documentation/learning_gem5/part1/gem5_stats
         - page: Using the default configuration scripts
           url: /documentation/learning_gem5/part1/example_configs
+        - page: Extending gem5 for ARM
+          url: /documentation/learning_gem5/part1/extending_configs
 
     - title: Modifying/Extending
       id: part2
