@@ -18,7 +18,7 @@ gem5-style guidelines
 
 When modifying any open source project, it is important to follow the
 project's style guidelines. Details on gem5 style can be found on the
-gem5 [wiki page](http://gem5.org/Coding_Style).
+gem5 [Coding Style page](http://www.gem5.org/documentation/general_docs/development/coding_style/).
 
 To help you conform to the style guidelines, gem5 includes a script
 which runs whenever you commit a changeset in git. This script should be

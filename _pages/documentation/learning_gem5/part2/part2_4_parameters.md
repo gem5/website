@@ -15,7 +15,7 @@ One of the most powerful parts of gem5's Python interface is the ability
 to pass parameters from Python to the C++ objects in gem5. In this
 chapter, we will explore some of the kinds of parameters for SimObjects
 and how to use them building off of the simple `HelloObject` from the
-previous chapters \<events-chapter\>.
+[previous chapters](http://www.gem5.org/documentation/learning_gem5/part2/helloobject/).
 
 Simple parameters
 -----------------
@@ -23,7 +23,7 @@ Simple parameters
 First, we will add parameters for the latency and number of times to
 fire the event in the `HelloObject`. To add a parameter, modify the
 `HelloObject` class in the SimObject Python file
-(`src/learning_gem5/HelloObject.py`). Parameters are set by adding new
+(`src/learning_gem5/part2/HelloObject.py`). Parameters are set by adding new
 statements to the Python class that include a `Param` type.
 
 For instance, the following code has a parameter `time_to_wait` which is
@@ -33,7 +33,7 @@ parameter.
 ```python
 class HelloObject(SimObject):
     type = 'HelloObject'
-    cxx_header = "learning_gem5/hello_object.hh"
+    cxx_header = "learning_gem5/part2/hello_object.hh"
 
     time_to_wait = Param.Latency("Time before firing the event")
     number_of_fires = Param.Int(1, "Number of times to fire the event before "
@@ -99,11 +99,11 @@ class HelloObject : public SimObject
   private:
     void processEvent();
 
-    EventWrapper<HelloObject, &HelloObject::processEvent> event;
+    EventWrapper event;
 
-    std::string myName;
+    const std::string myName;
 
-    Tick latency;
+    const Tick latency;
 
     int timesLeft;
 
@@ -203,7 +203,7 @@ buffer. Once the buffer is full, the simulation will exit.
 ```python
 class GoodbyeObject(SimObject):
     type = 'GoodbyeObject'
-    cxx_header = "learning_gem5/goodbye_object.hh"
+    cxx_header = "learning_gem5/part2/goodbye_object.hh"
 
     buffer_size = Param.MemorySize('1kB',
                                    "Size of buffer to fill with goodbye")
@@ -270,7 +270,7 @@ class GoodbyeObject : public SimObject
 ```
 
 ```cpp
-#include "learning_gem5/goodbye_object.hh"
+#include "learning_gem5/part2/goodbye_object.hh"
 
 #include "debug/Hello.hh"
 #include "sim/sim_exit.hh"
@@ -374,7 +374,7 @@ like a normal parameter.
 ```python
 class HelloObject(SimObject):
     type = 'HelloObject'
-    cxx_header = "learning_gem5/hello_object.hh"
+    cxx_header = "learning_gem5/part2/hello_object.hh"
 
     time_to_wait = Param.Latency("Time before firing the event")
     number_of_fires = Param.Int(1, "Number of times to fire the event before "
@@ -388,17 +388,24 @@ The updated `HelloObject.py` file can be downloaded
 
 Second, we will add a reference to a `GoodbyeObject` to the
 `HelloObject` class.
+Don't forget to include goodbye_object.hh at the top of the hello_object.hh file!
 
 ```cpp
+#include <string>
+
+#include "learning_gem5/part2/goodbye_object.hh"
+#include "params/HelloObject.hh"
+#include "sim/sim_object.hh"
+
 class HelloObject : public SimObject
 {
   private:
     void processEvent();
 
-    EventWrapper<HelloObject, &HelloObject::processEvent> event;
+    EventWrapper event;
 
     /// Pointer to the corresponding GoodbyeObject. Set via Python
-    const GoodbyeObject* goodbye;
+    GoodbyeObject* goodbye;
 
     /// The name of this object in the Python config file
     const std::string myName;
@@ -484,9 +491,9 @@ root.hello.goodbye_object = GoodbyeObject(buffer_size='100B')
 
 m5.instantiate()
 
-print "Beginning simulation!"
+print("Beginning simulation!")
 exit_event = m5.simulate()
-print 'Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause())
+print('Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause()))
 ```
 
 You can download this script
