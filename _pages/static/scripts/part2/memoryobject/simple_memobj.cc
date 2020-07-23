@@ -28,12 +28,12 @@
  * Authors: Jason Lowe-Power
  */
 
-#include "learning_gem5/simple_memobj/simple_memobj.hh"
+#include "learning_gem5/part2/simple_memobj.hh"
 
 #include "debug/SimpleMemobj.hh"
 
 SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
-    MemObject(params),
+    SimObject(params),
     instPort(params->name + ".inst_port", this),
     dataPort(params->name + ".data_port", this),
     memPort(params->name + ".mem_side", this),
@@ -41,21 +41,20 @@ SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
 {
 }
 
-Port&
-SimpleMemobj::getPort(const std::string& if_name, PortID idx)
+Port &SimpleMemobj::getPort(const std::string &if_name, PortID idx)
 {
     panic_if(idx != InvalidPortID, "This object doesn't support vector ports");
 
-    // This is the name from the Python SimObject declaration in SimpleCache.py
-    if (if_name == "inst_port") {
+    // This is the name from the Python SimObject declaration (SimpleMemobj.py)
+    if (if_name == "mem_side") {
+        return memPort;
+    } else if (if_name == "inst_port") {
         return instPort;
     } else if (if_name == "data_port") {
         return dataPort;
-    } else if (if_name == "mem_side") {
-        return memPort;
     } else {
         // pass it along to our super class
-        return MemObject::getPort(if_name, idx);
+        return SimObject::getPort(if_name, idx);
     }
 }
 

@@ -21,7 +21,7 @@ gem5 master and slave ports
 
 Before diving into the implementation of a memory object, we should
 first understand gem5's master and slave port interface. As previously
-discussed in simple-config-chapter, all memory objects are connected
+discussed in [simple-config-chapter](../../part1/simple_config), all memory objects are connected
 together via ports. These ports provide a rigid interface between these
 memory objects.
 
@@ -87,7 +87,7 @@ inherits from either `MasterPort` or `SlavePort` for master and slave
 ports, respectively. Master ports send requests (and receive response),
 and slave ports receive requests (and send responses).
 
-master-slave-1-fig outlines the simplest interaction between a master
+The figure below outlines the simplest interaction between a master
 and slave port. This figure shows the interaction in timing mode. The
 other modes are much simpler and use a simple callchain between the
 master and the slave.
@@ -110,7 +110,7 @@ value is directly returned to the calling master. A return value of
 value of `false`, on the other hand, means that the slave was unable to
 accept and the request must be retried sometime in the future.
 
-In master-slave-1-fig, first, the master sends a timing request by
+In the figure above, first, the master sends a timing request by
 calling `sendTimingReq`, which in turn calls `recvTimingResp`. The
 slave, returns true from `recvTimingResp`, which is returned from the
 call to `sendTimingReq`. The master continue executing, and the slave
@@ -130,7 +130,7 @@ Later in master-slave-example-section we will show the example code for
 these functions.
 
 It is possible that the master or slave is busy when they receive a
-request or a response. master-slave-2-fig shows the case where the slave
+request or a response. The figure below shows the case where the slave
 is busy when the original request was sent.
 
 ![Simple master-slave interaction when the slave is
@@ -145,7 +145,7 @@ once, but it could fail any number of times. Note: it is up to the
 master to track the packet that fails, not the slave. The slave *does
 not* keep the pointer to the packet that fails.
 
-Similarly, master-slave-3-fig shows the case when the master is busy at
+Similarly, this figure shows the case when the master is busy at
 the time the slave tries to send a response. In this case, the slave
 cannot call `sendTimingResp` until it receives a `recvRespRetry`.
 
@@ -164,10 +164,10 @@ Simple memory object example
 
 In this section, we will build a simple memory object. Initially, it
 will simply pass requests through from the CPU-side (a simple CPU) to
-the memory-side (a simple memory bus). See Figure simple-memobj-figure.
+the memory-side (a simple memory bus). See the figure below.
 It will have a single master port, to send requests to the memory bus,
 and two cpu-side ports for the instruction and data cache ports of the
-CPU. In the next chapter \<simplecache-chapter\>, we will add the logic
+CPU. In the next chapter [simplecache-chapter](../simplecache), we will add the logic
 to make this object a cache.
 
 ![System with a simple memory object which sits between a CPU and the
@@ -176,28 +176,27 @@ memory bus.](/pages/static/figures/simple_memobj.png)
 ### Declare the SimObject
 
 Just like when we were creating the simple SimObject in
-hello-simobject-chapter, the first step is to create a SimObject Python
+[hello-simobject-chapter](../helloobject), the first step is to create a SimObject Python
 file. We will call this simple memory object `SimpleMemobj` and create
 the SimObject Python file in `src/learning_gem5/simple_memobj`.
 
 ```python
 from m5.params import *
 from m5.proxy import *
-from MemObject import MemObject
+from m5.SimObject import SimObject
 
-class SimpleMemobj(MemObject):
+class SimpleMemobj(SimObject):
     type = 'SimpleMemobj'
-    cxx_header = "learning_gem5/simple_memobj/simple_memobj.hh"
+    cxx_header = "learning_gem5/part2/simple_memobj.hh"
 
     inst_port = SlavePort("CPU side port, receives requests")
     data_port = SlavePort("CPU side port, receives requests")
     mem_side = MasterPort("Memory side port, sends requests")
 ```
 
-For this object, we inherit from `MemObject`, not `SimObject` since we
-are creating an object that will interact with the memory system. The
-`MemObject` class has two pure virtual functions that we will have to
-define in our C++ implementation, `getMasterPort` and `getSlavePort`.
+For this object, we inherit from `SimObject`. The
+`SimObject` class has a pure virtual functions that we will have to
+define in our C++ implementation, `getPort`.
 
 This object's parameters are three ports. Two ports for the CPU to
 connect the instruction and data ports and a port to connect to the
@@ -206,7 +205,7 @@ simple description.
 
 It is important to remember the names of these ports. We will explicitly
 use these names when implementing `SimpleMemobj` and defining the
-`getMasterPort` and `getSlavePort` functions.
+`getPort` function.
 
 You can download the SimObject file
 [here](/_pages/static/scripts/part2/memoryobject/SimpleMemobj.py).
@@ -221,7 +220,11 @@ download the SConscript file
 Now, we create a header file for `SimpleMemobj`.
 
 ```cpp
-class SimpleMemobj : public MemObject
+#include "mem/port.hh"
+#include "params/SimpleMemobj.hh"
+#include "sim/sim_object.hh"
+
+class SimpleMemobj : public SimObject
 {
   private:
 
@@ -296,17 +299,17 @@ class MemSidePort : public MasterPort
 
 This class only has three pure virtual functions that we must override.
 
-### Defining the MemObject interface
+### Defining the SimObject interface
 
 Now that we have defined these two new types `CPUSidePort` and
 `MemSidePort`, we can declare our three ports as part of `SimpleMemobj`.
-We also need to declare the two pure virtual functions in the
-`MemObject` class, `getMasterPort` and `getSlavePort`. These two
-functions are used by gem5 during the initialization phase to connect
+We also need to declare the pure virtual function in the
+`SimObject` class, `getPort`. The
+function is used by gem5 during the initialization phase to connect
 memory objects together via ports.
 
 ```cpp
-class SimpleMemobj : public MemObject
+class SimpleMemobj : public SimObject
 {
   private:
 
@@ -321,80 +324,65 @@ class SimpleMemobj : public MemObject
   public:
     SimpleMemobj(SimpleMemobjParams *params);
 
-    BaseMasterPort& getMasterPort(const std::string& if_name,
-                                  PortID idx = InvalidPortID) override;
-
-    BaseSlavePort& getSlavePort(const std::string& if_name,
-                                PortID idx = InvalidPortID) override;
-
+    Port &getPort(const std::string &if_name,
+                  PortID idx=InvalidPortID) override;
 };
 ```
 
 You can download the header file for the `SimpleMemobj`
 [here](/_pages/static/scripts/part2/memoryobject/simple_memobj.hh).
 
-### Implementing basic MemObject functions
+### Implementing basic SimObject functions
 
 For the constructor of `SimpleMemobj`, we will simply call the
-`MemObject` constructor. We also need to initialize all of the ports.
+`SimObject` constructor. We also need to initialize all of the ports.
 Each port's constructor takes two parameters: the name and a pointer to
 its owner, as we defined in the header file. The name can be any string,
-but by convention, it is the same name as in the Python SimObject file.
+but by convention, it is the same name as in the Python SimObject file. We also initialize blocked to be false.
 
 ```cpp
+#include "learning_gem5/part2/simple_memobj.hh"
+#include "debug/SimpleMemobj.hh"
+
 SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
-    MemObject(params),
+    SimObject(params),
     instPort(params->name + ".inst_port", this),
     dataPort(params->name + ".data_port", this),
-    memPort(params->name + ".mem_side", this)
+    memPort(params->name + ".mem_side", this), blocked(false)
 {
 }
 ```
 
 Next, we need to implement the interfaces to get the ports. This
-interface is made of two functions `getMasterPort` and `getSlavePort`.
-These functions take two parameters. The `if_name` is the Python
-variable name of the interface for *this* object. In the case of the
-master port it will be `mem_side` since this is what we declared as a
-`MasterPort` in the Python SimObject file.
+interface is made of the function `getPort`.
+The function takes two parameters. The `if_name` is the Python
+variable name of the interface for *this* object. 
 
-To implement `getMasterPort`, we compare the `if_name` and check to see
+To implement `getPort`, we compare the `if_name` and check to see
 if it is `mem_side` as specified in our Python SimObject file. If it is,
-then we return the `memPort` object. If not, then we pass the request
-name to our parent. However, it will be an error if we try to connect a
-slave port to any other named port since the parent class has no ports
-defined.
+then we return the `memPort` object. If the name is `"inst_port"`, then we return the
+instPort, and if the name is `data_port` we return the data port. If not, then we pass the request name to our parent. 
 
 ```cpp
-BaseMasterPort&
-SimpleMemobj::getMasterPort(const std::string& if_name, PortID idx)
+Port &
+SimpleMemobj::getPort(const std::string &if_name, PortID idx)
 {
+    panic_if(idx != InvalidPortID, "This object doesn't support vector ports");
+
+    // This is the name from the Python SimObject declaration (SimpleMemobj.py)
     if (if_name == "mem_side") {
         return memPort;
-    } else {
-        return MemObject::getMasterPort(if_name, idx);
-    }
-}
-```
-
-To implement `getSlavePort`, we similarly check if the `if_name` matches
-either of the names we defined for our slave ports in the Python
-SimObject file. If the name is `"inst_port"`, then we return the
-instPort, and if the name is `data_port` we return the data port.
-
-```cpp
-BaseSlavePort&
-SimpleMemobj::getSlavePort(const std::string& if_name, PortID idx)
-{
-    if (if_name == "inst_port") {
+    } else if (if_name == "inst_port") {
         return instPort;
     } else if (if_name == "data_port") {
         return dataPort;
     } else {
-        return MemObject::getSlavePort(if_name, idx);
+        // pass it along to our super class
+        return SimObject::getPort(if_name, idx);
     }
 }
 ```
+
 
 ### Implementing slave and master port functions
 
@@ -647,7 +635,7 @@ the `SimpleMemobj` may be unblocked. `trySendRetry` checks to see if a
 retry is needed which we marked in `recvTimingReq` whenever the
 `SimpleMemobj` was blocked on a new request. Then, if the retry is
 needed, this function calls `sendRetryReq`, which in turn calls
-`recvReqRetry` on the peer master port (the CPU in this case).
+`recvReqRetry` on the peer master port (the CPU in this case). 
 
 ```cpp
 void
@@ -660,11 +648,18 @@ SimpleMemobj::CPUSidePort::trySendRetry()
     }
 }
 ```
-
+In addition to this function, to finish the file add the create function for SimpleMemobj.
+```cpp
+SimpleMemobj*
+SimpleMemobjParams::create()
+{
+    return new SimpleMemobj(this);
+}
+```
 You can download the implementation for the `SimpleMemobj`
 [here](/_pages/static/scripts/part2/memoryobject/simple_memobj.cc).
 
-The following figure, memobj-api-figure, shows the relationships between
+The following figure shows the relationships between
 the `CPUSidePort`, `MemSidePort`, and `SimpleMemobj`. This figure shows
 how the peer ports interact with the implementation of the
 `SimpleMemobj`. Each bold function is one that we had to implement, and
@@ -688,7 +683,7 @@ cache. However, before that, let's look at the config file to add the
 SimpleMemobj to your system.
 
 This config file builds off of the simple config file in
-simple-config-chapter. However, instead of connecting the CPU directly
+[simple-config-chapter](../../part1/simple_config). However, instead of connecting the CPU directly
 to the memory bus, we are going to instantiate a `SimpleMemobj` and
 place it between the CPU and the memory bus.
 
@@ -733,9 +728,9 @@ system.cpu.createThreads()
 root = Root(full_system = False, system = system)
 m5.instantiate()
 
-print "Beginning simulation!"
+print ("Beginning simulation!")
 exit_event = m5.simulate()
-print 'Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause())
+print('Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause()))
 ```
 
 You can download this config script

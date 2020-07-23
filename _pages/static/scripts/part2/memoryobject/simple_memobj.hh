@@ -28,13 +28,12 @@
  * Authors: Jason Lowe-Power
  */
 
-#ifndef __LEARNING_GEM5_SIMPLE_MEMOBJ_SIMPLE_MEMOBJ_HH__
-#define __LEARNING_GEM5_SIMPLE_MEMOBJ_SIMPLE_MEMOBJ_HH__
+#ifndef __LEARNING_GEM5_PART2_SIMPLE_MEMOBJ_HH__
+#define __LEARNING_GEM5_PART2_SIMPLE_MEMOBJ_HH__
 
-#include <vector>
-
-#include "mem/mem_object.hh"
+#include "mem/port.hh"
 #include "params/SimpleMemobj.hh"
+#include "sim/sim_object.hh"
 
 /**
  * A very simple memory object. Current implementation doesn't even cache
@@ -42,7 +41,7 @@
  * This memobj is fully blocking (not non-blocking). Only a single request can
  * be outstanding at a time.
  */
-class SimpleMemobj : public MemObject
+class SimpleMemobj : public SimObject
 {
   private:
 
@@ -91,7 +90,7 @@ class SimpleMemobj : public MemObject
 
         /**
          * Send a retry to the peer port only if it is needed. This is called
-         * from the SimpleCache whenever it is unblocked.
+         * from the SimpleMemobj whenever it is unblocked.
          */
         void trySendRetry();
 
@@ -115,7 +114,7 @@ class SimpleMemobj : public MemObject
          * Receive a timing request from the master port.
          *
          * @param the packet that the requestor sent
-         * @return whether this object can consume to packet. If false, we
+         * @return whether this object can consume the packet. If false, we
          *         will call sendRetry() when we can try to receive this
          *         request again.
          */
@@ -239,16 +238,16 @@ class SimpleMemobj : public MemObject
     /**
      * Get a port with a given name and index. This is used at
      * binding time and returns a reference to a protocol-agnostic
-     * base master port.
+     * port.
      *
      * @param if_name Port name
      * @param idx Index in the case of a VectorPort
      *
      * @return A reference to the given port
      */
-    Port& getPort(const std::string& if_name,
-                                  PortID idx = InvalidPortID) override;
+    Port &getPort(const std::string &if_name,
+                  PortID idx=InvalidPortID) override;
 };
 
 
-#endif // __LEARNING_GEM5_SIMPLE_MEMOBJ_SIMPLE_MEMOBJ_HH__
+#endif // __LEARNING_GEM5_PART2_SIMPLE_MEMOBJ_HH__
