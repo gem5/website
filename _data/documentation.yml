@@ -177,7 +177,11 @@ docs:
     - title: Stats Package
       id: statistics
       url: /documentation/general_docs/statistics/
- 
+
+    - title: Stats API
+      id: statistics-api
+      url: /documentation/general_dics/statistics/api
+
   - title: Learning gem5
     items:
     - title: Introduction
