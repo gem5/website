@@ -37,7 +37,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install git
         ```
 
-2.  gcc 4.8+
+2.  gcc 5+
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 
@@ -46,6 +46,8 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         ```
         sudo apt install build-essential
         ```
+
+       **We support GCC Versions >=5, up to GCC 10**
 
 3.  [SCons](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
@@ -227,7 +229,7 @@ Common errors
 
 ### Wrong gcc version
 
-    Error: gcc version 4.8 or newer required.
+    Error: gcc version 5 or newer required.
            Installed version: 4.4.7
 
 Update your environment variables to point to the right gcc version, or

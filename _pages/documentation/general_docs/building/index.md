@@ -43,10 +43,9 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc 4.8+**: gcc is used to compiled gem5. Version 4.8+ must be used. We
-support up to gcc Version 9. Please note that [support for gcc 4 may be dropped](https://gem5.atlassian.net/browse/GEM5-218)
-in future versions of gem5.
-    * **Clang**: Clang can also be used. At present, we support Clang 3.9 to
+* **gcc**: gcc is used to compiled gem5. **Version >=5 must be used**. We
+support up to gcc Version 10.
+* **Clang**: Clang can also be used. At present, we support Clang 3.9 to
 Clang 9 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment.
 * **Python** : gem5 relies on Python development libraries. As of gem5 version
