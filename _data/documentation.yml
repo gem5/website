@@ -180,7 +180,7 @@ docs:
 
     - title: Stats API
       id: statistics-api
-      url: /documentation/general_dics/statistics/api
+      url: /documentation/general_docs/statistics/api
 
   - title: Learning gem5
     items:
