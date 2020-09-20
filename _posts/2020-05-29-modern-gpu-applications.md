@@ -64,3 +64,7 @@ Our work has increased the usability of the gem5 GPU model, and shown how to run
 src="https://www.youtube.com/embed/HhLiMrjqCvA" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
+
+# Acknowledgments
+
+This work is supported in part by the National Science Foundation grant ENS-1925485.

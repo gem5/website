@@ -87,4 +87,6 @@ For additional details about our changes and some experimental results, check ou
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TSULdaGw0V8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Acknowledgments
 
+This work is supported in part by the National Science Foundation grant ENS-1925485.
