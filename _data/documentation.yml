@@ -37,6 +37,10 @@ docs:
       id: gem5_resources
       url: /documentation/general_docs/gem5_resources
 
+    - title: gem5 APIs
+      id: gem5-apis
+      url: /documentation/general_docs/gem5-apis
+
     - title: Full System
       id: fullsystem
       subitems:
