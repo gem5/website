@@ -87,20 +87,20 @@ gem5 although for information about Ruby you should look at the ISCA 38
 tutorial. We recorded video of the tutorial which is available
     below.
 
-  - [Slides](http://dist.gem5.org/dist/tutorials/hipeac2012/gem5_hipeac.pdf)
-  - [Overview](http://dist.gem5.org/dist/tutorials/hipeac2012/01.overview.m4v)
-  - [Introduction](http://dist.gem5.org/dist/tutorials/hipeac2012/02.introduction.m4v)
-  - [Basics](http://dist.gem5.org/dist/tutorials/hipeac2012/03.basics.m4v)
+  - [Slides](http://dist.gem5.org/tutorials/hipeac2012/gem5_hipeac.pdf)
+  - [Overview](http://dist.gem5.org/tutorials/hipeac2012/01.overview.m4v)
+  - [Introduction](http://dist.gem5.org/tutorials/hipeac2012/02.introduction.m4v)
+  - [Basics](http://dist.gem5.org/tutorials/hipeac2012/03.basics.m4v)
   - [Running
-    Experiments](http://dist.gem5.org/dist/tutorials/hipeac2012/04.running_experiment.m4v)
-  - [Debugging](http://dist.gem5.org/dist/tutorials/hipeac2012/05.debugging.m4v)
-  - [Memory](http://dist.gem5.org/dist/tutorials/hipeac2012/06.memory.m4v)
+    Experiments](http://dist.gem5.org/tutorials/hipeac2012/04.running_experiment.m4v)
+  - [Debugging](http://dist.gem5.org/tutorials/hipeac2012/05.debugging.m4v)
+  - [Memory](http://dist.gem5.org/tutorials/hipeac2012/06.memory.m4v)
   - [CPU
-    Models](http://dist.gem5.org/dist/tutorials/hipeac2012/07.cpu_models.m4v)
+    Models](http://dist.gem5.org/tutorials/hipeac2012/07.cpu_models.m4v)
   - [Common
-    Tasks](http://dist.gem5.org/dist/tutorials/hipeac2012/08.common_tasks.m4v)
-  - [Configuration](http://dist.gem5.org/dist/tutorials/hipeac2012/09.configuration.m4v)
-  - [Conclusion](http://dist.gem5.org/dist/tutorials/hipeac2012/10.conclusions.m4v)
+    Tasks](http://dist.gem5.org/tutorials/hipeac2012/08.common_tasks.m4v)
+  - [Configuration](http://dist.gem5.org/tutorials/hipeac2012/09.configuration.m4v)
+  - [Conclusion](http://dist.gem5.org/tutorials/hipeac2012/10.conclusions.m4v)
 
 ## ISCA 38
 
@@ -110,7 +110,7 @@ participating.
 
 [ISCA 2011](isca-2011)
 
-  - [Slides](http://dist.gem5.org/dist/tutorials/isca_pres_2011.pdf)
+  - [Slides](http://dist.gem5.org/tutorials/isca_pres_2011.pdf)
   - Podcasts/video coming soon provided there are no technical
     difficulties
 
@@ -120,23 +120,23 @@ This tutorial, held in March 2008 at ASPLOS XIII in Seattle, covered M5
 2.0 and included several small examples on creating SimObjects and
 adding parameters.
 
-  - [Slides](http://dist.gem5.org/dist/tutorials/asplos_pres.pdf)
-  - [Handouts](http://dist.gem5.org/dist/tutorials/asplos_hand.pdf)
+  - [Slides](http://dist.gem5.org/tutorials/asplos_pres.pdf)
+  - [Handouts](http://dist.gem5.org/tutorials/asplos_hand.pdf)
   - Video
-      - [Introduction](http://dist.gem5.org/dist/tutorials/introduction.mov)
+      - [Introduction](http://dist.gem5.org/tutorials/introduction.mov)
         -- A brief overview of M5, its capabilities and concepts
-      - [Running](http://dist.gem5.org/dist/tutorials/running.mov) --
+      - [Running](http://dist.gem5.org/tutorials/running.mov) --
         How to compile and run M5
       - [Full
-        System](http://dist.gem5.org/dist/tutorials/fullsystem.mov) --
+        System](http://dist.gem5.org/tutorials/fullsystem.mov) --
         Full system benchmarks, disk images, and scripts
-      - [Objects](http://dist.gem5.org/dist/tutorials/objects.mov) -- An
+      - [Objects](http://dist.gem5.org/tutorials/objects.mov) -- An
         overview of the various object models that are available out of
         the box
-      - [Extending](http://dist.gem5.org/dist/tutorials/extending.mov)
+      - [Extending](http://dist.gem5.org/tutorials/extending.mov)
         -- M5 internals, defining new objects & parameters, statistics,
         ISA descriptions, ARM & X86 support, future development
-      - [Debugging](http://dist.gem5.org/dist/tutorials/debugging.mov)
+      - [Debugging](http://dist.gem5.org/tutorials/debugging.mov)
         -- Facilities in M5 to aid debugging
   - [Description](asplos-2008)
 
@@ -145,8 +145,8 @@ adding parameters.
 This tutorial, held in June 2006 at ISCA 33 in Boston, was the first one
 to cover M5 2.0.
 
-  - [Slides](http://dist.gem5.org/dist/tutorials/isca_pres.pdf)
-  - [Handouts](http://dist.gem5.org/dist/tutorials/isca_hand.pdf)
+  - [Slides](http://dist.gem5.org/tutorials/isca_pres.pdf)
+  - [Handouts](http://dist.gem5.org/tutorials/isca_hand.pdf)
   - [Description](isca-2006)
 
 ## ISCA-32
@@ -154,5 +154,5 @@ to cover M5 2.0.
 Our first tutorial, held in June 2005 at ISCA 32 in Madison, is rather
 dated as it covered M5 1.X and not 2.0.
 
-  - [Slides](http://dist.gem5.org/dist/tutorials/tutorial.ppt)
-  - [Handouts](http://dist.gem5.org/dist/tutorials/tutorial.pdf)
+  - [Slides](http://dist.gem5.org/tutorials/tutorial.ppt)
+  - [Handouts](http://dist.gem5.org/tutorials/tutorial.pdf)
