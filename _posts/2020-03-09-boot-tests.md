@@ -71,7 +71,7 @@ We will, however, defer the detailed discussion on gem5art for a future blog pos
 The gem5 configuration scripts used to run these experiments are available in the [gem5art repo](https://github.com/darchr/gem5art/tree/master/docs/gem5-configs/configs-boot-tests/) and the details of how these experiments were run using gem5art can be found in the [gem5art boot tutorial](https://gem5art.readthedocs.io/en/latest/tutorials/boot-tutorial.html).
 The disk image and Linux kernel binaries we used are available from the following links (**warning:** the sizes of these files range from few MBs to 2GB):
 
-- [disk image](http://dist.gem5.org/dist/current/images/x86/ubuntu-18-04/base.img) (**Note:** /root/.bashrc in this disk image contains `m5 exit`, which will make the guest terminate the simulation as soon as it boots)
+- [disk image (GZIPPED)](http://dist.gem5.org/dist/current/images/x86/ubuntu-18-04/base.img.gz) (**Note:** /root/.bashrc in this disk image contains `m5 exit`, which will make the guest terminate the simulation as soon as it boots)
 - [vmlinux-4.4.186](http://dist.gem5.org/dist/current/kernels/x86/static/vmlinux-4.4.189)
 - [vmlinux-4.9.186](http://dist.gem5.org/dist/current/kernels/x86/static/vmlinux-4.9.186)
 - [vmlinux-4.14.134](http://dist.gem5.org/dist/current/kernels/x86/static/vmlinux-4.14.134)

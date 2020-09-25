@@ -43,10 +43,10 @@ the gem5 resources repository. **These are resources sources for gem5 20.0**.
 |square | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/square) |
 |spec-2006 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/spec-2017) |
 |spec-2017 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/spec-2006) |
-|gapbs | [Disk Image](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/gapbs) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/gapbs) |
-|parsec | [Disk Image](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/parsec) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/parsec) |
-|npb | [Disk Image](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/npb) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/npb) |
-|Linux boot-exit | [Disk Image](http://dist.gem5.org/v20/images/x86/ubuntu-18-04/boot-exit) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/boot-exit) |
+|gapbs | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/gapbs.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/gapbs) |
+|parsec | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/parsec.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/parsec) |
+|npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/npb) |
+|Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/v20/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/boot-exit) |
 
 ## How do I obtain the gem5 resource sources?
 
