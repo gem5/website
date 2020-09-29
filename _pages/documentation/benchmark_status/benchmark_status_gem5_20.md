@@ -1,9 +1,15 @@
 ---
-layout: page
-title: Working Status of Benchmarks
-parent: documentation
-permalink: documentation/benchmark_status/
+layout: documentation
+title: gem5-20 Working Status of Benchmarks
+doc: Working Status of Benchmarks
+parent: benchmark_status
+permalink: /documentation/benchmark_status/gem5-20
 ---
+
+# gem5-20 Working Status of Benchmarks
+
+* TOC
+{:toc}
 
 This page provides information on the working status of some benchmark suites with gem5-20.
 The resources needed to run these benchmarks with gem5 can be found in [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) or [gem5 resources web page](https://www.gem5.org/documentation/general_docs/gem5_resources/).
@@ -24,12 +30,12 @@ Following is the description of the possible status of these runs:
 
 **kernel-panic:** cases where kernel went into panic during simulation.
 
-<img src="/assets/img/status-plots/boot_classic_init.png" alt="Boot Tests Status with Classic Memory and init Boot" width="100%">
-<img src="/assets/img/status-plots/boot_classic_systemd.png" alt="Boot Tests Status with Classic Memory and systemd Boot" width="100%">
-<img src="/assets/img/status-plots/boot_MI_example_init.png" alt="Boot Tests Status with MI_Example Memory and init Boot" width="100%">
-<img src="/assets/img/status-plots/boot_MI_example_systemd.png" alt="Boot Tests Status with MI_Example Memory and systemd Boot" width="100%">
-<img src="/assets/img/status-plots/boot_MESI_Two_Level_init.png" alt="[Boot Tests Status with MESI_Two_Level Memory and init Boot" width="100%">
-<img src="/assets/img/status-plots/boot_MESI_Two_Level_systemd.png" alt="Boot Tests Status with MESI_Two_Level Memory and systemd Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_classic_init.png" alt="Boot Tests Status with Classic Memory and init Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_classic_systemd.png" alt="Boot Tests Status with Classic Memory and systemd Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_MI_example_init.png" alt="Boot Tests Status with MI_Example Memory and init Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_MI_example_systemd.png" alt="Boot Tests Status with MI_Example Memory and systemd Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_MESI_Two_Level_init.png" alt="[Boot Tests Status with MESI_Two_Level Memory and init Boot" width="100%">
+<img src="/assets/img/status-plots/gem5-20/boot_MESI_Two_Level_systemd.png" alt="Boot Tests Status with MESI_Two_Level Memory and systemd Boot" width="100%">
 
 **Summary:** kvmCPU works in all cases.
 AtomicSimpleCPU works fine with Classic memory system, but it is not supported with any Ruby protocols.
@@ -45,14 +51,14 @@ The O3CPU (with Ruby) cases where simulations crash, the errors point to possibl
 
 These NPB tests use KVM CPU (1,8,16,32, and 64 cores) and TimingSimple CPU (1 and 8 cores) with MESI_Two_Level memory system.
 
-<img src="/assets/img/status-plots/npb_multicore_kvm.png" alt="NPB Status with KVM CPU" width="100%">
+<img src="/assets/img/status-plots/gem5-20/npb_multicore_kvm.png" alt="NPB Status with KVM CPU" width="100%">
 
 It is a known problem that if the number of simulated CPU cores increase, KVM simulations get stuck sometimes.
 A work around is to use lower number of event queues than the CPU cores.
 Although our scripts do that for more than 1 CPU core, the cases shown as `timeout` in the plot above
 suffer from this problem of getting stuck.
 
-<img src="/assets/img/status-plots/npb_multicore_timing.png" alt="NPB Status with TimingSimple CPU and MESI_Two_Level Memory System" width="100%">
+<img src="/assets/img/status-plots/gem5-20/npb_multicore_timing.png" alt="NPB Status with TimingSimple CPU and MESI_Two_Level Memory System" width="100%">
 
 There are three cases with TimingSimple CPU which did not finish in the alloted time.
 There is no reason apparent in the generated results files (`simout`, `simerr`, `system.pc.com_1.device`).
@@ -61,7 +67,7 @@ Without further analysis, it is hard to tell if the simulation is stuck or is pr
 **Summary:** Most of the tested KVM and TimingSimple CPU simulations of NPB work successfully.
 The rest of the cases could not result into success in the allocated simulation time (except one kernel panic case).
 
-## PARSEC Tests
+# PARSEC Tests
 
 The PARSEC Experiments have been run with the following configurations:
 
@@ -71,8 +77,8 @@ The PARSEC Experiments have been run with the following configurations:
 
 The result of experiments with gem5-20 is shown below:
 
-<img src="/assets/img/status-plots/parsec_mesi_two_level_kvm.png" alt="PARSEC Status with KVM CPU" width="100%">
-<img src="/assets/img/status-plots/parsec_mesi_two_level_timing.png" alt="PARSEC Status with TimingSimple CPU" width="100%">
+<img src="/assets/img/status-plots/gem5-20/parsec_mesi_two_level_kvm.png" alt="PARSEC Status with KVM CPU" width="100%">
+<img src="/assets/img/status-plots/gem5-20/parsec_mesi_two_level_timing.png" alt="PARSEC Status with TimingSimple CPU" width="100%">
 
 The cases of unsuccessfull termination of simulation are shown below:
 
@@ -83,7 +89,7 @@ The cases of unsuccessfull termination of simulation are shown below:
 
 The following plot represent the status of SPEC2006 workloads for different CPUs and data sizes with respect to gem5-20, linux kernel version 4.19.83 and gcc version 7.5.0.
 
-<img src="/assets/img/status-plots/spec2006_gem5-20_status.png" alt="SPEC-2006 status for gem5-20" width="100%">
+<img src="/assets/img/status-plots/gem5-20/spec2006_gem5-20_status.png" alt="SPEC-2006 status for gem5-20" width="100%">
 
 * **434.zeusmp** had crashed in gem5-19 and gem5-20 segmentation fault.
 * **453.povray** needs a rerun and the test with gem5-19 was a success.
@@ -92,14 +98,14 @@ The following plot represent the status of SPEC2006 workloads for different CPUs
 
 The following plot represent the status of SPEC2017 workloads with respect to gem5-20, linux kernel version 4.19.83 and gcc version 7.5.0.
 
-<img src="/assets/img/status-plots/spec2017_gem5-20_status.png" alt="SPEC-2017 status for gem5-20" width="100%">
+<img src="/assets/img/status-plots/gem5-20/spec2017_gem5-20_status.png" alt="SPEC-2017 status for gem5-20" width="100%">
 
 * **600.perlbench_s** kernel panic while booting, couldn't find a reason.
 
 # GAPBS Tests
 The results of the GAPBS experiments with gem5-20 are shown below. For this experiment the input graphs for the workloads are synthetically generated.
 
-<img src="/assets/img/status-plots/gapbs_kvm.png" alt="GAPBS status for gem5-20 kvm" width="100%">
-<img src="/assets/img/status-plots/gapbs_atomic.png" alt="GAPBS status for gem5-20 atomic" width="100%">
-<img src="/assets/img/status-plots/gapbs_simple.png" alt="GAPBS status for gem5-20 simple" width="100%">
-<img src="/assets/img/status-plots/gapbs_o3.png" alt="GAPBS status for gem5-20 o3" width="100%">
+<img src="/assets/img/status-plots/gem5-20/gapbs_kvm.png" alt="GAPBS status for gem5-20 kvm" width="100%">
+<img src="/assets/img/status-plots/gem5-20/gapbs_atomic.png" alt="GAPBS status for gem5-20 atomic" width="100%">
+<img src="/assets/img/status-plots/gem5-20/gapbs_simple.png" alt="GAPBS status for gem5-20 simple" width="100%">
+<img src="/assets/img/status-plots/gem5-20/gapbs_o3.png" alt="GAPBS status for gem5-20 o3" width="100%">

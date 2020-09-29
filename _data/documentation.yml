@@ -273,6 +273,6 @@ docs:
 
   - title: Working Status of Benchmarks
     items:
-        - title: Working Status of Benchmarks
-          id: benchmark_status
-          url: /documentation/benchmark_status
+        - title: gem5-20 Working Status of Benchmarks
+          id: benchmark_status_20
+          url: /documentation/benchmark_status/gem5-20
