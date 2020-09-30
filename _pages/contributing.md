@@ -7,7 +7,7 @@ author: Bobby R. Bruce
 
 This document serves as a beginners guide to contributing to gem5. If questions
 arise while following this guide, we advise consulting [CONTRIBUTING.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/CONTRIBUTING.md)
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/CONTRIBUTING.md)
 which contains more details on how to contribute to gem5.
 
 The following subsections outline, in order, the steps involved in contributing
@@ -48,15 +48,15 @@ To pull the gem5 git repo:
 git clone https://gem5.googlesource.com/public/gem5
 ```
 
-### master-as-stable / develop branch
+### stable / develop branch
 
-By default, the git repo will have the `master` branch checked-out. The
-`master` branch is considered the gem5 stable release branch. I.e., the HEAD
+By default, the git repo will have the `stable` branch checked-out. The
+`stable` branch is the gem5 stable release branch. I.e., the HEAD
 of this branch contains the latest stable release of gem5. (execute `git tag`
-on the `master` branch to see the list of stable releases. A particular
+on the `stable` branch to see the list of stable releases. A particular
 release may be checked out by executing `git checkout <release>`). As the
-`master` branch only contains officially released gem5 code **contributors
-should not develop changes on top of the `master` branch** they should instead
+`stable` branch only contains officially released gem5 code **contributors
+should not develop changes on top of the `stable` branch** they should instead
 **develop changes on top of the `develop` branch**.
 
 To checkout the `develop` branch:
@@ -194,7 +194,7 @@ The commit message must adhere to our style. The first line of the commit is
 the "header". The header starts with a tag (or tags, separated by a comma),
 then a colon. Which tags are used depend on which components of gem5
 you have modified. **Please refer to the [MAINTAINERS.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/MAINTAINERS) for
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS) for
 a comprehensive list of accepted tags**. After this colon a short description
 of the commit must be provided. **This header line must not exceed 65
 characters**.
@@ -266,7 +266,7 @@ Gerrit will automatically notify those you assign. The "maintainers" of the
 components you have modified should be added as reviewers. These should
 correspond to the tags you included in the commit header. **Please consult
 [MAINTAINERS.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/MAINTAINERS) to
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS) to
 see who maintains which component**. As an example, for a commit with a header
 of `tests,arch : This is testing the arch component` then the maintainers for
 both `tests` and `arch` should be included as reviewers.
@@ -347,5 +347,5 @@ As one last step, you should change the corresponding Jira issue status to
 that the task has been completed.
 
 Stable releases of gem5 are published three times per year. Therefore, a change
-successfully submitted to the `develop` branch will be merged into the `master`
+successfully submitted to the `develop` branch will be merged into the `stable`
 branch within three to four months after submission.
