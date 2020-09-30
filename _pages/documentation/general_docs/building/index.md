@@ -92,18 +92,18 @@ the following Docker Images:
 Ubuntu 18.04 with all optional dependencies (Python 2):
 [gcr.io/gem5-test/ubuntu-18.04_all-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
 Ubuntu 18.04 with the minimum set of dependencies (Python 2):
 [gcr.io/gem5-test/ubuntu-18.04_min-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_min-dependencies) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/util/dockerfiles/ubuntu-18.04_min-dependencies/Dockerfile)).
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_min-dependencies/Dockerfile)).
 
 
 Ubuntu 20.04 with all optional dependencies (Python 3):
 [gcr.io/gem5-test/ubuntu-20.04_all-dependencies](
 https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 To obtain a docker image:
 

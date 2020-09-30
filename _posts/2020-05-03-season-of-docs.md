@@ -82,7 +82,7 @@ Tangentially to this, our project regularly has new contributors, many
 of whom need taught how to follow our contribution procedures. Typically we
 direct wannabe contributors to our [contribution guidelines](
 http://www.gem5.org/contributing) and our [CONTRIBUTION.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/CONTRIBUTING.md)
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/CONTRIBUTING.md)
 document. As with our Learning gem5 documentation, we would like this
 investigated and improved upon if need be.
 

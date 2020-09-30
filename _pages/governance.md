@@ -104,7 +104,7 @@ A committer who shows an above-average level of contribution to the project, par
 
 The project management committee consists of those individuals identified as ‘project owners’ on the development site. The PMC has additional responsibilities over and above those of a committer. These responsibilities ensure the smooth running of the project. PMC members are expected to review code contributions, participate in strategic planning, approve changes to the governance model and manage how the software is distributed and licensed.
 
-Some PMC members are responsible for specific components of the gem5 project. This includes gem5 source modules (e.g., classic caches, O3CPU model, etc.) and project assets (e.g., the website). A list of the current components and the responsible members can be found within the [MAINTAINERS](https://gem5.googlesource.com/public/gem5/+/refs/heads/master/MAINTAINERS) document.
+Some PMC members are responsible for specific components of the gem5 project. This includes gem5 source modules (e.g., classic caches, O3CPU model, etc.) and project assets (e.g., the website). A list of the current components and the responsible members can be found within the [MAINTAINERS](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS) document.
 
 Members of the PMC do not have significant authority over other members of the community, although it is the PMC that votes on new committers. It also makes decisions when community consensus cannot be reached. In addition, the PMC has access to the project’s private mailing list. This list is used for sensitive issues, such as votes for new committers and legal matters that cannot be discussed in public. It is never used for project management or planning.
 
