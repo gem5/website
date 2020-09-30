@@ -85,7 +85,7 @@ In the recent few years, multi-GPU systems have become increasingly common as mo
 
 For additional details about our changes and some experimental results, check out our workshop presentation!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TSULdaGw0V8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/TSULdaGw0V8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 960px;"></iframe>
 
 ## Acknowledgments
 

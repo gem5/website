@@ -41,4 +41,4 @@ The above upper bound could in principle be pessimistic, due to several assumpti
 
 ## Workshop Presentation
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UhWAozvZ9mU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/UhWAozvZ9mU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 960px;"></iframe>

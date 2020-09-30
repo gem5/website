@@ -11,6 +11,6 @@ We present HeteroGarnet, that improves upon the widely-popular Garnet 2.0 networ
 
 # Workshop Presentation
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AH9r44r2lHA"
+<iframe width="960" height="540" src="https://www.youtube.com/embed/AH9r44r2lHA"
 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
-picture-in-picture" allowfullscreen></iframe>
+picture-in-picture" allowfullscreen style="max-width: 960px";></iframe>

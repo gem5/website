@@ -19,10 +19,10 @@ All of these changes will be discussed in the gem5 workshop. In the workshop, we
 
 ### Workshop Presentation
 
-<iframe width="560" height="315"
+<iframe width="960" height="540"
 src="https://www.youtube.com/embed/ttJ9_I_Avyc" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+allowfullscreen style="max-width: 960px"></iframe>
 
 ## Refactoring the DRAMCtrl and creating an initial NVM interface
 
@@ -52,7 +52,7 @@ After refactoring the controller and creating unique DRAM and NVM interfaces, a 
 
 ### Workshop Presentation
 
-<iframe width="560" height="315"
+<iframe width="960" height="540"
 src="https://www.youtube.com/embed/t2PRoZPwwpk" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+allowfullscreen style="max-width: 960px"></iframe>

@@ -54,7 +54,7 @@ Bibliography
 Workshop Presentation
 ---------------------
 
-<iframe width="560" height="315"
+<iframe width="960" height="540"
 src="https://www.youtube.com/embed/2jPiXOhboko" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
+allowfullscreen style="max-width: 960px;"></iframe>
