@@ -77,5 +77,5 @@ on how to do this.
 
 If your issue is with the content of a gem5 document/tutorial being incorrect,
 then please consider submitting a change. Please consult our [README](
-https://gem5.googlesource.com/public/gem5-website/+/refs/heads/master/README.md)
+https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable/README.md)
 for more information on how to make contributions to the gem5 website.
