@@ -36,17 +36,17 @@ the gem5 resources repository. **These are resources sources for gem5 20.0**.
 
 |Resource |Compiled/Built Resource |Source |
 |:--------|:-----------------------|:------|
-|asmtest | 351 test binaries, downloadable with `https://dist.gem5.org/dist/v20/test-progs/asmtest/bin/<binary>` | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/asmtest) |
-|riscv-tests | [dhryston.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/dhrystone.riscv), [median.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/median.riscv), [mm.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mm.riscv), [mt-matmul.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mt-matmul.riscv), [mt-vvadd.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mt-vvadd.riscv), [multiply.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/multiply.riscv), [pmp.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/pmp.riscv), [qsort.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/qsort.riscv), [rsort.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/rsort.riscv), [spmv.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/spmv.riscv), [towers.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/towers.riscv), [vvadd.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/vvadd.riscv) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/riscv-tests) | 
-|insttests | [insttest-rv64a](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64a), [insttest-rv64c](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64c), [insttest-rv64d](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64d), [insttest-rv64f](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64f), [insttest-rv64i](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64i), [insttest-rv64m](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64m) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/insttest) |
-|pthreads | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/pthreads) |
-|square | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/square) |
-|spec-2006 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/spec-2017) |
-|spec-2017 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/spec-2006) |
-|gapbs | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/gapbs.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/gapbs) |
-|parsec | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/parsec.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/parsec) |
-|npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/npb) |
-|Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/v20/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/src/boot-exit) |
+|asmtest | 351 test binaries, downloadable with `https://dist.gem5.org/dist/v20/test-progs/asmtest/bin/<binary>` | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/asmtest) |
+|riscv-tests | [dhryston.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/dhrystone.riscv), [median.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/median.riscv), [mm.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mm.riscv), [mt-matmul.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mt-matmul.riscv), [mt-vvadd.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/mt-vvadd.riscv), [multiply.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/multiply.riscv), [pmp.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/pmp.riscv), [qsort.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/qsort.riscv), [rsort.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/rsort.riscv), [spmv.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/spmv.riscv), [towers.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/towers.riscv), [vvadd.riscv](http://dist.gem5.org/dist/v20/test-progs/riscv-tests/vvadd.riscv) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/riscv-tests) | 
+|insttests | [insttest-rv64a](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64a), [insttest-rv64c](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64c), [insttest-rv64d](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64d), [insttest-rv64f](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64f), [insttest-rv64i](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64i), [insttest-rv64m](http://dist.gem5.org/dist/v20/test-progs/insttest/bin/riscv/linux/insttest-rv64m) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/insttest) |
+|pthreads | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/pthreads) |
+|square | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/square) |
+|spec-2006 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2017) |
+|spec-2017 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2006) |
+|gapbs | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/gapbs.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gapbs) |
+|parsec | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/parsec.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/parsec) |
+|npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb) |
+|Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/v20/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit) |
 
 ## How do I obtain the gem5 resource sources?
 
@@ -57,15 +57,15 @@ gem5 resources sources may be obtained from
 git clone https://gem5.googlesource.com/public/gem5-resources
 ```
 
-The HEAD of the `master` branch will point towards a set of resource sources
+The HEAD of the `stable` branch will point towards a set of resource sources
 compatible with the latest release of gem5 (which can be obtained via
 `git clone https://gem5.googlesource.com/public/gem5`).
 
 Please consult the [README.md](
-https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/README.md)
+https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/README.md)
 file for information on compiling individual gem5 resources. Where license
 permits, the [README.md](
-https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/master/README.md)
+https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/README.md)
 file will provide a link to download the compiled resource from our
 dist.gem5.org Google Cloud Bucket.
 
@@ -84,8 +84,8 @@ instructions, usage notes, etc.
 
 ### Versioning
 
-The HEAD of the master branch will contain resources that can be built and run
-with the latest release of gem5 (that at the HEAD of the master branch on
+The HEAD of the stable branch will contain resources that can be built and run
+with the latest release of gem5 (that at the HEAD of the stable branch on
 <https://gem5.googlesource.com/public/gem5>).
 
 If you wish to use resources for an older release of gem5, then you must
@@ -100,19 +100,19 @@ To checkout a specific tag: `git checkout <tag name>`.
 
 It should noted that there will be no tag for the most recent release of gem5,
 as the most recent resources for the latest release are found at the HEAD
-of the master branch. The reason for this is resources may be added continually
+of the stable branch. The reason for this is resources may be added continually
 during the course of a gem5 release. Upon the next release of a gem5 version,
 gem5 resources is tagged.
 
 For example, assuming the current version of gem5 is v20.2. The gem5 resources
-will contain tags for v20.0 and v20.1. The current HEAD of the master branch
+will contain tags for v20.0 and v20.1. The current HEAD of the stable branch
 will contain resources for gem5 v20.2. If new resources are added, they will
-be added as commits on top of the master branch. During this time, the next
+be added as commits on top of the stable branch. During this time, the next
 major version of gem5 will be under develop on the gem5 develop branch. The
 gem5 resources repository also has a develop branch for resources developed,
 expanded, and/or modified for the upcoming gem5 release. Upon the release of
-this new major version of gem5 (v20.3), the master branch is tagged (in this
-case, as v20.2) and the develop branch is merged into the master.
+this new major version of gem5 (v20.3), the stable branch is tagged (in this
+case, as v20.2) and the develop branch is merged into the stable.
 
 ### Citing a resource
 
@@ -158,7 +158,7 @@ git clone https://gem5.googlesource.com/public/gem5-resources
 Then make changes and commit. When ready, push to Gerrit with:
 
 ```
-git push origin HEAD:refs/for/master
+git push origin HEAD:refs/for/stable
 ```
 
 This will add resources to be used in the latest release of gem5.
