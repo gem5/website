@@ -64,7 +64,7 @@ We utilize Gerrit to review changes made to the website. Once changes are
 committed to a local repository they may be submitted for review by executing:
 
 ```
-git push origin HEAD:refs/for/master
+git push origin HEAD:refs/for/stable
 ```
 
 At this stage you may receive an error if you're not registered to contribute
