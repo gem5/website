@@ -47,7 +47,7 @@ In this example, the entire list of SimObject APIs are noted in the
 http://doxygen.gem5.org/release/current/group__api__simobject.html). The
 definitions of different API groups can be found in
 [`src/doxygen/group_definitions.hh`](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/master/src/doxygen/group_definitions.hh).
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/doxygen/group_definitions.hh).
 
 ### Notes for developers
 
