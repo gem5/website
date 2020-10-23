@@ -1,17 +1,17 @@
 ---
 layout: documentation
-title: Extending gem5 to run ARM binaries 
+title: Extending gem5 to run ARM binaries
 doc: Learning gem5
 parent: part1
 permalink: /documentation/learning_gem5/part1/extending_configs
-author: Julian T. Angeles 
+author: Julian T. Angeles, Thomas E. Hansen
 ---
 
 Extending gem5 for ARM
 ======================
 
 This chapter assumes you've already built a basic x86 system with
-gem5 and created a simple configuration script. 
+gem5 and created a simple configuration script.
 
 Downloading ARM Binaries
 ------------------------
@@ -108,3 +108,81 @@ warn: readlink() called on '/proc/self/exe' may yield unexpected results in vari
 -50000
 Exiting @ tick 258647411000 because exiting with last active thread context
 ```
+
+ARM Full System Simulation
+--------------------------
+To run an ARM FS Simulation, there are some changes required to the setup.
+
+If you haven't already, from the gem5 repository's root directory, `cd` into
+the directory `util/term/` by running
+
+```bash
+$ cd util/term/
+```
+
+and then compile the `m5term` binary by running
+
+```bash
+$ make
+```
+
+The gem5 repository comes with example system setups and configurations. These
+can be found in the `configs/example/arm/` directory.
+
+A collection of full system Linux image files are available
+[here](https://www.gem5.org/documentation/general_docs/fullsystem/guest_binaries).
+Save these in a directory and remember the path to it. For example, you could
+store them in
+
+```
+/path/to/user/gem5/fs_images/
+```
+
+The `fs_images` directory will be assumed to contain the extracted FS images
+for the rest of this example.
+
+With the image(s) downloaded, execute the following command in your terminal:
+
+```bash
+$ export IMG_ROOT=/absolute/path/to/fs_images/<image-directory-name>
+```
+
+replacing "\<image-directory-name\>" with the name of the directory extracted
+from the downloaded image file, without the angle-brackets.
+
+We are now ready to run a FS ARM simulation. From the root of the gem5
+repository, run:
+
+```bash
+$ ./build/ARM/gem5.opt configs/example/arm/fs_bigLITTLE.py \
+    --caches \
+    --bootloader="$IMG_ROOT/binaries/<bootloader-name>" \
+    --kernel="$IMG_ROOT/binaries/<kernel-name>" \
+    --disk="$IMG_ROOT/disks/<disk-image-name>" \
+    --bootscript=path/to/bootscript.rcS
+```
+
+replacing anything in angle-brackets with the name of the directory or file,
+without the angle-brackets.
+
+You can then attach to the simulation by, in a different terminal window,
+running:
+
+```bash
+$ ./util/term/m5term 3456
+```
+
+The full details of what the `fs_bigLITTLE.py` script supports can be gotten by
+running:
+
+```bash
+$ ./build/ARM/gem5.opt configs/example/arm/fs_bigLITTLE.py --help
+```
+
+> **An aside on FS simulations:**
+>
+> Note that FS simulations take a long time; like "1 hour to load the kernel"
+> long time! There are ways to "fast-forward" a simulation and then resume the
+> detailed simulation at the interesting point, but these are beyond the scope
+> of this chapter.
+
