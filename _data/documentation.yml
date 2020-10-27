@@ -211,6 +211,10 @@ docs:
           url: /documentation/learning_gem5/part1/example_configs
         - page: Extending gem5 for ARM
           url: /documentation/learning_gem5/part1/extending_configs
+        - page: ARM Power Modelling
+          url: /documentation/learning_gem5/part1/arm_power_modelling
+        - page: ARM DVFS Support
+          url: /documentation/learning_gem5/part1/arm_dvfs_support
 
     - title: Modifying/Extending
       id: part2
