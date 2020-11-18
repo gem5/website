@@ -46,7 +46,7 @@ the gem5 resources repository. **These are resources sources for gem5 20.1**.
 |gapbs | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/gapbs.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gapbs) |
 |parsec | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/parsec.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/parsec) |
 |npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb) |
-|Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/v20-1/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit) |
+|Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit) |
 
 ## How do I obtain the gem5 resource sources?
 
