@@ -54,7 +54,7 @@ the gem5 resources repository. **These are resources sources for gem5 20.1**.
 |npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb) |
 |Linux boot-exit | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/boot-exit.img.gz) |[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit) |
 |hack-back| --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/hack-back) |
-
+|linux kernels | [v4.4.186](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.4.186), [v4.9.186](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.9.186), [v4.14.134](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.14.134), [v4.19.83](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.19.83), [v5.4.49](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-5.4.49) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/linux-kernel/) |
 
 ## How do I obtain the gem5 resource sources?
 
