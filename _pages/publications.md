@@ -40,9 +40,9 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 *   [**Exploring system performance using elastic traces: Fast, accurate and portable**](https://doi.org/10.1109/SAMOS.2016.7818336). Radhika Jagtap, Matthias Jung, Stephan Diestelhorst, Andreas Hansson, Norbert Wehn. IEEE International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS), 2016
 
-## SystemC Couping<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#systemc-couping"></span>
+## SystemC Coupling<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#systemc-coupling"></span>
 
-*   [**System Simulation with gem5 and SystemC: The Keystone for Full Interoperability**](http://samos-conference.com/Resources_Samos_Websites/Proceedings_Repository_SAMOS/2017/49_Final_Paper.pdf). C. Menard, M. Jung, J. Castrillon, N. Wehn. IEEE International Conference on Embedded Computer Systems Architectures Modeling and Simulation (SAMOS), July, 2017
+*   [**System Simulation with gem5 and SystemC: The Keystone for Full Interoperability**](https://ieeexplore.ieee.org/document/8344612). C. Menard, M. Jung, J. Castrillon, N. Wehn. IEEE International Conference on Embedded Computer Systems Architectures Modeling and Simulation (SAMOS), July, 2017
 
 # Derivative projects
 
