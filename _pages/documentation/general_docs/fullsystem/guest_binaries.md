@@ -30,14 +30,24 @@ The tarball below contains a set of binaries: the Linux kernel and a set of boot
 ##### Latest Linux Disk Images (**recommended**)
 
 * <http://dist.gem5.org/dist/current/arm/disks/ubuntu-18.04-arm64-docker.img.bz2>
-* <http://dist.gem5.org/dist/current/arm/disks/aarch64-ubuntu-trusty-headless.img.bz2>
+
+  Partition table: yes
+
+  gem5 init: `/init.gem5`
+
 * <http://dist.gem5.org/dist/current/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
-* <http://dist.gem5.org/dist/current/arm/disks/linaro-minimal-aarch64.img.bz2>
-* <http://dist.gem5.org/dist/current/arm/disks/linux-aarch32-ael.img.bz2>
 
 ##### Old Linux Kernel/Disk Image
 
 These images are not supported. If you run into problems, we will do our best to help, but there is no guarantee these will work with the latest gem5 version
+
+###### Disk images only
+
+* <http://dist.gem5.org/dist/current/arm/disks/aarch64-ubuntu-trusty-headless.img.bz2>
+* <http://dist.gem5.org/dist/current/arm/disks/linaro-minimal-aarch64.img.bz2>
+* <http://dist.gem5.org/dist/current/arm/disks/linux-aarch32-ael.img.bz2>
+
+###### Disk and kernel images
 
 * <http://dist.gem5.org/dist/current/arm/aarch-system-20170616.tar.xz>
 * <http://dist.gem5.org/dist/current/arm/aarch-system-20180409.tar.xz>
