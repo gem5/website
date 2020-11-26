@@ -34,6 +34,8 @@ docs:
           url: http://doxygen.gem5.org/release/v20-0-0-3/index.html
         - page: v20.1.0.0
           url: http://doxygen.gem5.org/release/v20-1-0-0/index.html
+        - page: v20.1.0.1
+          url: http://doxygen.gem5.org/release/v20-1-0-1/index.html
 
     - title: gem5 Resources
       id: gem5_resources
@@ -227,6 +229,10 @@ docs:
           url: /documentation/learning_gem5/part2/memoryobject
         - page: Creating a simple cache object
           url: /documentation/learning_gem5/part2/simplecache
+        - page: ARM Power Modelling
+          url: /documentation/learning_gem5/part2/arm_power_modelling
+        - page: ARM DVFS Support
+          url: /documentation/learning_gem5/part2/arm_dvfs_support
 
     - title: Modeling Cache Coherence with Ruby
       id: part3
