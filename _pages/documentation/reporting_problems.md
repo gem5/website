@@ -72,7 +72,7 @@ If you have solved a problem that you reported, please let the community know
 about your solution as a follow-up (either in the mailing list or in the Jira
 Issue tracking system). If you have fixed a bug, we'd appreciate if you could
 submit the fix to the gem5 source. Please see our
-[beginners guide to contributing](/documentation/contributing_beginners_guide)
+[beginners guide to contributing](/contributing)
 on how to do this.
 
 If your issue is with the content of a gem5 document/tutorial being incorrect,
