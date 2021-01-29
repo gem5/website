@@ -8,11 +8,11 @@ permalink: /documentation/general_docs/m5ops/
 
 # M5ops
 
-This page explains the special opcodes that can be used in M5 to do checkpoints etc. The m5 utility program (on our disk image and in util/m5/*) provides some of this functionality on the command line. In many cases it is best to insert the operation directly in the source code of your application of interest. You should be able to link with the appropriate m5op_ARCH.o file and the m5op.h header file has prototypes for all the functions.
+This page explains the special opcodes that can be used in M5 to do checkpoints etc. The m5 utility program (on our disk image and in util/m5/*) provides some of this functionality on the command line. In many cases it is best to insert the operation directly in the source code of your application of interest. You should be able to link with the appropriate m5op_ARCH.o file and the m5ops.h header file has prototypes for all the functions.
 
 ## Building M5
 
-In order to build m5 for your target ISA, run the following command in util/m5/ directory.
+In order to build m5 for your target ISA, run the following command in the util/m5/ directory.
 
 ```bash
 scons build/{TARGET_ISA}/out/m5
@@ -30,7 +30,7 @@ Note if you are using a x86 system for other ISAs you need to have the cross-com
 
 ## The m5 Utility (FS mode)
 
-he m5 utility (see util/m5/) can be used in FS mode to issue special instructions to trigger simulation specific functionality. It currently offers the following options:
+The m5 utility (see util/m5/) can be used in FS mode to issue special instructions to trigger simulation specific functionality. It currently offers the following options:
 
 * initparam: Deprecated, present only for old binary compatibility
 * exit [delay]: Stop the simulation in delay nanoseconds.
@@ -75,7 +75,7 @@ public  class HelloWorld {
 }
 ```
 
-When building you need to make sure classpath include gem5OpJni.jar:
+When building you need to make sure classpath includes gem5OpJni.jar:
 
 ```javascript
 javac -classpath $CLASSPATH:/path/to/gem5OpJni.jar HelloWorld.java
@@ -93,4 +93,4 @@ gem5's special opcodes (psuedo instructions) can be used with Fortran programs. 
 
 ## Linking M5 to your code
 
-In order to link m5 to your code you have to add ```gem5/include/gem/asm/generic/m5ops.h``` and ```gem5/util/m5/src/m5_mmap.h``` to your include path and add ```gem5/util/m5/src/m5_mmap.c``` and ```gem5/util/m5/src/{TARGET_ISA}/m5op.S``` to your source path and add m5op_{TARGET_ISA} and m5_mmap as objects to your object list. For an example on how to do this with PARSEC benchmark look [here](https://github.com/darchr/parsec-benchmark/blob/gem5-20-annotations/pkgs/libs/hooks/src/Makefile.shared)
+In order to link m5 to your code you have to add ```gem5/include/gem5/asm/generic/m5ops.h``` and ```gem5/util/m5/src/m5_mmap.h``` to your include path and add ```gem5/util/m5/src/m5_mmap.c``` and ```gem5/util/m5/src/{TARGET_ISA}/m5op.S``` to your source path and add m5op_{TARGET_ISA} and m5_mmap as objects to your object list. For an example on how to do this with PARSEC benchmark look [here](https://github.com/darchr/parsec-benchmark/blob/gem5-20-annotations/pkgs/libs/hooks/src/Makefile.shared)
