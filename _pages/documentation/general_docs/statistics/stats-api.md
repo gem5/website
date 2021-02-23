@@ -54,8 +54,9 @@ struct MyStats : public Stats::Group
     Stats::Scalar scalar0;
     Stats::Scalar scalar1;
 
-    Group()
-        : ADD_STAT(scalar0, "Description of scalar0"),       // equivalent to scalar0(this, "scalar0", "Description of scalar0"), where scalar0 has the follwing constructor
+    MyStats(Stats::Group *parent)
+        : Stats::Group(parent),
+          ADD_STAT(scalar0, "Description of scalar0"),       // equivalent to scalar0(this, "scalar0", "Description of scalar0"), where scalar0 has the follwing constructor
                                                              // Stats::Scalar(Group *parent = nullptr, const char *name = nullptr, const char *desc = nullptr)
           scalar1(this, "scalar1", "Description of scalar1")
      {
@@ -131,6 +132,7 @@ string "ipc".
 ---
 
 ## Stats Flags
+
 | Flags            | Descriptions                                                   |
 |------------------|----------------------------------------------------------------|
 | `Stats::none`    | Nothing extra to print.                                        |
