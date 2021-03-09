@@ -18,6 +18,12 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 # Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span>
 ---
+
+## gem5art and gem5resources<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#gem5art"></span>
+
+* [**Enabling Reproducible and Agile Full-System Simulation**](/assets/files/papers/enabling2021ispass.pdf). Bobby R. Bruce, Hoa Nguyen, Kyle Roarty, Mahyar Samani, Marjan Friborz, Trivikram Reddy, Matthew D. Sinclair, and Jason Lowe-Power. In Proceedings of the IEEE International Symposium on Performance Analysis of Software (ISPASS), March 2021.
+
+
 ## GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span>
 
 *   [**Lost in Abstraction: Pitfalls of Analyzing GPUs at the Intermediate Language Level**](https://doi.org/10.1109/HPCA.2018.00058). Anthony Gutierrez, Bradford M. Beckmann, Alexandru Dutu, Joseph Gross, John Kalamatianos, Onur Kayiran, Michael LeBeane, Matthew Poremba, Brandon Potter, Sooraj Puthoor, Matthew D. Sinclair, Mark Wyse, Jieming Yin, Xianwei Zhang, Akshay Jain, Timothy G. Rogers. In Proceedings of the 24th IEEE International Symposium on High-Performance Computer Architecture (HPCA), February 2018.
