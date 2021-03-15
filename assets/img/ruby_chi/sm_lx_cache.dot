@@ -1,0 +1,18 @@
+digraph finite_state_machine {
+    node [shape = circle, fixedsize=true, fontsize=12];
+    edge [fontsize=9];
+    I -> SC [ label = "ReadShared miss/\nReadShared" ];
+    I -> UC [ label = "ReadUnique miss/\nReadUnique" ];
+    SC -> I [ label = "Replacement/\nEvict" ];
+    SC -> UC [ label = "ReadUnique miss/\nReadUnique" ];
+    SD -> I [ label = "Replacement/\nWriteBack" ];
+    SD -> UD [ label = "ReadUnique miss/\nReadUnique" ];
+    UC -> I [ label = "Replacement/\nWriteEvict" ];
+    UC -> SC [ label = "SnpShared/\n_" ];
+    UD -> I [ label = "Replacement/\nWriteBack" ];
+    UD -> SD [ label = "SnpShared/\n_" ];
+    UC,I -> UC [ label = "WriteEvict/\n_" ];
+    SD,I -> SD [ label = "WriteBack/\n_" ];
+    UC,UD,I -> UD [ label = "WriteBack/\n_" ];
+    UC,UD,SD,SC -> I [ label = "SnpUnique" ];
+}

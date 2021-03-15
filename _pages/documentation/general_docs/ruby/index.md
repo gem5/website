@@ -67,6 +67,8 @@ The following cache coherence protocols are supported:
     run the Garnet network in a standalone manner.
 7.  **MESI Three Level**: 3-level caches,
     strictly-inclusive hierarchy. Based on MESI Two Level with an extra L0 cache.
+8.  **[CHI](CHI)**: flexible protocol that implements Arm's AMBA5 CHI transactions.
+    Supports configurable cache hierarchy with both MESI or MOESI coherency.
 
 Commonly used notations and data structures in the protocols have been
 described in detail [here](cache-coherence-protocols).

@@ -1,0 +1,17 @@
+digraph finite_state_machine {
+    node [shape = circle, fixedsize=true, fontsize=12];
+    edge [fontsize=9];
+    I -> RSC [ label = "ReadShared" ];
+    RU -> RSD [ label = "ReadShared/\nSnpShared, dirty resp" ];
+    RU -> RSC [ label = "ReadShared/\nSnpShared, clean resp" ];
+    I -> RU [ label = "ReadUnique" ];
+    I,RSC,RSD -> RU [ label = "ReadUnique/\nSnpUnique" ];
+    RSC -> I [ label = "Evict (#sharers>0)" ];
+    RSD -> RSC [ label = "WriteBack (#sharers>0)" ];
+    RSD -> I [ label = "WriteBack (#sharers=0)" ];
+    RU -> I [ label = "WriteBack" ];
+    RU -> I [ label = "WriteEvict" ];
+    RU -> RSC [ label = "SnpShared/\nSnpShared, clean resp" ];
+    RU -> RSD [ label = "SnpShared/\nSnpShared, dirty resp" ];
+    RU,RSC,RSD -> I [ label = "SnpUnique" ];
+}

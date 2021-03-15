@@ -1,0 +1,23 @@
+digraph finite_state_machine {
+    node [shape = circle, fixedsize=true, fontsize=12];
+    edge [fontsize=9];
+//    { rank=min UD SD }
+//    { rank=max UC SC }
+    I -> SC [ label = "Load miss/\nReadShared" ];
+    I -> UD [ label = "Store miss/\nReadUnique" ];
+    SC -> I [ label = "Replacement/\nEvict" ];
+    SC -> UD [ label = "Store miss/\nReadUnique" ];
+    SD -> I [ label = "Replacement/\nWriteBack" ];
+    SD -> UD [ label = "Store miss/\nReadUnique" ];
+    UC -> I [ label = "Replacement/\nWriteEvict" ];
+    UC -> SC [ label = "SnpShared" ];
+    UC -> UD [ label = "Store hit" ];
+    UD -> I [ label = "Replacement/\nWriteBack" ];
+    UD -> SD [ label = "SnpShared" ];
+    I -> UD_T [ label = "StoreConditional miss/\nReadUnique" ];
+    UD_T -> UD  [ label = "Timeout" ];
+    // UD -> UD [ label = "Load,Store hit" ];
+    // UC -> UC [ label = "Load hit" ];
+    // SC -> SC [ label = "Load hit" ];
+    // SD -> SD [ label = "Load hit" ];
+}
