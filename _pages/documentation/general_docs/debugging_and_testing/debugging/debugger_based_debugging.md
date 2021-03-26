@@ -25,12 +25,12 @@ debugger prompt using the `schedBreak()` function. The following example
 session illustrates both of these approaches:
 
 ```
-% gdb m5/build/ALPHA/gem5.debug
+% gdb m5/build/<ISA>/gem5.debug
 GNU gdb 6.1
 Copyright 2002 Free Software Foundation, Inc.
 [...]
 (gdb) run --debug-break=2000 configs/run.py
-Starting program: /z/stever/bk/m5/build/ALPHA/gem5.debug --debug-break=2000 configs/run.py
+Starting program: /z/stever/bk/m5/build/<ISA>/gem5.debug --debug-break=2000 configs/run.py
 M5 Simulator System
 [...]
 warn: Entering event queue @ 0.  Starting simulation...

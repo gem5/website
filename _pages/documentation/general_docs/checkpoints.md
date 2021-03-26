@@ -20,9 +20,9 @@ While creating checkpoints with Ruby memory model, it is necessary to use the MO
 Restoring from a checkpoint can usually be easily done from the command line, e.g.:
 
 ```
-  build/ALPHA/gem5.debug configs/example/fs.py -r N
+  build/<ISA>/gem5.debug configs/example/fs.py -r N
   OR
-  build/ALPHA/gem5.debug configs/example/fs.py --checkpoint-restore=N
+  build/<ISA>/gem5.debug configs/example/fs.py --checkpoint-restore=N
 ```
 
 The number N is integer that represents checkpoint number which usually starts from 1 then increases incrementally to 2,3,4...

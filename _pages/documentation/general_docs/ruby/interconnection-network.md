@@ -17,7 +17,7 @@ gem5's ruby memory system are described here.
 **Simple Network**:
 
 ```
-./build/ALPHA/gem5.debug \
+./build/<ISA>/gem5.debug \
                       configs/example/ruby_random_test.py \
                       --num-cpus=16  \
                       --num-dirs=16  \
@@ -31,7 +31,7 @@ The default network is simple, and the default topology is crossbar.
 **Garnet network**:
 
 ```
-./build/ALPHA/gem5.debug \
+./build/<ISA>/gem5.debug \
                       configs/example/ruby_random_test.py  \
                       --num-cpus=16 \
                       --num-dirs=16  \

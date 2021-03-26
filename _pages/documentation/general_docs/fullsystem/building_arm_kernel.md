@@ -63,8 +63,8 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j `nproc`
 Testing the just built kernel:
 
 ```
-./build/ARM/gem5.opt configs/example/fs.py --kernel=/tmp/linux-arm-gem5/vmlinux --machine-type=VExpress_GEM5_V1 \
-    --dtb-file=$PWD/system/arm/dt/armv7_gem5_v1_1cpu.dtb
+./build/ARM/gem5.opt configs/example/arm/starter_fs.py --kernel=/tmp/linux-arm-gem5/vmlinux \
+    --disk-image=aarch32-ubuntu-natty-headless.img.bz2
 ```
 
 ## AArch64

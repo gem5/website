@@ -397,4 +397,4 @@ The file `src/base/misc.hh` also houses 3 functions that alert the user to vario
 * `warn()` and `warn_once()` should be called when some functionality isn't necessarily implemented correctly, but it might work well enough. The idea behind a `warn()` is to inform the user that if they see some strange behavior shortly after a `warn()` the description might be a good place to go looking for an error.
 
 * `hack()` should be called when some functionality isn't implemented nearly as well as it could or should be but for expediency or history sake hasn't been fixed.
-* `inform()` Provides status messages and normal operating messages to the console for the user to see, without any connotations of incorrect behavior. For example it's used when secondary CPUs being executing code on ALPHA.
+* `inform()` Provides status messages and normal operating messages to the console for the user to see, without any connotations of incorrect behavior.
