@@ -60,12 +60,12 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install scons
         ```
 
-4.  Python 2.7+
+4.  Python 3.6+
     :   gem5 relies on the Python development libraries. To install
         these on Ubuntu use
 
         ```
-        sudo apt install python-dev
+        sudo apt install python3-dev
         ```
 
 5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+
@@ -78,7 +78,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         generation and playback.
 
         ```
-        sudo apt install libprotobuf-dev python-protobuf protobuf-compiler libgoogle-perftools-dev
+        sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
         ```
 
 6. [Boost](https://www.boost.org/) (**Optional**) : The Boost library is a set
@@ -129,7 +129,7 @@ can also specify these options on the command line to override any
 default.
 
 ```
-scons build/X86/gem5.opt -j9
+python3 scons build/X86/gem5.opt -j9
 ```
 
 > **gem5 binary types**
@@ -238,7 +238,7 @@ building-requirements-section.
 
 ### Python in a non-default location
 
-If you use a non-default version of Python, (e.g., version 2.7 when 2.5
+If you use a non-default version of Python, (e.g., version 3.6 when 2.5
 is your default), there may be problems when using SCons to build gem5.
 RHEL6 version of SCons uses a hardcoded location for Python, which
 causes the issue. gem5 often builds successfully in this case, but may
@@ -251,7 +251,7 @@ gem5.
     TypeError: 'dict' object is not callable
 
 To fix this, you can force SCons to use your environment's Python
-version by running `` python `which scons` build/X86/gem5.opt `` instead
+version by running `` python3 `which scons` build/X86/gem5.opt `` instead
 of `scons build/X86/gem5.opt`.
 
 ### M4 macro processor not installed
