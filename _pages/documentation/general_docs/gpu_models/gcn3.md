@@ -18,6 +18,10 @@ The GCN3 GPU is a model that simulates a GPU at the ISA level, as opposed to the
 
 ## **Using the model**
 
+Currently, the GCN3 GPU model in gem5 is only supported on the develop branch.
+Thus, you should use the develop branch when running the GCN3 model.
+We expect this support to be integrated into the gem5-v21.0 release.
+
 The [gem5 repository](https://gem5.goooglesource.com/public/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model
 
 The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a sample application (square) that can be used to verify that the model runs correctly.
@@ -82,7 +86,7 @@ The following additional components are used to build and run machine learning p
 * [MIOpen](https://github.com/ROCmSoftwarePlatform/MIOpen/)
 * [rocm-cmake](https://github.com/RadeonOpenCompute/rocm-cmake/)
 
-For information about installing these components locally, the commands in the GCN3 dockerfile (`util/dockerfiles/gcn-gpu/`) can be followed on an ubuntu 16 machine.
+For information about installing these components locally, the commands in the GCN3 dockerfile (`util/dockerfiles/gcn-gpu/`) can be followed on an Ubuntu 16 machine.
 
 ## **Documentation and Tutorials**
 

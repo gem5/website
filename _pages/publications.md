@@ -10,15 +10,21 @@ permalink: /publications/
 If you use gem5 in your research, we would appreciate a citation to the original paper in any publications you produce. Moreover, we would appreciate if you cite also the speacial features of gem5 which have been developed and contributed to the main line since the publication of the original paper in 2011\. In other words, if you use feature X please also cite the according paper Y from the list below.
 
 
-# Original Paper<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#original-paper"></span>
+# Original Paper<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#original-paper"></span>
 ---
 *   [**The gem5 Simulator**](http://dx.doi.org/10.1145/2024716.2024718). Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. May 2011, ACM SIGARCH Computer Architecture News.
 
 
 
-# Special Features of gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#special-features-of-gem5"></span>
+# Special Features of gem5<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#special-features-of-gem5"></span>
 ---
-## GPUs<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#gpus"></span>
+
+## gem5art and gem5resources<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#gem5art"></span>
+
+* [**Enabling Reproducible and Agile Full-System Simulation**](/assets/files/papers/enabling2021ispass.pdf). Bobby R. Bruce, Hoa Nguyen, Kyle Roarty, Mahyar Samani, Marjan Friborz, Trivikram Reddy, Matthew D. Sinclair, and Jason Lowe-Power. In Proceedings of the IEEE International Symposium on Performance Analysis of Software (ISPASS), March 2021.
+
+
+## GPUs<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#gpus"></span>
 
 *   [**Lost in Abstraction: Pitfalls of Analyzing GPUs at the Intermediate Language Level**](https://doi.org/10.1109/HPCA.2018.00058). Anthony Gutierrez, Bradford M. Beckmann, Alexandru Dutu, Joseph Gross, John Kalamatianos, Onur Kayiran, Michael LeBeane, Matthew Poremba, Brandon Potter, Sooraj Puthoor, Matthew D. Sinclair, Mark Wyse, Jieming Yin, Xianwei Zhang, Akshay Jain, Timothy G. Rogers. In Proceedings of the 24th IEEE International Symposium on High-Performance Computer Architecture (HPCA), February 2018.
 
@@ -26,21 +32,21 @@ If you use gem5 in your research, we would appreciate a citation to the original
 
 *   [**gem5-gpu: A Heterogeneous CPU-GPU Simulator**](http://research.cs.wisc.edu/multifacet/papers/cal14_gem5gpu.pdf). Jason Power, Joel Hestness, Marc S. Orr, Mark D. Hill, David A. Wood. Computer Architecture Letters vol. 13, no. 1, Jan 2014
 
-## DRAM Controller, DRAM Power Estimation<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#dram-controller-dram-power-estimation"></span>
+## DRAM Controller, DRAM Power Estimation<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#dram-controller-dram-power-estimation"></span>
 
 *   [**Simulating DRAM controllers for future system architecture exploration**](http://www.ics.ele.tue.nl/~mhansson/documents/pdf/2014-ispass.pdf). Andreas Hansson, Neha Agarwal, Aasheesh Kolli, Thomas Wenisch and Aniruddha N. Udipi. In Proceedings of the International Symposium on Performance Analysis of Systems and Software (ISPASS), March 2014.
 
 *   [**DRAMPower: Open-source DRAM Power & Energy Estimation Tool**](http://www.drampower.info). Karthik Chandrasekar, Christian Weis, Yonghui Li, Sven Goossens, Matthias Jung, Omar Naji, Benny Akesson, Norbert Wehn, and Kees Goossens, URL: [http://www.drampower.info](http://www.drampower.info).
 
-## KVM<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#kvm"></span>
+## KVM<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#kvm"></span>
 
 *   [**Full Speed Ahead: Detailed Architectural Simulation at Near-Native Speed**](http://ieeexplore.ieee.org/document/7314164/). Andreas Sandberg, Nikos Nikoleris, Trevor E. Carlson, Erik Hagersten, Stefanos Kaxiras, David Black-Schaffer. 2015 IEEE International Symposium on Workload Characterization
 
-## Elastic Traces<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#elastic-traces"></span>
+## Elastic Traces<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#elastic-traces"></span>
 
 *   [**Exploring system performance using elastic traces: Fast, accurate and portable**](https://doi.org/10.1109/SAMOS.2016.7818336). Radhika Jagtap, Matthias Jung, Stephan Diestelhorst, Andreas Hansson, Norbert Wehn. IEEE International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS), 2016
 
-## SystemC Coupling<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#systemc-coupling"></span>
+## SystemC Coupling<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#systemc-coupling"></span>
 
 *   [**System Simulation with gem5 and SystemC: The Keystone for Full Interoperability**](https://ieeexplore.ieee.org/document/8344612). C. Menard, M. Jung, J. Castrillon, N. Wehn. IEEE International Conference on Embedded Computer Systems Architectures Modeling and Simulation (SAMOS), July, 2017
 
@@ -90,7 +96,7 @@ gem5, or use gem5.
   - [Tutorial at ISPASS '11](https://sites.google.com/site/mv5sim/tutorial)
   - [Google group](http://groups.google.com/group/mv5sim)
 
-# Other Publications related to gem5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#other-publications-related-to-gem5"></span>
+# Other Publications related to gem5<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#other-publications-related-to-gem5"></span>
 ---
 *   [**Enabling Realistic Logical Device Interface and Driver for NVM Express Enabled Full System Simulations**](http://simplessd.camelab.org). Donghyun Gouk, Jie Zhang and Myoungsoo Jung. IFIP International Conference on Network and Parallel Computing (NPC) and Invited for International Journal of Parallel Programming (IJPP), 2017
 
@@ -110,9 +116,9 @@ gem5, or use gem5.
 *   [**The M5 Simulator: Modeling Networked Systems**](http://dx.doi.org/10.1109/MM.2006.82). N. L. Binkert, R. G. Dreslinski, L. R. Hsu, K. T. Lim, A. G. Saidi, S. K. Reinhardt. IEEE Micro, vol. 26, no. 4, pp. 52-60, July/August, 2006.
 *   [**Multifacet’s General Execution-driven Multiprocessor Simulator (GEMS) Toolset**](http://dx.doi.org/10.1145/1105734.1105747). Milo M.K. Martin, Daniel J. Sorin, Bradford M. Beckmann, Michael R. Marty, Min Xu, Alaa R. Alameldeen, Kevin E. Moore, Mark D. Hill, and David A. Wood. Computer Architecture News (CAN), September 2005.
 
-# Publications using gem5 / m5<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#publications-using-gem5-m5"></span>
+# Publications using gem5 / m5<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#publications-using-gem5-m5"></span>
 ---
-## 2017<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2017"></span>
+## 2017<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2017"></span>
 
 *   [[https://chess.eecs.berkeley.edu/pubs/1194/KimEtAl_CyPhy17.pdf](https://chess.eecs.berkeley.edu/pubs/1194/KimEtAl_CyPhy17.pdf)**An Integrated Simulation Tool for Computer Architecture and Cyber-Physical Systems**]. Hokeun Kim, Armin Wasicek, and Edward A. Lee. In Proceedings of the 6th Workshop on Design, Modeling and Evaluation of Cyber-Physical Systems (CyPhy’17), Seoul, Korea, October 19, 2017.
 
@@ -120,7 +126,7 @@ gem5, or use gem5.
 
 *   [[https://hal-lirmm.ccsd.cnrs.fr/lirmm-01467328](https://hal-lirmm.ccsd.cnrs.fr/lirmm-01467328)**MAGPIE: System-level Evaluation of Manycore Systems with Emerging Memory Technologies**]. Thibaud Delobelle, Pierre-Yves Péneau, Abdoulaye Gamatié, Florent Bruguier, Sophiane Senni, Gilles Sassatelli and Lionel Torres, 2nd International Workshop on Emerging Memory Solutions (EMS) co-located with DATE’17, March 2017.
 
-## 2016<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2016"></span>
+## 2016<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2016"></span>
 
 *   [[http://ieeexplore.ieee.org/document/7776838](http://ieeexplore.ieee.org/document/7776838)**An Agile Post-Silicon Validation Methodology for the Address Translation Mechanisms of Modern Microprocessors**]. G. Papadimitriou, A. Chatzidimitriou, D. Gizopoulos, R. Morad, IEEE Transactions on Device and Materials Reliability (TDMR 2016), Volume: PP, Issue: 99, December 2016.
 
@@ -140,7 +146,7 @@ gem5, or use gem5.
 
 *   [**Agave: A benchmark suite for exploring the complexities of the Android software stack**](http://ieeexplore.ieee.org/document/7482089). Martin Brown, Zachary Yannes, Michael Lustig, Mazdak Sanati, Sally A. McKee, Gary S. Tyson, Steven K. Reinhardt, IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS), Uppsala, Sweden, April 2016.
 
-## 2015<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2015"></span>
+## 2015<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2015"></span>
 
 *   [[http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7314163](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7314163)**Differential Fault Injection on Microarchitectural Simulators**]. M.Kaliorakis, S.Tselonis, A.Chatzidimitriou, N.Foutris, D.Gizopoulos, IEEE International Symposium on Workload Characterization (IISWC), Atlanta, GA, USA, October 2015.
 
@@ -162,7 +168,7 @@ gem5, or use gem5.
 
 *   [**A trace-driven approach for fast and accurate simulation of manycore architectures**](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=7059093&queryText%3DA+trace-driven+approach+for+fast+and+accurate+simulation+of+manycore+architectures). Anastasiia Butko, Rafael Garibotti, Luciano Ost, Vianney Lapotre, Abdoulaye Gamatie, Gilles Sassatelli and Chris Adeniyi-Jones. Design Automation Conference (ASP-DAC), 2015 20th Asia and South Pacific. January 19, 2015
 
-## 2014<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2014"></span>
+## 2014<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2014"></span>
 
 *   [**Evaluating Private vs. Shared Last-Level Caches for Energy Efficiency in Asymmetric Multi-Cores**](https://doi.org/10.1109/SAMOS.2014.6893211). A. Gutierrez, R.G. Dreslinski, and Trevor Mudge. In Proceedings of the 14th International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS), 2014.
 
@@ -176,7 +182,7 @@ gem5, or use gem5.
 
 *   [”‘Micro-architectural simulation of in-order and out-of-order ARM microprocessors with gem5 “’](http://dx.doi.org/10.1109/SAMOS.2014.6893220). Fernando A. Endo, Damien Couroussé, Henri-Pierre Charles. 2014 International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS XIV). July 2014.
 
-## 2013<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2013"></span>
+## 2013<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2013"></span>
 
 *   [**Continuous Real-World Inputs Can Open Up Alternative Accelerator Designs**](http://doi.acm.org/10.1145/2485922.2485923). Bilel Belhadj, Antoine Joubert, Zheng Li, Rodolphe Héliot, and Olivier Temam. ISCA ‘13
 *   _Cache Coherence for GPU Architectures._ Inderpreet Singh, Arrvindh Shriraman, Wilson WL Fung, Mike O’Connor, and Tor M. Aamodt. HPCA, 2013.
@@ -187,7 +193,7 @@ gem5, or use gem5.
 *   [**Optimization and Mathematical Modeling in Computer Architecture**](http://dx.doi.org/10.2200/S00531ED1V01Y201308CAC026) Nowatzki, T., Ferris, M., Sankaralingam, K., Estan, C., Vaish, N., & Wood, David A. (2013). Synthesis Lectures on Computer Architecture, 8(4), 1-144.
 *   [**Limits of Parallelism and Boosting in Dim Silicon**](http://doi.ieeecomputersociety.org/10.1109/MM.2013.73). Nathaniel Pinckney, Ronald G. Dreslinski, Korey Sewell, David Fick, Trevor Mudge, Dennis Sylvester, David Blaauw, IEEE Micro, vol. 33, no. 5, pp. 30-37, Sept.-Oct., 2013
 
-## 2012<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2012"></span>
+## 2012<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2012"></span>
 
 *   _Hardware Prefetchers for Emerging Parallel Applications_, Biswabandan Panda, Shankar Balachandran. In the proceedings of the IEEE/ACM Parallel Architectures and Compilation Techniques,PACT, Minneapolis, October 2012.
 *   [**Lazy Cache Invalidation for Self-Modifying Codes**](https://doi.org/10.1145/2380403.2380433). A. Gutierrez, J. Pusdesris, R.G. Dreslinski, and T. Mudge. In the proceedings of the International Conference on Compilers, Architecture and Synthesis for Embedded Systems (CASES), Tampere, Finland, October 2012.
@@ -196,12 +202,12 @@ gem5, or use gem5.
 *   [**Reducing memory reference energy with opportunistic virtual caching**](http://dx.doi.org/10.1109/ISCA.2012.6237026). Arkaprava Basu, Mark D. Hill, Michael M. Swift. In the proceedings of the 39th International Symposium on Computer Architecture (ISCA 2012).
 *   [**Cache Revive: Architecting Volatile STT-RAM Caches for Enhanced Performance in CMPs**](http://www.cse.psu.edu/~axj936/docs/Revive-DAC-2012.pdf). Adwait Jog, Asit Mishra, Cong Xu, Yuan Xie, V. Narayanan, Ravi Iyer, Chita Das. In the proceedings oF the IEEE/ACM Design Automation Conference (DAC), San Francisco, CA, June 2012.
 
-## 2011<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2011"></span>
+## 2011<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2011"></span>
 
 *   [**Full-System Analysis and Characterization of Interactive Smartphone Applications**](https://doi.org/10.1109/IISWC.2011.6114205). A. Gutierrez, R.G. Dreslinski, T.F. Wenisch, T. Mudge, A. Saidi, C. Emmons, and N. Paver. In the proceeding of the IEEE International Symposium on Workload Characterization (IISWC), pages 81-90, Austin, TX, November 2011.
 *   _Universal Rules Guided Design Parameter Selection for Soft Error Resilient Processors,_ L. Duan, Y. Zhang, B. Li, and L. Peng. Proceedings of the International Symposium on Performance Analysis of Systems and Software(ISPASS), Austin, TX, April 2011.
 
-## 2010<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2010"></span>
+## 2010<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2010"></span>
 
 *   _Using Hardware Vulnerability Factors to Enhance AVF Analysis,_ V. Sridharan, D. R. Kaeli. Proceedings of the International Symposium on Computer Architecture (ISCA-37), Saint-Malo, France, June 2010.
 *   _Leveraging Unused Cache Block Words to Reduce Power in CMP Interconnect,_ H. Kim, P. Gratz. IEEE Computer Architecture Letters, vol. 99, (RapidPosts), 2010.
@@ -209,7 +215,7 @@ gem5, or use gem5.
 *   _Simulation of Standard Benchmarks in Hardware Implementations of L2 Cache Models in Verilog HDL,_ Rosario M. Reas, Anastacia B. Alvarez, Joy Alinda P. Reyes, Computer Modeling and Simulation, International Conference on, pp. 153-158, 2010 12th International Conference on Computer Modelling and Simulation, 2010
 *   _A Simulation of Cache Sub-banking and Block Buffering as Power Reduction Techniques for Multiprocessor Cache Design,_ Jestoni V. Zarsuela, Anastacia Alvarez, Joy Alinda Reyes, Computer Modeling and Simulation, International Conference on, pp. 515-520, 2010 12th International Conference on Computer Modelling and Simulation, 2010
 
-## 2009<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2009"></span>
+## 2009<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2009"></span>
 
 *   _Efﬁcient Implementation of Decoupling Capacitors in 3D Processor-DRAM Integrated Computing Systems._ Q. Wu, J. Lu, K. Rose, and T. Zhang. Great Lakes Symposium on VLSI. 2009.
 *   _Evaluating the Impact of Job Scheduling and Power Management on Processor Lifetime for Chip Multiprocessors._ A. K. Coskun, R. Strong, D. M. Tullsen, and T. S. Rosing. Proceedings of the eleventh international joint conference on Measurement and modeling of computer systems. 2009.
@@ -241,7 +247,7 @@ gem5, or use gem5.
 *   _Express Cube Topologies for On-Chip Interconnects._ B. Grot, J. Hestness, S. W. Keckler, O. Mutlu. Proceedings of the 15th International Symposium on High-Performance Computer Architecture (HPCA-15), February 2009.
 *   _Enhancing LTP-Driven Cache Management Using Reuse Distance Information._ W. Lieu, D. Yeung. Journal of Instruction-Level Parallelism 11 (2009).
 
-## 2008<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2008"></span>
+## 2008<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2008"></span>
 
 *   _Analyzing the Impact of Data Prefetching on Chip MultiProcessors._ N. Fukumoto, T. Mihara, K. Inoue, and K. Murakami. Asia-Pacific Computer Systems Architecture Conference. 2008.
 *   _Historical Study of the Development of Branch Predictors._ Y. Peress. Masters Thesis at Florida State University. 2008.
@@ -297,7 +303,7 @@ gem5, or use gem5.
 
 *   _An approach for adaptive DRAM temperature and power management_. Song Liu, S. O. Memik, Y. Zhang, and G. Memik. Proceedings of the 22nd annual international conference on Supercomputing. 2008.
 
-## 2007<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2007"></span>
+## 2007<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2007"></span>
 
 *   _Modeling and Characterizing Power Variability in Multicore Architectures._ K. Meng, F. Huebbers, R, Joseph, and Y. Ismail. ISPASS-2007.
 *   _A High Performance Adaptive Miss Handling Architecture for Chip Multiprocessors._ M. Jahre, and L. Natvig. HiPEAC Journal 2007.
@@ -350,7 +356,7 @@ gem5, or use gem5.
 
 *   _Extending Multicore Architectures to Exploit Hybrid Parallelism in Single-thread Applications_. H. Zhong, S. A. Lieberman, S. A. Mahlke. Proc. 13th Intl. Symposium on High Performance Computer Architecture (HPCA). February 2007.
 
-## 2006<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2006"></span>
+## 2006<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2006"></span>
 
 *   _Evaluation of the Data Vortex Photonic All-Optical Path Interconnection Network for Next-Generation Supercomputers_. W. C. Hawkins. Dissertation at Georgia Tech. December 2006.
 
@@ -386,7 +392,7 @@ gem5, or use gem5.
 
 *   _A Simple Integrated Network Interface for High-Bandwidth Servers_. N. L. Binkert, A. G. Saidi, S. K. Reinhardt. University of Michigan Technical Report CSE-TR-514-06, January 2006. [pdf](http://www.eecs.umich.edu/techreports/cse/2006/CSE-TR-514-06.pdf)
 
-## 2005<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2005"></span>
+## 2005<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2005"></span>
 
 *   _Software Defined Radio - A High Performance Embedded Challenge_. H. lee, Y. Lin, Y. Harel, M. Woh, S. Mahlke, T. Mudge, K. Flautner. Proc. 2005 Int’l Conf. on High Performance Embedded Architectures and Compilers (HiPEAC). November 2005. [pdf](http://www.eecs.umich.edu/~sdrg/lee-hipeac05.pdf)
 
@@ -407,7 +413,7 @@ gem5, or use gem5.
 *   _Analyzing NIC Overheads in Network-Intensive Workloads_. N. L. Binkert, L. R. Hsu, A. G. Saidi, R. G. Dreslinski, A. L. Schultz, and S. K. Reinhardt. Eighth Workshop on Computer Architecture Evaluation using Commercial Workloads (CAECW), February 2005. [pdf](http://tesla.hpl.hp.com/caecw05/binkert-caecw8.pdf)
     *   An extended version appears as University of Michigan Technical Report CSE-TR-505-04, December 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-505-04.pdf)
 
-## 2004<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2004"></span>
+## 2004<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2004"></span>
 
 *   _Emulation of realisitic network traffic patterns on an eight-node data vortex interconnection network subsytem_. B. Small, A. Shacham, K. Bergman, K. Athikulwongse, C. Hawkins, and D.S. Will. Journal of Optical Networking Vol. 3, No.11, pp 802-809, November 2004. [pdf](http://lightwave.ee.columbia.edu/files/Small2004.pdf)
 
@@ -422,7 +428,7 @@ gem5, or use gem5.
 *   _A Compressed Memory Hierarchy using an Indirect Index Cache_. E. G. Hallnor and S. K. Reinhardt. Proc. 3rd Workshop on Memory Performance Issues (WMPI), June 2004. [pdf](http://www.eecs.umich.edu/~stever/pubs/wmpi04.pdf)
     *   An extended version appears as University of Michigan Technical Report CSE-TR-488-04, March 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-488-04.pdf)
 
-## 2003<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2003"></span>
+## 2003<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2003"></span>
 
 *   _The Impact of Resource Partitioning on SMT Processors_. S. E. Raasch and S. K. Reinhardt. Proc. 12th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), pp. 15-25, Sept.
     1.  [pdf](http://www.eecs.umich.edu/~stever/pubs/pact03.pdf)
@@ -432,6 +438,6 @@ gem5, or use gem5.
 
 *   _Design, Implementation and Use of the MIRV Experimental Compiler for Computer Architecture Research_. D. A. Greene. Dissertation at the Universtiy of Michigan, 2003. [[http://www.eecs.umich.edu/~tnm/theses/daveg.pdg](http://www.eecs.umich.edu/~tnm/theses/daveg.pdg)“>pdf ]
 
-## 2002<span class="anchor" data-clipboard-text="http://new.gem5.org/publications/#2002"></span>
+## 2002<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2002"></span>
 
 *   _A Scalable Instruction Queue Design Using Dependence Chains_. S. E. Raasch, N. L. Binkert, and S. K. Reinhardt. Proc. 29th Annual Int’l Symp. on Computer Architecture (ISCA), pp. 318-329, May 2002. [pdf](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.pdf) [ps](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.ps) [ps.gz](http://www.eecs.umich1111/~stever/pubs/isca02_segiq.ps.gz)

@@ -32,7 +32,7 @@ The roadmap for gem5 can be found on [Roadmap](https://docs.google.com/document/
 
 # Roles And Responsibilities
 ---
-## Users<span class="anchor" data-clipboard-text="http://new.gem5.org/contributing/governance/#users"></span>
+## Users<span class="anchor" data-clipboard-text="http://www.gem5.org/contributing/governance/#users"></span>
 
 Users are community members who have a need for the project. They are the most important members of the community and without them the project would have no purpose. Anyone can be a user; there are no special requirements. There are currently three main categories of gem5 users: academic researchers, industry researchers, and students. Individuals may transition between categories, e.g., when a graduate student takes an industry internship, then returns to school; or when a student graduates and takes a job in industry. These three users are described below.
 

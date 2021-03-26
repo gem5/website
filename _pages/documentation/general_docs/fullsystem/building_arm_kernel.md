@@ -10,7 +10,7 @@ permalink: /documentation/general_docs/fullsystem/building_arm_kernel
 
 This page contains instructions for building up-to-date kernels for gem5 running on ARM. 
 
-If you don't want to build the Kernel on your own you could still [download a
+If you don't want to build the Kernel (or a disk image) on your own you could still [download a
 prebuilt version](./guest_binaries).
 
 ## Prerequisites
@@ -78,8 +78,8 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- -j `nproc`
 Testing the just built kernel:
 
 ```
-./build/ARM/gem5.opt configs/example/fs.py --kernel=/tmp/linux-arm-gem5/vmlinux --machine-type=VExpress_GEM5_V1 \
-    --dtb-file=$PWD/system/arm/dt/armv8_gem5_v1_1cpu.dtb --disk-image=linaro-minimal-aarch64.img
+./build/ARM/gem5.opt configs/example/arm/starter_fs.py --kernel=/tmp/linux-arm-gem5/vmlinux \
+    --disk-image=ubuntu-18.04-arm64-docker.img
 ```
 
 # Legacy kernels (pre v4.x)

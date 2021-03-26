@@ -25,15 +25,9 @@ wishing to compile and run gem5 in Mac OS as we can in Linux-based systems**.
 [In later versions of gem5, we hope to more effectively support Mac OS through
 improved testing](https://gem5.atlassian.net/browse/GEM5-538).
 
-As of gem5 20, **building and running gem5 in both Python 2 and Python 3 are
-supported**. When testing gem5 we primarily test using Ubuntu 18.04 with
-Python 2, and Ubuntu 20.04 with Python 3. We would therefore advice, if
-possible, for users to **utilize Python 2 in Ubuntu 18.04 and Python 3 in
-Ubuntu 20.04**. Though we shall eventually
-[drop support for Python 2](https://gem5.atlassian.net/browse/GEM5-347),
-(due to [its retirement](
-http://pyfound.blogspot.com/2019/12/python-2-sunset.html)), we do not intend to
-do so until we receive ample evidence our community has migrated to Python 3.
+As of gem5 21.0, **we support building and running gem5 with Python 3.6+
+only.**. gem5 20.0 was our last version of gem5 to provide support for Python
+2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
 pre-prepared [Docker](https://www.docker.com/) images which may be used to
@@ -49,9 +43,8 @@ support up to gcc Version 10.
 Clang 9 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
 must be used.
-* **Python** : gem5 relies on Python development libraries. As of gem5 version
-20, gem5 can be compiled and run in environments using either Python 2.7 or
-Python 3
+* **Python 3.6+** : gem5 relies on Python development libraries. gem5 can be
+compiled and run in environments using Python 3.6+.
 * **protobuf 2.1+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
@@ -66,10 +59,8 @@ install all these dependencies using APT:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python-dev python-six python libboost-all-dev pkg-config
+    python3-dev python3-six python libboost-all-dev pkg-config
 ```
-
-This will create an environment which uses Python 2.
 
 ### Setup on Ubuntu 20.04
 
@@ -82,25 +73,23 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     python3-dev python3-six python-is-python3 libboost-all-dev pkg-config
 ```
 
-This will create an environment which uses Python 3.
-
 ### Docker
 
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
-Ubuntu 18.04 with all optional dependencies (Python 2):
+Ubuntu 18.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-18.04_all-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies) ([source Dockerfile](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
-Ubuntu 18.04 with the minimum set of dependencies (Python 2):
+Ubuntu 18.04 with the minimum set of dependencies:
 [gcr.io/gem5-test/ubuntu-18.04_min-dependencies](
 https://gcr.io/gem5-test/ubuntu-18.04_min-dependencies) ([source Dockerfile](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_min-dependencies/Dockerfile)).
 
 
-Ubuntu 20.04 with all optional dependencies (Python 3):
+Ubuntu 20.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-20.04_all-dependencies](
 https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies) ([source Dockerfile](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).

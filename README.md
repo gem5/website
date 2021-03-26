@@ -9,8 +9,8 @@ guidelines.
 
 ## Development
 
-You may clone repository the repository, and run a local instance of the
-website using:
+You may clone the repository, and run a local instance of the website
+using:
 
 ```
 git clone https://gem5.googlesource.com/public/gem5-website
@@ -94,7 +94,7 @@ Reviewers will review the change. For non-trivial edits, it is not unusual
 for a change to receive feedback from reviewers that they want incorporated
 before flagging as acceptable for merging into the gem5 website repository.
 **All communications between reviewers and contributors should be done in a
-polite manner. Rude and/or dismissive remakes will not be tolerated**.
+polite manner. Rude and/or dismissive remarks will not be tolerated**.
 
 Once your change has been accepted by reviewers you will be able to click
 `Submit` within your changes Gerrit page. This focally merges the change
@@ -122,7 +122,7 @@ Different layout templates used on the site.
 
 #### _pages
 
-All pages (other than the index.html home page) should be placed in this folder. There is a subfolder /documentation where pages meant for documentation part of the site can be kept. This is purely for organization and ease of finding things. Reorganizing the _pages folder should not affect the site.
+All pages (other than the index.html home page) should be placed in this folder. There is a subfolder /documentation where pages meant for the documentation part of the site can be kept. This is purely for organization and ease of finding things. Reorganizing the _pages folder should not affect the site.
 
 #### _posts
 
@@ -173,7 +173,7 @@ Navigation element with submenu:
 </li>
 ```
 
-Replace `about` in `{% if page.parent == "about" %}` to a word that will represent the parent of all pages in the submenu. Make sure the frontmatter in those pages include parent: [your_parent_identifier].
+Replace `about` in `{% if page.parent == "about" %}` with a word that will represent the parent of all pages in the submenu. Make sure the frontmatter in those pages includes parent: [your_parent_identifier].
 Replace the permalink and title in all the `<a></a>` submenu items.
 
 
