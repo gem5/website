@@ -36,7 +36,7 @@ details.
 ## Linux 4.x
 Newer gem5 kernels for ARM (v4.x and later) are based on the vanilla Linux kernel and typically have a small number of patches to make them work better with gem5. The patches are optional and you should be able to use a vanilla kernel as well. However, this requires you to configure the kernel yourself. Newer kernels all use the VExpress\_GEM5\_V1 gem5 platform for both AArch32 and AArch64.
 
-## Kernel Checkout
+# Kernel Checkout
 To checkout the kernel, execute the following command:
 
 ```
@@ -48,22 +48,7 @@ The repository contains a tag per gem5 kernel releases and working branches for 
 git checkout -b gem5/v4.14
 ```
 
-## AArch32
-To compile the kernel, execute the following commands in the repository:
-
-```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- gem5_defconfig
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j `nproc`
-```
-
-Testing the just built kernel:
-
-```
-./build/ARM/gem5.opt configs/example/arm/starter_fs.py --kernel=/tmp/linux-arm-gem5/vmlinux \
-    --disk-image=aarch32-ubuntu-natty-headless.img.bz2
-```
-
-## AArch64
+# Kernel build
 To compile the kernel, execute the following commands in the repository:
 
 ```
@@ -76,67 +61,6 @@ Testing the just built kernel:
 ```
 ./build/ARM/gem5.opt configs/example/arm/starter_fs.py --kernel=/tmp/linux-arm-gem5/vmlinux \
     --disk-image=ubuntu-18.04-arm64-docker.img
-```
-
-# Legacy kernels (pre v4.x)
-Older gem5 kernels for ARM (pre v4.x) are based on Linaro's Linux kernel for ARM. These kernels use either the VExpress\_EMM (AArch32) or VExpress\_EMM64 (AArch64)  gem5 platform. Unlike the newer kernels, there is a separate AArch32 and AArch64 kernel repository and the device tree files are shipped with the kernel.
-
-## 32 bit kernel (AArch32)
-These are instructions to generate a 32-bit ARM Linux binary.
-
-To checkout the aarch32 kernel, execute the following command:
-
-```
-git clone https://gem5.googlesource.com/arm/linux-arm-legacy
-```
-
-The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm-legacy) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
-
-```
-git checkout -b TAGNAME
-```
-
-To compile the kernel, execute the following commands in the repository:
-
-```
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- vexpress_gem5_server_defconfig
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j `nproc`
-```
-
-Testing the just built kernel:
-
-```
-./build/ARM/gem5.opt configs/example/fs.py  --kernel=/tmp/linux-arm-gem5/vmlinux \
-   --machine-type=VExpress_EMM --dtb-file=/tmp/linux-arm-gem5/arch/arm/boot/dts/vexpress-v2p-ca15-tc1-gem5.dtb 
-```
-
-## 64 bit kernel (AArch64)
-These are instructions to generate a 64-bit ARM Linux binary. 
-
-To checkout the aarch64 kernel, execute the following command:
-
-```
-git clone https://gem5.googlesource.com/arm/linux-arm64-legacy
-```
-
-The repository contains a tag per gem5 kernel release. Check the [project page](https://gem5-review.googlesource.com/#/admin/projects/arm/linux-arm64-legacy) for a list of branches and release tags. To checkout a tag, execute the following in the repository:
-
-```
-git checkout -b TAGNAME
-```
-
-To compile the kernel, execute the following commands in the repository:
-
-```
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- gem5_defconfig
-make ARCH=arm64 CROSS_COMPILE=aarch64-none-elf- -j4
-```
-
-Testing the just built kernel:
-
-```
-./build/ARM/gem5.opt configs/example/fs.py --kernel=/tmp/linux-arm64-gem5/vmlinux --machine-type=VExpress_EMM64 \
-    --dtb-file=/tmp/linux-arm64-gem5/arch/arm64/boot/dts/aarch64_gem5_server.dtb --disk-image=linaro-minimal-aarch64.img
 ```
 
 # Bootloaders
