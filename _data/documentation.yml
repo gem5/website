@@ -281,6 +281,42 @@ docs:
          id: doxygen
          url: http://doxygen.gem5.org/release/current/index.html
 
+  - title: gem5art
+    items:
+    - title: Introduction
+      id: introduction
+      url: /documentation/gem5art/introduction
+
+    - title: Details
+      id: main
+      subitems:
+        - page: Summary
+          url: /documentation/gem5art/main/summary
+        - page: Artifacts
+          url: /documentation/gem5art/main/artifacts
+        - page: Runs
+          url: /documentation/gem5art/main/run
+        - page: Tasks
+          url: /documentation/gem5art/main/tasks
+        - page: Disk Images
+          url: /documentation/gem5art/main/disks
+        - page: FAQ
+          url: /documentation/gem5art/main/faq
+
+    - title: Tutorials
+      id: tutorial
+      subitems:
+        - page: Boot Tutorial
+          url: /documentation/gem5art/tutorials/boot-tutorial
+        - page: NPB Tutorial
+          url: /documentation/gem5art/tutorials/npb-tutorial
+        - page: PARSEC Tutorial
+          url: /documentation/gem5art/tutorials/parsec-tutorial
+        - page: SPEC Tutorial
+          url: /documentation/gem5art/tutorials/spec-tutorial
+        - page: Microbench Tutorial
+          url: /documentation/gem5art/tutorials/microbench-tutorial
+
   - title: Reporting Problems
     items:
         - title: Reporting Problems
