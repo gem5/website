@@ -34,11 +34,7 @@ bootloader. See the [bootloaders](#bootloaders) section in this documents for
 details.
 
 ## Linux 4.x
-Newer gem5 kernels for ARM (v4.x and later) are based on the vanilla Linux kernel and typically have a small number of patches to make them work better with gem5. The patches are optional and you should be able to use a vanilla kernel as well. However, this requires you to configure the kernel yourself. Newer kernels all use the VExpress\_GEM5\_V1 gem5 platform for both AArch32 and AArch64. The required DTB files to describe the hardware to the OS ship with gem5. To build them, execute this command:
-
-```
-make -C system/arm/dt
-```
+Newer gem5 kernels for ARM (v4.x and later) are based on the vanilla Linux kernel and typically have a small number of patches to make them work better with gem5. The patches are optional and you should be able to use a vanilla kernel as well. However, this requires you to configure the kernel yourself. Newer kernels all use the VExpress\_GEM5\_V1 gem5 platform for both AArch32 and AArch64.
 
 ## Kernel Checkout
 To checkout the kernel, execute the following command:
@@ -150,6 +146,15 @@ There are two different bootloaders for gem5. One of 32-bit kernels and one for 
 make -C system/arm/bootloader/arm
 make -C system/arm/bootloader/arm64
 ```
+
+# Device Tree Blobs
+The required DTB files to describe the hardware to the OS ship with gem5. To build them, execute this command:
+
+```
+make -C system/arm/dt
+```
+
+We recommend to use these device tree files only if you are planning to amend them. If not, we recommend you to rely on DTB autogeneration: by running a FS script without the --dtb option, gem5 will automatically generate the DTB on the fly depending on the instantiated platform.
 
 Once you have compiled the binaries, put them in the binaries directory in your
 `M5_PATH`.
