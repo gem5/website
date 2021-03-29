@@ -24,9 +24,12 @@ The list of target ISAs is shown below.
 * arm (arm-linux-gnueabihf-gcc)
 * thumb (arm-linux-gnueabihf-gcc)
 * sparc (sparc64-linux-gnu-gcc)
-* aarch64 (aarch64-linux-gnu-gcc)
+* arm64 (aarch64-linux-gnu-gcc)
+* riscv (riscv64-linux-gnu-gcc)
 
 Note if you are using a x86 system for other ISAs you need to have the cross-compiler installed. The name of the cross-compiler is shown inside the parentheses in the list above.
+
+See util/m5/README.md for more details.
 
 ## The m5 Utility (FS mode)
 
