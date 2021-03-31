@@ -33,7 +33,10 @@ The tarball below contains a set of binaries: the Linux kernel and a set of boot
 
   Partition table: yes
 
-  gem5 init: `/init.gem5`
+  gem5 init:
+  * default (using m5 ops): `/init.gem5`
+  * kvm (using m5 --addr ops): `/init.addr.gem5`
+  * fast models (using m5 --semi ops): `/init.semi.gem5`
 
 * <http://dist.gem5.org/dist/current/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
 
