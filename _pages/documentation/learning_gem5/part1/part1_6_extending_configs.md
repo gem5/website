@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Extending gem5 to run ARM binaries
+title: Extending gem5 for ARM
 doc: Learning gem5
 parent: part1
 permalink: /documentation/learning_gem5/part1/extending_configs
@@ -22,8 +22,8 @@ from the root of the gem5 folder:
 ```
 mkdir -p cpu_tests/benchmarks/bin/arm
 cd cpu_tests/benchmarks/bin/arm
-wget gem5.org/dist/current/gem5/cpu_tests/benchmarks/bin/arm/Bubblesort
-wget gem5.org/dist/current/gem5/cpu_tests/benchmarks/bin/arm/FloatMM
+wget dist.gem5.org/dist/current/gem5/cpu_tests/benchmarks/bin/arm/Bubblesort
+wget dist.gem5.org/dist/current/gem5/cpu_tests/benchmarks/bin/arm/FloatMM
 ```
 
 We'll use these to further test our ARM system.
