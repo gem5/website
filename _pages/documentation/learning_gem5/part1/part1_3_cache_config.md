@@ -221,8 +221,8 @@ You need to *remove* the following two lines which connected the cache
 ports directly to the memory bus.
 
 ```
-system.cpu.icache_port = system.membus.slave
-system.cpu.dcache_port = system.membus.slave
+system.cpu.icache_port = system.membus.cpu_side_ports
+system.cpu.dcache_port = system.membus.cpu_side_ports
 ```
 
 We can't directly connect the L1 caches to the L2 cache since the L2
