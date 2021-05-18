@@ -29,7 +29,7 @@ simple-config-chapter, if you enable the `DRAM` debug flag, you get the
 following output. Note that this generates *a lot* of output to the
 console (about 7 MB).
 
-```sh
+```
     build/X86/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
@@ -90,7 +90,7 @@ executing. For this, the `Exec` debug flag may be useful. This debug
 flags shows details of how each instruction is executed by the simulated
 CPU.
 
-```sh
+```
     build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
@@ -151,40 +151,42 @@ In fact, the `Exec` flag is actually an agglomeration of multiple debug
 flags. You can see this, and all of the available debug flags, by
 running gem5 with the `--debug-help` parameter.
 
-```sh
+```
     build/X86/gem5.opt --debug-help
 ```
 
     Base Flags:
-    Activity: None
-    AddrRanges: None
-    Annotate: State machine annotation debugging
-    AnnotateQ: State machine annotation queue debugging
-    AnnotateVerbose: Dump all state machine annotation details
-    BaseXBar: None
-    Branch: None
-    Bridge: None
-    CCRegs: None
-    CMOS: Accesses to CMOS devices
-    Cache: None
-    CachePort: None
-    CacheRepl: None
-    CacheTags: None
-    CacheVerbose: None
-    Checker: None
-    Checkpoint: None
-    ClockDomain: None
+        Activity: None
+        AddrRanges: None
+        Annotate: State machine annotation debugging
+        AnnotateQ: State machine annotation queue debugging
+        AnnotateVerbose: Dump all state machine annotation details
+        BaseXBar: None
+        Branch: None
+        Bridge: None
+        CCRegs: None
+        CMOS: Accesses to CMOS devices
+        Cache: None
+        CacheComp: None
+        CachePort: None
+        CacheRepl: None
+        CacheTags: None
+        CacheVerbose: None
+        Checker: None
+        Checkpoint: None
+        ClockDomain: None
     ...
     Compound Flags:
-    AnnotateAll: All Annotation flags
-        Annotate, AnnotateQ, AnnotateVerbose
-    CacheAll: None
-        Cache, CachePort, CacheRepl, CacheVerbose, HWPrefetch
-    DiskImageAll: None
-        DiskImageRead, DiskImageWrite
+        All: Controls all debug flags. It should not be used within C++ code.
+            All Base Flags
+        AnnotateAll: All Annotation flags
+            Annotate, AnnotateQ, AnnotateVerbose
+        CacheAll: None
+            Cache, CacheComp, CachePort, CacheRepl, CacheVerbose, HWPrefetch
+        DiskImageAll: None
+            DiskImageRead, DiskImageWrite
     ...
     XBar: None
-        BaseXBar, CoherentXBar, NoncoherentXBar, SnoopFilter    XBar: None
         BaseXBar, CoherentXBar, NoncoherentXBar, SnoopFilter
 
 Adding a new debug flag
@@ -200,10 +202,10 @@ SConscript file. Add the following to the SConscript file in the
 directory with your hello object code (src/learning\_gem5/).
 
 ```python
-DebugFlag('Hello')
+DebugFlag('HelloExample')
 ```
 
-This declares a debug flag of "Hello". Now, we can use this in debug
+This declares a debug flag of "HelloExample". Now, we can use this in debug
 statements in our SimObject.
 
 By declaring the flag in the SConscript file, a debug header is
@@ -216,14 +218,14 @@ where we plan to use the debug flag.
 In the `hello_object.cc` file, we need to include the header file.
 
 ```cpp
-#include "debug/Hello.hh"
+#include "debug/HelloExample.hh"
 ```
 
 Now that we have included the necessary header file, let's replace the
 `std::cout` call with a debug statement like so.
 
 ```cpp
-DPRINTF(Hello, "Created the hello object\n");
+DPRINTF(HelloExample, "Created the hello object\n");
 ```
 
 `DPRINTF` is a C++ macro. The first parameter is a *debug flag* that has
@@ -235,7 +237,7 @@ statement.
 Now, if you recompile gem5 and run it with the "Hello" debug flag, you
 get the following result.
 
-```sh
+```
     build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
 ```
 
@@ -254,9 +256,9 @@ get the following result.
     Exiting @ tick 18446744073709551615 because simulate() limit reached
 
 You can find the updated SConcript file
-[here](/_pages/static/scripts/part2/debugging/SConscript) and the updated
-hello object code
-[here](/_pages/static/scripts/part2/debugging/hello_object.cc).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part2/SConscript)
+and the updated hello object code
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part2/hello_object.cc).
 
 Debug output
 ------------

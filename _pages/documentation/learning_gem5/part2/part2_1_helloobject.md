@@ -11,6 +11,9 @@ author: Jason Lowe-Power
 Creating a *very* simple SimObject
 ==================================
 
+**Note**: gem5 has SimObject named `SimpleObject`. Implementing another
+`SimpleObject` SimObject will result in confusing compiler issues.
+
 Almost all objects in gem5 inherit from the base SimObject type.
 SimObjects export the main interfaces to all objects in gem5. SimObjects
 are wrapped `C++` objects that are accessible from the `Python`
@@ -39,7 +42,7 @@ events](../events), and [parameters](../parameters).
 >
 > The first step when adding a new feature or modifying something in
 > gem5, is to create a new branch to store your changes. Details on git
-> branches can be found in the Git book\_.
+> branches can be found in the Git book.
 >
 > ```
 > git checkout -b hello-simobject
@@ -55,7 +58,11 @@ SimObject, we are just going to start out with no parameters. Thus, we
 simply need to declare a new class for our SimObject and set it's name
 and the C++ header that will define the C++ class for the SimObject.
 
-We can create a file, HelloObject.py, in `src/learning_gem5/part2`. If you have cloned the gem5 repository you'll have the files mentioned in this tutorial completed under `src/learning_gem5/part2` and `configs/learning_gem5/part2`. You can delete these or move them elsewhere to follow this tutorial.
+We can create a file, `HelloObject.py`, in `src/learning_gem5/part2`.
+If you have cloned the gem5 repository you'll have the files mentioned
+in this tutorial completed under `src/learning_gem5/part2` and
+`configs/learning_gem5/part2`. You can delete these or move them
+elsewhere to follow this tutorial.
 
 ```python
 from m5.params import *
@@ -82,7 +89,8 @@ convention. You can specify any header file here.
 Step 2: Implement your SimObject in C++
 ---------------------------------------
 
-Next, we need to create `hello_object.hh` and `hello_object.cc` in `src/learning_gem5/part2/` directory which will implement the `HelloObject`.
+Next, we need to create `hello_object.hh` and `hello_object.cc` in
+`src/learning_gem5/part2/` directory which will implement the `HelloObject`.
 
 We'll start with the header file for our `C++` object. By convention,
 gem5 wraps all header files in `#ifndef/#endif` with the name of the
@@ -116,7 +124,7 @@ The code required for our simple header file is listed below.
 class HelloObject : public SimObject
 {
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 };
 
 #endif // __LEARNING_GEM5_HELLO_OBJECT_HH__
@@ -140,43 +148,31 @@ simply use `std::cout` because it is simple.
 
 #include <iostream>
 
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params)
 {
     std::cout << "Hello World! From a SimObject!" << std::endl;
 }
 ```
 
-There is another function that we have to implement as well for the
-SimObject to be complete. We must implement one function for the
-parameter type that is implicitly created from the SimObject `Python`
-declaration, namely, the `create` function. This function simply returns
-a new instantiation of the SimObject. Usually this function is very
-simple (as below).
+**Note**: If the constructor of your SimObject follows the following
+signature,
 
 ```cpp
-HelloObject*
-HelloObjectParams::create()
-{
-    return new HelloObject(this);
-}
+Foo(const FooParams &)
 ```
+
+then a `FooParams::create()` method will be automatically defined. The purpose
+of the `create()` method is to call the SimObject constructor and return an
+instance of the SimObject. Most SimObject will follow this pattern; however,
+if your SimObject does not follow this pattern,
+[the gem5 SimObject documetation](http://doxygen.gem5.org/release/current/classSimObject.html#details)
+provides more information about manually implementing the `create()` method.
+
 
 [//]: # You can find the complete file
 [//]: # [here](/_pages/static/scripts/part2/helloobject/hello_object.cc).
 
-If you forget to add the create function for your SimObject, you will
-get a linker error when you compile. It will look something like the
-following.
-
-    build/X86/python/m5/internal/param_HelloObject_wrap.o: In function `_wrap_HelloObjectParams_create':
-    /local.chinook/gem5/gem5-tutorial/gem5/build/X86/python/m5/internal/param_HelloObject_wrap.cc:3096: undefined reference to `HelloObjectParams::create()'
-    collect2: error: ld returned 1 exit status
-    scons: *** [build/X86/gem5.opt] Error 1
-    scons: building terminated because of errors.
-
-This `` undefined reference to `HelloObjectParams::create()' `` means
-you need to implement the create function for your SimObject.
 
 Step 3: Register the SimObject and C++ file
 -------------------------------------------
@@ -227,7 +223,11 @@ Step 5: Create the config scripts to use your new SimObject
 -----------------------------------------------------------
 
 Now that you have implemented a SimObject, and it has been compiled into
-gem5, you need to create or modify a `Python` config file `run_hello.py` in `configs/learning_gem5/part2` to instantiate your object. Since your object is very simple a system object is not required! CPUs are not needed, or caches, or anything, except a `Root` object. All gem5 instances require a `Root` object.
+gem5, you need to create or modify a `Python` config file `run_hello.py` in
+`configs/learning_gem5/part2` to instantiate your object. Since your object
+is very simple a system object is not required! CPUs are not needed, or
+caches, or anything, except a `Root` object. All gem5 instances require a
+`Root` object.
 
 Walking through creating a *very* simple configuration script, first,
 import m5 and all of the objects you have compiled.
@@ -270,10 +270,15 @@ print('Exiting @ tick {} because {}'
 [//]: # You can find the complete file
 [//]: # [here](/_pages/static/scripts/part2/helloobject/run_hello.py).
 
-Remember to rebuild gem5 after modifying files in the src/ directory. The command line to run the config file is in the output below after 'command line:'. 
-The output should look something like the following:
+Remember to rebuild gem5 after modifying files in the src/ directory. The
+command line to run the config file is in the output below after
+'command line:'. The output should look something like the following:
 
-Note: If the code for the future section "Adding parameters to SimObjects and more events", (goodbye_object) is in your src/learning_gem5/part2 directory, run_hello.py will cause an error. If you delete those files or move them outside of the gem5 directory `run_hello.py` should give the output below.
+Note: If the code for the future section "Adding parameters to SimObjects
+and more events", (goodbye_object) is in your `src/learning_gem5/part2`
+directory, run_hello.py will cause an error. If you delete those files or
+move them outside of the gem5 directory `run_hello.py` should give the output
+below.
 ```
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.

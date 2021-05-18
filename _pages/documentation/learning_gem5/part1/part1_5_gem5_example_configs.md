@@ -34,30 +34,40 @@ All of gem5's configuration files can be found in `configs/`. The
 directory structure is shown below:
 
     configs/boot:
-    ammp.rcS            halt.sh                micro_tlblat2.rcS              netperf-stream-udp-local.rcS
-    ...
+    bbench-gb.rcS  bbench-ics.rcS  hack_back_ckpt.rcS  halt.sh
 
     configs/common:
-    Benchmarks.py     cpu2000.py     Options.py
-    Caches.py         FSConfig.py    O3_ARM_v7a.py     SysPaths.py
-    CacheConfig.py    CpuConfig.py   MemConfig.py      Simulation.py
+    Benchmarks.py   Caches.py  cpu2000.py    FileSystemConfig.py  GPUTLBConfig.py   HMC.py       MemConfig.py   Options.py     Simulation.py
+    CacheConfig.py  cores      CpuConfig.py  FSConfig.py          GPUTLBOptions.py  __init__.py  ObjectList.py  SimpleOpts.py  SysPaths.py
+
+    configs/dist:
+    sw.py
 
     configs/dram:
-    sweep.py
+    lat_mem_rd.py  low_power_sweep.py  sweep.py
 
     configs/example:
-    fs.py       read_config.py       ruby_mem_test.py      ruby_random_test.py
-    memtest.py  ruby_direct_test.py  ruby_network_test.py  se.py
+    apu_se.py  etrace_replay.py  garnet_synth_traffic.py  hmctest.py    hsaTopology.py  memtest.py  read_config.py  ruby_direct_test.py      ruby_mem_test.py     sc_main.py
+    arm        fs.py             hmc_hello.py             hmc_tgen.cfg  memcheck.py     noc_config  riscv           ruby_gpu_random_test.py  ruby_random_test.py  se.py
+
+    configs/learning_gem5:
+    part1  part2  part3  README
+
+    configs/network:
+    __init__.py  Network.py
+
+    configs/nvm:
+    sweep_hybrid.py  sweep.py
 
     configs/ruby:
-    MESI_Three_Level.py  MI_example.py           MOESI_CMP_token.py  Network_test.py
-    MESI_Two_Level.py    MOESI_CMP_directory.py  MOESI_hammer.py     Ruby.py
+    AMD_Base_Constructor.py  CHI.py        Garnet_standalone.py  __init__.py              MESI_Three_Level.py  MI_example.py      MOESI_CMP_directory.py  MOESI_hammer.py
+    CHI_config.py            CntrlBase.py  GPU_VIPER.py          MESI_Three_Level_HTM.py  MESI_Two_Level.py    MOESI_AMD_Base.py  MOESI_CMP_token.py      Ruby.py
 
     configs/splash2:
     cluster.py  run.py
 
     configs/topologies:
-    BaseTopology.py  Cluster.py  Crossbar.py  MeshDirCorners.py  Mesh.py  Pt2Pt.py  Torus.py
+    BaseTopology.py  Cluster.py  CrossbarGarnet.py  Crossbar.py  CustomMesh.py  __init__.py  MeshDirCorners_XY.py  Mesh_westfirst.py  Mesh_XY.py  Pt2Pt.py
 
 Each directory is briefly described below:
 
@@ -107,6 +117,17 @@ Each directory is briefly described below:
     next section. There are also some other utility configuration
     scripts in this directory.
 
+**learning_gem5/**
+:   This directory contains all gem5 configuration scripts found in the
+    learning\_gem5 book.
+
+**network/**
+:   This directory contains the configurations scripts for a HeteroGarnet
+    network.
+
+**nvm/**
+:   This directory contains example scripts using the NVM interface.
+
 **ruby/**
 :   This directory contains the configurations scripts for Ruby and its
     included cache coherence protocols. More details can be found in the
@@ -145,32 +166,34 @@ And we get the following as output:
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Jan 14 2015 16:11:34
-    gem5 started Feb  2 2015 15:22:24
-    gem5 executing on mustardseed.cs.wisc.edu
+    gem5 version 21.0.0.0
+    gem5 compiled May 17 2021 18:05:59
+    gem5 started May 18 2021 00:33:42
+    gem5 executing on amarillo, pid 85168
     command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello
+
     Global frequency set at 1000000000000 ticks per second
+    warn: No dot file generated. Please install pydot to generate the dot file and pdf.
     warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+    0: system.remote_gdb: listening for remote gdb on port 7005
     **** REAL SIMULATION ****
     info: Entering event queue @ 0.  Starting simulation...
     Hello world!
-    Exiting @ tick 5942000 because target called exit()
+    Exiting @ tick 5943000 because exiting with last active thread context
 
 However, this isn't a very interesting simulation at all! By default,
 gem5 uses the atomic CPU and uses atomic memory accesses, so there's no
 real timing data reported! To confirm this, you can look at
-m5out/config.ini. The CPU is shown on line 46:
+m5out/config.ini. The CPU is shown on line 51:
 
     [system.cpu]
     type=AtomicSimpleCPU
-    children=apic_clk_domain dtb interrupts isa itb tracer workload
+    children=interrupts isa mmu power_state tracer workload
     branchPred=Null
     checker=Null
     clk_domain=system.cpu_clk_domain
     cpu_id=0
     do_checkpoint_insts=true
-    do_quiesce=true
     do_statistics_insts=true
 
 To actually run gem5 in timing mode, let's specify a CPU type. While
@@ -183,17 +206,20 @@ build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/li
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Jan 14 2015 16:11:34
-    gem5 started Feb  2 2015 15:26:57
-    gem5 executing on mustardseed.cs.wisc.edu
+    gem5 version 21.0.0.0
+    gem5 compiled May 17 2021 18:05:59
+    gem5 started May 18 2021 00:36:10
+    gem5 executing on amarillo, pid 85269
     command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB
+
     Global frequency set at 1000000000000 ticks per second
+    warn: No dot file generated. Please install pydot to generate the dot file and pdf.
     warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+    0: system.remote_gdb: listening for remote gdb on port 7005
     **** REAL SIMULATION ****
     info: Entering event queue @ 0.  Starting simulation...
     Hello world!
-    Exiting @ tick 344986500 because target called exit()
+    Exiting @ tick 454646000 because exiting with last active thread context
 
 Now, let's check the config.ini file and make sure that these options
 propagated correctly to the final system. If you search
@@ -209,47 +235,59 @@ build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/li
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Jan 14 2015 16:11:34
-    gem5 started Feb  2 2015 15:29:20
-    gem5 executing on mustardseed.cs.wisc.edu
+    gem5 version 21.0.0.0
+    gem5 compiled May 17 2021 18:05:59
+    gem5 started May 18 2021 00:37:03
+    gem5 executing on amarillo, pid 85560
     command line: build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches
+
     Global frequency set at 1000000000000 ticks per second
+    warn: No dot file generated. Please install pydot to generate the dot file and pdf.
     warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+    0: system.remote_gdb: listening for remote gdb on port 7005
     **** REAL SIMULATION ****
     info: Entering event queue @ 0.  Starting simulation...
     Hello world!
-    Exiting @ tick 29480500 because target called exit()
+    Exiting @ tick 31680000 because exiting with last active thread context
 
-On the last line, we see that the total time went from 344986500 ticks
-to 29480500, much faster! Looks like caches are probably enabled now.
+On the last line, we see that the total time went from 454646000 ticks
+to 31680000, much faster! Looks like caches are probably enabled now.
 But, it's always a good idea to double check the `config.ini` file.
 
     [system.cpu.dcache]
-    type=BaseCache
-    children=tags
+    type=Cache
+    children=power_state replacement_policy tags
     addr_ranges=0:18446744073709551615
     assoc=2
     clk_domain=system.cpu_clk_domain
+    clusivity=mostly_incl
+    compressor=Null
+    data_latency=2
     demand_mshr_reserve=1
     eventq_index=0
-    forward_snoops=true
-    hit_latency=2
-    is_top_level=true
+    is_read_only=false
     max_miss_count=0
+    move_contractions=true
     mshrs=4
+    power_model=
+    power_state=system.cpu.dcache.power_state
     prefetch_on_access=false
     prefetcher=Null
+    replace_expansions=true
+    replacement_policy=system.cpu.dcache.replacement_policy
     response_latency=2
     sequential_access=false
     size=65536
     system=system
+    tag_latency=2
     tags=system.cpu.dcache.tags
     tgts_per_mshr=20
-    two_queue=false
+    warmup_percentage=0
+    write_allocator=Null
     write_buffers=8
+    writeback_clean=false
     cpu_side=system.cpu.dcache_port
-    mem_side=system.membus.slave[2]
+    mem_side=system.membus.cpu_side_ports[2]
 
 Some common options `se.py` and `fs.py`
 ---------------------------------------

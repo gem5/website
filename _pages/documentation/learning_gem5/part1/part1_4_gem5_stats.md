@@ -35,7 +35,9 @@ in the configuration scripts or the defaults were used, are shown in
 this file.
 
 Below is pulled from the config.ini generated when the `simple.py`
-configuration file from simple-config-chapter is run.
+configuration file from
+[simple-config-chapter](http://www.gem5.org/documentation/learning_gem5/part1/simple_config/)
+is run.
 
     [root]
     type=Root
@@ -98,10 +100,10 @@ configuration file from simple-config-chapter is run.
     system=system
 
 Here we see that at the beginning of the description of each SimObject
-is first it's name as created in the configuration file surrounded by
+is first its name as created in the configuration file surrounded by
 square brackets (e.g., `[system.membus]`).
 
-Next, every parameter of the SimObject is shown with it's value,
+Next, every parameter of the SimObject is shown with its value,
 including parameters not explicitly set in the configuration file. For
 instance, the configuration file sets the clock domain to be 1 GHz (1000
 ticks in this case). However, it did not set the cache line size (which
@@ -128,28 +130,30 @@ First, the statistics file contains general statistics about the
 execution:
 
     ---------- Begin Simulation Statistics ----------
-    sim_seconds                                  0.000346                       # Number of seconds simulated
-    sim_ticks                                   345518000                       # Number of ticks simulated
-    final_tick                                  345518000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
-    sim_freq                                 1000000000000                       # Frequency of simulated ticks
-    host_inst_rate                                 144400                       # Simulator instruction rate (inst/s)
-    host_op_rate                                   260550                       # Simulator op (including micro ops) rate (op/s)
-    host_tick_rate                             8718625183                       # Simulator tick rate (ticks/s)
-    host_mem_usage                                 778640                       # Number of bytes of host memory used
-    host_seconds                                     0.04                       # Real time elapsed on the host
-    sim_insts                                        5712                       # Number of instructions simulated
-    sim_ops                                         10314                       # Number of ops (including micro ops) simulated
+    simSeconds                                   0.000057                       # Number of seconds simulated (Second)
+    simTicks                                     57467000                       # Number of ticks simulated (Tick)
+    finalTick                                    57467000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset) (Tick)
+    simFreq                                  1000000000000                       # The number of ticks per simulated second ((Tick/Second))
+    hostSeconds                                      0.03                       # Real time elapsed on the host (Second)
+    hostTickRate                               2295882330                       # The number of ticks simulated per host second (ticks/s) ((Tick/Second))
+    hostMemory                                     665792                       # Number of bytes of host memory used (Byte)
+    simInsts                                         6225                       # Number of instructions simulated (Count)
+    simOps                                          11204                       # Number of ops (including micro ops) simulated (Count)
+    hostInstRate                                   247382                       # Simulator instruction rate (inst/s) ((Count/Second))
+    hostOpRate                                     445086                       # Simulator op (including micro ops) rate (op/s) ((Count/Second))
 
     ---------- Begin Simulation Statistics ----------
-    sim_seconds                                  0.000508                       # Number of seconds simulated 
-    sim_ticks                                   507841000                       # Number of ticks simulated
-    final_tick                                  507841000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset) 
-    sim_freq                                 1000000000000                       # Frequency of simulated ticks
-    host_inst_rate                                 157744                       # Simulator instruction rate (inst/s) host_op_rate                                   284736                       # Simulator op (including micro ops) rate (op/s)
-    host_tick_rate                            14017997125                       # Simulator tick rate (ticks/s)
-    host_mem_usage                                 642808                       # Number of bytes of host memory used host_seconds                                     0.04                       # Real time elapsed on the host
-    sim_insts                                        5712                       # Number of instructions simulated 
-    sim_ops                                         10313                       # Number of ops (including micro ops) simulated 
+    simSeconds                                   0.000490                       # Number of seconds simulated (Second)
+    simTicks                                    490394000                       # Number of ticks simulated (Tick)
+    finalTick                                   490394000                       # Number of ticks from beginning of simulation (restored from checkpoints and never reset) (Tick)
+    simFreq                                  1000000000000                       # The number of ticks per simulated second ((Tick/Second))
+    hostSeconds                                      0.03                       # Real time elapsed on the host (Second)
+    hostTickRate                              15979964060                       # The number of ticks simulated per host second (ticks/s) ((Tick/Second))
+    hostMemory                                     657488                       # Number of bytes of host memory used (Byte)
+    simInsts                                         6225                       # Number of instructions simulated (Count)
+    simOps                                          11204                       # Number of ops (including micro ops) simulated (Count)
+    hostInstRate                                   202054                       # Simulator instruction rate (inst/s) ((Count/Second))
+    hostOpRate                                     363571                       # Simulator op (including micro ops) rate (op/s) ((Count/Second))
 
 The statistic dump begins with
 `---------- Begin Simulation Statistics ----------`. There may be
@@ -158,7 +162,8 @@ during the gem5 execution. This is common for long running applications,
 or when restoring from checkpoints.
 
 Each statistic has a name (first column), a value (second column), and a
-description (last column preceded by \#).
+description (last column preceded by \#) followed by the unit of the
+statistic.
 
 Most of the statistics are self explanatory from their descriptions. A
 couple of important statistics are `sim_seconds` which is the total
@@ -166,80 +171,92 @@ simulated time for the simulation, `sim_insts` which is the number of
 instructions committed by the CPU, and `host_inst_rate` which tells you
 the performance of gem5.
 
-Next, the SimObjects' statistics are printed. For instance, the memory
-controller statistics. This has information like the bytes read by each
-component and the average bandwidth used by those components.
+Next, the SimObjects' statistics are printed. For instance, the CPU
+statistics, which contains information on the number of syscalls,
+statistics for cache system and translation buffers, etc.
 
-    system.clk_domain.voltage_domain.voltage            1                       # Voltage in Volts
-    system.clk_domain.clock                          1000                       # Clock period in ticks
-    system.mem_ctrl.pwrStateResidencyTicks::UNDEFINED    507841000                       # Cumulative time (in ticks) in various power states
-    system.mem_ctrl.bytes_read::cpu.inst            58264                       # Number of bytes read from this memory
-    system.mem_ctrl.bytes_read::cpu.data             7167                       # Number of bytes read from this memory
-    system.mem_ctrl.bytes_read::total               65431                       # Number of bytes read from this memory
-    system.mem_ctrl.bytes_inst_read::cpu.inst        58264                       # Number of instructions bytes read from this memory
-    system.mem_ctrl.bytes_inst_read::total          58264                       # Number of instructions bytes read from this memory
-    system.mem_ctrl.bytes_written::cpu.data          7160                       # Number of bytes written to this memory
-    system.mem_ctrl.bytes_written::total             7160                       # Number of bytes written to this memory
-    system.mem_ctrl.num_reads::cpu.inst              7283                       # Number of read requests responded to by this memory
-    system.mem_ctrl.num_reads::cpu.data              1084                       # Number of read requests responded to by this memory
-    system.mem_ctrl.num_reads::total                 8367                       # Number of read requests responded to by this memory
-    system.mem_ctrl.num_writes::cpu.data              941                       # Number of write requests responded to by this memory
-    system.mem_ctrl.num_writes::total                 941                       # Number of write requests responded to by this memory
-    system.mem_ctrl.bw_read::cpu.inst           114728823                       # Total read bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_read::cpu.data            14112685                       # Total read bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_read::total              128841507                       # Total read bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_inst_read::cpu.inst      114728823                       # Instruction read bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_inst_read::total         114728823                       # Instruction read bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_write::cpu.data           14098901                       # Write bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_write::total              14098901                       # Write bandwidth from this memory (bytes/s)
-    system.mem_ctrl.bw_total::cpu.inst          114728823                       # Total bandwidth to/from this memory (bytes/s)
-    system.mem_ctrl.bw_total::cpu.data           28211586                       # Total bandwidth to/from this memory (bytes/s)
-    system.mem_ctrl.bw_total::total             142940409                       # Total bandwidth to/from this memory (bytes/s)
+    system.clk_domain.clock                          1000                       # Clock period in ticks (Tick)
+    system.clk_domain.voltage_domain.voltage            1                       # Voltage in Volts (Volt)
+    system.cpu.numCycles                            57467                       # Number of cpu cycles simulated (Cycle)
+    system.cpu.numWorkItemsStarted                      0                       # Number of work items this cpu started (Count)
+    system.cpu.numWorkItemsCompleted                    0                       # Number of work items this cpu completed (Count)
+    system.cpu.dcache.demandHits::cpu.data           1941                       # number of demand (read+write) hits (Count)
+    system.cpu.dcache.demandHits::total              1941                       # number of demand (read+write) hits (Count)
+    system.cpu.dcache.overallHits::cpu.data          1941                       # number of overall hits (Count)
+    system.cpu.dcache.overallHits::total             1941                       # number of overall hits (Count)
+    system.cpu.dcache.demandMisses::cpu.data          133                       # number of demand (read+write) misses (Count)
+    system.cpu.dcache.demandMisses::total             133                       # number of demand (read+write) misses (Count)
+    system.cpu.dcache.overallMisses::cpu.data          133                       # number of overall misses (Count)
+    system.cpu.dcache.overallMisses::total            133                       # number of overall misses (Count)
+    system.cpu.dcache.demandMissLatency::cpu.data     14301000                       # number of demand (read+write) miss ticks (Tick)
+    system.cpu.dcache.demandMissLatency::total     14301000                       # number of demand (read+write) miss ticks (Tick)
+    system.cpu.dcache.overallMissLatency::cpu.data     14301000                       # number of overall miss ticks (Tick)
+    system.cpu.dcache.overallMissLatency::total     14301000                       # number of overall miss ticks (Tick)
+    system.cpu.dcache.demandAccesses::cpu.data         2074                       # number of demand (read+write) accesses (Count)
+    system.cpu.dcache.demandAccesses::total          2074                       # number of demand (read+write) accesses (Count)
+    system.cpu.dcache.overallAccesses::cpu.data         2074                       # number of overall (read+write) accesses (Count)
+    system.cpu.dcache.overallAccesses::total         2074                       # number of overall (read+write) accesses (Count)
+    system.cpu.dcache.demandMissRate::cpu.data     0.064127                       # miss rate for demand accesses (Ratio)
+    system.cpu.dcache.demandMissRate::total      0.064127                       # miss rate for demand accesses (Ratio)
+    system.cpu.dcache.overallMissRate::cpu.data     0.064127                       # miss rate for overall accesses (Ratio)
+    system.cpu.dcache.overallMissRate::total     0.064127                       # miss rate for overall accesses (Ratio)
+    system.cpu.dcache.demandAvgMissLatency::cpu.data 107526.315789                       # average overall miss latency ((Cycle/Count))
+    system.cpu.dcache.demandAvgMissLatency::total 107526.315789                       # average overall miss latency ((Cycle/Count))
+    system.cpu.dcache.overallAvgMissLatency::cpu.data 107526.315789                       # average overall miss latency ((Cycle/Count))
+    system.cpu.dcache.overallAvgMissLatency::total 107526.315789                       # average overall miss latency ((Cycle/Count))
+    ...
+    system.cpu.mmu.dtb.rdAccesses                    1123                       # TLB accesses on read requests (Count)
+    system.cpu.mmu.dtb.wrAccesses                     953                       # TLB accesses on write requests (Count)
+    system.cpu.mmu.dtb.rdMisses                        11                       # TLB misses on read requests (Count)
+    system.cpu.mmu.dtb.wrMisses                         9                       # TLB misses on write requests (Count)
+    system.cpu.mmu.dtb.walker.power_state.pwrStateResidencyTicks::UNDEFINED     57467000                       # Cumulative time (in ticks) in various power states (Tick)
+    system.cpu.mmu.itb.rdAccesses                       0                       # TLB accesses on read requests (Count)
+    system.cpu.mmu.itb.wrAccesses                    7940                       # TLB accesses on write requests (Count)
+    system.cpu.mmu.itb.rdMisses                         0                       # TLB misses on read requests (Count)
+    system.cpu.mmu.itb.wrMisses                        37                       # TLB misses on write requests (Count)
+    system.cpu.mmu.itb.walker.power_state.pwrStateResidencyTicks::UNDEFINED     57467000                       # Cumulative time (in ticks) in various power states (Tick)
+    system.cpu.power_state.pwrStateResidencyTicks::ON     57467000                       # Cumulative time (in ticks) in various power states (Tick)
+    system.cpu.thread_0.numInsts                        0                       # Number of Instructions committed (Count)
+    system.cpu.thread_0.numOps                          0                       # Number of Ops committed (Count)
+    system.cpu.thread_0.numMemRefs                      0                       # Number of Memory References (Count)
+    system.cpu.workload.numSyscalls                    11                       # Number of system calls (Count)
 
-Later in the file is the CPU statistics, which contains information on
-the number of syscalls, the number of branches, total committed
-instructions, etc.
+Later in the file is memory controller statistics. This has information like
+the bytes read by each component and the average bandwidth used by those
+components.
 
-    system.cpu.dtb.walker.pwrStateResidencyTicks::UNDEFINED    507841000                       # Cumulative time (in ticks) in various power states
-    system.cpu.dtb.rdAccesses                        1084                       # TLB accesses on read requests
-    system.cpu.dtb.wrAccesses                         941                       # TLB accesses on write requests
-    system.cpu.dtb.rdMisses                             9                       # TLB misses on read requests
-    system.cpu.dtb.wrMisses                             7                       # TLB misses on write requests
-    system.cpu.apic_clk_domain.clock                16000                       # Clock period in ticks
-    system.cpu.interrupts.pwrStateResidencyTicks::UNDEFINED    507841000                       # Cumulative time (in ticks) in various power states
-    system.cpu.itb.walker.pwrStateResidencyTicks::UNDEFINED    507841000                       # Cumulative time (in ticks) in various power states
-    system.cpu.itb.rdAccesses                           0                       # TLB accesses on read requests
-    system.cpu.itb.wrAccesses                        7284                       # TLB accesses on write requests
-    system.cpu.itb.rdMisses                             0                       # TLB misses on read requests
-    system.cpu.itb.wrMisses                            31                       # TLB misses on write requests
-    system.cpu.workload.numSyscalls                    11                       # Number of system calls
-    system.cpu.pwrStateResidencyTicks::ON       507841000                       # Cumulative time (in ticks) in various power states
-    system.cpu.numCycles                           507841                       # number of cpu cycles simulated
-    system.cpu.numWorkItemsStarted                      0                       # number of work items this cpu started
-    system.cpu.numWorkItemsCompleted                    0                       # number of work items this cpu completed
-    system.cpu.committedInsts                        5712                       # Number of instructions committed
-    system.cpu.committedOps                         10313                       # Number of ops (including micro ops) committed
-    system.cpu.num_int_alu_accesses                 10204                       # Number of integer alu accesses
-    system.cpu.num_fp_alu_accesses                      0                       # Number of float alu accesses
-    system.cpu.num_vec_alu_accesses                     0                       # Number of vector alu accesses
-    system.cpu.num_func_calls                         221                       # number of times a function call or return occured
-    system.cpu.num_conditional_control_insts          986                       # number of instructions that are conditional controls
-    system.cpu.num_int_insts                        10204                       # number of integer instructions
-    system.cpu.num_fp_insts                             0                       # number of float instructions
-    system.cpu.num_vec_insts                            0                       # number of vector instructions
-    system.cpu.num_int_register_reads               19293                       # number of times the integer registers were read
-    system.cpu.num_int_register_writes               7976                       # number of times the integer registers were written
-    system.cpu.num_fp_register_reads                    0                       # number of times the floating registers were read
-    system.cpu.num_fp_register_writes                   0                       # number of times the floating registers were written
-    system.cpu.num_vec_register_reads                   0                       # number of times the vector registers were read
-    system.cpu.num_vec_register_writes                  0                       # number of times the vector registers were written
-    system.cpu.num_cc_register_reads                 7020                       # number of times the CC registers were read
-    system.cpu.num_cc_register_writes                3825                       # number of times the CC registers were written
-    system.cpu.num_mem_refs                          2025                       # number of memory refs
-    system.cpu.num_load_insts                        1084                       # Number of load instructions
-    system.cpu.num_store_insts                        941                       # Number of store instructions
-    system.cpu.num_idle_cycles                          0                       # Number of idle cycles
-    system.cpu.num_busy_cycles                     507841                       # Number of busy cycles
-    system.cpu.not_idle_fraction                        1                       # Percentage of non-idle cycles
-    system.cpu.idle_fraction                            0                       # Percentage of idle cycles
-    system.cpu.Branches                              1306                       # Number of branches fetched
+    system.mem_ctrl.bytesReadWrQ                        0                       # Total number of bytes read from write queue (Byte)
+    system.mem_ctrl.bytesReadSys                    23168                       # Total read bytes from the system interface side (Byte)
+    system.mem_ctrl.bytesWrittenSys                     0                       # Total written bytes from the system interface side (Byte)
+    system.mem_ctrl.avgRdBWSys               403153113.96105593                       # Average system read bandwidth in Byte/s ((Byte/Second))
+    system.mem_ctrl.avgWrBWSys                 0.00000000                       # Average system write bandwidth in Byte/s ((Byte/Second))
+    system.mem_ctrl.totGap                       57336000                       # Total gap between requests (Tick)
+    system.mem_ctrl.avgGap                      158386.74                       # Average gap between requests ((Tick/Count))
+    system.mem_ctrl.requestorReadBytes::cpu.inst        14656                       # Per-requestor bytes read from memory (Byte)
+    system.mem_ctrl.requestorReadBytes::cpu.data         8512                       # Per-requestor bytes read from memory (Byte)
+    system.mem_ctrl.requestorReadRate::cpu.inst 255033323.472601681948                       # Per-requestor bytes read from memory rate ((Byte/Second))
+    system.mem_ctrl.requestorReadRate::cpu.data 148119790.488454252481                       # Per-requestor bytes read from memory rate ((Byte/Second))
+    system.mem_ctrl.requestorReadAccesses::cpu.inst          229                       # Per-requestor read serviced memory accesses (Count)
+    system.mem_ctrl.requestorReadAccesses::cpu.data          133                       # Per-requestor read serviced memory accesses (Count)
+    system.mem_ctrl.requestorReadTotalLat::cpu.inst      6234000                       # Per-requestor read total memory access latency (Tick)
+    system.mem_ctrl.requestorReadTotalLat::cpu.data      4141000                       # Per-requestor read total memory access latency (Tick)
+    system.mem_ctrl.requestorReadAvgLat::cpu.inst     27222.71                       # Per-requestor read average memory access latency ((Tick/Count))
+    system.mem_ctrl.requestorReadAvgLat::cpu.data     31135.34                       # Per-requestor read average memory access latency ((Tick/Count))
+    system.mem_ctrl.dram.bytesRead::cpu.inst        14656                       # Number of bytes read from this memory (Byte)
+    system.mem_ctrl.dram.bytesRead::cpu.data         8512                       # Number of bytes read from this memory (Byte)
+    system.mem_ctrl.dram.bytesRead::total           23168                       # Number of bytes read from this memory (Byte)
+    system.mem_ctrl.dram.bytesInstRead::cpu.inst        14656                       # Number of instructions bytes read from this memory (Byte)
+    system.mem_ctrl.dram.bytesInstRead::total        14656                       # Number of instructions bytes read from this memory (Byte)
+    system.mem_ctrl.dram.numReads::cpu.inst           229                       # Number of read requests responded to by this memory (Count)
+    system.mem_ctrl.dram.numReads::cpu.data           133                       # Number of read requests responded to by this memory (Count)
+    system.mem_ctrl.dram.numReads::total              362                       # Number of read requests responded to by this memory (Count)
+    system.mem_ctrl.dram.bwRead::cpu.inst       255033323                       # Total read bandwidth from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwRead::cpu.data       148119790                       # Total read bandwidth from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwRead::total          403153114                       # Total read bandwidth from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwInstRead::cpu.inst    255033323                       # Instruction read bandwidth from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwInstRead::total      255033323                       # Instruction read bandwidth from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwTotal::cpu.inst      255033323                       # Total bandwidth to/from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwTotal::cpu.data      148119790                       # Total bandwidth to/from this memory ((Byte/Second))
+    system.mem_ctrl.dram.bwTotal::total         403153114                       # Total bandwidth to/from this memory ((Byte/Second))
+    system.mem_ctrl.dram.readBursts                   362                       # Number of DRAM read bursts (Count)
+    system.mem_ctrl.dram.writeBursts                    0                       # Number of DRAM write bursts (Count)
