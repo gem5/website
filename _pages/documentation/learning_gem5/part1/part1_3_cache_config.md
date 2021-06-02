@@ -272,14 +272,19 @@ To add options to our two-level cache configuration, after importing our
 caches, let's add some options.
 
 ```
-from optparse import OptionParser
+import argparse
 
-parser = OptionParser()
-parser.add_option('--l1i_size', help="L1 instruction cache size")
-parser.add_option('--l1d_size', help="L1 data cache size")
-parser.add_option('--l2_size', help="Unified L2 cache size")
+parser = argparse.ArgumentParser(description='A simple system with 2-level cache.')
+parser.add\_argument("binary", default="", nargs="?", type=str,
+                    help="Path to the binary to execute.")
+parser.add\_argument("--l1i_size",
+                    help=f"L1 instruction cache size. Default: 16kB.")
+parser.add\_argument("--l1d_size",
+                    help="L1 data cache size. Default: Default: 64kB.")
+parser.add\_argument("--l2_size",
+                    help="L2 cache size. Default: 256kB.")
 
-(options, args) = parser.parse_args()
+options = parser.parse\_args()
 ```
 
 Now, you can run
@@ -287,7 +292,7 @@ Now, you can run
 will display the options you just added.
 
 Next, we need to pass these options onto the caches that we create in
-the configuration script. To do this, we'll simply change two\_level.py
+the configuration script. To do this, we'll simply change two\_level\_opts.py
 to pass the options into the caches as a parameter to their constructor
 and add an appropriate constructor, next.
 

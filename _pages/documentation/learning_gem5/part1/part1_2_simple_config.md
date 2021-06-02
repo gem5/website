@@ -176,7 +176,7 @@ system.cpu.dcache_port = system.membus.cpu_side_ports
 > lot of magic going on behind the scenes to set up the connection, the details
 > of which are unimportant to most users.
 >
-> Another notable kind of magic of the `=` of two ports in gem5 Python
+> Another notable kind of magic of the `=` of two ports in a gem5 Python
 > configuration is that, it is allowed to have one port on one side, and an
 > array of ports on the other side. For example:
 >
