@@ -30,9 +30,10 @@
 
 #include "learning_gem5/part2/simple_memobj.hh"
 
+#include "base/trace.hh"
 #include "debug/SimpleMemobj.hh"
 
-SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
+SimpleMemobj::SimpleMemobj(const SimpleMemobjParams &params) :
     SimObject(params),
     instPort(params->name + ".inst_port", this),
     dataPort(params->name + ".data_port", this),
@@ -41,7 +42,8 @@ SimpleMemobj::SimpleMemobj(SimpleMemobjParams *params) :
 {
 }
 
-Port &SimpleMemobj::getPort(const std::string &if_name, PortID idx)
+Port &
+SimpleMemobj::getPort(const std::string &if_name, PortID idx)
 {
     panic_if(idx != InvalidPortID, "This object doesn't support vector ports");
 
@@ -227,12 +229,4 @@ SimpleMemobj::sendRangeChange()
 {
     instPort.sendRangeChange();
     dataPort.sendRangeChange();
-}
-
-
-
-SimpleMemobj*
-SimpleMemobjParams::create()
-{
-    return new SimpleMemobj(this);
 }

@@ -37,7 +37,7 @@
 class HelloObject : public SimObject
 {
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 };
 
 #endif // __LEARNING_GEM5_HELLO_OBJECT_HH__

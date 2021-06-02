@@ -28,10 +28,10 @@
  * Authors: Jason Lowe-Power
  */
 
-#include "debug/Hello.hh"
+#include "debug/HelloExample.hh"
 #include "learning_gem5/hello_object.hh"
 
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params),
     event(*this),
     goodbye(params->goodbye_object),
@@ -39,7 +39,7 @@ HelloObject::HelloObject(HelloObjectParams *params) :
     latency(params->time_to_wait),
     timesLeft(params->number_of_fires)
 {
-    DPRINTF(Hello, "Created the hello object\n");
+    DPRINTF(HelloExample, "Created the hello object\n");
 }
 
 void
@@ -52,7 +52,7 @@ void
 HelloObject::processEvent()
 {
     timesLeft--;
-    DPRINTF(Hello, "Hello world! Processing the event! %d left\n", timesLeft);
+    DPRINTF(HelloExample, "Hello world! Processing the event! %d left\n", timesLeft);
 
     if (timesLeft <= 0) {
         DPRINTF(Hello, "Done firing!\n");
@@ -60,10 +60,4 @@ HelloObject::processEvent()
     } else {
         schedule(event, curTick() + latency);
     }
-}
-
-HelloObject*
-HelloObjectParams::create()
-{
-    return new HelloObject(this);
 }

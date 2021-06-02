@@ -30,15 +30,15 @@
 
 #include "learning_gem5/goodbye_object.hh"
 
-#include "debug/Hello.hh"
+#include "debug/HelloExample.hh"
 #include "sim/sim_exit.hh"
 
-GoodbyeObject::GoodbyeObject(GoodbyeObjectParams *params) :
+GoodbyeObject::GoodbyeObject(const GoodbyeObjectParams &params) :
     SimObject(params), event(*this), bandwidth(params->write_bandwidth),
     bufferSize(params->buffer_size), buffer(nullptr), bufferUsed(0)
 {
     buffer = new char[bufferSize];
-    DPRINTF(Hello, "Created the goodbye object\n");
+    DPRINTF(HelloExample, "Created the goodbye object\n");
 }
 
 GoodbyeObject::~GoodbyeObject()
@@ -49,14 +49,14 @@ GoodbyeObject::~GoodbyeObject()
 void
 GoodbyeObject::processEvent()
 {
-    DPRINTF(Hello, "Processing the event!\n");
+    DPRINTF(HelloExample, "Processing the event!\n");
     fillBuffer();
 }
 
 void
 GoodbyeObject::sayGoodbye(std::string other_name)
 {
-    DPRINTF(Hello, "Saying goodbye to %s\n", other_name);
+    DPRINTF(HelloExample, "Saying goodbye to %s\n", other_name);
 
     message = "Goodbye " + other_name + "!! ";
 
@@ -80,18 +80,12 @@ GoodbyeObject::fillBuffer()
 
     if (bufferUsed < bufferSize - 1) {
         // Wait for the next copy for as long as it would have taken
-        DPRINTF(Hello, "Scheduling another fillBuffer in %d ticks\n",
+        DPRINTF(HelloExample, "Scheduling another fillBuffer in %d ticks\n",
                 bandwidth * bytes_copied);
         schedule(event, curTick() + bandwidth * bytes_copied);
     } else {
-        DPRINTF(Hello, "Goodbye done copying!\n");
+        DPRINTF(HelloExample, "Goodbye done copying!\n");
         // Be sure to take into account the time for the last bytes
         exitSimLoop(buffer, 0, curTick() + bandwidth * bytes_copied);
     }
-}
-
-GoodbyeObject*
-GoodbyeObjectParams::create()
-{
-    return new GoodbyeObject(this);
 }

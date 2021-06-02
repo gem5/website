@@ -24,17 +24,14 @@
 # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Authors: Jason Lowe-Power
 
 from m5.params import *
-from m5.proxy import *
-from MemObject import MemObject
+from m5.SimObject import SimObject
 
-class SimpleMemobj(MemObject):
+class SimpleMemobj(SimObject):
     type = 'SimpleMemobj'
-    cxx_header = "learning_gem5/simple_memobj/simple_memobj.hh"
+    cxx_header = "learning_gem5/part2/simple_memobj.hh"
 
-    inst_port = SlavePort("CPU side port, receives requests")
-    data_port = SlavePort("CPU side port, receives requests")
-    mem_side = MasterPort("Memory side port, sends requests")
+    inst_port = ResponsePort("CPU side port, receives requests")
+    data_port = ResponsePort("CPU side port, receives requests")
+    mem_side = RequestPort("Memory side port, sends requests")
