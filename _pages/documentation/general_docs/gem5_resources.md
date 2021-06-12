@@ -47,8 +47,8 @@ the gem5 resources repository. **These are resources sources for gem5 20.1**.
 |simple/m5_exit | [x86 executable](https://dist.gem5.org/dist/v20-1/test-progs/m5-exit/bin/x86/linux/m5_exit) | [here (Along with other 'simple' executables)](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/simple) |
 |insttest | [insttest](https://dist.gem5.org/dist/v20-1/test-progs/insttest/bin/sparc/linux/insttest)| [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/insttest) |
 |square | [square.o](https://dist.gem5.org/dist/v20-1/test-progs/square/square.o) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/square) |
-|spec-2006 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2017) |
-|spec-2017 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2006) |
+|spec-2006 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2006) |
+|spec-2017 | --- | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2017) |
 |gapbs | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/gapbs.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gapbs) |
 |parsec | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/parsec.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/parsec) |
 |npb | [Disk Image (GZIPPED)](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/npb.img.gz) | [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb) |
