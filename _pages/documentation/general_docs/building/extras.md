@@ -17,12 +17,12 @@ One use of the EXTRAS feature is to support EIO traces. The trace reader for EIO
 The following examples show how to compile the EIO code. By adding to or modifying the extras path, any other suitable extra could be compiled in. To compile in code using EXTRAS simply execute the following
 
 ```js
- scons EXTRAS=/path/to/encumbered build/ALPHA/gem5.opt
+ scons EXTRAS=/path/to/encumbered build/<ISA>/gem5.opt
 ```
 
 In the root of this directory you should have a SConscript that uses the ```Source()``` and ```SimObject()``` scons functions that are used in the rest of M5 to compile the appropriate sources and add any SimObjects of interest. If you want to add more than one directory, you can set EXTRAS to a colon-separated list of paths.
 
-Note that EXTRAS is a "sticky" parameter, so after a value is provided to scons once, the value will be reused for future scons invocations targeting the same build directory (```build/ALPHA_SE``` in this case) as long as it is not overridden. Thus you only need to specify EXTRAS the first time you build a particular configuration or if you want to override a previously specified value. 
+Note that EXTRAS is a "sticky" parameter, so after a value is provided to scons once, the value will be reused for future scons invocations targeting the same build directory (```build/<ISA>``` in this case) as long as it is not overridden. Thus you only need to specify EXTRAS the first time you build a particular configuration or if you want to override a previously specified value.
 To run a regression with EXTRAS use a command line similar to the following:
 ```js
  ./util/regress --scons-opts = "EXTRAS=/path/to/encumbered" -j 2 quick

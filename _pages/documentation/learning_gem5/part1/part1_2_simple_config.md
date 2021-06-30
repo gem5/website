@@ -142,8 +142,8 @@ any caches, we will connect the I-cache and D-cache ports directly to
 the membus. In this example system, we have no caches.
 
 ```
-system.cpu.icache_port = system.membus.slave
-system.cpu.dcache_port = system.membus.slave
+system.cpu.icache_port = system.membus.cpu_side_ports
+system.cpu.dcache_port = system.membus.cpu_side_ports
 ```
 
 > **An aside on gem5 ports**
@@ -182,11 +182,11 @@ extra lines.
 
 ```
 system.cpu.createInterruptController()
-system.cpu.interrupts[0].pio = system.membus.master
-system.cpu.interrupts[0].int_master = system.membus.slave
-system.cpu.interrupts[0].int_slave = system.membus.master
+system.cpu.interrupts[0].pio = system.membus.mem_side_ports
+system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
-system.system_port = system.membus.slave
+system.system_port = system.membus.cpu_side_ports
 ```
 
 Next, we need to create a memory controller and connect it to the
@@ -194,9 +194,10 @@ membus. For this system, we'll use a simple DDR3 controller and it will
 be responsible for the entire memory range of our system.
 
 ```
-system.mem_ctrl = DDR3_1600_8x8()
-system.mem_ctrl.range = system.mem_ranges[0]
-system.mem_ctrl.port = system.membus.master
+system.mem_ctrl = MemCtrl()
+system.mem_ctrl.dram = DDR3_1600_8x8()
+system.mem_ctrl.dram.range = system.mem_ranges[0]
+system.mem_ctrl.dram.port = system.membus.mem_side_ports
 ```
 
 After those final connections, we've finished instantiating our
@@ -241,8 +242,13 @@ to use the process as it's workload, and finally create the functional
 execution contexts in the CPU.
 
 ```
+binary = 'tests/test-progs/hello/bin/x86/linux/hello'
+
+#for gem5 V21 and beyond, uncomment the following line
+#system.workload = SEWorkload.init_compatible(binary)
+
 process = Process()
-process.cmd = ['tests/test-progs/hello/bin/x86/linux/hello']
+process.cmd = [binary]
 system.cpu.workload = process
 system.cpu.createThreads()
 ```

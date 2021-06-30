@@ -22,14 +22,24 @@ Currently, the GCN3 GPU model in gem5 is only supported on the develop branch.
 Thus, you should use the develop branch when running the GCN3 model.
 We expect this support to be integrated into the gem5-v21.0 release.
 
-The [gem5 repository](https://gem5.goooglesource.com/public/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model
+The [gem5 repository](https://gem5.goooglesource.com/public/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model. A pre-built version of the docker image is hosted at `gcr.io/gem5-test/gcn-gpu`.
 
 The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a sample application (square) that can be used to verify that the model runs correctly.
 
-#### Building the image
+#### Using the image
+The docker image can either be built or pulled from gcr.io
+
+To build the docker image from source:
 ```
+# Working directory: gem5/util/dockerfiles/gcn-gpu
 docker build -t <image_name> .
 ```
+
+To pull the pre-built docker image:
+```
+docker pull gcr.io/gem5-test/gcn-gpu
+```
+You can also put `gcr.io/gem5-test/gcn-gpu` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 
 #### Building gem5 using the image
 The following command assumes the gem5 directory is a subdirectory of your current directory
@@ -40,7 +50,7 @@ docker run --rm -v $PWD/gem5:/gem5 -w /gem5 <image_name> scons -sQ -j$(nproc) bu
 #### Building a GPU application using the image
 The following command assumes the gem5-resources directory is a subdirectory of your current directory
 ```
-docker run --rm -v $PWD/gem5-resources:/gem5-resources -w /gem5-resources <image_name> make square
+docker run --rm -v $PWD/gem5-resources:$PWD/gem5-resources -w $PWD/gem5-resources/src/square <image_name> make gfx8-apu
 ```
 
 #### Running the sample application
@@ -49,8 +59,8 @@ The following command assumes that gem5 and gem5-resources are subdirectories of
 docker run --rm -v $PWD/gem5:/gem5 -v $PWD/gem5-resources:/gem5-resources \
                 -w /gem5 <image_name> \
                 build/GCN3_X86/gem5.opt configs/example/apu_se.py -n2 \
-                --benchmark-root=/gem5-resources/output/test-progs/square \
-                -c square
+                --benchmark-root=/gem5-resources/src/square/bin \
+                -c square.o
 ```
 
 ## **ROCm**

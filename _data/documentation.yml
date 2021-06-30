@@ -40,6 +40,8 @@ docs:
           url: http://doxygen.gem5.org/release/v20-1-0-5/index.html
         - page: v21.0.0.0
           url: http://doxygen.gem5.org/release/v21-0-0-0/index.html
+        - page: v21.0.1.0
+          url: http://doxygen.gem5.org/release/v21-0-1-0/index.html
 
     - title: gem5 Resources
       id: gem5_resources
@@ -217,10 +219,6 @@ docs:
           url: /documentation/learning_gem5/part1/example_configs
         - page: Extending gem5 for ARM
           url: /documentation/learning_gem5/part1/extending_configs
-        - page: ARM Power Modelling
-          url: /documentation/learning_gem5/part1/arm_power_modelling
-        - page: ARM DVFS Support
-          url: /documentation/learning_gem5/part1/arm_dvfs_support
 
     - title: Modifying/Extending
       id: part2

@@ -25,7 +25,7 @@ Here follows a list of prebuilt binaries to be downloaded by just clicking the l
 
 The tarball below contains a set of binaries: the Linux kernel and a set of bootloaders
 
-* <http://dist.gem5.org/dist/current/arm/aarch-system-201901106.tar.bz2>
+* <http://dist.gem5.org/dist/v21-0/arm/aarch-system-20210904.tar.bz2>
 
 ##### Latest Linux Disk Images (**recommended**)
 
@@ -33,7 +33,10 @@ The tarball below contains a set of binaries: the Linux kernel and a set of boot
 
   Partition table: yes
 
-  gem5 init: `/init.gem5`
+  gem5 init:
+  * default (using m5 ops): `/init.gem5`
+  * kvm (using m5 --addr ops): `/init.addr.gem5`
+  * fast models (using m5 --semi ops): `/init.semi.gem5`
 
 * <http://dist.gem5.org/dist/current/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
 

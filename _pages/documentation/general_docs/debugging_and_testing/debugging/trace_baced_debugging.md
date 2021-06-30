@@ -19,7 +19,7 @@ messages for a particular flag, use the `--debug-flags` command line argument.
 Multiple flags can be specified by giving a list of strings, e.g.:
 
 ```
-build/ALPHA/gem5.opt --debug-flags=Bus,Cache configs/examples/fs.py
+build/<ISA>/gem5.opt --debug-flags=Bus,Cache configs/examples/fs.py
 ```
 
 would turn on a group of debug flags related to instruction execution but leave
