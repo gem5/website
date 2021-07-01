@@ -37,7 +37,7 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=5 must be used**. We
+* **gcc**: gcc is used to compiled gem5. **Version >=7 must be used**. We
 support up to gcc Version 10.
 * **Clang**: Clang can also be used. At present, we support Clang 6 to
 Clang 9 (inclusive).
