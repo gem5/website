@@ -7,9 +7,13 @@ docs:
       id: gem5_documentation
       url: /documentation
 
-    - title: Code Style
-      id: code_style
-      url: /documentation/general_docs/development/coding_style/
+    - title: Development
+      id: development
+      subitems:
+        - page: Code Style
+          url: /documentation/general_docs/development/coding_style/
+        - page: Release Procedures
+          url: /documentation/general_docs/development/release_procedures/
 
     - title: Building
       id: building
