@@ -147,7 +147,7 @@ def connectCPU(self, cpu):
     raise NotImplementedError
 
 def connectBus(self, bus):
-    self.mem_side = bus.slave
+    self.mem_side = bus.cpu_side_ports
 ```
 
 Next, we have to define a separate `connectCPU` function for the
@@ -173,10 +173,10 @@ memory-side and CPU-side bus, respectively.
 
 ```
 def connectCPUSideBus(self, bus):
-    self.cpu_side = bus.master
+    self.cpu_side = bus.mem_side_ports
 
 def connectMemSideBus(self, bus):
-    self.mem_side = bus.slave
+    self.mem_side = bus.cpu_side_ports
 ```
 
 The full file can be found in the gem5 source at
