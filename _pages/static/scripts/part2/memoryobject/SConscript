@@ -32,4 +32,4 @@ Import('*')
 SimObject('SimpleMemobj.py')
 Source('simple_memobj.cc')
 
-DebugFlag('SimpleMemobj')
+DebugFlag('SimpleMemobj', "For Learning gem5 Part 2.")

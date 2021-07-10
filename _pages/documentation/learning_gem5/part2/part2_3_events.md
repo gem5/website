@@ -13,7 +13,7 @@ Event-driven programming
 
 gem5 is an event-driven simulator. In this chapter, we will explore how
 to create and schedule events. We will be building from the simple
-`HelloObject` from hello-simobject-chapter.
+`HelloObject` from [hello-simobject-chapter](../helloobject).
 
 Creating a simple event callback
 --------------------------------
@@ -143,12 +143,12 @@ class HelloObject : public SimObject
 
     EventFunctionWrapper event;
 
-    Tick latency;
+    const Tick latency;
 
     int timesLeft;
 
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 
     void startup();
 };
@@ -162,7 +162,7 @@ HelloObject::HelloObject(HelloObjectParams *params) :
     SimObject(params), event([this]{processEvent();}, name()),
     latency(100), timesLeft(10)
 {
-    DPRINTF(Hello, "Created the hello object\n");
+    DPRINTF(HelloExample, "Created the hello object\n");
 }
 ```
 
@@ -179,10 +179,10 @@ void
 HelloObject::processEvent()
 {
     timesLeft--;
-    DPRINTF(Hello, "Hello world! Processing the event! %d left\n", timesLeft);
+    DPRINTF(HelloExample, "Hello world! Processing the event! %d left\n", timesLeft);
 
     if (timesLeft <= 0) {
-        DPRINTF(Hello, "Done firing!\n");
+        DPRINTF(HelloExample, "Done firing!\n");
     } else {
         schedule(event, curTick() + latency);
     }

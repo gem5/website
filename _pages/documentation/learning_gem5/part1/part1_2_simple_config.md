@@ -44,6 +44,8 @@ start with the most simple script that can run gem5 and build from
 there. Hopefully, by the end of this section you'll have a good idea of
 how simulation scripts work.
 
+---
+
 > **An aside on SimObjects**
 >
 > gem5's modular design is built around the **SimObject** type. Most of
@@ -54,6 +56,9 @@ how simulation scripts work.
 > and specify the interactions between SimObjects.
 >
 > See [SimObject details](http://doxygen.gem5.org/release/current/classSimObject.html#details) for more information.
+
+---
+
 
 Creating a config file
 ----------------------
@@ -146,29 +151,48 @@ system.cpu.icache_port = system.membus.cpu_side_ports
 system.cpu.dcache_port = system.membus.cpu_side_ports
 ```
 
+---
 > **An aside on gem5 ports**
 >
 > To connect memory system components together, gem5 uses a port
-> abstraction. Each memory object can have two kinds of ports, *master
-> ports* and *slave ports*. Requests are sent from a master port to a
-> slave port, and responses are sent from a slave port to a master port.
-> When connecting ports, you must connect a master port to a slave port.
+> abstraction. Each memory object can have two kinds of ports,
+> *request ports* and *response ports*. Requests are sent from
+> a request port to a response port, and responses are sent from
+> a response port to a request port. When connecting ports, you
+> must connect a request port to a response port.
 >
 > Connecting ports together is easy to do from the python configuration
-> files. You can simply set the master port `=` to the slave port and
-> they will be connected. For instance:
+> files. You can simply set the request port `=` to the response port
+> and they will be connected. For instance:
 >
 > ```
-> memobject1.master = memobject2.slave
+> system.cpu.icache_port = system.l1_cache.cpu_side
 > ```
 >
-> The master and slave can be on either side of the `=` and the same
-> connection will be made. After making the connection, the master can
-> send requests to the slave port. There is a lot of magic going on
-> behind the scenes to set up the connection, the details of which are
-> unimportant for most users.
+> In this example, the cpu's `icache_port` is a request port, and the cache's
+> `cpu_side` is a response port. The request port and the response port can be
+> on either side of the `=` and the same connection will be made. After making
+> the connection, the requestor can send requests to the responder. There is a
+> lot of magic going on behind the scenes to set up the connection, the details
+> of which are unimportant to most users.
+>
+> Another notable kind of magic of the `=` of two ports in a gem5 Python
+> configuration is that, it is allowed to have one port on one side, and an
+> array of ports on the other side. For example:
+>
+> ```
+> system.cpu.icache_port = system.membus.cpu_side_ports
+> ```
+>
+> In this example, the cpu's `icache_port` is a request port, and the membus's
+> `cpu_side_ports` is an array of response ports. In this case, a new response
+> port is spawned on the `cpu_side_ports`, and this newly created port will be
+> connected to the request port.
 >
 > We will discuss ports and MemObject in more detail in the [MemObject chapter](http://www.gem5.org/documentation/learning_gem5/part2/memoryobject/).
+
+
+---
 
 Next, we need to connect up a few other ports to make sure that our
 system will function correctly. We need to create an I/O controller on
@@ -197,7 +221,7 @@ be responsible for the entire memory range of our system.
 system.mem_ctrl = MemCtrl()
 system.mem_ctrl.dram = DDR3_1600_8x8()
 system.mem_ctrl.dram.range = system.mem_ranges[0]
-system.mem_ctrl.dram.port = system.membus.mem_side_ports
+system.mem_ctrl.port = system.membus.mem_side_ports
 ```
 
 After those final connections, we've finished instantiating our
@@ -244,8 +268,8 @@ execution contexts in the CPU.
 ```
 binary = 'tests/test-progs/hello/bin/x86/linux/hello'
 
-#for gem5 V21 and beyond, uncomment the following line
-#system.workload = SEWorkload.init_compatible(binary)
+# for gem5 V21 and beyond, uncomment the following line
+# system.workload = SEWorkload.init_compatible(binary)
 
 process = Process()
 process.cmd = [binary]
@@ -287,13 +311,14 @@ Running gem5
 ------------
 
 Now that we've created a simple simulation script (the full version of
-which can be found at gem5/configs/learning\_gem5/part1/simple.py) we're
-ready to run gem5. gem5 can take many parameters, but requires just one
-positional argument, the simulation script. So, we can simply run gem5
+which can be found in the gem5 code base at
+[configs/learning\_gem5/part1/simple.py](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/simple.py)
+) we're ready to run gem5. gem5 can take many parameters, but requires just
+one positional argument, the simulation script. So, we can simply run gem5
 from the root gem5 directory as:
 
 ```
-build/X86/gem5.opt configs/tutorial/simple.py
+build/X86/gem5.opt configs/tutorial/part1/simple.py
 ```
 
 The output should be:
@@ -301,18 +326,20 @@ The output should be:
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Mar 16 2018 10:24:24
-    gem5 started Mar 16 2018 15:53:27
-    gem5 executing on amarillo, pid 41697
-    command line: build/X86/gem5.opt configs/tutorial/simple.py
+    gem5 version 21.0.0.0
+    gem5 compiled May 17 2021 18:05:59
+    gem5 started May 17 2021 22:05:20
+    gem5 executing on amarillo, pid 75197
+    command line: build/X86/gem5.opt configs/tutorial/part1/simple.py
 
     Global frequency set at 1000000000000 ticks per second
+    warn: No dot file generated. Please install pydot to generate the dot file and pdf.
     warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb: listening for remote gdb on port 7000
+    0: system.remote_gdb: listening for remote gdb on port 7005
     Beginning simulation!
     info: Entering event queue @ 0.  Starting simulation...
     Hello world!
-    Exiting @ tick 507841000 because exiting with last active thread context
+    Exiting @ tick 490394000 because exiting with last active thread context
 
 Parameters in the configuration file can be changed and the results
 should be different. For instance, if you double the system clock, the

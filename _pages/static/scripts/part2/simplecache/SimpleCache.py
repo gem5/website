@@ -35,8 +35,8 @@ class SimpleCache(MemObject):
     type = 'SimpleCache'
     cxx_header = "learning_gem5/simple_cache/simple_cache.hh"
 
-    cpu_side = VectorSlavePort("CPU side port, receives requests")
-    mem_side = MasterPort("Memory side port, sends requests")
+    cpu_side = VectorResponsePort("CPU side port, receives requests")
+    mem_side = RequestPort("Memory side port, sends requests")
 
     latency = Param.Cycles(1, "Cycles taken on a hit or to resolve a miss")
 

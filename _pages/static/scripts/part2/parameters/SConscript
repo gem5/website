@@ -33,4 +33,4 @@ SimObject('HelloObject.py')
 Source('hello_object.cc')
 Source('goodbye_object.cc')
 
-DebugFlag('Hello')
+DebugFlag('HelloExample', 'For Learning gem5 Part 2. Simple example debug flag')

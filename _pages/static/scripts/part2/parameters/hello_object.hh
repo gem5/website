@@ -57,7 +57,7 @@ class HelloObject : public SimObject
     int timesLeft;
 
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 
     void startup();
 };

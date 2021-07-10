@@ -24,13 +24,17 @@
 # THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Authors: Jason Power
 
-""" This file creates a simple system with a single CPU and a 2-level cache
-and executes 'hello', a simple Hello World application.
+""" This file creates a single CPU and a two-level cache system.
+This script takes a single parameter which specifies a binary to execute.
+If none is provided it executes 'hello' by default (mostly used for testing)
 
-This config file assumes that the x86 ISA was built.
+See Part 1, Chapter 3: Adding cache to the configuration script in the
+learning_gem5 book for more information about this script.
+This file exports options for the L1 I/D and L2 cache sizes.
+
+IMPORTANT: If you modify this file, it's likely that the Learning gem5 book
+           also needs to be updated. For now, email Jason <power.jg@gmail.com>
 
 """
 
@@ -41,6 +45,15 @@ from m5.objects import *
 
 # import the caches which we made
 from caches import *
+
+# get ISA for the default binary to run. This is mostly for simple testing
+isa = str(m5.defines.buildEnv['TARGET_ISA']).lower()
+
+# Default to running 'hello', use the compiled ISA to find the binary
+# grab the specific path to the binary
+thispath = os.path.dirname(os.path.realpath(__file__))
+binary = os.path.join(thispath, '../../../',
+                      'tests/test-progs/hello/bin/', isa, 'linux/hello')
 
 # create the system we are going to simulate
 system = System()
@@ -82,26 +95,32 @@ system.membus = SystemXBar()
 # Connect the L2 cache to the membus
 system.l2cache.connectMemSideBus(system.membus)
 
-# create the interrupt controller for the CPU and connect to the membus
-# Note: these are directly connected to the memory bus and are not cached
+# create the interrupt controller for the CPU
 system.cpu.createInterruptController()
-system.cpu.interrupts[0].pio = system.membus.master
-system.cpu.interrupts[0].int_master = system.membus.slave
-system.cpu.interrupts[0].int_slave = system.membus.master
+
+# For x86 only, make sure the interrupts are connected to the memory
+# Note: these are directly connected to the memory bus and are not cached
+if m5.defines.buildEnv['TARGET_ISA'] == "x86":
+    system.cpu.interrupts[0].pio = system.membus.mem_side_ports
+    system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+    system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
 # Connect the system up to the membus
-system.system_port = system.membus.slave
+system.system_port = system.membus.cpu_side_ports
 
 # Create a DDR3 memory controller
-system.mem_ctrl = DDR3_1600_8x8()
-system.mem_ctrl.range = system.mem_ranges[0]
-system.mem_ctrl.port = system.membus.master
+system.mem_ctrl = MemCtrl()
+system.mem_ctrl.dram = DDR3_1600_8x8()
+system.mem_ctrl.dram.range = system.mem_ranges[0]
+system.mem_ctrl.port = system.membus.mem_side_ports
+
+system.workload = SEWorkload.init_compatible(binary)
 
 # Create a process for a simple "Hello World" application
 process = Process()
 # Set the command
 # cmd is a list which begins with the executable (like argv)
-process.cmd = ['tests/test-progs/hello/bin/x86/linux/hello']
+process.cmd = [binary]
 # Set the cpu to use the process as its workload and create thread contexts
 system.cpu.workload = process
 system.cpu.createThreads()
@@ -111,6 +130,6 @@ root = Root(full_system = False, system = system)
 # instantiate all of the objects we've created above
 m5.instantiate()
 
-print "Beginning simulation!"
+print("Beginning simulation!")
 exit_event = m5.simulate()
-print 'Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause())
+print('Exiting @ tick %i because %s' % (m5.curTick(), exit_event.getCause()))

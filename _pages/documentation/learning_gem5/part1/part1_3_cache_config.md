@@ -67,7 +67,7 @@ parameter is the first argument to `Param.*`, unless the first argument
 is a string. The string argument of each of the parameters is a
 description of what the parameter is (e.g.,
 `tag_latency = Param.Cycles("Tag lookup latency")` means that the
-`` `tag_latency `` controls "The hit latency for this cache").
+`` tag_latency `` controls "The hit latency for this cache").
 
 Many of these parameters do not have defaults, so we are required to set
 these parameters before calling `m5.instantiate()`.
@@ -76,8 +76,8 @@ these parameters before calling `m5.instantiate()`.
 
 Now, to create caches with specific parameters, we are first going to
 create a new file, `caches.py`, in the same directory as simple.py,
-`configs/tutorial`. The first step is to import the SimObject(s) we are
-going to extend in this file.
+`configs/tutorial`. The first step is to import the SimObject(s)
+we are going to extend in this file.
 
 ```
 from m5.objects import Cache
@@ -180,13 +180,13 @@ def connectMemSideBus(self, bus):
 ```
 
 The full file can be found in the gem5 source at
-`gem5/configs/learning_gem5/part1/caches.py`.
+[`configs/learning_gem5/part1/caches.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/caches.py).
 
 Adding caches to the simple config file
 ------------------------------------
 
 Now, let's add the caches we just created to the configuration script we
-created in the [last chapter]((http://www.gem5.org/documentation/learning_gem5/part1/simple_config/).
+created in the [last chapter](http://www.gem5.org/documentation/learning_gem5/part1/simple_config/).
 
 First, let's copy the script to a new name.
 
@@ -243,15 +243,14 @@ memory bus.
 ```
 system.l2cache = L2Cache()
 system.l2cache.connectCPUSideBus(system.l2bus)
-
 system.l2cache.connectMemSideBus(system.membus)
 ```
 
 Everything else in the file stays the same! Now we have a complete
 configuration with a two-level cache hierarchy. If you run the current
-file, `hello` should now finish in 58513000 ticks. The full script can
+file, `hello` should now finish in 57467000 ticks. The full script can
 be found in the gem5 source at
-`gem5/configs/learning_gem5/part1/two_level.py`.
+[`configs/learning_gem5/part1/two_level.py](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
 
 Adding parameters to your script
 --------------------------------
@@ -261,10 +260,10 @@ configuration script every time you want to test the system with
 different parameters. To get around this, you can add command-line
 parameters to your gem5 configuration script. Again, because the
 configuration script is just Python, you can use the Python libraries
-that support argument parsing. Although :pyoptparse is officially
+that support argument parsing. Although pyoptparse is officially
 deprecated, many of the configuration scripts that ship with gem5 use it
 instead of pyargparse since gem5's minimum Python version used to be
-2.5. The minimum Python version is now 2.7, so pyargparse is a better
+2.5. The minimum Python version is now 3.6, so Python's argparse is a better
 option when writing new scripts that don't need to interact with the
 current gem5 scripts. To get started using :pyoptparse, you can consult
 the online Python documentation.
@@ -273,14 +272,19 @@ To add options to our two-level cache configuration, after importing our
 caches, let's add some options.
 
 ```
-from optparse import OptionParser
+import argparse
 
-parser = OptionParser()
-parser.add_option('--l1i_size', help="L1 instruction cache size")
-parser.add_option('--l1d_size', help="L1 data cache size")
-parser.add_option('--l2_size', help="Unified L2 cache size")
+parser = argparse.ArgumentParser(description='A simple system with 2-level cache.')
+parser.add\_argument("binary", default="", nargs="?", type=str,
+                    help="Path to the binary to execute.")
+parser.add\_argument("--l1i_size",
+                    help=f"L1 instruction cache size. Default: 16kB.")
+parser.add\_argument("--l1d_size",
+                    help="L1 data cache size. Default: Default: 64kB.")
+parser.add\_argument("--l2_size",
+                    help="L2 cache size. Default: 256kB.")
 
-(options, args) = parser.parse_args()
+options = parser.parse\_args()
 ```
 
 Now, you can run
@@ -288,7 +292,7 @@ Now, you can run
 will display the options you just added.
 
 Next, we need to pass these options onto the caches that we create in
-the configuration script. To do this, we'll simply change two\_level.py
+the configuration script. To do this, we'll simply change two\_level\_opts.py
 to pass the options into the caches as a parameter to their constructor
 and add an appropriate constructor, next.
 
@@ -360,19 +364,21 @@ build/X86/gem5.opt configs/tutorial/two_level.py --l2_size='1MB' --l1d_size='128
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Sep  6 2015 14:17:02
-    gem5 started Sep  6 2015 15:06:51
-    gem5 executing on galapagos-09.cs.wisc.edu
-    command line: build/X86/gem5.opt ../tutorial/_static/scripts/part1/two_level_opts.py --l2_size=1MB --l1d_size=128kB
+    gem5 version 21.0.0.0
+    gem5 compiled May 17 2021 18:05:59
+    gem5 started May 18 2021 00:00:33
+    gem5 executing on amarillo, pid 83118
+    command line: build/X86/gem5.opt configs/tutorial/two_level.py --l2_size=1MB --l1d_size=128kB
 
     Global frequency set at 1000000000000 ticks per second
+    warn: No dot file generated. Please install pydot to generate the dot file and pdf.
     warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
-    0: system.remote_gdb.listener: listening for remote gdb #0 on port 7000
+    0: system.remote_gdb: listening for remote gdb on port 7005
     Beginning simulation!
     info: Entering event queue @ 0.  Starting simulation...
     Hello world!
-    Exiting @ tick 56742000 because target called exit()
+    Exiting @ tick 57467000 because exiting with last active thread context
 
 The full scripts can be found in the gem5 source at
-`gem5/configs/learning_gem5/part1/caches.py` and
-`gem5/configs/learning_gem5/part1/two_level.py`.
+[`configs/learning_gem5/part1/caches.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/caches.py) and
+[`configs/learning_gem5/part1/two_level.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).

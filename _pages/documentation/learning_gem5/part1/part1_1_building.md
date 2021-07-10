@@ -81,10 +81,9 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
         ```
 
-6. [Boost](https://www.boost.org/) (**Optional**) : The Boost library is a set
-        of general purpose C++ libraries. It is a necessary dependency if you
-        wish to use the SystemC implementation.
-
+6. [Boost](https://www.boost.org/) (**Optional**)
+    :   The Boost library is a set of general purpose C++ libraries. It is a
+        necessary dependency if you wish to use the SystemC implementation.
         ```
         sudo apt install libboost-all-dev
         ```
@@ -124,12 +123,12 @@ There are a number of default compilations options in the `build_opts`
 directory. These files specify the parameters passed to SCons when
 initially building gem5. We'll use the X86 defaults and specify that we
 want to compile all of the CPU models. You can look at the file
-`build_opts/X86` to see the default values for the Scons options. You
+`build_opts/X86` to see the default values for the SCons options. You
 can also specify these options on the command line to override any
 default.
 
 ```
-python3 scons build/X86/gem5.opt -j9
+python3 `which scons` build/X86/gem5.opt -j9
 ```
 
 > **gem5 binary types**

@@ -28,16 +28,10 @@
  * Authors: Jason Lowe-Power
  */
 
-#include "debug/Hello.hh"
+#include "debug/HelloExample.hh"
 #include "learning_gem5/hello_object.hh"
 
-HelloObject::HelloObject(HelloObjectParams *params) : SimObject(params)
+HelloObject::HelloObject(const HelloObjectParams &params) : SimObject(params)
 {
-    DPRINTF(Hello, "Created the hello object\n");
-}
-
-HelloObject*
-HelloObjectParams::create()
-{
-    return new HelloObject(this);
+    DPRINTF(HelloExample, "Created the hello object\n");
 }
