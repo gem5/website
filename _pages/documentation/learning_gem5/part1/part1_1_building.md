@@ -68,7 +68,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install python3-dev
         ```
 
-5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+
+5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)
@@ -268,4 +268,35 @@ the following command.
 
 ```
 sudo apt-get install automake
+```
+
+### Protobuf 3.12.3 problem
+
+Compiling gem5 using protobuf might result in the following error,
+
+```
+In file included from build/X86/cpu/trace/trace_cpu.hh:53,
+                 from build/X86/cpu/trace/trace_cpu.cc:38:
+build/X86/proto/inst_dep_record.pb.h:49:51: error: 'AuxiliaryParseTableField' in namespace 'google::protobuf::internal' does not name a type; did you mean 'AuxillaryParseTableField'?
+   49 |   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
+```
+
+The root cause of the problem is discussed here: [https://gem5.atlassian.net/browse/GEM5-1032].
+
+To resolve this problem, you may need to update the version of ProtocolBuffer,
+```
+sudo apt update
+sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
+```
+
+After that, you may need to clean the gem5 build folder **before** recompiling gem5,
+```
+python3 `which scons` --clean --no-cache        # cleaning the build folder
+python3 `which scons` build/X86/gem5.opt -j 9   # re-compiling gem5
+```
+
+If the problem persists, you may need to completely remove the gem5 build folder **before** compiling gem5 again,
+```
+rm -rf build/                                   # completely removing the gem5 build folder
+python3 `which scons` build/X86/gem5.opt -j 9   # re-compiling gem5
 ```
