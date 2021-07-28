@@ -167,7 +167,7 @@ Now, to build the disk image, inside the disk-image folder, run:
 ```
 
 Once this process succeeds, the disk image can be found on `boot-exit/boot-exit-image/boot-exit`.
-A disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v20-1/images/x86/ubuntu-18-04/boot-exit.img.gz).
+A disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v21-1/images/x86/ubuntu-18-04/boot-exit.img.gz).
 
 
 ## Compiling the linux kernel
@@ -203,11 +203,11 @@ Repeat the above process for other kernel versions that we want to use in this e
 
 **Note:** The above instructions are tested with `gcc 7.5.0` and the already compiled Linux binaries can be downloaded from the following links:
 
-- [vmlinux-4.4.186](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.4.186)
-- [vmlinux-4.9.186](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.9.186)
-- [vmlinux-4.14.134](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.14.134)
-- [vmlinux-4.19.83](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-4.19.83)
-- [vmlinux-5.4.49](http://dist.gem5.org/dist/v20-1/kernels/x86/static/vmlinux-5.4.49)
+- [vmlinux-4.4.186](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.4.186)
+- [vmlinux-4.9.186](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.9.186)
+- [vmlinux-4.14.134](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.14.134)
+- [vmlinux-4.19.83](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.19.83)
+- [vmlinux-5.4.49](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-5.4.49)
 
 
 ## gem5 run scripts
