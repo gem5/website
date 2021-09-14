@@ -68,12 +68,12 @@ to copy their values to your C++ class in its constructor. The following
 code shows the changes to the `HelloObject` constructor.
 
 ```cpp
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params),
     event(*this),
-    myName(params->name),
-    latency(params->time_to_wait),
-    timesLeft(params->number_of_fires)
+    myName(params.name),
+    latency(params.time_to_wait),
+    timesLeft(params.number_of_fires)
 {
     DPRINTF(Hello, "Created the hello object with the name %s\n", myName);
 }
@@ -275,9 +275,9 @@ class GoodbyeObject : public SimObject
 #include "debug/Hello.hh"
 #include "sim/sim_exit.hh"
 
-GoodbyeObject::GoodbyeObject(GoodbyeObjectParams *params) :
-    SimObject(params), event(*this), bandwidth(params->write_bandwidth),
-    bufferSize(params->buffer_size), buffer(nullptr), bufferUsed(0)
+GoodbyeObject::GoodbyeObject(const GoodbyeObjectParams &params) :
+    SimObject(params), event(*this), bandwidth(params.write_bandwidth),
+    bufferSize(params.buffer_size), buffer(nullptr), bufferUsed(0)
 {
     buffer = new char[bufferSize];
     DPRINTF(Hello, "Created the goodbye object\n");
@@ -436,13 +436,13 @@ case this object has been coded to accept.
 #include "base/misc.hh"
 #include "debug/Hello.hh"
 
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(HelloObjectParams &params) :
     SimObject(params),
     event(*this),
-    goodbye(params->goodbye_object),
-    myName(params->name),
-    latency(params->time_to_wait),
-    timesLeft(params->number_of_fires)
+    goodbye(params.goodbye_object),
+    myName(params.name),
+    latency(params.time_to_wait),
+    timesLeft(params.number_of_fires)
 {
     DPRINTF(Hello, "Created the hello object with the name %s\n", myName);
     panic_if(!goodbye, "HelloObject must have a non-null GoodbyeObject");
