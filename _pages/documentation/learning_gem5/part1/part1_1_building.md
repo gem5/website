@@ -47,7 +47,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install build-essential
         ```
 
-       **We support GCC Versions >=7, up to GCC 10**
+       **We support GCC Versions >=7, up to GCC 11**
 
 3.  [SCons 3.0+](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
