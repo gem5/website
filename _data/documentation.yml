@@ -55,6 +55,18 @@ docs:
         - page: v21.2.0.0
           url: http://doxygen.gem5.org/release/v21-2-0-0/index.html
 
+    - title: gem5 standard library
+      id: gem5-standard-library
+      subitems:
+        - page: Standard Library Overview
+          url: /documentation/gem5-stdlib/overview
+        - page: Hello World Tutorial
+          url: /documentation/gem5-stdlib/hello-world-tutorial
+        - page: X86 Full-System Tutorial
+          url: /documentation/gem5-stdlib/x86-full-system-tutorial
+        - page: Developing Your Own Components Tutorial
+          url: /documentation/gem5-stdlib/develop-own-components-tutorial
+
     - title: gem5 Resources
       id: gem5_resources
       url: /documentation/general_docs/gem5_resources
