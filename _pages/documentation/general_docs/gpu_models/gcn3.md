@@ -55,12 +55,13 @@ docker run --rm -v $PWD/gem5-resources:$PWD/gem5-resources -w $PWD/gem5-resource
 
 #### Running the sample application
 The following command assumes that gem5 and gem5-resources are subdirectories of your current directory
+
 ```
 docker run --rm -v $PWD/gem5:/gem5 -v $PWD/gem5-resources:/gem5-resources \
                 -w /gem5 <image_name> \
-                build/GCN3_X86/gem5.opt configs/example/apu_se.py -n2 \
-                --benchmark-root=/gem5-resources/src/square/bin \
-                -c square.o
+                build/GCN3_X86/gem5.opt configs/example/apu_se.py -n3 \
+                --benchmark-root=/gem5-resources/src/gpu/square/bin \
+                -c square
 ```
 
 ## **ROCm**
