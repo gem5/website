@@ -17,16 +17,21 @@ This includes both AArch32 and AArch64 state at all ELs. This basically means su
 * [EL3: TrustZone®](https://developer.arm.com/ip-products/security-ip/trustzone)
 
 The baseline model is ARMv8.0 compliant, we also support some mandatory/optional ARMv8.x features (with x > 0)
-While the best way to get a synced version of Arm architectural features is to have a look at Arm ID registers:
 
-* [src/arch/arm/ArmISA.py](https://github.com/gem5/gem5/blob/master/src/arch/arm/ArmISA.py)
-* [src/arch/arm/ArmSystem.py](https://github.com/gem5/gem5/blob/master/src/arch/arm/ArmSystem.py)
+### From gem5 v21.2
 
-Here you will find a summary of some (but not all) notable`architectural extensions supported in gem5:
+The best way to get a synced version of Arm architectural features is to have a look at the [ArmExtension](https://gem5.googlesource.com/public/gem5/+/refs/heads/develop/src/arch/arm/ArmSystem.py) enum
+used by the release object and the available example releases provided within the same file.
 
-* ARMv8.1-LSE, Armv8.1 Large System Extensions
-* ARMv8.1-PAN, Privileged access never
-* ARMv8.2-SVE, Scalable Vector Extension
-* ARMv8.3-JSConv, Javascript conversion instructions
-* ARMv8.3-PAuth, Pointer Authentication
+A user can choose one of the following options:
 
+* Use the default release
+* Use another example release (e.g. Armv82)
+* Generate a custom release from the available ArmExtension enum values
+
+### Before gem5 v21.2
+
+The best way to get a synced version of Arm architectural features is to have a look at Arm ID registers and boolean values:
+
+* [src/arch/arm/ArmISA.py](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.1.0.2/src/arch/arm/ArmISA.py)
+* [src/arch/arm/ArmSystem.py](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.1.0.2/src/arch/arm/ArmSystem.py)
