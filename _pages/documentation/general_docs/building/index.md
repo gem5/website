@@ -153,6 +153,7 @@ The valid ISAs are:
 * NULL
 * MIPS
 * POWER
+* RISCV
 * SPARC
 * X86
 

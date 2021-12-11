@@ -59,27 +59,36 @@ Now, you can start digging into how to use and extend gem5!
 
 ### What version of gem5 should I use?
 
-The gem5 git repository has two branches: `develop` and `master`. The `develop`
+The gem5 git repository has two branches: `develop` and `stable`. The `develop`
 branch contains the very latest gem5 changes **but is not stable**. It is
 frequently updated. **The `develop` branch should only be used when
 contributing the the gem5 project** (please see our [Contributing Guide](
 /contributing) for more information on how to submit code to gem5).
 
-The master branch contains stable gem5 code. The HEAD of the master branch
+The stable branch contains stable gem5 code. The HEAD of the stable branch
 points towards the latest gem5 release. We would advise researchers use the
 latest stable release of gem5 and report which version was used when publishing
 results (use `git describe` to see latest gem5 release version number).
 
 If replicating previous work, please find which version of gem5 was used. This
-version should be tagged on the `master` branch and can thereby be checked-out
+version should be tagged on the `stable` branch and can thereby be checked-out
 on a new branch using `git checkout -b {branch} {version}`.
 E.g., to checkout `v19.0.0` on a new branch called `version19`:
 `git checkout -b version19 v19.0.0`. A complete list of released gem5
-versions can be determined by executing `git tag` on the `master` branch.
+versions can be determined by executing `git tag` on the `stable` branch.
 
 ### How should I cite gem5?
 
-You should always cite the [gem5 paper](http://dx.doi.org/10.1145/2024716.2024718).
+You should cite the [gem5-20 paper](https://arxiv.org/abs/2007.03152).
+
+```
+The gem5 Simulator: Version 20.0+. Jason Lowe-Power, Abdul Mutaal Ahmad, Ayaz Akram, Mohammad Alian, Rico Amslinger, Matteo Andreozzi, Adrià Armejach, Nils Asmussen, Brad Beckmann, Srikant Bharadwaj, Gabe Black, Gedare Bloom, Bobby R. Bruce, Daniel Rodrigues Carvalho, Jeronimo Castrillon, Lizhong Chen, Nicolas Derumigny, Stephan Diestelhorst, Wendy Elsasser, Carlos Escuin, Marjan Fariborz, Amin Farmahini-Farahani, Pouya Fotouhi, Ryan Gambord, Jayneel Gandhi, Dibakar Gope, Thomas Grass, Anthony Gutierrez, Bagus Hanindhito, Andreas Hansson, Swapnil Haria, Austin Harris, Timothy Hayes, Adrian Herrera, Matthew Horsnell, Syed Ali Raza Jafri, Radhika Jagtap, Hanhwi Jang, Reiley Jeyapaul, Timothy M. Jones, Matthias Jung, Subash Kannoth, Hamidreza Khaleghzadeh, Yuetsu Kodama, Tushar Krishna, Tommaso Marinelli, Christian Menard, Andrea Mondelli, Miquel Moreto, Tiago Mück, Omar Naji, Krishnendra Nathella, Hoa Nguyen, Nikos Nikoleris, Lena E. Olson, Marc Orr, Binh Pham, Pablo Prieto, Trivikram Reddy, Alec Roelke, Mahyar Samani, Andreas Sandberg, Javier Setoain, Boris Shingarov, Matthew D. Sinclair, Tuan Ta, Rahul Thakur, Giacomo Travaglini, Michael Upton, Nilay Vaish, Ilias Vougioukas, William Wang, Zhengrong Wang, Norbert Wehn, Christian Weis, David A. Wood, Hongil Yoon, Éder F. Zulian. ArXiv Preprint ArXiv:2007.03152, 2021.
+
+```
+
+[Download the .bib file.](/assets/files/gem5-20.bib)
+
+You may also cite the [original gem5 paper](http://dx.doi.org/10.1145/2024716.2024718).
 
 ```
 The gem5 Simulator. Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. May 2011, ACM SIGARCH Computer Architecture News.
@@ -93,7 +102,7 @@ See [the publications page](/publications/) for a list of models that have been 
 
 ### How should I refer to gem5?
 
-"gem5" should *always* have a lowercase "g". 
+"gem5" should *always* have a lowercase "g".
 If it makes you uncomfortable beginning a sentence with a lowercase letter or your editor requires a capital letter, you can instead refer to gem5 as "The gem5 Simulator".
 
 ### Can I use the gem5 logo?

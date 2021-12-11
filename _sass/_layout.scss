@@ -200,6 +200,24 @@ header {
   }
 }
 
+/**** Testing status ****/
+div.testing-status {
+  overflow: auto;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  .testing-title {
+    float: left;
+    padding-top: 1em;
+  }
+  .testing-info {
+    overflow: hidden;
+    ul {
+      list-style: none;
+    }
+  }
+}
+
 
 /**** CARD ****/
 div.card {

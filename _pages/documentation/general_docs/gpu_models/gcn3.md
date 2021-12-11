@@ -18,13 +18,11 @@ The GCN3 GPU is a model that simulates a GPU at the ISA level, as opposed to the
 
 ## **Using the model**
 
-Currently, the GCN3 GPU model in gem5 is only supported on the develop branch.
-Thus, you should use the develop branch when running the GCN3 model.
-We expect this support to be integrated into the gem5-v21.0 release.
+Currently, the GCN3 GPU model in gem5 is supported on the stable and develop branch.
 
 The [gem5 repository](https://gem5.goooglesource.com/public/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model. A pre-built version of the docker image is hosted at `gcr.io/gem5-test/gcn-gpu`.
 
-The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a sample application (square) that can be used to verify that the model runs correctly.
+The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a number of sample applications that can be used to verify that the model runs correctly.  We recommend users start with [square](https://resources.gem5.org/resources/square), as it is a simple, heavily tested application that should run relatively quickly.
 
 #### Using the image
 The docker image can either be built or pulled from gcr.io
@@ -42,26 +40,10 @@ docker pull gcr.io/gem5-test/gcn-gpu
 You can also put `gcr.io/gem5-test/gcn-gpu` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 
 #### Building gem5 using the image
-The following command assumes the gem5 directory is a subdirectory of your current directory
-```
-docker run --rm -v $PWD/gem5:/gem5 -w /gem5 <image_name> scons -sQ -j$(nproc) build/GCN3_X86/gem5.opt
-```
+See square in [gem5 resources](https://resources.gem5.org/resources/square) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
 
-#### Building a GPU application using the image
-The following command assumes the gem5-resources directory is a subdirectory of your current directory
-```
-docker run --rm -v $PWD/gem5-resources:$PWD/gem5-resources -w $PWD/gem5-resources/src/square <image_name> make gfx8-apu
-```
-
-#### Running the sample application
-The following command assumes that gem5 and gem5-resources are subdirectories of your current directory
-```
-docker run --rm -v $PWD/gem5:/gem5 -v $PWD/gem5-resources:/gem5-resources \
-                -w /gem5 <image_name> \
-                build/GCN3_X86/gem5.opt configs/example/apu_se.py -n2 \
-                --benchmark-root=/gem5-resources/src/square/bin \
-                -c square.o
-```
+#### Building & running a GPU application using the image
+See [gem5 resources](https://resources.gem5.org/) for examples of how to build and run GPU applications in the docker.
 
 ## **ROCm**
 
@@ -81,7 +63,7 @@ The `GPUComputeDriver` derives from `HSADriver` and is a device-specific impleme
 The `src/dev/hsa/kfd_ioctl.h` header must match the `kfd_ioctl.h` header that comes with ROCt. The emulated driver relies on that file to interpret the `ioctl()` codes the thunk uses.
 
 #### ROCm toolchain and software stack
-The GCN3 model supports ROCm version 1.6
+The GCN3 model supports ROCm version 4.0.
 
 The following ROCm components are required:
 * [Heterogeneous Compute Compiler (HCC)](https://github.com/RadeonOpenCompute/hcc)
@@ -92,7 +74,6 @@ The following ROCm components are required:
 The following additional components are used to build and run machine learning programs:
 * [hipBLAS](https://github.com/ROCmSoftwarePlatform/hipBLAS/)
 * [rocBLAS](https://github.com/ROCmSoftwarePlatform/rocBLAS/)
-* [MIOpenGEMM](https://github.com/ROCmSoftwarePlatform/MIOpenGEMM/)
 * [MIOpen](https://github.com/ROCmSoftwarePlatform/MIOpen/)
 * [rocm-cmake](https://github.com/RadeonOpenCompute/rocm-cmake/)
 
