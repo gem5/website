@@ -52,6 +52,8 @@ docs:
           url: http://doxygen.gem5.org/release/v21-1-0-1/index.html
         - page: v21.1.0.2
           url: http://doxygen.gem5.org/release/v21-1-0-2/index.html
+        - page: v21.2.0.0
+          url: http://doxygen.gem5.org/release/v21-2-0-0/index.html
 
     - title: gem5 Resources
       id: gem5_resources
