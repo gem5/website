@@ -78,21 +78,23 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
+Ubuntu 20.04 with all optional dependencies:
+[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2](
+https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2) ([source Dockerfile](
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
+
+Ubuntu 20.04 with minimum dependencies:
+[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2](
+https://gcr.io/gem5-test/ubuntu-20.04_min-dependencies:v21-2) ([source Dockerfile](
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_min-dependencies/Dockerfile)).
+
 Ubuntu 18.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-18.04_all-dependencies](
-https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies) ([source Dockerfile](
+[gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v21-2](
+https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v21-2) ([source Dockerfile](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
-Ubuntu 18.04 with the minimum set of dependencies:
-[gcr.io/gem5-test/ubuntu-18.04_min-dependencies](
-https://gcr.io/gem5-test/ubuntu-18.04_min-dependencies) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-18.04_min-dependencies/Dockerfile)).
 
 
-Ubuntu 20.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-20.04_all-dependencies](
-https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 To obtain a docker image:
 
@@ -100,13 +102,13 @@ To obtain a docker image:
 docker pull <image>
 ```
 
-E.g., for Ubuntu 18.04 with all optional dependencies:
+E.g., for Ubuntu 20.04 with all optional dependencies:
 
 ```
-docker pull gcr.io/gem5-test/ubuntu-18.04_all-dependencies
+docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2
 ```
 
-Then, to work within this enviornment, we suggest using the following:
+Then, to work within this environment, we suggest using the following:
 
 ```
 docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
@@ -114,7 +116,7 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-`gcr.io/gem5-test/ubuntu-18.04_all-dependencies`).
+`gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.

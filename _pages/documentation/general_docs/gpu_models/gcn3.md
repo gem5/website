@@ -25,7 +25,7 @@ The [gem5 repository](https://gem5.goooglesource.com/public/gem5) comes with a d
 The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a number of sample applications that can be used to verify that the model runs correctly.  We recommend users start with [square](https://resources.gem5.org/resources/square), as it is a simple, heavily tested application that should run relatively quickly.
 
 #### Using the image
-The docker image can either be built or pulled from gcr.io
+The docker image can either be built or pulled from gcr.io.
 
 To build the docker image from source:
 ```
@@ -33,17 +33,18 @@ To build the docker image from source:
 docker build -t <image_name> .
 ```
 
-To pull the pre-built docker image:
+To pull the pre-built docker image (Note the `v21-2` tag, to get the correct
+image for this release):
 ```
-docker pull gcr.io/gem5-test/gcn-gpu
+docker pull gcr.io/gem5-test/gcn-gpu:v21-2
 ```
-You can also put `gcr.io/gem5-test/gcn-gpu` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
+You can also put `gcr.io/gem5-test/gcn-gpu:v21-2` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 
 #### Building gem5 using the image
-See square in [gem5 resources](https://resources.gem5.org/resources/square) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
+See square in [gem5 resources](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gpu/square/) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
 
 #### Building & running a GPU application using the image
-See [gem5 resources](https://resources.gem5.org/) for examples of how to build and run GPU applications in the docker.
+See [gem5 resources](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gpu) for examples of how to build and run GPU applications in the docker.
 
 ## **ROCm**
 
