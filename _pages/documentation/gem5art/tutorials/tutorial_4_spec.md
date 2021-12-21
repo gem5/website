@@ -285,7 +285,7 @@ The following command downloads the compiled Linux kernel of version 4.19.83.
 In the root folder of the experiment,
 
 ```sh
-wget http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.19.83
+wget http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.19.83
 ```
 
 Now, `in launch_spec2017_experiments.py`, we make an Artifact object of the Linux kernel binary.

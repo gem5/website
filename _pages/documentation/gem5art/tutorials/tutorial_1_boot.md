@@ -167,7 +167,7 @@ Now, to build the disk image, inside the disk-image folder, run:
 ```
 
 Once this process succeeds, the disk image can be found on `boot-exit/boot-exit-image/boot-exit`.
-A disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v21-1/images/x86/ubuntu-18-04/boot-exit.img.gz).
+A similar disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v21-2/images/x86/ubuntu-18-04/x86-ubuntu.img.gz).
 
 
 ## Compiling the linux kernel
@@ -182,7 +182,7 @@ In this tutorial, we want to experiment with different linux kernels to examine 
 
 
 Let's use an example of kernel v5.4.49 to see how to compile the kernel.
-First, add a folder linux-configs to store linux kernel config files. The configuration files of interest are available [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit/linux-configs/).
+First, add a folder linux-configs to store linux kernel config files. The configuration files of interest are available [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/linux-kernel/).
 Then, we will get the linux source and checkout the required linux version (e.g. v5.4.49 in this case).
 
 ```
@@ -203,18 +203,18 @@ Repeat the above process for other kernel versions that we want to use in this e
 
 **Note:** The above instructions are tested with `gcc 7.5.0` and the already compiled Linux binaries can be downloaded from the following links:
 
-- [vmlinux-4.4.186](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.4.186)
-- [vmlinux-4.9.186](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.9.186)
-- [vmlinux-4.14.134](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.14.134)
-- [vmlinux-4.19.83](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.19.83)
-- [vmlinux-5.4.49](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-5.4.49)
+- [vmlinux-4.4.186](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.4.186)
+- [vmlinux-4.9.186](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.9.186)
+- [vmlinux-4.14.134](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.14.134)
+- [vmlinux-4.19.83](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.19.83)
+- [vmlinux-5.4.49](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-5.4.49)
 
 
 ## gem5 run scripts
 
 Next, we need to add gem5 run scripts. We will do that in a folder named configs-boot-tests.
-Get the run script named run_exit.py from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit/configs/run_exit.py), and other system configuration files from
-[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit/configs/system).
+Get the run script named run_exit.py from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/x86-ubuntu/configs/run_exit.py), and other system configuration files from
+[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/x86-ubuntu/configs/system).
 The run script (run_exit.py) takes the following arguments:
 - kernel: compiled kernel to be used for simulation
 - disk: built disk image to be used for simulation

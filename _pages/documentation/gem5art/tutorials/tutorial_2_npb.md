@@ -341,12 +341,12 @@ Now, to build the disk image inside the disk-image folder, run:
 ```
 
 Once this process succeeds, the created disk image can be found on `npb/npb-image/npb`.
-A disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v21-1/images/x86/ubuntu-18-04/npb.img.gz).
+A disk image already created following the above instructions can be found, gzipped, [here](http://dist.gem5.org/dist/v21-2/images/x86/ubuntu-18-04/npb.img.gz).
 
 ## Compiling the linux kernel
 
 In this tutorial, we use one of the LTS (long term support) releases of linux kernel v4.19.83 with gem5 to run NAS parallel benchmarks.
-First, get the linux kernel config file from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/boot-exit/linux-configs/), and place it in npb-tests folder.
+First, get the linux kernel config file from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/linux-kernel/linux-configs/), and place it in npb-tests folder.
 Then, we will get the linux source of version 4.19.83:
 
 ```
@@ -364,7 +364,7 @@ cp vmlinux vmlinux-4.19.83
 
 **Note:** The above instructions are tested with `gcc 7.5.0` and an already compiled Linux binary can be downloaded from the following link:
 
-- [vmlinux-4.19.83](http://dist.gem5.org/dist/v21-1/kernels/x86/static/vmlinux-4.19.83)
+- [vmlinux-4.19.83](http://dist.gem5.org/dist/v21-2/kernels/x86/static/vmlinux-4.19.83)
 
 ## gem5 run scripts
 
