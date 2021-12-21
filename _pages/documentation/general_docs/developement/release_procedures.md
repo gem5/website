@@ -28,6 +28,13 @@ For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
 * The [`ext/testlib/configuration.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/ext/testlib/configuration.py)  file's `default.resource_url` field is updated to point towards the correct Google Cloud release bucket (see [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)).
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/44725>.
+* The Resource downloader, `src/python/gem5/resources/downloader.py`, has a function `def _resources_json_version_required()`. This must be updated to the correct version of the `resources.json` file to use (see the [gem5 resources repository release procedures](#gem5-resources-repository)) for more information on this).
+* The `tests/weekly.sh`, `tests/nightly.sh`, `tests/compiler-tests.sh`, and `tests/jenkins/presubmit.sh` should be updated ensure they remain stable across different gem5 releases. This is achieved by:
+    1. Fix the docker pulls images by appending the version (example [here](https://gem5-review.googlesource.com/c/public/gem5/+/54470). This will be done after following the [docker image release procedures](#the-docker-images).
+    2. Ensure the download links are downloading from the correct Google Cloud bucket for the release version.
+* Hardcode the `rocm_patches/ROCclr.patch` download link in `util/dockerfiles/gcn-gpu` to the correct Google bucket.
+* Update the `ext/sst/README.md` file for the current version. This simply means updating the download links.
+See [here](https://gem5-review.googlesource.com/c/public/gem5/+/54703) for an example of how this is done.
 
 When the staging branch is confirmed to be in a satisfactory state, it will be merged into both develop and stable.
 There is then two additional actions:
@@ -59,6 +66,12 @@ Prior to this the following changes should be applied to the staging branch:
 
 * A new Google Cloud Bucket directory should be created for that version (see the [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)), and all the resources from the staging branch must match that found within that Google Cloud Bucket directory (i.e., the compiled resources within the bucket are built from the sources in the staging branch).
 * URL download links in the resources repo should be updated to point towards the correct Google Cloud Bucket directory.
+* The `resources.json` file, found in the root of the repository, must be updated for the current release.
+[This patch](https://gem5-review.googlesource.com/c/public/gem5-resources/+/54403) shows an example of doing this.
+The `version` field must be updated to the version that matches that in the `src/python/gem5/resources/downloader.py` file.
+The `previous-version` list must be updated to support all versions prior, inclusive of develop.
+Each previous version must map to a file that may be downloaded.
+* The `resources.json` `url_base` field must be updated to the correct directory from the Google Cloud Bucket.
 
 When merged into the develop branch, the URL download links should reverted back to `http://dist.gem5.org/dist/develop`.
 
