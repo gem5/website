@@ -268,8 +268,8 @@ execution contexts in the CPU.
 ```
 binary = 'tests/test-progs/hello/bin/x86/linux/hello'
 
-# for gem5 V21 and beyond, uncomment the following line
-# system.workload = SEWorkload.init_compatible(binary)
+# for gem5 V21 and beyond
+system.workload = SEWorkload.init_compatible(binary)
 
 process = Process()
 process.cmd = [binary]
