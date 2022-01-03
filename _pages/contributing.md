@@ -193,8 +193,8 @@ git commit
 The commit message must adhere to our style. The first line of the commit is
 the "header". The header starts with a tag (or tags, separated by a comma),
 then a colon. Which tags are used depend on which components of gem5
-you have modified. **Please refer to the [MAINTAINERS.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS) for
+you have modified. **Please refer to the [MAINTAINERS.yaml](
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS.yaml) for
 a comprehensive list of accepted tags**. After this colon a short description
 of the commit must be provided. **This header line must not exceed 65
 characters**.
@@ -265,8 +265,8 @@ Through the Gerrit portal we strongly advise you add reviewers.
 Gerrit will automatically notify those you assign. The "maintainers" of the
 components you have modified should be added as reviewers. These should
 correspond to the tags you included in the commit header. **Please consult
-[MAINTAINERS.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS) to
+[MAINTAINERS.yaml](
+https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS.yaml) to
 see who maintains which component**. As an example, for a commit with a header
 of `tests,arch : This is testing the arch component` then the maintainers for
 both `tests` and `arch` should be included as reviewers.
