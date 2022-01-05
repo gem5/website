@@ -216,6 +216,7 @@ The passed script will then be executed and will be responsible for running benc
 
 Finally, create **npb.json** and add following contents:
 
+{% raw %}
 ```json
 {
     "builders":
@@ -322,6 +323,7 @@ Finally, create **npb.json** and add following contents:
 
 }
 ```
+{% endraw %}
 
 **npb.json** is our primary .json configuration file. The provisioners and variables section of this file configure the files that need to be transferred to the disk and other things like disk image's name.
 

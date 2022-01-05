@@ -115,6 +115,8 @@ This is essentially a bash script that is executed on the VM after the file copy
 In `[disk-name].json`, we could add more scripts to `provisioners`.
 Note that the files are on the host, but the effects are on the disk image.
 For example, the following example runs `shared/post_installation.sh` after Ubuntu is installed,
+
+{% raw %}
 ```shell
 {
     "type": "shell",
@@ -125,6 +127,8 @@ For example, the following example runs `shared/post_installation.sh` after Ubun
     ]
 }
 ```
+{% endraw %}
+
 <a name="buildsimple"></a>
 ### d. Building the Disk Image
 <a name="simplebuild"></a>
