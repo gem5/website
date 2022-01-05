@@ -243,12 +243,16 @@ memory bus.
 ```
 system.l2cache = L2Cache()
 system.l2cache.connectCPUSideBus(system.l2bus)
+system.membus = SystemXBar()
 system.l2cache.connectMemSideBus(system.membus)
 ```
 
-Everything else in the file stays the same! Now we have a complete
-configuration with a two-level cache hierarchy. If you run the current
-file, `hello` should now finish in 57467000 ticks. The full script can
+Note that `system.membus = SystemXBar()` has been defined before
+`system.l2cache.connectMemSideBus` so we can pass it to
+`system.l2cache.connectMemSideBus`. Everything else in the file
+stays the same! Now we have a complete configuration with a
+two-level cache hierarchy. If you run the current file, `hello`
+should now finish in 57467000 ticks. The full script can
 be found in the gem5 source at
 [`configs/learning_gem5/part1/two_level.py](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
 
@@ -275,16 +279,23 @@ caches, let's add some options.
 import argparse
 
 parser = argparse.ArgumentParser(description='A simple system with 2-level cache.')
-parser.add\_argument("binary", default="", nargs="?", type=str,
+parser.add_argument("binary", default="", nargs="?", type=str,
                     help="Path to the binary to execute.")
-parser.add\_argument("--l1i_size",
+parser.add_argument("--l1i_size",
                     help=f"L1 instruction cache size. Default: 16kB.")
-parser.add\_argument("--l1d_size",
+parser.add_argument("--l1d_size",
                     help="L1 data cache size. Default: Default: 64kB.")
-parser.add\_argument("--l2_size",
+parser.add_argument("--l2_size",
                     help="L2 cache size. Default: 256kB.")
 
-options = parser.parse\_args()
+options = parser.parse_args()
+```
+Note that if you wanted to pass the binary file's path the way shown above
+and use it through options, you should specify it as `options.binary`.
+For example:
+
+```
+system.workload = SEWorkload.init_compatible(options.binary)
 ```
 
 Now, you can run
