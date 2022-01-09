@@ -55,7 +55,7 @@ how simulation scripts work.
 > configuration script you can create any SimObject, set its parameters,
 > and specify the interactions between SimObjects.
 >
-> See [SimObject details](http://doxygen.gem5.org/release/current/classSimObject.html#details) for more information.
+> See [SimObject details](http://doxygen.gem5.org/release/current/classgem5_1_1SimObject.html#details) for more information.
 
 ---
 
