@@ -7,17 +7,16 @@ permalink: /documentation/gem5-stdlib/hello-world-tutorial
 author: Bobby R. Bruce
 ---
 
-Building a "Hello World" example with the gem5 standard library
-===============================================================
+## Building a "Hello World" example with the gem5 standard library
 
 In this tutorial we will cover how to create a very basic simulation using gem5 components.
 This simulation will setup a system consisting of a single-core processor, running in Atomic mode, connected directly to main memory with no caches, I/O, or other components.
-The system will run an X86 binary in Syscall Execution (SE) mode.
+The system will run an X86 binary in syscall emulation (SE) mode.
 The binary will be obtained from gem5-resources and which will print a "Hello World!" string to stdout upon execution.
 
 To start we must compile gem5 to simulate the X86 ISA:
 
-```
+```sh
 # In the root of the gem5 directory
 scons build/X86/gem5.opt -j <number of threads>
 ```
@@ -62,9 +61,9 @@ memory = SingleChannelDDR3_1600("1GiB")
 ```
 
 There exists many memory components to choose from within `gem5.components.memory`.
-Here we are using a single-channel DDR3 1600, and setting its size to 1GiB.
+Here we are using a single-channel DDR3 1600, and setting its size to 1 GiB.
 It should be noted that setting the size here is technically optional.
-If not set, the `SingleChannelDDR3_1600` will default to 8GiB.
+If not set, the `SingleChannelDDR3_1600` will default to 8 GiB.
 
 Then we consider the _processor_:
 
@@ -72,7 +71,7 @@ Then we consider the _processor_:
 processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1)
 ```
 
-A processor in `gem5.components` is an object which contains a number of gem5 CPU cores, of a particular or varying type (`ATOMIC`, `TIMING`, `KVM`, or `O3`).
+A processor in `gem5.components` is an object which contains a number of gem5 CPU cores, of a particular or varying type (`ATOMIC`, `TIMING`, `KVM`, `O3`, etc.).
 The `SimpleProcessor` used in this example is a processor where all the CPU Cores are of an identical type.
 It requires two arguments: the `cpu_type`, which we set to `ATOMIC`, and `num_cores`, the number of cores, which we set to one.
 
@@ -89,7 +88,7 @@ board = SimpleBoard(
 
 While the constructor of each board may vary, they will typically require the user to specify the _processor_, _memory system_, and _cache hierarchy_, as well as the clock frequency to use.
 In this example we use the `SimpleBoard`.
-The `SimpleBoard` is a very basic system with no I/O which only supports SE mode and can only work with classic cache hierarchy setups.
+The `SimpleBoard` is a very basic system with no I/O which only supports SE-mode and can only work with "classic" cache hierarchies.
 
 At this point in the script we have specified everything we require to simulate our system.
 Of course, in order to run a meaningful simulation, we must specify a workload for this system to run.
@@ -107,6 +106,8 @@ In this example we are going to use the `x86-hello-64-static` resource;
 an x86, 64-bit, statically compiled binary which will print "Hello World!" to stdout.
 After specifying the resource we set the workload via the board's `set_se_binary_workload` function.
 As the name suggests `set_se_binary_workload` is a function used to set a binary to be executed in Syscall Execution mode.
+
+<!-- It would be nice to describe here how to find out what resources are available -->
 
 This is all that is required to setup your simulation.
 From this you simply need to construct and run the `Simulator`:
@@ -215,7 +216,7 @@ To recap on what was learned in this tutorial:
 
 * A system can be built with the gem5 components package using _processor_, _cache hierarchy_, _memory system_, and _board_ components.
 * Generally speaking, components of the same type are interchangeable as much as is possible. E.g., different _cache hierarchy_ components may be swapped in and out of a design without reconfiguration needed in other components.
-* _board_s contain functions to set workloads.
+* _boards_ contain functions to set workloads.
 * The resources package may be used to obtain prebuilt resources from gem5-resources.
 These are typically workloads that may be run via set workload functions.
 * The simulate package can be used to run a board within a gem5 simulation.

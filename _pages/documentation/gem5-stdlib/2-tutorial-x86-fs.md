@@ -7,15 +7,15 @@ permalink: /documentation/gem5-stdlib/x86-full-system-tutorial
 author: Bobby R. Bruce
 ---
 
-Building an x86 full-system simulation with the gem5 standard library
-=====================================================================
+## Building an x86 full-system simulation with the gem5 standard library
 
 One of the key ideas behind the gem5 standard library is to allow users to simulate, big, complex systems, with minimal effort.
-This is done by making sensible assumptions about the nature of the system to simulate and connecting components in a manner which "makes sense".
+This is done by making sensible assumptions about the nature of the system to simulate and connecting components in a manner which "makes sense."
 While this takes away some flexibility, it massively simplifies simulating typical hardware setups in gem5.
+The overarching philosophy is to make the _common case_ simple.
 
-In this tutorial we will build an X86 simulation, capable of running a full-system simulation, booting an Ubuntu operating system, and running a script.
-This system will utilize gem5's ability to switch cores, allowing booting of the operating system in KVM mode and switching to a detailed CPU model to run the script, and utilize a MESI Two Level Ruby cache hierarchy in a dual-core setup.
+In this tutorial we will build an X86 simulation, capable of running a full-system simulation, booting an Ubuntu operating system, and running a benchmark.
+This system will utilize gem5's ability to switch cores, allowing booting of the operating system in KVM fast-forward mode and switching to a detailed CPU model to run the benchmark, and use a MESI Two Level Ruby cache hierarchy in a dual-core setup.
 Without using the gem5 library this would take several hundred lines of Python, forcing the user to specify details such as every IO component and exactly how the cache hierarchy is setup.
 Here, we will demonstrate how simple this task can be with using the gem5 standard library.
 
@@ -49,7 +49,7 @@ They are all included as part of the gem5 binary and therefore do not need to ob
 
 A good start is to use the `requires` function to specify what kind of gem5 binary/setup is required to run the script:
 
-```
+```python
 requires(
     isa_required=ISA.X86,
     coherence_protocol_required=CoherenceProtocol.MESI_TWO_LEVEL,
@@ -60,6 +60,9 @@ requires(
 Here we state that we need gem5 compiled to run the X86 ISA and support the MESI Two Level protocol.
 We also require the host system to have KVM.
 **NOTE: Please ensure your host system supports KVM. If your system does not please remove the `kvm_required` check here**.
+KVM will only work if the host platform and the simulated ISA are the same (e.g., X86 host and X86 simulation).
+
+<!-- Can we provide a link to how to know if you have kvm? Related:https://gem5.atlassian.net/browse/GEM5-684-->
 
 This `requires` call is not required but provides a good safety net to those running the script.
 Errors that occur due to incompatible gem5 binaries may not make much sense otherwise.
@@ -69,20 +72,20 @@ We start with the _cache hierarchy_:
 
 ```python
 cache_hierarchy = MESITwoLevelCacheHierarchy(
-    l1d_size="16kB",
+    l1d_size="32KiB",
     l1d_assoc=8,
-    l1i_size="16kB",
+    l1i_size="32KiB",
     l1i_assoc=8,
-    l2_size="256kB",
+    l2_size="256KiB",
     l2_assoc=16,
     num_l2_banks=1,
 )
 ```
 
 Here we setup a MESI Two Level (ruby) cache hierarchy.
-Via the constructor we set the L1 data cache and L1 instruction cache to 16kB, and the L2 cache to 256kB.
+Via the constructor we set the L1 data cache and L1 instruction cache to 32 KiB, and the L2 cache to 256 KiB.
 
-Next we setup the `memory system`:
+Next we setup the _memory system_:
 
 ```python
 memory = SingleChannelDDR3_1600(size="2GiB")
@@ -155,7 +158,8 @@ The `x86-ubuntu-18.04-img` has been designed to boot the OS, automatically login
 The `m5 readfile` will read a file and execute it.
 The contents of this file are specified via the `readfile_contents` parameter.
 Therefore the value of` readfile_contents` will be executed on system startup.
-**(Note: `readfile_contents` is an optional argument. If it is not specified in `set_kernel_disk_workload` the simulation will exit after boot)**.
+**Note: `readfile_contents` is an optional argument. If it is not specified in `set_kernel_disk_workload` the simulation will exit after boot**.
+This behavior is specific to the `x86-ubuntu-18.04-img` disk image and is not true for all disk images.
 
 In this tutorial the script first runs `m5 exit`.
 This temporarily exits the simulation allowing us to switch the CPUs from `KVM` to `TIMING`.
@@ -220,9 +224,9 @@ requires(
 
 # Here we setup a MESI Two Level Cache Hierarchy.
 cache_hierarchy = MESITwoLevelCacheHierarchy(
-    l1d_size="16kB",
+    l1d_size="32KiB",
     l1d_assoc=8,
-    l1i_size="16kB",
+    l1i_size="32KiB",
     l1i_assoc=8,
     l2_size="256kB",
     l2_assoc=16,

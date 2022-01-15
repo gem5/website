@@ -7,10 +7,9 @@ permalink: /documentation/gem5-stdlib/develop-own-components-tutorial
 author: Bobby R. Bruce
 ---
 
-Developing your own gem5 standard library components
-===========================================
+## Developing your own gem5 standard library components
 
-![](/assets/img/stdlib/gem5-components-design.png)
+![gem5 component library design](/assets/img/stdlib/gem5-components-design.png)
 
 The above diagram shows the basic design of the gem5 library components.
 There are four important abstract classes: `AbstractBoard`, `AbstractProcessor`, `AbstractMemorySystem`, and `AbstractCacheHierarchy`.
@@ -27,7 +26,6 @@ We will inherit from the `AbstractClassicCacheHierarchy` class to create a class
 
 To begin, we should create a new Python class which inherits from the `AbstractClassicCacheHierarchy`.
 In this example we will call this `UniqueCacheHierarchy`, contained within a file `unique_cache_hierarchy.py`:
-
 
 ```python
 from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import AbstractClassicCacheHierarchy
@@ -184,9 +182,14 @@ class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
 This completes the code we'd need to create our own cache hierarchy.
 
 To use this code, a user can import it as they would any other Python module.
+As long as this code is in gem5's python search path, you can import it.
+You can also add `import sys; sys.path.append(<path to new component>)` at the beginning of your gem5 runscript to add the path of this new component to the python search path.
 
-Compiling your component into the gem5 standard library
--------------------------------------------------------
+## Contributing your component to the gem5 stdlib
+
+Before contributing your component, you will need to move it into the `src/` directory so that it is compiled into the gem5 binary.
+
+### Compiling your component into the gem5 standard library
 
 The gem5 standard library code resides in `src/python/gem5`.
 The basic directory structure is as follows:
@@ -232,8 +235,7 @@ cache_hierarchy = UniqueCacheHierarchy()
 
 ```
 
-Contributing your component to the gem5 stdlib
-----------------------------------------------
+### gem5 Code contribution and review
 
 If you believe your addition to the gem5 stdlib would be beneficial to the gem5 community, you may submit it as a patch.
 Please follow our [Contributing Guidelines](/contributing) if you have not contributed to gem5 before or need a reminder on our procedures.
@@ -248,7 +250,6 @@ Please look over other source code in the stdlib to see how this is typically do
 **Note**: Python black does not always enforce line lengths.
 For example, it will not reduce string lengths.
 You may have to manually reduce the length of some lines.
-
 
 Code will be reviewed via our [Gerrit code review system](https://gem5-review.googlesource.com/) like all other contributions.
 We would, however, emphasize that we will not accept patches to the library for simply being functional and tested;
