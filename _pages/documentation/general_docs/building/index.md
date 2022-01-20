@@ -177,30 +177,30 @@ out. This pulls out all the stops performance wise, but does so at the expense
 of run time error checking and the ability to turn on debug output. This
 version is recommended if you're very confident everything is working correctly
 and want to get peak performance from the simulator.
-* **prof** is similar to gem5.fast but also includes instrumentation that
-allows it to be used with the gprof profiling tool. This version is not needed
-very often, but can be used to identify the areas of gem5 that should be
-focused on to improve performance.
-* **perf** also includes instrumentation, but does so using google perftools,
-allowing it to be profiled with google-pprof. This profiling version is
-complementary to gem5.prof, and can probably replace it for all Linux-based
-systems.
 
 These versions are summarized in the following table.
 
-|Build variant|Optimizations|Run time debugging support|Profiling support|
-|-------------|-------------|--------------------------|-----------------|
-|**debug**    |             |X                         |                 |
-|**opt**      |X            |X                         |                 |
-|**fast**     |X            |                          |                 |
-|**prof**     |X            |                          |X                |
-|**perf**     |X            |                          |X                |
+|Build variant|Optimizations|Run time debugging support|
+|-------------|-------------|--------------------------|
+|**debug**    |             |X                         |
+|**opt**      |X            |X                         |
+|**fast**     |X            |                          |
 
 For example, to build gem5 on 4 threads with `opt` and targeting x86:
 
 ```
 scons build/X86/gem5.opt -j 4
 ```
+
+In addition, users may make use of the "gprof" and "pperf" build options to
+enable profiling:
+
+* **gprof** allows gem5 to be used with the gprof profiling tool. It can be
+enabled by compiling with the `--gprof` flag. E.g.,
+`scons build/ARM/gem5.debug --gprof`.
+* **pprof** allows gem5 to be used with the pprof profiling tool. It can be
+enabled by compiling with the `--pprof` flag. E.g.,
+`scons build/X86/gem5.debug --pprof`.
 
 ## Usage
 
