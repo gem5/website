@@ -358,9 +358,3 @@ docs:
         - title: Reporting Problems
           id: reporting_problems
           url: /documentation/reporting_problems
-
-  - title: Working Status of Benchmarks
-    items:
-        - title: gem5-20 Working Status of Benchmarks
-          id: benchmark_status_20
-          url: /documentation/benchmark_status/gem5-20
