@@ -295,7 +295,21 @@ docs:
           url: /documentation/learning_gem5/part3/simple-MI_example
     - title: gem5 101
       id: gem5_101
-      url: /documentation/learning_gem5/gem5_101/
+      subitems:
+        - page: gem5 101
+          url: /documentation/learning_gem5/gem5_101
+        - page: Homework 1
+          url: /documentation/learning_gem5/gem5_101/homework-1
+        - page: Homework 2
+          url: /documentation/learning_gem5/gem5_101/homework-2
+        - page: Homework 3
+          url: /documentation/learning_gem5/gem5_101/homework-3
+        - page: Homework 4
+          url: /documentation/learning_gem5/gem5_101/homework-4
+        - page: Homework 5
+          url: /documentation/learning_gem5/gem5_101/homework-5
+        - page: Homework 6
+          url: /documentation/learning_gem5/gem5_101/homework-6
 
   - title: gem5 Doxygen
     items:
