@@ -415,29 +415,20 @@ gem5, or use gem5.
 
 ## 2004<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2004"></span>
 
-*   _Emulation of realisitic network traffic patterns on an eight-node data vortex interconnection network subsytem_. B. Small, A. Shacham, K. Bergman, K. Athikulwongse, C. Hawkins, and D.S. Will. Journal of Optical Networking Vol. 3, No.11, pp 802-809, November 2004. [pdf](http://lightwave.ee.columbia.edu/files/Small2004.pdf)
-
-*   _ChipLock: Support for Secure Microarchitectures_. T. Kgil, L Falk, and T. Mudge. Proc. Workshop on Architectural Support for Security and Anti-virus (WASSA), October 2004, pp. 130-139. [pdf](http://www.eecs.umich.edu/~tnm/papers/wassa04.pdf)
-
-*   _Design and Applications of a Virtual Context Architecture_. D. Oehmke, N. Binkert, S. Reinhardt, and T. Mudge. University of Michigan Technical Report CSE-TR-497-04, September 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-497-04.pdf)
-
-*   _The Performance Potential of an Integrated Network Interface_. N. L. Binkert, R. G. Dreslinski, E. G. Hallnor, L. R. Hsu, S. E. Raasch, A. L. Schultz, and S. K. Reinhardt. Proc. Advanced Networking and Communications Hardware Workshop (ANCHOR), June 2004. [pdf](http://www.eecs.umich.edu/~stever/pubs/anchor04.pdf)
-
-*   _A Co-Phase Matrix to Guide Simultaneous Multithreading Simulation_. M. Van Biesbrouck, T. Sherwood, and B. Calder. IEEE International Symposium on Performance Analysis and Software (ISPASS), March 2004. [pdf](http://www.cs.ucsd.edu/~calder/papers/ISPASS-04-CoPhaseMatrix.pdf)
-
-*   _A Compressed Memory Hierarchy using an Indirect Index Cache_. E. G. Hallnor and S. K. Reinhardt. Proc. 3rd Workshop on Memory Performance Issues (WMPI), June 2004. [pdf](http://www.eecs.umich.edu/~stever/pubs/wmpi04.pdf)
-    *   An extended version appears as University of Michigan Technical Report CSE-TR-488-04, March 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-488-04.pdf)
+* [**Emulation of realisitic network traffic patterns on an eight-node data vortex interconnection network subsytem**](https://www.osapublishing.org/jocn/abstract.cfm?uri=jon-3-11-802). B. Small, A. Shacham, K. Bergman, K. Athikulwongse, C. Hawkins, and D.S. Will. Journal of Optical Networking Vol. 3, No.11, pp 802-809, November 2004. doi:[10.1364/JON.3.000802](https://doi.org/10.1364/JON.3.000802). [pdf](https://lightwave.ee.columbia.edu/sites/default/files/content/docs/Papers/2004/Small2004.pdf)
+* _ChipLock: Support for Secure Microarchitectures_. T. Kgil, L Falk, and T. Mudge. Proc. Workshop on Architectural Support for Security and Anti-virus (WASSA), October 2004, pp. 130-139. [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2004.05.chipLock.pdf) <!-- XXX: Also published as doi:10.1145/1055626.1055644. Is it the same or an extended version? -->
+* _Design and Applications of a Virtual Context Architecture_. D. Oehmke, N. Binkert, S. Reinhardt, and T. Mudge. University of Michigan Technical Report CSE-TR-497-04, September 2004. [pdf](https://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-497-04.pdf)
+* _The Performance Potential of an Integrated Network Interface_. N. L. Binkert, R. G. Dreslinski, E. G. Hallnor, L. R. Hsu, S. E. Raasch, A. L. Schultz, and S. K. Reinhardt. Proc. Advanced Networking and Communications Hardware Workshop (ANCHOR), June 2004.
+* [**A Co-Phase Matrix to Guide Simultaneous Multithreading Simulation**](https://ieeexplore.ieee.org/document/1291355). M. Van Biesbrouck, T. Sherwood, and B. Calder. IEEE International Symposium on Performance Analysis and Software (ISPASS), March 2004. doi:[10.1109/ISPASS.2004.1291355](https://dx.doi.org/10.1109/ISPASS.2004.1291355). [pdf](https://cseweb.ucsd.edu/~calder/papers/ISPASS-04-CoPhaseMatrix.pdf)
+* [**A Compressed Memory Hierarchy using an Indirect Index Cache**](https://dl.acm.org/doi/10.1145/1054943.1054945). E. G. Hallnor and S. K. Reinhardt. Proc. 3rd Workshop on Memory Performance Issues (WMPI), June 2004. doi:[10.1145/1054943.1054945](https://dx.doi.org/10.1145/1054943.1054945).
+  * An extended version appears as University of Michigan Technical Report CSE-TR-488-04, March 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-488-04.pdf)
 
 ## 2003<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2003"></span>
 
-*   _The Impact of Resource Partitioning on SMT Processors_. S. E. Raasch and S. K. Reinhardt. Proc. 12th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), pp. 15-25, Sept.
-    1.  [pdf](http://www.eecs.umich.edu/~stever/pubs/pact03.pdf)
-
-*   _Network-Oriented Full-System Simulation using M5_. N. L. Binkert, E. G. Hallnor, and S. K. Reinhardt. Sixth Workshop on Computer Architecture Evaluation using Commercial Workloads (CAECW), February
-    1.  [pdf](http://www.eecs.umich.edu/~stever/pubs/caecw03.pdf)
-
-*   _Design, Implementation and Use of the MIRV Experimental Compiler for Computer Architecture Research_. D. A. Greene. Dissertation at the Universtiy of Michigan, 2003. [[http://www.eecs.umich.edu/~tnm/theses/daveg.pdg](http://www.eecs.umich.edu/~tnm/theses/daveg.pdg)“>pdf ]
+* [**The Impact of Resource Partitioning on SMT Processors**](https://ieeexplore.ieee.org/document/1237998). S. E. Raasch and S. K. Reinhardt. Proc. 12th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), pp. 15-25, September 2003. doi:[10.1109/PACT.2003.1237998](https://dx.doi.org/10.1109/PACT.2003.1237998).
+* _Network-Oriented Full-System Simulation using M5_. N. L. Binkert, E. G. Hallnor, and S. K. Reinhardt. Sixth Workshop on Computer Architecture Evaluation using Commercial Workloads (CAECW), February 2003.
+* _Design, Implementation and Use of the MIRV Experimental Compiler for Computer Architecture Research_. D. A. Greene. Dissertation at the Universtiy of Michigan, 2003. [pdf](http://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/daveg.pdf)
 
 ## 2002<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2002"></span>
 
-*   _A Scalable Instruction Queue Design Using Dependence Chains_. S. E. Raasch, N. L. Binkert, and S. K. Reinhardt. Proc. 29th Annual Int’l Symp. on Computer Architecture (ISCA), pp. 318-329, May 2002. [pdf](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.pdf) [ps](http://www.eecs.umich.edu/~stever/pubs/isca02_segiq.ps) [ps.gz](http://www.eecs.umich1111/~stever/pubs/isca02_segiq.ps.gz)
+* [**A Scalable Instruction Queue Design Using Dependence Chains**](https://ieeexplore.ieee.org/document/1003589). S. E. Raasch, N. L. Binkert, and S. K. Reinhardt. Proc. 29th Annual Int’l Symp. on Computer Architecture (ISCA), pp. 318-329, May 2002. doi:[10.1109/ISCA.2002.1003589](https://dx.doi.org/10.1109/ISCA.2002.1003589).
