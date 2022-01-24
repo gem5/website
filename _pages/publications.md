@@ -305,60 +305,37 @@ gem5, or use gem5.
 
 ## 2007<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2007"></span>
 
-*   _Modeling and Characterizing Power Variability in Multicore Architectures._ K. Meng, F. Huebbers, R, Joseph, and Y. Ismail. ISPASS-2007.
-*   _A High Performance Adaptive Miss Handling Architecture for Chip Multiprocessors._ M. Jahre, and L. Natvig. HiPEAC Journal 2007.
-*   _Performance Effects of a Cache Miss Handling Architecture in a Multi-core Processor._ M. Jahre and L. Natvig. NIK-2007 conference. 2007.
-*   _Prioritizing Verification via Value-based Correctness Criticality._ J. Yoo, M. Franklin. Proceedings of the 25th International Conference on Computer Design (ICCD), 2007.
-
-*   _DRAM-Level Prefetching for Fully-Buffered DIMM: Design, Performance and Power Saving._ J. Lin, H. Zheng, Z. Zhu, Z. Zhang ,H. David. ISPASS 2007.
-
-*   ” Virtual Exclusion: An architectural approach to reducing leakage energy in caches for multiprocessor systems”. M. Ghosh, H. Lee. Proceedings of the International Conference on Parallel and Distributed Systems. December 2007.
-
-*   _Dependability-Performance Trade-off on Multiple Clustered Core Processors_. T. Funaki, T. Sato. Proceedings of the 4th International Workshop on Dependable Embedded Systems. October 2007.
-
-*   _Predictive Thread-to-Core Assignment on a Heterogeneous Multi-core Processor_. T. Sondag, V. Krishnamurthy, H. Rajan. PLOS ‘07: ACM SIGOPS 4th Workshop on Programming Languages and Operating Systems. October 2007.
-
-*   _Power deregulation: eliminating off-chip voltage regulation circuitry from embedded systems_. S. Kim, R. P. Dick, R. Joseph. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007.
-
-*   _Aggressive Snoop Reduction for Synchronized Producer-Consumer Communication in Energy-Efficient Embedded Multi-Processors_. C. Yu, P. Petrov. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007.
-
-*   _Three-Dimensional Multiprocessor System-on-Chip Thermal Optimization_. C. Sun, L. Shang, R.P. Dick. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007.
-
-*   _Sampled Simulation for Multithreaded Processors_. M. Van Biesbrouck. (Thesis) UC San Diego Technical Report CS2007-XXXX. September 2007.
-
-*   _Representative Multiprogram Workloads for Multithreaded Processor Simulation_. M. Van Biesbroucky, L. Eeckhoutz, B. Calder. IEEE International Symposium on Workload Characterization (IISWC). September 2007.
-
-*   _The Interval Page Table: Virtual Memory Support in Real-Time and Memory-Constrained Embedded Systems_. X. Zhou, P. Petrov. Proceedings of the 20th annual conference on Integrated circuits and systems design. 2007.
-
-*   _A power-aware shared cache mechanism based on locality assessment of memory reference for CMPs_. I. Kotera, R. Egawa, H. Takizawa, H. Kobayashi. Proceedings of the 2007 workshop on MEmory performance: DEaling with Applications, systems and architecture (MEDEA). September 2007.
-
-*   _Architectural Support for the Stream Execution Model on General-Purpose Processors_. J. Gummaraju, M. Erez, J. Coburn, M. Rosenblum, W. J. Dally. The Sixteenth International Conference on Parallel Architectures and Compilation Techniques (PACT). September 2007.
-
-*   _An Energy Efficient Parallel Architecture Using Near Threshold Operation_. R. Dreslinski, B. Zhai, T. Mudge, D. Blaauw, D. Sylvester. The Sixteenth International Conference on Parallel Architectures and Compilation Techniques (PACT). September 2007.
-
-*   _When Homogeneous becomes Heterogeneous: Wearout Aware Task Scheduling for Streaming Applications_. D. Roberts, R. Dreslinski, E. Karl, T. Mudge, D. Sylvester, D. Blaauw. Workshop on Operationg System Support for Heterogeneous Multicore Architectures (OSHMA). September 2007.
-
-*   ” On-Chip Cache Device Scaling Limits and Effective Fault Repair Techniques in Future Nanoscale Technology”. D. Roberts, N. Kim,T. Mudge. Digital System Design Architectures, Methods and Tools (DSD). August 2007.
-
-*   _Energy Efficient Near-threshold Chip Multi-processing_. B. Zhai, R. Dreslinski, D. Blaauw, T. Mudge, D. Sylvester. International Symposium on Low Power Electronics and Design (ISLPED). August 2007.
-
-*   ” A Burst Scheduling Access Reordering Mechanism”. J. Shao, B.T. Davis. IEEE 13th International Symposium on High Performance Computer Architecture (HPCA). 2007.
-
-*   _Enhancing LTP-Driven Cache Management Using Reuse Distance Information_. W. Liu, D. Yeung. University of Maryland Technical Report UMIACS-TR-2007-33\. June 2007.
-
-*   _Thermal modeling and management of DRAM memory systems_. J. Lin, H. Zheng, Z. Zhu, H. David, and Z. Zhang. Proceedings of the 34th Annual international Symposium on Computer Architecture (ISCA). June 2007.
-
-*   _Duplicating and Verifying LogTM with OS Support in the M5 Simulator_. G. Blake, T. Mudge. Sixth Annual Workshop on Duplicating, Deconstructing, and Debunking (WDDD). June 2007.
-
-*   _Analysis of Hardware Prefetching Across Virtual Page Boundaries_. R. Dreslinski, A. Saidi, T. Mudge, S. Reinhardt. Proc. of the 4th Conference on Computing Frontiers. May 2007.
-
-*   _Reliability in the Shadow of Long-Stall Instructions_. V. Sridharan, D. Kaeli, A. Biswas. Third Workshop on Silicon Errors in Logic - System Effects (SELSE-3). April 2007.
-
-*   _Extending Multicore Architectures to Exploit Hybrid Parallelism in Single-thread Applications_. H. Zhong, S. A. Lieberman, S. A. Mahlke. Proc. 13th Intl. Symposium on High Performance Computer Architecture (HPCA). February 2007.
+* [**Modeling and Characterizing Power Variability in Multicore Architectures**](https://ieeexplore.ieee.org/document/4211031). K. Meng, F. Huebbers, R, Joseph, and Y. Ismail. ISPASS-2007. doi:[10.1109/ISPASS.2007.363745](https://dx.doi.org/10.1109/ISPASS.2007.363745). [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/cmp-powervar.pdf)
+* _A High Performance Adaptive Miss Handling Architecture for Chip Multiprocessors._ M. Jahre, and L. Natvig. HiPEAC Journal 2007. [pdf](https://folk.idi.ntnu.no/jahre/publications/jahre09HiPEACJournal.pdf) <!-- XXX: There are no article with this title in Proc. of HiPEAC 2007 but in Transactions on HiPEAC IV (2011). doi:10.1007/978-3-642-24568-8_1 -->
+* _Performance Effects of a Cache Miss Handling Architecture in a Multi-core Processor._ M. Jahre and L. Natvig. NIK 2007. November 2007. [pdf](http://www.nik.no/2007/16-Jahre.pdf)
+* [**Prioritizing Verification via Value-based Correctness Criticality**](https://ieeexplore.ieee.org/document/4601921). J. Yoo, M. Franklin. Proceedings of the 25th International Conference on Computer Design (ICCD), 2007. doi:[10.1109/ICCD.2007.4601921](https://dx.doi.org/10.1109/ICCD.2007.4601921).
+* [**DRAM-Level Prefetching for Fully-Buffered DIMM: Design, Performance and Power Saving**](https://ieeexplore.ieee.org/document/4211026). J. Lin, H. Zheng, Z. Zhu, Z. Zhang ,H. David. ISPASS 2007. doi:[10.1109/ISPASS.2007.363740](https://dx.doi.org/10.1109/ISPASS.2007.363740). [pdf](https://www.engineering.iastate.edu/~zzhang/publications/tr07-ispass-fbdimm.pdf)
+* [**Virtual Exclusion: An architectural approach to reducing leakage energy in caches for multiprocessor systems**](https://ieeexplore.ieee.org/document/4447739). M. Ghosh, H. Lee. Proceedings of the International Conference on Parallel and Distributed Systems. December 2007. doi:[10.1109/ICPADS.2007.4447739](https://dx.doi.org/10.1109/ICPADS.2007.4447739). [pdf](https://hsienhsinlee.github.io/MARS/pub/icpads07-1.pdf)
+* _Dependability-Performance Trade-off on Multiple Clustered Core Processors_. T. Funaki, T. Sato. Proceedings of the 4th International Workshop on Dependable Embedded Systems. October 2007. [pdf](https://wdes07.di.fc.ul.pt/papers/paper-04-funaki.pdf)
+* [**Predictive Thread-to-Core Assignment on a Heterogeneous Multi-core Processor**](https://dl.acm.org/doi/10.1145/1376789.1376799). T. Sondag, V. Krishnamurthy, H. Rajan. PLOS ‘07: ACM SIGOPS 4th Workshop on Programming Languages and Operating Systems. October 2007. doi:[10.1145/1376789.1376799](https://dx.doi.org/10.1145/1376789.1376799).
+* [**Power deregulation: eliminating off-chip voltage regulation circuitry from embedded systems**](https://dl.acm.org/doi/10.1145/1289816.1289844). S. Kim, R. P. Dick, R. Joseph. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007. doi:[10.1145/1289816.1289844](https://dx.doi.org/10.1145/1289816.1289844). [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/deregulation.pdf)
+* [**Aggressive Snoop Reduction for Synchronized Producer-Consumer Communication in Energy-Efficient Embedded Multi-Processors**](https://dl.acm.org/doi/10.1145/1289816.1289876). C. Yu, P. Petrov. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007. doi:[10.1145/1289816.1289876](https://dx.doi.org/10.1145/1289816.1289876).
+* [**Three-Dimensional Multiprocessor System-on-Chip Thermal Optimization**](https://dl.acm.org/doi/10.1145/1289816.1289846). C. Sun, L. Shang, R.P. Dick. 5th IEEE/ACM International Conference on Hardware/Software Co-Design and System Synthesis (CODES+ISSS). October 2007. doi:[10.1145/1289816.1289846](https://dx.doi.org/10.1145/1289816.1289846). [pdf](https://ziyang.eecs.umich.edu/~dickrp/publications/sun07oct.pdf)
+* _Sampled Simulation for Multithreaded Processors_. M. Van Biesbrouck. (Thesis) UC San Diego Technical Report CS2007-0905. September 2007. [pdf](https://cseweb.ucsd.edu/~calder/papers/thesis-mvanbies.pdf)
+* [**Representative Multiprogram Workloads for Multithreaded Processor Simulation**](https://ieeexplore.ieee.org/document/4362195). M. Van Biesbroucky, L. Eeckhoutz, B. Calder. IEEE International Symposium on Workload Characterization (IISWC). September 2007. doi:[10.1109/IISWC.2007.4362195](https://dx.doi.org/10.1109/IISWC.2007.4362195). [pdf](https://cseweb.ucsd.edu/~calder/papers/IISWC-07-MultiThreadWorkloads.pdf)
+* [**The Interval Page Table: Virtual Memory Support in Real-Time and Memory-Constrained Embedded Systems**](https://dl.acm.org/doi/10.1145/1284480.1284559). X. Zhou, P. Petrov. Proceedings of the 20th annual conference on Integrated circuits and systems design. 2007. doi:[10.1145/1284480.1284559](https://dx.doi.org/10.1145/1284480.1284559).
+* [**A power-aware shared cache mechanism based on locality assessment of memory reference for CMPs**](https://dl.acm.org/doi/10.1145/1327171.1327185). I. Kotera, R. Egawa, H. Takizawa, H. Kobayashi. Proceedings of the 2007 workshop on MEmory performance: DEaling with Applications, systems and architecture (MEDEA). September 2007. doi:[10.1145/1327171.1327185](https://dx.doi.org/10.1145/1327171.1327185).
+* [**Architectural Support for the Stream Execution Model on General-Purpose Processors**](https://ieeexplore.ieee.org/document/4336195). J. Gummaraju, M. Erez, J. Coburn, M. Rosenblum, W. J. Dally. The Sixteenth International Conference on Parallel Architectures and Compilation Techniques (PACT). September 2007. doi:[10.1109/PACT.2007.4336195](https://dx.doi.org/10.1109/PACT.2007.4336195). [pdf](http://mesl.ucsd.edu/joel/papers/streamgppexts_pact07.pdf)
+* [**An Energy Efficient Parallel Architecture Using Near Threshold Operation**](https://ieeexplore.ieee.org/document/4336210). R. Dreslinski, B. Zhai, T. Mudge, D. Blaauw, D. Sylvester. The Sixteenth International Conference on Parallel Architectures and Compilation Techniques (PACT). September 2007. doi:[10.1109/PACT.2007.4336210](https://dx.doi.org/10.1109/PACT.2007.4336210). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2007.08.An-Energy-Efficient-Parallel-Architecture-Using-Near-Threshold-Operation_PACT-2007.pdf)
+* _When Homogeneous becomes Heterogeneous: Wearout Aware Task Scheduling for Streaming Applications_. D. Roberts, R. Dreslinski, E. Karl, T. Mudge, D. Sylvester, D. Blaauw. Workshop on Operating System Support for Heterogeneous Multicore Architectures (OSHMA). September 2007. [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2007.09.When_Homogeneous_becomes_Heterogeneous_PACT.pdf)
+* [**On-Chip Cache Device Scaling Limits and Effective Fault Repair Techniques in Future Nanoscale Technology**](https://ieeexplore.ieee.org/document/4341526). D. Roberts, N. Kim,T. Mudge. Digital System Design Architectures, Methods and Tools (DSD). August 2007. doi:[10.1109/DSD.2007.4341526](https://dx.doi.org/10.1109/DSD.2007.4341526). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2007.08.On-chip-cache-device-scaling-limits-and-effective-fault-repair.pdf)
+* [**Energy Efficient Near-threshold Chip Multi-processing**](https://dl.acm.org/doi/10.1145/1283780.1283789). B. Zhai, R. Dreslinski, D. Blaauw, T. Mudge, D. Sylvester. International Symposium on Low Power Electronics and Design (ISLPED). August 2007. doi:[10.1145/1283780.1283789](https://dx.doi.org/10.1145/1283780.1283789). [pdf](https://blaauw.engin.umich.edu/wp-content/uploads/sites/342/2018/02/Zhai-Energy-Efficent-Near-threshold-Chip-Multi-processing.pdf)
+* [**A Burst Scheduling Access Reordering Mechanism**](https://ieeexplore.ieee.org/document/4147669). J. Shao, B.T. Davis. IEEE 13th International Symposium on High Performance Computer Architecture (HPCA). 2007. doi:[10.1109/HPCA.2007.346206](https://dx.doi.org/10.1109/HPCA.2007.346206). [pdf](http://mercury.pr.erau.edu/~davisb22/papers/burst_scheduling_hpca13.pdf)
+* _Enhancing LTP-Driven Cache Management Using Reuse Distance Information_. W. Liu, D. Yeung. University of Maryland Technical Report UMIACS-TR-2007-33. June 2007. [pdf](http://maggini.eng.umd.edu/pub/UMIACS-TR-2007-33.pdf) <!-- XXX: Also published in Journal of Instruction-Level Parallelism, Volume 11 (2009). https://jilp.org/vol11/ -->
+* [**Thermal modeling and management of DRAM memory systems**](https://ieeexplore.ieee.org/document/6212452). J. Lin, H. Zheng, Z. Zhu, H. David, and Z. Zhang. Proceedings of the 34th Annual international Symposium on Computer Architecture (ISCA). June 2007. doi:[10.1109/TC.2012.118](https://dx.doi.org/10.1109/TC.2012.118).
+* _Duplicating and Verifying LogTM with OS Support in the M5 Simulator_. G. Blake, T. Mudge. Sixth Annual Workshop on Duplicating, Deconstructing, and Debunking (WDDD). June 2007. [pdf](https://pharm.ece.wisc.edu/wddd/2007/papers/wddd_03.pdf)
+* [**Analysis of Hardware Prefetching Across Virtual Page Boundaries**](https://dl.acm.org/doi/10.1145/1242531.1242537). R. Dreslinski, A. Saidi, T. Mudge, S. Reinhardt. Proc. of the 4th Conference on Computing Frontiers. May 2007. doi:[10.1145/1242531.1242537](https://dx.doi.org/10.1145/1242531.1242537). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2007.07.Analysis_of_hardware_prefetching.pdf)
+* _Reliability in the Shadow of Long-Stall Instructions_. V. Sridharan, D. Kaeli, A. Biswas. Third Workshop on Silicon Errors in Logic - System Effects (SELSE-3). April 2007. [pdf](https://ece.northeastern.edu/groups/nucar/publications/SELSE07.pdf)
+* [**Extending Multicore Architectures to Exploit Hybrid Parallelism in Single-thread Applications**](https://ieeexplore.ieee.org/document/4147645). H. Zhong, S. A. Lieberman, S. A. Mahlke. Proc. 13th Intl. Symposium on High Performance Computer Architecture (HPCA). February 2007. doi:[10.1109/HPCA.2007.346182](https://dx.doi.org/10.1109/HPCA.2007.346182).
 
 ## 2006<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2006"></span>
 
-*   _Evaluation of the Data Vortex Photonic All-Optical Path Interconnection Network for Next-Generation Supercomputers_. W. C. Hawkins. Dissertation at Georgia Tech. December 2006.
+* _Evaluation of the Data Vortex Photonic All-Optical Path Interconnection Network for Next-Generation Supercomputers_. W. C. Hawkins. Dissertation at Georgia Tech. December 2006.
 * [**Running the manual: an approach to high-assurance microkernel development**](https://dl.acm.org/doi/10.1145/1159842.1159850). P. Derrin, K. Elphinstone, G. Klein, D. Cock, M. M. T. Chakravarty. Proceedings of the 2006 ACM SIGPLAN workshop on Haskell. 2006. doi:[10.1145/1159842.1159850](https://dx.doi.org/10.1145/1159842.1159850).
 * [**The Filter Checker: An Active Verification Management Approach**](https://ieeexplore.ieee.org/document/4030964). J. Yoo, M. Franklin. 21st IEEE International Symposium on Defect and Fault-Tolerance in VLSI Systems (DFT’06), 2006. doi:[10.1109/DFT.2006.64](https://dx.doi.org/10.1109/DFT.2006.64).
 * _Physical Resource Matching Under Power Asymmetry_. K. Meng, F. Huebbers, R. Joseph, Y. Ismail. Presented at the 2006 P=ac2 Conference. 2006. [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/man-asymmetry.pdf)
