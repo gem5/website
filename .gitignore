@@ -1,7 +1,11 @@
 Gemfile.lock
 
+vendor/
+.bundle/
+
 _site/
 .sass-cache/
+.jekyll-metadata
 
 # For Mac and images
 .DS_Store
