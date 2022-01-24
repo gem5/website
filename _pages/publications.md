@@ -394,24 +394,16 @@ gem5, or use gem5.
 
 ## 2005<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2005"></span>
 
-*   _Software Defined Radio - A High Performance Embedded Challenge_. H. lee, Y. Lin, Y. Harel, M. Woh, S. Mahlke, T. Mudge, K. Flautner. Proc. 2005 Int’l Conf. on High Performance Embedded Architectures and Compilers (HiPEAC). November 2005. [pdf](http://www.eecs.umich.edu/~sdrg/lee-hipeac05.pdf)
-
-*   _How to Fake 1000 Registers_. D. W. Oehmke, N. L. Binkert, S. K. Reinhardt, and T. Mudge. Proc. 38th Ann. Int’l Symp. on Microarchitecture (MICRO), November 2005. [pdf](http://www.eecs.umich.edu/~stever/pubs/micro05.pdf)
-
-*   _Virtualizing Register Context_. D. W. Oehmke. Dissertation at the University of Michigan, 2005. [pdf](http://www.eecs.umich.edu/~tnm/theses/davidO.pdf)
-
-*   _Performance Validation of Network-Intensive Workloads on a Full-System Simulator_. A. G. Saidi, N. L. Binkert, L. R. Hsu, and S. K. Reinhardt. First Ann. Workshop on Iteraction between Operating System and Computer Architecture (IOSCA), October 2005. [pdf](http://www.eecs.umich.edu/~stever/pubs/iosca05.pdf)
-    *   An extended version appears as University of Michigan Technical Report CSE-TR-511-05, July 2005. [pdf](http://www.eecs.umich.edu/techreports/cse/2005/CSE-TR-511-05.pdf)
-
-*   _Performance Analysis of System Overheads in TCP/IP Workloads_. N. L. Binkert, L. R. Hsu, A. G. Saidi, R. G. Dreslinski, A. L. Schultz, and S. K. Reinhardt. Proc. 14th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), September 2005. [pdf](http://www.eecs.umich.edu/~stever/pubs/pact05.pdf)
-
-*   _Sampling and Stability in TCP/IP Workloads_. L. R. Hsu, A. G. Saidi, N. L. Binkert, and S. K. Reinhardt. Proc. First Annual Workshop on Modeling, Benchmarking, and Simulation (MoBS), June
-    1.  [pdf](http://www.eecs.umich.edu/~stever/pubs/mobs05.pdf)
-
-*   _A Unified Compressed Memory Hierarchy_. E. G. Hallnor and S. K. Reinhardt. Proc. 11th Int’l Symp. on High-Performance Computer Architecture (HPCA), February 2005. [pdf](http://www.eecs.umich.edu/~stever/pubs/hpca05.pdf)
-
-*   _Analyzing NIC Overheads in Network-Intensive Workloads_. N. L. Binkert, L. R. Hsu, A. G. Saidi, R. G. Dreslinski, A. L. Schultz, and S. K. Reinhardt. Eighth Workshop on Computer Architecture Evaluation using Commercial Workloads (CAECW), February 2005. [pdf](http://tesla.hpl.hp.com/caecw05/binkert-caecw8.pdf)
-    *   An extended version appears as University of Michigan Technical Report CSE-TR-505-04, December 2004. [pdf](http://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-505-04.pdf)
+* [**Software Defined Radio - A High Performance Embedded Challenge**](https://link.springer.com/chapter/10.1007%2F11587514_3). H. Lee, Y. Lin, Y. Harel, M. Woh, S. Mahlke, T. Mudge, K. Flautner. Proc. 2005 Int’l Conf. on High Performance Embedded Architectures and Compilers (HiPEAC), November 2005. doi:[10.1007/11587514\_3](https://dx.doi.org/10.1007/11587514_3). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2005.11.Software-defined-radio-A-high-performance-embedded-challenge.pdf)
+* [**How to Fake 1000 Registers**](https://ieeexplore.ieee.org/document/1540944). D. W. Oehmke, N. L. Binkert, S. K. Reinhardt, and T. Mudge. Proc. 38th Ann. Int’l Symp. on Microarchitecture (MICRO), November 2005. doi:[10.1109/MICRO.2005.21](https://dx.doi.org/10.1109/MICRO.2005.21). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2005.11.How-to-Fake-1000-Registers_MICRO36.pdf-.pdf)
+* _Virtualizing Register Context_. D. W. Oehmke. Dissertation at the University of Michigan, 2005. [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/davidO.pdf)
+* _Performance Validation of Network-Intensive Workloads on a Full-System Simulator_. A. G. Saidi, N. L. Binkert, L. R. Hsu, and S. K. Reinhardt. First Ann. Workshop on Iteraction between Operating System and Computer Architecture (IOSCA), October 2005. [pdf](https://web.eecs.umich.edu/~saidi/pubs/iosca05.pdf)
+  * An extended version appears as University of Michigan Technical Report CSE-TR-511-05, July 2005. [pdf](https://www.eecs.umich.edu/techreports/cse/2005/CSE-TR-511-05.pdf)
+* [**Performance Analysis of System Overheads in TCP/IP Workloads**](https://dl.acm.org/doi/10.1109/PACT.2005.35). N. L. Binkert, L. R. Hsu, A. G. Saidi, R. G. Dreslinski, A. L. Schultz, and S. K. Reinhardt. Proc. 14th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), September 2005. doi:[10.1109/PACT.2005.35](https://dx.doi.org/10.1109/PACT.2005.35). [pdf](https://web.eecs.umich.edu/~saidi/pubs/pact05.pdf)
+* _Sampling and Stability in TCP/IP Workloads_. L. R. Hsu, A. G. Saidi, N. L. Binkert, and S. K. Reinhardt. Proc. First Annual Workshop on Modeling, Benchmarking, and Simulation (MoBS), June 2005. [pdf](https://web.eecs.umich.edu/~saidi/pubs/mobs05.pdf)
+* [**A Unified Compressed Memory Hierarchy**](https://ieeexplore.ieee.org/abstract/document/1385941). E. G. Hallnor and S. K. Reinhardt. Proc. 11th Int’l Symp. on High-Performance Computer Architecture (HPCA), February 2005. doi:[10.1109/HPCA.2005.4](https://dx.doi.org/10.1109/HPCA.2005.4).
+* _Analyzing NIC Overheads in Network-Intensive Workloads_. N. L. Binkert, L. R. Hsu, A. G. Saidi, R. G. Dreslinski, A. L. Schultz, and S. K. Reinhardt. Eighth Workshop on Computer Architecture Evaluation using Commercial Workloads (CAECW), February 2005.
+  * An extended version appears as University of Michigan Technical Report CSE-TR-505-04, December 2004. [pdf](https://www.eecs.umich.edu/techreports/cse/2004/CSE-TR-505-04.pdf)
 
 ## 2004<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2004"></span>
 
