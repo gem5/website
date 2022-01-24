@@ -359,38 +359,22 @@ gem5, or use gem5.
 ## 2006<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2006"></span>
 
 *   _Evaluation of the Data Vortex Photonic All-Optical Path Interconnection Network for Next-Generation Supercomputers_. W. C. Hawkins. Dissertation at Georgia Tech. December 2006.
-
-*   _Running the manual: an approach to high-assurance microkernel development_. P. Derrin, K. Elphinstone, G. Klein, D. Cock, M. M. T. Chakravarty. Proceedings of the 2006 ACM SIGPLAN workshop on Haskell. 2006.
-
-*   _The Filter Checker: An Active Verification Management Approach_. J. Yoo, M. Franklin. 21st IEEE International Symposium on Defect and Fault-Tolerance in VLSI Systems (DFT’06), 2006.
-
-*   _Physical Resource Matching Under Power Asymmetry_. K. Meng, F. Huebbers, R. Joseph, Y. Ismail. Presented at the 2006 P=ac2 Conference. 2006. [pdf](http://www.ece.northwestern.edu/~rjoseph/publications/man-asymmetry.pdf)
-
-*   _Process Variation Aware Cache Leakage Management_. K. Meng, R. Joseph. Proceedings of the 2006 International Symposium on Low Power Electronics and Design (ISLPED). October 2006.
-
-*   _FlashCache: a NAND flash memory file cache for low power web servers_. T. Kgil, T. Mudge. Proceedings of the 2006 international conference on Compilers, Architecture and Synthesis for Embedded Systems (CASES). October 2006.
-
-*   _PicoServer: Using 3D Stacking Technology To Enable A Compact Energy Efficient Chip Multiprocessor_. T. Kgil, S. D’Souza, A. Saidi, N. Binkert, R. Dreslinski, S. Reinhardt, K. Flautner, T. Mudge. 12th Int’l Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS). October 2006.
-
-*   _Integrated Network Interfaces for High-Bandwidth TCP/IP_. N. L. Binkert, A. G. Saidi, S. K. Reinhardt. 12th Int’l Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS). October 2006.
-
-*   _Communist, utilitarian, and capitalist cache policies on CMPs: caches as a shared resource_. L. R. Hsu, S. K. Reinhardt, R. Iyer, S. Makineni. Proc. 15th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), September 2006.
-
-*   _Impact of CMP Design on High-Performance Embedded Computing_. P. Crowley, M. A. Franklin, J. Buhler, and R. D. Chamberlain. Proc. of 10th High Performance Embedded Computing Workshop. September 2006.
-
-*   _BASS: A Benchmark suite for evaluating Architectural Security Systems_. J. Poe, T. Li. ACM SIGARCH Computer Architecture News. Vol. 34, No. 4, September 2006.
-
-*   _The M5 Simulator: Modeling Networked Systems_. N. L. Binkert, R. G. Dreslinski, L. R. Hsu, K. T. Lim, A. G. Saidi, S. K. Reinhardt. IEEE Micro, vol. 26, no. 4, pp. 52-60, July/August, 2006.[Link](http://csdl2.computer.org/persagen/DLAbsToc.jsp?resourcePath=/dl/mags/mi/&toc=comp/mags/mi/2006/04/m4toc.xml&DOI=10.1109/MM.2006.82)
-
-*   _Considering All Starting Points for Simultaneous Multithreading Simulation_. M. Van Biesbrouck, L. Eeckhout, B. Calder. Proc. of the Int’l Symp. on Performance Analysis of Systems and Software (ISPASS). 2006.[pdf](http://www.cse.ucsd.edu/users/calder/papers/ISPASS-06-CoPhaseAllPairs.pdf)
-
-*   _Dynamic Thread Assignment on Heterogeneous Multiprocessor Architectures_. M. Becchi, P. Crowley. Proc. of the 3rd Conference on Computing Frontiers. pp29-40\. May 2006. [pdf](http://portal.acm.org/ft_gateway.cfm?id=1128029&type=pdf&coll=GUIDE&dl=GUIDE&CFID=15151515&CFTOKEN=6184618)
-
-*   _Integrated System Architectures for High-Performance Internet Servers_. N. L. Binkert. Dissertation at the University of Michigan. February 2006.
-
-*   _Exploring Salvage Techniques for Multi-core Architectures_. R. Joseph. 2nd Workshop on High Performance Computing Reliability Issues. February 2006. [pdf](http://www.ece.northwestern.edu/~rjoseph/publications/hpcri-salvage.pdf)
-
-*   _A Simple Integrated Network Interface for High-Bandwidth Servers_. N. L. Binkert, A. G. Saidi, S. K. Reinhardt. University of Michigan Technical Report CSE-TR-514-06, January 2006. [pdf](http://www.eecs.umich.edu/techreports/cse/2006/CSE-TR-514-06.pdf)
+* [**Running the manual: an approach to high-assurance microkernel development**](https://dl.acm.org/doi/10.1145/1159842.1159850). P. Derrin, K. Elphinstone, G. Klein, D. Cock, M. M. T. Chakravarty. Proceedings of the 2006 ACM SIGPLAN workshop on Haskell. 2006. doi:[10.1145/1159842.1159850](https://dx.doi.org/10.1145/1159842.1159850).
+* [**The Filter Checker: An Active Verification Management Approach**](https://ieeexplore.ieee.org/document/4030964). J. Yoo, M. Franklin. 21st IEEE International Symposium on Defect and Fault-Tolerance in VLSI Systems (DFT’06), 2006. doi:[10.1109/DFT.2006.64](https://dx.doi.org/10.1109/DFT.2006.64).
+* _Physical Resource Matching Under Power Asymmetry_. K. Meng, F. Huebbers, R. Joseph, Y. Ismail. Presented at the 2006 P=ac2 Conference. 2006. [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/man-asymmetry.pdf)
+* [**Process Variation Aware Cache Leakage Management**](https://dl.acm.org/doi/10.1145/1165573.1165636). K. Meng, R. Joseph. Proceedings of the 2006 International Symposium on Low Power Electronics and Design (ISLPED). October 2006. doi:[10.1145/1165573.1165636](https://dx.doi.org/10.1145/1165573.1165636).
+* [**FlashCache: a NAND flash memory file cache for low power web servers**](https://dl.acm.org/doi/10.1145/1176760.1176774). T. Kgil, T. Mudge. Proceedings of the 2006 international conference on Compilers, Architecture and Synthesis for Embedded Systems (CASES). October 2006. doi:[10.1145/1176760.1176774](https://dx.doi.org/10.1145/1176760.1176774).
+* [**PicoServer: Using 3D Stacking Technology To Enable A Compact Energy Efficient Chip Multiprocessor**](https://dl.acm.org/doi/10.1145/1168857.1168873). T. Kgil, S. D’Souza, A. Saidi, N. Binkert, R. Dreslinski, S. Reinhardt, K. Flautner, T. Mudge. 12th Int’l Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS). October 2006. doi:[10.1145/1168857.1168873](https://dx.doi.org/10.1145/1168857.1168873).
+* [**Integrated Network Interfaces for High-Bandwidth TCP/IP**](https://dl.acm.org/doi/10.1145/1168857.1168897). N. L. Binkert, A. G. Saidi, S. K. Reinhardt. 12th Int’l Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS). October 2006. doi:[10.1145/1168857.1168897](https://dx.doi.org/10.1145/1168857.1168897). [pdf](https://web.eecs.umich.edu/~saidi/pubs/asplos06-nic.pdf)
+* [**Communist, utilitarian, and capitalist cache policies on CMPs: caches as a shared resource**](https://dl.acm.org/doi/10.1145/1152154.1152161). L. R. Hsu, S. K. Reinhardt, R. Iyer, S. Makineni. Proc. 15th Int’l Conf. on Parallel Architectures and Compilation Techniques (PACT), September 2006. doi:[10.1145/1152154.1152161](https://dx.doi.org/10.1145/1152154.1152161).
+* _Impact of CMP Design on High-Performance Embedded Computing_. P. Crowley, M. A. Franklin, J. Buhler, and R. D. Chamberlain. Proc. of 10th High Performance Embedded Computing Workshop. September 2006. [pdf](https://www.arl.wustl.edu/~pcrowley/cfbc06.pdf)
+* [**BASS: A Benchmark suite for evaluating Architectural Security Systems**](https://dl.acm.org/doi/10.1145/1186736.1186739). J. Poe, T. Li. ACM SIGARCH Computer Architecture News. Vol. 34, No. 4, September 2006. doi:[10.1145/1186736.1186739](https://dx.doi.org/10.1145/1186736.1186739).
+* [**The M5 Simulator: Modeling Networked Systems**](https://ieeexplore.ieee.org/document/1677503). N. L. Binkert, R. G. Dreslinski, L. R. Hsu, K. T. Lim, A. G. Saidi, S. K. Reinhardt. IEEE Micro, vol. 26, no. 4, pp. 52-60, July/August, 2006. doi:[10.1109/MM.2006.82](https://dx.doi.org/10.1109/MM.2006.82).
+* [**Considering All Starting Points for Simultaneous Multithreading Simulation**](https://ieeexplore.ieee.org/document/1620799). M. Van Biesbrouck, L. Eeckhout, B. Calder. Proc. of the Int’l Symp. on Performance Analysis of Systems and Software (ISPASS). March 2006. doi:[10.1109/ISPASS.2006.1620799](https://dx.doi.org/10.1109/ISPASS.2006.1620799). [pdf](https://cseweb.ucsd.edu/~calder/papers/ISPASS-06-CoPhaseAllPairs.pdf)
+* [**Dynamic Thread Assignment on Heterogeneous Multiprocessor Architectures**](https://dl.acm.org/doi/10.1145/1128022.1128029). M. Becchi, P. Crowley. Proc. of the 3rd Conference on Computing Frontiers. pp. 29-40. May 2006. doi:[10.1145/1128022.1128029](https://dx.doi.org/10.1145/1128022.1128029).
+* _Integrated System Architectures for High-Performance Internet Servers_. N. L. Binkert. Dissertation at the University of Michigan. February 2006. [pdf](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/90845/binkert-thesis.pdf)
+* _Exploring Salvage Techniques for Multi-core Architectures_. R. Joseph. 2nd Workshop on High Performance Computing Reliability Issues. February 2006. [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/hpcri-salvage.pdf)
+* _A Simple Integrated Network Interface for High-Bandwidth Servers_. N. L. Binkert, A. G. Saidi, S. K. Reinhardt. University of Michigan Technical Report CSE-TR-514-06, January 2006. [pdf](https://www.eecs.umich.edu/techreports/cse/2006/CSE-TR-514-06.pdf)
 
 ## 2005<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2005"></span>
 
