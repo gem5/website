@@ -249,59 +249,37 @@ gem5, or use gem5.
 
 ## 2008<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2008"></span>
 
-*   _Analyzing the Impact of Data Prefetching on Chip MultiProcessors._ N. Fukumoto, T. Mihara, K. Inoue, and K. Murakami. Asia-Pacific Computer Systems Architecture Conference. 2008.
-*   _Historical Study of the Development of Branch Predictors._ Y. Peress. Masters Thesis at Florida State University. 2008.
-
-*   _Hierarchical Domain Partitioning For Hierarchical Architectures._ J. Meng, S. Che, J. W. Sheaffer, J. Li, J. Huang, and K. Skadron. Univ. of Virginia Dept. of Comp. Sci. Tech Report CS-2008-08\. 2008.
-*   _Memory Access Scheduling Schemes for Systems with Multi-Core Processors._ H. Zheng, J. Lin, Z. Zhang, and Z. Zhu. International Conference on Parallel Processing, 2008.
-
-*   _Register Multimapping: Reducing Register Bank Conflicts Through One-To-Many Logical-To-Physical Register Mapping._ N. L. Duong and R. Kumar. Tehnical Report CHRC-08-07.
-*   _Cross-Layer Custimization Platform for Low-Power and Real-Time Embedded Applications._ X. Zhou. Dissertation at the University of Maryland. 2008.
-*   _Probabilistic Replacement: Enabling Flexible Use of Shared Caches for CMPs._ W. Liu and D. Yeung. University of Maryland Technical Report UMIACS-TR-2008-13\. 2008.
-*   _Observer Effect and Measurement Bias in Performance Analysis_. T. Mytkowicz, P. F. Sweeney, M. Hauswirth, and A. Diwan. University of Colorado at Boulder Technical Report CU-CS 1042-08\. June, 2008.
-*   _Power-Aware Dynamic Cache Partitioning for CMPs._ I. Kotera, K. Abe, R. Egawa, H. Takizawa, and H. Kobayashi. 3rd International Conference on High Performance and Embedded Architectures and Compilers (HiPEAC). 2008.
-*   _Modeling of Cache Access Behavior Based on Zipf’s Law._ I. Kotera, H. Takizawa, R. Egawa, H. Kobayashi. MEDEA 2008.
-*   _Hierarchical Verification for Increasing Performance in Reliable Processors._ J. Yoo, M. Franklin. Journal of Electronic Testing. 2008.
-
-*   _Transaction-Aware Network-on-Chip Resource Reservation._ Z. Li, C. Zhu, L. Shang, R. Dick, Y. Sun. Computer Architecture Letters. Volume PP, Issue 99, Page(s):1 - 1.
-
-*   _Predictable Out-of-order Execution Using Virtual Traces._ J. Whitham, N. Audsley. Proceedings of the 29th IEEE Real-time Systems Symposium, December 2008. [pdf](http://www.jwhitham.org.uk/pubs/vt1.pdf)
-
-*   _Architectural and Compiler Mechanisms for Acelerating Single Thread Applications on Multicore Processors._ H. Zhong. Dissertation at The University of Michigan. 2008.
-
-*   _Mini-Rank: Adaptive DRAM Architecture for Improving Memory Power Efficiency._ H. Zheng, J. Lin, Z. Zhang, E. Gorbatov, H. David, Z. Zhu. Proceedings of the 41st Annual Symposium on Microarchitecture (MICRO-41), November 2008.
-
-*   _Reconfigurable Energy Efficient Near Threshold Cache Architectures._ R. Dreslinski, G. Chen, T. Mudge, D. Blaauw, D. Sylvester, K. Flautner. Proceedings of the 41st Annual Symposium on Microarchitecture (MICRO-41), November 2008.
-
-*   _Distributed and low-power synchronization architecture for embedded multiprocessors._ C. Yu, P. Petrov. Internation Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS), October 2008.
-
-*   _Thermal Monitoring Mechanisms for Chip Multiprocessors._ J. Long, S.O. Memik, G. Memik, R. Mukherjee. ACM Transactions on Architecture and Code Optimization (TACO), August 2008.
-
-*   _Multi-optimization power management for chip multiprocessors._ K. Meng, R. Joseph, R. Dick, L. Shang. Proceedings of the 17th international conference on Parallel Architectures and Compilation Techniques (PACT), 2008.
-
-*   ” Three-Dimensional Chip-Multiprocessor Run-Time Thermal Management.” C. Zhu, Z. Gu, L. Shang, R.P. Dick, R. Joseph. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), August 2008.
-
-*   ” Latency and bandwidth efficient communication through system customization for embedded multiprocessors”. C. Yu and P. Petrov. DAC 2008, June 2008.
-
-*   _Corona: System Implications of Emerging Nanophotonic Technology_. D. Vantrease, R. Schreiber, M. Monchiero, M. McLaren, N., P. Jouppi, M. Fiorentino, A. Davis, N. Binkert, R. G. Beausoleil, and J. Ahn. Proceedings of the 35th International Symposium on Computer Architecture (ISCA-35), June 2008.
-
-*   _Improving NAND Flash Based Disk Caches_. T. Kgil, D. Roberts and T. N. Mudge. Proceedings of the 35th International Symposium on Computer Architecture (ISCA-35), June 2008.
-
-*   _A Taxonomy to Enable Error Recovery and Correction in Software_. V. Sridharan, D. A. Liberty, and D. R. Kaeli. Workshop on Quality-Aware Design (W-QUAD), in conjunction with the 35th International Symposium on Computer Architecture (ISCA-35), June 2008.
-
-*   _Quantifying Software Vulnerability_. V. Sridharan and D. R. Kaeli. First Workshop on Radiation Effects and Fault Tolerance in Nanometer Technologies, in conjunction with the ACM International Conference on Computing Frontiers, May 2008.
-
-*   _Core Monitors: Monitoring Performance in Multicore Processors._ P. West. Masters Thesis at Florida State University. April 2008.
-
-*   _Full System Critical Path Analysis._ A. Saidi, N. Binkert, T. N. Mudge, and S. K. Reinhardt. 2008 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS), April 2008.
-
-*   _A Power and Temperature Aware DRAM Architecture._ S. Liu, S. O. Memik, Y. Zhang, G. Memik. 45th annual conference on Design automation (DAC), 2008.
-
-*   _Streamware: Programming General-Purpose Multicore Processors Using Streams._ J. Gummaraju, J. Coburn, Y. Turner, M. Rosenblum. Procedings of the Thirteenth International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), March 2008.
-
-*   _Application-aware snoop filtering for low-power cache coherence in embedded multiprocessors_. X. Zhou, C. Yu, A. Dash, and P. Petrov. Transactions on Design Automation of Electronic Systems (TODAES). January 2008.
-
-*   _An approach for adaptive DRAM temperature and power management_. Song Liu, S. O. Memik, Y. Zhang, and G. Memik. Proceedings of the 22nd annual international conference on Supercomputing. 2008.
+* [**Analyzing the Impact of Data Prefetching on Chip MultiProcessors**](https://ieeexplore.ieee.org/document/4625454). N. Fukumoto, T. Mihara, K. Inoue, and K. Murakami. Asia-Pacific Computer Systems Architecture Conference. August 2008. doi:[10.1109/APCSAC.2008.4625454](https://dx.doi.org/10.1109/APCSAC.2008.4625454). [pdf](https://cpc.ait.kyushu-u.ac.jp/~koji.inoue/paper/2008/ACSAC08Fukumoto.pdf)
+* _Historical Study of the Development of Branch Predictors._ Y. Peress. Masters Thesis at Florida State University. 2008.
+* _Hierarchical Domain Partitioning For Hierarchical Architectures._ J. Meng, S. Che, J. W. Sheaffer, J. Li, J. Huang, and K. Skadron. Univ. of Virginia Dept. of Comp. Sci. Tech Report CS-2008-08. 2008. [pdf](https://www.cs.virginia.edu/~skadron/Papers/domain_part_tr2008_08.pdf)
+* [**Memory Access Scheduling Schemes for Systems with Multi-Core Processors**](https://ieeexplore.ieee.org/document/4625875). H. Zheng, J. Lin, Z. Zhang, and Z. Zhu. International Conference on Parallel Processing, September 2008. doi:[10.1109/ICPP.2008.53](https://dx.doi.org/10.1109/ICPP.2008.53).
+* _Register Multimapping: Reducing Register Bank Conflicts Through One-To-Many Logical-To-Physical Register Mapping._ N. L. Duong and R. Kumar. Technical Report CHRC-08-07. <!-- XXX: Also published as doi:10.1109/SASP.2009.5226335. -->
+* _Cross-Layer Custimization Platform for Low-Power and Real-Time Embedded Applications._ X. Zhou. Dissertation at the University of Maryland. 2008.
+* _Probabilistic Replacement: Enabling Flexible Use of Shared Caches for CMPs_. W. Liu and D. Yeung. University of Maryland Technical Report UMIACS-TR-2008-13. 2008. [pdf](http://maggini.eng.umd.edu/pub/UMIACS-TR-2008-13.pdf)
+* _Observer Effect and Measurement Bias in Performance Analysis_. T. Mytkowicz, P. F. Sweeney, M. Hauswirth, and A. Diwan. University of Colorado at Boulder Technical Report CU-CS 1042-08. June, 2008. [pdf](https://www.inf.usi.ch/faculty/hauswirth/publications/CU-CS-1042-08.pdf)
+* _Power-Aware Dynamic Cache Partitioning for CMPs_. I. Kotera, K. Abe, R. Egawa, H. Takizawa, and H. Kobayashi. 3rd International Conference on High Performance and Embedded Architectures and Compilers (HiPEAC). 2008. <!-- XXX: Published as doi:10.1007/978-3-642-19448-1_8 (2011). -->
+* [**Modeling of Cache Access Behavior Based on Zipf’s Law**](https://dl.acm.org/doi/10.1145/1509084.1509086). I. Kotera, H. Takizawa, R. Egawa, H. Kobayashi. MEDEA 2008. doi:[10.1145/1509084.1509086](https://dx.doi.org/10.1145/1509084.1509086).
+* [**Hierarchical Verification for Increasing Performance in Reliable Processors**](https://link.springer.com/article/10.1007%2Fs10836-007-5037-z). J. Yoo, M. Franklin. Journal of Electronic Testing. June 2008. doi:[10.1007/s10836-007-5037-z](https://dx.doi.org/10.1007/s10836-007-5037-z).
+* [**Transaction-Aware Network-on-Chip Resource Reservation**](https://ieeexplore.ieee.org/document/4545404). Z. Li, C. Zhu, L. Shang, R. Dick, Y. Sun. Computer Architecture Letters. Volume 7, Issue 2, pp. 53-56, July-December 2008. doi:[10.1109/L-CA.2008.9](https://dx.doi.org/10.1109/L-CA.2008.9). [pdf](https://ziyang.eecs.umich.edu/~dickrp/publications/li08jun.pdf)
+* [**Predictable Out-of-order Execution Using Virtual Traces**](https://ieeexplore.ieee.org/document/4700457). J. Whitham, N. Audsley. Proceedings of the 29th IEEE Real-time Systems Symposium, December 2008. doi:[10.1109/RTSS.2008.9](https://dx.doi.org/10.1109/RTSS.2008.9). [pdf](http://www.jwhitham.org.uk/pubs/vt1.pdf)
+* _Architectural and Compiler Mechanisms for Acelerating Single Thread Applications on Multicore Processors._ H. Zhong. Dissertation at The University of Michigan. 2008. [pdf](https://cccp.eecs.umich.edu/theses/hongtaoz-thesis.pdf)
+* [**Mini-Rank: Adaptive DRAM Architecture for Improving Memory Power Efficiency**](https://ieeexplore.ieee.org/document/4771792). H. Zheng, J. Lin, Z. Zhang, E. Gorbatov, H. David, Z. Zhu. Proceedings of the 41st Annual Symposium on Microarchitecture (MICRO-41), November 2008. doi:[10.1109/MICRO.2008.4771792](https://dx.doi.org/10.1109/MICRO.2008.4771792).
+* [**Reconfigurable Energy Efficient Near Threshold Cache Architectures**](https://ieeexplore.ieee.org/document/4771813). R. Dreslinski, G. Chen, T. Mudge, D. Blaauw, D. Sylvester, K. Flautner. Proceedings of the 41st Annual Symposium on Microarchitecture (MICRO-41), November 2008. doi:[10.1109/MICRO.2008.4771813](https://dx.doi.org/10.1109/MICRO.2008.4771813). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2008.11.Reconfigurable-Energy-Efficient-Near-Threshold-Cache-Architectures.pdf)
+* [**Distributed and low-power synchronization architecture for embedded multiprocessors**](https://dl.acm.org/doi/10.1145/1450135.1450153). C. Yu, P. Petrov. Internation Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS), October 2008. doi:[10.1145/1450135.1450153](https://dx.doi.org/10.1145/1450135.1450153).
+* [**Thermal Monitoring Mechanisms for Chip Multiprocessors**](https://dl.acm.org/doi/10.1145/1400112.1400114). J. Long, S.O. Memik, G. Memik, R. Mukherjee. ACM Transactions on Architecture and Code Optimization (TACO), August 2008. doi:[10.1145/1400112.1400114](https://dx.doi.org/10.1145/1400112.1400114). [pdf](http://users.ece.northwestern.edu/~jlo198/Site/Publications_files/ThermalMonitoringCMPs_TACO.pdf)
+* [**Multi-optimization power management for chip multiprocessors**](https://dl.acm.org/doi/10.1145/1454115.1454141). K. Meng, R. Joseph, R. Dick, L. Shang. Proceedings of the 17th international conference on Parallel Architectures and Compilation Techniques (PACT), October 2008. doi:[10.1145/1454115.1454141](https://dx.doi.org/10.1145/1454115.1454141). [pdf](http://users.ece.northwestern.edu/~rjoseph/publications/cmp-adapt.pdf)
+* [**Three-Dimensional Chip-Multiprocessor Run-Time Thermal Management**](https://ieeexplore.ieee.org/document/4527121). C. Zhu, Z. Gu, L. Shang, R.P. Dick, R. Joseph. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), August 2008. doi:[10.1109/TCAD.2008.925793](https://dx.doi.org/10.1109/TCAD.2008.925793). [pdf](https://ziyang.eecs.umich.edu/~dickrp//publications/zhu08aug.pdf)
+* [**Latency and bandwidth efficient communication through system customization for embedded multiprocessors**](https://dl.acm.org/doi/10.1145/1391469.1391665). C. Yu and P. Petrov. DAC 2008, June 2008. doi:[10.1145/1391469.1391665](https://dx.doi.org/10.1145/1391469.1391665).
+* [**Corona: System Implications of Emerging Nanophotonic Technology**](https://ieeexplore.ieee.org/document/4556723). D. Vantrease, R. Schreiber, M. Monchiero, M. McLaren, N., P. Jouppi, M. Fiorentino, A. Davis, N. Binkert, R. G. Beausoleil, and J. Ahn. Proceedings of the 35th International Symposium on Computer Architecture (ISCA-35), June 2008. doi:[10.1109/ISCA.2008.35](https://dx.doi.org/10.1109/ISCA.2008.35).
+* [**Improving NAND Flash Based Disk Caches**](https://ieeexplore.ieee.org/document/4556737). T. Kgil, D. Roberts and T. N. Mudge. Proceedings of the 35th International Symposium on Computer Architecture (ISCA-35), June 2008. doi:[10.1109/ISCA.2008.32](https://dx.doi.org/10.1109/ISCA.2008.32). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2008.06.Improving-NAND-Flash-based-disk-caches.pdf)
+* _A Taxonomy to Enable Error Recovery and Correction in Software_. V. Sridharan, D. A. Liberty, and D. R. Kaeli. Workshop on Quality-Aware Design (W-QUAD), in conjunction with the 35th International Symposium on Computer Architecture (ISCA-35), June 2008. [pdf](https://ece.northeastern.edu/groups/nucar/publications/WQUAD08.pdf)
+* [**Quantifying Software Vulnerability**](https://dl.acm.org/doi/10.1145/1366224.1366225). V. Sridharan and D. R. Kaeli. First Workshop on Radiation Effects and Fault Tolerance in Nanometer Technologies, in conjunction with the ACM International Conference on Computing Frontiers, May 2008. doi:[10.1145/1366224.1366225](https://dx.doi.org/10.1145/1366224.1366225). [pdf](https://ece.northeastern.edu/groups/nucar/publications/WREFT08.pdf)
+* _Core Monitors: Monitoring Performance in Multicore Processors_. P. West. Masters Thesis at Florida State University. April 2008.
+* [**Full System Critical Path Analysis**](https://ieeexplore.ieee.org/document/4510739). A. Saidi, N. Binkert, T. N. Mudge, and S. K. Reinhardt. 2008 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS), April 2008. doi:[10.1109/ISPASS.2008.4510739](https://dx.doi.org/10.1109/ISPASS.2008.4510739). [pdf](https://tnm.engin.umich.edu/wp-content/uploads/sites/353/2017/12/2008.04.Full-System-Critical-Path-Ananlysis.pdf)
+* [**A Power and Temperature Aware DRAM Architecture**](https://dl.acm.org/doi/10.1145/1391469.1391691). S. Liu, S. O. Memik, Y. Zhang, G. Memik. 45th annual conference on Design automation (DAC), June 2008. doi:[10.1145/1391469.1391691](https://dx.doi.org/10.1145/1391469.1391691). [pdf](http://users.ece.northwestern.edu/~memik/papers/dac08b.pdf)
+* [**Streamware: Programming General-Purpose Multicore Processors Using Streams**](https://dl.acm.org/doi/10.1145/1346281.1346319). J. Gummaraju, J. Coburn, Y. Turner, M. Rosenblum. Procedings of the Thirteenth International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), March 2008. doi:[10.1145/1346281.1346319](https://dx.doi.org/10.1145/1346281.1346319). [pdf](http://mesl.ucsd.edu/joel/papers/streamware_asplos08.pdf) <!-- XXX: For unknown reasons, the DOI URL redirects to doi:10.1145/1353535.1346319, the same article but in ACM SIGOPS Operating Systems Review, Volume 42, Issue 2. -->
+* [**Application-aware snoop filtering for low-power cache coherence in embedded multiprocessors**](https://dl.acm.org/doi/10.1145/1297666.1297682). X. Zhou, C. Yu, A. Dash, and P. Petrov. Transactions on Design Automation of Electronic Systems (TODAES). January 2008. doi:[10.1145/1297666.1297682](https://dx.doi.org/10.1145/1297666.1297682).
+* [**An approach for adaptive DRAM temperature and power management**](https://dl.acm.org/doi/10.1145/1375527.1375540). Song Liu, S. O. Memik, Y. Zhang, and G. Memik. Proceedings of the 22nd annual international conference on Supercomputing. June 2008. doi:[10.1145/1375527.1375540](https://dx.doi.org/10.1145/1375527.1375540). [pdf](http://users.eecs.northwestern.edu/~yzh702/papers/ICS08.pdf) <!-- XXX: Also published as doi:10.1109/TVLSI.2009.2014842. An extended version? -->
 
 ## 2007<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2007"></span>
 
