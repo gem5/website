@@ -150,7 +150,6 @@ some systems. We therefore strongly advise allocating more threads if possible.
 
 The valid ISAs are:
 
-* ARCH
 * ARM
 * NULL
 * MIPS
