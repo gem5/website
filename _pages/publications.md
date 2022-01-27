@@ -209,11 +209,11 @@ gem5, or use gem5.
 
 ## 2010<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2010"></span>
 
-*   _Using Hardware Vulnerability Factors to Enhance AVF Analysis,_ V. Sridharan, D. R. Kaeli. Proceedings of the International Symposium on Computer Architecture (ISCA-37), Saint-Malo, France, June 2010.
-*   _Leveraging Unused Cache Block Words to Reduce Power in CMP Interconnect,_ H. Kim, P. Gratz. IEEE Computer Architecture Letters, vol. 99, (RapidPosts), 2010.
-*   _A Fast Timing-Accurate MPSoC HW/SW Co-Simulation Platform based on a Novel Synchronization Scheme,_ Mingyan Yu, Junjie Song, Fangfa Fu, Siyue Sun, and Bo Liu. Proceedings of the International MultiConfernce of Engineers and Computer Scientists. 2010 [pdf](http://www.iaeng.org/publication/IMECS2010/IMECS2010_pp1396-1400.pdf)
-*   _Simulation of Standard Benchmarks in Hardware Implementations of L2 Cache Models in Verilog HDL,_ Rosario M. Reas, Anastacia B. Alvarez, Joy Alinda P. Reyes, Computer Modeling and Simulation, International Conference on, pp. 153-158, 2010 12th International Conference on Computer Modelling and Simulation, 2010
-*   _A Simulation of Cache Sub-banking and Block Buffering as Power Reduction Techniques for Multiprocessor Cache Design,_ Jestoni V. Zarsuela, Anastacia Alvarez, Joy Alinda Reyes, Computer Modeling and Simulation, International Conference on, pp. 515-520, 2010 12th International Conference on Computer Modelling and Simulation, 2010
+* [**Using Hardware Vulnerability Factors to Enhance AVF Analysis**](https://dl.acm.org/doi/10.1145/1815961.1816023). V. Sridharan, D. R. Kaeli. Proceedings of the International Symposium on Computer Architecture (ISCA-37), Saint-Malo, France, June 2010. doi:[10.1145/1815961.1816023](https://dx.doi.org/10.1145/1815961.1816023).
+* [**Leveraging Unused Cache Block Words to Reduce Power in CMP Interconnect**](https://ieeexplore.ieee.org/document/5476388). H. Kim, P. Gratz. IEEE Computer Architecture Letters, Vol. 9, Issue 1, 2010. doi:[10.1109/L-CA.2010.9](https://dx.doi.org/10.1109/L-CA.2010.9).
+* _A Fast Timing-Accurate MPSoC HW/SW Co-Simulation Platform based on a Novel Synchronization Scheme_. Mingyan Yu, Junjie Song, Fangfa Fu, Siyue Sun, and Bo Liu. Proceedings of the International MultiConfernce of Engineers and Computer Scientists. 2010. [pdf](http://www.iaeng.org/publication/IMECS2010/IMECS2010_pp1396-1400.pdf)
+* [**Simulation of Standard Benchmarks in Hardware Implementations of L2 Cache Models in Verilog HDL**](https://ieeexplore.ieee.org/document/5481047). Rosario M. Reas, Anastacia B. Alvarez, Joy Alinda P. Reyes. International Conference on Computer Modeling and Simulation, pp. 153-158, 2010. doi:[10.1109/UKSIM.2010.35](https://dx.doi.org/10.1109/UKSIM.2010.35).
+* [**A Simulation of Cache Sub-banking and Block Buffering as Power Reduction Techniques for Multiprocessor Cache Design**](https://ieeexplore.ieee.org/document/5480502). Jestoni V. Zarsuela, Anastacia Alvarez, Joy Alinda Reyes. 12th International Conference on Computer Modelling and Simulation, pp. 515-520, 2010. doi:[10.1109/UKSIM.2010.100](https://dx.doi.org/10.1109/UKSIM.2010.100).
 
 ## 2009<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2009"></span>
 
