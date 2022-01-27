@@ -204,8 +204,8 @@ gem5, or use gem5.
 
 ## 2011<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2011"></span>
 
-*   [**Full-System Analysis and Characterization of Interactive Smartphone Applications**](https://doi.org/10.1109/IISWC.2011.6114205). A. Gutierrez, R.G. Dreslinski, T.F. Wenisch, T. Mudge, A. Saidi, C. Emmons, and N. Paver. In the proceeding of the IEEE International Symposium on Workload Characterization (IISWC), pages 81-90, Austin, TX, November 2011.
-*   _Universal Rules Guided Design Parameter Selection for Soft Error Resilient Processors,_ L. Duan, Y. Zhang, B. Li, and L. Peng. Proceedings of the International Symposium on Performance Analysis of Systems and Software(ISPASS), Austin, TX, April 2011.
+* [**Full-System Analysis and Characterization of Interactive Smartphone Applications**](https://ieeexplore.ieee.org/document/6114205). A. Gutierrez, R.G. Dreslinski, T.F. Wenisch, T. Mudge, A. Saidi, C. Emmons, and N. Paver. In the proceeding of the IEEE International Symposium on Workload Characterization (IISWC), pages 81-90, Austin, TX, November 2011. doi:[10.1109/IISWC.2011.6114205](https://dx.doi.org/10.1109/IISWC.2011.6114205).
+* [**Universal Rules Guided Design Parameter Selection for Soft Error Resilient Processors**](https://ieeexplore.ieee.org/document/5762741). L. Duan, Y. Zhang, B. Li, and L. Peng. Proceedings of the International Symposium on Performance Analysis of Systems and Software(ISPASS), Austin, TX, April 2011. doi:[10.1109/ISPASS.2011.5762741](https://dx.doi.org/10.1109/ISPASS.2011.5762741).
 
 ## 2010<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2010"></span>
 
