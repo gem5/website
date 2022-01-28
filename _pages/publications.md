@@ -120,11 +120,9 @@ gem5, or use gem5.
 ---
 ## 2017<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2017"></span>
 
-*   [[https://chess.eecs.berkeley.edu/pubs/1194/KimEtAl_CyPhy17.pdf](https://chess.eecs.berkeley.edu/pubs/1194/KimEtAl_CyPhy17.pdf)**An Integrated Simulation Tool for Computer Architecture and Cyber-Physical Systems**]. Hokeun Kim, Armin Wasicek, and Edward A. Lee. In Proceedings of the 6th Workshop on Design, Modeling and Evaluation of Cyber-Physical Systems (CyPhy’17), Seoul, Korea, October 19, 2017.
-
-*   [[http://www.lirmm.fr/~sassate/ADAC/wp-content/uploads/2017/06/opensuco17.pdf](http://www.lirmm.fr/~sassate/ADAC/wp-content/uploads/2017/06/opensuco17.pdf)**Efficient Programming for Multicore Processor Heterogeneity: OpenMP versus OmpSs**]. Anastasiia Butko, Florent Bruguier, Abdoulaye Gamatié and Gilles Sassatelli. In Open Source Supercomputing (OpenSuCo’17) Workshop co-located with ISC’17, June 2017.
-
-*   [[https://hal-lirmm.ccsd.cnrs.fr/lirmm-01467328](https://hal-lirmm.ccsd.cnrs.fr/lirmm-01467328)**MAGPIE: System-level Evaluation of Manycore Systems with Emerging Memory Technologies**]. Thibaud Delobelle, Pierre-Yves Péneau, Abdoulaye Gamatié, Florent Bruguier, Sophiane Senni, Gilles Sassatelli and Lionel Torres, 2nd International Workshop on Emerging Memory Solutions (EMS) co-located with DATE’17, March 2017.
+*   [**An Integrated Simulation Tool for Computer Architecture and Cyber-Physical Systems**](https://link.springer.com/chapter/10.1007%2F978-3-030-17910-6_7). Hokeun Kim, Armin Wasicek, and Edward A. Lee. In Proceedings of the 6th Workshop on Design, Modeling and Evaluation of Cyber-Physical Systems (CyPhy’17), Seoul, Korea, October 19, 2017. doi:[10.1007/978-3-030-17910-6\_7](https://dx.doi.org/10.1007/978-3-030-17910-6_7). [pdf](https://ptolemy.berkeley.edu/projects/chess/pubs/1194/KimEtAl_CyPhy17.pdf)
+* _Efficient Programming for Multicore Processor Heterogeneity: OpenMP versus OmpSs_. Anastasiia Butko, Florent Bruguier, Abdoulaye Gamatié and Gilles Sassatelli. In Open Source Supercomputing (OpenSuCo’17) Workshop co-located with ISC’17, June 2017. [link](https://hal-lirmm.ccsd.cnrs.fr/lirmm-01723762/)
+* _MAGPIE: System-level Evaluation of Manycore Systems with Emerging Memory Technologies_. Thibaud Delobelle, Pierre-Yves Péneau, Abdoulaye Gamatié, Florent Bruguier, Sophiane Senni, Gilles Sassatelli and Lionel Torres, 2nd International Workshop on Emerging Memory Solutions (EMS) co-located with DATE’17, March 2017. [link](https://hal-lirmm.ccsd.cnrs.fr/lirmm-01467328)
 
 ## 2016<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2016"></span>
 
