@@ -184,14 +184,14 @@ gem5, or use gem5.
 
 ## 2013<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2013"></span>
 
-*   [**Continuous Real-World Inputs Can Open Up Alternative Accelerator Designs**](http://doi.acm.org/10.1145/2485922.2485923). Bilel Belhadj, Antoine Joubert, Zheng Li, Rodolphe Héliot, and Olivier Temam. ISCA ‘13
-*   _Cache Coherence for GPU Architectures._ Inderpreet Singh, Arrvindh Shriraman, Wilson WL Fung, Mike O’Connor, and Tor M. Aamodt. HPCA, 2013.
-*   _Navigating Heterogeneous Processors with Market Mechanisms._ Marisabel Guevara, Benjamin Lubin, and Benjamin C. Lee. HPCA, 2013
-*   _Power Struggles: Revisiting the RISC vs. CISC Debate on Contemporary ARM and x86 Architectures_. Emily Blem, Jaikrishnan Menon, and Karthikeyan Sankaralingam. HPCA 2013.
-*   [**Coset coding to extend the lifetime of memory**](http://dx.doi.org/10.1109/HPCA.2013.6522321). Adam N. Jacobvitz, Robert Calderbank, Daniel J. Sorin. HPCA ‘13.
-*   [**The McPAT Framework for Multicore and Manycore Architectures: Simultaneously Modeling Power, Area, and Timing**](http://dx.doi.org/10.1145/2445572.2445577). Sheng Li, Jung Ho Ahn, Richard D. Strong, Jay B. Brockman, Dean M. Tullsen, Norman P. Jouppi. ACM Transactions on Architecture and Code Optimization (TACO), Volume 10, Issue 1, April 2013
-*   [**Optimization and Mathematical Modeling in Computer Architecture**](http://dx.doi.org/10.2200/S00531ED1V01Y201308CAC026) Nowatzki, T., Ferris, M., Sankaralingam, K., Estan, C., Vaish, N., & Wood, David A. (2013). Synthesis Lectures on Computer Architecture, 8(4), 1-144.
-*   [**Limits of Parallelism and Boosting in Dim Silicon**](http://doi.ieeecomputersociety.org/10.1109/MM.2013.73). Nathaniel Pinckney, Ronald G. Dreslinski, Korey Sewell, David Fick, Trevor Mudge, Dennis Sylvester, David Blaauw, IEEE Micro, vol. 33, no. 5, pp. 30-37, Sept.-Oct., 2013
+*   [**Continuous Real-World Inputs Can Open Up Alternative Accelerator Designs**](https://dl.acm.org/doi/10.1145/2485922.2485923). Bilel Belhadj, Antoine Joubert, Zheng Li, Rodolphe Héliot, and Olivier Temam. ISCA ‘13. doi:[10.1145/2485922.2485923](https://dx.doi.org/10.1145/2485922.2485923).
+* [**Cache Coherence for GPU Architectures**](https://ieeexplore.ieee.org/document/6522351). Inderpreet Singh, Arrvindh Shriraman, Wilson WL Fung, Mike O’Connor, and Tor M. Aamodt. HPCA, 2013. doi:[10.1109/HPCA.2013.6522351](https://dx.doi.org/10.1109/HPCA.2013.6522351).
+* [**Navigating Heterogeneous Processors with Market Mechanism**](https://ieeexplore.ieee.org/document/6522310). Marisabel Guevara, Benjamin Lubin, and Benjamin C. Lee. HPCA, 2013. doi:[10.1109/HPCA.2013.6522310](https://dx.doi.org/10.1109/HPCA.2013.6522310).
+* [**Power Struggles: Revisiting the RISC vs. CISC Debate on Contemporary ARM and x86 Architectures**](https://ieeexplore.ieee.org/document/6522302). Emily Blem, Jaikrishnan Menon, and Karthikeyan Sankaralingam. HPCA 2013. doi:[10.1109/HPCA.2013.6522302](https://dx.doi.org/10.1109/HPCA.2013.6522302).
+* [**Coset coding to extend the lifetime of memory**](https://ieeexplore.ieee.org/document/6522321). Adam N. Jacobvitz, Robert Calderbank, Daniel J. Sorin. HPCA ‘13. doi:[10.1109/HPCA.2013.6522321](https://dx.doi.org/10.1109/HPCA.2013.6522321).
+* [**The McPAT Framework for Multicore and Manycore Architectures: Simultaneously Modeling Power, Area, and Timing**](https://dl.acm.org/doi/10.1145/2445572.2445577). Sheng Li, Jung Ho Ahn, Richard D. Strong, Jay B. Brockman, Dean M. Tullsen, Norman P. Jouppi. ACM Transactions on Architecture and Code Optimization (TACO), Volume 10, Issue 1, April 2013. doi:[10.1145/2445572.2445577](https://dx.doi.org/10.1145/2445572.2445577).
+* [**Optimization and Mathematical Modeling in Computer Architecture**](https://www.morganclaypool.com/doi/abs/10.2200/S00531ED1V01Y201308CAC026). Nowatzki, T., Ferris, M., Sankaralingam, K., Estan, C., Vaish, N., & Wood, David A. (2013). Synthesis Lectures on Computer Architecture, 8(4), 1-144. doi:[10.2200/S00531ED1V01Y201308CAC026](https://dx.doi.org/10.2200/S00531ED1V01Y201308CAC026).
+* [**Limits of Parallelism and Boosting in Dim Silicon**](https://ieeexplore.ieee.org/document/6560066). Nathaniel Pinckney, Ronald G. Dreslinski, Korey Sewell, David Fick, Trevor Mudge, Dennis Sylvester, David Blaauw, IEEE Micro, vol. 33, no. 5, pp. 30-37, Sept.-Oct., 2013. doi:[10.1109/MM.2013.73](https://dx.doi.org/10.1109/MM.2013.73).
 
 ## 2012<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2012"></span>
 
