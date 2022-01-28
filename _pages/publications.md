@@ -170,17 +170,12 @@ gem5, or use gem5.
 
 ## 2014<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2014"></span>
 
-*   [**Evaluating Private vs. Shared Last-Level Caches for Energy Efficiency in Asymmetric Multi-Cores**](https://doi.org/10.1109/SAMOS.2014.6893211). A. Gutierrez, R.G. Dreslinski, and Trevor Mudge. In Proceedings of the 14th International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS), 2014.
-
-*   [[http://dx.doi.org/10.1109/HPCC.2014.173](http://dx.doi.org/10.1109/HPCC.2014.173) **Security Effectiveness and a Hardware Firewall for MPSoCs]**. M. D. Grammatikakis, K. Papadimitriou, P. Petrakis, A. Papagrigoriou, G. Kornaros, I. Christoforakis and M. Coppola. In 16th IEEE International Conference on High Performance Computing and Communications - Workshop on Multicore and Multithreaded Architectures and Algorithms, 2014, pp. 1032-1039 Aug. 2014
-
-*   [[http://dx.doi.org/10.1145/2541940.2541951](http://dx.doi.org/10.1145/2541940.2541951) **Integrated 3D-Stacked Server Designs for Increasing Physical Density of Key-Value Stores]**. Anthony Gutierrez, Michael Cieslak, Bharan Giridhar, Ronald G. Dreslinski, Luis Ceze, and Trevor Mudge. ASPLOS XIX
-
-*   [[http://dx.doi.org/10.1145/2593069.2593184](http://dx.doi.org/10.1145/2593069.2593184) **Power / Capacity Scaling: Energy Savings With Simple Fault-Tolerant Caches]**. Mark Gottscho, Abbas BanaiyanMofrad, Nikil Dutt, Alex Nicolau, and Puneet Gupta. DAC, 2014.
-
-*   [”‘Write-Aware Replacement Policies for PCM-Based Systems “’](http://dx.doi.org/10.1093/comjnl/bxu104). R. Rodríguez-Rodríguez, F. Castro, D. Chaver*, R. Gonzalez-Alberquilla, L. Piñuel and F. Tirado. The Computer Journal, 2014.
-
-*   [”‘Micro-architectural simulation of in-order and out-of-order ARM microprocessors with gem5 “’](http://dx.doi.org/10.1109/SAMOS.2014.6893220). Fernando A. Endo, Damien Couroussé, Henri-Pierre Charles. 2014 International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS XIV). July 2014.
+* [**Evaluating Private vs. Shared Last-Level Caches for Energy Efficiency in Asymmetric Multi-Cores**](https://ieeexplore.ieee.org/document/6893211). A. Gutierrez, R.G. Dreslinski, and Trevor Mudge. In Proceedings of the 14th International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS), 2014. doi:[10.1109/SAMOS.2014.6893211](https://dx.doi.org/10.1109/SAMOS.2014.6893211).
+* [**Security Effectiveness and a Hardware Firewall for MPSoCs**](https://ieeexplore.ieee.org/document/7056871). M. D. Grammatikakis, K. Papadimitriou, P. Petrakis, A. Papagrigoriou, G. Kornaros, I. Christoforakis and M. Coppola. In 16th IEEE International Conference on High Performance Computing and Communications - Workshop on Multicore and Multithreaded Architectures and Algorithms, 2014, pp. 1032-1039 Aug. 2014. doi:[10.1109/HPCC.2014.173](https://dx.doi.org/10.1109/HPCC.2014.173).
+* [**Integrated 3D-Stacked Server Designs for Increasing Physical Density of Key-Value Stores**](https://dl.acm.org/doi/10.1145/2541940.2541951). Anthony Gutierrez, Michael Cieslak, Bharan Giridhar, Ronald G. Dreslinski, Luis Ceze, and Trevor Mudge. ASPLOS XIX. doi:[10.1145/2541940.2541951](https://dx.doi.org/10.1145/2541940.2541951).
+* [**Power / Capacity Scaling: Energy Savings With Simple Fault-Tolerant Caches**](https://dl.acm.org/doi/10.1145/2593069.2593184). Mark Gottscho, Abbas BanaiyanMofrad, Nikil Dutt, Alex Nicolau, and Puneet Gupta. DAC, 2014. doi:[10.1145/2593069.2593184](https://dx.doi.org/10.1145/2593069.2593184).
+* [**Write-Aware Replacement Policies for PCM-Based Systems**](https://academic.oup.com/comjnl/article/58/9/2000/341364). R. Rodríguez-Rodríguez, F. Castro, D. Chaver, R. Gonzalez-Alberquilla, L. Piñuel and F. Tirado. The Computer Journal, 2014. doi:[10.1093/comjnl/bxu104](https://dx.doi.org/10.1093/comjnl/bxu104).
+* [**Micro-architectural simulation of in-order and out-of-order ARM microprocessors with gem5**](https://ieeexplore.ieee.org/document/6893220). Fernando A. Endo, Damien Couroussé, Henri-Pierre Charles. 2014 International Conference on Embedded Computer Systems: Architectures, Modeling, and Simulation (SAMOS XIV). July 2014. doi:[10.1109/SAMOS.2014.6893220](https://dx.doi.org/10.1109/SAMOS.2014.6893220).
 
 ## 2013<span class="anchor" data-clipboard-text="http://www.gem5.org/publications/#2013"></span>
 
