@@ -16,6 +16,15 @@ wiki.
 The slides and handouts are the same material except that the handouts
 are formatted with two slides per page.
 
+## gem5 Boot Camp 2022
+
+[More information can be found on the official Boot Camp event page](/events/boot-camp-2022)
+
+The first gem5 Boot Camp 2022 is to be held at UC Davis on July 11th to July 15th.
+The 5 day event will give early-career researchers an opportunity to learn how to use gem5 in their research.
+With the assumption of no prior knowledge, the gem5 boot camp will introduce users to all major areas of gem5, such creating of SimObjects, handling the gem5 statistics, working with the gem5 standard library, creating full-system simulations, managing experiment runs using gem5art, and more.
+The event will also given researchers an opportunity to network with others interested in computer architecture simulation.
+
 ## ISCA 2020: 3rd gem5 Users' Workshop
 
 [More information on the workshop page.](isca-2020)
