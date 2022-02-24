@@ -25,6 +25,16 @@ The 5 day event will give early-career researchers an opportunity to learn how t
 With the assumption of no prior knowledge, the gem5 boot camp will introduce users to all major areas of gem5, such creating of SimObjects, handling the gem5 statistics, working with the gem5 standard library, creating full-system simulations, managing experiment runs using gem5art, and more.
 The event will also given researchers an opportunity to network with others interested in computer architecture simulation.
 
+## ISCA 2022: The 4th gem5 Tutorial and User's Workshop
+
+[More information can be found on the event's page](/events/isca-2022).
+
+We will be hosting the 4th gem5 Tutorial and User's Workshop at ICSA 2022.
+
+The tutorial will give those new to gem5 a "crash course" in using the tool to carry out architecture research.
+
+The workshop will consist of a keynote presentation and a series of 15 minute presentations by members of the gem5 community.
+
 ## ISCA 2020: 3rd gem5 Users' Workshop
 
 [More information on the workshop page.](isca-2020)
