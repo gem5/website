@@ -51,7 +51,7 @@ generation and playback.
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
-### Setup on Ubuntu 18.04
+### Setup on Ubuntu 18.04 (gem5 >= v21.0)
 
 If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
 install all these dependencies using APT:
@@ -59,10 +59,10 @@ install all these dependencies using APT:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python3-six python libboost-all-dev pkg-config
+    python3-dev python libboost-all-dev pkg-config
 ```
 
-### Setup on Ubuntu 20.04
+### Setup on Ubuntu 20.04 (gem5 >= v21.0)
 
 If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
 install all these dependencies using API:
@@ -70,7 +70,7 @@ install all these dependencies using API:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python3-six python-is-python3 libboost-all-dev pkg-config
+    python3-dev python-is-python3 libboost-all-dev pkg-config
 ```
 
 ### Docker
