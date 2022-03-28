@@ -5,9 +5,10 @@ permalink: events/boot-camp-2022
 
 We are happy to announce the first gem5 Boot Camp, to be held at UC Davis from July 11th to July 15th 2022.
 The purpose of the gem5 Boot Camp is for junior computer architecture researchers, particularly PhD. students, to learn how to use gem5 in their projects.
-The Boot Camp, held over 5 days, will take attendees through setting up basic system simulations, creating your own components, learning to interpret gem5 status, and up to running and modifying simulations comparable to real-world systems.
+The Boot Camp, held over 5 days, will take attendees through setting up basic system simulations, creating bespoke components, learning to interpret gem5 stats, and up to running and modifying simulations comparable to real-world systems.
 
-**This event is free for all accepted attendees**. There is no cost for registration, accommodation and meals will be provided, and travel grants are available.
+**This event is free for all accepted attendees**. There is no cost for registration.
+Accommodation and meals will be provided, and travel grants will be available.
 
 ## Key Dates
 
