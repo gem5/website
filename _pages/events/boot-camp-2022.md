@@ -46,9 +46,9 @@ We especially encourage those from non-research universities, minority serving i
 
 ## How can I apply?
 
-We are not yet ready to process applications to attend this event.
-If you wish to be notified when we are ready, please register your interest here: <https://forms.gle/AztSG3mD2BqQ4f967>.
+Those wishing to attend can fill out the following Google Form by **May 18th**: <https://forms.gle/3wWPsMDfXyaChmQ68>
 
+If your application was successful you will be contacted, via the email address provided, by June 1st.
 
 ## What does it cost?
 
