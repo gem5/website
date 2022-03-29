@@ -13,6 +13,7 @@ Accommodation and meals will be provided, and travel grants will be available.
 ## Key Dates
 
 * Boot camp: **July 11th to July 15th 2022**
+* Application deadline: **May 18th 2022** (Apply [here](https://forms.gle/3wWPsMDfXyaChmQ68))
 
 ## When and where is the Boot Camp?
 
