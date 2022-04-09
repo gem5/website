@@ -134,7 +134,7 @@ python3 `which scons` build/X86/gem5.opt -j9
 > **gem5 binary types**
 >
 > The SCons scripts in gem5 currently have 5 different binaries you can
-> build for gem5: debug, opt, fast, prof, and perf. These names are
+> build for gem5: debug, opt, and fast. These names are
 > mostly self-explanatory, but detailed below.
 >
 > debug
@@ -156,12 +156,6 @@ python3 `which scons` build/X86/gem5.opt -j9
 >     fast is the highest performing binary, and is much smaller than
 >     opt. However, fast is only appropriate when you feel that it is
 >     unlikely your code has major bugs.
->
-> prof and perf
-> :   These two binaries are build for profiling gem5. prof includes
->     profiling information for the GNU profiler (gprof), and perf
->     includes profiling information for the Google performance tools
->     (gperftools).
 >
 The main argument passed to SCons is what you want to build,
 `build/X86/gem5.opt`. In this case, we are building gem5.opt (an
