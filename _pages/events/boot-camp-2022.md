@@ -58,3 +58,43 @@ There will be no cost to attend.
 Accommodation on the UC Davis campus, meals, and social events will be provided as part of the event.
 
 We will be offering travel grants which can be applied for to cover transport expenses after the event.
+
+## Tentative schedule
+
+* Monday
+  * Morning
+    * Welcome and introduction
+    * Building gem5
+    * Python basics
+    * Using gem5 basics
+  * Afternoon
+    * The gem5 standard library
+  * **Welcome dinner!**
+* Tuesday
+  * Morning
+    * Using gem5's models: CPUs, caches, and memory
+    * Running things in gem5: SE mode, traffic generators, cross compiling, magic instructions
+  * Afternoon
+    * Full system simulation: Disk images, RISC-V, ARM, x86
+    * Accelerating simulation: Fastforwarding, checkpointing, KVM
+* Wednesday
+  * Morning
+    * Event-driven simulation programming
+    * Creating your own SimObjects
+    * Interacting with memory from your SimObject
+  * Afternoon
+    * gem5's CPU-ISA interface
+    * The CPU execution model
+    * Adding a new instruction
+* Thursday
+  * Morning
+    * Advanced topics in memory/caches: Garnet, SLICC
+  * Afternoon
+    * gem5's GPU model
+    * Full system GPU simulation
+* Friday
+  * Morning
+    * Writing tests and contributing to gem5
+  * Afternoon
+    * Integrating other simulators with gem5: SST, DRAMSim, SystemC
+    * Wrap up + open ended time
