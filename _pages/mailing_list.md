@@ -6,17 +6,10 @@ permalink: /mailing_lists/
 
 There are three mailing lists for gem5:
 
-* gem5-dev ([subscribe](
-https://lists.gem5.org/postorius/lists/gem5-dev.gem5.org/)) --- Discussions
-regarding gem5 development. Bug reports should be submitted to our
-[Jira Issue Tracker](https://gem5.atlassian.net), though the gem5-dev mailing
-list can be used to discuss bugs in greater detail.
-* gem5-users ([subscribe](
-https://lists.gem5.org/postorius/lists/gem5-users.gem5.org/)) --- General
-discussions about gem5 and its use.
-* gem5-announce ([subscribe](
-https://lists.gem5.org/postorius/lists/gem5-announce.gem5.org)) --- General
-gem5 annoucements.
+* gem5-dev@gem5.org : For discussions regarding gem5 development. Bug reports should be submitted to our [Jira Issue Tracker](https://gem5.atlassian.net).
+Those withing to post and/or receive mail from the list should subscribe by sending an email to gem5-dev-join@gem5.org or at <https://harmonylists.io/list/gem5-dev.gem5.org>.
+* gem5-users : For general discussions about gem5 and its use. Those wishing to post and/or receive mail from the list should subscribe by sending an email to gem5-users-join@gem5.org or at <https://harmonylists.io/list/gem5-users.gem5.org>.
+* gem5-announce@gem5.org : For general gem5 announcements. Those wishing to receive mail from this list should subscribe by sending an email to gem5-announce-join@gem5.org or at <https://harmonylists.io/list/gem5-announce.gem5.org>.
 
 # Mail Archive
 
