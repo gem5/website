@@ -71,6 +71,7 @@ from m5.SimObject import SimObject
 class HelloObject(SimObject):
     type = 'HelloObject'
     cxx_header = "learning_gem5/part2/hello_object.hh"
+    cxx_class = "gem5::HelloObject"
 ```
 
 [//]: # You can find the complete file
@@ -85,6 +86,10 @@ The `cxx_header` is the file that contains the declaration of the class
 used as the `type` parameter. Again, the convention is to use the name
 of the SimObject with all lowercase and underscores, but this is only
 convention. You can specify any header file here.
+
+The `cxx_class` is an attribute specifying the newly created SimObject
+is declared within the gem5 namespace. Most SimObjects in the gem5 code
+base are declared within the gem5 namespace!
 
 Step 2: Implement your SimObject in C++
 ---------------------------------------
@@ -201,7 +206,7 @@ is the required code.
 ```python
 Import('*')
 
-SimObject('HelloObject.py')
+SimObject('HelloObject.py', sim_objects=['HelloObject'])
 Source('hello_object.cc')
 ```
 
