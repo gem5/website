@@ -55,11 +55,11 @@ remove those 3 lines:
 
 ```
 system.cpu.createInterruptController()
-#system.cpu.interrupts[0].pio = system.membus.master
-#system.cpu.interrupts[0].int_master = system.membus.slave
-#system.cpu.interrupts[0].int_slave = system.membus.master
+#system.cpu.interrupts[0].pio = system.membus.mem_side_ports
+#system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+#system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
-system.system_port = system.membus.slave
+system.system_port = system.membus.cpu_side_ports
 ```
 
 You can either delete or comment them out as above. Next let's set
