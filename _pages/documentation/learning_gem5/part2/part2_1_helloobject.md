@@ -101,6 +101,9 @@ We'll start with the header file for our `C++` object. By convention,
 gem5 wraps all header files in `#ifndef/#endif` with the name of the
 file and the directory its in so there are no circular includes.
 
+SimObjects should be declared within the gem5 namespace. Therefore,
+we declare our class within the `namespace gem5` scope.
+
 The only thing we need to do in the file is to declare our class. Since
 `HelloObject` is a SimObject, it must inherit from the C++ SimObject
 class. Most of the time, your SimObject's parent will be a subclass of
@@ -126,11 +129,16 @@ The code required for our simple header file is listed below.
 #include "params/HelloObject.hh"
 #include "sim/sim_object.hh"
 
+namespace gem5
+{
+
 class HelloObject : public SimObject
 {
   public:
     HelloObject(const HelloObjectParams &p);
 };
+
+} // namespace gem5
 
 #endif // __LEARNING_GEM5_HELLO_OBJECT_HH__
 ```
@@ -153,11 +161,16 @@ simply use `std::cout` because it is simple.
 
 #include <iostream>
 
+namespace gem5
+{
+
 HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params)
 {
     std::cout << "Hello World! From a SimObject!" << std::endl;
 }
+
+} // namespace gem5
 ```
 
 **Note**: If the constructor of your SimObject follows the following
