@@ -218,6 +218,7 @@ where we plan to use the debug flag.
 In the `hello_object.cc` file, we need to include the header file.
 
 ```cpp
+#include "base/trace.hh"
 #include "debug/HelloExample.hh"
 ```
 
