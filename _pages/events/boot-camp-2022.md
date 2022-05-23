@@ -10,10 +10,12 @@ The Boot Camp, held over 5 days, will take attendees through setting up basic sy
 **This event is free for all accepted attendees**. There is no cost for registration.
 Accommodation and meals will be provided, and travel grants will be available.
 
+**Important Note:** Registration for this event is now closed.
+
 ## Key Dates
 
 * Boot camp: **July 11th to July 15th 2022**
-* Application deadline: **May 18th 2022** (Apply [here](https://forms.gle/3wWPsMDfXyaChmQ68))
+* ~~Application deadline: **May 18th 2022** (Apply [here](https://forms.gle/3wWPsMDfXyaChmQ68))~~
 
 ## When and where is the Boot Camp?
 
@@ -47,9 +49,11 @@ We especially encourage those from non-research universities, minority serving i
 
 ## How can I apply?
 
-Those wishing to attend can fill out the following Google Form by **May 18th**: <https://forms.gle/3wWPsMDfXyaChmQ68>
+Registration for this event this event is now closed.
 
-If your application was successful you will be contacted, via the email address provided, by June 1st.
+~~Those wishing to attend can fill out the following Google Form by **May 18th**: <https://forms.gle/3wWPsMDfXyaChmQ68>~~
+
+~~If your application was successful you will be contacted, via the email address provided, by June 1st.~~
 
 ## What does it cost?
 
