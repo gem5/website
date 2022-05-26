@@ -18,49 +18,49 @@ they interact with each other and the simulator.
 
 Classes involved in the power model are:
 
-* [PowerModel](http://doxygen.gem5.org/release/current/classPowerModel.html):
+* [PowerModel](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalResistor.html):
 Represents a power model for a hardware component.
 * [PowerModelState](
-http://doxygen.gem5.org/release/current/classPowerModelState.html): Represents a
+http://doxygen.gem5.org/release/current/classgem5_1_1PowerModelState.html): Represents a
 power model for a hardware component in a certain power state. It is an
 abstract class that defines an interface that must be implemented for each
 model.
 * [MathExprPowerModel](
-http://doxygen.gem5.org/release/current/classMathExprPowerModel.html): Simple
+http://doxygen.gem5.org/release/current/classgem5_1_1MathExprPowerModel.html): Simple
 implementation of [PowerModelState](
-http://doxygen.gem5.org/release/current/classPowerModelState.html) that assumes
+http://doxygen.gem5.org/release/current/classgem5_1_1PowerModelState.html) that assumes
 that power can be modeled using a simple power.
 
 Classes involved in the thermal model are:
 
-* [ThermalModel](http://doxygen.gem5.org/release/current/classThermalModel.html):
+* [ThermalModel](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalModel.html):
 Contains the system thermal model logic and state. It performs the power query
 and temperature update. It also enables gem5 to query for temperature (for OS
 reporting).
-* [ThermalDomain](http://doxygen.gem5.org/release/current/classThermalDomain.html):
+* [ThermalDomain](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalDomain.html):
 Represents an entity that generates heat. It's essentially a group of
-[SimObjects](http://doxygen.gem5.org/release/current/classSubSystem.html) grouped
+[SimObjects](http://doxygen.gem5.org/release/current/classgem5_1_1SubSystem.html) grouped
 under a SubSystem component that have its own thermal behaviour.
-* [ThermalNode](http://doxygen.gem5.org/release/current/classThermalNode.html):
+* [ThermalNode](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalNode.html):
 Represents a node in the thermal circuital equivalent. The node has a
 temperature and interacts with other nodes through connections (thermal
 resistors and capacitors).
 * [ThermalReference](
-http://doxygen.gem5.org/release/current/classThermalReference.html): Temperature
+http://doxygen.gem5.org/release/current/classgem5_1_1ThermalReference.html): Temperature
 reference for the thermal model (essentially a thermal node with a fixed
 temperature), can be used to model air or any other constant temperature
 domains.
-* [ThermalEntity](http://doxygen.gem5.org/release/current/classThermalEntity.html):
+* [ThermalEntity](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalEntity.html):
 A thermal component that connects two thermal nodes and models a thermal
 impedance between them. This class is just an abstract interface.
 * [ThermalResistor](
-http://doxygen.gem5.org/release/current/classThermalResistor.html): Implements
-[ThermalEntity](http://doxygen.gem5.org/release/current/classThermalEntity.html) to
+http://doxygen.gem5.org/release/current/classgem5_1_1ThermalResistor.html): Implements
+[ThermalEntity](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalEntity.html) to
 model a thermal resistance between the two nodes it connects. Thermal
 resistances model the capacity of a material to transfer heat (units in K/W).
 * [ThermalCapacitor](
-http://doxygen.gem5.org/release/current/classThermalCapacitor.html): Implements
-[ThermalEntity](http://doxygen.gem5.org/release/current/classThermalEntity.html) to
+http://doxygen.gem5.org/release/current/classgem5_1_1ThermalCapacitor.html): Implements
+[ThermalEntity](http://doxygen.gem5.org/release/current/classgem5_1_1ThermalEntity.html) to
 model a thermal capacitance. Thermal capacitors are used to model material's
 thermal capacitance, this is, the ability to change a certain material
 temperature (units in J/K).
@@ -78,7 +78,7 @@ created (like ThermalReferences) and connected all together by creating thermal
 entities (capacitors and resistors).
 
 Last step to conclude the thermal model is to create the [ThermalModel](
-http://doxygen.gem5.org/release/current/classThermalModel.html) instance itself and
+http://doxygen.gem5.org/release/current/classgem5_1_1ThermalModel.html) instance itself and
 attach all the instances used to it, so it can properly update them at runtime.
 Only one thermal model instance is supported right now and it will
 automatically report temperature when appropriate (ie. platform sensor
@@ -87,7 +87,7 @@ devices).
 ## Power model
 
 Every [ClockedObject](
-http://doxygen.gem5.org/release/current/classClockedObject.html) has a power model
+http://doxygen.gem5.org/release/current/classgem5_1_1ClockedObject.html) has a power model
 associated. If this power model is non-null power will be calculated at every
 stats dump (although it might be possible to force power evaluation at any
 other point, if the power model uses the stats, it is a good idea to keep both
@@ -100,7 +100,7 @@ consumption the power is just the weighted average of each power model.
 A power state model is essentially an interface that allows us to define two
 power functions for dynamic and static. As an example implementation a class
 called [MathExprPowerModel](
-http://doxygen.gem5.org/release/current/classMathExprPowerModel.html) has been
+http://doxygen.gem5.org/release/current/classgem5_1_1MathExprPowerModel.html) has been
 provided. This implementation allows the user to define a power model as an
 equation involving several statistics. There's also some automatic (or "magic")
 variables such as "temp", which reports temperature.

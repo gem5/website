@@ -258,23 +258,23 @@ based on pipeline activity. External events are mostly received by callbacks
 http://doxygen.gem5.org/release/current/classMinor_1_1Fetch1_1_1IcachePort.html#aec62b3d89dfe61e8528cdcdf3729eeab))
 and cause the pipeline to be woken up to service advancing request queues.
 
-[Ticked](http://doxygen.gem5.org/release/current/classTicked.html) (sim/ticked.hh)
+[Ticked](http://doxygen.gem5.org/release/current/classgem5_1_1Ticked.html) (sim/ticked.hh)
 is a base class bringing together an evaluate member function and a provided
-[SimObject](http://doxygen.gem5.org/release/current/classSimObject.html). It
+[SimObject](http://doxygen.gem5.org/release/current/classgem5_1_1SimObject.html). It
 provides a [Ticked::start](
 http://doxygen.gem5.org/release/current/classTicked.html#a798d1e248c27161de6eb2bc6fef5e425)/stop
 interface to start and pause clock events from being periodically issued.
-[Pipeline](http://doxygen.gem5.org/release/current/classMinor_1_1Pipeline.html) is
+[Pipeline](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Pipeline.html) is
 a derived class of Ticked.
 
 During evaluate calls, stages can signal that they still have work to do in the
 next cycle by calling either [MinorCPU::activityRecorder](
-http://doxygen.gem5.org/release/current/classMinorCPU.html#ae3b03c96ee234e2c5c6c68f4567245a7)->activity()
+http://doxygen.gem5.org/release/current/classgem5_1_1MinorCPU.html#ae3b03c96ee234e2c5c6c68f4567245a7)->activity()
 (for non-callable related activity) or MinorCPU::wakeupOnEvent(<stageId>) (for
 stage callback-related 'wakeup' activity).
 
 [Pipeline::evaluate](
-http://doxygen.gem5.org/release/current/classMinor_1_1Pipeline.html#af07fdce00c8937e9de5b6450a1cd62bf)
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Pipeline.html#af07fdce00c8937e9de5b6450a1cd62bf)
 contains calls to evaluate for each unit and a test for pipeline idling which
 can turns off the clock tick if no unit has signalled that it may become active
 next cycle.
@@ -289,9 +289,9 @@ transported in 0 cycles making fetch1ToFetch2BackwardDelay the only
 configurable delay which can be set as low as 0 cycles.
 
 The [MinorCPU::activateContext](
-http://doxygen.gem5.org/release/current/classMinorCPU.html#a854596342bfb9dd889437e494c4ddb27)
+http://doxygen.gem5.org/release/current/classgem5_1_1MinorCPU.html#a854596342bfb9dd889437e494c4ddb27)
 and [MinorCPU::suspendContext](
-http://doxygen.gem5.org/release/current/classMinorCPU.html#ae6aa9b1bb798d8938f0b35e11d9e68b8)
+http://doxygen.gem5.org/release/current/classgem5_1_1MinorCPU.html#ae6aa9b1bb798d8938f0b35e11d9e68b8)
 interface can be called to start and pause threads (threads in the MT sense)
 and to start and pause the pipeline. Executing instructions can call this
 interface (indirectly through the ThreadContext) to idle the CPU/their threads.
@@ -734,18 +734,18 @@ The available flags are:
 |Debug flag      | Unit which will generate debugging output |
 |:---------------|:------------------------------------------|
 |Activity        | [Debug](http://doxygen.gem5.org/release/current/namespaceDebug.html) ActivityMonitor actions |
-|Branch          | [Fetch2](http://doxygen.gem5.org/release/current/classMinor_1_1Fetch2.html) and [Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) branch prediction decisions |
-|[MinorCPU](http://doxygen.gem5.org/release/current/classMinorCPU.html)      | CPU global actions such as wakeup/thread suspension |
-|[Decode](http://doxygen.gem5.org/release/current/classMinor_1_1Decode.html) | [Decode](http://doxygen.gem5.org/release/current/classMinor_1_1Decode.html) |
-|MinorExec       | [Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) behaviour |
-|Fetch           |[Fetch1](http://doxygen.gem5.org/release/current/classMinor_1_1Fetch1.html) and [Fetch2](http://doxygen.gem5.org/release/current/classMinor_1_1Fetch2.html) |
-|MinorInterrupt  | [Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) interrupt handling  |
-|MinorMem        | [Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) memory interactions |
-|MinorScoreboard | [Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) scoreboard activity |
+|Branch          | [Fetch2](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch2.html) and [Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) branch prediction decisions |
+|[MinorCPU](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1MinorCPU.html)      | CPU global actions such as wakeup/thread suspension |
+|[Decode](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Decode.html) | [Decode](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Decode.html) |
+|MinorExec       | [Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) behaviour |
+|Fetch           |[Fetch1](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch1.html) and [Fetch2](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch2.html) |
+|MinorInterrupt  | [Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) interrupt handling  |
+|MinorMem        | [Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) memory interactions |
+|MinorScoreboard | [Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) scoreboard activity |
 |MinorTrace      | Generate MinorTrace cyclic state trace output (see below) |
 |MinorTiming     | MinorTiming instruction timing modification operations    |
 
-The group flag [Minor](http://doxygen.gem5.org/release/current/namespaceMinor.html)
+The group flag [Minor](http://doxygen.gem5.org/release/current/namespaceminor.html)
 enables all the flags beginning with [Minor](
 http://doxygen.gem5.org/release/current/namespaceMinor.html).
 
@@ -772,7 +772,7 @@ printed for every named element in the model.
 
 #### MinorInst - summaries of instructions issued by Decode
 
-[Decode](http://doxygen.gem5.org/release/current/classMinor_1_1Decode.html)
+[Decode](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Decode.html)
 
 For example:
 
@@ -785,7 +785,7 @@ MinorInst lines are currently only generated for instructions which are committe
 
 #### MinorLine - summaries of line fetches issued by Fetch1
 
-[Fetch1](http://doxygen.gem5.org/release/current/classMinor_1_1Fetch1.html)
+[Fetch1](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch1.html)
 
 For example:
 
@@ -899,8 +899,8 @@ current tick (to the left), the data in transit, and the data available at
 their outputs (to the right).
 
 The backwards FIFO between [Fetch2](
-http://doxygen.gem5.org/release/current/classMinor_1_1Fetch2.html) and [Fetch1](
-http://doxygen.gem5.org/release/current/classMinor_1_1Fetch1.html) shows branch
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch2.html) and [Fetch1](
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch1.html) shows branch
 prediction data.
 
 In general, all displayed data is correct at the end of a cycle's activity at
@@ -915,28 +915,28 @@ buffer with all reserved or occupied slots will, therefore, block the previous
 stage from generating output.
 
 Fetch queues and [LSQ](
-http://doxygen.gem5.org/release/current/classMinor_1_1LSQ.html) show the
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1LSQ.html) show the
 lines/instructions in the queues of each interface and show the number of
 lines/instructions in TLB and memory in the two striped colours of the top of
 their frames.
 
 Inside [Execute](
-http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html), the horizontal
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html), the horizontal
 bars represent the individual FU pipelines. The vertical bar to the left is the
 input buffer and the bar to the right, the instructions committed this cycle.
 The background of [Execute](
-http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) shows
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) shows
 instructions which are being committed this cycle in their original FU pipeline
 positions.
 
 The strip at the top of the [Execute](
-http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) block shows the
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) block shows the
 current streamSeqNum that [Execute](
-http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) is committing.
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) is committing.
 A similar stripe at the top of [Fetch1](
-http://doxygen.gem5.org/release/current/classMinor_1_1Fetch1.html) shows that
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch1.html) shows that
 stage's expected streamSeqNum and the stripe at the top of [Fetch2](
-http://doxygen.gem5.org/release/current/classMinor_1_1Fetch2.html) shows its
+http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Fetch2.html) shows its
 issuing predictionSeqNum.
 
 The scoreboard shows the number of instructions in flight which will commit a
@@ -944,7 +944,7 @@ result to the register in the position shown. The scoreboard contains slots for
 each integer and floating point register.
 
 The Execute::inFlightInsts queue shows all the instructions in flight in
-[Execute](http://doxygen.gem5.org/release/current/classMinor_1_1Execute.html) with
+[Execute](http://doxygen.gem5.org/release/current/classgem5_1_1minor_1_1Execute.html) with
 the oldest instruction (the next instruction to be committed) to the right.
 
 `Stage activity` shows the signalled activity (as E/1) for each stage (with CPU

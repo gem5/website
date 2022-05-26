@@ -22,9 +22,9 @@ the 11th September.
 # Streaming & Offline viewing
 
 The workshop is being streamed live and all talks will be available on
-YouTube after the workshop. See the [main summit
-page](https://developer.arm.com/research/summit/summit-live) for
-details.
+YouTube after the workshop.
+
+**An archive of the event can be found [here](https://youtube.com/playlist?list=PLgyFKd2HIZlY0E554m3qfp-ekm1a_Q7A4)**.
 
 # Target Audience
 
@@ -50,25 +50,25 @@ program.
 
 | Time        | Topic                                                                                                                                                                             |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 09.00-09.30 | Welcome and introduction to gem5 — [slides](Media:Summit2017_Intro_to_gem5.pdf "wikilink")                                                                                        |
-| 09.30-09.45 | [Interacting with gem5 using workload-automation & devlib](#WA "wikilink") — [slides](Media:Summit2017_wa_devlib.pdf "wikilink")                                                  |
-| 09.45-10.00 | [ARM Research Starter Kit: System Modeling using gem5](#StarterKit "wikilink") — [slides](Media:Summit2017_starterkit.pdf "wikilink")                                             |
+| 09.00-09.30 | Welcome and introduction to gem5                                                                                   |
+| 09.30-09.45 | [Interacting with gem5 using workload-automation & devlib](#WA "wikilink")                                               |
+| 09.45-10.00 | [ARM Research Starter Kit: System Modeling using gem5](#StarterKit "wikilink")                                            |
 | 10.00-10.15 | Break                                                                                                                                                                             |
 | 10.15-10.30 | [Debugging a target-agnostic JIT compiler with GEM5](#JIT_Debugging "wikilink")                                                                                                   |
-| 10.30-11.00 | [Learning gem5: Modeling Cache Coherence with gem5](#Ruby "wikilink") — [slides](Media:Summit2017_learning_gem5_ruby.pdf "wikilink")                                              |
+| 10.30-11.00 | [Learning gem5: Modeling Cache Coherence with gem5](#Ruby "wikilink")                                              |
 | 11.00-11.15 | Break (overlaps with main program break)                                                                                                                                          |
-| 11.15-11.45 | [A Detailed On-Chip Network Model inside a Full-System Simulator](#Garnet2 "wikilink") — [slides](Media:Summit2017_garnet2.0_tutorial.pdf "wikilink")                             |
-| 11.45-12.00 | [Integrating and quantifying the impact of low power modes in the DRAM controller in gem5](#DRAMPower "wikilink") — [slides](Media:Summit2017_drampower.pdf "wikilink")           |
+| 11.15-11.45 | [A Detailed On-Chip Network Model inside a Full-System Simulator](#Garnet2 "wikilink")                             |
+| 11.45-12.00 | [Integrating and quantifying the impact of low power modes in the DRAM controller in gem5](#DRAMPower "wikilink")            |
 | 12.00-12.15 | Break                                                                                                                                                                             |
-| 12.15-12.45 | [CPU power estimation using PMCs and its application in gem5](#PowMon "wikilink") — [slides](Media:Summit2017_powmon.pdf "wikilink")                                              |
-| 12.45-13.00 | [gem5: empowering the masses](#PowerFramework "wikilink") — [slides](Media:Summit2017_powerframework.pdf "wikilink")                                                              |
+| 12.15-12.45 | [CPU power estimation using PMCs and its application in gem5](#PowMon "wikilink")                                              |
+| 12.45-13.00 | [gem5: empowering the masses](#PowerFramework "wikilink")                                                              |
 | 13.00-14.15 | Lunch                                                                                                                                                                             |
-| 14.15-14.45 | [Trace-driven simulation of multithreaded applications in gem5](#ElasticSimMATE "wikilink") — [slides](Media:Summit2017_elasticsimmate.pdf "wikilink")                            |
-| 14.45-15.00 | [Generating Synthetic Traffic for Heterogeneous Architectures](#TraceGeneration "wikilink") — [slides](Media:Summit2017_trace_generation.pdf "wikilink")                          |
+| 14.15-14.45 | [Trace-driven simulation of multithreaded applications in gem5](#ElasticSimMATE "wikilink")                            |
+| 14.45-15.00 | [Generating Synthetic Traffic for Heterogeneous Architectures](#TraceGeneration "wikilink")                          |
 | 15:00-15:15 | Break                                                                                                                                                                             |
-| 15:15-16:45 | [System Simulation with gem5, SystemC and other Tools](#SystemC "wikilink") — [slides](Media:Summit2017_systemc.pdf "wikilink")                                                   |
-| 15:45-16:00 | [COSSIM: An Integrated Solution to Address the Simulator Gap for Parallel Heterogeneous Systems](#COSSIM "wikilink") — [slides](Media:Summit2017_COSSIM.pdf "wikilink")           |
-| 16:00-16:15 | [Simulation of Complex Systems Incorporating Hardware Accelerators](#ComplexSystems "wikilink") — [slides](Media:Summit2017_complex_fs_incorporating_accelerators.pdf "wikilink") |
+| 15:15-16:45 | [System Simulation with gem5, SystemC and other Tools](#SystemC "wikilink")                                                   |
+| 15:45-16:00 | [COSSIM: An Integrated Solution to Address the Simulator Gap for Parallel Heterogeneous Systems](#COSSIM "wikilink")          |
+| 16:00-16:15 | [Simulation of Complex Systems Incorporating Hardware Accelerators](#ComplexSystems "wikilink") |
 | 16:15-16:30 | Break                                                                                                                                                                             |
 | 16:30-18:15 | Introduction to ARM Research                                                                                                                                                      |
 | 18:20-20.00 | Poster Session & Pre-Dinner Drinks                                                                                                                                                |

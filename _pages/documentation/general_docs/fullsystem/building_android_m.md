@@ -222,7 +222,7 @@ Remove the boot animation:
 sudo rm /mnt/androidRoot/system/bin/bootanimation
 ```
 
-Download and unpack the Mali drivers, for gem5 Android 4.4, from [here](http://malideveloper.arm.com/resources/drivers/arm-mali-midgard-gpu-user-space-drivers/). Then, make the directories for the drivers and copy them:
+Download and unpack the Mali drivers, for gem5 Android 4.4, from [here](https://developer.arm.com/downloads/-/mali-drivers/midgard-kernel). Then, make the directories for the drivers and copy them:
 
 ```
 sudo mkdir -p /mnt/androidRoot/system/vendor/lib/egl
