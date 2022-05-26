@@ -76,7 +76,7 @@ program.
 
 # Talks
 
-<span id="ElasticSimMATE">
+<span id="ElasticSimMATE"/>
 
 ## Trace-driven simulation of multithreaded applications in gem5
 
@@ -152,9 +152,7 @@ systems.
 > Ukraine. During her Master she participated on the international
 > program of double diploma between Montpellier and Kiev universities.
 
-</span>
-
-<span id="Ruby">
+<span id="Ruby"/>
 
 ## Modeling Cache Coherence with gem5
 
@@ -184,9 +182,7 @@ begin writing your own coherence protocols\!
 > Distinguished Graduate Fellowship Cisco Computer Sciences Award in
 > 2014 and 2015.
 
-</span>
-
-<span id="Garnet2">
+<span id="Garnet2"/>
 
 ## A Detailed On-Chip Network Model inside a Full-System Simulator
 
@@ -234,9 +230,7 @@ demonstrate how Garnet works within the entire gem5 ecosystem.
 > interconnection networks, networks-on-chip, deep learning
 > accelerators, and FPGAs.
 
-</span>
-
-<span id="SystemC">
+<span id="SystemC"/>
 
 ## System Simulation with gem5, SystemC and other Tools
 
@@ -266,9 +260,7 @@ for coupling gem5 with SystemC and other tools.
 > modeling of widely heterogeneous hardware as well dataflow compilers
 > for heterogeneous MPSoC platforms.
 
-</span>
-
-<span id="PowMon">
+<span id="PowMon"/>
 
 ## CPU power estimation using PMCs and its application in gem5
 
@@ -320,11 +312,9 @@ results obtained from hardware.
 > the General Chair of the European Workshop on Microelectronics
 > Education 2016. He is a member of the IEEE, IET and Fellow of the HEA.
 
-</span>
-
 # Short Talks
 
-<span id="JIT_Debugging">
+<span id="JIT_Debugging"/>
 
 ## Debugging a target-agnostic JIT compiler with GEM5
 
@@ -341,9 +331,8 @@ in the PDL and the low-level inferred implementation. In this talk, we
 present a new debugger based on simulating the execution of the target
 runtime VM in GEM5; the debugger frontend connects to this simulation
 using the RSP wire protocol.
-</span>
 
-<span id="COSSIM">
+<span id="COSSIM"/>
 
 ## COSSIM: An Integrated Solution to Address the Simulator Gap for Parallel Heterogeneous Systems
 
@@ -402,9 +391,7 @@ devices).
 > Computer Engineering in which he specialized in Computer Architecture
 > and Hardware Design.
 
-</span>
-
-<span id="ComplexSystems">
+<span id="ComplexSystems"/>
 
 ## Simulation of Complex Systems Incorporating Hardware Accelerators
 
@@ -453,9 +440,7 @@ also orders of magnitude faster.
 > Computer Engineering in which he specialized in Computer Architecture
 > and Hardware Design.
 
-</span>
-
-<span id="TraceGeneration">
+<span id="TraceGeneration"/>
 
 ## Generating Synthetic Traffic for Heterogeneous Architectures
 
@@ -491,9 +476,7 @@ of changes at the interconnection network and memory hierarchy.
 > include performance evaluation in computer architecture, heterogeneous
 > architectures, and multi-threaded workloads.
 
-</span>
-
-<span id="StarterKit">
+<span id="StarterKit"/>
 
 ## ARM Research Starter Kit: System Modeling using gem5
 
@@ -513,9 +496,7 @@ well as those who would like to promote gem5 in research.
 > research enablement activities at ARM, which cover a range of
 > different research areas from SoC design to IoT and data science.
 
-</span>
-
-<span id="WA">
+<span id="WA"/>
 
 ## Interacting with gem5 using workload-automation & devlib
 
@@ -531,9 +512,7 @@ tool and show how they can make your gem5 work easier.
 > London, where she investigated the effects of optical interconnects on
 > the performance of chip multiprocessors, using gem5.
 
-</span>
-
-<span id="PowerFramework">
+<span id="PowerFramework"/>
 
 ## gem5: empowering the masses
 
@@ -552,9 +531,8 @@ which the accuracy and versatility of the simulator have been improved.
 > ideally without impacting the delivered
 performance.
 
-</span>
 
-<span id="DRAMPower">
+<span id="DRAMPower"/>
 
 ## Integrating and quantifying the impact of low power modes in the DRAM controller in gem5
 
@@ -587,6 +565,3 @@ from University of Kaiserslautern: Matthias Jung and Norbert Wehn.
 > several collaborative research projects, especially with academics.
 > Currently she is exploring the problem of energy efficient data
 > movement for sparse data workloads.
-
-</span>
-
