@@ -51,17 +51,6 @@ generation and playback.
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
-### Setup on Ubuntu 18.04 (gem5 >= v21.0)
-
-If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
-install all these dependencies using APT:
-
-```
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
-    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python libboost-all-dev pkg-config
-```
-
 ### Setup on Ubuntu 20.04 (gem5 >= v21.0)
 
 If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
@@ -71,6 +60,17 @@ install all these dependencies using API:
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     python3-dev python-is-python3 libboost-all-dev pkg-config
+```
+
+### Setup on Ubuntu 18.04 (gem5 >= v21.0)
+
+If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
+install all these dependencies using APT:
+
+```
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    python3-dev python libboost-all-dev pkg-config
 ```
 
 ### Docker
@@ -84,7 +84,7 @@ https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2) ([source Dockerfil
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with minimum dependencies:
-[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-2](
+[gcr.io/gem5-test/ubuntu-20.04_min-dependencies:v21-2](
 https://gcr.io/gem5-test/ubuntu-20.04_min-dependencies:v21-2) ([source Dockerfile](
 https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_min-dependencies/Dockerfile)).
 
