@@ -22,8 +22,8 @@ from the root of the gem5 folder:
 ```
 mkdir -p cpu_tests/benchmarks/bin/arm
 cd cpu_tests/benchmarks/bin/arm
-wget dist.gem5.org/dist/v21-2/test-progs/cpu-tests/bin/arm/Bubblesort
-wget dist.gem5.org/dist/v21-2/test-progs/cpu-tests/bin/arm/FloatMM
+wget dist.gem5.org/dist/v22-0/test-progs/cpu-tests/bin/arm/Bubblesort
+wget dist.gem5.org/dist/v22-0/test-progs/cpu-tests/bin/arm/FloatMM
 ```
 
 We'll use these to further test our ARM system.

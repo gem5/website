@@ -25,11 +25,11 @@ Here follows a list of prebuilt binaries to be downloaded by just clicking the l
 
 The tarball below contains a set of binaries: the Linux kernel and a set of bootloaders
 
-* <http://dist.gem5.org/dist/v21-2/arm/aarch-system-20210904.tar.bz2>
+* <http://dist.gem5.org/dist/v22-0/arm/aarch-system-20210904.tar.bz2>
 
 ##### Latest Linux Disk Images (**recommended**)
 
-* <http://dist.gem5.org/dist/v21-2/arm/disks/ubuntu-18.04-arm64-docker.img.bz2>
+* <http://dist.gem5.org/dist/v22-0/arm/disks/ubuntu-18.04-arm64-docker.img.bz2>
 
   Partition table: yes
 
@@ -38,7 +38,7 @@ The tarball below contains a set of binaries: the Linux kernel and a set of boot
   * kvm (using m5 --addr ops): `/init.addr.gem5`
   * fast models (using m5 --semi ops): `/init.semi.gem5`
 
-* <http://dist.gem5.org/dist/v21-2/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
+* <http://dist.gem5.org/dist/v22-0/arm/disks/aarch32-ubuntu-natty-headless.img.bz2>
 
 ##### Old Linux Kernel/Disk Image
 
