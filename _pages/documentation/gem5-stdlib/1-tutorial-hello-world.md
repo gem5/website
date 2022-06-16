@@ -113,12 +113,10 @@ This is all that is required to setup your simulation.
 From this you simply need to construct and run the `Simulator`:
 
 ```python
-simulator = Simulator(board=board, full_system=False)
+simulator = Simulator(board=board)
 simulator.run()
 ```
 
-Please ensure you have set the `full_system` parameter to `False`.
-By default it is `True`, but in this tutorial we are running in SE mode, not FS.
 It should also be noted that **the `Simulator` module is still in a beta state, so its APIs may change upon the next release**.
 
 As a recap, your script should look like the following:
@@ -151,7 +149,7 @@ binary = Resource("x86-hello64-static")
 board.set_se_binary_workload(binary)
 
 # Setup the Simulator and run the simulation.
-simulator = Simulator(board=board, full_system=False)
+simulator = Simulator(board=board)
 simulator.run()
 ```
 
@@ -164,14 +162,7 @@ It can then be executed with:
 If setup correctly, the output will look something like:
 
 ```
-gem5 Simulator System.  http://gem5.org
-gem5 is copyrighted software; use the --copyright option for details.
-
-gem5 version 21.2.0.0
-gem5 compiled Dec 29 2021 16:06:43
-gem5 started Dec 29 2021 16:16:36
-gem5 executing on liberty.cs.ucdavis.edu, pid 477522
-command line: ./build/X86/gem5.opt hello-world-tutorial.py
+...
 
 warn: The simulate package is still in a beta state. The gem5 project does not guarantee the APIs within this package will remain consistent across upcoming releases.
 Global frequency set at 1000000000000 ticks per second

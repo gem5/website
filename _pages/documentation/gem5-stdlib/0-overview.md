@@ -18,7 +18,7 @@ The [`configs/examples/gem5_library`](https://gem5.googlesource.com/public/gem5/
 
 The following subsections give a broad overview of the gem5 stdlib packages and what there intended purposes are.
 
-**Note: The documentation/tutorial/etc. related to the standard library are for the v21.2 release.
+**Note: The documentation/tutorial/etc. related to the standard library are for the v22.0 release.
 Please ensure you have the correct version of gem5 before proceeding.**
 
 <!-- Could use a nice picture here showing the main modules of the stdlib and how they relate -->
