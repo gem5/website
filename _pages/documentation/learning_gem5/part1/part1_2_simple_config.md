@@ -66,8 +66,8 @@ Creating a config file
 Let's start by creating a new config file and opening it:
 
 ```
-mkdir configs/tutorial
-touch configs/tutorial/simple.py
+mkdir configs/tutorial/part1/
+touch configs/tutorial/part1/simple.py
 ```
 
 This is just a normal python file that will be executed by the embedded

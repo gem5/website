@@ -36,7 +36,7 @@ the same command, except this time we want it to compile with the
 default ARM configurations. To do so, we just replace x86 with ARM:  
 
 ```
-scons build/ARM/gem5.opt -j20
+scons build/ARM/gem5.opt -j 20
 ```
 
 When compilation is finished you should have a working gem5 executable
