@@ -230,16 +230,16 @@ DPRINTF(HelloExample, "Created the hello object\n");
 ```
 
 `DPRINTF` is a C++ macro. The first parameter is a *debug flag* that has
-been declared in a SConscript file. We can use the flag `Hello` since we
+been declared in a SConscript file. We can use the flag `HelloExample` since we
 declared it in the `src/learning_gem5/SConscript` file. The rest of the
 arguments are variable and can be anything you would pass to a `printf`
 statement.
 
-Now, if you recompile gem5 and run it with the "Hello" debug flag, you
+Now, if you recompile gem5 and run it with the "HelloExample" debug flag, you
 get the following result.
 
 ```
-    build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
+    build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -248,7 +248,7 @@ get the following result.
     gem5 compiled Jan  4 2017 09:40:10
     gem5 started Jan  4 2017 09:41:01
     gem5 executing on chinook, pid 29078
-    command line: build/X86/gem5.opt --debug-flags=Hello configs/learning_gem5/part2/run_hello.py
+    command line: build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
 
     Global frequency set at 1000000000000 ticks per second
           0: hello: Created the hello object
