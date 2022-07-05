@@ -350,7 +350,8 @@ Additionally, you can change the CPU model to `MinorCPU` to model an
 in-order CPU, or `DerivO3CPU` to model an out-of-order CPU. However,
 note that `DerivO3CPU` currently does not work with simple.py, because
 `DerivO3CPU` requires a system with separate instruction and data caches
-(`DerivO3CPU` does work with the configuration in the next section).
+(`DerivO3CPU` does work with the configuration in the next section). Also note
+that `MinorCPU` does not work with X86 as of gem5 version 22.0.0.
 
 Next, we will add caches to our configuration file to model a more
 complex system.
