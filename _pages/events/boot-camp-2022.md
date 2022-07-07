@@ -86,3 +86,48 @@ We will be offering travel grants which can be applied for to cover transport ex
 | Friday Morning | Writing tests and contributing to gem5 | - Write a GTest to test a piece of CPP code <br> - Write a PyUnit test to test a python function <br> - Use testlib to test a gem5 simulation condition <br> - Run Testlib/PyUnit/GUnit tests for gem5 <br> - Understand gem5's quick/Kokoro, long/Nightly, very-long/Weekly test structure <br> - Understand gem5's code-formatting guidelines <br> - Use git to add code to the repo <br> - Review patches on Gerrit <br> - Respond to feedback on Gerrit |
 | Friday Afternoon | gem5 extensions and other simulators | - Incorporate SST into a simulation <br> - Incorporate DRAMSim into a simulation <br> - Use SystemC in gem5 and gem5 in SystemC |
 | | Wrapping things up | |
+
+## Information for attendees
+
+### Hosting
+
+Those attendees being hosted on campus will be staying in [Wall Hall](https://housing.ucdavis.edu/residence-halls/wall-hall).
+Please check your email for information on checking into your room on the day of arrival.
+
+### General Event Information
+
+The Bootcamp will run Monday to Friday, 9AM to 4PM each day at UC Davis's [Putah Creek Lodge](https://ces.ucdavis.edu/putah-creek-lodge).
+Please see our map below highlighting the suggested walking route from Wall Hall to the Putah Creek lodge.
+
+![](/assets/files/bootcamp-2022/bootcamp-travel-map.png)
+
+### Meals
+
+A continental breakfast (with coffee) will be served daily, at around 8:30AM, at Putah Creek Lodge.
+
+Each day lunch will be served 12-noon and will conclude at 1PM.
+Lunch will consist of a selection of sandwiches and wraps.
+There will be no pork served and vegan options will be provided.
+
+The session will continue for 3 more hours until 4PM.
+Coffee and snacks will be provided during this time.
+
+Evening meals will be provided by Housing Services with food served from 5PM to 7PM each day at the campus dining halls.
+Please check your email for information about using Conference Housing Services Dining Commons.
+
+Breakfast will be provided by Conference Housing Service Dining Commons on Saturday Morning, assuming you choose to stay Friday night.
+
+### Welcome Dinner
+
+On Monday attendees will have a Welcome Dinner at [Dunloe Brewing](https://dunloebrewing.com/) (1606 Olive Dr, Davis).
+The event will start at 5:30PM and attendees will head there straight after Monday's Workshop session from Putah Creek Lodge.
+The event will conclude at 7:30PM.
+
+[Zim Cuisine](https://www.zimcuisine.com) will be catering this event.
+
+### Thursday Night Social Event
+
+From 7PM to 10PM Thursday night a social event will be held for all Workshop attendees at the [Memorial Union Games Area](https://memorialunion.ucdavis.edu/games-area).
+
+**Food will not be provided at this event.**
+Attendees should utilize Dining Commons services prior to attending.
