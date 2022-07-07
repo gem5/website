@@ -322,7 +322,7 @@ git commit --amend
 Then push the new changes to Gerrit:
 
 ```Shell
-git push original HEAD:refs/for/develop
+git push origin HEAD:refs/for/develop
 ```
 
 If for some reason you no longer have your original workspace, you may pull
