@@ -25,7 +25,7 @@ Here follows a list of prebuilt binaries to be downloaded by just clicking the l
 
 The tarball below contains a set of binaries: the Linux kernel and a set of bootloaders
 
-* <http://dist.gem5.org/dist/v22-0/arm/aarch-system-20210904.tar.bz2>
+* <http://dist.gem5.org/dist/v22-0/arm/aarch-system-20220707.tar.bz2>
 
 ##### Latest Linux Disk Images (**recommended**)
 
