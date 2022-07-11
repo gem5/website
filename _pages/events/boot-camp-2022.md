@@ -12,6 +12,19 @@ Accommodation and meals will be provided, and travel grants will be available.
 
 **Important Note:** Registration for this event is now closed.
 
+
+## Livestream and discussion
+
+You can find links to all of the livestreamed videos on [YouTube](https://www.youtube.com/playlist?list=PL_hVbFs_loVSaSDPr1RJXP5RRFWjBMqq3).
+
+Instead of using YouTube comments, we will be using [Slack](https://app.slack.com/client/T03JNC47S2E/C03PJRJ4RQ8) for our discussions.
+You can use the following [invite](https://join.slack.com/t/gem5-workspace/shared_invite/zt-1aal963w6-_cqn0u8QgBh3GeeSi2Ja7g) link to enter the slack.
+Once you have joined, type `/join-channel bootcamp-2022` in any text box (e.g., in a DM to yourself) to join the bootcamp channel.
+
+## gem5 Bootcamp Content
+
+The Bootcamp event content, including archived videos of events, can be found here: https://gem5bootcamp.github.io/gem5-bootcamp-env/
+
 ## Key Dates
 
 * Boot camp: **July 11th to July 15th 2022**
