@@ -112,7 +112,7 @@ accept and the request must be retried sometime in the future.
 
 In the figure above, first, the master sends a timing request by
 calling `sendTimingReq`, which in turn calls `recvTimingResp`. The
-slave, returns true from `recvTimingResp`, which is returned from the
+slave, returns true from `recvTimingReq`, which is returned from the
 call to `sendTimingReq`. The master continue executing, and the slave
 does whatever is necessary to complete the request (e.g., if it is a
 cache, it looks up the tags to see if there is a match to the address in
