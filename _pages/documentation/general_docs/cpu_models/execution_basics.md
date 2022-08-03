@@ -124,3 +124,15 @@ In this example, register %f1 in the alternate FP register file could be referre
 * The description above is intended to illustrate the typical usage of these index types. There may be exceptions that don't precisely   follow this description, but I got tired of writing "typically" in every sentence.
 * The terms 'relative' and 'unified' were invented for use in this documentation, so you are unlikely see them in the code until the code starts catching up with this page.
 * This discussion pertains only to the architectural registers. An out-of-order CPU model such as O3 adds another layer of complexity by renaming these architectural registers (using the flattened register indices) to an underlying physical register file.
+
+
+## ISA and CPU Independence ##
+
+gem5 tries to keep CPU models ISA independent to make it easier to use any ISA with different CPU models. gem5 relies on two generic interfaces to make this independence possible: static instructions and execution context (both are discussed above).
+Static instructions allow CPU to manage instructions and the execution context allow ISA or instructions to interact with the CPU. Following picture provides a high level overview of
+what components in gem5 are ISA dependent or independent:
+
+![ISA dependent or independent components of gem5](/assets/img/ISAInd.png)
+
+**Source of the above figure:** Modular ISA-Independent Full-System Simulation (Ch 5 of Processor and System-on-Chip Simulation), G. Black, N. Binkert, and S. Reinhardt, A. Saidi.
+[Link](https://link.springer.com/content/pdf/10.1007/978-1-4419-6175-4.pdf).
