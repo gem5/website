@@ -8,6 +8,9 @@ permalink: /documentation/general_docs/cpu_models/execution_basics
 
 # Execution basic
 
+**gem5 bootcamp 2022 module on instruction execution:**
+<div class="slides-link"> <span> The slides on how instructions work from the gem5 bootcamp 2022 can be found </span> <a href="https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EeRIKzkdUJBDlaa9AmzERusBp28hxMfkyIOp-_2H5L9AqQ?e=RoMFUD&action=embedview&wdbipreview=true"> here</a><span>.</span> <p></p>
+                </div>
 
 # StaticInsts #
 The StaticInst provides all static information and methods for a binary instruction.
