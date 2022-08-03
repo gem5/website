@@ -7,9 +7,7 @@ permalink: /documentation/learning_gem5/part3/cache-actions/
 author: Jason Lowe-Power
 ---
 
-
-Action code blocks
-==================
+## Action code blocks
 
 The next section of the state machine file is the action blocks. The
 action blocks are executed during a transition from one state to

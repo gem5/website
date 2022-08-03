@@ -8,18 +8,16 @@ author: Jason Lowe-Power
 ---
 
 
-Compiling a SLICC protocol
-==========================
+## Building the MSI protocol
 
-The SLICC file
---------------
+### The SLICC file
 
 Now that we have finished implementing the protocol, we need to compile
 it. You can download the complete SLICC files below:
 
--   [MSI-cache.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-cache.sm)
--   [MSI-dir.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-dir.sm)
--   [MSI-msg.sm](/_pages/static/scripts/part3/MSI\_protocol/MSI-msg.sm)
+- [MSI-cache.sm](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-cache.sm)
+- [MSI-dir.sm](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-dir.sm)
+- [MSI-msg.sm](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-msg.sm)
 
 Before building the protocol, we need to create one more file:
 `MSI.slicc`. This file tells the SLICC compiler which state machine
@@ -44,10 +42,9 @@ include "MSI-dir.sm";
 ```
 
 You can download the fill file
-[here](/_pages/static/scripts/part3/MSI_protocol/MSI.slicc).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/s/MSI.slicc).
 
-Compiling a protocol with SCons
--------------------------------
+### Compiling a protocol with SCons
 
 Most SCons defaults (found in `build_opts/`) specify the protocol as
 `MI_example`, an example, but poor performing protocol. Therefore, we
@@ -55,7 +52,7 @@ cannot simply use a default build name (e.g., `X86` or `ARM`). We have
 to specify the SCons options on the command line. The command line below
 will build our new protocol with the X86 ISA.
 
-```
+```sh
 scons build/X86_MSI/gem5.opt --default=X86 PROTOCOL=MSI SLICC_HTML=True
 ```
 

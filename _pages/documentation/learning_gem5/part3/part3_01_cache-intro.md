@@ -8,8 +8,7 @@ author: Jason Lowe-Power
 ---
 
 
-MSI example cache protocol
-==========================
+## MSI example cache protocol
 
 Before we implement a cache coherence protocol, it is important to have
 a solid understanding of cache coherence. This section leans heavily on
@@ -25,7 +24,7 @@ We will implement this as a three-hop directory protocol (i.e., caches can send 
 Details for the protocol can be found in Section 8.2 of *A Primer on Memory Consistency and Cache Coherence* (pages 141-149).
 It will be helpful to print out Section 8.2 to reference as you are implementing the protocol.
 
-You can download an excerpt of Sorin et al. that contains Section 8.2 [here](/_pages/static/external/Sorin_et-al_Excerpt_8.2.pdf).
+You can download the Second Edition [via this link](https://link.springer.com/content/pdf/10.1007/978-3-031-01764-3.pdf).
 
 ## First steps to writing a protocol
 
@@ -41,11 +40,9 @@ We need to create a `SConsopts` file with the following:
 ```python
 Import('*')
 
-all_protocols.extend([
-'MSI',
-])
+main.Append(ALL_PROTOCOLS=['MSI'])
 
-protocol_dirs.append(str(Dir('.').abspath))
+main.Append(PROTOCOL_DIRS=[Dir('.')])
 ```
 
 We do two things in this file. First, we register the name of our
@@ -57,10 +54,9 @@ tells the SCons to look in the current directory for files to pass to
 the SLICC compiler.
 
 You can download the `SConsopts` file
-[here](/_pages/static/scripts/part3/MSI_protocol/SConsopts).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/SConsopts).
 
-Writing a state machine file
-----------------------------
+### Writing a state machine file
 
 The next step, and most of the effort in writing a protocol, is to
 create the state machine files. State machine files generally follow the
@@ -85,3 +81,5 @@ Actions
 Transitions
 :   Specify actions to execute given a starting state and an event and
     the final state. This is the meat of the state machine definition.
+
+Over the next few sections we will go over how to write each of these components of the protocol.

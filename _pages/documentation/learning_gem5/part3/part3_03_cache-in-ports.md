@@ -8,9 +8,6 @@ author: Jason Lowe-Power
 ---
 
 
-In port code blocks
-===================
-
 After declaring all of the structures we need in the state machine file,
 the first "functional" part of the file are the "in ports". This section
 specifies what *events* to *trigger* on different incoming messages.
@@ -228,7 +225,7 @@ Next, all messages need a *destination*, and a *size*. The destination
 is specified as a `NetDest`, which is a bitmap of all the `MachineID` in
 the system. This allows messages to be broadcast to a flexible set of
 receivers. The message also has a size. You can find the possible
-message sizes in `src/mem/protocol/RubySlicc_Exports.sm`.
+message sizes in `src/mem/ruby/protocol/RubySlicc_Exports.sm`.
 
 This message may also contain a data block and the number acks that are
 expected. Thus, we can include these in the message definition as well.
@@ -240,7 +237,7 @@ there are messages in-flight for an address that is functionally read or
 written the functional access may fail.
 
 You can download the complete `MSI-msg.sm` file 
-[here](/_pages/static/scripts/part3/MSI_protocol/MSI-msg.sm).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-msg.sm).
 
 Now that we have defined the data in the response message, we can look
 at how we choose which action to trigger in the `in_port` for response

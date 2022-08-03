@@ -7,10 +7,6 @@ permalink: /documentation/learning_gem5/part3/simple-MI_example/
 author: Jason Lowe-Power
 ---
 
-
-Configuring for a standard protocol
-===================================
-
 You can easily adapt the simple example configurations from this part to
 the other SLICC protocols in gem5. In this chapter, we will briefly look
 at an example with `MI_example`, though this can be easily extended to
@@ -26,7 +22,7 @@ For `MI_example`, we can use exactly the same runscript as before
 the classes needed for `MI_example`. There are only a couple of changes
 from `MSI`, mostly due to different naming schemes. You can download the
 file
-[here](/_pages/static/scripts/part3/configs/ruby_caches_MI_example.py).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/ruby_caches_MI_example.py).
 
 ```python
 class MyCacheSystem(RubySystem):

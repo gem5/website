@@ -8,9 +8,6 @@ author: Jason Lowe-Power
 ---
 
 
-MSI Directory implementation
-============================
-
 Implementing a directory controller is very similar to the L1 cache
 controller, except using a different state machine table. The state
 machine fore the directory can be found in Table 8.2 in Sorin et al.
@@ -35,6 +32,8 @@ MessageBuffer *requestFromCache, network="From", virtual_network="0",
 
 MessageBuffer *responseFromCache, network="From", virtual_network="2",
       vnet_type="response";
+
+MessageBuffer *requestToMemory;
 
 MessageBuffer *responseFromMemory;
 
@@ -65,11 +64,10 @@ need to have the same virtual network numbers* as the message buffers in
 the L1 cache. These virtual network numbers are how the Ruby network
 directs messages between controllers.
 
-There is also one more special message buffer: `responseFromMemory`.
+There is also two more special message buffers: `requestToMemory` and `responseFromMemory`.
 This is similar to the `mandatoryQueue`, except instead of being like a
-slave port for CPUs it is like a master port. The `responseFromMemory`
-buffer will deliver response sent across the the memory port, as we will
-see below in the action section.
+responder port for CPUs it is like a requestor port. The `responseFromMemory` and `requestToMemory`
+buffers will deliver responses sent across the the memory port and send requests across the memory port, as we will see below in the action section.
 
 After the parameters and message buffers, we need to declare all of the
 states, events, and other local structures.
@@ -115,7 +113,7 @@ enumeration(Event, desc="Directory events") {
     MemAck,       desc="Ack from memory that write is complete";
 }
 
-structure(Entry, desc="...", interface="AbstractEntry") {
+structure(Entry, desc="...", interface="AbstractCacheEntry", main="false") {
     State DirState,         desc="Directory state";
     NetDest Sharers,        desc="Sharers for this block";
     NetDest Owner,          desc="Owner of this block";
@@ -136,7 +134,10 @@ In the `Entry` definition for the directory, we use a NetDest for both
 the sharers and the owner. This makes sense for the sharers, since we
 want a full bitvector for all L1 caches that may be sharing the block.
 The reason we also use a `NetDest` for the owner is to simply copy the
-structure into the message we send as a response as shown below.
+structure into the message we send as a response as shown below.D
+Note that we add one extra parameter to the `Entry` declaration: `main="false"`.
+This extra parameter tells the replacement policy that this `Entry` is special and should be ignored.
+In the `DirectoryMemory` we are tracking *all* of the backing memory locations, so there is no need for a replacement policy.
 
 In this implementation, we use a few more transient states than in Table
 8.2 in Sorin et al. to deal with the fact that the memory latency in
@@ -283,12 +284,11 @@ in_port(request_in, RequestMsg, requestFromCache) {
 }
 ```
 
-The next part of the state machine file is the actions. First, we define
-actions for queuing memory reads and writes. For this, we will use a
-special function define in the `AbstractController`: `queueMemoryRead`.
-This function takes an address and converts it to a gem5 request and
-packet and sends it to across the port that is connected to this
-controller. We will see how to connect this port in the
+The next part of the state machine file is the actions.
+First, we define actions for sending memory reads and writes.
+For this, we will use the special `memQueue_out` port that we defined above.
+If we `enqueue` messages on this port, they will be translated into "normal" gem5 `PacketPtr`s and sent across the memory port defined in the configuration.
+We will see how to connect this port in the
 configuration section \<MSI-config-section\>. Note that we need two
 different actions to send data to memory for both requests and responses
 since there are two different message buffers (virtual networks) that
@@ -297,7 +297,13 @@ data might arrive on.
 ```cpp
 action(sendMemRead, "r", desc="Send a memory read request") {
     peek(request_in, RequestMsg) {
-        queueMemoryRead(in_msg.Requestor, address, toMemLatency);
+        enqueue(memQueue_out, MemoryMsg, toMemLatency) {
+            out_msg.addr := address;
+            out_msg.Type := MemoryRequestType:MEMORY_READ;
+            out_msg.Sender := in_msg.Requestor;
+            out_msg.MessageSize := MessageSizeType:Request_Control;
+            out_msg.Len := 0;
+        }
     }
 }
 
@@ -305,8 +311,14 @@ action(sendDataToMem, "w", desc="Write data to memory") {
     peek(request_in, RequestMsg) {
         DPRINTF(RubySlicc, "Writing memory for %#x\n", address);
         DPRINTF(RubySlicc, "Writing %s\n", in_msg.DataBlk);
-        queueMemoryWrite(in_msg.Requestor, address, toMemLatency,
-                         in_msg.DataBlk);
+        enqueue(memQueue_out, MemoryMsg, toMemLatency) {
+            out_msg.addr := address;
+            out_msg.Type := MemoryRequestType:MEMORY_WB;
+            out_msg.Sender := in_msg.Requestor;
+            out_msg.MessageSize := MessageSizeType:Writeback_Data;
+            out_msg.DataBlk := in_msg.DataBlk;
+            out_msg.Len := 0;
+        }
     }
 }
 
@@ -314,9 +326,14 @@ action(sendRespDataToMem, "rw", desc="Write data to memory from resp") {
     peek(response_in, ResponseMsg) {
         DPRINTF(RubySlicc, "Writing memory for %#x\n", address);
         DPRINTF(RubySlicc, "Writing %s\n", in_msg.DataBlk);
-        queueMemoryWrite(in_msg.Sender, address, toMemLatency,
-                         in_msg.DataBlk);
-    }
+        enqueue(memQueue_out, MemoryMsg, toMemLatency) {
+            out_msg.addr := address;
+            out_msg.Type := MemoryRequestType:MEMORY_WB;
+            out_msg.Sender := in_msg.Sender;
+            out_msg.MessageSize := MessageSizeType:Writeback_Data;
+            out_msg.DataBlk := in_msg.DataBlk;
+            out_msg.Len := 0;
+        }
 }
 ```
 
@@ -574,4 +591,4 @@ transition({MI_m, SS_m, S_m, M_m}, {GetS, GetM}) {
 ```
 
 You can download the complete `MSI-dir.sm` file
-[here](/_pages/static/scripts/part3/MSI_protocol/MSI-dir.sm).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-dir.sm).

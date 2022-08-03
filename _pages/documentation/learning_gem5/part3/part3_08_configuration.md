@@ -8,8 +8,7 @@ author: Jason Lowe-Power
 ---
 
 
-Configuring a simple Ruby system
-================================
+## A configuration script for the MSI protocol
 
 First, create a new configuration directory in `configs/`. Just like all
 gem5 configuration files, we will have a configuration run script. For
@@ -43,10 +42,9 @@ create a `setup` function that takes as parameters the CPUs in the
 system and the memory controllers.
 
 You can download the complete run script
-[here](_pages/static/scripts/part3/configs/simple_ruby.py).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/simple_ruby.py).
 
-Cache system configuration
---------------------------
+### Cache system configuration
 
 Now, let's create a file `msi_caches.py`. In this file, we will create
 four classes: `MyCacheSystem` which will inherit from `RubySystem`,
@@ -54,7 +52,7 @@ four classes: `MyCacheSystem` which will inherit from `RubySystem`,
 by SLICC from our two state machines, and `MyNetwork` which will inherit
 from `SimpleNetwork`.
 
-### L1 Cache
+#### L1 Cache
 
 Let's start with the `L1Cache`. First, we will inherit from
 `L1Cache_Controller` since we named our L1 cache "L1Cache" in the state
@@ -150,7 +148,7 @@ def connectQueues(self, ruby_system):
     self.responseFromDirOrSibling.slave = ruby_system.network.master
 ```
 
-### Directory
+#### Directory
 
 Now, we can similarly implement the directory. There are three
 differences from the L1 cache. First, we need to set the address ranges
@@ -202,7 +200,7 @@ class DirController(Directory_Controller):
         self.responseFromMemory = MessageBuffer()
 ```
 
-### Ruby System
+#### Ruby System
 
 Now, we can implement the Ruby system object. For this object, the
 constructor is simple. It just checks the SCons variable `PROTOCOL` to
@@ -297,7 +295,7 @@ def setup(self, system, cpus, mem_ctrls):
             cpu.dtb.walker.port = self.sequencers[i].slave
 ```
 
-### Network
+#### Network
 
 Finally, the last object we have to implement is the network. The
 constructor is simple, but we need to declare an empty list for the list
@@ -342,4 +340,4 @@ class MyNetwork(SimpleNetwork):
 ```
 
 You can download the complete `msi_caches.py` file
-[here](/_pages/static/scripts/part3/configs/msi_caches.py).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/msi_caches.py).

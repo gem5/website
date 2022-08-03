@@ -8,8 +8,7 @@ author: Jason Lowe-Power
 ---
 
 
-Running the simple Ruby system
-==============================
+## Running the simple Ruby system
 
 Now, we can run our system with the MSI protocol!
 
@@ -112,7 +111,7 @@ int main(int argc, char *argv[])
 
 With the above code compiled as `threads`, we can run gem5!
 
-```
+```sh
 build/MSI/gem5.opt configs/learning_gem5/part6/simple_ruby.py
 ```
 
@@ -120,6 +119,7 @@ The output should be something like the following. Most of the warnings
 are unimplemented syscalls in SE mode due to using pthreads and can be
 safely ignored for this simple example.
 
+```termout
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
@@ -168,3 +168,4 @@ safely ignored for this simple example.
     warn: ignoring syscall madvise(...)
     Validating...Success!
     Exiting @ tick 9386342000 because exiting with last active thread context
+```

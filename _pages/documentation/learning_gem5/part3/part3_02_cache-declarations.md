@@ -8,9 +8,6 @@ author: Jason Lowe-Power
 ---
 
 
-Declaring a state machine
-=========================
-
 Let's start on our first state machine file! First, we will create the
 L1 cache controller for our MSI protocol.
 
@@ -50,8 +47,7 @@ while browsing the HTML table, you can see the more detailed comments
 from the author of the protocol. It is important to be clear with these
 descriptions since coherence protocols can get quite complicated.
 
-State machine parameters
-------------------------
+## State machine parameters
 
 Proceeding the `machine()` declaration is a colon, after which all of
 the parameters to the state machine are declared. These parameters are
@@ -181,8 +177,7 @@ class L1Cache_Controller(RubyController):
     mandatoryQueue = Param.MessageBuffer("")
 ```
 
-State declarations
-------------------
+## State declarations
 
 The next part of the state machine is the state declaration. Here, we
 are going to declare all of the stable and transient states for the
@@ -240,8 +235,7 @@ permission are accessed (they should all have the same data). For
 functional writes, all blocks are updated with new data if they have
 busy, read-only, or read-write permission.
 
-Event declarations
-------------------
+## Event declarations
 
 Next, we need to declare all of the events that are triggered by
 incoming messages for this cache controller. These events come directly
@@ -275,8 +269,7 @@ enumeration(Event, desc="Cache events") {
 }
 ```
 
-User-defined structures
------------------------
+## User-defined structures
 
 Next, we need to define some structures that we will use in other places
 in this controller. The first one we will define is `Entry`. This is the
@@ -334,8 +327,7 @@ structure(TBETable, external="yes") {
 The `external="yes"` tells SLICC to not look for the definition of this
 structure. This is similar to declaring a variable `extern` in C/C++.
 
-Other declarations and definitions required
--------------------------------------------
+## Other declarations and definitions required
 
 Finally, we are going to go through some boilerplate of declaring
 variables, declaring functions in `AbstractController` that we will use

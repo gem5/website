@@ -8,8 +8,7 @@ author: Jason Lowe-Power
 ---
 
 
-Transition code blocks
-======================
+## Transition code blocks
 
 Finally, we've reached the final section of the state machine file! This
 section contains the details for all of the transitions between states
@@ -201,4 +200,4 @@ transition(SI_A, Inv, II_A) {
 ```
 
 You can download the complete `MSI-cache.sm` file
-[here](/_pages/static/scripts/part3/MSI_protocol/MSI-cache.sm).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part3/MSI-cache.sm).

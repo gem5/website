@@ -8,8 +8,6 @@ author: Jason Lowe-Power
 ---
 
 
-Debugging SLICC Protocols
-=========================
 
 In this section, I present the steps that I took while debugging the MSI
 protocol implemented earlier in this chapter. Learning to debug
@@ -26,8 +24,7 @@ stream-of-consciousness style. I will show the error that was generated,
 then the solution to the error, sometimes with some commentary of the
 different tactics I tried to solve the error.
 
-General debugging tips
-----------------------
+## General debugging tips
 
 Ruby has many useful debug flags. However, the most useful, by far, is
 `ProtocolTrace`. Below, you will see several examples of using the
@@ -83,8 +80,7 @@ expose even more bugs in the protocol. If at all possible, it is much
 easier to debug your protocol with the random tester than with real
 applications!
 
-Understanding Protocol Traces
------------------------------
+## Understanding Protocol Traces
 
 Unfortunately, despite extensive effort to catch bugs in them, coherence
 protocols (even heavily tested ones) will have bugs. Sometimes these
@@ -105,6 +101,7 @@ Here, we discuss what appears in the protocol trace to help explain what
 is happening. To start with, lets look at a small snippet of a protocol
 trace (we will discuss the details of this trace further below):
 
+```protocoltrace
     ...
     4541   0    L1Cache         Replacement   MI_A>MI_A   [0x4ac0, line 0x4ac0]
     4542   0    L1Cache              PutAck   MI_A>I      [0x4ac0, line 0x4ac0]
@@ -118,37 +115,38 @@ trace (we will discuss the details of this trace further below):
     5321   0        Seq               Begin       >       [0x4aec, line 0x4ac0] ST
     5322   0    L1Cache               Store      S>SM_AD  [0x4ac0, line 0x4ac0]
     5327   0  Directory                GetM      S>M_M    [0x4ac0, line 0x4ac0]
+```
 
 Every line in this trace has a set pattern in terms of what information
 appears on that line. Specifically, the fields are:
 
-1.  Current Tick: the tick the print is occurs in
-2.  Machine Version: The number of the machine where this request is
-    coming from. For example, if there are 4 L1 caches, then the numbers
-    would be 0-3. Assuming you have 1 L1 Cache per core, you can think
-    of this as representing the core the request is coming from.
-3.  Component: which part of the system is doing the print. Generally,
-    `Seq` is shorthand for Sequencer, `L1Cache` represents the L1 Cache,
-    "Directory" represents the directory, and so on. For L1 caches and
-    the directory, this represents the name of the machine type (i.e.,
-    what is after "MachineType:" in the `machine()` definition).
-4.  Action: what the component is doing. For example, "Begin" means the
-    Sequencer has received a new request, "Done" means that the
-    Sequencer is completing a previous request, and "DataDirNoAcks"
-    means that our DataDirNoAcks event is being triggered.
-5.  Transition (e.g., MI\_A\>MI\_A): what state transition this action
-    is doing (format: "currentState\>nextState"). If no transition is
-    happening, this is denoted with "\>".
-6.  Address (e.g., [0x4ac0, line 0x4ac0]): the physical address of the
-    request (format: [wordAddress, lineAddress]). This address will
-    always be cache-block aligned except for requests from the
-    `Sequencer` and `mandatoryQueue`.
-7.  (Optional) Comments: optionally, there is one additional field to
-    pass comments. For example, the "LD" , "ST", and "33 cycles" lines
-    use this extra field to pass additional information to the trace --
-    such as identifying the request as a load or store. For SLICC
-    transitions, `APPEND_TRANSITION_COMMENT` often use this, as we
-    [discussed previously](../cache-actions/).
+1. Current Tick: the tick the print is occurs in
+2. Machine Version: The number of the machine where this request is
+   coming from. For example, if there are 4 L1 caches, then the numbers
+   would be 0-3. Assuming you have 1 L1 Cache per core, you can think
+   of this as representing the core the request is coming from.
+3. Component: which part of the system is doing the print. Generally,
+   `Seq` is shorthand for Sequencer, `L1Cache` represents the L1 Cache,
+   "Directory" represents the directory, and so on. For L1 caches and
+   the directory, this represents the name of the machine type (i.e.,
+   what is after "MachineType:" in the `machine()` definition).
+4. Action: what the component is doing. For example, "Begin" means the
+   Sequencer has received a new request, "Done" means that the
+   Sequencer is completing a previous request, and "DataDirNoAcks"
+   means that our DataDirNoAcks event is being triggered.
+5. Transition (e.g., MI\_A\>MI\_A): what state transition this action
+   is doing (format: "currentState\>nextState"). If no transition is
+   happening, this is denoted with "\>".
+6. Address (e.g., [0x4ac0, line 0x4ac0]): the physical address of the
+   request (format: [wordAddress, lineAddress]). This address will
+   always be cache-block aligned except for requests from the
+   `Sequencer` and `mandatoryQueue`.
+7. (Optional) Comments: optionally, there is one additional field to
+   pass comments. For example, the "LD" , "ST", and "33 cycles" lines
+   use this extra field to pass additional information to the trace --
+   such as identifying the request as a load or store. For SLICC
+   transitions, `APPEND_TRANSITION_COMMENT` often use this, as we
+   [discussed previously](../cache-actions/).
 
 Generally, spaces are used to separate each of these fields (the space
 between the fields are added implicitly, you do not need to add them).
@@ -176,15 +174,18 @@ these fields with the ProtocolTrace flag. For example, if you look at
 `Seq               Begin` and `Seq                Done` trace prints
 come from (search for ProtocolTrace).
 
-Errors I ran into debugging MSI
--------------------------------
+## Errors I ran into debugging MSI
 
+```termout
     gem5.opt: build/MSI/mem/ruby/system/Sequencer.cc:423: void Sequencer::readCallback(Addr, DataBlock&, bool, MachineType, Cycles, Cycles, Cycles): Assertion `m_readRequestTable.count(makeLineAddress(address))' failed.
+```
 
-I'm an idiot, it was that I called readCallback in externalStoreHit
+I'm made a silly mistake. It was that I called readCallback in externalStoreHit
 instead of writeCallback. It's good to start simple!
 
+```termout
     gem5.opt: build/MSI/mem/ruby/network/MessageBuffer.cc:220: Tick MessageBuffer::dequeue(Tick, bool): Assertion `isReady(current_time)' failed.
+```
 
 I ran gem5 in GDB to get more information. Look at
 L1Cache\_Controller::doTransitionWorker. The current transition is:
@@ -195,8 +196,10 @@ MI\_A-\>I on a PutAck See it's in popResponseQueue.
 The problem is that the PutAck is on the forward network, not the
 response network.
 
+```termout
     panic: Invalid transition
     system.caches.controllers0 time: 3594 addr: 3264 event: DataDirAcks state: IS_D
+```
 
 Hmm. I think this shouldn't have happened. The needed acks should always
 be 0 or you get data from the owner. Ah. So I implemented sendDataToReq
@@ -215,19 +218,21 @@ before sending the data to the requestor at the directory. Only if the
 requestor is the owner do we include the number of sharers. Otherwise,
 it doesn't matter at all and we just set the sharers to 0.
 
-
+```termout
     panic: Invalid transition system.caches.controllers0 time: 5332
     addr: 0x4ac0 event: Inv state: SM\_AD
+```
 
 First, let's look at where Inv is triggered. If you get an invalidate...
 only then. Maybe it's that we are on the sharer list and shouldn't be?
 
 We can use protocol trace and grep to find what's going on.
 
-```
+```sh
 build/MSI/gem5.opt --debug-flags=ProtocolTrace configs/learning_gem5/part6/ruby_test.py | grep 0x4ac0
 ```
 
+```termout
     ...
     4541   0    L1Cache         Replacement   MI_A>MI_A   [0x4ac0, line 0x4ac0]
     4542   0    L1Cache              PutAck   MI_A>I      [0x4ac0, line 0x4ac0]
@@ -241,6 +246,7 @@ build/MSI/gem5.opt --debug-flags=ProtocolTrace configs/learning_gem5/part6/ruby_
     5321   0        Seq               Begin       >       [0x4aec, line 0x4ac0] ST
     5322   0    L1Cache               Store      S>SM_AD  [0x4ac0, line 0x4ac0]
     5327   0  Directory                GetM      S>M_M    [0x4ac0, line 0x4ac0]
+```
 
 Maybe there is a sharer in the sharers list when there shouldn't be? We
 can add a defensive assert in clearOwner and setOwner.
@@ -261,7 +267,9 @@ action(clearOwner, "cO", desc="Clear the owner") {
 
 Now, I get the following error:
 
+```termout
     panic: Runtime Error at MSI-dir.sm:301: assert failure.
+```
 
 This is in setOwner. Well, actually this is OK since we need to have the
 sharers still set until we count them to send the ack count to the
@@ -280,7 +288,9 @@ on a GetS.
 
 So, onto the next problem!
 
+```termout
     panic: Deadlock detected: current_time: 56091 last_progress_time: 6090 difference:  50001 processor: 0
+```
 
 Deadlocks are the worst kind of error. Whatever caused the deadlock is
 ancient history (i.e., likely happened many cycles earlier), and often
@@ -290,6 +300,7 @@ Looking at the tail of the protocol trace (note: sometimes you must put
 the protocol trace into a file because it grows *very* big) I see that
 there is an address that is trying to be replaced. Let's start there.
 
+```protocoltrace
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
@@ -300,10 +311,12 @@ there is an address that is trying to be replaced. Let's start there.
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
     56091   0    L1Cache         Replacement   SM_A>SM_A   [0x5ac0, line 0x5ac0]
+```
 
 Before this replacement got stuck I see the following in the protocol
 trace. Note: this is 50000 cycles in the past!
 
+```protocoltrace
     ...
     5592   0    L1Cache               Store      S>SM_AD  [0x5ac0, line 0x5ac0]
     5597   0  Directory                GetM      S>M_M    [0x5ac0, line 0x5ac0]
@@ -311,6 +324,7 @@ trace. Note: this is 50000 cycles in the past!
     5641   0  Directory             MemData    M_M>M      [0x5ac0, line 0x5ac0]
     ...
     5646   0    L1Cache         DataDirAcks  SM_AD>SM_A   [0x5ac0, line 0x5ac0]
+```
 
 Ah! This clearly should not be DataDirAcks since we only have a single
 CPU! So, we seem to not be subtracting properly. Going back to the
@@ -328,6 +342,7 @@ Fun!
 
 What I'm seeing at the end of the protocol trace is the following.
 
+```protocoltrace
     144684   0    L1Cache         Replacement   MI_A>MI_A   [0x5bc0, line 0x5bc0]
     ...
     144685   0  Directory                GetM   MI_M>MI_M   [0x54c0, line 0x54c0]
@@ -340,6 +355,7 @@ What I'm seeing at the end of the protocol trace is the following.
     ...
     144687   0  Directory                GetM   MI_M>MI_M   [0x54c0, line 0x54c0]
     ...
+```
 
 This is repeated for a long time.
 
@@ -385,10 +401,12 @@ DPRINTF(RubySlicc, "Owner %s\n", getDirectoryEntry(addr).Owner);
 Then, I see the following output when running with ProtocolTrace and
 RubySlicc.
 
+```gem5trace
     118   0  Directory             MemData    M_M>M      [0x400, line 0x400]
     118: system.caches.controllers2: MSI-dir.sm:160: Owner [NetDest (16) 1 0  -  -  - 0  -  -  -  -  -  -  -  -  -  -  -  -  - ]
     118   0  Directory                GetM      M>M      [0x400, line 0x400]
     118: system.caches.controllers2: MSI-dir.sm:160: Owner [NetDest (16) 1 1  -  -  - 0  -  -  -  -  -  -  -  -  -  -  -  -  - ]
+```
 
 It looks like when we process the GetM when in state M we need to first
 clear the owner before adding the new owner. The other options is in
@@ -397,7 +415,9 @@ to the NetDest.
 
 Oooo! This is a new error!
 
+```termout
     panic: Runtime Error at MSI-dir.sm:229: Unexpected message type..
+```
 
 What is this message that fails? Let's use the RubyNetwork debug flag to
 try to track down what message is causing this error. A few lines above
@@ -409,7 +429,9 @@ are split into multiple sections. I know I'm running with two CPUs, so
 the first two 0's are for the CPUs, and the other 1 must be fore the
 directory.
 
+```gem5trace
     2285: PerfectSwitch-2: Message: [ResponseMsg: addr = [0x8c0, line 0x8c0] Type = InvAck Sender = L1Cache-1 Destination = [NetDest (16) 0 0  -  -  - 1  -  -  -  -  -  -  -  -  -  -  -  -  - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0xb1 0xb2 0xb3 0xb4 0xca 0xcb 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ] MessageSize = Control Acks = 0 ]
+```
 
 This message has the type InvAck, which is clearly wrong! It seems that
 we are setting the requestor wrong when we send the invalidate (Inv)
@@ -419,8 +441,10 @@ Yes. This is the problem. We need to make the requestor the original
 requestor. This was already correct for the FwdGetS/M, but I missed the
 invalidate somehow. On to the next error!
 
+```termout
     panic: Invalid transition
     system.caches.controllers0 time: 2287 addr: 0x8c0 event: LastInvAck state: SM_AD
+```
 
 This seems to be that I am not counting the acks correctly. It could
 also be that the directory is much slower than the other caches at
@@ -449,10 +473,12 @@ match as it should. Kind of like the deadlock, the data could have been
 corrupted in the ancient past. I believe the address is the last one in
 the protocol trace.
 
+```termout
     panic: Action/check failure: proc: 0 address: 19688 data: 0x779e6d0
     byte\_number: 0 m\_value+byte\_number: 53 byte: 0 [19688, value: 53,
     status: Check\_Pending, initiating node: 0, store\_count: 4]Time:
     5843
+```
 
 So, it could be something to do with ack counts, though I don't think
 this is the issue. Either way, it's a good idea to annotate the protocol
@@ -468,7 +494,9 @@ action(decrAcks, "da", desc="Decrement the number of acks") {
 }
 ```
 
+```protocoltrace
     5737   1    L1Cache              InvAck  SM_AD>SM_AD  [0x400, line 0x400] Acks: -1
+```
 
 For these data issues, the debug flag RubyNetwork is useful because it
 prints the value of the data blocks at every point it is in the network.
@@ -477,24 +505,28 @@ block is all 0's after loading from main-memory. I believe this should
 have valid data. In fact, if we go back in time some we see that there
 was some non-zero elements.
 
+```protocoltrace
     5382   1    L1Cache                 Inv      S>I      [0x4cc0, line 0x4cc0]
+```
 
-    > 5383: PerfectSwitch-1: Message: [ResponseMsg: addr = [0x4cc0, line
-    > 0x4cc0] Type = InvAck Sender = L1Cache-1 Destination = [NetDest (16) 1
-    > 0 - - - 0 - - - - - - - - - - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x35 0x36 0x37 0x61 0x6d 0x6e 0x6f 0x70 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ] MessageSize = Control Acks =
-    > 0 ] ... ... ... 5389 0 Directory MemData M\_M\    >M [0x4cc0, line 0x4cc0]
-    > 5390: PerfectSwitch-2: incoming: 0 5390: PerfectSwitch-2: Message:
-    > [ResponseMsg: addr = [0x4cc0, line 0x4cc0] Type = Data Sender =
-    > Directory-0 Destination = [NetDest (16) 1 0 - - - 0 - - - - - - - - -
-    > - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
-    > 0x0 ] MessageSize = Data Acks = 1 ]
+```gem5trace
+    5383: PerfectSwitch-1: Message: [ResponseMsg: addr = [0x4cc0, line
+    0x4cc0] Type = InvAck Sender = L1Cache-1 Destination = [NetDest (16) 1
+    0 - - - 0 - - - - - - - - - - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x35 0x36 0x37 0x61 0x6d 0x6e 0x6f 0x70 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ] MessageSize = Control Acks =
+    0 ] ... ... ... 5389 0 Directory MemData M\_M\    >M [0x4cc0, line 0x4cc0]
+    5390: PerfectSwitch-2: incoming: 0 5390: PerfectSwitch-2: Message:
+    [ResponseMsg: addr = [0x4cc0, line 0x4cc0] Type = Data Sender =
+    Directory-0 Destination = [NetDest (16) 1 0 - - - 0 - - - - - - - - -
+    - - - - ] DataBlk = [ 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0
+    0x0 ] MessageSize = Data Acks = 1 ]
+```
 
 It seems that memory is not being updated correctly on the M-\>S
 transition. After lots of digging and using the MemoryAccess debug flag
@@ -503,8 +535,10 @@ that in sendDataToMem I was using the request\_in. This is right for
 PutM, but not right for Data. We need to have another action to send
 data from response queue!
 
+```termout
     panic: Invalid transition
     system.caches.controllers0 time: 44381 addr: 0x7c0 event: Inv state: SM_AD
+```
 
 Invalid transition is my personal favorite kind of SLICC error. For this
 error, you know exactly what address caused it, and it's very easy to

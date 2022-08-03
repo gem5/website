@@ -8,13 +8,10 @@ author: Jason Lowe-Power
 ---
 
 
-Introduction to Ruby
-====================
+## Introduction to Ruby
 
-Ruby comes from the [multifacet GEMS
-project](http://research.cs.wisc.edu/gems/). Ruby provides a detailed
-cache memory and cache coherence models as well as a detailed network
-model (Garnet).
+Ruby comes from the [multifacet GEMS project](http://research.cs.wisc.edu/gems/).
+Ruby provides a detailed cache memory and cache coherence models as well as a detailed network model (Garnet).
 
 Ruby is flexible. It can model many different kinds of coherence
 implementations, including broadcast, directory, token, region-based
