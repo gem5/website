@@ -1,13 +1,13 @@
 ---
 layout: documentation
-title: "Coding Style"
+title: "C/C++ Coding Style"
 doc: gem5 documentation
 parent: development
 permalink: /documentation/general_docs/development/coding_style/
 ---
-# Coding Style
+# C/C++ Coding Style
 
-We strive to maintain a consistent coding style in the M5 source code to make the source more readable and maintainable. This necessarily involves compromise among the multiple developers who work on this code. We feel that we have been successful in finding such a compromise, as each of the primary M5 developers is annoyed by at least one of the rules below. We ask that you abide by these guidelines as well if you develop code that you would like to contribute back to M5. An Emacs c++-mode style embodying the indentation rules is available in the source tree at util/emacs/m5-c-style.el.
+We strive to maintain a consistent coding style in the gem5 C/C++ source code to make the source more readable and maintainable. This necessarily involves compromise among the multiple developers who work on this code. We feel that we have been successful in finding such a compromise, as each of the primary M5 developers is annoyed by at least one of the rules below. We ask that you abide by these guidelines as well if you develop code that you would like to contribute back to M5. An Emacs c++-mode style embodying the indentation rules is available in the source tree at util/emacs/m5-c-style.el.
 
 ## Indentation and Line Breaks
 
