@@ -139,6 +139,33 @@ class ExampleClass
 }
 ```
 
+### Using pre-commit
+
+To help enforce our style guide we use use [pre-commit](
+https://pre-commit.com). pre-commit is a git hook and, as such, must be
+explicitly installed by a gem5 developer.
+
+To install the gem5 pre-commit checks, execute the following in the gem5
+directory:
+
+```sh
+pip install pre-commit
+pre-commit install
+```
+
+Once installed pre-commit will run checks on modified code prior to running the
+`git commit` command (see [our section on commiting](#committing) for more
+details on commiting your changes). If these tests fail you will not be able to
+commit.
+
+These same pre-commit checks are run as part of Gerrit's CI checks (those
+which must pass to obtain a "Verified" status required for a change to be
+incorporated into the develop branch). It is therefore recommended that
+developers install pre-commit to catch style errors early.
+
+**Note:** As of the v22.0 release, the pre-commit hook is only available on the
+develop branch.
+
 ## Compiling and running tests
 
 The minimum criteria for a change to be submitted is that the code is
