@@ -79,9 +79,11 @@ Conflicts may need resolved between your local changes and new changes on the
 
 ## Making modifications
 
+### C/CPP
+
 Different tasks will require the project to be modified in different ways.
-Though, in all cases, our style-guide must be adhered to. The full style guide
-is outlined [here](/documentation/general_docs/development/coding_style).
+Though, in all cases, our style-guide must be adhered to. The full C/C++ style
+guide is outlined [here](/documentation/general_docs/development/coding_style).
 
 As a high-level overview:
 
@@ -138,6 +140,28 @@ class ExampleClass
 
 }
 ```
+
+### Python
+
+We use [Python Black](https://github.com/psf/black) to format our Python code
+to the correct style. To install:
+
+```sh
+pip install black
+```
+
+Then run on modified/added python files using:
+
+```sh
+black <files/directories>
+```
+
+For varibale/method/etc. naming conventions, please follow the [PEP 8 naming
+convention recommendations](
+https://peps.python.org/pep-0008/#naming-conventions). While we try our best to
+enforce naming conventions across the gem5 project, we are aware there are
+instances where they are not. In such cases please **follow the convention
+of the code you are modifying**.
 
 ### Using pre-commit
 
