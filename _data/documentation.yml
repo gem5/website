@@ -155,6 +155,7 @@ docs:
 
     - title: CPU Models
       id: cpu_models
+      url: /documentation/general_docs/cpu_models/
       subitems:
         - page: SimpleCPU
           url: /documentation/general_docs/cpu_models/SimpleCPU

@@ -1,6 +1,8 @@
 ---
 layout: documentation
 title: "gem5's CPU models"
+doc: gem5 documentation
+parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/
 ---
 
