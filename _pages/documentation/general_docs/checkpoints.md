@@ -11,7 +11,7 @@ Checkpoints are essentially snapshops of a simulation. You would want to use a c
 ## Creation ##
 First of all, you need to create a checkpoint. Each checkpoint as saved in a new directory named 'cpt.TICKNUMBER', where TICKNUMBER refers to the tick value at which this checkpoint was created. There are several ways in which a checkpoint can be created: 
 * After booting the gem5 simulator, execute the command m5 checkpoint. One can execute the command manually using m5term, or include it in a run script to do this automatically after the Linux kernel has booted up.
-* There is a pseudo instruction that can be used for creating checkpoints. For example, one may include this pseduo instruction in an application program, so that the checkpoint is created when the application has reached a certain state.
+* There is a pseudo instruction that can be used for creating checkpoints. For example, one may include this pseudo instruction in an application program, so that the checkpoint is created when the application has reached a certain state.
 * The option **-****-take-checkpoints** can be provided to the python scripts (fs.py, ruby_fs.py) so that checkpoints are dumped periodically. The option **-****-checkpoint-at-end** can be used for creating the checkpoint at the end of the simulation. Take a look at the file **configs/common/Options.py** for these options.
 
 While creating checkpoints with Ruby memory model, it is necessary to use the MOESI hammer protocol. This is because checkpointing the correct memory state requires that the caches are flushed to the memory. This flushing operation is currently supported only with the MOESI hammer protocol.
