@@ -23,6 +23,10 @@ docs:
         - page: Building EXTRAS
           url: /documentation/general_docs/building/EXTRAS
 
+    - title: Using KVM
+      id: using_kvm
+      url: /documentation/general_docs/using_kvm
+
     - title: Doxygen
       id: doxygen-docs
       subitems:
