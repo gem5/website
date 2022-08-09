@@ -21,6 +21,10 @@ The following subsections give a broad overview of the gem5 stdlib packages and 
 **Note: The documentation/tutorial/etc. related to the standard library are for the v22.0 release.
 Please ensure you have the correct version of gem5 before proceeding.**
 
+As part of [gem5's 2022 Bootcamp](/events/boot-camp-2022), the stdlib was taught as a tutorial.
+Slides for this tutorial can be found [here](https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EWxNhA79fP1Fk4byc0kfPK4BQDDTHdeNGA9p7SkAzvVO-Q?e=Y8aKMv&action=embedview&wdbipreview=true).
+A video recording of this tutorial can be found [here](https://www.youtube.com/watch?v=vbruiMyIFsA).
+
 <!-- Could use a nice picture here showing the main modules of the stdlib and how they relate -->
 
 ## The gem5 stdlib components package and its design philosophy
