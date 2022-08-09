@@ -400,3 +400,11 @@ that the task has been completed.
 Stable releases of gem5 are published three times per year. Therefore, a change
 successfully submitted to the `develop` branch will be merged into the `stable`
 branch within three to four months after submission.
+
+## gem5 Bootcamp 2022
+
+As part of [gem5's 2022 Bootcamp](/events/boot-camp-2022), contributing to gem5
+was taught as a tutorial. Slides for this tutorial can be found [here](
+https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EQLtRAKI94JKjgk5pBmJtG8B3ssv9MaR0a2i92G0TwHK8Q?e=KN3NIppm2kg&action=embedview&wdbipreview=true).
+A video recording of this tutorial can be found [here](
+https://www.youtube.com/watch?v=T67wzFd1gVY).
