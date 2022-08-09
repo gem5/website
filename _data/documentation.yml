@@ -129,6 +129,8 @@ docs:
           url: /documentation/general_docs/ruby/cache-coherence-protocols
         - page: Garnet 2.0
           url: /documentation/general_docs/ruby/garnet-2
+        - page: HeteroGarnet
+          url: /documentation/general_docs/ruby/heterogarnet
         - page: MOESI CMP directory
           url: /documentation/general_docs/ruby/MOESI_CMP_directory
         - page: Garnet Synthetic Traffic
