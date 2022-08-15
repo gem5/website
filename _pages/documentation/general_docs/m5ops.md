@@ -9,6 +9,7 @@ permalink: /documentation/general_docs/m5ops/
 # M5ops
 
 This page explains the special opcodes that can be used in M5 to do checkpoints etc. The m5 utility program (on our disk image and in util/m5/*) provides some of this functionality on the command line. In many cases it is best to insert the operation directly in the source code of your application of interest. You should be able to link with the appropriate libm5.a file and the m5ops.h header file has prototypes for all the functions.
+A tutorial on using the M5ops was given as a part of the gem5 2022 Bootcamp. A recording of this event can be found [here](https://youtu.be/TeHKMVOWUAY).
 
 ## Building M5 and libm5
 
@@ -111,3 +112,71 @@ For example, this could be achieved by adding the following to your Makefile:
 CFLAGS += -I$(GEM5_PATH)/include
 LDFLAGS += -L$(GEM5_PATH)/util/m5/build/$(TARGET_ISA)/out -lm5
 ```
+
+Here is a simple Makefile example:
+
+```make
+TARGET_ISA=x86
+
+GEM5_HOME=$(realpath ./)
+$(info   GEM5_HOME is $(GEM5_HOME))
+
+CXX=g++
+
+CFLAGS=-I$(GEM5_HOME)/include
+
+LDFLAGS=-L$(GEM5_HOME)/util/m5/build/$(TARGET_ISA)/out -lm5
+
+OBJECTS= hello_world
+
+all: hello_world
+
+hello_world:
+	$(CXX) -o $(OBJECTS) hello_world.cpp $(CFLAGS) $(LDFLAGS)
+
+clean:
+	rm -f $(OBJECTS)
+```
+
+
+## Using the "_addr" version of M5ops
+
+The "_addr" version of m5ops triggers the same simulation specific functionality as the default m5ops, but they use different trigger mechanisms. Below is a quote from the m5 utility README.md explaining the trigger mechanisms.
+
+```markdown
+The bare function name as defined in the header file will use the magic instruction based trigger mechanism, what would have historically been the default.
+
+Some macros at the end of the header file will set up other declarations which mirror all of the other definitions, but with an “_addr” and “_semi” suffix. These other versions will trigger the same gem5 operations, but using the “magic” address or semihosting trigger mechanisms. While those functions will be unconditionally declared in the header file, a definition will exist in the library only if that trigger mechanism is supported for that ABI.
+```
+
+In order to use the "_addr" version of m5ops, you need to include th m5_mmap.h header file, pass the "magic" address (ex. "0xFFFF0000" for x86) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
+
+Here is a simple example using the "_addr" version of the m5ops:
+
+```c
+#include <gem5/m5ops.h>
+#include <m5_mmap.h>
+#include <stdio.h>
+
+#define GEM5
+
+int main(void) {
+#ifdef GEM5
+    m5op_addr = 0xFFFF0000;
+    map_m5_mem();
+    m5_work_begin_addr(0,0);
+#endif
+
+    print("hello world!");
+
+#ifdef GEM5
+    m5_work_end_addr(0,0);
+#endif
+}
+```
+
+When you run the applications with m5ops inserted in FS mode with a KVM CPU, this error might appear.
+
+    ```illegal instruction (core dumped)```
+
+This is because m5ops instructions are not valid instructions to the host. Using the "_addr" version of the m5ops can fix this issue, so it might be necessary to use the "_addr" version if you want to integrate m5ops into your applications or use the m5 binary utility when running with KVM CPUs.

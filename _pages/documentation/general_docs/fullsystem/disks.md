@@ -483,7 +483,8 @@ StandardError=tty
 WantedBy=default.target
 ```
 
-Enable the gem5 service and disable the ttyS0 service.
+Enable the gem5 service and **disable the ttyS0 service**.
+If your disk boots up to a login prompt, it might be caused by not disabling the ttyS0 service.
 
 ```
 systemctl enable gem5.service
