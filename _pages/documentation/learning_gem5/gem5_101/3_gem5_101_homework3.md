@@ -59,9 +59,9 @@ Your first task is to compile this code statically and simulate it with gem5 usi
 
 Usually while carrying out experiments for evaluating a design, one would like to look only at statistics for the portion of the code that is most important.  To do so, typically programs are annotated so that the simulator, on reaching an annotated portion of the code, carries out functions like create a checkpoint, output and reset statistical variables.
 
-You will edit the C++ code from the first part to output and reset stats just before the start of the DAXPY loop and just after it.  For this, include the file `util/m5/m5op.h` in the program.  You will find this file in `util/m5` directory of the gem5 repository.  Use the function `m5_dumpreset_stats()` from this file in your program. This function outputs the statistical variables and then resets them. You can provide 0 as the value for the delay and the period arguments.
+You will edit the C++ code from the first part to output and reset stats just before the start of the DAXPY loop and just after it.  For this, include the file `util/m5/m5op.h` in the program.  You will find this file in `util/m5` directory of the gem5 repository.  Use the function `m5_dump_reset_stats()` from this file in your program. This function outputs the statistical variables and then resets them. You can provide 0 as the value for the delay and the period arguments.
 
-To provide the definition of the `m5_dumpreset_stats()`, go to the directory `util/m5` and edit the Makefile.x86 in the following way:
+To provide the definition of the `m5_dump_reset_stats()`, go to the directory `util/m5` and edit the Makefile.x86 in the following way:
 
 ```
   diff --git a/util/m5/Makefile.x86 b/util/m5/Makefile.x86
@@ -78,7 +78,7 @@ To provide the definition of the `m5_dumpreset_stats()`, go to the directory `ut
    all: m5
 ```
 
-Execute the command `make -f Makefile.x86` in the directory `util/m5`.  This will create an object file named `m5op_x86.o`.  Link this file with the program for DAXPY.  Now again simulate the program with the timing simple CPU.  This time you should see three sets of statistics in the file stats.txt.  Report the breakup of instructions among different op classes for the three parts of the program.  Provide the fragment of the generated assembly code that starts with call to `m5_dumpreset_stats()` and ends `m5_dumpreset_stats()`, and has the main daxpy loop in between.
+Execute the command `make -f Makefile.x86` in the directory `util/m5`.  This will create an object file named `m5op_x86.o`.  Link this file with the program for DAXPY.  Now again simulate the program with the timing simple CPU.  This time you should see three sets of statistics in the file stats.txt.  Report the breakup of instructions among different op classes for the three parts of the program.  Provide the fragment of the generated assembly code that starts with call to `m5_dump_reset_stats()` and ends `m5_dump_reset_stats()`, and has the main daxpy loop in between.
 
 
 3. There are several different types of CPUs that gem5 supports: atomic, timing, out-of-order, inorder and kvm.  Let's talk about the timing and the inorder cpus.  The timing CPU (also known as SimpleTimingCPU) executes each arithmetic instruction in a single cycle, but requires multiple cycles for memory accesses.  Also, it is not pipelined.  So only a single instruction is being worked upon at any time.  The inorder cpu (also known as Minor) executes instructions in a pipelined fashion.  As I understand it has the following pipe stages: fetch1, fetch2, decode and execute.
@@ -99,7 +99,7 @@ Turn in your assignment by sending an email message to Prof. David Wood <david@c
 1. The email should contain the name and ID numbers of the student submitting
 the assignment. The files below should be attached as a zip file to the email.
 
-2. A file named daxpy.cpp which is used for testing.  This file should also include the pseudo-instructions (`m5_dumpreset_stats()`) as asked in part 2.  Also provide a file daxpy.s with the fragment of the generated assembly code as asked for in part 2.
+2. A file named daxpy.cpp which is used for testing.  This file should also include the pseudo-instructions (`m5_dump_reset_stats()`) as asked in part 2.  Also provide a file daxpy.s with the fragment of the generated assembly code as asked for in part 2.
 
 3. stats.txt and config.ini files for all the simulations.
 
