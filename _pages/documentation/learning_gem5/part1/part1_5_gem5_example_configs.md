@@ -187,7 +187,7 @@ real timing data reported! To confirm this, you can look at
 m5out/config.ini. The CPU is shown on line 51:
 
     [system.cpu]
-    type=AtomicSimpleCPU
+    type=X86AtomicSimpleCPU
     children=interrupts isa mmu power_state tracer workload
     branchPred=Null
     checker=Null

@@ -53,7 +53,7 @@ isa = str(m5.defines.buildEnv['TARGET_ISA']).lower()
 # grab the specific path to the binary
 thispath = os.path.dirname(os.path.realpath(__file__))
 binary = os.path.join(thispath, '../../../',
-                      'tests/test-progs/hello/bin/', isa, 'linux/hello')
+                      'tests/test-progs/hello/bin/x86/linux/hello')
 
 # create the system we are going to simulate
 system = System()
@@ -68,7 +68,10 @@ system.mem_mode = 'timing'               # Use timing accesses
 system.mem_ranges = [AddrRange('512MB')] # Create an address range
 
 # Create a simple CPU
-system.cpu = TimingSimpleCPU()
+# As this configuration script is for X86, we use `X86TimingSimpleCPU`
+# If a RISCV or ARM simple CPU is desired then `RiscvTimingSimpleCPU` or
+# `ArmTimingSimpleCPU` should be used.
+system.cpu = X86TimingSimpleCPU()
 
 # Create an L1 instruction and data cache
 system.cpu.icache = L1ICache()
@@ -97,13 +100,12 @@ system.l2cache.connectMemSideBus(system.membus)
 
 # create the interrupt controller for the CPU
 system.cpu.createInterruptController()
-
+system.cpu.interrupts[0].pio = system.membus.mem_side_ports
 # For x86 only, make sure the interrupts are connected to the memory
+# For other ISAs, these two lines should be removed
 # Note: these are directly connected to the memory bus and are not cached
-if m5.defines.buildEnv['TARGET_ISA'] == "x86":
-    system.cpu.interrupts[0].pio = system.membus.mem_side_ports
-    system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
-    system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
+system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
 # Connect the system up to the membus
 system.system_port = system.membus.cpu_side_ports

@@ -23,7 +23,7 @@ of directly connecting the CPU to the memory controllers.
 First, so we can test our *coherence* protocol, let's use two CPUs.
 
 ```python
-system.cpu = [TimingSimpleCPU(), TimingSimpleCPU()]
+system.cpu = [X86TimingSimpleCPU(), X86TimingSimpleCPU()]
 ```
 
 Next, after the memory controllers have been instantiated, we are going
@@ -113,15 +113,12 @@ def getBlockSizeBits(self, system):
 
 def sendEvicts(self, cpu):
     """True if the CPU model or ISA requires sending evictions from caches
-       to the CPU. Two scenarios warrant forwarding evictions to the CPU:
+       to the CPU. Three scenarios warrant forwarding evictions to the CPU:
        1. The O3 model must keep the LSQ coherent with the caches
        2. The x86 mwait instruction is built on top of coherence
        3. The local exclusive monitor in ARM systems
     """
-    if type(cpu) is DerivO3CPU or \
-       buildEnv['TARGET_ISA'] in ('x86', 'arm'):
-        return True
-    return False
+    return True
 ```
 
 Finally, we need to implement `connectQueues` to connect all of the

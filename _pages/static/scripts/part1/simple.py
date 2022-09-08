@@ -53,7 +53,7 @@ system.mem_mode = 'timing'               # Use timing accesses
 system.mem_ranges = [AddrRange('512MB')] # Create an address range
 
 # Create a simple CPU
-system.cpu = TimingSimpleCPU()
+system.cpu = X86TimingSimpleCPU()
 
 # Create a memory bus, a system crossbar, in this case
 system.membus = SystemXBar()
@@ -64,13 +64,12 @@ system.cpu.dcache_port = system.membus.slave
 
 # create the interrupt controller for the CPU and connect to the membus
 system.cpu.createInterruptController()
-
-# For x86 only, make sure the interrupts are connected to the memory
-# Note: these are directly connected to the memory bus and are not cached
-if m5.defines.buildEnv['TARGET_ISA'] == "x86":
-    system.cpu.interrupts[0].pio = system.membus.master
-    system.cpu.interrupts[0].int_master = system.membus.slave
-    system.cpu.interrupts[0].int_slave = system.membus.master
+system.cpu.interrupts[0].pio = system.membus.master
+# For x86 only, we make sure the interrupts are connected to the memory.
+# Note: These are directly connected to the memory bus and are not cached.
+# For other ISAs, the following two lines should be removed.
+system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
 # Create a DDR3 memory controller and connect it to the membus
 system.mem_ctrl = MemCtrl()

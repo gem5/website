@@ -134,10 +134,7 @@ class L1Cache(L1Cache_Controller):
            2. The x86 mwait instruction is built on top of coherence
            3. The local exclusive monitor in ARM systems
         """
-        if type(cpu) is DerivO3CPU or \
-           buildEnv['TARGET_ISA'] in ('x86', 'arm'):
-            return True
-        return False
+        return True
 
     def connectQueues(self, ruby_system):
         """Connect all of the queues for this controller.

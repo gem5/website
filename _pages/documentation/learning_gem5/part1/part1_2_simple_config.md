@@ -126,14 +126,19 @@ system.mem_ranges = [AddrRange('512MB')]
 ```
 
 Now, we can create a CPU. We'll start with the most simple timing-based
-CPU in gem5, *TimingSimpleCPU*. This CPU model executes each instruction
+CPU in gem5 for the X86 ISA, *X86TimingSimpleCPU*. This CPU model executes each instruction
 in a single clock cycle to execute, except memory requests, which flow
 through the memory system. To create the CPU you can simply just
 instantiate the object:
 
 ```
-system.cpu = TimingSimpleCPU()
+system.cpu = X86TimingSimpleCPU()
 ```
+
+If we wanted to use the RISCV ISA we could use `RiscvTimingSimpleCPU` or if
+we wanted to use the ARM ISA we could use `ArmTimingSimpleCPU`. However, we
+will continue to use the X86 ISA for this exercise.
+
 
 Next, we're going to create the system-wide memory bus:
 
@@ -346,11 +351,29 @@ should be different. For instance, if you double the system clock, the
 simulation should finish faster. Or, if you change the DDR controller to
 DDR4, the performance should be better.
 
-Additionally, you can change the CPU model to `MinorCPU` to model an
-in-order CPU, or `DerivO3CPU` to model an out-of-order CPU. However,
-note that `DerivO3CPU` currently does not work with simple.py, because
-`DerivO3CPU` requires a system with separate instruction and data caches
-(`DerivO3CPU` does work with the configuration in the next section).
+Additionally, you can change the CPU model to `X86MinorCPU` to model an
+in-order CPU, or `X86O3CPU` to model an out-of-order CPU. However,
+note that `X86O3CPU` currently does not work with simple.py, because
+`X86O3CPU` requires a system with separate instruction and data caches
+(`X86O3CPU` does work with the configuration in the next section).
+
+All gem5 BaseCPU's take the naming format `{ISA}{Type}CPU`. Ergo, if we wanted
+a RISCV Minor CPU we'd use `RiscvMinorCPU`.
+
+The Valid ISAs are:
+* Riscv
+* Arm
+* X86
+* Sparc
+* Power
+* Mips
+
+The CPU types are:
+* AtomicSimpleCPU
+* O3CPU
+* TimingSimpleCPu
+* KvmCPU
+* MinorCPU
 
 Next, we will add caches to our configuration file to model a more
 complex system.
