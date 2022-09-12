@@ -74,6 +74,8 @@ docs:
           url: /documentation/gem5-stdlib/x86-full-system-tutorial
         - page: Developing Your Own Components Tutorial
           url: /documentation/gem5-stdlib/develop-own-components-tutorial
+        - page: How To Create Your Own Board Using The gem5 Standard Library
+          url: /documentation/gem5-stdlib/develop-stdlib-board
 
     - title: gem5 Resources
       id: gem5_resources
