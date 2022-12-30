@@ -121,7 +121,7 @@ docker pull <image>
 E.g., for Ubuntu 20.04 with all optional dependencies:
 
 ```
-docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-0
+docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1
 ```
 
 Then, to work within this environment, we suggest using the following:
