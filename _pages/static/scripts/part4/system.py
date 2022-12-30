@@ -102,7 +102,7 @@ class MySystem(LinuxX86System):
         # Note: If you use multiple CPUs, then the BIOS config needs to be
         #       updated as well.
 
-        self.cpu = AtomicSimpleCPU()
+        self.cpu = X86AtomicSimpleCPU()
         self.mem_mode = 'atomic'
         self.cpu.createThreads()
 

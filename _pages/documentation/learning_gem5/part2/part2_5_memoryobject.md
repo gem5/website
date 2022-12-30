@@ -698,7 +698,7 @@ system.clk_domain.voltage_domain = VoltageDomain()
 system.mem_mode = 'timing'
 system.mem_ranges = [AddrRange('512MB')]
 
-system.cpu = TimingSimpleCPU()
+system.cpu = X86TimingSimpleCPU()
 
 system.memobj = SimpleMemobj()
 
@@ -782,7 +782,7 @@ memory requests and responses from and to the CPU.
      ...
 
 You may also want to change the CPU model to the out-of-order model
-(`DerivO3CPU`). When using the out-of-order CPU you will potentially see
+(`X86O3CPU`). When using the out-of-order CPU you will potentially see
 a different address stream since it allows multiple memory requests
 outstanding at a once. When using the out-of-order CPU, there will now
 be many stalls because the `SimpleMemobj` is blocking.
