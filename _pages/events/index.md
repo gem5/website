@@ -16,6 +16,15 @@ wiki.
 The slides and handouts are the same material except that the handouts
 are formatted with two slides per page.
 
+## ISCA 2023: The gem5 Workshop
+
+[More information can be found on the event's page](/events/isca-2023).
+
+We will be running a gem5 workshop on **June 17th 2023**, co-located at ISCA 2023 in Orlando, Florida.
+
+This will be an all-day event and give members of the gem5 community opportunity to present and discuss their gem5-related contributions, research, and thoughts.
+Our goal with this workshop is to provide a space for free-flowing discussions and opportunities for networking.
+
 ## HPCA 2023: The gem5 Tutorial
 
 [More information can be found on the event's page](/events/hpca-2023).
