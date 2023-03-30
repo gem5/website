@@ -29,22 +29,22 @@ author: Jason Lowe-Power
   - The protocol has four types of controllers -- **L1 cache controller,
     L2 cache controller, Directory controller** and **DMA controller**.
     L1 cache controller is responsible for managing L1 Instruction and
-    L1 Data Cache. Number of instantiation of L1 cache controller is
+    L1 Data Cache. Number of instantiations of L1 cache controller is
     equal to the number of cores in the simulated system. L2 cache
     controller is responsible for managing the shared L2 cache and for
     maintaining coherence of on-chip data through directory coherence
-    scheme. The Directory controller act as interface to the Memory
-    Controller/Off-chip main memory and also responsible for coherence
+    scheme. The Directory controller acts as interface to the Memory
+    Controller/Off-chip main memory and is also responsible for coherence
     across multiple chips/and external coherence request from DMA
     controller. DMA controller is responsible for satisfying coherent
     DMA requests.
-  - One of the primary optimization in this protocol is that if a L1
+  - One of the primary optimizations in this protocol is that if a L1
     Cache request a data block even for read permission, the L2 cache
     controller if finds that no other core has the block, it returns the
     cache block with exclusive permission. This is an optimization done
     in anticipation that a cache blocks read would be written by the
     same core soon and thus save an extra request with this
-    optimization. This is exactly why **E** state exits (i.e. when a
+    optimization. This is exactly why **E** state exists (i.e. when a
     cache block is writable but not yet written).
   - The protocol supports *silent eviction* of *clean* cache blocks from
     the private L1 caches. This means that cache blocks which have not
