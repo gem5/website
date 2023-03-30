@@ -76,7 +76,7 @@ these parameters before calling `m5.instantiate()`.
 
 Now, to create caches with specific parameters, we are first going to
 create a new file, `caches.py`, in the same directory as simple.py,
-`configs/tutorial`. The first step is to import the SimObject(s)
+`configs/tutorial/part1`. The first step is to import the SimObject(s)
 we are going to extend in this file.
 
 ```
@@ -191,7 +191,7 @@ created in the [last chapter](http://www.gem5.org/documentation/learning_gem5/pa
 First, let's copy the script to a new name.
 
 ```
-cp ./configs/tutorial/simple.py ./configs/tutorial/two_level.py
+cp ./configs/tutorial/part1/simple.py ./configs/tutorial/part1/two_level.py
 ```
 
 First, we need to import the names from the `caches.py` file into the
@@ -254,7 +254,7 @@ stays the same! Now we have a complete configuration with a
 two-level cache hierarchy. If you run the current file, `hello`
 should now finish in 57467000 ticks. The full script can
 be found in the gem5 source at
-[`configs/learning_gem5/part1/two_level.py](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
+[`configs/learning_gem5/part1/two_level.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
 
 Adding parameters to your script
 --------------------------------
@@ -299,7 +299,7 @@ system.workload = SEWorkload.init_compatible(options.binary)
 ```
 
 Now, you can run
-`build/X86/gem5.opt configs/tutorial/two_level.py --help` which
+`build/X86/gem5.opt configs/tutorial/part1/two_level.py --help` which
 will display the options you just added.
 
 Next, we need to pass these options onto the caches that we create in
@@ -369,7 +369,7 @@ With these changes, you can now pass the cache sizes into your script
 from the command line like below.
 
 ```
-build/X86/gem5.opt configs/tutorial/two_level.py --l2_size='1MB' --l1d_size='128kB'
+build/X86/gem5.opt configs/tutorial/part1/two_level.py --l2_size='1MB' --l1d_size='128kB'
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -379,7 +379,7 @@ build/X86/gem5.opt configs/tutorial/two_level.py --l2_size='1MB' --l1d_size='128
     gem5 compiled May 17 2021 18:05:59
     gem5 started May 18 2021 00:00:33
     gem5 executing on amarillo, pid 83118
-    command line: build/X86/gem5.opt configs/tutorial/two_level.py --l2_size=1MB --l1d_size=128kB
+    command line: build/X86/gem5.opt configs/tutorial/part1/two_level.py --l2_size=1MB --l1d_size=128kB
 
     Global frequency set at 1000000000000 ticks per second
     warn: No dot file generated. Please install pydot to generate the dot file and pdf.

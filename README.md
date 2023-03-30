@@ -1,11 +1,12 @@
 # gem5 website
 
-The website for gem5 is written in Jekyll markdown. It serves as the primarily
-source of information for those interested in the gem5 project. In the spirit
-of gem5's community-led, open governance model, anyone who wishes may make
-contributions and improvements to the website. This README outlines the basic
-procedure to do so, as well as notes the directory structure and general
-guidelines.
+The website for gem5 is written in
+[Jekyll markdown](https://jekyllrb.com/docs/configuration/markdown/).
+It serves as the primarily source of information for those interested in the
+gem5 project. In the spirit of gem5's community-led, open governance model
+anyone who wishes may make contributions and improvements to the website.
+This README outlines the basic procedure to do so, as well as notes the
+directory structure and general guidelines.
 
 ## Development
 
