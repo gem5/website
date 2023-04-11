@@ -377,3 +377,9 @@ docs:
         - title: Reporting Problems
           id: reporting_problems
           url: /documentation/reporting_problems
+
+  - title: Common Errors
+    items:
+        - title: Common Errors
+          id: common-errors
+          url: /documentation/general_docs/common-errors/
