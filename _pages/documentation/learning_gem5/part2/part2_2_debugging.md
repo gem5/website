@@ -199,7 +199,7 @@ to replace this and use gem5's debugging facilities instead.
 
 When creating a new debug flag, we first have to declare it in a
 SConscript file. Add the following to the SConscript file in the
-directory with your hello object code (src/learning\_gem5/).
+directory with your hello object code (`src/learning_gem5/SConscript`).
 
 ```python
 DebugFlag('HelloExample')
@@ -239,7 +239,8 @@ Now, if you recompile gem5 and run it with the "HelloExample" debug flag, you
 get the following result.
 
 ```
-    build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
+scons build/X86/gem5.opt
+build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -282,7 +283,8 @@ Using functions other than DPRINTF
 
 `DPRINTF` is the most commonly used debugging function in gem5. However,
 gem5 provides a number of other functions that are useful in specific
-circumstances.
+circumstances. All debugging functions are available in the
+[reference documentation](http://doxygen.gem5.org/release/current/base_2trace_8hh.html).
 
 > These functions are like the previous functions `:cppDDUMP`,
 > `:cppDPRINTF`, and `:cppDPRINTFR` except they do not take a flag as a
