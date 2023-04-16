@@ -64,7 +64,7 @@ so we can call member functions of the instance of the class.
 HelloObject::HelloObject(HelloObjectParams *params) :
     SimObject(params), event([this]{processEvent();}, name())
 {
-    DPRINTF(Hello, "Created the hello object\n");
+    DPRINTF(HelloExample, "Created the hello object\n");
 }
 ```
 
@@ -75,7 +75,7 @@ case, we'll simply print something if we are debugging.
 void
 HelloObject::processEvent()
 {
-    DPRINTF(Hello, "Hello world! Processing the event!\n");
+    DPRINTF(HelloExample, "Hello world! Processing the event!\n");
 }
 ```
 
@@ -106,7 +106,7 @@ would use some offset from `curTick()`, but since we know the startup()
 function is called when the time is currently 0, we can use an explicit
 tick value.
 
-The output when you run gem5 with the "Hello" debug flag is now
+The output when you run gem5 with the "HelloExample" debug flag is now
 
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.

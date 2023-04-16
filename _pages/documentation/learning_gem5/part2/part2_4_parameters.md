@@ -180,7 +180,7 @@ First, declare the SimObject in the SConscript file:
 ```python
 Import('*')
 
-SimObject('HelloObject.py')
+SimObject('HelloObject.py', sim_objects=['HelloObject', 'GoodbyeObject'])
 Source('hello_object.cc')
 Source('goodbye_object.cc')
 
@@ -204,6 +204,7 @@ buffer. Once the buffer is full, the simulation will exit.
 class GoodbyeObject(SimObject):
     type = 'GoodbyeObject'
     cxx_header = "learning_gem5/part2/goodbye_object.hh"
+    cxx_class = "gem5::GoodbyeObject"
 
     buffer_size = Param.MemorySize('1kB',
                                    "Size of buffer to fill with goodbye")
@@ -238,13 +239,13 @@ class GoodbyeObject : public SimObject
 
     EventWrapper<GoodbyeObject, &GoodbyeObject::processEvent> event;
 
-    /// The bytes processed per tick
+    /// The bytes processed per tick.
     float bandwidth;
 
-    /// The size of the buffer we are going to fill
+    /// The size of the buffer we are going to fill.
     int bufferSize;
 
-    /// The buffer we are putting our message in
+    /// The buffer we are putting our message in.
     char *buffer;
 
     /// The message to put into the buffer.
@@ -272,6 +273,7 @@ class GoodbyeObject : public SimObject
 ```cpp
 #include "learning_gem5/part2/goodbye_object.hh"
 
+#include "base/trace.hh"
 #include "debug/Hello.hh"
 #include "sim/sim_exit.hh"
 
@@ -331,12 +333,6 @@ GoodbyeObject::fillBuffer()
         exitSimLoop(buffer, 0, curTick() + bandwidth * bytes_copied);
     }
 }
-
-GoodbyeObject*
-GoodbyeObjectParams::create()
-{
-    return new GoodbyeObject(this);
-}
 ```
 
 The header file can be downloaded
@@ -388,7 +384,7 @@ The updated `HelloObject.py` file can be downloaded
 
 Second, we will add a reference to a `GoodbyeObject` to the
 `HelloObject` class.
-Don't forget to include goodbye_object.hh at the top of the hello_object.hh file!
+Don't forget to include `goodbye_object.hh` at the top of the `hello_object.hh` file!
 
 ```cpp
 #include <string>
@@ -417,7 +413,7 @@ class HelloObject : public SimObject
     int timesLeft;
 
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 
     void startup();
 };
@@ -433,7 +429,6 @@ case this object has been coded to accept.
 ```cpp
 #include "learning_gem5/part2/hello_object.hh"
 
-#include "base/misc.hh"
 #include "debug/Hello.hh"
 
 HelloObject::HelloObject(HelloObjectParams &params) :
@@ -461,7 +456,7 @@ HelloObject::processEvent()
 
     if (timesLeft <= 0) {
         DPRINTF(Hello, "Done firing!\n");
-        goodbye.sayGoodbye(myName);
+        goodbye->sayGoodbye(myName);
     } else {
         schedule(event, curTick() + latency);
     }
