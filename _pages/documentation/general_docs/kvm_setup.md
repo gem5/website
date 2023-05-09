@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Setting Up and Using KVM on your machine
-permalink: /documentation/general_docs/kvm_setup/
+permalink: /documentation/general_docs/using_kvm/
 author: Mahyar Samani and Bobby R. Bruce
 ---
 
