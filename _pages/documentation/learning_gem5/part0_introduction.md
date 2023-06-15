@@ -31,7 +31,7 @@ tools like gem5, it is important to actually understand how it works
 before using it.
 
 You can find the source for this book at
-<https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable/_pages/documentation/learning_gem5/>.
+<https://github.com/gem5/website/tree/stable/_pages/documentation/learning_gem5/>.
 
 ## What is gem5?
 

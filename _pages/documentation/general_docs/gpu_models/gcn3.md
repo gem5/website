@@ -20,9 +20,9 @@ The GCN3 GPU is a model that simulates a GPU at the ISA level, as opposed to the
 
 Currently, the GCN3 GPU model in gem5 is supported on the stable and develop branch.
 
-The [gem5 repository](https://gem5.googlesource.com/public/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model. A pre-built version of the docker image is hosted at `gcr.io/gem5-test/gcn-gpu:v22-0`.
+The [gem5 repository](https://github.com/gem5/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model. A pre-built version of the docker image is hosted at `gcr.io/gem5-test/gcn-gpu:v22-0`.
 
-The [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/) also comes with a number of sample applications that can be used to verify that the model runs correctly.  We recommend users start with [square](https://resources.gem5.org/resources/square), as it is a simple, heavily tested application that should run relatively quickly.
+The [gem5-resources repository](https://github.com/gem5/gem5-resources/) also comes with a number of sample applications that can be used to verify that the model runs correctly.  We recommend users start with [square](https://resources.gem5.org/resources/square), as it is a simple, heavily tested application that should run relatively quickly.
 
 #### Using the image
 The docker image can either be built or pulled from gcr.io.
@@ -41,10 +41,10 @@ docker pull gcr.io/gem5-test/gcn-gpu:v22-0
 You can also put `gcr.io/gem5-test/gcn-gpu:v22-0` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 
 #### Building gem5 using the image
-See square in [gem5 resources](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gpu/square/) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
+See square in [gem5 resources](https://github.com/gem5/gem5-resources/tree/stable/src/gpu/square/) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
 
 #### Building & running a GPU application using the image
-See [gem5 resources](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/gpu) for examples of how to build and run GPU applications in the docker.
+See [gem5 resources](https://github.com/gem5/gem5-resources/tree/stable/src/gpu/) for examples of how to build and run GPU applications in the docker.
 
 ## **ROCm**
 

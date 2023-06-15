@@ -22,7 +22,7 @@ For `MI_example`, we can use exactly the same runscript as before
 the classes needed for `MI_example`. There are only a couple of changes
 from `MSI`, mostly due to different naming schemes. You can download the
 file
-[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/ruby_caches_MI_example.py).
+[here](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part3/ruby_caches_MI_example.py).
 
 ```python
 class MyCacheSystem(RubySystem):

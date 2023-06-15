@@ -94,7 +94,7 @@ Next, we have to clone gem5 and build it. If you want to use the exact gem5 sour
 See the commands below:
 
 ```sh
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 cd gem5
 git checkout v20.1.0.0
 scons build/X86/gem5.opt -j8
@@ -104,12 +104,12 @@ We will look at the details of our launch script later on, but following is how 
 
 ```python
 gem5_repo = Artifact.registerArtifact(
-    command = 'git clone https://gem5.googlesource.com/public/gem5',
+    command = 'git clone https://github.com/gem5/gem5',
     typ = 'git repo',
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 from googlesource and checked out v20.1.0.0'
+    documentation = 'cloned gem5 from github and checked out v20.1.0.0'
 )
 
 gem5_binary = Artifact.registerArtifact(
@@ -182,7 +182,7 @@ In this tutorial, we want to experiment with different linux kernels to examine 
 
 
 Let's use an example of kernel v5.4.49 to see how to compile the kernel.
-First, add a folder linux-configs to store linux kernel config files. The configuration files of interest are available [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/linux-kernel/).
+First, add a folder linux-configs to store linux kernel config files. The configuration files of interest are available [here](https://github.com/gem5/gem5-resources/tree/stable/src/linux-kernel).
 Then, we will get the linux source and checkout the required linux version (e.g. v5.4.49 in this case).
 
 ```
@@ -304,12 +304,12 @@ For all other artifacts, add following lines in launch_boot_tests.py:
 ```python
 
 gem5_repo = Artifact.registerArtifact(
-    command = 'git clone https://gem5.googlesource.com/public/gem5',
+    command = 'git clone https://github.com/gem5/gem5',
     typ = 'git repo',
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 from googlesource and checked out v20.1.0.0'
+    documentation = 'cloned gem5 from github and checked out v20.1.0.0'
 )
 
 m5_binary = Artifact.registerArtifact(

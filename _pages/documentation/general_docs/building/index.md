@@ -93,22 +93,22 @@ the following Docker Images:
 Ubuntu 22.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1](
 https://gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/tags/v22.1.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
+https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
 
 Ubuntu 22.04 with minimum dependencies:
 [gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1](
 https://gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/tags/v22.1.0.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
+https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1](
 https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/tags/v22.1.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
+https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 Ubuntu 18.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1](
 https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1) ([source Dockerfile](
-https://gem5.googlesource.com/public/gem5/+/refs/tags/v22.1.0.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
+https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
 
 
@@ -140,7 +140,7 @@ directory.
 ## Getting the code
 
 ```
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 ```
 
 ## Building with SCons

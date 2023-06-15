@@ -12,7 +12,7 @@ The `EXTRAS` SCons option is a way to add functionality in gem5 without adding y
 
 The main drawback of the EXTRAS feature is that, by itself, it only supports adding code to gem5, not modifying any of the base gem5 code. 
 
-One use of the EXTRAS feature is to support EIO traces. The trace reader for EIO is licensed under the SimpleScalar license, and due to the incompatibility of that license with gem5's BSD license, the code to read these traces is not included in the gem5 distribution. Instead, the EIO code is distributed via a separate "encumbered" [repository](https://gem5.googlesource.com/public/gem5).
+One use of the EXTRAS feature is to support EIO traces. The trace reader for EIO is licensed under the SimpleScalar license, and due to the incompatibility of that license with gem5's BSD license, the code to read these traces is not included in the gem5 distribution. Instead, the EIO code is distributed via a separate "encumbered" [repository](https://github.com/gem5/gem5).
 
 The following examples show how to compile the EIO code. By adding to or modifying the extras path, any other suitable extra could be compiled in. To compile in code using EXTRAS simply execute the following
 

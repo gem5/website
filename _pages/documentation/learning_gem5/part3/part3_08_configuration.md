@@ -42,7 +42,7 @@ create a `setup` function that takes as parameters the CPUs in the
 system and the memory controllers.
 
 You can download the complete run script
-[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/simple_ruby.py).
+[here](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part3/simple_ruby.py).
 
 ### Cache system configuration
 
@@ -337,4 +337,4 @@ class MyNetwork(SimpleNetwork):
 ```
 
 You can download the complete `msi_caches.py` file
-[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part3/msi_caches.py).
+[here](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part3/msi_caches.py).

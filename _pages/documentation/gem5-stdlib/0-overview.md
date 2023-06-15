@@ -10,11 +10,11 @@ author: Bobby R. Bruce
 ## An overview of the gem5 standard library
 
 Similar to standard libraries in programming languages, the gem5 standard library is designed to provide users of gem5 with commonly used components, features, and functionality with the goal of improving their productivity.
-The gem5 stdlib was introduced in [v21.1](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.1.0.0) in an alpha-release state (then referred to as "gem5 components"), and has been fully released as of [v21.2](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.2.0.0).
+The gem5 stdlib was introduced in [v21.1](https://github.com/gem5/gem5/tree/v21.1.0.0) in an alpha-release state (then referred to as "gem5 components"), and has been fully released as of [v21.2](https://github.com/gem5/gem5/tree/v21.2.0.0).
 
 For users new to the gem5 standard library, the following tutorials may be of help in understanding how the gem5 stdlib may be used to improve the creation of gem5 simulations.
 They include a tutorial on building syscall emulation and full-system simulations, as well as a guide on how to extend the library and contribute.
-The [`configs/examples/gem5_library`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/example/gem5_library/) directory in the gem5 repository also contains example scripts which use the library.
+The [`configs/examples/gem5_library`](https://github.com/gem5/gem5/tree/stable/configs/example/gem5_library) directory in the gem5 repository also contains example scripts which use the library.
 
 The following subsections give a broad overview of the gem5 stdlib packages and what there intended purposes are.
 
@@ -103,9 +103,7 @@ print(f"The resources is available at {resource.get_local_path()}")
 
 This will obtain the `riscv-disk-img` resource and store it locally for use in a gem5 simulation.
 
-The resources package references the [`resources.json` file](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/resources.json) in the [gem5-resources repository](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable) to get info on what resources are available and where they may be downloaded from.
-While this is a machine-readable JSON file, users may use it to lookup the resources available.
-**We hope in the near future to have a website which renders this in a more human-readable manner**.
+The resources package references the resources that are available to view at the [gem5 Resources website](https://resources.gem5.org) and the [gem5 Resources repository](https://github.com/gem5/gem5-resources). The website is strongly recommended to get info on what resources are available and where they may be downloaded from.
 
 ## The Simulate package
 

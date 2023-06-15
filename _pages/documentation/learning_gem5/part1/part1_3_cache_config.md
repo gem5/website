@@ -180,7 +180,7 @@ def connectMemSideBus(self, bus):
 ```
 
 The full file can be found in the gem5 source at
-[`configs/learning_gem5/part1/caches.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/caches.py).
+[`configs/learning_gem5/part1/caches.py`](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part1/caches.py).
 
 Adding caches to the simple config file
 ------------------------------------
@@ -254,7 +254,7 @@ stays the same! Now we have a complete configuration with a
 two-level cache hierarchy. If you run the current file, `hello`
 should now finish in 57467000 ticks. The full script can
 be found in the gem5 source at
-[`configs/learning_gem5/part1/two_level.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
+[`configs/learning_gem5/part1/two_level.py`](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part1/two_level.py).
 
 Adding parameters to your script
 --------------------------------
@@ -391,5 +391,5 @@ build/X86/gem5.opt configs/tutorial/part1/two_level.py --l2_size='1MB' --l1d_siz
     Exiting @ tick 57467000 because exiting with last active thread context
 
 The full scripts can be found in the gem5 source at
-[`configs/learning_gem5/part1/caches.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/caches.py) and
-[`configs/learning_gem5/part1/two_level.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/two_level.py).
+[`configs/learning_gem5/part1/caches.py`](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part1/caches.py) and
+[`configs/learning_gem5/part1/two_level.py`](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part1/two_level.py).

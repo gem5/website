@@ -17,7 +17,7 @@ experiments_repo = Artifact.registerArtifact(
 
 gem5_repo = Artifact.registerArtifact(
     command = '''
-        git clone -b v19.0.0.0 https://gem5.googlesource.com/public/gem5
+        git clone -b v19.0.0.0 https://github.com/gem5/gem5
         cd gem5
         scons build/X86/gem5.opt -j8
     ''',

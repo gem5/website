@@ -317,7 +317,7 @@ Running gem5
 
 Now that we've created a simple simulation script (the full version of
 which can be found in the gem5 code base at
-[configs/learning\_gem5/part1/simple.py](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/configs/learning_gem5/part1/simple.py)
+[configs/learning\_gem5/part1/simple.py](https://github.com/gem5/gem5/blob/stable/configs/learning_gem5/part1/simple.py)
 ) we're ready to run gem5. gem5 can take many parameters, but requires just
 one positional argument, the simulation script. So, we can simply run gem5
 from the root gem5 directory as:

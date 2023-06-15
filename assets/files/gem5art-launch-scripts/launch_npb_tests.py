@@ -29,12 +29,12 @@ experiments_repo = Artifact.registerArtifact(
 )
 
 gem5_repo = Artifact.registerArtifact(
-    command = 'git clone https://gem5.googlesource.com/public/gem5',
+    command = 'git clone https://github.com/gem5/gem5',
     typ = 'git repo',
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 from googlesource and checked out v20.1.0.0'
+    documentation = 'cloned gem5 from github and checked out v20.1.0.0'
 )
 
 m5_binary = Artifact.registerArtifact(

@@ -95,7 +95,7 @@ Change directories to where you want to download the gem5 source. Then,
 to clone the repository, use the `git clone` command.
 
 ```
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 ```
 
 You can now change directories to `gem5` which contains all of the gem5

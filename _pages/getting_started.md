@@ -14,12 +14,10 @@ Thus, the most common way to use gem5 is to download the source and build it you
 
 To download gem5, you can use [`git`](https://git-scm.com/) to checkout to current stable branch.
 If you're not familiar with version control or git, The [git book](https://git-scm.com/book/en/v2) (available online for free) is a great way to learn more about git and become more comfortable using version control.
-The canonical version of gem5 is hosted by Google on googlesource.com.
-However, there is a [GitHub mirror](https://github.com/gem5/gem5) as well.
-It is strongly suggested to use the googlesource version of gem5, and it is required if you want to [contribute any changes](/contributing) back to the gem5 mainline.
+The canonical version of gem5 is hosted on [GitHub](https://github.com/gem5/gem5).
 
 ```
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 ```
 
 After cloning the source code, you can build gem5 by using [`scons`](https://scons.org/).
@@ -95,7 +93,7 @@ The gem5 Simulator. Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. 
 ```
 
 You should also specify the **version** of gem5 you use in your methodology section.
-If you didn't use a specific stable version of gem5 (e.g., gem5-20.1.3), you should state the commit hash *as shown on https:/gem5.googlesource.com/*.
+If you didn't use a specific stable version of gem5 (e.g., gem5-20.1.3), you should state the commit hash *as shown on https://github.com/gem5/gem5*.
 
 If you use the GPU model, the DRAM model, or any of the other models in gem5 that have been [published](/publications/), you're encouraged to cite those works as well.
 See [the publications page](/publications/) for a list of models that have been contributed to gem5 beyond the original paper.

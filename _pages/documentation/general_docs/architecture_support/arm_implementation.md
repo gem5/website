@@ -20,7 +20,7 @@ The baseline model is ARMv8.0 compliant, we also support some mandatory/optional
 
 ### From gem5 v21.2
 
-The best way to get a synced version of Arm architectural features is to have a look at the [ArmExtension](https://gem5.googlesource.com/public/gem5/+/refs/heads/develop/src/arch/arm/ArmSystem.py) enum
+The best way to get a synced version of Arm architectural features is to have a look at the [ArmExtension](https://github.com/gem5/gem5/blob/develop/src/arch/arm/ArmSystem.py) enum
 used by the release object and the available example releases provided within the same file.
 
 A user can choose one of the following options:
@@ -33,5 +33,5 @@ A user can choose one of the following options:
 
 The best way to get a synced version of Arm architectural features is to have a look at Arm ID registers and boolean values:
 
-* [src/arch/arm/ArmISA.py](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.1.0.2/src/arch/arm/ArmISA.py)
-* [src/arch/arm/ArmSystem.py](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.1.0.2/src/arch/arm/ArmSystem.py)
+* [src/arch/arm/ArmISA.py](https://github.com/gem5/gem5/blob/v21.1.0.2/src/arch/arm/ArmISA.py)
+* [src/arch/arm/ArmSystem.py](https://github.com/gem5/gem5/blob/v21.1.0.2/src/arch/arm/ArmSystem.py)

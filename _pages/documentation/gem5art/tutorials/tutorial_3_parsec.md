@@ -45,7 +45,7 @@ This tutorial follows the following directory structure (inside the main directo
 - configs-parsec-tests: gem5 run and configuration scripts to run PARSEC
 - disk-image: contains packer script and template files used to build a disk image.
 The built disk image will be stored in the same folder
-- gem5: gem5 [source code](https://gem5.googlesource.com/public/gem5) and the compiled binary
+- gem5: gem5 [source code](https://github.com/gem5/gem5) and the compiled binary
 - linux-stable: linux kernel [source code](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git)  used for full-system experiments
 - config.4.19.83: linux kernel config file used for its compilation
 - results: directory to store the results of the experiments (generated once gem5 jobs are executed)
@@ -418,7 +418,7 @@ parsec_repo = Artifact.registerArtifact(
 
 gem5_repo = Artifact.registerArtifact(
     command = '''
-        git clone https://gem5.googlesource.com/public/gem5;
+        git clone https://github.com/gem5/gem5;
         cd gem5;
         git remote add darchr https://github.com/darchr/gem5;
         git fetch darchr;
@@ -429,7 +429,7 @@ gem5_repo = Artifact.registerArtifact(
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 master branch from googlesource (Nov 18, 2019) and cherry-picked 2 commits from darchr/gem5'
+    documentation = 'cloned gem5 master branch from github (Nov 18, 2019) and cherry-picked 2 commits from darchr/gem5'
 )
 
 m5_binary = Artifact.registerArtifact(

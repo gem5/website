@@ -100,7 +100,8 @@ board.set_se_binary_workload(binary)
 ```
 
 The `Resource` class takes a string which specifies which resource, from [gem5-resources](/documentation/general_docs/gem5_resources), is to be obtained for the simulation.
-All the gem5 resources are specified in the [gem5 resources `resources.json` file](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/resources.json).
+All the gem5 resources can be found on the [gem5 Resources website](https://resources.gem5.org).
+
 If the resource is not present on the host system it'll be automatically downloaded.
 In this example we are going to use the `x86-hello-64-static` resource;
 an x86, 64-bit, statically compiled binary which will print "Hello World!" to stdout.

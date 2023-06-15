@@ -105,10 +105,10 @@ pip install gem5art-artifact gem5art-run gem5art-tasks
 
 ## Building gem5
 
-Next clone gem5 from googlesource:
+Next clone gem5 from GitHub:
 
 ```sh
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 ```
 
 If you want to use the exact gem5 source that was used at the time of creating this tutorial you will have to checkout the relevant commit. If you want to try with the current version of gem5 at the time of reading this tutorial, you can ignore the git checkout command.
@@ -348,7 +348,7 @@ A disk image already created following the above instructions can be found, gzip
 ## Compiling the linux kernel
 
 In this tutorial, we use one of the LTS (long term support) releases of linux kernel v4.19.83 with gem5 to run NAS parallel benchmarks.
-First, get the linux kernel config file from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/linux-kernel/linux-configs/), and place it in npb-tests folder.
+First, get the linux kernel config file from [here](https://github.com/gem5/gem5-resources/tree/stable/src/linux-kernel/linux-configs), and place it in npb-tests folder.
 Then, we will get the linux source of version 4.19.83:
 
 ```
@@ -372,7 +372,7 @@ cp vmlinux vmlinux-4.19.83
 
 Next, we need to add gem5 run scripts. We will do that in a folder named configs-npb-tests.
 Get the run script named run_npb.py from [here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb/configs/run_npb.py), and other system configuration files from
-[here]((https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb/configs/system/).
+[here](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/npb/configs/system/).
 
 The main script `run_npb.py` expects following arguments:
 
@@ -469,12 +469,12 @@ For all other artifacts, add following lines in launch_npb_tests.py:
 
 ```python
 gem5_repo = Artifact.registerArtifact(
-    command = 'git clone https://gem5.googlesource.com/public/gem5',
+    command = 'git clone https://github.com/gem5/gem5',
     typ = 'git repo',
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 from googlesource and checked out v20.1.0.0'
+    documentation = 'cloned gem5 from github and checked out v20.1.0.0'
 )
 
 m5_binary = Artifact.registerArtifact(

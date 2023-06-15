@@ -39,7 +39,7 @@ parsec_repo = Artifact.registerArtifact(
 
 gem5_repo = Artifact.registerArtifact(
     command = '''
-        git clone https://gem5.googlesource.com/public/gem5;
+        git clone https://github.com/gem5/gem5;
         cd gem5;
         git remote add darchr https://github.com/darchr/gem5;
         git fetch darchr;
@@ -50,7 +50,7 @@ gem5_repo = Artifact.registerArtifact(
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 master branch from googlesource (Nov 18, 2019) and cherry-picked 2 commits from darchr/gem5'
+    documentation = 'cloned gem5 master branch from github (Nov 18, 2019) and cherry-picked 2 commits from darchr/gem5'
 )
 
 m5_binary = Artifact.registerArtifact(

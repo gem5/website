@@ -23,7 +23,7 @@ We will use system emulation (SE) mode of gem5 to run these microbenchmarks with
 This tutorial follows the following directory structure:
 
 - configs-micro-tests: the base gem5 configuration to be used to run SE mode simulations
-- gem5: gem5 [source code](https://gem5.googlesource.com/public/gem5) and the compiled binary
+- gem5: gem5 [source code](https://github.com/gem5/gem5) and the compiled binary
 
 - results: directory to store the results of the experiments (generated once gem5 jobs are executed)
 - launch_micro_tests.py: gem5 jobs launch script (creates all of the needed artifacts as well)
@@ -71,7 +71,7 @@ pip install gem5art-artifact gem5art-run gem5art-tasks
 First clone gem5 in your micro-tests repo:
 
 ```sh
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 cd gem5
 ```
 
@@ -184,7 +184,7 @@ experiments_repo = Artifact.registerArtifact(
 )
 
 gem5_repo = Artifact.registerArtifact(
-    command = '''git clone https://gem5.googlesource.com/public/gem5;
+    command = '''git clone https://github.com/gem5/gem5;
     cd gem5;
     wget https://github.com/darchr/gem5/commit/38d07ab0251ea8f5181abc97a534bb60157b2b5d.patch;
     git am 38d07ab0251ea8f5181abc97a534bb60157b2b5d.patch --reject;
@@ -193,7 +193,7 @@ gem5_repo = Artifact.registerArtifact(
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'git repo with gem5 cloned on Nov 22 from googlesource (patch applied to support mem vector port)'
+    documentation = 'git repo with gem5 cloned on Nov 22 from github (patch applied to support mem vector port)'
 )
 
 gem5_binary = Artifact.registerArtifact(

@@ -7,7 +7,7 @@ author: Bobby R. Bruce
 
 This document serves as a beginners guide to contributing to gem5. If questions
 arise while following this guide, we advise consulting [CONTRIBUTING.md](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/CONTRIBUTING.md)
+https://github.com/gem5/gem5/blob/stable/CONTRIBUTING.md)
 which contains more details on how to contribute to gem5.
 
 The following subsections outline, in order, the steps involved in contributing
@@ -37,15 +37,15 @@ yourself from the task and change the task's status back to `Todo`.**
 
 ## Obtaining the git repo
 
-The gem5 git repository is hosted at <https://gem5.googlesource.com>.
-**Please note: contributions made to other gem5 repos (e.g., our GitHub mirror)
-will not be considered. Please contribute to <https://gem5.googlesource.com>
+The gem5 git repository is hosted at <https://github.com/gem5/gem5>.
+**Please note: contributions made to other gem5 repos
+will not be considered. Please contribute to <https://github.com/gem5/gem5>
 exclusively.**
 
 To pull the gem5 git repo:
 
 ```Shell
-git clone https://gem5.googlesource.com/public/gem5
+git clone https://github.com/gem5/gem5
 ```
 
 ### stable / develop branch
@@ -245,7 +245,7 @@ The commit message must adhere to our style. The first line of the commit is
 the "header". The header starts with a tag (or tags, separated by a comma),
 then a colon. Which tags are used depend on which components of gem5
 you have modified. **Please refer to the [MAINTAINERS.yaml](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS.yaml) for
+https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) for
 a comprehensive list of accepted tags**. After this colon a short description
 of the commit must be provided. **This header line must not exceed 65
 characters**.
@@ -317,7 +317,7 @@ Gerrit will automatically notify those you assign. The "maintainers" of the
 components you have modified should be added as reviewers. These should
 correspond to the tags you included in the commit header. **Please consult
 [MAINTAINERS.yaml](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/MAINTAINERS.yaml) to
+https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) to
 see who maintains which component**. As an example, for a commit with a header
 of `tests,arch : This is testing the arch component` then the maintainers for
 both `tests` and `arch` should be included as reviewers.

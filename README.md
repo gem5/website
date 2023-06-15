@@ -14,8 +14,8 @@ You may clone the repository, and run a local instance of the website
 using:
 
 ```
-git clone https://gem5.googlesource.com/public/gem5-website
-cd gem5-website
+git clone https://github.com/gem5/website.git
+cd website
 bundle
 jekyll serve --config _config.yml,_config_dev.yml
 ```

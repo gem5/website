@@ -47,7 +47,7 @@ In this example, the entire list of SimObject APIs are noted in the
 http://doxygen.gem5.org/release/current/group__api__simobject.html). The
 definitions of different API groups can be found in
 [`src/doxygen/group_definitions.hh`](
-https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/doxygen/group_definitions.hh).
+https://github.com/gem5/gem5/blob/stable/src/doxygen/group_definitions.hh).
 
 ### Notes for developers
 
@@ -82,7 +82,7 @@ attribute (`[[deprecated(<msg>)]]`). When utilizing a deprecated C++ API, a
 warning will be given at compilation time specifying which API to transition
 to. The gem5 deprecated Python parameter APIs are wrapped with our [bespoke
 `DeprecatedParam` class](
-https://gem5.googlesource.com/public/gem5/+/bd13e8e206e6c86581cf9afa904ef1060351a4b0/src/python/m5/params.py#2166).
+https://github.com/gem5/gem5/blob/bd13e8e206e6c86581cf9afa904ef1060351a4b0/src/python/m5/params.py#L2166).
 Python parameters wrapped in this class will throw an warning when used and
 specify which API to transition to.
 
@@ -167,14 +167,14 @@ class TLBCoalescer(ClockedObject):
 ```
 
 [In recent revisions](
-https://gem5.googlesource.com/public/gem5/+/392c1ced53827198652f5eda58e1874246b024f4)
+https://github.com/gem5/gem5/tree/392c1ced53827198652f5eda58e1874246b024f4)
 the terms `master` and `slave` have been replaced. Though, the `slave` and
 `master` terminology are widely used, so much so we consider them part of the
 old API. We therefore wish to deprecate this API is a safe manner while
 changing `master` and `slave` with `cpu_side_ports` and `mem_side_ports`. To
 do so we would maintain the `master` and `slave` variables but utilize our
 [`DeprecatedParam` Class](
-https://gem5.googlesource.com/public/gem5/+/bd13e8e206e6c86581cf9afa904ef1060351a4b0/src/python/m5/params.py#2166)
+https://github.com/gem5/gem5/blob/bd13e8e206e6c86581cf9afa904ef1060351a4b0/src/python/m5/params.py#L2166)
 to produce warnings when and if these deprecated variables are used. Working on
 our example, we would produce the following:
 

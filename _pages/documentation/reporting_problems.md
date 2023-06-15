@@ -28,7 +28,7 @@ reporting an issue:
 [Jira Issue Tracking system](https://gem5.atlassian.net).
 
 2. Ensure you're compiling and running the latest version of [gem5](
-https://gem5.googlesource.com). The issue may have already been resolved.
+https://github.com/gem5/gem5). The issue may have already been resolved.
 
 3. Check changes [currently under review on our Gerrit system](
 https://gem5-review.googlesource.com/dashboard/self). It's possible a fix to
@@ -77,5 +77,5 @@ on how to do this.
 
 If your issue is with the content of a gem5 document/tutorial being incorrect,
 then please consider submitting a change. Please consult our [README](
-https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable/README.md)
+https://github.com/gem5/website/blob/stable/README.md)
 for more information on how to make contributions to the gem5 website.

@@ -20,7 +20,7 @@ experiments_repo = Artifact.registerArtifact(
 )
 
 gem5_repo = Artifact.registerArtifact(
-    command = '''git clone https://gem5.googlesource.com/public/gem5;
+    command = '''git clone https://github.com/gem5/gem5;
     cd gem5;
     wget https://github.com/darchr/gem5/commit/38d07ab0251ea8f5181abc97a534bb60157b2b5d.patch;
     git am 38d07ab0251ea8f5181abc97a534bb60157b2b5d.patch --reject;
@@ -29,7 +29,7 @@ gem5_repo = Artifact.registerArtifact(
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'git repo with gem5 cloned on Nov 22 from googlesource (patch applied to support mem vector port)'
+    documentation = 'git repo with gem5 cloned on Nov 22 from github (patch applied to support mem vector port)'
 )
 
 gem5_binary = Artifact.registerArtifact(

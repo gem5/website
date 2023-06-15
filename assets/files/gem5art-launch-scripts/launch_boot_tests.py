@@ -33,12 +33,12 @@ experiments_repo = Artifact.registerArtifact(
     documentation = 'main experiments repo to run full system boot tests with gem5 20.1'
 )
 gem5_repo = Artifact.registerArtifact(
-    command = 'git clone https://gem5.googlesource.com/public/gem5',
+    command = 'git clone https://github.com/gem5/gem5',
     typ = 'git repo',
     name = 'gem5',
     path =  'gem5/',
     cwd = './',
-    documentation = 'cloned gem5 from googlesource and checked out release-staging-v20.1.0.0 (Sep 14, 2020)'
+    documentation = 'cloned gem5 from github and checked out release-staging-v20.1.0.0 (Sep 14, 2020)'
 )
 
 m5_binary = Artifact.registerArtifact(

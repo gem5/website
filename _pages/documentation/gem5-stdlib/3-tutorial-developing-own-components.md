@@ -51,7 +51,7 @@ class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
 
 As with every abstract base class, there are virtual functions which must be implemented.
 Once implemented the `UniqueCacheHierarchy` can be used in simulations.
-The `get_mem_side_port` and `get_cpu_side_port` are declared in the [AbstractClassicCacheHierarchy](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/python/gem5/components/cachehierarchies/classic/abstract_classic_cache_hierarchy.py), while `incorporate_cache` is declared in the [AbstractCacheHierarchy](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/python/gem5/components/cachehierarchies/abstract_cache_hierarchy.py)
+The `get_mem_side_port` and `get_cpu_side_port` are declared in the [AbstractClassicCacheHierarchy](https://github.com/gem5/gem5/blob/stable/src/python/gem5/components/cachehierarchies/classic/abstract_classic_cache_hierarchy.py), while `incorporate_cache` is declared in the [AbstractCacheHierarchy](https://github.com/gem5/gem5/blob/stable/src/python/gem5/components/cachehierarchies/abstract_cache_hierarchy.py)
 
 The `get_mem_side_port` and `get_cpu_side_port` functions return a `Port` each.
 As their name suggests, these are ports used by the board to access the cache hierarchy from the memory side and the cpu side.
@@ -61,7 +61,7 @@ The `incorporate_cache` function is the function which is called to incorporate 
 The contents of this function will vary between cache hierarchy setups but will typically inspect the board it is connected to, and use the board's API to connect the cache hierarchy.
 
 In this example we assume the user is looking to implement a private L1 cache hierarchy, consisting of a data cache and instruction cache for each CPU core.
-This has actually already been implemented in the gem5 stdlib as the [PrivateL1CacheHierarchy](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/python/gem5/components/cachehierarchies/classic/private_l1_cache_hierarchy.py), but for this example we shall duplicate the effort.
+This has actually already been implemented in the gem5 stdlib as the [PrivateL1CacheHierarchy](https://github.com/gem5/gem5/blob/stable/src/python/gem5/components/cachehierarchies/classic/private_l1_cache_hierarchy.py), but for this example we shall duplicate the effort.
 
 First we start by implementing the `get_mem_side_port` and `get_cpu_side_port` functions:
 

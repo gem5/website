@@ -485,7 +485,7 @@ Moving stats to the new style involves:
   - Updating the class constructors to initialize `Stats::Group` variable. Usually, it's adding `stats(this)` to the constructors assuming the name of the variable is `stats`.
 
 Some examples,
-  - An example of `Stats::Group` declaration is [here](https://gem5.googlesource.com/public/gem5/+/refs/tags/v20.0.0.3/src/cpu/testers/traffic_gen/base.hh#194).
+  - An example of `Stats::Group` declaration is [here](https://github.com/gem5/gem5/blob/v20.0.0.3/src/cpu/testers/traffic_gen/base.hh#L194).
 Note that all variables of type starting with `Stats::` have been moved to the struct.
-  - An example of a `Stats::Group` constructor that utilizes `ADD_STAT` is [here](https://gem5.googlesource.com/public/gem5/+/refs/tags/v20.0.0.3/src/cpu/testers/traffic_gen/base.cc#332).
-  - In the case where a stat variable requiring additional initializations other than `name` and `description`, you can follow [this example](https://gem5.googlesource.com/public/gem5/+/refs/tags/v20.0.0.3/src/mem/comm_monitor.cc#105).
+  - An example of a `Stats::Group` constructor that utilizes `ADD_STAT` is [here](https://github.com/gem5/gem5/blob/v20.0.0.3/src/cpu/testers/traffic_gen/base.cc#L332).
+  - In the case where a stat variable requiring additional initializations other than `name` and `description`, you can follow [this example](https://github.com/gem5/gem5/blob/v20.0.0.3/src/mem/comm_monitor.cc#L105).

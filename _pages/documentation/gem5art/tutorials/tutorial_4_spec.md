@@ -11,14 +11,14 @@ Authors:
 # Tutorial: Run SPEC CPU 2017 / SPEC CPU 2006 Benchmarks in Full System Mode with gem5art
 
 ## Introduction
-In this tutorial, we will demonstrate how to utilize [gem5art](https://github.com/darchr/gem5art) and [gem5-resources](https://gem5.googlesource.com/public/gem5-resources/) to run [SPEC CPU 2017 benchmarks](https://www.spec.org/cpu2017/) in gem5 full system mode.
+In this tutorial, we will demonstrate how to utilize [gem5art](https://github.com/gem5/gem5/tree/stable/util/gem5art) and [gem5-resources](https://github.com/gem5/gem5-resources/tree/stable/) to run [SPEC CPU 2017 benchmarks](https://www.spec.org/cpu2017/) in gem5 full system mode.
 The scripts in this tutorial work with gem5art v1.3.0, gem5 20.1.0.4, and gem5-resources 20.1.0.4.
 
 The content of this tutorial is mostly for conducting SPEC CPU 2017 experiments.
 However, due to the similarity of SPEC 2006 and SPEC 2017 resources, this tutorial also applies to conducting SPEC 2006 experiment by using `src/spec-2006` folder instead of `src/spec-2017` of gem5-resources.
 
 ### gem5-resources
-[gem5-resources](https://gem5.googlesource.com/public/gem5-resources/) is an actively maintained collections of gem5-related resources that are commonly used.
+[gem5-resources](https://github.com/gem5/gem5-resources/tree/stable/) is an actively maintained collections of gem5-related resources that are commonly used.
 The resources include scripts, binaries and disk images for full system simulation of many commonly used benchmarks.
 This tutorial will offer guidance in utilizing gem5-resources for full system simulation.
 
@@ -71,13 +71,13 @@ We are only interested in the first part of stats.txt.
 
 ## Setting up the Experiment
 In this part, we have two concurrent tasks: setting up the resources and documenting the process using gem5art.
-We will structure the [SPEC 2017 resources as laid out by gem5-resources](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/src/spec-2017/).
+We will structure the [SPEC 2017 resources as laid out by gem5-resources](https://github.com/gem5/gem5-resources/tree/stable/src/spec-2017/).
 The script `launch_spec2017_experiment.py` will contain the documentation about the artifacts we create and will also serve as Python script that launches the experiment.
 
 ### Acquiring gem5-resources and Setting up the Experiment Folder
 First, we clone the gem5-resource repo and check out the stable branch upto the `1fe56ffc94005b7fa0ae5634c6edc5e2cb0b7357` commit, which is the most recent version of gem5-resources that is compatible with gem5 20.1.0.4 as of March 2021.
 ```sh
-git clone https://gem5.googlesource.com/public/gem5-resources
+git clone https://github.com/gem5/gem5-resources
 cd gem5-resources
 git checkout 1fe56ffc94005b7fa0ae5634c6edc5e2cb0b7357
 ```
@@ -94,7 +94,7 @@ We document the root folder of the experiment in `launch_spec2017_experiment.py`
 ```sh
 experiments_repo = Artifact.registerArtifact(
     command = '''
-        git clone https://gem5.googlesource.com/public/gem5-resources
+        git clone https://github.com/gem5/gem5-resources
         cd gem5-resources
         git checkout 1fe56ffc94005b7fa0ae5634c6edc5e2cb0b7357
         cd src/spec-2017
@@ -107,7 +107,7 @@ experiments_repo = Artifact.registerArtifact(
     cwd = './',
     documentation = '''
         local repo to run spec 2017 experiments with gem5 full system mode;
-        resources cloned from https://gem5.googlesource.com/public/gem5-resources upto commit 1fe56ffc94005b7fa0ae5634c6edc5e2cb0b7357 of stable branch
+        resources cloned from https://github.com/gem5/gem5-resources upto commit 1fe56ffc94005b7fa0ae5634c6edc5e2cb0b7357 of stable branch
     '''
 )
 ```
@@ -143,7 +143,7 @@ In this step, we download the source code and build gem5 v20.1.0.4.
 In the root folder of the experiment,
 
 ```sh
-git clone -b v20.1.0.4 https://gem5.googlesource.com/public/gem5
+git clone -b v20.1.0.4 https://github.com/gem5/gem5
 cd gem5
 scons build/X86/gem5.opt -j8
 ```
@@ -154,7 +154,7 @@ In `launch_spec2017_experiments.py`, we document the step in Artifact objects as
 ```python
 gem5_repo = Artifact.registerArtifact(
     command = '''
-        git clone -b v20.1.0.4 https://gem5.googlesource.com/public/gem5
+        git clone -b v20.1.0.4 https://github.com/gem5/gem5
         cd gem5
         scons build/X86/gem5.opt -j8
     ''',
@@ -279,7 +279,7 @@ disk_image = Artifact.registerArtifact(
 ### Obtaining a Compiled Linux Kernel that Works with gem5
 The compiled Linux kernel binaries that is known to work with gem5 can be found here: [https://www.gem5.org/documentation/general_docs/gem5_resources/](https://www.gem5.org/documentation/general_docs/gem5_resources/).
 
-The Linux kernel configurations that are used to compile the Linux kernel binaries are documented and maintained in gem5-resources: [https://gem5.googlesource.com/public/gem5-resources/+/cee972a1727abd80924dad73d9f3b5cf0f13012d/src/linux-kernel/](https://gem5.googlesource.com/public/gem5-resources/+/cee972a1727abd80924dad73d9f3b5cf0f13012d/src/linux-kernel/).
+The Linux kernel configurations that are used to compile the Linux kernel binaries are documented and maintained in gem5-resources: [https://github.com/gem5/gem5-resources/tree/stable/src/linux-kernel/](https://github.com/gem5/gem5-resources/tree/stable/src/linux-kernel/).
 
 The following command downloads the compiled Linux kernel of version 4.19.83.
 In the root folder of the experiment,

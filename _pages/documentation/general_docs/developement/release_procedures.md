@@ -6,12 +6,12 @@ parent: development
 permalink: /documentation/general_docs/development/release_procedures/
 ---
 
-Information on when releases are carried out, how the community is notified, versioning information, and how to contribute to a release can be found in our [CONTRIBUTING.md document](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/CONTRIBUTING.md#releases).
+Information on when releases are carried out, how the community is notified, versioning information, and how to contribute to a release can be found in our [CONTRIBUTING.md document](https://github.com/gem5/gem5/blob/stable/CONTRIBUTING.md#releases).
 The purpose of this document is to outline specific procedures carried out during a release.
 
 ## gem5 repository
 
-The [gem5 git repository](https://gem5.googlesource.com/public/gem5/) has two branches, [stable](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable) and [develop](https://gem5.googlesource.com/public/gem5/+/refs/heads/develop).
+The [gem5 git repository](https://github.com/gem5/gem5) has two branches, [stable](https://github.com/gem5/gem5/tree/stable) and [develop](https://github.com/gem5/gem5/tree/develop).
 The HEAD of the stable branch is the latest official release of gem5 and will be tagged as such.
 Users are not permitted to submit patches to the stable branch, and instead submit patches to the develop branch.
 At least two weeks prior to a release a staging branch is created from the develop branch.
@@ -22,11 +22,11 @@ The staging branch is updated with the following changes:
 * The `-werror` is removed.
 This ensures that gem5 compiles on newer compilers as new/stricter compiler warnings are incorporated.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/43425>.
-* The [Doxygen "Project Number" field](https://gem5.googlesource.com/public/gem5/+/refs/tags/v21.0.1.0/src/Doxyfile#34) is updated to the version ID.
+* The [Doxygen "Project Number" field](https://github.com/gem5/gem5/blob/v21.0.1.0/src/Doxyfile#34) is updated to the version ID.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
-* The [`src/base/version.cc`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/base/version.cc) file is updated to state the version ID.
+* The [`src/base/version.cc`](https://github.com/gem5/gem5/blob/stable/src/base/version.cc) file is updated to state the version ID.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
-* The [`ext/testlib/configuration.py`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/ext/testlib/configuration.py)  file's `default.resource_url` field is updated to point towards the correct Google Cloud release bucket (see [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)).
+* The [`ext/testlib/configuration.py`](https://github.com/gem5/gem5/blob/stable/ext/testlib/configuration.py)  file's `default.resource_url` field is updated to point towards the correct Google Cloud release bucket (see [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)).
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/44725>.
 * The Resource downloader, `src/python/gem5/resources/downloader.py`, has a function `def _resources_json_version_required()`. This must be updated to the correct version of the `resources.json` file to use (see the [gem5 resources repository release procedures](#gem5-resources-repository)) for more information on this).
 * The `tests/weekly.sh`, `tests/nightly.sh`, `tests/compiler-tests.sh`, and `tests/jenkins/presubmit.sh` should be updated ensure they remain stable across different gem5 releases. This is achieved by:
@@ -43,7 +43,7 @@ There is then two additional actions:
 2. The stable branch is tagged with the latest release version id at its HEAD.
     * For example, `git tag -a v21.1.0.0 -m "gem5 version 21.1.0.0" && git push --tags`
 
-The [RELEASE-NOTES.md](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/RELEASE-NOTES.md) should be updated to notify the community of the major changes in this release.
+The [RELEASE-NOTES.md](https://github.com/gem5/gem5/blob/stable/RELEASE-NOTES.md) should be updated to notify the community of the major changes in this release.
 This can be done on the develop branch prior to the creation of the staging branch, or on the staging branch.
 It has been customary to create a blog post on <http://www.gem5.org> outlining the release.
 While appreciated, it is not mandatory.
@@ -54,7 +54,7 @@ Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing to the gem5 
 
 ## gem5 resources repository
 
-The [gem5 resources git repository](https://gem5.googlesource.com/public/gem5-resources) has two branches, [stable](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable) and [develop](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/develop).
+The [gem5 resources git repository](https://github.com/gem5/gem5-resources) has two branches, [stable](https://github.com/gem5/gem5-resources/tree/stable) and [develop](https://github.com/gem5/gem5-resources/tree/develop).
 The HEAD of the stable branch contains the source for resources with known compatibility to the most recently release of gem5.
 E.g., if the current release of gem5 is v22.3, the head of gem5 resources repository will contain the source for resources with known compatibility with v22.3.
 The develop branch contains sources compatible with the develop branch of the gem5 repository.
@@ -85,7 +85,7 @@ Therefore, if a user wished to get the resources sources compatible with the the
 The built gem5 resources are found within the gem5 Google Cloud Bucket.
 
 The [gem5 resources git repository](#gem5-resources-repository) contains sources of the gem5 resources, these are then compiled and stored in the Google Cloud Bucket.
-The gem5 resources repo [README.md](https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/README.md) contains links to download the built resources from the Google Cloud Bucket.
+The gem5 resources repo [README.md](https://github.com/gem5/gem5-resources/blob/stable/README.md) contains links to download the built resources from the Google Cloud Bucket.
 
 The Google Cloud Bucket, like the gem5 resources repository, is versioned.
 Each resource is stored under `http://dist.gem5.org/dist/{major version}`.
@@ -109,9 +109,9 @@ Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing resources to
 
 ## The docker images
 
-Currently hosted in [`util/dockerfiles`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/) in the gem5 repository, we have a series of Dockerfiles which can be built to produce environments in which gem5 can be built and run.
+Currently hosted in [`util/dockerfiles`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/) in the gem5 repository, we have a series of Dockerfiles which can be built to produce environments in which gem5 can be built and run.
 These images are mostly used for testing purposes.
-The [`ubuntu-20.04_all-dependencies`](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/) Dockerfile is the one most suitable for users who wish to build and execute gem5 in a supported environment.
+The [`ubuntu-20.04_all-dependencies`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/) Dockerfile is the one most suitable for users who wish to build and execute gem5 in a supported environment.
 
 We provide pre-built Docker images, hosted at <gcr.io/gem5-test>.
 All the Dockerfiles found in `util/dockerfiles` have been built and stored there.
@@ -132,7 +132,7 @@ Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing images.
 
 ## gem5 website repository
 
-The [gem5 website git repository](https://gem5.googlesource.com/public/gem5-website/) has two branches, [stable](https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable) and [develop](https://gem5.googlesource.com/public/gem5-website/+/refs/heads/develop).
+The [gem5 website git repository](https://github.com/gem5/website/) has two branches, [stable](https://github.com/gem5/website/tree/stable) and [develop](https://github.com/gem5/website/tree/develop).
 The stable branch is what is built and viewable at <http://www.gem5.org>, and is up-to-date with the current gem5 release.
 E.g., if the current release of gem5, on its stable branch, is `v20.1`, the documentation on the stable branch will related to `v20.1`.
 The develop branch contains the state of the website for the upcoming gem5 release.
@@ -201,7 +201,7 @@ gsutil -m cp -r doxygen/html/* gs://doxygen.gem5.org/release/current/
 gsutil -m cp -r gs://doxygen.gem5.org/release/current gs://doxygen.gem5.org/release/{version id}
 ```
 
-The final step is to add a link to this gem5 Doxygen version on the website, via the [`_data/documentation.yml` file](https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable/_data/documentation.yml).
+The final step is to add a link to this gem5 Doxygen version on the website, via the [`_data/documentation.yml` file](https://github.com/gem5/website/blob/stable/_data/documentation.yml).
 For example: <https://gem5-review.googlesource.com/c/public/gem5-website/+/43385>.
 
 
