@@ -383,3 +383,9 @@ docs:
         - title: Common Errors
           id: common-errors
           url: /documentation/general_docs/common-errors/
+
+  - title: Moving Active Changes from Gerrit to GitHub
+    items:
+        - title: Moving Active Changes from Gerrit to GitHub
+          id: moving_to_github
+          url: /documentation/general_docs/moving_to_github/
