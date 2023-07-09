@@ -42,7 +42,7 @@ class HelloObject : public SimObject
     EventFunctionWrapper event;
 
   public:
-    HelloObject(HelloObjectParams *p);
+    HelloObject(const HelloObjectParams &p);
 
     void startup();
 };
@@ -61,7 +61,7 @@ any function you want. Below, we captute `this` in the lambda (`[this]`)
 so we can call member functions of the instance of the class.
 
 ```cpp
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params), event([this]{processEvent();}, name())
 {
     DPRINTF(HelloExample, "Created the hello object\n");
@@ -158,7 +158,7 @@ Then, in the constructor add default values for the `latency` and
 `timesLeft`.
 
 ```cpp
-HelloObject::HelloObject(HelloObjectParams *params) :
+HelloObject::HelloObject(const HelloObjectParams &params) :
     SimObject(params), event([this]{processEvent();}, name()),
     latency(100), timesLeft(10)
 {
