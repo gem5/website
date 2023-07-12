@@ -62,8 +62,6 @@ You may then obtain it locally using:
 git clone https://github.com/{your github account}/gem5
 ```
 
-Via this forked repo you can contribute to gem5.
-
 ### stable / develop branch
 
 When cloned the git repo will have the `stable` branch checked-out by default. The
@@ -263,6 +261,7 @@ files:
 git add <changed files>
 ```
 
+Make sure these changes are being added to your forked repository.
 Then commit using:
 
 ```Shell
@@ -308,6 +307,7 @@ git commit --amend
 ```
 
 This will give you opportunity to edit the commit message.
+
 
 You may continue to add more commits as a chain of commits to be included in the pull-request.
 However, we recommend that pull-requests are kept small and focused.
