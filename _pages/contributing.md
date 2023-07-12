@@ -333,7 +333,7 @@ These must pass before your changes can be merged into the gem5 `develop` branch
 In addition to the CI tests, your changes will be reviewed by the gem5 community.
 Your pull-request must have the approval of at least one community member prior to being merged.
 
-Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 Project Maintainer will do a [Squash and Merge](https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html) on the pull-request.
+Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 Project Maintainer will do a [Squash and Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-commits) on the pull-request.
 
 ### Making iterative improvements based on feedback
 
