@@ -16,24 +16,23 @@ to the gem5 project.
 ## Determining what you can contribute
 
 The easiest way to see how you can contribute to gem5 is to check our Jira
-issue tracker: <https://gem5.atlassian.net>. From Jira you can check open
-issues.
+issue tracker: <https://gem5.atlassian.net> or GitHub issue tracker:
+<https://github.com/gem5/gem5/issues>.
 
 Browse these open issues and see if there are any which you are capable of
 handling. When you find a task you are happy to carry out, verify no one else
 is presently assigned, then leave a comment asking if you may assign yourself
-this task (this will involve creating a Jira account). Though not mandatory, we
+this task. Though not mandatory, we
 advise first-time contributors do this so developers more familiar with the
 task may give advice on how best to implement the necessary changes.
 
 Once a developers has replied to your comment (and given any advice they may
-have), you may officially assign yourself the task. After this you should
-change the status of the task from `Todo` to `In progress`. This helps the gem5
+have), you may officially assign yourself the task. This helps the gem5
 development community understand which parts of the project are presently being
 worked on.
 
 **If, for whatever reason, you stop working on a task, please unassign
-yourself from the task and change the task's status back to `Todo`.**
+yourself from the task.**
 
 ## Obtaining the git repo
 
@@ -44,13 +43,30 @@ exclusively.**
 
 To pull the gem5 git repo:
 
-```Shell
+```sh
 git clone https://github.com/gem5/gem5
 ```
 
+If you wish to use gem5 and never contribute, this is fine. However, to
+contribute, we use the [GitHub Pull-Request model](https://docs.github.com/en/pull-requests), and therefore recommend [Forking the gem5 repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) prior to contributing.
+
+### Forking
+
+Please consult the [GitHub documentation on Forking a GitHub repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+As we will be working atop the `develop` branch, please ensure you Fork all the repository's branches, not just the `stable` branch.
+
+This will create your own forked version of the gem5 repo on your own GitHub account.
+You may then obtain it locally using:
+
+```sh
+git clone https://github.com/{your github account}/gem5
+```
+
+Via this forked repo you can contribute to gem5.
+
 ### stable / develop branch
 
-By default, the git repo will have the `stable` branch checked-out. The
+When cloned the git repo will have the `stable` branch checked-out by default. The
 `stable` branch is the gem5 stable release branch. I.e., the HEAD
 of this branch contains the latest stable release of gem5. (execute `git tag`
 on the `stable` branch to see the list of stable releases. A particular
@@ -59,23 +75,41 @@ release may be checked out by executing `git checkout <release>`). As the
 should not develop changes on top of the `stable` branch** they should instead
 **develop changes on top of the `develop` branch**.
 
-To checkout the `develop` branch:
+To switch to the `develop` branch:
 
-```Shell
-git checkout --track origin/develop
+```sh
+git switch develop
 ```
 
-Changes may be made on this branch to incorporate changes assigned to yourself.
+The develop `branch` is merged into the `stable` branch upon a gem5 release.
+Therefore, any changes you make exist on the stable branch until the next release.
 
-As the develop branch is frequently updated, regularly obtain the latest
-`develop` branch by executing:
+We recommend creating your own local branches to do changes.
+This helps keep your changes organized across different branches in your forked repository.
+For example, the following will create a new branch, from `develop`, called `new-feature`:
 
+```sh
+git switch -c new-feature
 ```
-git pull --rebase
+
+While working on your contribution, we recommend keeping your forked repository in-sync with the source gem5 repository.
+To do so, regularly [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+
+The develop branch is frequently updated so can be obtained locally, after a sync, with:
+
+```sh
+git switch develop # Switching back to the develop branch.
+git pull
 ```
 
-Conflicts may need resolved between your local changes and new changes on the
-`develop` branch.
+You can then incorporate these into your local branch with:
+
+```sh
+git switch new-feature # Switching back to your "new-feature" branch.
+git rebase develop
+```
+
+Conflicts may need resolved between your branch and new changes.
 
 ## Making modifications
 
@@ -156,7 +190,7 @@ Then run on modified/added python files using:
 black <files/directories>
 ```
 
-For varibale/method/etc. naming conventions, please follow the [PEP 8 naming
+For variable/method/etc. naming conventions, please follow the [PEP 8 naming
 convention recommendations](
 https://peps.python.org/pep-0008/#naming-conventions). While we try our best to
 enforce naming conventions across the gem5 project, we are aware there are
@@ -178,29 +212,26 @@ pre-commit install
 ```
 
 Once installed pre-commit will run checks on modified code prior to running the
-`git commit` command (see [our section on commiting](#committing) for more
-details on commiting your changes). If these tests fail you will not be able to
+`git commit` command (see [our section on committing](#committing) for more
+details on committing your changes). If these tests fail you will not be able to
 commit.
 
-These same pre-commit checks are run as part of Gerrit's CI checks (those
-which must pass to obtain a "Verified" status required for a change to be
-incorporated into the develop branch). It is therefore recommended that
-developers install pre-commit to catch style errors early.
-
-**Note:** As of the v22.0 release, the pre-commit hook is only available on the
-develop branch.
+These same pre-commit checks are run as part our CI checks (those
+which must pass in order for a change to be merged into the develop branch). It
+is therefore strongly recommended that developers install pre-commit to catch
+style errors early.
 
 ## Compiling and running tests
 
 The minimum criteria for a change to be submitted is that the code is
 compilable and the test cases pass.
 
-The following command both compiles the project and runs our system-level
-checks:
+The following command both compiles the project and runs our "quick"
+system-level checks:
 
-```Shell
+```sh
 cd tests
-python main.py run
+./main.py run
 ```
 
 **Note: These tests can take several hours to build and execute. `main.py` may
@@ -209,22 +240,19 @@ be run on multiple threads with the `-j` flag. E.g.: `python main.py run
 
 The unit tests should also pass. To run the unit tests:
 
-```Shell
+```sh
 scons build/NULL/unittests.opt
 ```
 
 To compile an individual gem5 binary:
 
-```Shell
-scons build/{ISA}/gem5.opt
+```sh
+scons build/ALL/gem5.opt
 ```
 
-where `{ISA}` is the target ISA. Common ISAs are `ARM`, `MIPS`, `POWER`,
-`RISCV`, `SPARC`, and `X86`. So, to build gem5 for `X86`:
-
-```Shell
-scons build/X86/gem5.opt
-```
+This compiles a gem5 binary containing "ALL" ISA targets. For more information
+on building gem5 please consult our [building documentation](
+/documentation/general_docs/building).
 
 ## Committing
 
@@ -275,136 +303,47 @@ Jira Issue: https://gem5.atlassian.net/browse/GEM5-186
 If you feel the need to change your commit, add the necessary files then
 _amend_ the changes to the commit using:
 
-```
+```sh
 git commit --amend
 ```
 
 This will give you opportunity to edit the commit message.
 
-## Pushing to Gerrit
+You may continue to add more commits as a chain of commits to be included in the pull-request.
+However, we recommend that pull-requests are kept small and focused.
+For example, if you wish to add a different feature or fix a different bug, we recommend doing so in another pull requests.
 
-Pushing to Gerrit will allow others in the gem5 project to review the change to
-be fully merged into the gem5 source.
+## Pushing and creating a pull request
 
-To start this process, execute:
+Once you have completed your changes locally, you can push to your forked gem5 repository.
+Assuming the branch we are working on is `new-feature`:
 
-```
-git push origin HEAD:refs/for/develop
-```
-
-At this stage you may receive an error if you're not registered to contribute
-to our Gerrit. To resolve this issue:
-
-1. Create an account at <https://gem5-review.googlesource.com>.
-2. Go to `User Settings`.
-3. Select `Obtain password` (under `HTTP Credentials`).
-4. A new tab shall open, explaining how to authenticate your machine to make
-contributions to Gerrit. Follow these instructions and try pushing again.
-
-Gerrit will amend your commit message with a `Change-ID`. Any commit pushed
-to Gerrit with this `Change-ID` is assumed to be part of this change.
-
-## Code review
-
-Now, at <https://gem5-review.googlesource.com>, you can view the
-change you have submitted (`Your` -> `Changes` -> `Outgoing reviews`). We
-suggest that, at this stage, you mark the corresponding Jira issue
-as `In Review`. Adding a link to the change on Gerrit as a comment to the
-issue is also helpful.
-
-Through the Gerrit portal we strongly advise you add reviewers.
-Gerrit will automatically notify those you assign. The "maintainers" of the
-components you have modified should be added as reviewers. These should
-correspond to the tags you included in the commit header. **Please consult
-[MAINTAINERS.yaml](
-https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) to
-see who maintains which component**. As an example, for a commit with a header
-of `tests,arch : This is testing the arch component` then the maintainers for
-both `tests` and `arch` should be included as reviewers.
-
-Reviewers will then review this change. There are three scores which the commit
-shall be evaluated: "Code-Review", "Maintainer", and "Verified".
-
-Each reviewer can give a score from `-2` to `+2` to the "Code-Review" score,
-where `+2` indicates the reviewer is 100% okay with the patch in its current
-state and `-2` when the reviewer is certain they do not want the patch
-merged in its current state.
-
-Maintainers can add `+1` or `-1` to the "Maintainer" score. A `+1` score
-indicates that the maintainer is okay with the patch.
-
-When a Maintainer gives a `+1` our continuous integration system will process
-the change. At the time of writing, the continuous integration system will run:
-
-```
-scons build/NULL/unittests.opt
-cd tests
-python main.py run
+```sh
+git push --set-upstream origin test-feature
 ```
 
-If this executes successfully (i.e. the project builds and the tests pass) the
-continuous integration system will give a `+1` to the "Verifier" score, and a
-`-1` if it did not execute successfully.
+Now, via the GitHub web interface, you can [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) of your changes from your forked repository's branch into the gem5 `develop` branch.
 
-Gerrit will permit a commit to be merged if at least one reviewer has given a
-`+2` to the "Reviewer" score, one maintainer has given a `+1` to the
-"Maintainer" score, and the continuous integration system has given a `+1` to
-the "Verifier" score.
+## Passing the checks
 
-For non-trivial changes, it is not unusual for a change to receive feedback
-from reviewers that they will want incorporated before giving the commit a
-score necessary for it to be merged. This leads to an iterative process.
+Once you have created a pull request, the gem5 Continuous Integration (CI) tests will run.
+These run a series of checks to ensure your changes are valid.
+These must pass before your changes can be merged into the gem5 `develop` branch.
+
+In addition to the CI tests, your changes will be reviewed by the gem5 community.
+Your pull-request must have the approval of at least one community member prior to being merged.
+
+Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 Project Maintainer will do a [Squash and Merge](https://docs.gitlab.com/ee/user/project/merge_requests/squash_and_merge.html) on the pull-request.
 
 ### Making iterative improvements based on feedback
 
-A reviewer will ask questions and post suggestions on Gerrit. You should read
+A reviewer will ask questions and post suggestions on GitHub. You should read
 these comments and answer these questions. **All communications between
 reviewers and contributors should be done in a polite manner. Rude and/or
 dismissive remarks will not be tolerated.**
 
-When you understand what changes are required, using the same workspace as
-before, make the necessary modifications to the gem5 repo, and amend the
-changes to the commit:
+When you understand what changes are required make amendments to the pull
+request by adding patches to the same branch and then pushing to the forked repository.
 
-```Shell
-git commit --amend
-```
-
-Then push the new changes to Gerrit:
-
-```Shell
-git push origin HEAD:refs/for/develop
-```
-
-If for some reason you no longer have your original workspace, you may pull
-the change by going to your change in Gerrit, clicking `Download` and executing
-one of the listed commands.
-
-When your new change is uploaded via the `git push` command, the reviewers will
-re-review the change to ensure you have incorporated their suggested
-improvements. The reviewers may suggest more improvements and, in this case,
-you will have to incorporate them using the same process as above. **This
-process is therefore iterative, and it may therefore take several cycles until
-the patch is in a state in which the reviewers are happy**. Please do not
-be deterred, it is very common for a change to require several iterations.
-
-## Submit and merge
-
-Once this iterative process is complete. The patch may be merged. This is done
-via Gerrit (Simply click `Submit` within the relevant Gerrit page).
-
-As one last step, you should change the corresponding Jira issue status to
-`Done` then link the Gerrit page as a comment on Jira as to provide evidence
-that the task has been completed.
-
-Stable releases of gem5 are published three times per year. Therefore, a change
-successfully submitted to the `develop` branch will be merged into the `stable`
-branch within three to four months after submission.
-
-## gem5 Bootcamp 2022
-
-As part of [gem5's 2022 Bootcamp](/events/boot-camp-2022), contributing to gem5
-was taught as a tutorial. Slides for this tutorial can be found [here](
-https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EQLtRAKI94JKjgk5pBmJtG8B3ssv9MaR0a2i92G0TwHK8Q?e=KN3NIppm2kg&action=embedview&wdbipreview=true).
-A video recording of this tutorial can be found [here](
-https://www.youtube.com/watch?v=T67wzFd1gVY).
+Once pushed to the forked repository, the pull request will automatically update with your changes.
+A reviewer will then review your changes and, if necessary, ask for further changes, or approve your pull-request.
