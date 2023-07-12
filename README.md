@@ -14,8 +14,8 @@ You may clone the repository, and run a local instance of the website
 using:
 
 ```
-git clone https://github.com/gem5/website.git
-cd website
+git clone https://github.com/gem5/website
+cd gem5-website
 bundle
 jekyll serve --config _config.yml,_config_dev.yml
 ```
@@ -61,35 +61,39 @@ Jira: https://gem5.atlassian.net/browse/GEM5-186
 
 ## Submitting a contribution
 
-We utilize Gerrit to review changes made to the website. Once changes are
-committed to a local repository they may be submitted for review by executing:
+We utilize GitHub to review changes made to the website. To make
+changes, follow the steps below.
 
+1. Fork the gem5 repository on GitHub from https://github.com/gem5/gem5-website/.
+2. Create a new branch in your forked repository for your changes.
+3. Commit your changes to the new branch.
+4. Push the branch to your forked repository.
+5. Open a pull request from your branch in your forked repository to the main gem5 website repository.
+
+
+If you have not signed up for an account on the github
+(https://github.com/), you first have to create an account.
+
+ 1. Go to https://github.com/
+ 2. Click "Sign up" in the upper right corner.
+
+Changes are required to have a `Change-ID`, whic can be added using the pre-commit
+hook.  This can be installed via the following:
+
+``` bash
+pip install pre-commit
+pre-commit install
 ```
-git push origin HEAD:refs/for/stable
-```
-
-At this stage you may receive an error if you're not registered to contribute
-to our Gerrit. To resolve this issue:
-
-1. Create an account at https://gem5-review.googlesource.com
-2. Go to `User Settings`
-3. Select `Obtain password` (under `HTTP Credentials`).
-4. A new tab shall open, explaining how to authenticate your machine to make
-contributions to Gerrit. Follow these instructions and try pushing again.
-
-Gerrit will amend your commit message with a `Change-ID`. Any commit pushed to
-Gerrit with this Change-ID is assumed to be part of this change.
 
 ### Code Review
 
-Once a change has been submitted to Gerrit, you may view the change at
-<https://gem5-review.googlesource.com> under `Your` -> `Changes` ->
-`Outgoing reviews`).
+Once a change has been submitted to GitHub, you may view the change at
+<https://github.com/gem5/website/pulls>.
 
-Through the Gerrit prowl we strongly advise you add reviewers to your change.
-Gerrit will automatically notify those you assign. We recommend you add both
-**Bobby R. Bruce <bbruce@ucdavis.edu>** and **Jason Lowe-Power
-<jlowepower@ucdavis.edu>** as reviewers.
+Through the GitHub pull request we strongly advise you add reviewers to your change.
+GitHub will automatically notify those you assign. We recommend you add both
+**Bobby R. Bruce <bbruce@ucdavis.edu>** (@BobbyRBruce) and **Jason Lowe-Power
+<jason@lowepower.com>** (@powerjg) as reviewers.
 
 Reviewers will review the change. For non-trivial edits, it is not unusual
 for a change to receive feedback from reviewers that they want incorporated
@@ -97,8 +101,7 @@ before flagging as acceptable for merging into the gem5 website repository.
 **All communications between reviewers and contributors should be done in a
 polite manner. Rude and/or dismissive remarks will not be tolerated**.
 
-Once your change has been accepted by reviewers you will be able to click
-`Submit` within your changes Gerrit page. This focally merges the change
+Once your change has been accepted by reviewers a maintainer will squash and merge your pull request into the gem5 website repository.
 into the gem5 website repository. The website will be automatically updated
 with your changes within 30 minutes.
 

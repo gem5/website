@@ -48,6 +48,9 @@ To pull the gem5 git repo:
 git clone https://github.com/gem5/gem5
 ```
 
+In order to make changes to this repo, fork the gem5 repo from the link
+above into your own repository.
+
 ### stable / develop branch
 
 By default, the git repo will have the `stable` branch checked-out. The
@@ -182,8 +185,8 @@ Once installed pre-commit will run checks on modified code prior to running the
 details on commiting your changes). If these tests fail you will not be able to
 commit.
 
-These same pre-commit checks are run as part of Gerrit's CI checks (those
-which must pass to obtain a "Verified" status required for a change to be
+These same pre-commit checks are run as part of GitHub's CI checks (those
+which must pass the status checks required for a change to be
 incorporated into the develop branch). It is therefore recommended that
 developers install pre-commit to catch style errors early.
 
@@ -235,6 +238,7 @@ files:
 git add <changed files>
 ```
 
+Make sure these changes are being added to your forked repository.
 Then commit using:
 
 ```Shell
@@ -281,39 +285,29 @@ git commit --amend
 
 This will give you opportunity to edit the commit message.
 
-## Pushing to Gerrit
+## Pushing to GitHub
 
-Pushing to Gerrit will allow others in the gem5 project to review the change to
+Pushing to GitHub will allow others in the gem5 project to review the change to
 be fully merged into the gem5 source.
 
-To start this process, execute:
+To start this process, execute the following in your forked repository:
 
 ```
-git push origin HEAD:refs/for/develop
+git push origin
 ```
 
-At this stage you may receive an error if you're not registered to contribute
-to our Gerrit. To resolve this issue:
-
-1. Create an account at <https://gem5-review.googlesource.com>.
-2. Go to `User Settings`.
-3. Select `Obtain password` (under `HTTP Credentials`).
-4. A new tab shall open, explaining how to authenticate your machine to make
-contributions to Gerrit. Follow these instructions and try pushing again.
-
-Gerrit will amend your commit message with a `Change-ID`. Any commit pushed
-to Gerrit with this `Change-ID` is assumed to be part of this change.
+In order to have these changes reviewed, now go onto GitHub and create a
+pull request from your forked repo, onto the gem5-website repo.
 
 ## Code review
 
-Now, at <https://gem5-review.googlesource.com>, you can view the
-change you have submitted (`Your` -> `Changes` -> `Outgoing reviews`). We
-suggest that, at this stage, you mark the corresponding Jira issue
-as `In Review`. Adding a link to the change on Gerrit as a comment to the
-issue is also helpful.
+Now, at <https://github.com/gem5/gem5/pulls>, you can view the
+change you have submitted. We suggest that, at this stage, you mark the
+corresponding Jira issue as `In Review`. Adding a link to the change on
+GitHub as a comment to the issue is also helpful.
 
-Through the Gerrit portal we strongly advise you add reviewers.
-Gerrit will automatically notify those you assign. The "maintainers" of the
+Through the GitHub pull request we strongly advise you add reviewers.
+GitHub will automatically notify those you assign. The "maintainers" of the
 components you have modified should be added as reviewers. These should
 correspond to the tags you included in the commit header. **Please consult
 [MAINTAINERS.yaml](
@@ -322,34 +316,25 @@ see who maintains which component**. As an example, for a commit with a header
 of `tests,arch : This is testing the arch component` then the maintainers for
 both `tests` and `arch` should be included as reviewers.
 
-Reviewers will then review this change. There are three scores which the commit
-shall be evaluated: "Code-Review", "Maintainer", and "Verified".
+Reviewers will then review this change. There are two categories which the commit
+shall be evaluated: "Code-Review", and the CI-tests workflow.
 
-Each reviewer can give a score from `-2` to `+2` to the "Code-Review" score,
-where `+2` indicates the reviewer is 100% okay with the patch in its current
-state and `-2` when the reviewer is certain they do not want the patch
-merged in its current state.
+Any person can review your pull request. They can either approve your changes,
+or make suggestions on what needs to be fixed before approval can be given.
 
-Maintainers can add `+1` or `-1` to the "Maintainer" score. A `+1` score
-indicates that the maintainer is okay with the patch.
-
-When a Maintainer gives a `+1` our continuous integration system will process
-the change. At the time of writing, the continuous integration system will run:
-
-```
-scons build/NULL/unittests.opt
-cd tests
-python main.py run
-```
+Upon the creation of a pull request, our continuous integration system will process
+the change. You can see what tests will be run in `.github/workflows/ci-tests.yaml`
 
 If this executes successfully (i.e. the project builds and the tests pass) the
-continuous integration system will give a `+1` to the "Verifier" score, and a
-`-1` if it did not execute successfully.
+continuous integration system will pass the status checks within GitHub.
 
-Gerrit will permit a commit to be merged if at least one reviewer has given a
-`+2` to the "Reviewer" score, one maintainer has given a `+1` to the
-"Maintainer" score, and the continuous integration system has given a `+1` to
-the "Verifier" score.
+However, for first-time contributors, someone will first need to review,
+and approve your pull request before the continous integration tests
+begin.
+
+In order for a pull request to be merged, one of the Maintainers of the
+gem5 repo will have to hit the merge button. This allows for final checks
+to be done, ensuring the quality of code entering the gem5 codebase.
 
 For non-trivial changes, it is not unusual for a change to receive feedback
 from reviewers that they will want incorporated before giving the commit a
@@ -357,7 +342,7 @@ score necessary for it to be merged. This leads to an iterative process.
 
 ### Making iterative improvements based on feedback
 
-A reviewer will ask questions and post suggestions on Gerrit. You should read
+A reviewer will ask questions and post suggestions on GitHub. You should read
 these comments and answer these questions. **All communications between
 reviewers and contributors should be done in a polite manner. Rude and/or
 dismissive remarks will not be tolerated.**
@@ -370,15 +355,11 @@ changes to the commit:
 git commit --amend
 ```
 
-Then push the new changes to Gerrit:
+Then push the new changes to GitHub:
 
 ```Shell
-git push origin HEAD:refs/for/develop
+git push origin
 ```
-
-If for some reason you no longer have your original workspace, you may pull
-the change by going to your change in Gerrit, clicking `Download` and executing
-one of the listed commands.
 
 When your new change is uploaded via the `git push` command, the reviewers will
 re-review the change to ensure you have incorporated their suggested
@@ -391,10 +372,10 @@ be deterred, it is very common for a change to require several iterations.
 ## Submit and merge
 
 Once this iterative process is complete. The patch may be merged. This is done
-via Gerrit (Simply click `Submit` within the relevant Gerrit page).
+via GitHub (Simply click `Submit` within the relevant GitHub page).
 
 As one last step, you should change the corresponding Jira issue status to
-`Done` then link the Gerrit page as a comment on Jira as to provide evidence
+`Done` then link the GitHub page as a comment on Jira as to provide evidence
 that the task has been completed.
 
 Stable releases of gem5 are published three times per year. Therefore, a change
