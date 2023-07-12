@@ -101,8 +101,7 @@ before flagging as acceptable for merging into the gem5 website repository.
 **All communications between reviewers and contributors should be done in a
 polite manner. Rude and/or dismissive remarks will not be tolerated**.
 
-Once your change has been accepted by reviewers you will be able to click
-`Submit` at the bottom of your pull request. This focally merges the change
+Once your change has been accepted by reviewers a maintainer will squash and merge your pull request into the gem5 website repository.
 into the gem5 website repository. The website will be automatically updated
 with your changes within 30 minutes.
 
