@@ -92,7 +92,7 @@ Once a change has been submitted to GitHub, you may view the change at
 
 Through the GitHub pull request we strongly advise you add reviewers to your change.
 GitHub will automatically notify those you assign. We recommend you add both
-**Bobby R. Bruce <bbruce@ucdavis.edu>** and **Jason Lowe-Power
+**Bobby R. Bruce <bbruce@ucdavis.edu>** (@BobbyRBruce) and **Jason Lowe-Power
 <jason@lowepower.com>** (@powerjg) as reviewers.
 
 Reviewers will review the change. For non-trivial edits, it is not unusual
