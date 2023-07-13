@@ -83,31 +83,13 @@ The develop `branch` is merged into the `stable` branch upon a gem5 release.
 Therefore, any changes you make exist on the stable branch until the next release.
 
 We recommend creating your own local branches to do changes.
+The flow of development works best if `develop` and `stable` are not modified directly.
 This helps keep your changes organized across different branches in your forked repository.
-For example, the following will create a new branch, from `develop`, called `new-feature`:
+The following example will create a new branch, from `develop`, called `new-feature`:
 
 ```sh
 git switch -c new-feature
 ```
-
-While working on your contribution, we recommend keeping your forked repository in-sync with the source gem5 repository.
-To do so, regularly [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
-
-The develop branch is frequently updated so can be obtained locally, after a sync, with:
-
-```sh
-git switch develop # Switching back to the develop branch.
-git pull
-```
-
-You can then incorporate these into your local branch with:
-
-```sh
-git switch new-feature # Switching back to your "new-feature" branch.
-git rebase develop
-```
-
-Conflicts may need resolved between your branch and new changes.
 
 ## Making modifications
 
@@ -313,13 +295,42 @@ You may continue to add more commits as a chain of commits to be included in the
 However, we recommend that pull-requests are kept small and focused.
 For example, if you wish to add a different feature or fix a different bug, we recommend doing so in another pull requests.
 
+## Keeping your forked and local repositories up-to-date
+
+While working on your contribution, we recommend keeping your forked repository in-sync with the source gem5 repository.
+To do so, regularly [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+This can be done via the GitHub web interface and, if so, you should `git pull` on top of the `stable` and `develop` branches to ensure your local repository is in-sync.
+To do so from the command line:
+
+```sh
+git fetch upstream # Obtain the latest from the gem5 repo.
+git switch develop # Switch to the develop branch.
+git merge upstream/develop # Merge the latest changes into the develop branch.
+git push # Push to develop to your forked repo.
+git switch stable # Switch to the stable branch.
+git merge upstream/stable # Merge the latest changes into the stable branch.
+git push # Push the changes to stable to your forked repo.
+```
+
+As we are working on the `develop` branch, once we've synced our forked repository, we can rebase our local branch on top of the `develop` branch.
+
+```sh
+git switch develop # Switching back to the develop branch.
+git pull # Ensuring we have the latest from the forked repository.
+git switch new-feature # Switching back to our local branch.
+git rebase develop # Rebasing our local branch on top of the develop branch.
+```
+
+Conflicts may need resolved between your branch and new changes.
+
 ## Pushing and creating a pull request
 
 Once you have completed your changes locally, you can push to your forked gem5 repository.
 Assuming the branch we are working on is `new-feature`:
 
 ```sh
-git push --set-upstream origin test-feature
+git switch new-feature # Ensure we are on the 'new-feature' branch.
+git push --set-upstream origin new-feature
 ```
 
 Now, via the GitHub web interface, you can [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) of your changes from your forked repository's branch into the gem5 `develop` branch.
