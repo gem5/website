@@ -82,7 +82,7 @@ git switch develop
 The develop `branch` is merged into the `stable` branch upon a gem5 release.
 Therefore, any changes you make exist on the develop branch until the next release.
 
-We recommend creating your own local branches to do changes.
+We strongly recommend creating your own local branches to do changes.
 The flow of development works best if `develop` and `stable` are not modified directly.
 This helps keep your changes organized across different branches in your forked repository.
 The following example will create a new branch, from `develop`, called `new-feature`:
