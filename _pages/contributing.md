@@ -290,7 +290,6 @@ git commit --amend
 
 This will give you opportunity to edit the commit message.
 
-
 You may continue to add more commits as a chain of commits to be included in the pull-request.
 However, we recommend that pull-requests are kept small and focused.
 For example, if you wish to add a different feature or fix a different bug, we recommend doing so in another pull requests.
@@ -299,7 +298,7 @@ For example, if you wish to add a different feature or fix a different bug, we r
 
 While working on your contribution, we recommend keeping your forked repository in-sync with the source gem5 repository.
 To do so, regularly [Sync your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
-This can be done via the GitHub web interface and, if so, you should `git pull` on top of the `stable` and `develop` branches to ensure your local repository is in-sync.
+This can be done via the GitHub web interface and, if so, you should `git pull` on top of your local `stable` and `develop` branches to ensure your local repository is in-sync.
 To do so from the command line:
 
 ```sh
@@ -312,7 +311,8 @@ git merge upstream/stable # Merge the latest changes into the stable branch.
 git push # Push the changes to stable to your forked repo.
 ```
 
-As we are working on the `develop` branch, once we've synced our forked repository, we can rebase our local branch on top of the `develop` branch.
+As our local branch work atop the `develop` branch, once we've synced our forked repository, we can rebase our local branch on top of the `develop` branch.
+Assuming our local branch is called `new-feature`:
 
 ```sh
 git switch develop # Switching back to the develop branch.
