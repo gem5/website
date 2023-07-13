@@ -80,7 +80,7 @@ git switch develop
 ```
 
 The develop `branch` is merged into the `stable` branch upon a gem5 release.
-Therefore, any changes you make exist on the stable branch until the next release.
+Therefore, any changes you make exist on the develop branch until the next release.
 
 We recommend creating your own local branches to do changes.
 The flow of development works best if `develop` and `stable` are not modified directly.
