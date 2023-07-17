@@ -148,6 +148,20 @@ From here, pre-commit will always run whenever you use `git commit`.
 However, if you've already committed these files, you can manually check that pre-commit still passes by running `pre-commit run --files <files to format>` to check specific files, `pre-commit run --all-files` for testing the entire directory, or `pre-commit run <hook_id>` for individual hooks.
 When running these commands, pre-commit will both detect any style issues, and automatically reformat the files for you.
 
+## Change-ID
+
+If you're running into issues getting you continuous integration tests to pass on GitHub, you may be forgetting to add a Change-Id to your commit message.
+Though we have migrated away from using Gerrit, we still require the addition of a Change-Id.
+In order to amend your commit and have all our checks pass, you must install the commit message hook from Gerrit.
+You can install and update your commit by running the following commands below.
+
+```bash
+n f=.git/hooks/commit-msg ; mkdir -p  ;  curl -Lo  https://gerrit-review.googlesource.com/tools/hooks/commit-msg ; chmod +x
+git commit --amend --no-edit
+```
+
+If you want more information on the commit message hook, read [here](https://gerrit-review.googlesource.com/Documentation/cmd-hook-commit-msg.html), and if you want to know more about Change-Ids, look [here](https://gerrit-review.googlesource.com/Documentation/user-changeid.html)
+
 ## Further Issues
 
 If you continue to run into errors using gem5, feel free to ask questions in our [Slack channel](https://join.slack.com/t/gem5-workspace/shared_invite/zt-1c8go4yjo-LNb7l~BZ0FagwmVxX08y9g) or [mailing lists](https://www.gem5.org/mailing_lists).
