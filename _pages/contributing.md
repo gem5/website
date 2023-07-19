@@ -302,6 +302,10 @@ This can be done via the GitHub web interface and, if so, you should `git pull` 
 To do so from the command line:
 
 ```sh
+# Add the main gem5 repository as a remote on your local repository. This only
+# needs done once.
+git remote add upstream https://github.com/gem5/website.git
+
 git fetch upstream # Obtain the latest from the gem5 repo.
 git switch develop # Switch to the develop branch.
 git merge upstream/develop # Merge the latest changes into the develop branch.
