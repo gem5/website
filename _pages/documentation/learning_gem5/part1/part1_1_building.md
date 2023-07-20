@@ -37,7 +37,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install git
         ```
 
-2.  gcc 7+
+2.  gcc 8+
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 

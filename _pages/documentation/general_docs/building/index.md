@@ -12,7 +12,7 @@ authors: Bobby R. Bruce
 ## Supported operating systems and environments
 
 gem5 has been designed with a Linux environment in mind. We test regularly
-on **Ubuntu 18.04**, **Ubuntu 20.04**, **Ubuntu 22.04** to ensure gem5 functions well in
+on **Ubuntu 20.04**, and **Ubuntu 22.04** to ensure gem5 functions well in
 these environments. Though **any Linux based OS should function if the correct
 dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
@@ -37,9 +37,9 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=7 must be used**. We
+* **gcc**: gcc is used to compiled gem5. **Version >=8 must be used**. We
 support up to gcc Version 12.
-* **Clang**: Clang can also be used. At present, we support Clang 6 to
+* **Clang**: Clang can also be used. At present, we support Clang 7 to
 Clang 14 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
 must be used.
@@ -62,7 +62,6 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     python3-dev libboost-all-dev pkg-config
 ```
 
-
 ### Setup on Ubuntu 20.04 (gem5 >= v21.0)
 
 If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
@@ -72,17 +71,6 @@ install all these dependencies using APT:
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     python3-dev python-is-python3 libboost-all-dev pkg-config
-```
-
-### Setup on Ubuntu 18.04 (gem5 >= v21.0)
-
-If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
-install all these dependencies using APT:
-
-```
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
-    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python libboost-all-dev pkg-config
 ```
 
 ### Docker
@@ -104,13 +92,6 @@ Ubuntu 20.04 with all optional dependencies:
 [gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1](
 https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
-
-Ubuntu 18.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
-
-
 
 To obtain a docker image:
 
