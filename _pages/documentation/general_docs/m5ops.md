@@ -30,7 +30,7 @@ The list of target ISAs is shown below.
 
 Note if you are using a x86 system for other ISAs you need to have the cross-compiler installed. The name of the cross-compiler is shown inside the parentheses in the list above.
 
-See util/m5/README.md for more details.
+See [util/m5/README.md](https://github.com/gem5/gem5/blob/stable/util/m5/README.md) for more details.
 
 ## The m5 Utility (FS mode)
 
