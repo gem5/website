@@ -427,6 +427,16 @@ the minor release numbers in case this policy changes in the future.
 7. The gem5-dev and gem5-user mailing lists shall be notified of the new gem5
 release.
 
+### Exemptions
+
+Due to limitations with GitHub we may update the ".github" directory in the gem5 repo's `stable` branch between gem5 releases.
+This is due to certain processes carried out by the GitHub Actions infrastructure which rely on configurations being present on a repository's primary branch.
+As the files in ".github" only influence the functionality of our GitHub actions and other GitHub activities, updating these files does not change the functionality of the gem5 in way.
+It is therefore safe to do this.
+Despite this exemption to our normal procedure we aim to ensure that **the ".github" directory on the `stable` is never "ahead" of that in the `develop` branch**.
+Therefore contributors who wish to update files in ".github" should submit their changes to `develop` and then request their changes to be applied to the `stable` branch.
+
+
 ### Hotfixes
 
 There may be circumstances in which a change to gem5 is deemed critical and
