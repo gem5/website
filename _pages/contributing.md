@@ -300,7 +300,7 @@ To do so from the command line:
 ```sh
 # Add the main gem5 repository as a remote on your local repository. This only
 # needs done once.
-git remote add upstream https://github.com/gem5/website.git
+git remote add upstream https://github.com/gem5/gem5.git
 
 git fetch upstream # Obtain the latest from the gem5 repo.
 git switch develop # Switch to the develop branch.
