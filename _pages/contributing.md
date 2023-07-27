@@ -1,15 +1,11 @@
 ---
 layout: page
-title: A beginners guide to contributing
+title: A guide to contributing
 permalink: contributing
 author: Bobby R. Bruce
 ---
 
-This document serves as a beginners guide to contributing to gem5. If questions
-arise while following this guide, we advise consulting [CONTRIBUTING.md](
-https://github.com/gem5/gem5/blob/stable/CONTRIBUTING.md)
-which contains more details on how to contribute to gem5.
-
+This document serves as a guide to contributing to gem5.
 The following subsections outline, in order, the steps involved in contributing
 to the gem5 project.
 
@@ -348,7 +344,9 @@ These must pass before your changes can be merged into the gem5 `develop` branch
 In addition to the CI tests, your changes will be reviewed by the gem5 community.
 Your pull-request must have the approval of at least one community member prior to being merged.
 
-Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 Project Maintainer will do a [Squash and Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-commits) on the pull-request.
+Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 maintainer will do a [Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) on the pull-request.
+The gem5 maintainers are individuals granted the ability to merge pull requests into the gem5 `develop` branch.
+
 
 ### Making iterative improvements based on feedback
 
@@ -359,6 +357,98 @@ dismissive remarks will not be tolerated.**
 
 When you understand what changes are required make amendments to the pull
 request by adding patches to the same branch and then pushing to the forked repository.
+A git "force push" (i.e., `git push --force`) is also acceptable if you wish to alter the commits locally in order to make the changes.
+We encourage contributors to help keep our `git log` clean and readable.
+We recommend that users rebase their changes frequently on top of the develop branch, squash their commits where appropriate (e.g., in cases where there are many small fix commits to a change in the same PR) then force push changes to keep their PR commits concise.
 
 Once pushed to the forked repository, the pull request will automatically update with your changes.
-A reviewer will then review your changes and, if necessary, ask for further changes, or approve your pull-request.
+The reviewer will then re-review your changes and, if necessary, ask for further changes, or approve your pull-request.
+
+## Reviewing other contributions
+
+We encourage all gem5 developers to review other's contributions.
+Anyone may review a gem5 change and, if they feel it is ready, approve it.
+All pull-requests can be found at <https://github.com/gem5/gem5/pulls>.
+
+When reviewing a pull request we enforce the followings guidelines.
+These have been designed to ensure clear and polite communication between all parties:
+
+* In all forms of communication, contributors and reviewers must be polite.
+Comments seen as being rude or dismissive will not be tolerated.
+* If choosing to not approve a PR, please state clearly why.
+When asking for changes, the commits should be specific and actionable.
+General criticisms which cannot be addressed or understood by the contributor are unhelpful.
+If the contribution needs improvement, reviewers should state what their requested changes are.
+If more information is needed for the reviewers to make a decision the reviewer should ask clear questions.
+If the PR is generally not seen as a worthwhile contribution, a good justification should be given so the contributor may fairly rebuttal.
+* By default, the original contributor is assumed to own a change.
+I.e., they are assumed to be the sole party to submit patches to the pull request.
+If someone other than the original contributor wishes to submit patches on the original contributors behalf they should first ask permission.
+Pull requests which appear abandoned may be adopted by a new contributor as long as there is good enough reason to assume the original contributor is no longer working on the pull request.
+* Maintainers have the final say on whether a change is merged.
+Your review will be taken into account by the maintainer.
+It is expected, in all but the most extreme cases, that the reviewer's concerns must be addressed and for the reviewer to approve the the contribution prior to the maintainer merging the pull request.
+
+We also recommend consulting Google's ["How to write code review comments"](https://google.github.io/eng-practices/review/reviewer/comments.html) for advice on giving feedback to contributors.
+
+## Releases
+
+gem5 releases occur 3 times per year. The procedure for releasing gem5 is as
+follows:
+
+1. Developers will be notified, via the gem5-dev mailing list, that a new
+release of gem5 will occur. This should be no sooner than 2 weeks prior to the
+creation of the staging branch (the first step in releasing a new version of
+gem5). This gives time for developers to ensure their changes for the next
+release are submitted to the develop branch.
+2. When a release is ready, a new staging branch shall be created by a project
+maintainer, from develop, with the name "release-staging-{VERSION}". The
+gem5-dev mailing list will be notified that the staging branch will be merged
+into the stable branch after two weeks, thus marking the new release.
+3. The staging branch will have the full suite of gem5 tests run on it to
+ensure all tests pass and the to-be-released code is in a decent state.
+4. If a user submits a pull request to the staging branch, it will be considered
+and undergo the standard github review process. However, only alterations that
+cannot wait until the following release will be accepted for submission into
+the branch (i.e., submissions to the staging branch for "last minute"
+inclusions to the release should be of a high priority, such as a critical bug
+fix). The project maintainers will use their discretion in deciding whether a
+change may be submitted directly to the staging branch. All other submissions
+to gem5 will continue to be made to the develop branch. Patches submitted
+into the staging branch do not need to be re-added to the develop branch.
+5. Once the staging branch has been deemed ready for release, the [release procedures](https://www.gem5.org/documentation/general_docs/development/release_procedures/) will be carried out.
+This will end with the staging branch being merged into the stable branch.
+6. The stable branch shall be tagged with the correct version number for that
+release. gem5 conforms to a "v{YY}.{MAJOR}.{MINOR}.{HOTFIX}" versioning system.
+E.g., the first major release of 2022 will be "v22.0.0.0", followed by
+"v22.1.0.0". All the releases (with the exception of hotfixes) are considered
+major releases. For the meantime, there are no minor releases though we keep
+the minor release numbers in case this policy changes in the future.
+7. The gem5-dev and gem5-user mailing lists shall be notified of the new gem5
+release.
+
+### Hotfixes
+
+There may be circumstances in which a change to gem5 is deemed critical and
+cannot wait for an official release (e.g., a high-priority bug fix). In these
+circumstances a hotfix shall be made.
+
+First, if a developer suspects a hotfix may be necessary then the issue
+should be discussed on the gem5-dev mailing list. The community will decide
+whether the issue is worthy of a hotfix, and the final decision should be
+made by members of the PMC if there is no consensus. Assuming the hotfix is
+permitted, the following steps will be taken:
+
+1. A new branch with the prefix "hotfix-" will be created from the stable
+branch. Only gem5 maintainers can create branches. If a non-maintainer requires
+the creation of a hotfix branch then they should contact a gem5 maintainer.
+2. The change shall be submitted to the hotfix branch via github. Full review,
+as with any other change, will be required.
+3. Once fully submitted, the hotfix branch shall be merged into both the
+develop and the stable branch by a gem5 maintainer.
+4. The stable branch will be tagged with the new version number; the same as
+the last but with an incremented hotfix number (e.g., "v20.2.0.0" would
+transition to "v20.2.0.1").
+4. The hotfix branch will then be deleted.
+5. The gem5-dev and the gem5-user mailing lists shall be notified of this
+hotfix.
