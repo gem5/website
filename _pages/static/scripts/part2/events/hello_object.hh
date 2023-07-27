@@ -50,7 +50,7 @@ class HelloObject : public SimObject
   public:
     HelloObject(const HelloObjectParams &p);
 
-    void startup();
+    void startup() override;
 };
 
 #endif // __LEARNING_GEM5_HELLO_OBJECT_HH__
