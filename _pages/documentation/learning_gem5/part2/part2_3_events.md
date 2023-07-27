@@ -44,7 +44,7 @@ class HelloObject : public SimObject
   public:
     HelloObject(const HelloObjectParams &p);
 
-    void startup();
+    void startup() override;
 };
 ```
 
@@ -150,7 +150,7 @@ class HelloObject : public SimObject
   public:
     HelloObject(const HelloObjectParams &p);
 
-    void startup();
+    void startup() override;
 };
 ```
 
