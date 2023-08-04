@@ -171,6 +171,7 @@ int main(void) {
 
 #ifdef GEM5
     m5_work_end_addr(0,0);
+    unmap_m5_mem();
 #endif
 }
 ```
