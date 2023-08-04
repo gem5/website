@@ -178,6 +178,13 @@ int main(void) {
 }
 ```
 
+*Note*: You'll need to add a new header location for the compiler to find the `m5_mmap.h`.
+If you are following the example Makefile above, you can add the following line below where CFLAGS is defined,
+
+```c
+CFLAGS += $(GEM5_PATH)/util/m5/src/
+```
+
 When you run the applications with m5ops inserted in FS mode with a KVM CPU, this error might appear.
 
     ```illegal instruction (core dumped)```
