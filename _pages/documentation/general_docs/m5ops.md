@@ -149,7 +149,9 @@ The bare function name as defined in the header file will use the magic instruct
 Some macros at the end of the header file will set up other declarations which mirror all of the other definitions, but with an “_addr” and “_semi” suffix. These other versions will trigger the same gem5 operations, but using the “magic” address or semihosting trigger mechanisms. While those functions will be unconditionally declared in the header file, a definition will exist in the library only if that trigger mechanism is supported for that ABI.
 ```
 
-In order to use the "_addr" version of m5ops, you need to include th m5_mmap.h header file, pass the "magic" address (ex. "0xFFFF0000" for x86) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
+*Note*: The macros generating the "_addr" and "_semi" m5ops are called `M5OP`, which are defined in `util/m5/abi/*/m5op_addr.S` and `util/m5/abi/*/m5op_semi.S`.
+
+In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (ex. "0xFFFF0000" for x86) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
 
 Here is a simple example using the "_addr" version of the m5ops:
 
@@ -171,8 +173,16 @@ int main(void) {
 
 #ifdef GEM5
     m5_work_end_addr(0,0);
+    unmap_m5_mem();
 #endif
 }
+```
+
+*Note*: You'll need to add a new header location for the compiler to find the `m5_mmap.h`.
+If you are following the example Makefile above, you can add the following line below where CFLAGS is defined,
+
+```c
+CFLAGS += $(GEM5_PATH)/util/m5/src/
 ```
 
 When you run the applications with m5ops inserted in FS mode with a KVM CPU, this error might appear.
