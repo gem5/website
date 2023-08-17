@@ -112,7 +112,7 @@ The `starting_core_type` parameter specifies which CPU type to start a simulatio
 In this case a KVM core.
 **(Note: If your host system does not support KVM, this simulation will not run. You must change this to another CPU type, such as `CPUTypes.ATOMIC`)**
 The `switch_core_type` parameter specifies which CPU type to switch to in a simulation.
-In this case we'll be switching from KVM cores to a TIMING cores.
+In this case we'll be switching from KVM cores to TIMING cores.
 The final parameter, `num_cores`, specifies the number of cores within the processor.
 
 With this processor a user can call `processor.switch()` to switch to and from the starting cores and the switch cores, which we will demonstrate later on in this tutorial.
