@@ -226,7 +226,7 @@ protocol.)
   cache must allocate a new Packet object for its response. Also,
   because the target device may delete the request packet immediately
   on delivery, any other memory device wishing to reference a
-  broadcast packet past point where the packet is delivered must make
+  broadcast packet past the point where the packet is delivered must make
   a copy of that packet, as the pointer to the packet that is
   delivered cannot be relied upon to stay valid.
 
