@@ -54,7 +54,7 @@ has both MasterPort and SlavePort instances.
 There are two groups of functions in the port object. The `send*`
 functions are called on the port by the object that owns that port. For
 example to send a packet in the memory system a CPU would call
-`myPort->sendTimingReq(pkt)` to send a packet. Each send function has a
+`myPort->sendTimingReq(pkt)`. Each send function has a
 corresponding recv function that is called on the ports peer. So the
 implementation of the `sendTimingReq()` call above would simply be
 `peer->recvTimingReq(pkt)` on the slave port. Using this method we only
