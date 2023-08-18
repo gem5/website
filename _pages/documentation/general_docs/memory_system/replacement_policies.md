@@ -80,7 +80,7 @@ Most Recently Used (MRU) {#most_recently_used_mru}
 ------------------------
 
 The Most Recently Used policy chooses replacement victims by their
-recency, however, as opposed to LRU, the newest the entry is, the more
+recency, however, as opposed to LRU, the newer the entry is, the more
 likely it is to be victimized.
 
 Least Frequently Used (LFU) {#least_frequently_used_lfu}
@@ -88,7 +88,7 @@ Least Frequently Used (LFU) {#least_frequently_used_lfu}
 
 The victim is chosen using the reference frequency. The least referenced
 entry is chosen to be evicted, regardless of the amount of times it has
-been touched, or how long has passed since its last touch.
+been touched, or how much time has passed since its last touch.
 
 First-In, First-Out (FIFO) {#first_in_first_out_fifo}
 --------------------------
