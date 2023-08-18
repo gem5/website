@@ -152,7 +152,7 @@ to be certain the data is valid:
   Unknown.
 - A list of command attributes associated with the packet
     - Note: There is some overlap in the data in the status field and
-      the command attributes. This is largely so that a packet an be
+      the command attributes. This is largely so that a packet can be
       easily reinitialized when nacked or easily reused with atomic or
       functional accesses.
 - A `SenderState` pointer which is a virtual base opaque structure
