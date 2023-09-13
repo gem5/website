@@ -12,8 +12,8 @@ Event-driven programming
 ========================
 
 gem5 is an event-driven simulator. In this chapter, we will explore how
-to create and schedule events. We will be building from the simple
-`HelloObject` from [hello-simobject-chapter](../helloobject).
+to create and schedule events. We will be building `HelloObject` from the
+simple `SimpleObject` described in [simple-simobject-chapter](../helloobject).
 
 Creating a simple event callback
 --------------------------------
@@ -57,7 +57,7 @@ event. When printing the name, there will be an automatic
 The first parameter is simply a function that takes no parameters and
 has no return value (`std::function<void(void)>`). Usually, this is a
 simple lambda function that calls a member function. However, it can be
-any function you want. Below, we captute `this` in the lambda (`[this]`)
+any function you want. Below, we capture `this` in the lambda (`[this]`)
 so we can call member functions of the instance of the class.
 
 ```cpp
@@ -102,7 +102,7 @@ HelloObject::startup()
 ```
 
 Here, we simply schedule the event to execute at tick 100. Normally, you
-would use some offset from `curTick()`, but since we know the startup()
+would use some offset from `curTick()`, but since we know the `startup()`
 function is called when the time is currently 0, we can use an explicit
 tick value.
 
