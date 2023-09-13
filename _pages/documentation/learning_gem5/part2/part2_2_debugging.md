@@ -199,7 +199,7 @@ to replace this and use gem5's debugging facilities instead.
 
 When creating a new debug flag, we first have to declare it in a
 SConscript file. Add the following to the SConscript file in the
-directory with your hello object code (`src/learning_gem5/SConscript`).
+directory with your `SimpleObject` code (`src/learning_gem5/part2/SConscript`).
 
 ```python
 DebugFlag('HelloExample')
@@ -215,7 +215,7 @@ capitalization) as what we declare in the SConscript file. Therefore, we
 need to include the automatically generated header file in any files
 where we plan to use the debug flag.
 
-In the `hello_object.cc` file, we need to include the header file.
+In the `simple_object.cc` file, we need to include the header file.
 
 ```cpp
 #include "base/trace.hh"
@@ -231,7 +231,7 @@ DPRINTF(HelloExample, "Created the hello object\n");
 
 `DPRINTF` is a C++ macro. The first parameter is a *debug flag* that has
 been declared in a SConscript file. We can use the flag `HelloExample` since we
-declared it in the `src/learning_gem5/SConscript` file. The rest of the
+declared it in the `src/learning_gem5/part2/SConscript` file. The rest of the
 arguments are variable and can be anything you would pass to a `printf`
 statement.
 
@@ -240,16 +240,16 @@ get the following result.
 
 ```
 scons build/X86/gem5.opt
-build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
+build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_simple.py
 ```
 
     gem5 Simulator System.  http://gem5.org
     gem5 is copyrighted software; use the --copyright option for details.
 
-    gem5 compiled Jan  4 2017 09:40:10
-    gem5 started Jan  4 2017 09:41:01
+    gem5 compiled Sep 13 2023 09:40:10
+    gem5 started Sep 13 2023 09:41:01
     gem5 executing on chinook, pid 29078
-    command line: build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
+    command line: build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_simple.py
 
     Global frequency set at 1000000000000 ticks per second
           0: hello: Created the hello object
@@ -258,9 +258,7 @@ build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_he
     Exiting @ tick 18446744073709551615 because simulate() limit reached
 
 You can find the updated SConcript file
-[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part2/SConscript)
-and the updated hello object code
-[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part2/hello_object.cc).
+[here](https://gem5.googlesource.com/public/gem5/+/refs/heads/stable/src/learning_gem5/part2/SConscript).
 
 Debug output
 ------------
