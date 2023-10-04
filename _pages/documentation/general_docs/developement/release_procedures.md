@@ -113,22 +113,22 @@ Currently hosted in [`util/dockerfiles`](https://github.com/gem5/gem5/tree/stabl
 These images are mostly used for testing purposes.
 The [`ubuntu-20.04_all-dependencies`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/) Dockerfile is the one most suitable for users who wish to build and execute gem5 in a supported environment.
 
-We provide pre-built Docker images, hosted at <gcr.io/gem5-test>.
+We provide pre-built Docker images hosted at <ghcr.io> under "gem5".
 All the Dockerfiles found in `util/dockerfiles` have been built and stored there.
-For instance, `ubuntu-20.04_all-dependencies` can be found at <gcr.io/gem5-test/ubuntu-20.04_all-dependencies> (and can thereby be obtained with `docker pull cr.io/gem5-test/ubuntu-20.04_all-dependencies`).
+For instance, `ubuntu-20.04_all-dependencies` can be found at <ghcr.io/gem5/ubuntu-20.04_all-dependencies> (and can thereby be obtained with `docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies`).
 
 The Docker images are continually built from the Dockerfiles found on the develop branch.
 Therefore the docker image with the `latest` tag is that in-sync with the Dockerfiles found on the gem5 repo's develop branch.
-Upon a release of the latest version of gem5, when the staging branches are merged into develop, the built images hosted at <grc.io/gem5-test> will be tagged with the gem5 version number.
+Upon a release of the latest version of gem5, when the staging branches are merged into develop, the built images hosted at <ghcr.io> will be tagged with the gem5 version number.
 So, upon the release of `v23.2`, the images will be tagged with `v23-2`
 The purpose of this is so users of an older versions of gem5, may obtain images compatible with their release.
-I.e., a user of gem5 `v21.0` may obtain the `v21.0` version of the `ubuntu-20.04_all-dependencies` with `docker pull cr.io/gem5-test/ubuntu-20.04_all-dependencies:v21-0`.
+I.e., a user of gem5 `v21.0` may obtain the `v21.0` version of the `ubuntu-20.04_all-dependencies` with `docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v21-0`.
 
 **Important notes:**
-* If changes to the Dockerfile are done on the staging branch, then these changes will need to be pushed to <gcr.io/gem5-test> manually.
-* Special permissions are needed to push to the <gcr.io/gem5-test>.
+* If changes to the Dockerfile are done on the staging branch, then these changes will need to be pushed to <ghcr.io> manually.
+* Special permissions are needed to push to the <ghcr.io>.
 Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing images.
-* It is a future goal to of ours to move [the Dockerfiles from `util/dockerfiles` to gem5-resources](https://gem5.atlassian.net/browse/GEM5-1044).
+* It is a future goal of ours to move [the Dockerfiles from `util/dockerfiles` to gem5-resources](https://gem5.atlassian.net/browse/GEM5-1044).
 
 ## gem5 website repository
 
