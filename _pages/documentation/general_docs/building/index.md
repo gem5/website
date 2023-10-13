@@ -93,24 +93,24 @@ For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
 Ubuntu 22.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
+[gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v23-0](
+https://gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v23-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
 
 Ubuntu 22.04 with minimum dependencies:
-[gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
+[gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v23-0](
+https://gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v23-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
+[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v23-0](
+https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v23-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 Ubuntu 18.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
+[gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v23-0](
+https://gcr.io/gem5-test/ubuntu-18.04_all-dependencies:v23-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
 
 
@@ -123,7 +123,7 @@ docker pull <image>
 E.g., for Ubuntu 20.04 with all optional dependencies:
 
 ```
-docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1
+docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v23-0
 ```
 
 Then, to work within this environment, we suggest using the following:
@@ -134,7 +134,7 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-`gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1`).
+`gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v23-0`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.
@@ -238,7 +238,6 @@ gem5 is copyrighted software; use the --copyright option for details.
 
 Options
 =======
---version               show program's version number and exit
 --help, -h              show this help message and exit
 --build-info, -B        Show build information
 --copyright, -C         Show full copyright information
@@ -246,14 +245,16 @@ Options
 --outdir=DIR, -d DIR    Set the output directory to DIR [Default: m5out]
 --redirect-stdout, -r   Redirect stdout (& stderr, without -e) to file
 --redirect-stderr, -e   Redirect stderr to file
+--silent-redirect       Suppress printing a message when redirecting stdout or
+                        stderr
 --stdout-file=FILE      Filename for -r redirection [Default: simout]
 --stderr-file=FILE      Filename for -e redirection [Default: simerr]
 --listener-mode={on,off,auto}
                         Port (e.g., gdb) listener mode (auto: Enable if
                         running interactively) [Default: auto]
---listener-loopback-only
-                        Port listeners will only accept connections over the
-                        loopback device
+--allow-remote-connections
+                        Port listeners will accept connections from anywhere
+                        (0.0.0.0). Default is only localhost.
 --interactive, -i       Invoke the interactive interpreter after running the
                         script
 --pdb                   Invoke the python debugger before running the script
@@ -262,6 +263,9 @@ Options
                         script
 --quiet, -q             Reduce verbosity
 --verbose, -v           Increase verbosity
+-c cmd                  program passed in as string (terminates option list)
+-s                      IGNORED, only for compatibility with python. don'tadd
+                        user site directory to sys.path; also PYTHONNOUSERSITE
 
 Statistics Options
 ------------------
@@ -290,7 +294,11 @@ Debugging Options
                         flag)
 --debug-start=TICK      Start debug output at TICK
 --debug-end=TICK        End debug output at TICK
---debug-file=FILE       Sets the output file for debug [Default: cout]
+--debug-file=FILE       Sets the output file for debug. Append '.gz' to the
+                        name for it to be compressed automatically [Default:
+                        cout]
+--debug-activate=EXPR[,EXPR]
+                        Activate EXPR sim objects
 --debug-ignore=EXPR     Ignore EXPR sim objects
 --remote-gdb-port=REMOTE_GDB_PORT
                         Remote gdb base port (set to 0 to disable listening)
