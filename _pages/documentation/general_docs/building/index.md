@@ -12,7 +12,7 @@ authors: Bobby R. Bruce
 ## Supported operating systems and environments
 
 gem5 has been designed with a Linux environment in mind. We test regularly
-on **Ubuntu 18.04**, **Ubuntu 20.04**, **Ubuntu 22.04** to ensure gem5 functions well in
+on **Ubuntu 20.04**, **Ubuntu 22.04** to ensure gem5 functions well in
 these environments. Though **any Linux based OS should function if the correct
 dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
@@ -37,12 +37,12 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=7 must be used**. We
+* **gcc**: gcc is used to compiled gem5. **Version >=8 must be used**. We
 support up to gcc Version 12. **Note**: GCC Version 9 may be used but is not officially
 supported due to it
 [increasing gem5 Object File sizes](https://github.com/gem5/gem5/issues/555).
-* **Clang**: Clang can also be used. At present, we support Clang 6 to
-Clang 14 (inclusive).
+* **Clang**: Clang can also be used. At present, we support Clang 7 to
+Clang 16 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
 must be used.
 * **Python 3.6+** : gem5 relies on Python development libraries. gem5 can be
@@ -61,7 +61,7 @@ install all these dependencies using APT:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config
+    python3-dev libboost-all-dev pkg-config python3-tk
 ```
 
 
@@ -73,10 +73,11 @@ install all these dependencies using APT:
 ```
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python-is-python3 libboost-all-dev pkg-config
+    python3-dev python-is-python3 libboost-all-dev pkg-config gcc-10 g++-10 \
+    python3-tk
 ```
 
-### Setup on Ubuntu 18.04 (gem5 >= v21.0)
+### Setup on Ubuntu 18.04 (v21.0 <= gem5 <= v23.0)
 
 If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may
 install all these dependencies using APT:
@@ -219,6 +220,10 @@ enabled by compiling with the `--gprof` flag. E.g.,
 enabled by compiling with the `--pprof` flag. E.g.,
 `scons build/X86/gem5.debug --pprof`.
 
+## Build with Kconfig
+
+Please see [here](https://www.gem5.org/documentation/general_docs/kconfig_build_system/)
+
 ## Usage
 
 Once compiled, gem5 can then be run using:
@@ -247,8 +252,8 @@ Options
 --redirect-stderr, -e   Redirect stderr to file
 --silent-redirect       Suppress printing a message when redirecting stdout or
                         stderr
---stdout-file=FILE      Filename for -r redirection [Default: simout]
---stderr-file=FILE      Filename for -e redirection [Default: simerr]
+--stdout-file=FILE      Filename for -r redirection [Default: simout.txt]
+--stderr-file=FILE      Filename for -e redirection [Default: simerr.txt]
 --listener-mode={on,off,auto}
                         Port (e.g., gdb) listener mode (auto: Enable if
                         running interactively) [Default: auto]
@@ -263,7 +268,11 @@ Options
                         script
 --quiet, -q             Reduce verbosity
 --verbose, -v           Increase verbosity
+-m mod                  run library module as a script (terminates option
+                        list)
 -c cmd                  program passed in as string (terminates option list)
+-P                      Don't prepend the script directory to the system path.
+                        Mimics Python 3's `-P` option.
 -s                      IGNORED, only for compatibility with python. don'tadd
                         user site directory to sys.path; also PYTHONNOUSERSITE
 
