@@ -79,18 +79,18 @@ For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
 Ubuntu 22.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1) ([source Dockerfile](
+[ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1](
+https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
 
 Ubuntu 22.04 with minimum dependencies:
-[gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-22.04_min-dependencies:v22-1) ([source Dockerfile](
+[ghcr.io/gem5/ubuntu-22.04_min-dependencies:v22-1](
+https://ghcr.io/gem5/ubuntu-22.04_min-dependencies:v22-1) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with all optional dependencies:
-[gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1](
-https://gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1) ([source Dockerfile](
+[ghcr.io/gem5/ubuntu-20.04_all-dependencies:v22-1](
+https://ghcr.io/gem5/ubuntu-20.04_all-dependencies:v22-1) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 To obtain a docker image:
@@ -102,7 +102,7 @@ docker pull <image>
 E.g., for Ubuntu 20.04 with all optional dependencies:
 
 ```
-docker pull gcr.io/gem5-test/ubuntu-20.04_all-dependencies:v22-1
+docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v22-1
 ```
 
 Then, to work within this environment, we suggest using the following:
@@ -113,7 +113,7 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-`gcr.io/gem5-test/ubuntu-22.04_all-dependencies:v22-1`).
+`ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.
