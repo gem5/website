@@ -25,10 +25,20 @@ The Garnet Synthetic Traffic provides a framework for simulating the [Garnet net
 
 First build gem5 with the [Garnet_standalone](/documentation/general_docs/ruby/Garnet_standalone.md) coherence protocol. The Garnet_standalone protocol is ISA-agnostic, and hence we build it with the NULL ISA.
 
-```
-scons build/NULL/gem5.debug PROTOCOL=Garnet_standalone
+For gem5 <= 23.0:
 
 ```
+scons build/NULL/gem5.debug PROTOCOL=Garnet_standalone
+```
+
+For gem5 >= 23.1
+
+```
+scons defconfig build/NULL build_opts/NULL
+scons setconfig build/NULL RUBY_PROTOCOL_GARNET_STANDALONE=y
+scons build/NULL/gem5.debug
+```
+
 Example command:
 
 ```
