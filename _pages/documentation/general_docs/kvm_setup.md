@@ -35,7 +35,7 @@ The limitations of using a 32-bit kernel on your host machine are as follows:
 
 This can severely limit the usefulness of KVM in for gem5 simulations.
 
-## Enablinbg KVM
+## Enabling KVM
 
 For KVM to function directly with gem5, the following dependencies must be installed:
 
