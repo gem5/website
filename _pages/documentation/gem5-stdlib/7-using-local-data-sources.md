@@ -9,7 +9,7 @@ author: Harshil Patel
 
 gem5 supports using local data sources in the form of a MongoDB Atlas and JSON datasource. To utilize data sources other than the main gem5 resources database, you will need to override the gem5-resources-config.
 
-MongoDB Config Format:
+MongoDB Atlas Config Format:
 ```json
 {
     "sources":{
@@ -19,7 +19,7 @@ MongoDB Config Format:
             "collection": "collection name",
             "url": "Atlas data API URL",
             "authUrl": "Atlas authentication URL",
-            "apiKey": "API key",
+            "apiKey": "API key for data API for MongoDB Atlas",
             "isMongo": true
         }       
     }
@@ -37,19 +37,29 @@ JSON Config Format:
     }
 }
 ```
-### Updating gem5 Resources Config:
+### Updating gem5 Resources Config
 
 You can update the gem5 resources config in the following ways:
 
-Set the GEM5_CONFIG environment variable to point to a new config file. This will override the default config.
+ - Set the GEM5_CONFIG environment variable to point to a new config file. This will override the default config.
 
-Have a file named gem5-config.json in the current working directory. This will also override the default config.
+- Have a file named gem5-config.json in the current working directory. This will also override the default config.
 
-Use the GEM5_RESOURCE_JSON environment variable to override the default config to use a JSON file, or use the GEM5_RESOURCE_JSON_APPEND environment variable to add a JSON file to the current config. If the config is overridden by the above two methods, then these environment variables will override or modify that config.
+- If the above two methods are not used, then the default resources config will be used.
+
+You can also override the resources config with a JSON file or add a JSON file to the config as follows:
+
+- Use the GEM5_RESOURCE_JSON environment variable to override the default config to use a JSON file.
+
+- GEM5_RESOURCE_JSON_APPEND environment variable to add a JSON file to the current config. 
+
+If the gem5 resources config was updated by the GEM5_CONFIG environment variable or having a gem5-config.json in current working directory, then these flags will override or add to those configs.
+
+Note: Overriding or appending does not modify the actual config files.
 
 ### Using Multiple Data Sources
 
-gem5 supports the use of more than one data source. The config structure is as follows:
+gem5 supports the use of more than one data source. The structure of the resource configuration is as follows:
 
 ```json
 {
@@ -67,7 +77,7 @@ The data sources can be a combination of MongoDB Atlas and JSON. By default, gem
 resource = obtain_resource("id", clients=["data-source-1"])
 ```
 
-### Using Custom Config and Local Resources
+### Using Custom Resource Configuration and Local Resources
 
 In this example, we will walk through how to set up your custom configuration and utilize your own local resources. For this illustration, we'll employ a JSON file as our resource data source.
 
@@ -126,7 +136,7 @@ The JSON object of a resource should adhere to the [gem5 resources schema](https
 
 **Note**: While the `url` field can be a link, in this case, I'm using a local download.
 
-#### Creating Your Custom Configuration
+#### Creating Your Custom Resource Configuration
 
 Create a file named `gem5-config.json` with the following content:
 
