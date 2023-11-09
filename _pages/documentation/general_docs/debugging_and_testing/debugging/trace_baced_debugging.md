@@ -218,6 +218,43 @@ form, etc., is printed which is the output you see when you turn on `Exec`. For
 `NativeTrace`, this is where architectural state is gathered up to send to
 statetrace.
 
+### Disassembling instructions with third party disassembler
+
+Most of the gem5 tracers (inheriting from InstTracer mentioned above) will print/dump
+the dynamic instruction stream together with other information (e.g. destination
+register values). The disassembly is generated on the fly by querying the instruction
+to be traced (StaticInst).
+Every StaticInst is supposed to define a generateDisassembly method which returns the
+instruction mnemonic (opcode + operand list) as a string.
+
+From gem5 v23.1 it will be possible to hook different disassemblers to every InstTracer.
+A disassembler will have to implement the InstDisassembler interface defined in
+src/sim/insttracer.hh
+
+By default the native disassembler (relying on generateDisassembly) will be used.
+To change the disassembler with a custom one (say it is called MyDisassembler),
+just amend the config file with:
+
+```
+cpu.tracer.disassembler = MyDisassembler()
+```
+
+#### Capstone disassembler
+
+gem5 v23.1 introduces the [integration with the Capstone disassembler](https://github.com/gem5/gem5/pull/494).
+[Capstone](http://www.capstone-engine.org/) is an open source disassembler already used
+by other projects (like QEMU).
+
+To compile gem5 with capstone support, it is necessary to install capstone first.
+Then the capstone disassembler will have to be instantiated in the config script. At the
+time of the writing only the Arm version of the disassembler has been implemented.
+Therefore the line to be added to the script will have to be (assuming it is an Arm
+simulation):
+
+```
+cpu.tracer.disassembler = ArmCapstoneDisassembler()
+```
+
 ## Comparing traces with a real machine
 
 The statetrace tool runs alongside gem5 and compares execution of a workload on
