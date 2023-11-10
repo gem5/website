@@ -48,15 +48,22 @@ contribute, we use the [GitHub Pull-Request model](https://docs.github.com/en/pu
 
 ### Forking
 
-Please consult the [GitHub documentation on Forking a GitHub repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
-As we will be working atop the `develop` branch, please ensure you Fork all the repository's branches, not just the `stable` branch.
-
+Please refer to the [GitHub documentation on forking a GitHub repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Since we will be working on the `develop` branch, make sure to fork all repository branches, not just the `stable` branch. To achieve this, when creating a new fork, unselect the option "Copy the stable branch only" to ensure your fork includes all repository branches.
+ 
 This will create your own forked version of the gem5 repo on your own GitHub account.
 You may then obtain it locally using:
 
 ```sh
 git clone https://github.com/{your github account}/gem5
 ```
+
+If you forked only the `stable` branch, run these two commands to fetch the other branches as well:
+
+```sh
+git remote add gem5 https://github.com/gem5/gem5.git
+git fetch gem5
+```
+
 
 ### stable / develop branch
 
@@ -332,6 +339,8 @@ Assuming the branch we are working on is `new-feature`:
 git switch new-feature # Ensure we are on the 'new-feature' branch.
 git push --set-upstream origin new-feature
 ```
+
+If this is your first time pushing to your forked gem5 repo, you might encounter an error stating that GitHub no longer accepts account passwords when authenticating Git operations. To resolve this issue, generate a personal access token at https://github.com/settings/tokens and then follow the steps at https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh to switch remote URLs to SSH.
 
 Now, via the GitHub web interface, you can [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) of your changes from your forked repository's branch into the gem5 `develop` branch.
 
