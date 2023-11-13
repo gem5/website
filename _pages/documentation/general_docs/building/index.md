@@ -38,7 +38,9 @@ information on this.
 
 * **git** : gem5 uses git for version control.
 * **gcc**: gcc is used to compiled gem5. **Version >=7 must be used**. We
-support up to gcc Version 12.
+support up to gcc Version 12. **Note**: GCC Version 9 may be used but is not officially
+supported due to it
+[increasing gem5 Object File sizes](https://github.com/gem5/gem5/issues/555).
 * **Clang**: Clang can also be used. At present, we support Clang 6 to
 Clang 14 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
