@@ -10,6 +10,7 @@ author: Harshil Patel
 gem5 supports using local data sources in the form of a MongoDB Atlas and JSON datasource. To utilize data sources other than the main gem5 resources database, you will need to override the gem5-resources-config.
 
 MongoDB Atlas Config Format:
+
 ```json
 {
     "sources":{
@@ -25,6 +26,7 @@ MongoDB Atlas Config Format:
     }
 }
 ```
+
 JSON Config Format:
 
 ```json
@@ -37,13 +39,15 @@ JSON Config Format:
     }
 }
 ```
+
 ### Updating gem5 Resources Config
 
+gem5 has a default resources config in `src/python/gem5_default_config.py`. This resources config points to the MongoDB Atlas collection of gem5 resources.
 You can update the gem5 resources config in the following ways:
 
- - Set the GEM5_CONFIG environment variable to point to a new config file. This will override the default config.
+- Set the GEM5_CONFIG environment variable to point to a new config file. This will override the default resources config.
 
-- Have a file named gem5-config.json in the current working directory. This will also override the default config.
+- Have a file named gem5-config.json in the current working directory. This will also override the default resources config.
 
 - If the above two methods are not used, then the default resources config will be used.
 
@@ -51,7 +55,7 @@ You can also override the resources config with a JSON file or add a JSON file t
 
 - Use the GEM5_RESOURCE_JSON environment variable to override the default config to use a JSON file.
 
-- GEM5_RESOURCE_JSON_APPEND environment variable to add a JSON file to the current config. 
+- GEM5_RESOURCE_JSON_APPEND environment variable to add a JSON file to the current resources config.
 
 If the gem5 resources config was updated by the GEM5_CONFIG environment variable or having a gem5-config.json in current working directory, then these flags will override or add to those configs.
 
@@ -132,7 +136,7 @@ Next, let's create the JSON data source. I'll name the file `my-resources.json`.
 ]
 ```
 
-The JSON object of a resource should adhere to the [gem5 resources schema](https://resources.gem5.org/gem5-resources-schema.json). 
+The JSON object of a resource should adhere to the [gem5 resources schema](https://resources.gem5.org/gem5-resources-schema.json).
 
 **Note**: While the `url` field can be a link, in this case, I'm using a local download.
 
