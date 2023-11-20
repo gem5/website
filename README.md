@@ -15,7 +15,7 @@ using:
 
 ```
 git clone https://github.com/gem5/website
-cd gem5-website
+cd website
 bundle
 jekyll serve --config _config.yml,_config_dev.yml
 ```
@@ -35,7 +35,7 @@ git commit
 
 The commit message must adhere to our style. The first line of the commit
 is the "header". **The header line must not exceed 65 characters and adequately
-describe the change**. To be consistent with commits made to the gem5 gerrit,
+describe the change**. To be consistent with commits made to the gem5 repository,
 the header should start with a `website` tag followed by a colon.
 
 After this, a more detailed description of the commit can be included. This is
@@ -43,8 +43,7 @@ inserted below the header, separated by an empty line. Including a description
 is optional but strongly recommended for complex changes. The description may
 span multiple lines, and multiple paragraphs. **No line in the description
 may exceed 72 characters**. We also recommend adding reference to any relevant
-Jira issue (from the gem5 Jira: <https://gem5.atlassian.net>) so the context
-of a change can be more easily understood.
+GitHub issue so the context of a change can be more easily understood.
 
 Below is an example of how a gem5 website commit message should be formatted:
 
@@ -56,7 +55,7 @@ is necessary to adequately describe the change.
 
 A description may spawn multiple paragraphs if desired.
 
-Jira: https://gem5.atlassian.net/browse/GEM5-186
+Issue: https://github.com/gem5/gem5/issues/123
 ```
 
 ## Submitting a contribution
@@ -64,7 +63,7 @@ Jira: https://gem5.atlassian.net/browse/GEM5-186
 We utilize GitHub to review changes made to the website. To make
 changes, follow the steps below.
 
-1. Fork the gem5 repository on GitHub from https://github.com/gem5/gem5-website/.
+1. Fork the gem5 repository on GitHub from https://github.com/gem5/website/.
 2. Create a new branch in your forked repository for your changes.
 3. Commit your changes to the new branch.
 4. Push the branch to your forked repository.
@@ -77,13 +76,23 @@ If you have not signed up for an account on the github
  1. Go to https://github.com/
  2. Click "Sign up" in the upper right corner.
 
-Changes are required to have a `Change-ID`, whic can be added using the pre-commit
+Changes are required to have a `Change-ID`, which can be added using the pre-commit
 hook.  This can be installed via the following:
 
 ``` bash
 pip install pre-commit
 pre-commit install
 ```
+
+### Stable vs. Develop branch
+
+The rule for when to work on the stable vs. develop branch is as follows:
+
+* If the change applies to the current gem5 stable, then the change should be on the stable branch of gem5-website.
+
+* If the change cannot work on gem5 stable and requires updates to gem5 that are only found on gem5 develop, then the change should be on the develop branch of gem5-website.
+
+When a new version of gem5 is released, the develop branch is merged into the stable branch. When gem5-website's stable and develop branches diverge, we merge stable into develop.
 
 ### Code Review
 
@@ -134,7 +143,7 @@ Holds blog posts.
 
 #### _sass
 
-All custom css is kept in _layout.scss.
+All custom css is kept in `_layout.scss`.
 
 #### assets
 
@@ -149,7 +158,7 @@ Holds index.html of blog page.
 
 To edit the navigation bar:
 Go to `_includes/header.html`
-Navigation element without submenu:
+* Navigation element without submenu:
 
 ```
 <li class="nav-item {% if page.title == "Home" %}active{% endif %}">
@@ -162,7 +171,7 @@ Replace `/` in `href="{{ "/" | prepend: site.baseurl }}"` to the page's permalin
 Replace `Home` in `>Home</a>` with what you want the navbar to show.
 
 
-Navigation element with submenu:
+* Navigation element with submenu:
 
 ```
 <li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
@@ -197,7 +206,7 @@ Parent Topic:
 - subtopic
 - ...
 
-To edit the documentation navigation, simply edit the documentation.yml file in the _data folder. `docs` lists the parent topics, and within it `subitems` lists its subtopics. This is an example of how it should be formatted:
+To edit the documentation navigation, simply edit the `documentation.yml` file in the `_data` folder. `docs` lists the parent topics, and within it `subitems` lists its subtopics. This is an example of how it should be formatted:
 
 ```
 title: Documentation
@@ -222,9 +231,9 @@ docs:
 ```
 
 Notes:
-`id` is an identifier that links subtopics to its parent. It is required and must not contain any spaces. The subtopic pages must include in the frontmatter `parent: id` with `id` being the parent's id.
+`id` is an identifier that links subtopics to its parent. It is required and must not contain any spaces. The subtopic pages must include in the frontmatter `parent: id` with `id` being the parent's `id`.
 
-`url` is optional for parent topics, if a parent topic has its own a page. If no url is provided, it will automatically link to the first subtopic.
+`url` is optional for parent topics, if a parent topic has its own a page. If no `url` is provided, it will automatically link to the first subtopic.
 
 #### Add New Page
 
@@ -241,13 +250,13 @@ permalink: /gettingstarted/     // url
 
 Notes:
 
-`parent` should be the exact same as the id of its parent topic that is assigned to it in _data/documentation.yml file. (If the page is the parent topic, `parent` is the same as the id assigned to it in _data/documentation.yml file.)
+`parent` should be the exact same as the `id` of its parent topic that is assigned to it in `_data/documentation.yml` file. (If the page is the parent topic, `parent` is the same as the `id` assigned to it in `_data/documentation.yml` file.)
 
-Place the file in _pages/documentation. Make sure to add the page to the documentation navigation, explained by the section above.
+Place the file in `_pages/documentation`. Make sure to add the page to the documentation navigation, explained by the section above.
 
 #### Indicating outdated information
 
-To flag information in a page as valid, use an outdated notice in the .md file of that page:
+To flag information in a page as valid, use an outdated notice in the `.md` file of that page:
 
 ```
 {: .outdated-notice}
