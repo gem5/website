@@ -88,11 +88,11 @@ pre-commit install
 
 The rule for when to work on the stable vs. develop branch is as follows:
 
-* If the change applies to the current gem5 stable, then the change should be on the stable branch of gem5-website.
+* If the change applies to the current gem5 stable, then the change should be on the stable branch of the gem5 website.
 
-* If the change cannot work on gem5 stable and requires updates to gem5 that are only found on gem5 develop, then the change should be on the develop branch of gem5-website.
+* If the change cannot work on gem5 stable and requires updates to gem5 that are only found on gem5 develop, then the change should be on the develop branch of the website.
 
-When a new version of gem5 is released, the develop branch is merged into the stable branch. When gem5-website's stable and develop branches diverge, we merge stable into develop.
+When a new version of gem5 is released, the develop branch is merged into the stable branch. When the website's stable and develop branches diverge, we merge stable into develop.
 
 ### Code Review
 

@@ -115,12 +115,32 @@ sudo apt-get install libprotobuf-dev
 ```
 
 ### **Scripts and options**
-* SE mode
-    * `build/ARM/gem5.opt [gem5.opt options] -d bzip_10Minsts configs/example/se.py [se.py options] --cpu-type=arm_detailed --caches --cmd=$M5_PATH/binaries/arm_arm/linux/bzip2 --options=$M5_PATH/data/bzip2/lgred/input/input.source -I 10000000 --elastic-trace-en --data-trace-file=deptrace.proto.gz --inst-trace-file=fetchtrace.proto.gz --mem-type=SimpleMemory`
-* FS mode: Create a checkpoint for your region of interest and resume from the checkpoint but with O3 CPU model and tracing enabled
-    * `build/ARM/gem5.opt --outdir=m5out/bbench ./configs/example/fs.py [fs.py options] --benchmark bbench-ics`
-    * `build/ARM/gem5.opt --outdir=m5out/bbench/capture_10M ./configs/example/fs.py [fs.py options] --cpu-type=arm_detailed --caches --elastic-trace-en --data-trace-file=deptrace.proto.gz --inst-trace-file=fetchtrace.proto.gz --mem-type=SimpleMemory --checkpoint-dir=m5out/bbench -r 0 --benchmark bbench-ics -I 10000000`
-
+#### SE mode
+```
+build/ARM/gem5.opt configs/example/arm/etrace_se.py \
+    --inst-trace-file fetchtrace.proto.gz \
+    --data-trace-file deptrace.proto.gz \
+    [WORKLOAD]
+```
+#### FS mode
+Create a checkpoint for your region of interest and resume from the checkpoint but with O3 CPU model and tracing enabled.
+```
+# Checkpoint generation
+# NOTE: fs.py is deprecated and will be removed. Do not rely too much on it
+build/ARM/gem5.opt --outdir=m5out/bbench \
+    ./configs/deprecated/example/fs.py [fs.py options] \
+    --benchmark bbench-ics
+```
+```
+# Checkpoint restore
+# NOTE: fs.py is deprecated and will be removed. Do not rely too much on it
+build/ARM/gem5.opt --outdir=m5out/bbench/capture_10M \
+    ./configs/deprecated/example/fs.py [fs.py options] \
+    --cpu-type=arm_detailed --caches \
+    --elastic-trace-en --data-trace-file=deptrace.proto.gz --inst-trace-file=fetchtrace.proto.gz \
+    --mem-type=SimpleMemory \
+    --checkpoint-dir=m5out/bbench -r 0 --benchmark bbench-ics -I 10000000
+```
 
 ## **Replay with Trace CPU**
 
@@ -135,7 +155,7 @@ The Trace CPU model inherits from the Base CPU and interfaces with data and inst
 ### **Scripts and options**
 
 * A trace replay script in the examples folder can be used to play back SE and FS generated traces
-    * `build/ARM/gem5.opt [gem5.opt options] -d bzip_10Minsts_replay configs/example/etrace_replay.py [options] --cpu-type=trace --caches --data-trace-file=bzip_10Minsts/deptrace.proto.gz --inst-trace-file=bzip_10Minsts/fetchtrace.proto.gz --mem-size=4GB`
+    * `build/ARM/gem5.opt [gem5.opt options] -d bzip_10Minsts_replay configs/example/etrace_replay.py [options] --caches --data-trace-file=bzip_10Minsts/deptrace.proto.gz --inst-trace-file=bzip_10Minsts/fetchtrace.proto.gz --mem-size=4GB`
 
 
 

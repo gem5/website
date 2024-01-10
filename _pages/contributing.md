@@ -49,7 +49,7 @@ contribute, we use the [GitHub Pull-Request model](https://docs.github.com/en/pu
 ### Forking
 
 Please refer to the [GitHub documentation on forking a GitHub repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Since we will be working on the `develop` branch, make sure to fork all repository branches, not just the `stable` branch. To achieve this, when creating a new fork, unselect the option "Copy the stable branch only" to ensure your fork includes all repository branches.
- 
+
 This will create your own forked version of the gem5 repo on your own GitHub account.
 You may then obtain it locally using:
 
@@ -63,7 +63,6 @@ If you forked only the `stable` branch, run these two commands to fetch the othe
 git remote add gem5 https://github.com/gem5/gem5.git
 git fetch gem5
 ```
-
 
 ### stable / develop branch
 
@@ -355,7 +354,6 @@ Your pull-request must have the approval of at least one community member prior 
 
 Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 maintainer will do a [Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) on the pull-request.
 The gem5 maintainers are individuals granted the ability to merge pull requests into the gem5 `develop` branch.
-
 
 ### Making iterative improvements based on feedback
 
