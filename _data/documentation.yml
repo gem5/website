@@ -393,3 +393,9 @@ docs:
         - title: Moving Active Changes from Gerrit to GitHub
           id: moving_to_github
           url: /documentation/general_docs/moving_to_github/
+
+  - title: Kconfig Build System
+    items:
+        - title: Kconfig Build System
+          id: kconfig_build_system
+          url: /documentation/general_docs/kconfig_build_system/
