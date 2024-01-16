@@ -77,7 +77,7 @@ Please add the `learning_gem5/part3/Kconfig` below the `mem/ruby/Kconfig`.
 
 ### Compiling a protocol with SCons
 
-#### In the older gem5 version (gem5 <= 23.0)
+#### In the older gem5 versions (gem5 <= 23.0)
 
 Most SCons defaults (found in `build_opts/`) specify the protocol as
 `MI_example`, an example, but poor performing protocol. Therefore, we
