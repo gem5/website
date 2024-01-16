@@ -21,7 +21,6 @@ The AMD VEGA GPU is a model that simulates a GPU at the VEGA ISA level, as oppos
 Currently, the AMD VEGA GPU model in gem5 is supported on the stable and develop branch.
 
 The [gem5 repository](https://github.com/gem5/gem5) comes with a dockerfile located in `util/dockerfiles/gcn-gpu/`. This dockerfile contains the drivers and libraries needed to run the GPU model. A pre-built version of the docker image is hosted at `ghcr.io/gem5-test/gcn-gpu:v23-1`.
-
 The [gem5-resources repository](https://github.com/gem5/gem5-resources/) also comes with a number of sample applications that can be used to verify that the model runs correctly.  We recommend users start with [square](https://resources.gem5.org/resources/square), as it is a simple, heavily tested application that should run relatively quickly.
 
 #### Using the image
@@ -35,11 +34,12 @@ docker build -t <image_name> .
 
 To pull the pre-built docker image (Note the `v23-1` tag, to get the correct
 image for this release):
+
 ```
 docker pull ghcr.io/gem5-test/gcn-gpu:v23-1
 ```
-You can also put `ghcr.io/gem5-test/gcn-gpu:v23-1` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 
+You can also put `ghcr.io/gem5-test/gcn-gpu:v23-1` as the image in the docker run command without pulling beforehand and it will be pulled automatically.
 #### Building gem5 using the image
 See square in [gem5 resources](https://github.com/gem5/gem5-resources/tree/stable/src/gpu/square/) for an example of how to build gem5 in the docker.  Note: these directions assume you are pulling the latest image automatically.
 

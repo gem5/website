@@ -37,7 +37,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install git
         ```
 
-2.  gcc 7+
+2.  gcc 8+
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 
@@ -124,12 +124,14 @@ the compiler, etc. There will be a separate directory for each set of
 options (ISA and cache coherence protocol) that you use to compile gem5.
 
 There are a number of default compilations options in the `build_opts`
-directory. These files specify the parameters passed to SCons when
-initially building gem5. We'll use the X86 defaults and specify that we
+directory. These files specify the parameters used to build gem5 which have
+non-default values. We'll use the X86 defaults and specify that we
 want to compile all of the CPU models. You can look at the file
-`build_opts/X86` to see the default values for the SCons options. You
-can also specify these options on the command line to override any
-default.
+`build_opts/X86` to see the (kconfig) settings which have non-default values.
+For gem5 <= 23.0, You can also specify these options on the command line to
+override any default values. For gem5 >= 23.1, You can use kconfig tools like
+setconfig, menuconfig, or guiconfig to modify these settings in an existing
+build directory.
 
 ```
 python3 `which scons` build/X86/gem5.opt -j9
@@ -165,34 +167,47 @@ The main argument passed to SCons is what you want to build,
 `build/X86/gem5.opt`. In this case, we are building gem5.opt (an
 optimized binary with debug symbols). We want to build gem5 in the
 directory build/X86. Since this directory currently doesn't exist, SCons
-will look in `build_opts` to find the default parameters for X86. (Note:
+will look in `build_opts` to find the parameters for X86. (Note:
 I'm using -j9 here to execute the build on 9 of my 8 cores on my
 machine. You should choose an appropriate number for your machine,
 usually cores+1.)
 
-The output should look something like below:
+The output should look something like below (For gem5 >= 23.1):
 
+    scons: Reading SConscript files ...
+    Mkdir("/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build")
+    Checking for linker -Wl,--as-needed support... yes
+    Checking for compiler -gz support... yes
+    Checking for linker -gz support... yes
+    Info: Using Python config: python3-config
     Checking for C header file Python.h... yes
-    Checking for C library pthread... yes
-    Checking for C library dl... yes
-    Checking for C library util... yes
-    Checking for C library m... yes
-    Checking for C library python2.7... yes
+    Checking Python version... 3.11.5
     Checking for accept(0,0,0) in C++ library None... yes
     Checking for zlibVersion() in C++ library z... yes
-    Checking for GOOGLE_PROTOBUF_VERIFY_VERSION in C++ library protobuf... yes
+    Checking for pkg-config package protobuf... yes
     Checking for clock_nanosleep(0,0,NULL,NULL) in C library None... yes
-    Checking for timer_create(CLOCK_MONOTONIC, NULL, NULL) in C library None... no
-    Checking for timer_create(CLOCK_MONOTONIC, NULL, NULL) in C library rt... yes
-    Checking for C library tcmalloc... yes
-    Checking for backtrace_symbols_fd((void*)0, 0, 0) in C library None... yes
+    Checking for timer_create(CLOCK_MONOTONIC, NULL, NULL) in C library None... yes
+    Checking for C library tcmalloc_minimal... yes
+    Checking for backtrace_symbols_fd((void *)1, 0, 0) in C library None... yes
+    Checking for C header file png.h... yes
     Checking for C header file fenv.h... yes
+    Checking for C header file capstone/capstone.h... no
     Checking for C header file linux/kvm.h... yes
     Checking size of struct kvm_xsave ... yes
     Checking for member exclude_host in struct perf_event_attr...yes
-    Building in /local.chinook/gem5/gem5-tutorial/gem5/build/X86
-    Variables file /local.chinook/gem5/gem5-tutorial/gem5/build/variables/X86 not found,
-      using defaults in /local.chinook/gem5/gem5-tutorial/gem5/build_opts/X86
+    Checking for C header file valgrind/valgrind.h... yes
+    Checking for pkg-config package hdf5-serial... no
+    Checking for pkg-config package hdf5... no
+    Checking for H5Fcreate("", 0, 0, 0) in C library hdf5... no
+    Checking for shm_open("/test", 0, 0) in C library None... yes
+    Checking for C header file linux/if_tun.h... yes
+    "ext/Kconfiglib/defconfig.py" --kconfig "/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build/Kconfig" "/local.chinook/gem5/gem5-tutorial/gem5/build_opts/X86"
+    Loaded configuration '/local.chinook/gem5/gem5-tutorial/gem5/build_opts/X86'
+    Configuration saved to '/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build/config'
+    Checking whether __i386__ is declared... no
+    Checking whether __x86_64__ is declared... yes
+    Checking for compiler -Wno-self-assign-overloaded support... yes
+    Checking for linker -Wno-free-nonheap-object support... yes
     scons: done reading SConscript files.
     scons: Building targets ...
      [ISA DESC] X86/arch/x86/isa/main.isa -> generated/inc.d

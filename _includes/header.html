@@ -38,9 +38,15 @@
 				</div>
 			</li>
 
-      <!-- EVENTS -->
-			<li class="nav-item dropdown {% if page.url == "/events/" %}active{% endif %}">
-        <a class="nav-link" href="{{ "/events/" | prepend: site.baseurl }}">Events</a>
+      <!-- COMMUNITY -->
+			<li class="nav-item dropdown {% if page.title == "Community" %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Community
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{ "/events" | prepend: site.baseurl }}">Events</a>
+          <a class="dropdown-item" href="{{ "/dev_meetings" | prepend: site.baseurl }}">Developer Meetings</a>
+        </div>
 			</li>
 
       <!-- CONTRIBUTING -->
