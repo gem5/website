@@ -16,6 +16,16 @@ wiki.
 The slides and handouts are the same material except that the handouts
 are formatted with two slides per page.
 
+## HPCA 2024: gem5 Tutorial
+
+[More information can be found on the event's page](/events/hpca-2024).
+
+We will be hosting the 6th gem5 Tutorial at HPCA 2024.
+
+This day-long tutorial will give attendees an intensive course on using gem5 to carry out architecture research.
+The course will assume no prior knowledge of gem5 and will cover all major areas of gem5, such as creating SimObjects, handling the gem5 statistics, working with the gem5 standard library, and creating full-system simulations.
+New features in gem5, such as the gem5 "suites" and other gem5 standard library features, will also be covered so will be suitable for those who have used gem5 before but wish to refresh their skills.
+
 ## ISCA 2023: The gem5 Workshop
 
 [More information can be found on the event's page](/events/isca-2023).
