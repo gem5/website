@@ -86,6 +86,8 @@ docs:
           url: /documentation/gem5-stdlib/develop-own-components-tutorial
         - page: How To Create Your Own Board Using The gem5 Standard Library
           url: /documentation/gem5-stdlib/develop-stdlib-board
+        - page: How to use local resources and data sources in gem5
+          url: /documentation/gem5-stdlib/using-local-resources
 
     - title: gem5 Resources
       id: gem5_resources
