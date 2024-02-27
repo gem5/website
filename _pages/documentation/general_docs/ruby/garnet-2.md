@@ -8,7 +8,7 @@ author: Jason Lowe-Power
 ---
 
 **More details of the gem5 Ruby Interconnection Network are
-[here](interconnection-network "wikilink").**
+[here](/documentation/general_docs/ruby/interconnection-network/).**
 
 ### Garnet2.0: An On-Chip Network Model for Heterogeneous SoCs
 

@@ -2,11 +2,13 @@ html {
   scroll-behavior: smooth;
   position: relative;
   min-height: 100%;
+  font-size: 16px;
 }
 body {
+	font-family: $font-style;
 	margin: 0;
   margin-bottom: 300px;
-	font-family: $font-style;
+  text-align: justify;
 }
 
 h1, h2, h3, h4 {
@@ -26,6 +28,13 @@ a, a:hover {
 	color: $main;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /**** CODE BLOCK ****/
 pre code {
@@ -127,6 +136,7 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   background-color: $base;
   overflow-x: hidden;
   padding-bottom: 25px;
+  text-align: left;
 	a {
 		text-decoration: none;
 		color: $main;
@@ -150,7 +160,8 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 div#doc-container {
   margin-left: $sidenav-width;
   padding: 30px 35px;
-	width: auto;
+	max-width: 1100px;
+  width: auto;
   div.edit {
     text-align: right;
   }
@@ -166,37 +177,24 @@ div.navbuttons {
   }
 }
 
+.container {
+  max-width: 1050px;
+}
 
 /**** HEADER ****/
 header {
-  min-height: 350px;
   background-color: $base;
-  text-align: center;
-  align-items: center;
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
-  a {
-    text-decoration: underline;
-  }
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 12px;
+  text-align: center;
 
-  h1 {padding-top: 20px;}
   p {
-    padding: 12px;
     font-size: large;
-    text-align: justify;
-    width: 50%;
     margin: auto;
-  }
-	// BUTTONS
-	.btn-outline-primary {
-		margin: 10px;
-	}
-  .btn-primary {
-    border: 2px $main solid;
-    margin: 10px;
-  }
-  a:hover {
-    color: white;
-    text-decoration: none;
+    max-width: $content-width;
+    text-align: justify;
   }
 }
 
@@ -342,14 +340,11 @@ footer {
   body {
     margin-bottom: 575px;
   }
-
-  .sponsor-item {
-    width: 100%; /* Take full width on small screens */
-  }
 }
 
 
-/* --------- MAIN STYLES ----------- */
+
+/* ------- MAIN STYLES ---------- */
 
 .btn-main-link {
   align-items: center;
@@ -365,7 +360,7 @@ footer {
 
 .btn-main-link:hover {
   scale: 1.07;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .btn-main-link:active {
@@ -373,45 +368,29 @@ footer {
 }
 
 .page-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .hr-shorter {
-  max-width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 980px;
 }
 
-/* --------- TESTING STATUS ----------- */
+/* ------ TESTING STATUS -------- */
 
 .testing-status {
   font-weight: bold;
   margin: auto;
-  padding-bottom: 20px;
-  padding-top: 0px;
-  text-align: center;
-  width: 60%;
+  max-width: $content-width;
 }
 
-.testing-status ul {
-  display: flex; 
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
-  list-style-type: none; /* Remove bullet points */
-  list-style: none; /* Remove default list styles */
-  margin: auto; 
-  padding: 0;
-  width: 80%;
-}
-
-.testing-status li {
-  box-sizing: border-box;
-  flex: 0 0 25%; /* Each item takes 25% width (4 items in a row) */
-}
-
-
-/* --------- CARD ----------- */
+/* --------- CARD --------------- */
 
 .card {
   border-radius: 5px;
@@ -437,7 +416,7 @@ footer {
   text-transform: uppercase;
 }
 
-.card-title-highlighted { 
+.card-title-highlighted {
   background-color: #008eb0;
   color: white;
 }
@@ -458,7 +437,15 @@ footer {
 
 }
 
+/* --------- NAVBAR ------------- */
 
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+}
 
 /* --------- SPONSORS ----------- */
 
@@ -466,7 +453,7 @@ footer {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 150vh; 
+  height: 150vh;
   justify-content: space-around;
 }
 

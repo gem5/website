@@ -43,7 +43,6 @@ We will be hosting the 5th gem5 Tutorial HPCA 2023.
 
 The tutorial will give those new to gem5 a "crash course" in using the tool to carry out architecture research.
 
-
 ## gem5 Boot Camp 2022
 
 [More information can be found on the official Boot Camp event page](/events/boot-camp-2022)
