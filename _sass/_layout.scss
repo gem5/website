@@ -475,3 +475,13 @@ footer {
   max-width: 135px; /* Adjust the maximum width of the logos */
 }
 
+
+/* ----- BOOTCAMP 2024 ---------- */
+.bootcamp .nav-link {
+  color: black;
+}
+
+.bootcamp .nav-link.active {
+  color: $main;
+  font-weight: bold;
+}
