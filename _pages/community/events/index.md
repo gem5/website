@@ -16,6 +16,17 @@ wiki.
 The slides and handouts are the same material except that the handouts
 are formatted with two slides per page.
 
+## gem5 bootcamp 2024
+
+[More information can be found on the event's page](/events/bootcamp-2024).
+
+The gem5 bootcamp 2024 is to be held at UC Davis from July 29th to August 2nd.
+
+The bootcamp spans five full days, featuring an engaging workshop focused on learning gem5. The workshop is designed to be inclusive, assuming no prior experience with gem5. The goal is to equip participants with a strong foundation in gem5 for conducting advanced research in computer architecture.
+
+The schedule accommodates both students and professionals. Students are encouraged to participate for the entire five days, while professionals are targeted for a three-day attendance from Tuesday to Thursday. The first day (Monday) is dedicated to introducing gem5 to students and familiarizing them with the environment. Days 2 through 4 cover more advanced aspects of gem5 development. The final day (Friday) focuses on practical exercises, including writing tests and contributing to gem5.
+
+
 ## HPCA 2024: gem5 Tutorial
 
 [More information can be found on the event's page](/events/hpca-2024).
