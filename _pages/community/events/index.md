@@ -16,6 +16,15 @@ wiki.
 The slides and handouts are the same material except that the handouts
 are formatted with two slides per page.
 
+## ISCA 2024: gem5 Workshop and tutorial
+
+[More information can be found on the event's page](/events/isca-2024).
+
+We will be hosting a gem5 Workshop and the 7th gem5 Tutorial at ISCA 2024.
+
+The workshop will be an opportunity for members of the gem5 community to give presentations on their contributions to gem5 and gem5-related research.
+The tutorial will give attendees an intensive course crash-course on using gem5 to carry out architecture research.
+
 ## gem5 bootcamp 2024
 
 [More information can be found on the event's page](/events/bootcamp-2024).
