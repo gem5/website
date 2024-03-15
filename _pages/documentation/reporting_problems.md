@@ -25,7 +25,7 @@ reporting an issue:
 
 1. Please check if a similar question has already been asked on our
 [mailing lists](/mailing_lists) (check the archives), or reported in our
-[Jira Issue Tracking system](https://gem5.atlassian.net).
+[GitHub issues](https://github.com/gem5/gem5/issues).
 
 2. Ensure you're compiling and running the latest version of [gem5](
 https://github.com/gem5/gem5). The issue may have already been resolved.
@@ -51,8 +51,8 @@ side.
 Once you believe you have gathered enough information about your problem. Then
 feel free to report it.
 
-* If you have reason to believe your problem is a bug then please report the
-issue on gem5's [Jira Issue Tracking system](https://gem5.atlassian.net).
+* If you have a reason to believe your problem is a bug then please report the
+issue on gem5's [GitHub issues](https://github.com/gem5/gem5/issues).
 **Please include any information which may aid in someone else reproducing
 this bug on their system**. Include the command line argument used, any
 relevant system information (as a minimum, what OS are you using, and how
