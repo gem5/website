@@ -58,7 +58,7 @@ tabs:
         Anyone can apply though, as spaces are limited, preference will be given to early career researchers (e.g., first or second year PhD and masters students planning on applying for a PhD). We especially encourage those from non-research universities, minority serving institutions, and universities without PhD programs to apply.
 
         #### How to apply?
-        Those wishing to apply for a travel grant can complete the following Google Form by April 15th: _form will be available soon_.
+        Those wishing to apply for a travel grant can complete the following Google Form by April 15th: [Google form](https://forms.gle/uYg33DdKDshppgPK7).
 
         If your application is successful, you will be contacted via the email address provided by May 1st.
 
