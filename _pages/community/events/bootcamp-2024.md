@@ -19,9 +19,10 @@ tabs:
         * **Junior Computer Architecture Researchers** (early graduate students): The primary goal is to equip junior researchers with essential skills to seamlessly integrate gem5 into their projects. This comprehensive **5-day** bootcamp covers a spectrum of topics, starting from foundational aspects such as setting up system simulations. It then progresses to more advanced topics including the creation of customized components, understanding gem5 statistics, and culminating in hands-on experience with running and modifying simulations that closely emulate real-world systems.
         * **Professionals**: This track caters to professionals seeking proficiency in gem5, with a specific emphasis on development aspects. The tailored **3-day** bootcamp provides a focused introduction, ensuring that professionals acquire the necessary skills to leverage gem5 effectively in their work.
 
-        #### Registration fee
-        * Students: TBA
-        * Professionals: TBA
+        #### Registration Fees
+        * Students: $500
+        * Students with accommodation on campus: $1100
+        * Professionals: $800
 
         Students have the opportunity to submit applications for travel grants, with the deadline set for April 15th. Notification of the grant status will be sent out by May 1st.
 
