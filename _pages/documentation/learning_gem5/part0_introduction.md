@@ -58,14 +58,6 @@ To get the most out of gem5, you'll most likely need to add new capabilities spe
 As you add the new features you need, please consider contributing your changes back to gem5. That way others can take advantage of your hard work, and gem5 can become an even better simulator.
 
 ## Asking for help
-gem5 has two main mailing lists where you can ask for help or advice.
-gem5-dev is for developers who are working on the main version of gem5.
-This is the version that's distributed from the website and most likely what you'll base your own work off of.
-gem5-users is a larger mailing list and is for people working on their own projects which are not, at least initially, going to be distributed as part of the official version of gem5.
+Please visit our [Ask a question](/ask-a-question) page.
 
-Most of the time, gem5-users is the right mailing list to use.
-Most of the people on gem5-dev are also on gem5-users including all the main developers, and in addition many other members of the gem5 community will see your post.
-That helps you because they might be able to answer your question, and it also helps them because they'll be able to see the answers people send you.
-To find more information about the mailing lists, to sign up, or to look through archived posts visit [Mailing Lists](/mailing_lists).
-
-Before reporting a problem on the mailing list, please read [Reporting Problems](/documentation/reporting_problems).
+Before reporting a problem, please read [Reporting Problems](/documentation/reporting_problems).

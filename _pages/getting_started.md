@@ -49,8 +49,8 @@ Now, you can start digging into how to use and extend gem5!
 ## Next steps
 
 - [Learning gem5](/documentation/learning_gem5/introduction) is a work in progress book describing how to use and develop with gem5. It contains details on how to create configurations files, extend gem5 with new models, gem5's cache coherence model, and more.
-- [gem5 Events](/events) are frequently occuring with computer architecture conferences and at other locations.
-- You can get help on [gem5's mailing lists](/mailing_lists) or by following the [gem5 tag on Stack Overflow](https://stackoverflow.com/questions/tagged/gem5).
+- [gem5 Events](/events) are frequently occurring with computer architecture conferences and at other locations.
+- You can get help on [gem5's channels](/ask-a-question) or by following the [gem5 tag on Stack Overflow](https://stackoverflow.com/questions/tagged/gem5).
 - [The contributing guide](/contributing) describes how to contribute your code changes and other ways to contribute to gem5.
 
 ## Tips for Using gem5 in Research
