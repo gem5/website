@@ -6,7 +6,7 @@ permalink: documentation/reporting_problems/
 author: Bobby R. Bruce
 ---
 
-Many of the people on the [gem5-users mailing list](/mailing_lists) are happy
+Many of the people in the [gem5 community](/ask-a-question) are happy
 to help when someone has a problem or something doesn't work. However, please
 keep in mind those working on gem5 have other commitments, so we'd appreciate,
 prior to reporting, if users could put in some effort to solving their own
@@ -23,9 +23,8 @@ or enable you to provide more information to the gem5 community regarding the
 problem. Below are a series of steps/checks we'd advise you carry out before
 reporting an issue:
 
-1. Please check if a similar question has already been asked on our
-[mailing lists](/mailing_lists) (check the archives), or reported in our
-[GitHub issues](https://github.com/gem5/gem5/issues).
+1. Please check if a similar question has already been asked on any of
+[our channels](/ask-a-question) (check the archives as well).
 
 2. Ensure you're compiling and running the latest version of [gem5](
 https://github.com/gem5/gem5). The issue may have already been resolved.
@@ -59,20 +58,19 @@ relevant system information (as a minimum, what OS are you using, and how
 did you compile gem5?), error messages received, program outputs, stack traces,
 etc.
 
-* If you choose to ask a question on the [gem5-users mailing list](
-/mailing_lists), please provide any information which may be helpful. If you
-have a theory about what the problem might be, please let us know, but
-include enough basic information so others can decide whether your theory is
-correct or not.
+* If you choose to ask a question on the [gem5 Discussions page](
+https://github.com/orgs/gem5/discussions), please provide any information which
+may be helpful. If you have a theory about what the problem might be, please let
+us know, but include enough basic information so others can decide whether your
+theory is correct or not.
 
 
 # Solving the problem
 
 If you have solved a problem that you reported, please let the community know
-about your solution as a follow-up (either in the mailing list or in the Jira
-Issue tracking system). If you have fixed a bug, we'd appreciate if you could
-submit the fix to the gem5 source. Please see our
-[beginners guide to contributing](/contributing)
+about your solution as a follow-up on your GitHub issue or discussion. If you
+have fixed a bug, we'd appreciate if you could submit the fix to the gem5
+source. Please see our [beginners guide to contributing](/contributing)
 on how to do this.
 
 If your issue is with the content of a gem5 document/tutorial being incorrect,

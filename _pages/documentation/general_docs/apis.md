@@ -56,8 +56,8 @@ the gem5 community should be consulted. APIs are intended to stay unaltered for
 some time. To avoid the gem5 project becoming encumbered with "too many APIs",
 we strongly advise those wishing to extend the API to communicate to the
 gem5 development team as to why the API will be of value. The
-[gem5-dev mailing list](/mailing_lists/) is a good communication channel for
-this.
+[gem5 Discussion page](https://github.com/orgs/gem5/discussions/categories/gem5-dev)
+is a good communication channel for this.
 
 ## How can the API change?
 
@@ -89,11 +89,11 @@ specify which API to transition to.
 ### Notes for Developers
 
 Prior to making any changes to the gem5 API the [gem5-dev mailing list](
-/mailing_lists/) should be consulted. Changing the API, for whatever reason,
+/ask-a-question/) should be consulted. Changing the API, for whatever reason,
 **will** be subject to higher scrutiny than other changes. Developers should
 be prepared to provide compelling arguments as to why the API needs changed. We
 strongly recommend API changes are discussed or they may be rejected during the
-Gerrit Code review.
+code review.
 
 When creating a new API the old API must be tagged as deprecated and the new
 API created to exist alongside the old. **It is of upmost importance that the

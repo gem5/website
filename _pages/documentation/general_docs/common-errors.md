@@ -164,5 +164,5 @@ If you want more information on the commit message hook, read [here](https://ger
 
 ## Further Issues
 
-If you continue to run into errors using gem5, feel free to ask questions in our [Slack channel](https://join.slack.com/t/gem5-workspace/shared_invite/zt-1c8go4yjo-LNb7l~BZ0FagwmVxX08y9g) or [mailing lists](https://www.gem5.org/mailing_lists).
+If you continue to run into errors using gem5, feel free to [ask for help](/ask-a-question).
 In addition, you can find information on how to report errors that may potentially need fixes [here](https://www.gem5.org/documentation/reporting_problems/) if other channels don't cover all the information you need.
