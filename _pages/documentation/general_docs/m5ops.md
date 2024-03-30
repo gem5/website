@@ -95,6 +95,9 @@ java -classpath $CLASSPATH:/path/to/gem5OpJni.jar -Djava.library.path=/path/to/l
 
 gem5's special opcodes (psuedo instructions) can be used with Fortran programs. In the Fortran code, one can add calls to C functions that invoke the special opcode. While creating the final binary, compile the object files for the Fortran program and the C program (for opcodes) together. I found the documentation provided [here](https://gcc.gnu.org/wiki/GFortranGettingStarted) useful. Read the section **-****- Compiling a mixed C-Fortran program**.
 
+The idea of using gem5 ops with Fortran code is essentially to compile the m5 ops C code to an object file, and then link the object file against the binary calling the m5 ops.
+The C function calling convention in Fortran is such that, if the function name in C code is `void foo_bar_(void)`, then in Fortran, you can call the function by `call foo_bar`.
+
 ## Linking M5 to your C/C++ code
 
 In order to link m5 to your code, first build `libm5.a` as described in the section above.
@@ -151,7 +154,7 @@ Some macros at the end of the header file will set up other declarations which m
 
 *Note*: The macros generating the "_addr" and "_semi" m5ops are called `M5OP`, which are defined in `util/m5/abi/*/m5op_addr.S` and `util/m5/abi/*/m5op_semi.S`.
 
-In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (ex. "0xFFFF0000" for x86) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
+In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (e.g., "0xFFFF0000" for x86, and "0x01001000" for arm64) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
 
 Here is a simple example using the "_addr" version of the m5ops:
 
@@ -169,7 +172,7 @@ int main(void) {
     m5_work_begin_addr(0,0);
 #endif
 
-    print("hello world!");
+    printf("hello world!\n");
 
 #ifdef GEM5
     m5_work_end_addr(0,0);
@@ -189,4 +192,4 @@ When you run the applications with m5ops inserted in FS mode with a KVM CPU, thi
 
     ```illegal instruction (core dumped)```
 
-This is because m5ops instructions are not valid instructions to the host. Using the "_addr" version of the m5ops can fix this issue, so it might be necessary to use the "_addr" version if you want to integrate m5ops into your applications or use the m5 binary utility when running with KVM CPUs.
+This is because m5ops instructions are not valid instructions to the host. Using the "_addr" version of the m5ops can fix this issue, so it is necessary to use the "_addr" version if you want to integrate m5ops into your applications or use the m5 binary utility when running with KVM CPUs.
