@@ -45,7 +45,7 @@ Example command:
 ./build/NULL/gem5.debug configs/example/garnet_synth_traffic.py  \
         --num-cpus=16 \
         --num-dirs=16 \
-        --network=garnet2.0 \
+        --network=garnet \
         --topology=Mesh_XY \
         --mesh-rows=4  \
         --sim-cycles=1000 \
@@ -59,7 +59,7 @@ Example command:
 |------------|-----------|
  | **--num-cpus** | Number of cpus. This is the number of source (injection) nodes in the network. |
  | **--num-dirs** | Number of directories. This is the number of destination (ejection) nodes in the network. |
- | **--network** | Network model: simple or garnet2.0. Use garnet2.0 for running synthetic traffic. |
+ | **--network** | Network model: simple or garnet. Use garnet for running synthetic traffic. |
  | **--topology** | Topology for connecting the cpus and dirs to the network routers/switches. More detail about different topologies can be found (here)[Interconnection_Network#Topology]. |
  | **--mesh-rows** | The number of rows in the mesh. Only valid when ''--topology'' is ''Mesh_*'' or ''MeshDirCorners_*''. |
 
