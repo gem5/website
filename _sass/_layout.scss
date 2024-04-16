@@ -127,15 +127,14 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   }
 }
 .sidenav {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 150px);
   top: 130px;
   width: $sidenav-width;
+  z-index: 2; // for sidenav to show in front of the footer, which has z-index 1.
   position: fixed;
-  // z-index: -1;
   left: 0;
   background-color: $base;
   overflow-x: hidden;
-  padding-bottom: 25px;
   text-align: left;
 	a {
 		text-decoration: none;
@@ -327,6 +326,7 @@ footer {
   // margin-top: 100px;
   padding-top: 40px;
   position: absolute;
+  z-index:1;
   bottom: 0;
   background-color: $base;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
