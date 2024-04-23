@@ -51,6 +51,18 @@ generation and playback.
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
+### Setup on Ubuntu 24.04 (gem5 > v24.0)
+
+If compiling gem5 on Ubuntu 24.04, or related Linux distributions, you may
+install all these dependencies using APT:
+
+```
+sudo apt install build-essential scons python3-dev git pre-commit zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev libboost-all-dev  \
+    libhdf5-serial-dev python3-pydot python3-venv python3-tk mypy m4 libcapstone-dev \
+    libpng-dev libelf-dev pkg-config wget cmake doxygen
+```
+
 ### Setup on Ubuntu 22.04 (gem5 >= v21.1)
 
 If compiling gem5 on Ubuntu 22.04, or related Linux distributions, you may
@@ -78,15 +90,20 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
+Ubuntu 24.04 with all optional dependencies:
+[ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](
+https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
+
+Ubuntu 24.04 with minimum dependencies:
+[ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
+https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1](
 https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
-
-Ubuntu 22.04 with minimum dependencies:
-[ghcr.io/gem5/ubuntu-22.04_min-dependencies:v22-1](
-https://ghcr.io/gem5/ubuntu-22.04_min-dependencies:v22-1) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-20.04_all-dependencies:v22-1](
