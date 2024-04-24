@@ -12,21 +12,14 @@ authors: Bobby R. Bruce
 ## Supported operating systems and environments
 
 gem5 has been designed with a Linux environment in mind. We test regularly
-on **Ubuntu 20.04**, and **Ubuntu 22.04** to ensure gem5 functions well in
+on **Ubuntu 20.04**, **Ubuntu 22.04** and **Ubuntu 24.04** to ensure gem5 functions well in
 these environments. Though **any Linux based OS should function if the correct
 dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
 information).
 
-**Mac OS should work when compiling using the clang compiler**, with all other
-dependencies installed. However, at present, we do not officially test our
-builds on Mac OS. **We therefore cannot guarantee the same stability for those
-wishing to compile and run gem5 in Mac OS as we can in Linux-based systems**.
-[In later versions of gem5, we hope to more effectively support Mac OS through
-improved testing](https://gem5.atlassian.net/browse/GEM5-538).
-
 As of gem5 21.0, **we support building and running gem5 with Python 3.6+
-only.**. gem5 20.0 was our last version of gem5 to provide support for Python
+only**. gem5 20.0 was our last version of gem5 to provide support for Python
 2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
@@ -92,13 +85,15 @@ the following Docker Images:
 
 Ubuntu 24.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](
-https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
+https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0)
+<!-- add this when files are merged to stable
+ ([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)). -->
 
 Ubuntu 24.04 with minimum dependencies:
 [ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
-https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
+<!-- add this line when files are merged to stable
+([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)). -->
 
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v22-1](
