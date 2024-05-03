@@ -10,6 +10,16 @@ tabs:
     content: |
         We are happy to announce the **gem5 bootcamp 2024!**
 
+        ---
+
+        **IMPORTANT:**
+        - Registration will open next week!
+        - If you are a student and wish to stay in the student dorms, you need to register before May 26th.
+        - Spaces are limited, so be sure to register on time if you plan to join us for the gem5 bootcamp this summer!
+
+        ---
+
+
         **WHEN: July 29th - August 2nd 2024**
 
         **WHERE: UC Davis, California**
@@ -22,9 +32,10 @@ tabs:
         #### Registration Fees
         * Students: $500
         * Students with accommodation on campus: $1100
-        * Professionals: $800
+        * Professionals (3 days, Tue/Wed/Thu): $800
+        * Professionals (5 days, Mon - Fri): $1200
 
-        Students have the opportunity to submit applications for travel grants, with the deadline set for April 15th. Notification of the grant status will be sent out by May 1st.
+        Students are still welcome to submit the applications for travel grants.
 
         The registration fee covers five days of meals, including breakfast, lunch, and an afternoon snack. Additionally, participants will enjoy a reception dinner and a fun evening event, each scheduled on separate days. Students have the option of discounted accommodation on campus.
 
@@ -48,9 +59,8 @@ tabs:
     id: key-dates
     content: |
         - **Bootcamp:** July 29 - August 2, 2024
-        - **Application Deadline:** April 15, 2024
-        - **Registration Ends:** June 15, 2024
-
+        - **Students accommodation on campus deadline:** May 26th
+        - **Registration deadline:** June 24th
 
   - name: Application
     id: application
@@ -59,9 +69,9 @@ tabs:
         Anyone can apply though, as spaces are limited, preference will be given to early career researchers (e.g., first or second year PhD and masters students planning on applying for a PhD). We especially encourage those from non-research universities, minority serving institutions, and universities without PhD programs to apply.
 
         #### How to apply?
-        Those wishing to apply for a travel grant can complete the following Google Form by April 15th: [Google form](https://forms.gle/uYg33DdKDshppgPK7).
+        You can still submit your application here: [Google form](https://forms.gle/uYg33DdKDshppgPK7).
 
-        If your application is successful, you will be contacted via the email address provided by May 1st.
+        If your application is successful, we will let you know.
 
   - name: Schedule
     id: schedule
@@ -72,7 +82,7 @@ tabs:
   - name: Registration
     id: registration
     content: |
-        Registration is not open yet.
+        Registration will open next week!
 
   - name: Info for attendees
     id: info-attendees
