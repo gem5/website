@@ -13,8 +13,8 @@ tabs:
         ---
 
         **IMPORTANT:**
-        - Registration will open next week!
-        - If you are a student and wish to stay in the student dorms, you need to register before May 26th.
+        - [**Registration is now open!**](https://na.eventscloud.com/ereg/index.php?eventid=799532&)
+        - If you are a student and wish to stay in the student dorms, you need to register **before May 26th**.
         - Spaces are limited, so be sure to register on time if you plan to join us for the gem5 bootcamp this summer!
 
         ---
@@ -82,7 +82,18 @@ tabs:
   - name: Registration
     id: registration
     content: |
-        Registration will open next week!
+        [**Registration**](https://na.eventscloud.com/ereg/index.php?eventid=799532&) **is open!**
+
+        Please use the link provided above to register for the bootcamp.
+
+        There are two registration categories available:
+        - *Student* : Select this option if you are an undergraduate, master's, PhD, or postdoc student.
+        - *Professional* : Choose this option otherwise.
+
+        For students, registration covers the entire 5-day event. You have the choice to stay in student dorms on campus. To secure dorm accommodation, registration must be completed before **May 26th**.
+
+        Professionals can opt for either a 3-day (Tuesday, Wednesday, Thursday) or 5-day (Monday - Friday) event. We recommend the 5-day option for those completely new to gem5; otherwise, the 3-day option may be more suitable. If you're unsure, please don't hesitate to reach out to us.
+
 
   - name: Info for attendees
     id: info-attendees
@@ -109,6 +120,12 @@ tabs:
   - name: Organizers
     id: organizers
     content: |
+        ![Bobby](../assets/img/team-photos/bobby.webp)
+        ![Ivana](../assets/img/team-photos/ivana.webp)
+        ![Jason](../assets/img/team-photos/jason.webp)
+
+        **Our team:** Bobby, Ivana and Jason
+
         If you have any questions regarding the bootcamp, please send them to: imitrovic@ucdavis.edu
 
 ---
