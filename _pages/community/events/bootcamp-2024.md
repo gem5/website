@@ -17,6 +17,7 @@ tabs:
         - If you are a student and wish to stay in the student dorms, you need to register **before May 26th**.
         - Spaces are limited, so be sure to register on time if you plan to join us for the gem5 bootcamp this summer!
         - You can find the bootcamp schedule [here](https://gem5bootcamp.github.io/2024/).
+
         ---
 
 
@@ -53,7 +54,7 @@ tabs:
         * Network with others in the computer architecture research community.
         * **And much, much more!**
 
-        Schedule: [Bootcamp 2022](https://gem5bootcamp.github.io/gem5-bootcamp-env/)
+        Schedule: [Bootcamp 2024](https://gem5bootcamp.github.io/2024/)
 
   - name: Key Dates
     id: key-dates
