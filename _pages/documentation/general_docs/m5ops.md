@@ -154,7 +154,7 @@ Some macros at the end of the header file will set up other declarations which m
 
 *Note*: The macros generating the "_addr" and "_semi" m5ops are called `M5OP`, which are defined in `util/m5/abi/*/m5op_addr.S` and `util/m5/abi/*/m5op_semi.S`.
 
-In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (e.g., "0xFFFF0000" for x86, and "0x01001000" for arm64) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
+In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (e.g., "0xFFFF0000" for x86, and "0x10010000" for arm64/riscv) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
 
 Here is a simple example using the "_addr" version of the m5ops:
 
