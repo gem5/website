@@ -83,7 +83,6 @@ For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
 Ubuntu 22.04 with all optional dependencies:
-
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
 https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
@@ -95,7 +94,7 @@ https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_min-de
 
 Ubuntu 20.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0](
-https://ghcr.io/gem5ubuntu-20.04_all-dependencies:v23-0) ([source Dockerfile](
+https://ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
 Ubuntu 18.04 with all optional dependencies:
@@ -112,7 +111,7 @@ docker pull <image>
 E.g., for Ubuntu 20.04 with all optional dependencies:
 
 ```
-docker pull ghcr.io/gem5ubuntu-20.04_all-dependencies:v23-0
+docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
 ```
 
 Then, to work within this environment, we suggest using the following:
