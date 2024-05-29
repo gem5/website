@@ -13,9 +13,8 @@ tabs:
         ---
 
         **IMPORTANT:**
-        - [**Registration is now open!**](https://na.eventscloud.com/ereg/index.php?eventid=799532&)
-        - If you are a student and wish to stay in the student dorms, you need to register **before May 26th**.
-        - Spaces are limited, so be sure to register on time if you plan to join us for the gem5 bootcamp this summer!
+        - [**Registration is open until June 24th!**](https://na.eventscloud.com/ereg/index.php?eventid=799532&) Please note that spaces are limited.
+        - A few dorm rooms are still available, so students should register and book as soon as possible to guarantee availability.
         - You can find the bootcamp schedule [here](https://gem5bootcamp.github.io/2024/).
 
         ---
@@ -66,14 +65,8 @@ tabs:
   - name: Application
     id: application
     content: |
-        #### Who is eligible to apply for the travel grant?
-        Anyone can apply though, as spaces are limited, preference will be given to early career researchers (e.g., first or second year PhD and masters students planning on applying for a PhD). We especially encourage those from non-research universities, minority serving institutions, and universities without PhD programs to apply.
-
-        #### How to apply?
-        You can still submit your application here: [Google form](https://forms.gle/uYg33DdKDshppgPK7).
-
-        If your application is successful, we will let you know.
-
+        All available travel grants have been awarded.
+        
   - name: Schedule
     id: schedule
     content: |
@@ -90,7 +83,7 @@ tabs:
         - *Student* : Select this option if you are an undergraduate, master's, PhD, or postdoc student.
         - *Professional* : Choose this option otherwise.
 
-        For students, registration covers the entire 5-day event. You have the choice to stay in student dorms on campus. To secure dorm accommodation, registration must be completed before **May 26th**.
+        For students, registration covers the entire 5-day event. You have the choice to stay in student dorms on campus. A few dorm rooms are still available, so students should register and book as soon as possible to guarantee availability.
 
         Professionals can opt for either a 3-day (Tuesday, Wednesday, Thursday) or 5-day (Monday - Friday) event. We recommend the 5-day option for those completely new to gem5; otherwise, the 3-day option may be more suitable. If you're unsure, please don't hesitate to reach out to us.
 
