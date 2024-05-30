@@ -11,6 +11,8 @@ tabs:
     content: |
       If you use gem5 for your research, **please cite the following papers**.
 
+      For your specific case, you can access a list of papers used by your project in the `citations.bib` file located in the `m5out` folder, which is generated during the build process of gem5.
+
       * [**The gem5 Simulator: Version 20.0+**](https://arxiv.org/abs/2007.03152). Jason Lowe-Power, Abdul Mutaal Ahmad, Ayaz Akram, Mohammad Alian, Rico Amslinger, Matteo Andreozzi, Adrià Armejach, Nils Asmussen, Brad Beckmann, Srikant Bharadwaj, Gabe Black, Gedare Bloom, Bobby R. Bruce, Daniel Rodrigues Carvalho, Jeronimo Castrillon, Lizhong Chen, Nicolas Derumigny, Stephan Diestelhorst, Wendy Elsasser, Carlos Escuin, Marjan Fariborz, Amin Farmahini-Farahani, Pouya Fotouhi, Ryan Gambord, Jayneel Gandhi, Dibakar Gope, Thomas Grass, Anthony Gutierrez, Bagus Hanindhito, Andreas Hansson, Swapnil Haria, Austin Harris, Timothy Hayes, Adrian Herrera, Matthew Horsnell, Syed Ali Raza Jafri, Radhika Jagtap, Hanhwi Jang, Reiley Jeyapaul, Timothy M. Jones, Matthias Jung, Subash Kannoth, Hamidreza Khaleghzadeh, Yuetsu Kodama, Tushar Krishna, Tommaso Marinelli, Christian Menard, Andrea Mondelli, Miquel Moreto, Tiago Mück, Omar Naji, Krishnendra Nathella, Hoa Nguyen, Nikos Nikoleris, Lena E. Olson, Marc Orr, Binh Pham, Pablo Prieto, Trivikram Reddy, Alec Roelke, Mahyar Samani, Andreas Sandberg, Javier Setoain, Boris Shingarov, Matthew D. Sinclair, Tuan Ta, Rahul Thakur, Giacomo Travaglini, Michael Upton, Nilay Vaish, Ilias Vougioukas, William Wang, Zhengrong Wang, Norbert Wehn, Christian Weis, David A. Wood, Hongil Yoon, Éder F. Zulian. CoRR, 2020. [ arXiv: [2007.03152](https://arxiv.org/abs/2007.03152) ] [ [pdf](https://arxiv.org/pdf/2007.03152.pdf) ]
 
       * [**The gem5 Simulator**](https://dl.acm.org/doi/10.1145/2024716.2024718). Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. ACM SIGARCH Computer Architecture News, May 2011. [ doi: [10.1145/2024716.2024718](https://dl.acm.org/doi/10.1145/2024716.2024718) ] [ [pdf](https://dl.acm.org/doi/pdf/10.1145/2024716.2024718) ]
@@ -20,7 +22,6 @@ tabs:
       * **Analyzing Local RISC-V Interrupt Latencies with Virtual Prototyping**. Robert Hauser, Lukas Steffen, Florian Grützmacher, Christian Haubelt.
       In Workshop Methoden und Beschreibungssprachen zur Modellierung und Verifikation von Schaltungen und Systemen (MBMV24), pp. 1-7, Kaiserslautern, Deutschland, Februar 2024 (to appear)
 
-      You can also access this list from the `citations.bib` file located in the `m5out` folder, which is generated during the build process of gem5.
 
   - name: Special Features of gem5
     id: special-features
