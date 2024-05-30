@@ -17,10 +17,6 @@ tabs:
 
       * [**The gem5 Simulator**](https://dl.acm.org/doi/10.1145/2024716.2024718). Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. ACM SIGARCH Computer Architecture News, May 2011. [ doi: [10.1145/2024716.2024718](https://dl.acm.org/doi/10.1145/2024716.2024718) ] [ [pdf](https://dl.acm.org/doi/pdf/10.1145/2024716.2024718) ]
 
-      * [**Simulating DRAM controllers for future system architecture exploration**](https://ieeexplore.ieee.org/document/6844484). A. Hansson, N. Agarwal, A. Kolli, T. Wenisch and A. N. Udipi. 2014 IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS), Monterey, CA, USA, 2014, pp. 201-210. [ doi: [10.1109/ISPASS.2014.6844484](https://doi.org/10.1109/ISPASS.2014.6844484) ] [ [pdf](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6844484) ]
-
-      * **Analyzing Local RISC-V Interrupt Latencies with Virtual Prototyping**. Robert Hauser, Lukas Steffen, Florian Grützmacher, Christian Haubelt.
-      In Workshop Methoden und Beschreibungssprachen zur Modellierung und Verifikation von Schaltungen und Systemen (MBMV24), pp. 1-7, Kaiserslautern, Deutschland, Februar 2024 (to appear)
 
 
   - name: Special Features of gem5
