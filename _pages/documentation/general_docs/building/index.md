@@ -12,21 +12,14 @@ authors: Bobby R. Bruce
 ## Supported operating systems and environments
 
 gem5 has been designed with a Linux environment in mind. We test regularly
-on **Ubuntu 20.04**, and **Ubuntu 22.04** to ensure gem5 functions well in
+on **Ubuntu 20.04**, **Ubuntu 22.04** and **Ubuntu 24.04** to ensure gem5 functions well in
 these environments. Though **any Linux based OS should function if the correct
 dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
 information).
 
-**Mac OS should work when compiling using the clang compiler**, with all other
-dependencies installed. However, at present, we do not officially test our
-builds on Mac OS. **We therefore cannot guarantee the same stability for those
-wishing to compile and run gem5 in Mac OS as we can in Linux-based systems**.
-[In later versions of gem5, we hope to more effectively support Mac OS through
-improved testing](https://gem5.atlassian.net/browse/GEM5-538).
-
 As of gem5 21.0, **we support building and running gem5 with Python 3.6+
-only.**. gem5 20.0 was our last version of gem5 to provide support for Python
+only**. gem5 20.0 was our last version of gem5 to provide support for Python
 2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
@@ -37,10 +30,8 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=8 must be used**. We
-support up to gcc Version 12. **Note**: GCC Version 9 may be used but is not officially
-supported due to it
-[increasing gem5 Object File sizes](https://github.com/gem5/gem5/issues/555).
+* **gcc**: gcc is used to compiled gem5. **Version >=10 must be used**. We
+support up to gcc Version 13.
 * **Clang**: Clang can also be used. At present, we support Clang 7 to
 Clang 16 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
@@ -52,6 +43,18 @@ generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
+
+### Setup on Ubuntu 24.04 (gem5 >= v24.0)
+
+If compiling gem5 on Ubuntu 24.04, or related Linux distributions, you may
+install all these dependencies using APT:
+
+```
+sudo apt install build-essential scons python3-dev git pre-commit zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    libboost-all-dev  libhdf5-serial-dev python3-pydot python3-venv python3-tk mypy \
+    m4 libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake doxygen
+```
 
 ### Setup on Ubuntu 22.04 (gem5 >= v21.1)
 
@@ -82,15 +85,20 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
+Ubuntu 24.04 with all optional dependencies:
+[ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](
+https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0)
+([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
+
+Ubuntu 24.04 with minimum dependencies:
+[ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
+https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
+([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
 https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0) ([source Dockerfile](
 https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
-
-Ubuntu 22.04 with minimum dependencies:
-[ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
 
 Ubuntu 20.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0](
