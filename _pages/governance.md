@@ -11,8 +11,8 @@ permalink: /governance/
 ---
 gem5 is a meritocratic, consensus-based community project. Anyone with an interest in the project can join the community, contribute to the project design and participate in the decision-making process. Historically, gem5 development has been carried out both in industry and in academia. This document describes how that participation takes place and how to set about earning merit within the project community.
 
-The document is broken into a number of sections. Philosophy describes the ideas behind the gem5 community. The Jira section points
-users towards our Jira issue tracker for gem5's development. Users and Responsibilities describes the classes of users that use gem5, the types of gem5 contributors, and their responsibilities. Support describes how the community supports users and the Contribution process describes how to contribute. Finally, the Decision Process describes how decisions are made and then we conclude.
+The document is broken into a number of sections. Philosophy describes the ideas behind the gem5 community. The GitHub issues section points
+users towards our GitHub issue tracker for gem5's development. Users and Responsibilities describes the classes of users that use gem5, the types of gem5 contributors, and their responsibilities. Support describes how the community supports users and the Contribution process describes how to contribute. Finally, the Decision Process describes how decisions are made and then we conclude.
 
 # Philosophy
 ---
@@ -27,12 +27,12 @@ The gem5 community strives to balance the needs of its three user types (academi
 
 Additionally, the gem5 community is committed to openness, transparency, and inclusiveness. Participants in the gem5 community of all backgrounds should feel welcome and encouraged to contribute.
 
-# gem5 Jira issue tracker
+# gem5 GitHub issue tracker
 ---
-The [gem5 Jira issue tracker](https://gem5.atlassian.net) lists known bugs, feature and improvement suggestions.
+The [gem5 GitHub issue tracker](https://github.com/gem5/gem5/issues) lists known bugs, feature and improvement suggestions.
 Those wishing to work on gem5 may browse issues and request assignment to the tasks they believe they can undertake.
 Users of all types are encouraged to open their own bug reports or put forward improvement suggestions.
-While contributions to gem5 may be made without first being logged in our Jira tracker, Jira is the project's primary way of prioritizing and managing work items for upcoming releases.
+While contributions to gem5 may be made without first being logged in our GitHub issue tracker, that remains the project’s primary method of prioritizing and managing work items for upcoming releases.
 
 # Roles And Responsibilities
 ---

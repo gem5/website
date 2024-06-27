@@ -25,17 +25,27 @@ The Garnet Synthetic Traffic provides a framework for simulating the [Garnet net
 
 First build gem5 with the [Garnet_standalone](/documentation/general_docs/ruby/Garnet_standalone.md) coherence protocol. The Garnet_standalone protocol is ISA-agnostic, and hence we build it with the NULL ISA.
 
-```
-scons build/NULL/gem5.debug PROTOCOL=Garnet_standalone
+For gem5 <= 23.0:
 
 ```
+scons build/NULL/gem5.debug PROTOCOL=Garnet_standalone
+```
+
+For gem5 >= 23.1
+
+```
+scons defconfig build/NULL build_opts/NULL
+scons setconfig build/NULL RUBY_PROTOCOL_GARNET_STANDALONE=y
+scons build/NULL/gem5.debug
+```
+
 Example command:
 
 ```
 ./build/NULL/gem5.debug configs/example/garnet_synth_traffic.py  \
         --num-cpus=16 \
         --num-dirs=16 \
-        --network=garnet2.0 \
+        --network=garnet \
         --topology=Mesh_XY \
         --mesh-rows=4  \
         --sim-cycles=1000 \
@@ -49,7 +59,7 @@ Example command:
 |------------|-----------|
  | **--num-cpus** | Number of cpus. This is the number of source (injection) nodes in the network. |
  | **--num-dirs** | Number of directories. This is the number of destination (ejection) nodes in the network. |
- | **--network** | Network model: simple or garnet2.0. Use garnet2.0 for running synthetic traffic. |
+ | **--network** | Network model: simple or garnet. Use garnet for running synthetic traffic. |
  | **--topology** | Topology for connecting the cpus and dirs to the network routers/switches. More detail about different topologies can be found (here)[Interconnection_Network#Topology]. |
  | **--mesh-rows** | The number of rows in the mesh. Only valid when ''--topology'' is ''Mesh_*'' or ''MeshDirCorners_*''. |
 

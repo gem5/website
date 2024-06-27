@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container bootcamp" style='text-align: justify; font-size: 18px;'>
+    <br>
+    <h1 class="title">{{ page.title }}</h1>
+    <br>
+    <ul class="nav nav-tabs">
+        <!-- Navigation Links -->
+        {% for tab in page.tabs %}
+            <li class="nav-item">
+                <a href="#" onclick="showContent('{{ tab.id }}')" class="nav-link {% if tab.active %}active{% endif %}">{{ tab.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Content Sections -->
+    {% for tab in page.tabs %}
+        <div class="content-section" id="{{ tab.id }}">
+            <!-- {{ tab.name }} Section Content -->
+            <br>
+            {{ tab.content | markdownify }}
+        </div>
+    {% endfor %}
+</div>
+
+<script src="{{ '/assets/js/tabs.js' | relative_url }}"></script>

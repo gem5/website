@@ -2,15 +2,15 @@ html {
   scroll-behavior: smooth;
   position: relative;
   min-height: 100%;
+  font-size: 16px;
 }
 body {
-	margin: 0;
-  margin-bottom: 350px;
 	font-family: $font-style;
+	margin: 0;
+  margin-bottom: 300px;
+  text-align: justify;
 }
-@media (max-width: 576px) {
-  body {margin-bottom: 600px;}
-}
+
 h1, h2, h3, h4 {
 	font-weight: 600;
 	color: $heading-font-color;
@@ -28,6 +28,13 @@ a, a:hover {
 	color: $main;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 /**** CODE BLOCK ****/
 pre code {
@@ -42,10 +49,12 @@ pre code {
 
 /**** NAVBAR ****/
 .navbar {
+  text-align: right;
   .navbar-brand {
     padding: 0 !important;
   }
 }
+
 ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
     display: block;
 }
@@ -118,15 +127,15 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
   }
 }
 .sidenav {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 150px);
   top: 130px;
   width: $sidenav-width;
+  z-index: 2; // for sidenav to show in front of the footer, which has z-index 1.
   position: fixed;
-  // z-index: -1;
   left: 0;
   background-color: $base;
   overflow-x: hidden;
-  padding-bottom: 25px;
+  text-align: left;
 	a {
 		text-decoration: none;
 		color: $main;
@@ -150,7 +159,8 @@ ul.navbar-nav li.dropdown:hover > div.dropdown-menu {
 div#doc-container {
   margin-left: $sidenav-width;
   padding: 30px 35px;
-	width: auto;
+	max-width: 1100px;
+  width: auto;
   div.edit {
     text-align: right;
   }
@@ -166,121 +176,26 @@ div.navbuttons {
   }
 }
 
+.container {
+  max-width: 1050px;
+}
 
 /**** HEADER ****/
 header {
-  min-height: 350px;
   background-color: $base;
-  text-align: center;
-  align-items: center;
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
-  a {
-    text-decoration: underline;
-  }
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 12px;
+  text-align: center;
 
-  h1 {padding-top: 20px;}
   p {
-    padding: 12px;
-    color: $main;
     font-size: large;
-    width: 60%;
     margin: auto;
-  }
-	// BUTTONS
-	.btn-outline-primary {
-		margin: 10px;
-	}
-  .btn-primary {
-    border: 2px $main solid;
-    margin: 10px;
-  }
-  a:hover {
-    color: white;
-    text-decoration: none;
+    max-width: $content-width;
+    text-align: justify;
   }
 }
-
-/**** Testing status ****/
-div.testing-status {
-  overflow: auto;
-  width: 60%;
-  margin: auto;
-  text-align: center;
-  .testing-title {
-    float: left;
-    padding-top: 1em;
-  }
-  .testing-info {
-    overflow: hidden;
-    ul {
-      list-style: none;
-    }
-  }
-}
-
-
-/**** CARD ****/
-div.card {
-	width: 18rem;
-	min-height: 320px;
-	margin: auto;
-	margin-top: 5rem;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
-	border-radius: 5px;
-
-  div.fav {
-    margin: -2.8rem auto;
-		background-color: white;
-		padding: 0px 18px;
-		border-radius: 50px;
-		border: 1px solid lightgrey;
-		font-size: 70px;
-		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
-		// text-align: center;
-	}
-
-	h5.card-title {
-    text-transform: uppercase;
-    margin-top: 2.8rem;
-		color: $main;
-		font-weight: 600;
-		font-size: 1.4rem;
-  }
-
-  img {
-    max-width: 200px;
-    max-height: 200px;
-    display: block;
-    margin: auto;
-  }
-}
-
-div.card:hover {
-		box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
-}
-
-div.card-body {
-  text-align: center;
-}
-
-
-
-div.toc {
-  margin-right: 280px;
-  h1 {
-    margin-top: 100px;
-    font-size: 28px;
-  }
-  h2 {
-    font-size: 25px;
-  }
-  h3 {
-    font-size: 22px;
-  }
-}
-
-
 
 /**** TABLE OF CONTENTS ****/
 ul#markdown-toc {
@@ -411,6 +326,7 @@ footer {
   // margin-top: 100px;
   padding-top: 40px;
   position: absolute;
+  z-index:1;
   bottom: 0;
   background-color: $base;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
@@ -421,12 +337,151 @@ footer {
 }
 
 @media (max-width: 576px) {
-  body {margin-bottom: 575}
+  body {
+    margin-bottom: 575px;
+  }
 }
 
-/***** SPECIAL THINGS ****/
-div.sponsor-ask {
+
+
+/* ------- MAIN STYLES ---------- */
+
+.btn-main-link {
+  align-items: center;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  color: #008eb0;
+  cursor: pointer;
+  margin: 5px 15px;
+  padding: 5px 15px;
+}
+
+.btn-main-link:hover {
+  scale: 1.07;
+  text-decoration: underline;
+}
+
+.btn-main-link:active {
+  border: none;
+}
+
+.page-subtitle {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 10px;
   text-align: center;
-  font-size: larger;
-  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+.hr-shorter {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 980px;
+}
+
+/* ------ TESTING STATUS -------- */
+
+.testing-status {
+  font-weight: bold;
+  margin: auto;
+  max-width: $content-width;
+}
+
+/* --------- CARD --------------- */
+
+.card {
+  border-radius: 5px;
+	height: 435px;
+	margin: auto;
+	margin-top: 3rem;
+	padding: 0px 5px;
+  text-align: center;
+	width: 18rem;
+}
+
+.card-title {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+  color: black;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: -1rem auto 5px auto;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-title-highlighted {
+  background-color: #008eb0;
+  color: white;
+}
+
+.card p {
+  text-align: justify;
+}
+
+.card-connect-with-us {
+  height: fit-content;
+  max-width: 80%;
+  width: 650px;
+
+  .btn-main-link {
+    height: 55px;
+    width: auto;
+  }
+
+}
+
+/* --------- NAVBAR ------------- */
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+}
+
+/* --------- SPONSORS ----------- */
+
+.sponsor-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 150vh;
+  justify-content: space-around;
+}
+
+.sponsor-item {
+  flex: 1;
+  flex-grow: 1;
+  margin-right: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+.sponsor-item a {
+  text-decoration: none;
+}
+
+.sponsor-item img {
+  margin-bottom: 10px;
+  max-height: 105px; /* Adjust the maximum height of the logos */
+  max-width: 135px; /* Adjust the maximum width of the logos */
+}
+
+
+/* ----- BOOTCAMP 2024 ---------- */
+.bootcamp .nav-link {
+  color: black;
+}
+
+.bootcamp .nav-link.active {
+  color: $main;
+  font-weight: bold;
 }

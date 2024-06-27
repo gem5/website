@@ -112,7 +112,7 @@ The `starting_core_type` parameter specifies which CPU type to start a simulatio
 In this case a KVM core.
 **(Note: If your host system does not support KVM, this simulation will not run. You must change this to another CPU type, such as `CPUTypes.ATOMIC`)**
 The `switch_core_type` parameter specifies which CPU type to switch to in a simulation.
-In this case we'll be switching from KVM cores to a TIMING cores.
+In this case we'll be switching from KVM cores to TIMING cores.
 The final parameter, `num_cores`, specifies the number of cores within the processor.
 
 With this processor a user can call `processor.switch()` to switch to and from the starting cores and the switch cores, which we will demonstrate later on in this tutorial.
@@ -152,7 +152,7 @@ The `X86Board`'s `set_kernel_disk_workload` function requires a `kernel` and `di
 Both these are obtainable from the gem5 resources repository.
 Therefore, via the `Resource` class, we specify `x86-linux-kernel-5.4.49` for the Kernel (a Linux kernel, version 5.4.49, compiled to X86) and `x86-ubuntu-18.04-img` for the disk image (a disk image containing Ubuntu 18.04, for X86).
 The `Resource` class will automatically retrieve these resources if they are not already present on the host system.
-**Note: If a user wishes to use their own resource (that is, a resource not prebuilt as part of gem5-resources), they may follow the tutorial [here](../general_docs/gem5_resources.md)**
+**Note: If a user wishes to use their own resource (that is, a resource not prebuilt as part of gem5-resources), they may follow the tutorial [here](../general_docs/gem5_resources)**
 
 The `x86-ubuntu-18.04-img` has been designed to boot the OS, automatically login, and run `m5 readfile`.
 The `m5 readfile` will read a file and execute it.

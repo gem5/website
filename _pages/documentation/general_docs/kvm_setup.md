@@ -35,7 +35,7 @@ The limitations of using a 32-bit kernel on your host machine are as follows:
 
 This can severely limit the usefulness of KVM in for gem5 simulations.
 
-## Enablinbg KVM
+## Enabling KVM
 
 For KVM to function directly with gem5, the following dependencies must be installed:
 
@@ -62,7 +62,7 @@ It can be executed with the following:
 
 ```console
 scons build/X86/gem5.opt -j`nproc`
-./build/X86/gem5.opt configs/example/gem5_library/x86-ubuntu-run.py
+./build/X86/gem5.opt configs/example/gem5_library/x86-ubuntu-run-with-kvm.py
 ```
 
 If the simulation runs successfully, you have successfully installed KVM and can use it with gem5.

@@ -26,11 +26,11 @@ The list of target ISAs is shown below.
 * thumb (arm-linux-gnueabihf-gcc)
 * sparc (sparc64-linux-gnu-gcc)
 * arm64 (aarch64-linux-gnu-gcc)
-* riscv (riscv64-linux-gnu-gcc)
+* riscv (riscv64-unknown-linux-gnu-gcc)
 
 Note if you are using a x86 system for other ISAs you need to have the cross-compiler installed. The name of the cross-compiler is shown inside the parentheses in the list above.
 
-See util/m5/README.md for more details.
+See [util/m5/README.md](https://github.com/gem5/gem5/blob/stable/util/m5/README.md) for more details.
 
 ## The m5 Utility (FS mode)
 
@@ -95,6 +95,9 @@ java -classpath $CLASSPATH:/path/to/gem5OpJni.jar -Djava.library.path=/path/to/l
 
 gem5's special opcodes (psuedo instructions) can be used with Fortran programs. In the Fortran code, one can add calls to C functions that invoke the special opcode. While creating the final binary, compile the object files for the Fortran program and the C program (for opcodes) together. I found the documentation provided [here](https://gcc.gnu.org/wiki/GFortranGettingStarted) useful. Read the section **-****- Compiling a mixed C-Fortran program**.
 
+The idea of using gem5 ops with Fortran code is essentially to compile the m5 ops C code to an object file, and then link the object file against the binary calling the m5 ops.
+The C function calling convention in Fortran is such that, if the function name in C code is `void foo_bar_(void)`, then in Fortran, you can call the function by `call foo_bar`.
+
 ## Linking M5 to your C/C++ code
 
 In order to link m5 to your code, first build `libm5.a` as described in the section above.
@@ -149,7 +152,9 @@ The bare function name as defined in the header file will use the magic instruct
 Some macros at the end of the header file will set up other declarations which mirror all of the other definitions, but with an “_addr” and “_semi” suffix. These other versions will trigger the same gem5 operations, but using the “magic” address or semihosting trigger mechanisms. While those functions will be unconditionally declared in the header file, a definition will exist in the library only if that trigger mechanism is supported for that ABI.
 ```
 
-In order to use the "_addr" version of m5ops, you need to include th m5_mmap.h header file, pass the "magic" address (ex. "0xFFFF0000" for x86) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
+*Note*: The macros generating the "_addr" and "_semi" m5ops are called `M5OP`, which are defined in `util/m5/abi/*/m5op_addr.S` and `util/m5/abi/*/m5op_semi.S`.
+
+In order to use the "_addr" version of m5ops, you need to include the m5_mmap.h header file, pass the "magic" address (e.g., "0xFFFF0000" for x86, and "0x10010000" for arm64/riscv) to m5op_addr, then call the map_m5_mem() to open /dev/mem. You can insert m5ops by adding "_addr" at the end of the original m5ops functions.
 
 Here is a simple example using the "_addr" version of the m5ops:
 
@@ -167,16 +172,24 @@ int main(void) {
     m5_work_begin_addr(0,0);
 #endif
 
-    print("hello world!");
+    printf("hello world!\n");
 
 #ifdef GEM5
     m5_work_end_addr(0,0);
+    unmap_m5_mem();
 #endif
 }
+```
+
+*Note*: You'll need to add a new header location for the compiler to find the `m5_mmap.h`.
+If you are following the example Makefile above, you can add the following line below where CFLAGS is defined,
+
+```c
+CFLAGS += $(GEM5_PATH)/util/m5/src/
 ```
 
 When you run the applications with m5ops inserted in FS mode with a KVM CPU, this error might appear.
 
     ```illegal instruction (core dumped)```
 
-This is because m5ops instructions are not valid instructions to the host. Using the "_addr" version of the m5ops can fix this issue, so it might be necessary to use the "_addr" version if you want to integrate m5ops into your applications or use the m5 binary utility when running with KVM CPUs.
+This is because m5ops instructions are not valid instructions to the host. Using the "_addr" version of the m5ops can fix this issue, so it is necessary to use the "_addr" version if you want to integrate m5ops into your applications or use the m5 binary utility when running with KVM CPUs.

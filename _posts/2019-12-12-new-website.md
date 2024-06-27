@@ -9,7 +9,7 @@ categories: project
 Welcome to gem5's new website!
 The old wiki has needed a refresh for a few years (see screenshot below), and we're excited to finally have something to share with the community!
 We hope the new site has better usability and makes it easier to find information about gem5 and how to use it.
-If you have any questions or comments, don't hesitate to reach out on the gem5-dev [mailing list](/mailing_lists)!
+If you have any questions or comments, don't hesitate to reach out on the gem5-dev [mailing list](/ask-a-question)!
 
 ![](/assets/img/blog/old-website.png "screenshot of the old website")
 *gem5's original website*
@@ -23,7 +23,7 @@ We've already moved most of the documentation, but there are still a few pages t
 
 There will be some rough edges as we transition.
 Some links may be broken, and it's possible we missed pages that should be migrated.
-If you find any issues, please let us know via the [mailing list](/mailing_lists) or by opening an issue on [Jira](https://gem5.atlassian.net/).
+If you find any issues, please let us know via the [mailing list](/ask-a-question) or by opening an issue on [Jira](https://gem5.atlassian.net/).
 
 The website is currently hosted on GitHub pages.
 If you'd like to contribute, feel free to create a [pull request](https://github.com/gem5/new-website/pulls) on the [source repository](https://github.com/gem5/new-website).

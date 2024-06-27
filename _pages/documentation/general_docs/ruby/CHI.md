@@ -9,7 +9,7 @@ author: Tiago Mück
 
 # CHI
 
-The CHI ruby protocol provides a single cache controller that can be reused at multiple levels of the cache hierarchy and configured to model multiple instances of MESI and MOESI cache coherency protocols. This implementation is based of [Arm's AMBA 5 CHI specification](https://static.docs.arm.com/ihi0050/d/IHI0050D_amba_5_chi_architecture_spec.pdf) and provides a scalable framework for the design space exploration of large SoC designs.
+The CHI ruby protocol provides a single cache controller that can be reused at multiple levels of the cache hierarchy and configured to model multiple instances of MESI and MOESI cache coherency protocols. This implementation is based of [Arm's AMBA 5 CHI specification](https://developer.arm.com/documentation/ihi0050/D/) and provides a scalable framework for the design space exploration of large SoC designs.
 
 - [CHI overview and terminology](#chi-overview)
 - [Protocol overview](#protocol-overview)
@@ -42,7 +42,7 @@ CHI (Coherent Hub Interface) provides a component architecture and transaction-l
 
 An HNF is the point of coherency (PoC) and point of serialization (PoS) for a specific address range. The HNF is responsible for issuing any required snoop requests to RNFs or memory access requests to SNFs in order to complete a transaction. The HNF can also encapsulate a shared last-level cache and include a directory for targeted snoops.
 
-The [CHI specification](https://static.docs.arm.com/ihi0050/d/IHI0050D_amba_5_chi_architecture_spec.pdf) also defines specific types of nodes for non-coherent requesters (RNI) and non-coherent address ranges (HNI and SNI), e.g., memory ranges belonging to IO components. In Ruby, IO accesses don't go though the cache coherency protocol so only CHI's fully coherent node types are implemented. In this documentation we interchangeably use the terms RN / RNF, HN / HNF, and SN/SNF. We also use the terms **upstream** and **downstream** to refer to components in the previous (i.e. towards the cpu) and next  (i.e. towards memory) levels in the memory hierarchy, respectively.
+The [CHI specification](https://developer.arm.com/documentation/ihi0050/D/) also defines specific types of nodes for non-coherent requesters (RNI) and non-coherent address ranges (HNI and SNI), e.g., memory ranges belonging to IO components. In Ruby, IO accesses don't go though the cache coherency protocol so only CHI's fully coherent node types are implemented. In this documentation we interchangeably use the terms RN / RNF, HN / HNF, and SN/SNF. We also use the terms **upstream** and **downstream** to refer to components in the previous (i.e. towards the cpu) and next  (i.e. towards memory) levels in the memory hierarchy, respectively.
 
 ## Protocol overview
 
@@ -105,7 +105,7 @@ When a cache controller is a HNF (home node), the state transactions are basical
 - On a cache and directory miss, DMT (direct memory transfer) is used if enabled.
 - On a cache miss and directory hit, DCT (direct cache transfer) is used if enabled.
 
-For more information on DCT and DMT transactions, see Sections 1.7 and 2.3.1 in the [CHI specification](https://static.docs.arm.com/ihi0050/d/IHI0050D_amba_5_chi_architecture_spec.pdf). DMT and DCT are CHI features that allow the data source for a request to send data directly to the original requester. On a DMT request, the SN sends data directly to the RN (instead of sending first to the HN, which would then forwards to the RN), while with DCT, the HN requests that a RN being snooped (the snoopee) to send a copy of the line directly the original requester. With DCT enabled, the HN may also request that the snoopee to send the data to both the HN and the original requester, so the HN can also cache the data. This depends on the allocation policy defined by the configuration parameters. Notice that the allocation policy also changes the cache state transitions. For simplicity, the figure above illustrates an inclusive cache.
+For more information on DCT and DMT transactions, see Sections 1.7 and 2.3.1 in the [CHI specification](https://developer.arm.com/documentation/ihi0050/D/). DMT and DCT are CHI features that allow the data source for a request to send data directly to the original requester. On a DMT request, the SN sends data directly to the RN (instead of sending first to the HN, which would then forwards to the RN), while with DCT, the HN requests that a RN being snooped (the snoopee) to send a copy of the line directly the original requester. With DCT enabled, the HN may also request that the snoopee to send the data to both the HN and the original requester, so the HN can also cache the data. This depends on the allocation policy defined by the configuration parameters. Notice that the allocation policy also changes the cache state transitions. For simplicity, the figure above illustrates an inclusive cache.
 
 The following is a list of the main configuration parameters of the cache controller that affect the protocol behavior (please refer to the protocol SLICC specification for details and a full list of parameters)
 
@@ -372,7 +372,7 @@ Notice `CheckCacheFill` does not actually writes data to the cache block. If onl
 
 ## Supported CHI transactions
 
-All transactions are implemented as described in the [AMBA5 CHI Issue D specification](https://static.docs.arm.com/ihi0050/d/IHI0050D_amba_5_chi_architecture_spec.pdf). The next sections provide a more detailed explanation of the implementation-specific choices not fixed by the public document.
+All transactions are implemented as described in the [AMBA5 CHI Issue D specification](https://developer.arm.com/documentation/ihi0050/D/). The next sections provide a more detailed explanation of the implementation-specific choices not fixed by the public document.
 
 ### Supported requests
 

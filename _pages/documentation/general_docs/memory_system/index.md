@@ -54,7 +54,7 @@ has both MasterPort and SlavePort instances.
 There are two groups of functions in the port object. The `send*`
 functions are called on the port by the object that owns that port. For
 example to send a packet in the memory system a CPU would call
-`myPort->sendTimingReq(pkt)` to send a packet. Each send function has a
+`myPort->sendTimingReq(pkt)`. Each send function has a
 corresponding recv function that is called on the ports peer. So the
 implementation of the `sendTimingReq()` call above would simply be
 `peer->recvTimingReq(pkt)` on the slave port. Using this method we only
@@ -152,7 +152,7 @@ to be certain the data is valid:
   Unknown.
 - A list of command attributes associated with the packet
     - Note: There is some overlap in the data in the status field and
-      the command attributes. This is largely so that a packet an be
+      the command attributes. This is largely so that a packet can be
       easily reinitialized when nacked or easily reused with atomic or
       functional accesses.
 - A `SenderState` pointer which is a virtual base opaque structure
@@ -226,7 +226,7 @@ protocol.)
   cache must allocate a new Packet object for its response. Also,
   because the target device may delete the request packet immediately
   on delivery, any other memory device wishing to reference a
-  broadcast packet past point where the packet is delivered must make
+  broadcast packet past the point where the packet is delivered must make
   a copy of that packet, as the pointer to the packet that is
   delivered cannot be relied upon to stay valid.
 

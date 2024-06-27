@@ -1,68 +1,77 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="{{ "/" | prepend: site.baseurl }}">
-		<img src="{{ "/assets/img/gem5ColorLong.gif" | prepend: site.baseurl }}" alt="gem5" height=55px>
-	</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <!-- LIST FOR NAVBAR -->
-    <ul class="navbar-nav ml-auto">
-      <!-- HOME -->
-      <li class="nav-item {% if page.title == "Home" %}active{% endif %}">
-        <a class="nav-link" href="{{ "/" | prepend: site.baseurl }}">Home</a>
-      </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid">
 
-      <!-- ABOUT -->
-			<li class="nav-item dropdown {% if page.parent == "about" %}active{% endif %}">
-				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					About
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ "/about" | prepend: site.baseurl }}">About gem5</a>
-          <a class="dropdown-item" href="{{ "/publications" | prepend: site.baseurl }}">Publications</a>
-          <a class="dropdown-item" href="{{ "/governance" | prepend: site.baseurl }}">Governance</a>
-				</div>
-			</li>
+    <!-- LOGO -->
+    <a class="navbar-brand" href="{{ '/' | prepend: site.baseurl }}">
+      <img src="{{ '/assets/img/gem5ColorLong.gif' | prepend: site.baseurl }}" alt="gem5" height=55px>
+    </a>
 
-      <!-- DOCUMENTATION -->
-			<li class="nav-item dropdown {% if page.layout == "documentation" %}active{% endif %}">
-				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Documentation
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<!-- Pull navigation from _data/documentation.yml -->
-					{% for item in site.data.documentation.docs %}
-            <a class="dropdown-item" href="{{ item.items[0].url | prepend: site.baseurl }}">{{ item.title }}</a>
-					{% endfor %}
-				</div>
-			</li>
+    <!-- When the screen size is small, display a hamburger icon instead of the navbar. -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- COMMUNITY -->
-			<li class="nav-item dropdown {% if page.title == "Community" %}active{% endif %}">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Community
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{{ "/events" | prepend: site.baseurl }}">Events</a>
-          <a class="dropdown-item" href="{{ "/dev_meetings" | prepend: site.baseurl }}">Developer Meetings</a>
-        </div>
-			</li>
+    <!-- Navbar content-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-      <!-- CONTRIBUTING -->
-      <li class="nav-item {% if page.title == "Contributing" %}active{% endif %}">
-        <a class="nav-link" href="{{ "/contributing" | prepend: site.baseurl }}">Contributing</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">
+            Home
+          </a>
+        </li>
 
-      <!-- BLOG -->
-      <li class="nav-item {% if page.url == "/blog/" %}active{% endif %}">
-        <a class="nav-link" href="{{ "/blog" | prepend: site.baseurl }}">Blog</a>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {% if page.parent == 'about' %}active{% endif %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{{ '/about' | prepend: site.baseurl }}">About gem5</a></li>
+            <li><a class="dropdown-item" href="{{ '/publications' | prepend: site.baseurl }}">Publications</a></li>
+            <li><a class="dropdown-item" href="{{ '/governance' | prepend: site.baseurl }}">Governance</a></li>
+          </ul>
+        </li>
 
-      <!-- SEARCH -->
-			<li class="nav-item {% if page.title == "Search" %}active{% endif %}">
-        <a class="nav-link" href="{{ "/search" | prepend: site.baseurl }}">Search</a>
-      </li>
-    </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {% if page.layout == 'documentation' %}active{% endif %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Documentation
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <!-- Pull navigation from _data/documentation.yml -->
+            {% for item in site.data.documentation.docs %}
+              <li><a class="dropdown-item" href="{{ item.items[0].url | prepend: site.baseurl }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {% if page.title == 'Events' or page.title == 'Developer Meetings' %}active{% endif %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Community
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{{ '/events' | prepend: site.baseurl }}">Events</a></li>
+            <li><a class="dropdown-item" href="{{ '/dev_meetings' | prepend: site.baseurl }}">Developer Meetings</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link {% if page.title == 'A guide to contributing' %}active{% endif %}" href="{{ '/contributing' | prepend: site.baseurl }}">
+            Contributing
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.url == '/blog/' %}active{% endif %}" href="{{ '/blog' | prepend: site.baseurl }}">
+            Blog
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if page.title == 'Search' %}active{% endif %}" href="{{ '/search' | prepend: site.baseurl }}">
+            Search
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

@@ -3,168 +3,137 @@ layout: default
 title: The gem5 simulator system
 ---
 <header>
-  <img src="{{ "/assets/img/gem5logo/Color/noBackground/vertical/gem5ColorVert.png" | prepend: site.baseurl }}" height="250px;">
-
-  <br/>
-  <a href="{{ site.posts.first.url }}"><button type="button" class="btn btn-primary btn-lg"><b>Latest News:</b> {{ site.posts.first.title }}</button></a>
-  <br/>
+  <img src="{{ '/assets/img/gem5logo/Color/noBackground/horizontal/gem5ColorLong.gif' | prepend: site.baseurl }}" height="170px;">
 
   <p>
     The gem5 simulator is a modular platform for computer-system architecture research, encompassing system-level architecture as well as processor microarchitecture.
-    gem5 is a <i>community led</i> project with an <a href=/governance/>open governance</a> model.
+    gem5 is a <i>community led</i> project with an <a href="/governance/">open governance</a> model.
   </p>
+  <br/>
   <p>
     gem5 was originally conceived for computer architecture research in academia, but it has grown to be used in computer system design by academia, industry for research, and in teaching.
   </p>
 
-  <a href="{{ "/getting_started" | prepend: site.baseurl }}"><button type="button" class="btn btn-primary" href="">Get Started</button></a>
-  <a href="https://github.com/gem5/gem5"><button type="button" class="btn btn-outline-primary">Source</button></a>
-  <a href="https://github.com/gem5/gem5/pulls"><button type="button" class="btn btn-outline-primary">Code Review</button></a>
-  <a href="https://arxiv.org/abs/2007.03152"><button type="button" class="btn btn-outline-primary">gem5-20+ paper</button></a>
-  <a href="https://www.gem5.org/join-slack"><button type="button" class="btn btn-outline-primary">Join our Slack</button></a>
-  <a href="https://www.youtube.com/channel/UCCpCGEj_835WYmbB0g96lZw"><button type="button" class="btn btn-outline-primary">gem5 Youtube</button></a>
+  <hr class="hr-shorter">
 
-  <div class="testing-status">
-    <div class="testing-title">
-    <h3>Testing Status:</h3>
+  <div class="row align-items-center testing-status">
+    <div class="col">
+      Testing status:
     </div>
-    <div class="testing-info">
-    <ul>
-      <li><a href='https://jenkins.gem5.org/job/nightly/'><img src='https://jenkins.gem5.org/buildStatus/icon?job=nightly&style=plastic&subject=Nightly%20Tests%20ran%20${startTime}%20ago%20for%20${duration}'></a></li>
-      <li><a href='https://jenkins.gem5.org/job/weekly/'><img src='https://jenkins.gem5.org/buildStatus/icon?job=weekly&style=plastic&subject=Weekly%20Tests%20ran%20${startTime}%20ago%20for%20${duration}'></a></li>
-      <li><a href='https://jenkins.gem5.org/job/compiler-checks/'><img src='https://jenkins.gem5.org/buildStatus/icon?job=compiler-checks&style=plastic&subject=Compiler%20Tests%20ran%20${startTime}%20ago%20for%20${duration}'></a></li>
-    </ul>
+    <div class="col">
+      <a href='https://github.com/gem5/gem5/actions/workflows/daily-tests.yaml'><img src='https://github.com/gem5/gem5/actions/workflows/daily-tests.yaml/badge.svg'></a>
+    </div>
+    <div class="col">
+      <a href='https://github.com/gem5/gem5/actions/workflows/weekly-tests.yaml'><img src='https://github.com/gem5/gem5/actions/workflows/weekly-tests.yaml/badge.svg'></a>
+    </div>
+    <div class="col">
+      <a href='https://github.com/gem5/gem5/actions/workflows/compiler-tests.yaml'><img src='https://github.com/gem5/gem5/actions/workflows/compiler-tests.yaml/badge.svg'></a>
     </div>
   </div>
 
 </header>
 
 <div class="container">
-
   <div class="row">
 
     <div class="col">
       <div class="card">
-        <div class="fav"><i class="fa fa-envelope"></i></div>
+        <h5 class="card-title"> Getting started </h5>
         <div class="card-body">
-          <h5 class="card-title">Mailing Lists</h5>
-          <p class="card-text">gem5 has two main mailing lists where you can ask for help or advice.</p>
-          <a href="/mailing_lists/" class="btn btn-primary">Go to Mailing Lists</a>
+          <p>
+            Welcome to the gem5 community! Whether you're a seasoned developer or just starting, feel free to ask for guidance as you explore and contribute to gem5.
+          </p>
+          <a href="/getting_started/"><button class="btn-main-link">First steps</button></a>
+          <a href="/ask-a-question/"><button class="btn-main-link">Ask a question</button></a>
+          <a href="/documentation/learning_gem5/introduction/"><button class="btn-main-link">Learn gem5</button></a>
+          <a href="/publications/"><button class="btn-main-link">Cite gem5 in your work</button></a>
         </div>
       </div>
     </div>
 
     <div class="col">
       <div class="card">
-        <div class="fav"><i class="fa fa-graduation-cap"></i></div>
+        <h5 class="card-title"> Source code </h5>
         <div class="card-body">
-          <h5 class="card-title">Learning gem5</h5>
-          <p class="card-text">Learn how to use gem5 and interact with the gem5 codebase.</p>
-          <a href="/documentation/learning_gem5/introduction/" class="btn btn-primary">Go to Learning gem5</a>
+          <p>
+            Our gem5 project thrives on GitHub, serving as the open-source hub where community led development takes place.
+          </p>
+          <a href="https://github.com/gem5/gem5"><button class="btn-main-link">GitHub</button></a>
+          <a href="/contributing"><button class="btn-main-link">Contributing</button></a>
+          <a href="https://github.com/gem5/gem5/pulls"><button class="btn-main-link">Code reviews</button></a>
+          <a href="https://github.com/gem5/gem5/issues"><button class="btn-main-link">Bug reports</button></a>
+          <a href="https://resources.gem5.org/"><button class="btn-main-link">gem5 resources</button></a>
         </div>
       </div>
     </div>
 
     <div class="col">
       <div class="card">
-        <div class="fav"><i class="fa fa-code-fork"></i></div>
+        <h5 class="card-title card-title-highlighted"> Latest news </h5>
         <div class="card-body">
-          <h5 class="card-title">Contributing</h5>
-          <p class="card-text">Aid the gem5 project by becoming a contributor!</p>
-          <a href="/contributing" class="btn btn-primary">Go to Contributing</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="fav"><i class="fa fa-youtube"></i></div>
-        <div class="card-body">
-          <h5 class="card-title">YouTube</h5>
-          <p class="card-text">Learn more about gem5 on our YouTube channel</p>
-          <a href="https://www.youtube.com/channel/UCCpCGEj_835WYmbB0g96lZw" class="btn btn-primary">Go to YouTube</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="fav"><i class="fa fa-download"></i></div>
-        <div class="card-body">
-          <h5 class="card-title">Guest binaries</h5>
-          <p class="card-text">Download guest binaries for Fullsystem and Syscall Emulation mode</p>
-          <a href="/documentation/general_docs/fullsystem/guest_binaries" class="btn btn-primary">Go to Download page</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="fav"><i class="fa fa-book"></i></div>
-        <div class="card-body">
-          <h5 class="card-title">Publications</h5>
-          <p class="card-text">We're always happy to have people cite our work. See our publication list to see how gem5 is aiding computer architecture research.</p>
-          <a href="/publications/" class="btn btn-primary">Go to Publications</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="fav"><i class="fa fa-newspaper-o"></i></div>
-        <div class="card-body">
-          <h5 class="card-title">Blog</h5>
-          <p class="card-text">Keep up-to-date with the latest gem5 news via our blog!</p>
-          <a href="/blog" class="btn btn-primary">Go to Blog</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="fav"><i class="fa fa-bug"></i></div>
-        <div class="card-body">
-          <h5 class="card-title">Issue Tracker</h5>
-          <p class="card-text">View the latest gem5 bug reports or add your own!</p>
-          <a href="https://gem5.atlassian.net" class="btn btn-primary">Go to Issue Tracker</a>
+          <p>
+            Explore our blog for the latest updates and news about gem5, offering a valuable resource to stay informed on the project's developments.
+          </p>
+          <a href="/events/bootcamp-2024"><button class="btn-main-link"> We are happy to announce the <b>gem5 bootcamp 2024!</b></button></a>
+          <a href="{{ site.posts.first.url }}"><button class="btn-main-link">{{ site.posts.first.title }}</button></a>
+          <!-- <a href="{{ site.posts[1].url }}"><button class="btn-main-link">{{ site.posts[1].title }}</button></a> -->
         </div>
       </div>
     </div>
 
   </div>
 
-  <br><br>
-  <hr>
-
-  <h1 class="title"> Sponsors </h1>
-
-  <div class="sponsor-ask">
-    <a href="mailto:jlowepower@ucdavis.edu" class="btn btn-primary">Add your company to this list!</a>
-  </div>
-
-  <div class="row">
-
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <a href="https://www.nsf.gov"><img src="assets/img/external_logos/nsf.png" alt="NSF logo"></a>
-          This project is funded in part by NSF through the CCRI program, award number CNS 1925724. <br/>
-          <a href="https://www.ccrivo.org/">Click here for other CCRI-funded infrastructures</a>
-        </div>
+  <div class="col">
+    <div class="card card-connect-with-us">
+      <h5 class="card-title"> Connect with us </h5>
+      <div class="card-body">
+        <a href="https://github.com/orgs/gem5/discussions"><img src="assets/img/external_logos/github.png" alt="GitHub logo" class="btn-main-link"></a>
+        <a href="https://join.slack.com/t/gem5-workspace/shared_invite/zt-2e2nfln38-xsIkN1aRmofRlAHOIkZaEA"><img src="assets/img/external_logos/slack.png" alt="Slack logo" class="btn-main-link"></a>
+        <a href="https://www.youtube.com/@gem5"><img src="assets/img/external_logos/youtube.png" alt="YouTube logo" class="btn-main-link"></a><br/>
       </div>
     </div>
+  </div>
 
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <a href="https://www.google.com"><img src="assets/img/external_logos/google.png" alt="Google logo"></a>
-          Google generously hosts the gem5 source code, Gerrit code review, and CI testing.
-        </div>
-      </div>
+  <br/><br/>
+
+  <hr class="hr-shorter">
+
+  <div class="page-subtitle"> Sponsors </div>
+  <br/>
+
+  <div class="row sponsors-container">
+    <div class="sponsor-item">
+      <a href="https://www.nsf.gov">
+        <img src="assets/img/external_logos/nsf.png" alt="NSF logo" class="btn-main-link">
+      </a>
+      <a href="https://www.energy.gov/science/office-science">
+        <img src="assets/img/external_logos/doe.png" alt="DOE logo" class="btn-main-link">
+      </a>
+      <p>
+        This project is funded in part by
+        NSF (award number: <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2311888&HistoricalAwards=false">OAC-2311888</a>)
+        and DOE (award number: <a href="https://pamspublic.science.energy.gov/WebPAMSExternal/Interface/Common/ViewPublicAbstract.aspx?rv=cc328a17-8db6-42af-aa73-8e96b6ad93a2&rtc=24&PRoleId=10">DE-SC0024502</a>).
+      </p>
+    </div>
+
+    <div class="sponsor-item">
+      <a href="https://arch.cs.ucdavis.edu">
+        <img src="assets/img/external_logos/DArchR.png" alt="DArchR logo" class="btn-main-link">
+      </a>
+      <p>
+        UC Davis Computer Architecture Research Group
+      </p>
+    </div>
+
+    <div class="sponsor-item">
+      <a href="https://www.google.com">
+        <img src="assets/img/external_logos/google.png" alt="Google logo" class="btn-main-link">
+      </a>
+      <p>
+        Google
+      </p>
     </div>
 
   </div>
-
 
 </div>
-
