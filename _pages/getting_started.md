@@ -16,7 +16,7 @@ To download gem5, you can use [`git`](https://git-scm.com/) to checkout to curre
 If you're not familiar with version control or git, The [git book](https://git-scm.com/book/en/v2) (available online for free) is a great way to learn more about git and become more comfortable using version control.
 The canonical version of gem5 is hosted on [GitHub](https://github.com/gem5/gem5).
 
-```
+```sh
 git clone https://github.com/gem5/gem5
 ```
 
@@ -28,9 +28,9 @@ It is strongly suggested to *not* try to compile gem5 when running on a virtual 
 When running with a VM on a laptop gem5 can take over an hour just to compile.
 The [building gem5](/documentation/general_docs/building) provides more details on building gem5 and its dependencies.
 
-```
+```sh
 cd gem5
-scons build/X86/gem5.opt -j <NUMBER OF CPUs ON YOUR PLATFORM>
+scons build/X86/gem5.opt -j <NUMBER THREADS>
 ```
 
 Now that you have a gem5 binary, you can run your first simulation!
@@ -39,7 +39,7 @@ The gem5 binary reads in and executes the provided Python script which creates t
 In this example, the script creates a *very* simple system and executes a "hello world" binary.
 More information about the script can be found in the [Simple Config chapter](/documentation/learning_gem5/part1/simple_config) of the [Learning gem5](/documentation/learning_gem5/introduction) book.
 
-```
+```sh
 build/X86/gem5.opt configs/learning_gem5/part1/simple.py
 ```
 
