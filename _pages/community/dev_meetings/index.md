@@ -8,6 +8,14 @@ The Developer Meeting is a recurring monthly event. Its primary purpose is to st
 
 ---
 
+## June 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1203)
+- Video recording: [YouTube](https://youtu.be/vkBKsJ5dvEc?si=NWcPCAhOlVDvEAnX)
+
+## May 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1095)
+- Video recording: [YouTube](https://youtu.be/C5Ze9hjUL8M)
+
 ## April 2024
 - Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/995)
 - Video recording: [YouTube](https://www.youtube.com/watch?v=_1D8PM_vPr0)
