@@ -12,7 +12,7 @@ authors: Bobby R. Bruce
 ## Supported operating systems and environments
 
 gem5 has been designed with a Linux environment in mind. We test regularly
-on **Ubuntu 20.04**, and **Ubuntu 22.04** to ensure gem5 functions well in
+on **Ubuntu 22.04**, and **Ubuntu 24.04** to ensure gem5 functions well in
 these environments. Though **any Linux based OS should function if the correct
 dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
@@ -22,8 +22,6 @@ information).
 dependencies installed. However, at present, we do not officially test our
 builds on Mac OS. **We therefore cannot guarantee the same stability for those
 wishing to compile and run gem5 in Mac OS as we can in Linux-based systems**.
-[In later versions of gem5, we hope to more effectively support Mac OS through
-improved testing](https://gem5.atlassian.net/browse/GEM5-538).
 
 As of gem5 21.0, **we support building and running gem5 with Python 3.6+
 only.**. gem5 20.0 was our last version of gem5 to provide support for Python
@@ -37,10 +35,8 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=8 must be used**. We
-support up to gcc Version 12. **Note**: GCC Version 9 may be used but is not officially
-supported due to it
-[increasing gem5 Object File sizes](https://github.com/gem5/gem5/issues/555).
+* **gcc**: gcc is used to compiled gem5. **Version >=10 must be used**. We
+support up to gcc Version 13.
 * **Clang**: Clang can also be used. At present, we support Clang 7 to
 Clang 16 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
@@ -53,6 +49,22 @@ generation and playback.
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
+### Setup on Ubuntu 24.04 (gem5 >= v24.0)
+
+If compiling gem5 on Ubuntu 24.04, or related Linux distributions, you may
+install all these dependencies using APT:
+
+```sh
+sudo apt install build-essential scons python3-dev git pre-commit \
+                zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler \
+                libprotoc-dev libgoogle-perftools-dev libboost-all-dev \
+                libhdf5-serial-dev python3-pydot python3-venv python3-tk \
+                mypy m4 libcapstone-dev libpng-dev libelf-dev pkg-config \
+                wget cmake doxygen
+```
+
+This installs all gem5 dependencies, including the optional dependencies.
+
 ### Setup on Ubuntu 22.04 (gem5 >= v21.1)
 
 If compiling gem5 on Ubuntu 22.04, or related Linux distributions, you may
@@ -64,72 +76,55 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     python3-dev libboost-all-dev pkg-config python3-tk
 ```
 
-### Setup on Ubuntu 20.04 (gem5 >= v21.0)
-
-If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
-install all these dependencies using APT:
-
-```
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
-    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python-is-python3 libboost-all-dev pkg-config gcc-10 g++-10 \
-    python3-tk
-```
-
 
 ### Docker
 
 For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
-Ubuntu 22.04 with all optional dependencies:
+Ubuntu 24.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
+https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
 
-Ubuntu 22.04 with minimum dependencies:
+Ubuntu 24.04 with all minimum dependencies:
+[ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
+https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+
+Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-22.04_min-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_min-dependencies/Dockerfile)).
-
-Ubuntu 20.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
-
-Ubuntu 18.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-18.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-18.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
+https://ghcr.io/gem5/ubuntu-22.04_akk-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v23.0.0.0/util/dockerfiles/ubuntu-24.0_all-dependencies/Dockerfile)).
 
 To obtain a docker image:
 
-```
+```sh
 docker pull <image>
 ```
 
-E.g., for Ubuntu 20.04 with all optional dependencies:
+E.g., for Ubuntu 24.04 with all optional dependencies:
 
-```
-docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+```sh
+docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0
 ```
 
 Then, to work within this environment, we suggest using the following:
 
-```
+```sh
 docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 ```
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0`).
+ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.
 
 ## Getting the code
 
-```
+```sh
 git clone https://github.com/gem5/gem5
 ```
 
@@ -144,13 +139,13 @@ tree, usually near the files they're associated with.
 Within the root of the gem5 directory, gem5 can be built with SCons using:
 
 ```
-scons build/{ISA}/gem5.{variant} -j {cpus}
+scons build/{ISA}/gem5.{variant} -j {threads}
 ```
 
 where `{ISA}` is the target (guest) Instruction Set Architecture, and
 `{variant}` specifies the compilation settings. For most intents and purposes
 `opt` is a good target for compilation. The `-j` flag is optional and allows
-for parallelization of compilation with `{cpus}` specifying the number of
+for parallelization of compilation with `{threads}` specifying the number of
 threads. A single-threaded compilation from scratch can take up to 2 hours on
 some systems. We therefore strongly advise allocating more threads if possible.
 
@@ -193,8 +188,8 @@ These versions are summarized in the following table.
 
 For example, to build gem5 on 4 threads with `opt` and targeting x86:
 
-```
-scons build/X86/gem5.opt -j 4
+```sh
+scons build/X86/gem5.{variant} -j {threads}
 ```
 
 In addition, users may make use of the "gprof" and "pperf" build options to
@@ -207,9 +202,19 @@ enabled by compiling with the `--gprof` flag. E.g.,
 enabled by compiling with the `--pprof` flag. E.g.,
 `scons build/X86/gem5.debug --pprof`.
 
+### The `ALL` target
+
+The `ALL` target can be used to build all the available ISAs into a single gem5 binary.
+
+To do so, use the following command:
+
+```sh
+scons build/ALL/gem5.opt -j 4
+```
+
 ## Build with Kconfig
 
-Please see [here](https://www.gem5.org/documentation/general_docs/kconfig_build_system/)
+Please see [here](https://www.gem5.org/documentation/general_docs/kconfig_build_system/) for information on configuration a gem5 build using Kconfigs.
 
 ## Usage
 
