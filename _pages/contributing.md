@@ -59,8 +59,11 @@ git clone https://github.com/{your github account}/gem5
 If you forked only the `stable` branch, run these two commands to fetch the other branches as well:
 
 ```sh
-git remote add gem5 https://github.com/gem5/gem5.git
-git fetch gem5
+git remote add upstream https://github.com/gem5/gem5.git
+git fetch upstream
+git switch gem5/develop
+git switch -c develop
+git push --set-upstream origin develop
 ```
 
 ### stable / develop branch
@@ -216,19 +219,18 @@ cd tests
 ```
 
 **Note: These tests can take several hours to build and execute. `main.py` may
-be run on multiple threads with the `-j` flag. E.g.: `python main.py run
--j6`.**
+be run on multiple threads with the `-j` flag. E.g.: `python main.py run -j6`.**
 
 The unit tests should also pass. To run the unit tests:
 
 ```sh
-scons build/NULL/unittests.opt
+scons build/ALL/unittests.opt -j <number of threads>
 ```
 
 To compile an individual gem5 binary:
 
 ```sh
-scons build/ALL/gem5.opt
+scons build/ALL/gem5.opt -j <number of threads>
 ```
 
 This compiles a gem5 binary containing "ALL" ISA targets. For more information
@@ -271,7 +273,7 @@ messages include a link to the relevant GitHub issue/issues.
 
 Below is an example of how a gem5 commit message should be formatted:
 
-```
+```commit
 test,base: This commit tests some classes in the base component
 
 This is a more detailed description of the commit. This can be as long
@@ -441,7 +443,6 @@ As the files in ".github" only influence the functionality of our GitHub actions
 It is therefore safe to do this.
 Despite this exemption to our normal procedure we aim to ensure that **the ".github" directory on the `stable` is never "ahead" of that in the `develop` branch**.
 Therefore contributors who wish to update files in ".github" should submit their changes to `develop` and then request their changes to be applied to the `stable` branch.
-
 
 ### Hotfixes
 
