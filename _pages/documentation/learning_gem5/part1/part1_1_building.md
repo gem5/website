@@ -135,7 +135,7 @@ python3 `which scons` build/X86/gem5.opt -j9
 
 > **gem5 binary types**
 >
-> The SCons scripts in gem5 currently have 5 different binaries you can
+> The SCons scripts in gem5 currently have 3 different binaries you can
 > build for gem5: debug, opt, and fast. These names are
 > mostly self-explanatory, but detailed below.
 >

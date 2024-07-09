@@ -32,7 +32,7 @@ begin the simulation.
 
 This script is completely user-defined. You can choose to use any valid
 Python code in the configuration scripts. This book provides on example
-of a style that relies heavily classes and inheritance in Python. As a
+of a style that relies heavily on classes and inheritance in Python. As a
 gem5 user, it's up to you how simple or complicated to make your
 configuration scripts.
 
