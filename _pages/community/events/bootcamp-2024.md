@@ -10,16 +10,6 @@ tabs:
     content: |
         We are happy to announce the **gem5 bootcamp 2024!**
 
-        ---
-
-        **IMPORTANT:**
-        - [**Registration is open until June 24th!**](https://na.eventscloud.com/ereg/index.php?eventid=799532&) Please note that spaces are limited.
-        - A few dorm rooms are still available, so students should register and book as soon as possible to guarantee availability.
-        - You can find the bootcamp schedule [here](https://gem5bootcamp.github.io/2024/).
-
-        ---
-
-
         **WHEN: July 29th - August 2nd 2024**
 
         **WHERE: UC Davis, California**
@@ -30,12 +20,6 @@ tabs:
         * **Professionals**: This track caters to professionals seeking proficiency in gem5, with a specific emphasis on development aspects. The tailored **3-day** bootcamp provides a focused introduction, ensuring that professionals acquire the necessary skills to leverage gem5 effectively in their work.
 
         #### Registration Fees
-        * Students: $500
-        * Students with accommodation on campus: $1100
-        * Professionals (3 days, Tue/Wed/Thu): $800
-        * Professionals (5 days, Mon - Fri): $1200
-
-        Students are still welcome to submit the applications for travel grants.
 
         The registration fee covers five days of meals, including breakfast, lunch, and an afternoon snack. Additionally, participants will enjoy a reception dinner and a fun evening event, each scheduled on separate days. Students have the option of discounted accommodation on campus.
 
@@ -59,8 +43,7 @@ tabs:
     id: key-dates
     content: |
         - **Bootcamp:** July 29 - August 2, 2024
-        - **Students accommodation on campus deadline:** May 26th
-        - **Registration deadline:** June 24th
+        - **Registration:** Closed.
 
   - name: Application
     id: application
@@ -75,6 +58,9 @@ tabs:
   - name: Registration
     id: registration
     content: |
+        Registration is closed.
+
+        <!--
         [**Registration**](https://na.eventscloud.com/ereg/index.php?eventid=799532&) **is open!**
 
         Please use the link provided above to register for the bootcamp.
@@ -86,12 +72,15 @@ tabs:
         For students, registration covers the entire 5-day event. You have the choice to stay in student dorms on campus. A few dorm rooms are still available, so students should register and book as soon as possible to guarantee availability.
 
         Professionals can opt for either a 3-day (Tuesday, Wednesday, Thursday) or 5-day (Monday - Friday) event. We recommend the 5-day option for those completely new to gem5; otherwise, the 3-day option may be more suitable. If you're unsure, please don't hesitate to reach out to us.
-
+        -->
 
   - name: Info for attendees
     id: info-attendees
     content: |
-        **Students can choose to stay on campus**, with a nightly rate of around $100 for a single room. This option can be selected during the registration process.
+
+        <!--
+          Students can choose to stay on campus, with a nightly rate of around $100 for a single room. This option can be selected during the registration process.
+        -->
 
         ##### Hotels nearby:
         * [Hyatt](https://www.hyatt.com/en-US/hotel/california/hyatt-place-uc-davis/smfzu) (0.1 miles from the venue)
