@@ -189,7 +189,9 @@ docs:
     - title: GPU Models
       id: gpu_models
       subitems:
-        - page: VEGA
+        - page: Full System
+          url: /documentation/general_docs/gpu_models/gpufs
+        - page: System Emulation
           url: /documentation/general_docs/gpu_models/vega
 
     - title: M5ops

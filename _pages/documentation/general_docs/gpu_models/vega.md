@@ -6,7 +6,7 @@ parent: gpu_models
 permalink: /documentation/general_docs/gpu_models/vega
 ---
 
-# **AMD VEGA GPU model**
+# **System Emulation AMD VEGA GPU model**
 
 Table of Contents
 
