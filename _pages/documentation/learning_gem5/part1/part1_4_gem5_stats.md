@@ -120,8 +120,8 @@ stats.txt
 ---------
 
 gem5 has a flexible statistics generating system. gem5 statistics is
-covered in some detail on the [gem5 wiki
-site](http://www.gem5.org/Statistics). Each instantiation of a SimObject
+covered in some detail on the [gem5 stats](
+https://www.gem5.org/documentation/general_docs/statistics/). Each instantiation of a SimObject
 has it's own statistics. At the end of simulation, or when special
 statistic-dumping commands are issued, the current state of the
 statistics for all SimObjects is dumped to a file.
