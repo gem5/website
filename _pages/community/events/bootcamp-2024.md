@@ -8,6 +8,17 @@ tabs:
     id: about
     active: true
     content: |
+        ---
+
+        **After the event:**
+
+        Thank you to everyone who contributed to this bootcamp and helped make it a success.
+
+        - [YouTube Videos](https://www.youtube.com/playlist?list=PL_hVbFs_loVR_8ntTTmmG6YEq3Po_4snu)
+        - [Slides](https://bootcamp.gem5.org/)
+
+        ---
+
         We are happy to announce the **gem5 bootcamp 2024!**
 
         **WHEN: July 29th - August 2nd 2024**
