@@ -15,7 +15,7 @@ tabs:
         Thank you to everyone who contributed to this bootcamp and helped make it a success.
 
         - [YouTube Videos](https://www.youtube.com/playlist?list=PL_hVbFs_loVR_8ntTTmmG6YEq3Po_4snu)
-        - [Slides](gem5bootcamp.github.io/2024)
+        - [Slides](https://gem5bootcamp.github.io/2024)
 
         ---
 
