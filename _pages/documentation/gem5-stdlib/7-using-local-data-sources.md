@@ -103,7 +103,7 @@ resource = obtain_resource("id", clients=["data-source-json-1"])
 
 Local resources, in the context of gem5, pertain to resources that users possess and wish to integrate into gem5 but aren't pre-existing in the gem5 resources database.
 
-For users, This offers the flexibility to employ their own resources seamlessly within gem5, bypassing the need to create dedicated resource objects like `BinaryResource`. Instead, they can directly utilize these local resources through `obtain_resource`, streamlining the integration process.
+For users, This offers the flexibility to employ their own resources seamlessly within gem5, bypassing the need to create dedicated resource objects using `BinaryResource(local_path=/path/to/binary)`. Instead, they can directly utilize these local resources through `obtain_resource()`, streamlining the integration process.
 
 ### Using Custom Resource Configuration and Local Resources
 
@@ -111,9 +111,7 @@ In this example, we will walk through how to set up your custom configuration an
 
 #### Creating a Custom Resource Data Source
 
-Let's begin by creating a local JSON object for a resource. This is a bare bones resource that will serve as an example that local resources can be used with obtain resources.
-
-To act as this bare bones resource has a source file let us create a file named `fake-binary`. This is just an empty file.
+Let's begin by creating a local JSON object for a resource. This is a bare bones resource that will serve as an example. To use local resources with `obtain_resource()`,our bare bones resource need to have a binary file. Here we use an empty binary called `fake-binary`.
 
 Next, let's create the JSON data source. I'll name the file `my-resources.json`. The contents should look like this:
 
@@ -172,10 +170,15 @@ First, build gem5 with RISC-V:
 scons build/RISCV/gem5.opt -j`nproc`
 ```
 
-Next, run the `local-resource-example.py` file using our local `riscv-hello` resource:
+Next, run the `local-resource-example.py` file using our local `test-binary` resource:
+
+Using environment variable
+```bash
+GEM5_RESOURCE_JSON_APPEND=path/to/my-resources.json ./build/RISCV/gem5.opt configs/example/gem5_library/local-resource-example.py --resource test-binary
+```
+or you can overwrite the `gem5_default_config` with our own custom config:
 
 ```bash
 GEM5_CONFIG=path/to/gem5-config.json ./build/RISCV/gem5.opt configs/example/gem5_library/local-resource-example.py --resource test-binary
 ```
-
 This command will execute the `local-resource-example.py` script using our locally downloaded resource. This script just calls the obtain_resource function and prints the local path of the resource. This script indicates that local resources function similarly as resources on the gem5 resources database.
