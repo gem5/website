@@ -111,7 +111,9 @@ In this example, we will walk through how to set up your custom configuration an
 
 #### Creating a Custom Resource Data Source
 
-Let's begin by creating a local JSON object for a resource. This is a bare bones resource that will serve as an example. To use local resources with `obtain_resource()`,our bare bones resource need to have a binary file. Here we use an empty binary called `fake-binary`.
+Let's begin by creating a local resource. This is a bare bones resource that will serve as an example. To use local resources with `obtain_resource()`, our bare bones resource need to have a binary file. Here we use an empty binary called `fake-binary`. 
+
+**Note**: Make sure that Gem5 binary and `fake-binary` have same ISA target (RISCV here).
 
 Next, let's create the JSON data source. I'll name the file `my-resources.json`. The contents should look like this:
 
@@ -142,7 +144,7 @@ Next, let's create the JSON data source. I'll name the file `my-resources.json`.
 ]
 ```
 
-The JSON object of a resource should adhere to the [gem5 resources schema](https://resources.gem5.org/gem5-resources-schema.json).
+The JSON file of a resource should adhere to the [gem5 resources schema](https://resources.gem5.org/gem5-resources-schema.json).
 
 **Note**: While the `url` field can be a link, in this case, I'm using a local file.
 
@@ -164,7 +166,7 @@ Create a file named `gem5-config.json` with the following content:
 
 #### Running gem5 with a Local Data Source
 
-First, build gem5 with RISC-V:
+First, build gem5 with RISCV:
 
 ```bash
 scons build/RISCV/gem5.opt -j`nproc`
