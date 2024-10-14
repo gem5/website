@@ -16,11 +16,11 @@ the CPU and the memory bus. In the [next chapter](../simplecache)
 we will take this simple memory object and add some logic to it to make
 it a very simple blocking uniprocessor cache.
 
-gem5 master and slave ports
+gem5 request and response ports
 ---------------------------
 
 Before diving into the implementation of a memory object, we should
-first understand gem5's master and slave port interface. As previously
+first understand gem5's request and response port interface. As previously
 discussed in [simple-config-chapter](../../part1/simple_config), all memory objects are connected
 together via ports. These ports provide a rigid interface between these
 memory objects.
@@ -80,80 +80,80 @@ it: `PacketPtr`.
 
 ### Port interface
 
-There are two types of ports in gem5: master ports and slave ports.
+There are two types of ports in gem5: request ports and response ports.
 Whenever you implement a memory object, you will implement at least one
 of these types of ports. To do this, you create a new class that
-inherits from either `MasterPort` or `SlavePort` for master and slave
-ports, respectively. Master ports send requests (and receive response),
-and slave ports receive requests (and send responses).
+inherits from either `RequestPort` or `ResponsePort` for request and response
+ports, respectively. Request ports send requests (and receive response),
+and response ports receive requests (and send responses).
 
-The figure below outlines the simplest interaction between a master
-and slave port. This figure shows the interaction in timing mode. The
+The figure below outlines the simplest interaction between a request
+and response port. This figure shows the interaction in timing mode. The
 other modes are much simpler and use a simple callchain between the
-master and the slave.
+requestor and the responder.
 
-![Simple master-slave interaction when both can accept the request and
-the response.](/_pages/static/figures/master_slave_1.png)
+![Simple request-response interaction when both can accept the request and
+the response.](/_pages/static/figures/requestor_responder_1.png)
 
 As mentioned above, all of the port interfaces require a `PacketPtr` as
 a parameter. Each of these functions (`sendTimingReq`, `recvTimingReq`,
 etc.), accepts a single parameter, a `PacketPtr`. This packet is the
 request or response to send or receive.
 
-To send a request packet, the master calls `sendTimingReq`. In turn,
+To send a request packet, the requestor calls `sendTimingReq`. In turn,
 (and in the same callchain), the function `recvTimingReq` is called on
-the slave with the same `PacketPtr` as its sole parameter.
+the responder with the same `PacketPtr` as its sole parameter.
 
 The `recvTimingReq` has a return type of `bool`. This boolean return
-value is directly returned to the calling master. A return value of
-`true` signifies that the packet was accepted by the slave. A return
-value of `false`, on the other hand, means that the slave was unable to
+value is directly returned to the calling requestor. A return value of
+`true` signifies that the packet was accepted by the responder. A return
+value of `false`, on the other hand, means that the responder was unable to
 accept and the request must be retried sometime in the future.
 
-In the figure above, first, the master sends a timing request by
+In the figure above, first, the requestor sends a timing request by
 calling `sendTimingReq`, which in turn calls `recvTimingResp`. The
-slave, returns true from `recvTimingReq`, which is returned from the
-call to `sendTimingReq`. The master continue executing, and the slave
+responder, returns true from `recvTimingReq`, which is returned from the
+call to `sendTimingReq`. The requestor continue executing, and the responder
 does whatever is necessary to complete the request (e.g., if it is a
 cache, it looks up the tags to see if there is a match to the address in
 the request).
 
-Once the slave completes the request, it can send a response to the
-master. The slave calls `sendTimingResp` with the response packet (this
+Once the responder completes the request, it can send a response to the
+requestor. The responder calls `sendTimingResp` with the response packet (this
 should be the same `PacketPtr` as the request, but it should now be a
-response packet). In turn, the master function `recvTimingResp` is
-called. The master's `recvTimingResp` function returns `true`, which is
-the return value of `sendTimingResp` in the slave. Thus, the interaction
+response packet). In turn, the request function `recvTimingResp` is
+called. The requestor's `recvTimingResp` function returns `true`, which is
+the return value of `sendTimingResp` in the responder. Thus, the interaction
 for that request is complete.
 
-Later in master-slave-example-section we will show the example code for
+Later, in the example section we will show the example code for
 these functions.
 
-It is possible that the master or slave is busy when they receive a
-request or a response. The figure below shows the case where the slave
+It is possible that the requestor or responder is busy when they receive a
+request or a response. The figure below shows the case where the responder
 is busy when the original request was sent.
 
-![Simple master-slave interaction when the slave is
-busy](/_pages/static/figures/master_slave_2.png)
+![Simple requestor-responder interaction when the responder is
+busy](/_pages/static/figures/requestor_responder_2.png)
 
-In this case, the slave returns `false` from the `recvTimingReq`
-function. When a master receives false after calling `sendTimingReq`, it
+In this case, the responder returns `false` from the `recvTimingReq`
+function. When a requestor receives false after calling `sendTimingReq`, it
 must wait until the its function `recvReqRetry` is executed. Only when
-this function is called is the master allowed to retry calling
+this function is called is the requestor allowed to retry calling
 `sendTimingRequest`. The above figure shows the timing request failing
 once, but it could fail any number of times. Note: it is up to the
-master to track the packet that fails, not the slave. The slave *does
+requestor to track the packet that fails, not the responder. The responder *does
 not* keep the pointer to the packet that fails.
 
-Similarly, this figure shows the case when the master is busy at
-the time the slave tries to send a response. In this case, the slave
+Similarly, this figure shows the case when the requestor is busy at
+the time the responder tries to send a response. In this case, the responder
 cannot call `sendTimingResp` until it receives a `recvRespRetry`.
 
-![Simple master-slave interaction when the master is
-busy](/_pages/static/figures/master_slave_3.png)
+![Simple requestor-responder interaction when the requestor is
+busy](/_pages/static/figures/requestor_responder_3.png)
 
 Importantly, in both of these cases, the retry codepath can be a single
-call stack. For instance, when the master calls `sendRespRetry`,
+call stack. For instance, when the requestor calls `sendRespRetry`,
 `recvTimingReq` can also be called in the same call stack. Therefore, it
 is easy to incorrectly create an infinite recursion bug, or other bugs.
 It is important that before a memory object sends a retry, that it is
@@ -165,7 +165,7 @@ Simple memory object example
 In this section, we will build a simple memory object. Initially, it
 will simply pass requests through from the CPU-side (a simple CPU) to
 the memory-side (a simple memory bus). See the figure below.
-It will have a single master port, to send requests to the memory bus,
+It will have a single memory-side requestor port, to send requests to the memory bus,
 and two cpu-side ports for the instruction and data cache ports of the
 CPU. In the next chapter [simplecache-chapter](../simplecache), we will add the logic
 to make this object a cache.
@@ -189,9 +189,9 @@ class SimpleMemobj(SimObject):
     type = 'SimpleMemobj'
     cxx_header = "learning_gem5/part2/simple_memobj.hh"
 
-    inst_port = SlavePort("CPU side port, receives requests")
-    data_port = SlavePort("CPU side port, receives requests")
-    mem_side = MasterPort("Memory side port, sends requests")
+    inst_port = ResponsePort("CPU side port, receives requests")
+    data_port = ResponsePort("CPU side port, receives requests")
+    mem_side = RequestPort("Memory side port, sends requests")
 ```
 
 For this object, we inherit from `SimObject`. The
@@ -236,26 +236,26 @@ class SimpleMemobj : public SimObject
 };
 ```
 
-### Define a slave port type
+### Define a response port type
 
 Now, we need to define classes for our two kinds of ports: the CPU-side
 and the memory-side ports. For this, we will declare these classes
 inside the `SimpleMemobj` class since no other object will ever use
 these classes.
 
-Let's start with the slave port, or the CPU-side port. We are going to
-inherit from the `SlavePort` class. The following is the required code
-to override all of the pure virtual functions in the `SlavePort` class.
+Let's start with the response port, or the CPU-side port. We are going to
+inherit from the `ResponsePort` class. The following is the required code
+to override all of the pure virtual functions in the `ResponsePort` class.
 
 ```cpp
-class CPUSidePort : public SlavePort
+class CPUSidePort : public ResponsePort
 {
   private:
     SimpleMemobj *owner;
 
   public:
     CPUSidePort(const std::string& name, SimpleMemobj *owner) :
-        SlavePort(name, owner), owner(owner)
+        ResponsePort(name, owner), owner(owner)
     { }
 
     AddrRangeList getAddrRanges() const override;
@@ -273,21 +273,21 @@ This object requires five functions to be defined.
 This object also has a single member variable, its owner, so it can call
 functions on that object.
 
-### Define a master port type
+### Define a request port type
 
-Next, we need to define a master port type. This will be the memory-side
+Next, we need to define a request port type. This will be the memory-side
 port which will forward request from the CPU-side to the rest of the
 memory system.
 
 ```cpp
-class MemSidePort : public MasterPort
+class MemSidePort : public RequestPort
 {
   private:
     SimpleMemobj *owner;
 
   public:
     MemSidePort(const std::string& name, SimpleMemobj *owner) :
-        MasterPort(name, owner), owner(owner)
+        RequestPort(name, owner), owner(owner)
     { }
 
   protected:
@@ -384,9 +384,9 @@ SimpleMemobj::getPort(const std::string &if_name, PortID idx)
 ```
 
 
-### Implementing slave and master port functions
+### Implementing request and response port functions
 
-The implementation of both the slave and master port is relatively
+The implementation of both the request and response port is relatively
 simple. For the most part, each of the port functions just forwards the
 information to the main memory object (`SimpleMemobj`).
 
@@ -428,7 +428,7 @@ SimpleMemobj::getAddrRanges() const
 ```
 
 Similarly for the `MemSidePort`, we need to implement `recvRangeChange`
-and forward the request through the `SimpleMemobj` to the slave port.
+and forward the request through the `SimpleMemobj` to the response port.
 
 ```cpp
 void
@@ -479,7 +479,7 @@ SimpleMemobj::CPUSidePort::recvTimingReq(PacketPtr pkt)
 To handle the request for the `SimpleMemobj`, we first check if the
 `SimpleMemobj` is already blocked waiting for a response to another
 request. If it is blocked, then we return `false` to signal the calling
-master port that we cannot accept the request right now. Otherwise, we
+request port that we cannot accept the request right now. Otherwise, we
 mark the port as blocked and send the packet out of the memory port. For
 this, we can define a helper function in the `MemSidePort` object to
 hide the flow control from the `SimpleMemobj` implementation. We will
@@ -503,13 +503,13 @@ SimpleMemobj::handleRequest(PacketPtr pkt)
 
 Next, we need to implement the `sendPacket` function in the
 `MemSidePort`. This function will handle the flow control in case its
-peer slave port cannot accept the request. For this, we need to add a
+peer response port cannot accept the request. For this, we need to add a
 member to the `MemSidePort` to store the packet in case it is blocked.
 It is the responsibility of the sender to store the packet if the
 receiver cannot receive the request (or response).
 
-This function simply send the packet by calling the function
-`sendTimingReq`. If the send fails, then this object store the packet in
+This function simply sends the packet by calling the function
+`sendTimingReq`. If the send fails, then this object stores the packet in
 the `blockedPacket` member function so it can send the packet later
 (when it receives a `recvReqRetry`). This function also contains some
 defensive code to make sure there is not a bug and we never try to
@@ -558,12 +558,12 @@ SimpleMemobj::MemSidePort::recvTimingResp(PacketPtr pkt)
 ```
 
 In the `SimpleMemobj`, first, it should always be blocked when we
-receive a response since the object is blocking. Before sending the
-packet back to the CPU side, we need to mark that the object no longer
-blocked. This must be done *before calling `sendTimingResp`*. Otherwise,
-it is possible to get stuck in an infinite loop as it is possible that
-the master port has a single callchain between receiving a response and
-sending another request.
+receive a response since the object should be waiting for the response.
+Before sending the packet back to the CPU side, we need to mark that the
+object is no longer blocked. This must be done *before calling
+`sendTimingResp`*. Otherwise, it is possible to get stuck in an infinite
+loop as it is possible that the request port has a single callchain between
+receiving a response and sending another request.
 
 After unblocking the `SimpleMemobj`, we check to see if the packet is an
 instruction or data packet and send it back across the appropriate port.
@@ -597,7 +597,7 @@ Similar to how we implemented a convenience function for sending packets
 in the `MemSidePort`, we can implement a `sendPacket` function in the
 `CPUSidePort` to send the responses to the CPU side. This function calls
 `sendTimingResp` which will in turn call `recvTimingResp` on the peer
-master port. If this call fails and the peer port is currently blocked,
+request port. If this call fails and the peer port is currently blocked,
 then we store the packet to be sent later.
 
 ```cpp
@@ -635,7 +635,7 @@ the `SimpleMemobj` may be unblocked. `trySendRetry` checks to see if a
 retry is needed which we marked in `recvTimingReq` whenever the
 `SimpleMemobj` was blocked on a new request. Then, if the retry is
 needed, this function calls `sendRetryReq`, which in turn calls
-`recvReqRetry` on the peer master port (the CPU in this case). 
+`recvReqRetry` on the peer request port (the CPU in this case). 
 
 ```cpp
 void
@@ -707,18 +707,18 @@ system.cpu.dcache_port = system.memobj.data_port
 
 system.membus = SystemXBar()
 
-system.memobj.mem_side = system.membus.slave
+system.memobj.mem_side = system.membus.cpu_side_ports
 
 system.cpu.createInterruptController()
-system.cpu.interrupts[0].pio = system.membus.master
-system.cpu.interrupts[0].int_master = system.membus.slave
-system.cpu.interrupts[0].int_slave = system.membus.master
+system.cpu.interrupts[0].pio = system.membus.mem_side_ports
+system.cpu.interrupts[0].int_requestor = system.membus.cpu_side_ports
+system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
 system.mem_ctrl = DDR3_1600_8x8()
 system.mem_ctrl.range = system.mem_ranges[0]
-system.mem_ctrl.port = system.membus.master
+system.mem_ctrl.port = system.membus.mem_side_ports
 
-system.system_port = system.membus.slave
+system.system_port = system.membus.cpu_side_ports
 
 process = Process()
 process.cmd = ['tests/test-progs/hello/bin/x86/linux/hello']
