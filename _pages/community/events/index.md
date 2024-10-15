@@ -16,6 +16,16 @@ are formatted with two slides per page.
 
 ---
 
+## gem5 bootcamp in Latin America 2024
+
+[More information can be found on the event's page](/events/boot-camp-latin-america-2024)
+
+We are excited to announce that we are bringing the gem5 bootcamp series to Latin America. The event will take place November 25th-November 30th at the University of Buenos Aires, in Buenos Aires, Argentina. In this workshop you are going to learn about processor simulators in general, specifically about gem5, how to run experiments on top of the simulator, and all the amazing research you can do using processor simulators. The bootcamp will span several full days, featuring an engaging workshop focused on learning gem5. The workshop is designed to be inclusive, assuming no prior experience with gem5. The goal is to equip participants with a strong foundation in gem5 for conducting advanced research in computer architecture. If you are considering attending, please fill out the interest form so that we can plan accordingly.
+
+This event is free for all accepted attendees.
+
+---
+
 ## ISCA 2024: gem5 Workshop and tutorial
 
 [More information can be found on the event's page](/events/isca-2024).

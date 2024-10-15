@@ -21,6 +21,12 @@ The Bootcamp event content, including archived videos of events, can be found he
 
 * Boot camp: **November 25th-November 30th 2024**
 
+## Scholarships
+
+It's not confirmed yet, but we may have scholarships to (at least partially) cover travels and stay in Buenos Aires during the course.
+
+**Fill out the form to let us know you want to attend** and if you are going to need a scholarship to do so: [Form](https://forms.gle/qYZmxKat1MvPq2qw5)
+
 ## What should attendees expect?
 
 There will be 5 full days of workshop activities centered around learning gem5.
