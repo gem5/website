@@ -33,8 +33,8 @@ class SimpleCache(MemObject):
     type = 'SimpleCache'
     cxx_header = "learning_gem5/simple_cache/simple_cache.hh"
 
-    cpu_side = VectorSlavePort("CPU side port, receives requests")
-    mem_side = MasterPort("Memory side port, sends requests")
+    cpu_side = VectorResponsePort("CPU side port, receives requests")
+    mem_side = RequestPort("Memory side port, sends requests")
 
     latency = Param.Cycles(1, "Cycles taken on a hit or to resolve a miss")
 
@@ -65,7 +65,7 @@ The third and final difference between the `SimpleCache` and the
 `SimpleMemobj` is that instead of having two named CPU ports
 (`inst_port` and `data_port`), the `SimpleCache` use another special
 parameter: the `VectorPort`. `VectorPorts` behave similarly to regular
-ports (e.g., they are resolved via `getMasterPort` and `getSlavePort`),
+ports (e.g., they are resolved via `getPort`),
 but they allow this object to connect to multiple peers. Then, in the
 resolution functions the parameter we ignored before (`PortID idx`) is
 used to differentiate between the different ports. By using a vector
@@ -103,7 +103,7 @@ to set the `blockSize` for this cache. We also initialize the capacity
 based on the block size and the parameter and initialize other member
 variables we will need below. Finally, we must create a number of
 `CPUSidePorts` based on the number of connections to this object. Since
-the `cpu_side` port was declared as a `VectorSlavePort` in the SimObject
+the `cpu_side` port was declared as a `VectorResponsePort` in the SimObject
 Python file, the parameter automatically has a variable
 `port_cpu_side_connection_count`. This is based on the Python name of
 the parameter. For each of these connections we add a new `CPUSidePort`
@@ -112,19 +112,22 @@ to a `cpuPorts` vector declared in the `SimpleCache` class.
 We also add one extra member variable to the `CPUSidePort` to save its
 id, and we add this as a parameter to its constructor.
 
-Next, we need to implement `getMasterPort` and `getSlavePort`. The
-`getMasterPort` is exactly the same as the `SimpleMemobj`. For
-`getSlavePort`, we now need to return the port based on the id
-requested.
+Next, we need to implement the `getPort` function. On the memory side, 
+this is straightforward as there is only one port. However, on the CPU side,
+we now need to return the port corresponding to the requested ID.
 
 ```cpp
-BaseSlavePort&
-SimpleCache::getSlavePort(const std::string& if_name, PortID idx)
+Port &
+SimpleCache::getPort(const std::string &if_name, PortID idx)
 {
-    if (if_name == "cpu_side" && idx < cpuPorts.size()) {
+    if (if_name == "mem_side") {
+        panic_if(idx != InvalidPortID,
+                 "Mem side of simple cache not a vector port");
+        return memPort;
+    } else if (if_name == "cpu_side" && idx < cpuPorts.size()) {
         return cpuPorts[idx];
     } else {
-        return MemObject::getSlavePort(if_name, idx);
+        return ClockedObject::getPort(if_name, idx);
     }
 }
 ```
@@ -483,7 +486,7 @@ system.cpu.dcache_port = system.cache.cpu_side
 
 system.membus = SystemXBar()
 
-system.cache.mem_side = system.membus.slave
+system.cache.mem_side = system.membus.cpu_side_ports
 
 ...
 ```
