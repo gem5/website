@@ -30,6 +30,7 @@ a, a:hover {
 
 a {
   text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
@@ -38,14 +39,19 @@ a:hover {
 
 /**** CODE BLOCK ****/
 pre code {
-	color: white !important;
-	background-color: black;
+  color: black;
+	background-color: #f0f0f0;
   // border: 2px solid grey;
   display: block;
   padding: 20px;
 	overflow-x: scroll;
 }
 
+p code {
+  color: black;
+  background-color: #f0f0f0;
+  padding: 3px 6px;
+}
 
 /**** NAVBAR ****/
 .navbar {
