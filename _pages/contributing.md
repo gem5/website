@@ -17,14 +17,14 @@ issue tracker: <https://github.com/gem5/gem5/issues>.
 Browse these open issues and see if there are any which you are capable of
 handling. When you find a task you are happy to carry out, verify no one else
 is presently assigned, then leave a comment asking if you may assign yourself
-this task. Though not mandatory, we
-advise first-time contributors do this so developers more familiar with the
-task may give advice on how best to implement the necessary changes.
+this task. Although not required, first-time contributors are encouraged to do
+this so developers more familiar with the task may give advice on how best to
+implement the necessary changes.
 
-Once a developers has replied to your comment (and given any advice they may
-have), you may officially assign yourself the task. This helps the gem5
-development community understand which parts of the project are presently being
-worked on.
+Once a developer responds to your comment and provides any advice, you may 
+officially assign yourself to the task. This helps the gem5 development 
+community stay informed about which parts of the project are currently in 
+progress.
 
 **If, for whatever reason, you stop working on a task, please unassign
 yourself from the task.**
@@ -32,9 +32,8 @@ yourself from the task.**
 ## Obtaining the git repo
 
 The gem5 git repository is hosted at <https://github.com/gem5/gem5>.
-**Please note: contributions made to other gem5 repos
-will not be considered. Please contribute to <https://github.com/gem5/gem5>
-exclusively.**
+**Important note: Contributions made to other gem5 repos will not be
+considered. Please contribute to <https://github.com/gem5/gem5> exclusively.**
 
 To pull the gem5 git repo:
 
@@ -63,7 +62,7 @@ git remote add gem5 https://github.com/gem5/gem5.git
 git fetch gem5
 ```
 
-### stable / develop branch
+### stable vs. develop branch
 
 When cloned the git repo will have the `stable` branch checked-out by default. The
 `stable` branch is the gem5 stable release branch. I.e., the HEAD
@@ -238,38 +237,26 @@ on building gem5 please consult our [building documentation](
 ## Committing
 
 When you feel your change is done, you may commit. Start by adding the changed
-files:
+files `git add <changed files>`. Make sure these changes are being added to 
+your forked repository. Then commit using `git commit`.
 
-```Shell
-git add <changed files>
-```
+**The commit message must adhere to our style.**
 
-Make sure these changes are being added to your forked repository.
-Then commit using:
+- **Header format:** Start with a tag (or tags, separated by a comma), then a 
+colon. Refer to the [MAINTAINERS.yaml](
+https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) for a list of 
+accepted tags. Which tags are used depend on which components of gem5 you have
+modified. After the colon a short description of the commit must be provided. 
+**The header line must not exceed 65 characters.**
 
-```Shell
-git commit
-```
-
-The commit message must adhere to our style. The first line of the commit is
-the "header". The header starts with a tag (or tags, separated by a comma),
-then a colon. Which tags are used depend on which components of gem5
-you have modified. **Please refer to the [MAINTAINERS.yaml](
-https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) for
-a comprehensive list of accepted tags**. After this colon a short description
-of the commit must be provided. **This header line must not exceed 65
-characters**.
-
-After this, a more detailed description of the commit can be added. This is
-inserted below the header, separated by an empty line. Including a description
-is optional but it's strongly recommended. The description may span multiple
-lines, and multiple paragraphs. **No line in the description may exceed 72
-characters.**
+- **Detailed Description (Optional):** Add below the header, separated by an 
+empty line. Including a description is optional but it's strongly recommended.
+The description may span multiple lines, and multiple paragraphs. 
+**No line should exceed 72 characters.**
 
 To improve the navigability of the gem5 project we would appreciate if commit
-messages include a link to the relevant GitHub issue/issues.
-
-Below is an example of how a gem5 commit message should be formatted:
+messages include a link to the relevant GitHub issue/issues. Below is an 
+example of how a gem5 commit message should be formatted:
 
 ```
 test,base: This commit tests some classes in the base component
@@ -283,13 +270,8 @@ GitHub Issue: https://github.com/gem5/gem5/issues/123
 ```
 
 If you feel the need to change your commit, add the necessary files then
-_amend_ the changes to the commit using:
-
-```sh
-git commit --amend
-```
-
-This will give you opportunity to edit the commit message.
+_amend_ the changes to the commit using `git commit --amend`. This will give 
+you opportunity to edit the commit message.
 
 You may continue to add more commits as a chain of commits to be included in the pull-request.
 However, we recommend that pull-requests are kept small and focused.
@@ -338,7 +320,7 @@ git switch new-feature # Ensure we are on the 'new-feature' branch.
 git push --set-upstream origin new-feature
 ```
 
-If this is your first time pushing to your forked gem5 repo, you might encounter an error stating that GitHub no longer accepts account passwords when authenticating Git operations. To resolve this issue, generate a personal access token at https://github.com/settings/tokens and then follow the steps at https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh to switch remote URLs to SSH.
+If this is your first time pushing to your forked gem5 repo, you might encounter an error stating that GitHub no longer accepts account passwords when authenticating Git operations. To resolve this issue, generate a personal access token at [github-tokens](https://github.com/settings/tokens) and then follow [these steps](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh) to switch remote URLs to SSH.
 
 Now, via the GitHub web interface, you can [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) of your changes from your forked repository's branch into the gem5 `develop` branch.
 
@@ -351,21 +333,20 @@ These must pass before your changes can be merged into the gem5 `develop` branch
 In addition to the CI tests, your changes will be reviewed by the gem5 community.
 Your pull-request must have the approval of at least one community member prior to being merged.
 
-Once your pull-request has passed all the CI tests and has been approved by at least one community member, it will be merged a gem5 maintainer will do a [Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) on the pull-request.
+Once your pull-request has passed all the CI tests and has been approved by at least one community member, a gem5 maintainer will do a [Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) on the pull-request.
 The gem5 maintainers are individuals granted the ability to merge pull requests into the gem5 `develop` branch.
 
 ### Making iterative improvements based on feedback
 
-A reviewer will ask questions and post suggestions on GitHub. You should read
-these comments and answer these questions. **All communications between
-reviewers and contributors should be done in a polite manner. Rude and/or
-dismissive remarks will not be tolerated.**
+A reviewer will ask questions and post suggestions on GitHub. You should read these comments carefully and respond to any questions. 
+**All communication between reviewers and contributors should remain polite, as rude or dismissive remarks will not be tolerated.**
 
-When you understand what changes are required make amendments to the pull
-request by adding patches to the same branch and then pushing to the forked repository.
-A git "force push" (i.e., `git push --force`) is also acceptable if you wish to alter the commits locally in order to make the changes.
-We encourage contributors to help keep our `git log` clean and readable.
-We recommend that users rebase their changes frequently on top of the develop branch, squash their commits where appropriate (e.g., in cases where there are many small fix commits to a change in the same PR) then force push changes to keep their PR commits concise.
+When you understand what changes are required, make amendments to the pull request by adding patches to the same branch and then pushing to the forked repository. 
+A Git ‘force push’ (i.e., `git push --force`) is also acceptable if you wish to alter the commits locally to implement the changes. 
+We encourage contributors to help keep our `git log` clean and readable. 
+We recommend that users frequently rebase their changes on top of the develop branch, 
+squash their commits where appropriate (e.g., in cases with many small fix commits to a change in the same PR), 
+and then force push changes to keep their PR commits concise.
 
 Once pushed to the forked repository, the pull request will automatically update with your changes.
 The reviewer will then re-review your changes and, if necessary, ask for further changes, or approve your pull-request.
@@ -376,17 +357,17 @@ We encourage all gem5 developers to review other's contributions.
 Anyone may review a gem5 change and, if they feel it is ready, approve it.
 All pull-requests can be found at <https://github.com/gem5/gem5/pulls>.
 
-When reviewing a pull request we enforce the followings guidelines.
+When reviewing a pull request we enforce the following guidelines.
 These have been designed to ensure clear and polite communication between all parties:
 
 * In all forms of communication, contributors and reviewers must be polite.
 Comments seen as being rude or dismissive will not be tolerated.
-* If choosing to not approve a PR, please state clearly why.
-When asking for changes, the commits should be specific and actionable.
-General criticisms which cannot be addressed or understood by the contributor are unhelpful.
-If the contribution needs improvement, reviewers should state what their requested changes are.
-If more information is needed for the reviewers to make a decision the reviewer should ask clear questions.
-If the PR is generally not seen as a worthwhile contribution, a good justification should be given so the contributor may fairly rebuttal.
+* If you choose not to approve a PR, please clearly state your reasons. 
+When requesting changes, the comments should be specific and actionable. 
+General criticisms that cannot be addressed or understood by the contributor are unhelpful. 
+If the contribution needs improvement, reviewers should clearly outline the requested changes. 
+If more information is needed for the reviewers to make a decision, they should ask clear questions. 
+If the PR is generally not considered a worthwhile contribution, a solid justification should be provided so that the contributor may respond fairly.
 * By default, the original contributor is assumed to own a change.
 I.e., they are assumed to be the sole party to submit patches to the pull request.
 If someone other than the original contributor wishes to submit patches on the original contributors behalf they should first ask permission.
