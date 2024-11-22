@@ -8,6 +8,47 @@ The Developer Meeting is a recurring monthly event. Its primary purpose is to st
 
 ---
 
+## November 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1715)
+- Video recording: [YouTube](https://youtu.be/dTV7OjkgsiY)
+
+---
+
+## October 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1607)
+- Video recording: [YouTube](https://youtu.be/u8TvQMEnqPM)
+
+---
+
+## September 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1503)
+- Video recording: [YouTube](https://youtu.be/lWuo1bdhEiM)
+
+---
+
+## August 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1398)
+- Video recording: [YouTube](https://youtu.be/hEyhXJg-rbU)
+
+---
+
+## July 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1337)
+
+---
+
+## June 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1203)
+- Video recording: [YouTube](https://youtu.be/vkBKsJ5dvEc)
+
+---
+
+## May 2024
+- Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/1095)
+- Video recording: [YouTube](https://youtu.be/C5Ze9hjUL8M)
+
+---
+
 ## April 2024
 - Meeting agenda and slides: [GitHub discussion](https://github.com/orgs/gem5/discussions/995)
 - Video recording: [YouTube](https://www.youtube.com/watch?v=_1D8PM_vPr0)
