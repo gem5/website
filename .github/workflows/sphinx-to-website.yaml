@@ -2,7 +2,7 @@
   name: Generate Sphinx Docs and Commit to Website
   on:
     schedule:
-      - cron: 0 13 * * 1 # run it once a week
+      - cron: 0 22 * * 2 # run it once a week
   jobs:
       build-sphinx:
           permissions:
