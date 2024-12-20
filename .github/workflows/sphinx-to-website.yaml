@@ -1,58 +1,61 @@
 ---
-  name: Generate Sphinx Docs and Commit to Website
-  on:
+name: Generate Sphinx Docs and Commit to Website
+on:
     schedule:
-      - cron: 0 22 * * 2 # run it once a week
-  jobs:
-      build-sphinx:
-          permissions:
-              contents: write
-  
-          runs-on: ubuntu-latest
-          container: ghcr.io/gem5/ubuntu-24.04_all-dependencies:latest
-          steps:
-              - name: checkout gem5
-                uses: actions/checkout@v4
-                with:
-                    repository: gem5/gem5
-                    path: gem5
-                    ref: stable
+        - cron: 0 22 * * 2 # run it once a week
+jobs:
+    build-sphinx:
+        permissions:
+            contents: write
 
-              - name: checkout website
-                uses: actions/checkout@v4
-                with:
-                    path: website
-                    ref: stable
-              - name: install Sphinx
-                run: |
-                    apt-get update
-                    apt-get install python3-sphinx -y --fix-missing
-                    sphinx-build --version
-              - name: Build gem5
-                run: |
+        runs-on: ubuntu-latest
+        container: ghcr.io/gem5/ubuntu-24.04_all-dependencies:latest
+        steps:
+            - name: checkout gem5
+              uses: actions/checkout@v4
+              with:
+                  repository: gem5/gem5
+                  path: gem5
+                  ref: stable
+
+            - name: checkout website
+              uses: actions/checkout@v4
+              with:
+                  path: website
+                  ref: stable
+            - name: install Sphinx
+              run: |
+                  apt-get update
+                  apt-get install python3-sphinx -y --fix-missing
+                  sphinx-build --version
+            - name: Build gem5
+              run: |
                   cd gem5
                   scons build/ALL/gem5.opt -j $(nproc)
-              - name: Generate RST
-                run: |
-                    cd gem5/docs
-                    ../build/ALL/gem5.opt gem5-sphinx-apidoc -o . ../src/python/gem5 -F -e
-  
-              - name: Generate Sphinx docs
-                run: |
-                    cd gem5/docs
-                    ../build/ALL/gem5.opt gem5-sphinx -M html . _build
-              - name: Add frontmatter
-                run: |
+            - name: Generate RST
+              run: |
+                  cd gem5/docs
+                  ../build/ALL/gem5.opt gem5-sphinx-apidoc -o . ../src/python/gem5 -F -e
+
+            - name: Generate Sphinx docs
+              run: |
+                  cd gem5/docs
+                  ../build/ALL/gem5.opt gem5-sphinx -M html . _build
+            - name: Add frontmatter
+              run: |
+                  if [ -d "website/_pages/documentation/general_docs/sphinx_docs" ]; then
                     rm -r website/_pages/documentation/general_docs/sphinx_docs
                     mkdir website/_pages/documentation/general_docs/sphinx_docs
-                    cp -r gem5/docs/_build/html/* website/_pages/documentation/general_docs/sphinx_docs
-                    cd website
-                    python3 add-sphinx-docs.py
-              - name: Commit documentation changes to gem5/website repo
-                uses: EndBug/add-and-commit@v9
-                with:
-                    add: './_pages/documentation/general_docs/sphinx_docs'
-                    author_name: Github Action
-                    author_email: action@github.com
-                    message: "Update Sphinx documentation"
-                    cwd: './website'
+                  fi
+                  cp -r gem5/docs/_build/html/* website/_pages/documentation/general_docs/sphinx_docs
+                  cd website
+                  python3 add-sphinx-docs.py
+            - name: Commit documentation changes to gem5/website repo
+              uses: EndBug/add-and-commit@v9
+              with:
+                  add: ./_pages/documentation/general_docs/sphinx_docs
+                  author_name: Github Action
+                  author_email: action@github.com
+                  message: Update Sphinx documentation
+                  cwd: ./website
+
