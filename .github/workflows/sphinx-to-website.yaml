@@ -1,6 +1,7 @@
 ---
 name: Generate Sphinx Docs and Commit to Website
 on:
+    workflow_dispatch:
     schedule:
         - cron: 0 22 * * 2 # run it once a week
 jobs:
