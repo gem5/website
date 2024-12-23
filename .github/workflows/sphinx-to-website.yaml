@@ -46,11 +46,12 @@ jobs:
               run: |
                   if [ -d "website/_pages/documentation/general_docs/sphinx_docs" ]; then
                     rm -r website/_pages/documentation/general_docs/sphinx_docs
-                    mkdir website/_pages/documentation/general_docs/sphinx_docs
                   fi
+                  mkdir website/_pages/documentation/general_docs/sphinx_docs
                   cp -r gem5/docs/_build/html/* website/_pages/documentation/general_docs/sphinx_docs
                   cd website
                   python3 add-sphinx-docs.py
+              continue-on-error: true
             - name: Commit documentation changes to gem5/website repo
               uses: EndBug/add-and-commit@v9
               with:
