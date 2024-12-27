@@ -1,0 +1,219 @@
+---
+title: "gem5.simulate.exit_event_generators.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.simulate.exit_event_generators.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.simulate.exit_event_generators module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.simulate.simulator module" href="gem5.simulate.simulator.html" />
+    <link rel="prev" title="gem5.simulate.exit_event module" href="gem5.simulate.exit_event.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.simulate.exit_event_generators">
+<span id="gem5-simulate-exit-event-generators-module"></span><h1>gem5.simulate.exit_event_generators module<a class="headerlink" href="#module-gem5.simulate.exit_event_generators" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.dump_reset_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">dump_reset_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.dump_reset_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A generator for doing statstic dump and reset. It will reset the simulation
+statistics and then dump simulation statistics.</p>
+<p>The Simulation run loop will continue after executing the behavior of the
+generator.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.dump_stats_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">dump_stats_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.dump_stats_generator" title="Link to this definition">¶</a></dt>
+<dd><p>This generator dumps the stats every time it is called.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.exit_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">exit_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.exit_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A default generator for an exit event. It will return <code class="docutils literal notranslate"><span class="pre">True</span></code>, indicating that
+the Simulator run loop should exit.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.looppoint_save_checkpoint_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">looppoint_save_checkpoint_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">looppoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.looppoint.html#gem5.resources.looppoint.Looppoint" title="gem5.resources.looppoint.Looppoint"><span class="pre">Looppoint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_relatives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_when_empty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.looppoint_save_checkpoint_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A generator for taking a checkpoint for LoopPoint. It will save the
+checkpoints in the checkpoint_dir path with the Region id.</p>
+<p>(i.e. “cpt.Region10) It only takes a checkpoint if the current PC Count
+pair is a significant PC Count Pair. This is determined in the LoopPoint
+module. The simulation loop continues after exiting this generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checkpoint_dir</strong> – Where to save the checkpoints.</p></li>
+<li><p><strong>loopoint</strong> – The LoopPoint object used in the configuration script</p></li>
+<li><p><strong>update_relative</strong> – If the generator should update the relative count
+information in the output json file, then it should
+be <code class="docutils literal notranslate"><span class="pre">True</span></code>. It is default as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>exit_when_empty</strong> – If the generator should exit the simulation loop if
+all PC paris have been discovered, then it should be
+<code class="docutils literal notranslate"><span class="pre">True</span></code>. It is default as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.reset_stats_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">reset_stats_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.reset_stats_generator" title="Link to this definition">¶</a></dt>
+<dd><p>This generator resets the stats every time it is called. It does not dump
+the stats before resetting them.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.save_checkpoint_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">save_checkpoint_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.save_checkpoint_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A generator for taking a checkpoint. It will take a checkpoint with the
+input path and the current simulation <code class="docutils literal notranslate"><span class="pre">Ticks</span></code>.</p>
+<p>The Simulation run loop will continue after executing the behavior of the
+generator.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.simpoints_save_checkpoint_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">simpoints_save_checkpoint_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.SimpointResource" title="gem5.resources.resource.SimpointResource"><span class="pre">SimpointResource</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.simpoints_save_checkpoint_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A generator for taking multiple checkpoints for SimPoints. It will save the
+checkpoints in the <code class="docutils literal notranslate"><span class="pre">checkpoint_dir</span></code> path with the SimPoints’ index.
+The Simulation run loop will continue after executing the behavior of the
+generator until all the SimPoints in the <code class="docutils literal notranslate"><span class="pre">simpoint_list</span></code> has taken a
+checkpoint.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.skip_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">skip_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.skip_generator" title="Link to this definition">¶</a></dt>
+<dd><p>This generator does nothing when on the exit event.</p>
+<p>The simulation will continue after this generator.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.spatter_exit_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">spatter_exit_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spatter_gen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_generator.html#gem5.components.processors.spatter_gen.spatter_generator.SpatterGenerator" title="gem5.components.processors.spatter_gen.spatter_generator.SpatterGenerator"><span class="pre">SpatterGenerator</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.spatter_exit_generator" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.switch_generator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">switch_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor" title="gem5.components.processors.abstract_processor.AbstractProcessor"><span class="pre">AbstractProcessor</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.switch_generator" title="Link to this definition">¶</a></dt>
+<dd><p>A default generator for a switch exit event. If the processor is a
+SwitchableProcessor, this generator will switch it. Otherwise nothing will
+happen.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event_generators.warn_default_decorator">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event_generators.</span></span><span class="sig-name descname"><span class="pre">warn_default_decorator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">effect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event_generators.warn_default_decorator" title="Link to this definition">¶</a></dt>
+<dd><p>A decortator for generators which will print a warning that it is a
+default generator.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.html">gem5.components package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.simulate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.simulate.html#module-gem5.simulate">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.simulate.html">gem5.simulate package</a><ul>
+      <li>Previous: <a href="gem5.simulate.exit_event.html" title="previous chapter">gem5.simulate.exit_event module</a></li>
+      <li>Next: <a href="gem5.simulate.simulator.html" title="next chapter">gem5.simulate.simulator module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.simulate.exit_event_generators.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

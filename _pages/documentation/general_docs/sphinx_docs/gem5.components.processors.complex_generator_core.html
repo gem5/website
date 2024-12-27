@@ -1,0 +1,279 @@
+---
+title: "gem5.components.processors.complex_generator_core.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.processors.complex_generator_core.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.processors.complex_generator_core module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.processors.cpu_types module" href="gem5.components.processors.cpu_types.html" />
+    <link rel="prev" title="gem5.components.processors.complex_generator module" href="gem5.components.processors.complex_generator.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.processors.complex_generator_core">
+<span id="gem5-components-processors-complex-generator-core-module"></span><h1>gem5.components.processors.complex_generator_core module<a class="headerlink" href="#module-gem5.components.processors.complex_generator_core" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.processors.complex_generator_core.</span></span><span class="sig-name descname"><span class="pre">ComplexGeneratorCore</span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore" title="gem5.components.processors.abstract_generator_core.AbstractGeneratorCore"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractGeneratorCore</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_linear">
+<span class="sig-name descname"><span class="pre">add_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rd_perc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_linear" title="Link to this definition">¶</a></dt>
+<dd><p>This function will add the params for a linear traffic to the list of
+traffic params in this generator core. These params will be later
+resolved by the <code class="docutils literal notranslate"><span class="pre">start_traffic</span></code> call. This core uses a <cite>PyTrafficGen</cite> to
+create the traffic based on the specified params below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> – The number of ticks for the generator core to generate
+traffic.</p></li>
+<li><p><strong>rate</strong> – The rate at which the synthetic data is read/written.</p></li>
+<li><p><strong>block_size</strong> – The number of bytes to be read/written with each
+request.</p></li>
+<li><p><strong>min_addr</strong> – The lower bound of the address range the generator
+will read/write from/to.</p></li>
+<li><p><strong>max_addr</strong> – The upper bound of the address range the generator
+will read/write from/to.</p></li>
+<li><p><strong>rd_perc</strong> – The percentage of read requests among all the generated
+requests. The write percentage would be equal to
+<code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">-</span> <span class="pre">rd_perc</span></code>.</p></li>
+<li><p><strong>data_limit</strong> – The amount of data in bytes to read/write by the
+generator before stopping generation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_random">
+<span class="sig-name descname"><span class="pre">add_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rd_perc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_random" title="Link to this definition">¶</a></dt>
+<dd><p>This function will add the params for a random traffic to the list of
+traffic params in this generator core. These params will be later
+resolved by the <code class="docutils literal notranslate"><span class="pre">start_traffic</span></code> call. This core uses a PyTrafficGen to
+create the traffic based on the specified params below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> – The number of ticks for the generator core to generate
+traffic.</p></li>
+<li><p><strong>rate</strong> – The rate at which the synthetic data is read/written.</p></li>
+<li><p><strong>block_size</strong> – The number of bytes to be read/written with each
+request.</p></li>
+<li><p><strong>min_addr</strong> – The lower bound of the address range the generator
+will read/write from/to.</p></li>
+<li><p><strong>max_addr</strong> – The upper bound of the address range the generator
+will read/write from/to.</p></li>
+<li><p><strong>rd_perc</strong> – The percentage of read requests among all the generated
+requests. The write percentage would be equal to
+<code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">-</span> <span class="pre">rd_perc</span></code>.</p></li>
+<li><p><strong>data_limit</strong> – The amount of data in bytes to read/write by the
+generator before stopping generation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.connect_dcache">
+<span class="sig-name descname"><span class="pre">connect_dcache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.connect_dcache" title="Link to this definition">¶</a></dt>
+<dd><p>This function should connect the response port from the data cache to
+the right request port on the core.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> – The response port from the icache to connect to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.set_traffic_from_python_generator">
+<span class="sig-name descname"><span class="pre">set_traffic_from_python_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">python_generator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.set_traffic_from_python_generator" title="Link to this definition">¶</a></dt>
+<dd><p>Function to set the traffic from a user defined python generator.
+The generator should only assume one input argument (positional)
+for the actual PyTrafficGen object to create the traffic. This is possible
+either through using a generator with hardcoded parameters in the
+function calls to PyTrafficGen methods or by compiling a flexible
+python generator into a generator object with only one
+input argument (positional) using <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>generator</strong> – A python generator object that creates traffic
+patterns through calls to methods of PyTrafficGen.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexGeneratorCore.start_traffic">
+<span class="sig-name descname"><span class="pre">start_traffic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.start_traffic" title="Link to this definition">¶</a></dt>
+<dd><p>This function first checks if there are any pending traffics that
+require creation, if so it will create the pending traffics based on
+<code class="docutils literal notranslate"><span class="pre">traffic_params</span></code> list and adds  them to the traffic list, then it starts
+generating the traffic at the top of the traffic list. It also pops the
+first element in the list so that every time this function is called a
+new traffic is generated, each instance of a call to this function
+should happen before each instance of the call to <code class="docutils literal notranslate"><span class="pre">m5.simulate()</span></code>. All
+the instances of calls to this function should happen after
+<code class="docutils literal notranslate"><span class="pre">m5.instantiate()</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.ComplexTrafficParams">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.processors.complex_generator_core.</span></span><span class="sig-name descname"><span class="pre">ComplexTrafficParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.components.processors.complex_generator_core.TrafficModes" title="gem5.components.processors.complex_generator_core.TrafficModes"><span class="pre">TrafficModes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rd_perc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.ComplexTrafficParams" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.TrafficModes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.processors.complex_generator_core.</span></span><span class="sig-name descname"><span class="pre">TrafficModes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.complex_generator_core.TrafficModes" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>The traffic mode class</p>
+<p>This class is an enum to store traffic mode in a more meaningful way.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.TrafficModes.linear">
+<span class="sig-name descname"><span class="pre">linear</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.TrafficModes.linear" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.complex_generator_core.TrafficModes.random">
+<span class="sig-name descname"><span class="pre">random</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.processors.complex_generator_core.TrafficModes.random" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.processors.html">gem5.components.processors package</a><ul>
+      <li>Previous: <a href="gem5.components.processors.complex_generator.html" title="previous chapter">gem5.components.processors.complex_generator module</a></li>
+      <li>Next: <a href="gem5.components.processors.cpu_types.html" title="next chapter">gem5.components.processors.cpu_types module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.processors.complex_generator_core.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

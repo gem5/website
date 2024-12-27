@@ -1,0 +1,7 @@
+gem5.components.devices.gpus.viper\_shader module
+=================================================
+
+.. automodule:: gem5.components.devices.gpus.viper_shader
+   :members:
+   :undoc-members:
+   :show-inheritance:

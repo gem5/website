@@ -1,0 +1,19 @@
+gem5.components.devices.gpus package
+====================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.devices.gpus.amdgpu
+   gem5.components.devices.gpus.viper_shader
+
+Module contents
+---------------
+
+.. automodule:: gem5.components.devices.gpus
+   :members:
+   :undoc-members:
+   :show-inheritance:

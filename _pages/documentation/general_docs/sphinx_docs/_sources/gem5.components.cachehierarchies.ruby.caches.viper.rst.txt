@@ -1,0 +1,23 @@
+gem5.components.cachehierarchies.ruby.caches.viper package
+==========================================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache
+   gem5.components.cachehierarchies.ruby.caches.viper.directory
+   gem5.components.cachehierarchies.ruby.caches.viper.dma_controller
+   gem5.components.cachehierarchies.ruby.caches.viper.sqc
+   gem5.components.cachehierarchies.ruby.caches.viper.tcc
+   gem5.components.cachehierarchies.ruby.caches.viper.tcp
+
+Module contents
+---------------
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.viper
+   :members:
+   :undoc-members:
+   :show-inheritance:

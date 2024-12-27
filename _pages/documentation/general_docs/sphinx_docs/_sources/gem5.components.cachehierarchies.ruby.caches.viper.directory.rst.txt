@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.caches.viper.directory module
+===================================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.viper.directory
+   :members:
+   :undoc-members:
+   :show-inheritance:

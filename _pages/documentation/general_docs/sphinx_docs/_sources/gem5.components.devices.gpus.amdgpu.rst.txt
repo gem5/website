@@ -1,0 +1,7 @@
+gem5.components.devices.gpus.amdgpu module
+==========================================
+
+.. automodule:: gem5.components.devices.gpus.amdgpu
+   :members:
+   :undoc-members:
+   :show-inheritance:

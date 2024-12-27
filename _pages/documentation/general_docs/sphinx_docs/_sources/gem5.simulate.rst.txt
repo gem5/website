@@ -1,0 +1,20 @@
+gem5.simulate package
+=====================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.simulate.exit_event
+   gem5.simulate.exit_event_generators
+   gem5.simulate.simulator
+
+Module contents
+---------------
+
+.. automodule:: gem5.simulate
+   :members:
+   :undoc-members:
+   :show-inheritance:

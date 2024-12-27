@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.caches.viper.corepair\_cache module
+=========================================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache
+   :members:
+   :undoc-members:
+   :show-inheritance:

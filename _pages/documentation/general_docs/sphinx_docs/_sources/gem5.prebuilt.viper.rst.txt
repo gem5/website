@@ -1,0 +1,21 @@
+gem5.prebuilt.viper package
+===========================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.prebuilt.viper.board
+   gem5.prebuilt.viper.cpu_cache_hierarchy
+   gem5.prebuilt.viper.gpu_cache_hierarchy
+   gem5.prebuilt.viper.viper_network
+
+Module contents
+---------------
+
+.. automodule:: gem5.prebuilt.viper
+   :members:
+   :undoc-members:
+   :show-inheritance:

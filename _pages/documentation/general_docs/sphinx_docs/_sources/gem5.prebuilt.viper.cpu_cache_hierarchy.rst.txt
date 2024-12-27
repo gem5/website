@@ -1,0 +1,7 @@
+gem5.prebuilt.viper.cpu\_cache\_hierarchy module
+================================================
+
+.. automodule:: gem5.prebuilt.viper.cpu_cache_hierarchy
+   :members:
+   :undoc-members:
+   :show-inheritance:

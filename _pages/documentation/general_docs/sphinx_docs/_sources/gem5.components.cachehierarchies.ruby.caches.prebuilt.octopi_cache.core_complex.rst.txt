@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi\_cache.core\_complex module
+========================================================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache.core_complex
+   :members:
+   :undoc-members:
+   :show-inheritance:

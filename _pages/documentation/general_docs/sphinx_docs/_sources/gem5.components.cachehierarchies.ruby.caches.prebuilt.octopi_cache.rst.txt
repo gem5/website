@@ -1,0 +1,21 @@
+gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi\_cache package
+===========================================================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache.core_complex
+   gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache.octopi
+   gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache.octopi_network
+   gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache.ruby_network_components
+
+Module contents
+---------------
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.prebuilt.octopi_cache
+   :members:
+   :undoc-members:
+   :show-inheritance:

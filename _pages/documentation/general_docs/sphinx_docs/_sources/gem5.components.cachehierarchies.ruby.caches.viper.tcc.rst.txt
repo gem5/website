@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.caches.viper.tcc module
+=============================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.viper.tcc
+   :members:
+   :undoc-members:
+   :show-inheritance:

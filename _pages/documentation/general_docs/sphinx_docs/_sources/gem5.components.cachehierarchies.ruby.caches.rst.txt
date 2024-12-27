@@ -1,0 +1,22 @@
+gem5.components.cachehierarchies.ruby.caches package
+====================================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.cachehierarchies.ruby.caches.mesi_three_level
+   gem5.components.cachehierarchies.ruby.caches.mesi_two_level
+   gem5.components.cachehierarchies.ruby.caches.mi_example
+   gem5.components.cachehierarchies.ruby.caches.prebuilt
+   gem5.components.cachehierarchies.ruby.caches.viper
+
+Module contents
+---------------
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches
+   :members:
+   :undoc-members:
+   :show-inheritance:

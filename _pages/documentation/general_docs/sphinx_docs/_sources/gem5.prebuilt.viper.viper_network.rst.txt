@@ -1,0 +1,7 @@
+gem5.prebuilt.viper.viper\_network module
+=========================================
+
+.. automodule:: gem5.prebuilt.viper.viper_network
+   :members:
+   :undoc-members:
+   :show-inheritance:

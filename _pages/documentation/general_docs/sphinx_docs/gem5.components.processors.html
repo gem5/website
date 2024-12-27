@@ -1,0 +1,515 @@
+---
+title: "gem5.components.processors.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.processors.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.processors package &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.processors.spatter_gen package" href="gem5.components.processors.spatter_gen.html" />
+    <link rel="prev" title="gem5.components.memory.single_channel module" href="gem5.components.memory.single_channel.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="gem5-components-processors-package">
+<h1>gem5.components.processors package<a class="headerlink" href="#gem5-components-processors-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.spatter_gen.html">gem5.components.processors.spatter_gen package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.spatter_gen.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_generator.html">gem5.components.processors.spatter_gen.spatter_generator module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_generator.html#gem5.components.processors.spatter_gen.spatter_generator.SpatterGenerator"><code class="docutils literal notranslate"><span class="pre">SpatterGenerator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_generator_core.html">gem5.components.processors.spatter_gen.spatter_generator_core module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_generator_core.html#gem5.components.processors.spatter_gen.spatter_generator_core.SpatterGeneratorCore"><code class="docutils literal notranslate"><span class="pre">SpatterGeneratorCore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html">gem5.components.processors.spatter_gen.spatter_kernel module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html#gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel"><code class="docutils literal notranslate"><span class="pre">SpatterKernel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html#gem5.components.processors.spatter_gen.spatter_kernel.parse_kernel"><code class="docutils literal notranslate"><span class="pre">parse_kernel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html#gem5.components.processors.spatter_gen.spatter_kernel.partition_trace"><code class="docutils literal notranslate"><span class="pre">partition_trace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html#gem5.components.processors.spatter_gen.spatter_kernel.prepare_kernels"><code class="docutils literal notranslate"><span class="pre">prepare_kernels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.processors.spatter_gen.spatter_kernel.html#gem5.components.processors.spatter_gen.spatter_kernel.unroll_trace"><code class="docutils literal notranslate"><span class="pre">unroll_trace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.spatter_gen.html#module-gem5.components.processors.spatter_gen">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.abstract_core.html">gem5.components.processors.abstract_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore"><code class="docutils literal notranslate"><span class="pre">AbstractCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.abstract"><code class="docutils literal notranslate"><span class="pre">AbstractCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.add_pc_tracker_probe"><code class="docutils literal notranslate"><span class="pre">AbstractCore.add_pc_tracker_probe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">AbstractCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.connect_icache"><code class="docutils literal notranslate"><span class="pre">AbstractCore.connect_icache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.connect_interrupt"><code class="docutils literal notranslate"><span class="pre">AbstractCore.connect_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.connect_walker_ports"><code class="docutils literal notranslate"><span class="pre">AbstractCore.connect_walker_ports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">AbstractCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">AbstractCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">AbstractCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">AbstractCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.get_isa"><code class="docutils literal notranslate"><span class="pre">AbstractCore.get_isa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.get_mmu"><code class="docutils literal notranslate"><span class="pre">AbstractCore.get_mmu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.is_kvm_core"><code class="docutils literal notranslate"><span class="pre">AbstractCore.is_kvm_core()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.requires_send_evicts"><code class="docutils literal notranslate"><span class="pre">AbstractCore.requires_send_evicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.set_switched_out"><code class="docutils literal notranslate"><span class="pre">AbstractCore.set_switched_out()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore.set_workload"><code class="docutils literal notranslate"><span class="pre">AbstractCore.set_workload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.abstract_generator.html">gem5.components.processors.abstract_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.incorporate_processor"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.incorporate_processor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.AbstractGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">AbstractGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.abstract_generator.html#gem5.components.processors.abstract_generator.partition_range"><code class="docutils literal notranslate"><span class="pre">partition_range()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html">gem5.components.processors.abstract_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.connect_icache"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.connect_icache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.connect_interrupt"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.connect_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.connect_walker_ports"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.connect_walker_ports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.get_isa"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.get_isa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.is_kvm_core"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.is_kvm_core()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.set_workload"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.set_workload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_generator_core.html#gem5.components.processors.abstract_generator_core.AbstractGeneratorCore.start_traffic"><code class="docutils literal notranslate"><span class="pre">AbstractGeneratorCore.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.abstract_processor.html">gem5.components.processors.abstract_processor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.abstract"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.cxx_exports"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.get_cores"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.get_cores()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.get_isa"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.get_isa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.get_num_cores"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.get_num_cores()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor.incorporate_processor"><code class="docutils literal notranslate"><span class="pre">AbstractProcessor.incorporate_processor()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html">gem5.components.processors.base_cpu_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.abstract"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.add_pc_tracker_probe"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.add_pc_tracker_probe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.connect_icache"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.connect_icache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.connect_interrupt"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.connect_interrupt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.connect_walker_ports"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.connect_walker_ports()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.get_isa"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.get_isa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.get_mmu"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.get_mmu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.get_simobject"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.get_simobject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.is_kvm_core"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.is_kvm_core()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.requires_send_evicts"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.requires_send_evicts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.set_switched_out"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.set_switched_out()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_core.html#gem5.components.processors.base_cpu_core.BaseCPUCore.set_workload"><code class="docutils literal notranslate"><span class="pre">BaseCPUCore.set_workload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html">gem5.components.processors.base_cpu_processor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.abstract"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.cxx_exports"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.base_cpu_processor.html#gem5.components.processors.base_cpu_processor.BaseCPUProcessor.incorporate_processor"><code class="docutils literal notranslate"><span class="pre">BaseCPUProcessor.incorporate_processor()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.complex_generator.html">gem5.components.processors.complex_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.add_linear"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.add_linear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.add_random"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.add_random()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.set_traffic_from_python_generator"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.set_traffic_from_python_generator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator.html#gem5.components.processors.complex_generator.ComplexGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">ComplexGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html">gem5.components.processors.complex_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_linear"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.add_linear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.add_random"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.add_random()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.set_traffic_from_python_generator"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.set_traffic_from_python_generator()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexGeneratorCore.start_traffic"><code class="docutils literal notranslate"><span class="pre">ComplexGeneratorCore.start_traffic()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.ComplexTrafficParams"><code class="docutils literal notranslate"><span class="pre">ComplexTrafficParams</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.TrafficModes"><code class="docutils literal notranslate"><span class="pre">TrafficModes</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.TrafficModes.linear"><code class="docutils literal notranslate"><span class="pre">TrafficModes.linear</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.complex_generator_core.html#gem5.components.processors.complex_generator_core.TrafficModes.random"><code class="docutils literal notranslate"><span class="pre">TrafficModes.random</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.cpu_types.html">gem5.components.processors.cpu_types module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes"><code class="docutils literal notranslate"><span class="pre">CPUTypes</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes.ATOMIC"><code class="docutils literal notranslate"><span class="pre">CPUTypes.ATOMIC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes.KVM"><code class="docutils literal notranslate"><span class="pre">CPUTypes.KVM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes.MINOR"><code class="docutils literal notranslate"><span class="pre">CPUTypes.MINOR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes.O3"><code class="docutils literal notranslate"><span class="pre">CPUTypes.O3</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.CPUTypes.TIMING"><code class="docutils literal notranslate"><span class="pre">CPUTypes.TIMING</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.get_cpu_type_from_str"><code class="docutils literal notranslate"><span class="pre">get_cpu_type_from_str()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.get_cpu_types_str_set"><code class="docutils literal notranslate"><span class="pre">get_cpu_types_str_set()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.cpu_types.html#gem5.components.processors.cpu_types.get_mem_mode"><code class="docutils literal notranslate"><span class="pre">get_mem_mode()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.gups_generator.html">gem5.components.processors.gups_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator.html#gem5.components.processors.gups_generator.GUPSGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">GUPSGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html">gem5.components.processors.gups_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_core.html#gem5.components.processors.gups_generator_core.GUPSGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorCore.cxx_template_params</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html">gem5.components.processors.gups_generator_ep module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.abstract"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.cxx_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_ep.html#gem5.components.processors.gups_generator_ep.GUPSGeneratorEP.start_traffic"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorEP.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html">gem5.components.processors.gups_generator_par module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.abstract"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.cxx_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.gups_generator_par.html#gem5.components.processors.gups_generator_par.GUPSGeneratorPAR.start_traffic"><code class="docutils literal notranslate"><span class="pre">GUPSGeneratorPAR.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.linear_generator.html">gem5.components.processors.linear_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator"><code class="docutils literal notranslate"><span class="pre">LinearGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator.html#gem5.components.processors.linear_generator.LinearGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">LinearGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html">gem5.components.processors.linear_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.linear_generator_core.html#gem5.components.processors.linear_generator_core.LinearGeneratorCore.start_traffic"><code class="docutils literal notranslate"><span class="pre">LinearGeneratorCore.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.random_generator.html">gem5.components.processors.random_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator"><code class="docutils literal notranslate"><span class="pre">RandomGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator.html#gem5.components.processors.random_generator.RandomGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">RandomGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.random_generator_core.html">gem5.components.processors.random_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.random_generator_core.html#gem5.components.processors.random_generator_core.RandomGeneratorCore.start_traffic"><code class="docutils literal notranslate"><span class="pre">RandomGeneratorCore.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.simple_core.html">gem5.components.processors.simple_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore"><code class="docutils literal notranslate"><span class="pre">SimpleCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.abstract"><code class="docutils literal notranslate"><span class="pre">SimpleCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cpu_class_factory"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cpu_class_factory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cpu_simobject_factory"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cpu_simobject_factory()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">SimpleCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_core.html#gem5.components.processors.simple_core.SimpleCore.get_type"><code class="docutils literal notranslate"><span class="pre">SimpleCore.get_type()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.simple_processor.html">gem5.components.processors.simple_processor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor.abstract"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor.cxx_exports"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_processor.html#gem5.components.processors.simple_processor.SimpleProcessor.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">SimpleProcessor.cxx_template_params</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html">gem5.components.processors.simple_switchable_processor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.abstract"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.cxx_exports"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.incorporate_processor"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.incorporate_processor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.simple_switchable_processor.html#gem5.components.processors.simple_switchable_processor.SimpleSwitchableProcessor.switch"><code class="docutils literal notranslate"><span class="pre">SimpleSwitchableProcessor.switch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.strided_generator.html">gem5.components.processors.strided_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator"><code class="docutils literal notranslate"><span class="pre">StridedGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator.html#gem5.components.processors.strided_generator.StridedGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">StridedGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html">gem5.components.processors.strided_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.strided_generator_core.html#gem5.components.processors.strided_generator_core.StridedGeneratorCore.start_traffic"><code class="docutils literal notranslate"><span class="pre">StridedGeneratorCore.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.switchable_processor.html">gem5.components.processors.switchable_processor module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.abstract"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.cxx_exports"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.get_cores"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.get_cores()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.get_num_cores"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.get_num_cores()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.incorporate_processor"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.incorporate_processor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.switchable_processor.html#gem5.components.processors.switchable_processor.SwitchableProcessor.switch_to_processor"><code class="docutils literal notranslate"><span class="pre">SwitchableProcessor.switch_to_processor()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.traffic_generator.html">gem5.components.processors.traffic_generator module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.abstract"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.cxx_exports"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator.html#gem5.components.processors.traffic_generator.TrafficGenerator.start_traffic"><code class="docutils literal notranslate"><span class="pre">TrafficGenerator.start_traffic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html">gem5.components.processors.traffic_generator_core module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.abstract"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.abstract</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.connect_dcache"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.connect_dcache()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.cxx_exports"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.cxx_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.cxx_extra_bases</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.cxx_param_exports</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.processors.traffic_generator_core.html#gem5.components.processors.traffic_generator_core.TrafficGeneratorCore.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">TrafficGeneratorCore.cxx_template_params</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-gem5.components.processors">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gem5.components.processors" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+      <li>Previous: <a href="gem5.components.memory.single_channel.html" title="previous chapter">gem5.components.memory.single_channel module</a></li>
+      <li>Next: <a href="gem5.components.processors.spatter_gen.html" title="next chapter">gem5.components.processors.spatter_gen package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.processors.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

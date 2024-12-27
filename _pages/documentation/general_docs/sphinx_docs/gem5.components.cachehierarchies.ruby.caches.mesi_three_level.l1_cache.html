@@ -1,0 +1,174 @@
+---
+title: "gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l2_cache module" href="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l2_cache.html" />
+    <link rel="prev" title="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.dma_controller module" href="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.dma_controller.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache">
+<span id="gem5-components-cachehierarchies-ruby-caches-mesi-three-level-l1-cache-module"></span><h1>gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache module<a class="headerlink" href="#module-gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.</span></span><span class="sig-name descname"><span class="pre">L1Cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l1i_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1i_assoc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1d_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1d_assoc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore" title="gem5.components.processors.abstract_core.AbstractCore"><span class="pre">AbstractCore</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_isa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.isas.html#gem5.isas.ISA" title="gem5.isas.ISA"><span class="pre">ISA</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">clk_domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ClockDomain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MESI_Three_Level_L0Cache_Controller</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.connectQueues">
+<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.connectQueues" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.getBlockSizeBits">
+<span class="sig-name descname"><span class="pre">getBlockSizeBits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.getBlockSizeBits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.versionCount">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">versionCount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.L1Cache.versionCount" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.html">gem5.components.cachehierarchies package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.ruby.html">gem5.components.cachehierarchies.ruby package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.ruby.caches.html">gem5.components.cachehierarchies.ruby.caches package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.html">gem5.components.cachehierarchies.ruby.caches.mesi_three_level package</a><ul>
+      <li>Previous: <a href="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.dma_controller.html" title="previous chapter">gem5.components.cachehierarchies.ruby.caches.mesi_three_level.dma_controller module</a></li>
+      <li>Next: <a href="gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l2_cache.html" title="next chapter">gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l2_cache module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.cachehierarchies.ruby.caches.mesi_three_level.l1_cache.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

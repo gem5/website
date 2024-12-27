@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.caches.viper.dma\_controller module
+=========================================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.caches.viper.dma_controller
+   :members:
+   :undoc-members:
+   :show-inheritance:

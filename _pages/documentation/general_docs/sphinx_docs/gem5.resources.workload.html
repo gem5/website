@@ -1,0 +1,149 @@
+---
+title: "gem5.resources.workload.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.resources.workload.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.resources.workload module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.simulate package" href="gem5.simulate.html" />
+    <link rel="prev" title="gem5.resources.resource module" href="gem5.resources.resource.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.resources.workload">
+<span id="gem5-resources-workload-module"></span><h1>gem5.resources.workload module<a class="headerlink" href="#module-gem5.resources.workload" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.resources.workload.CustomWorkload">
+<span class="sig-prename descclassname"><span class="pre">gem5.resources.workload.</span></span><span class="sig-name descname"><span class="pre">CustomWorkload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.workload.CustomWorkload" title="Link to this definition">¶</a></dt>
+<dd><p>A custom workload gem5 resource. It can be used to specify a custom,
+local workload.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">CustomWorkload</span></code> class is deprecated. It will be removed in a
+future release of gem5. Please use the
+<code class="docutils literal notranslate"><span class="pre">gem5.resources.resource.WorkloadResource</span></code> class instead.</p>
+</div>
+<p>The class has been stealthily converted to a function which wraps the
+<code class="docutils literal notranslate"><span class="pre">WorkloadResource</span></code> class.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.resources.workload.Workload">
+<span class="sig-prename descclassname"><span class="pre">gem5.resources.workload.</span></span><span class="sig-name descname"><span class="pre">Workload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workload_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gem5_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24.1.0.1'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.workload.Workload" title="Link to this definition">¶</a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Workload</span></code> class is deprecated. It will be removed in a future
+release of gem5. Please use the <code class="docutils literal notranslate"><span class="pre">gem5.resources.resource.WorkloadResource</span></code>
+class instead.</p>
+</div>
+<p>The class has been stealthily converted to a function which wraps the
+<code class="docutils literal notranslate"><span class="pre">WorkloadResource</span></code> class.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.html">gem5.components package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="gem5.resources.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.resources.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.resources.html#module-gem5.resources">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.resources.html">gem5.resources package</a><ul>
+      <li>Previous: <a href="gem5.resources.resource.html" title="previous chapter">gem5.resources.resource module</a></li>
+      <li>Next: <a href="gem5.simulate.html" title="next chapter">gem5.simulate package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.resources.workload.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

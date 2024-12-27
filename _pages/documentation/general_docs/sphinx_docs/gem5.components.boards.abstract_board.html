@@ -1,0 +1,340 @@
+---
+title: "gem5.components.boards.abstract_board.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.abstract_board.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.boards.abstract_board module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.boards.abstract_system_board module" href="gem5.components.boards.abstract_system_board.html" />
+    <link rel="prev" title="gem5.components.boards.experimental.lupv_board module" href="gem5.components.boards.experimental.lupv_board.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.boards.abstract_board">
+<span id="gem5-components-boards-abstract-board-module"></span><h1>gem5.components.boards.abstract_board module<a class="headerlink" href="#module-gem5.components.boards.abstract_board" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.boards.abstract_board.</span></span><span class="sig-name descname"><span class="pre">AbstractBoard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clk_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor" title="gem5.components.processors.abstract_processor.AbstractProcessor"><span class="pre">AbstractProcessor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><span class="pre">AbstractMemorySystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_hierarchy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.cachehierarchies.abstract_cache_hierarchy.html#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy"><span class="pre">AbstractCacheHierarchy</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The abstract board interface.</p>
+<p>Boards are used as the object which can connect together all other
+components. This abstract class defines the external interface that other
+boards must provide. Boards can be specialized for different ISAs or system
+designs (e.g., core counts, cache types, memory channels, I/O devices, etc).</p>
+<p>In addition to providing the place that system components are connected,
+the board also exposes an interface for the caches, processor, and memory
+to interact.</p>
+<p>The board also exposes an interface to set up I/O devices which needs to be
+specialized for each ISA and/or platform.</p>
+<p>Board inherits from System and can therefore be used as a System SimObject
+when required.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.connect_system_port">
+<span class="sig-name descname"><span class="pre">connect_system_port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Port</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.connect_system_port" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_cache_hierarchy">
+<span class="sig-name descname"><span class="pre">get_cache_hierarchy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="gem5.components.cachehierarchies.abstract_cache_hierarchy.html#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy"><span class="pre">AbstractCacheHierarchy</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_cache_hierarchy" title="Link to this definition">¶</a></dt>
+<dd><p>Get the cache hierarchy connected to the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The cache hierarchy.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_cache_line_size">
+<span class="sig-name descname"><span class="pre">get_cache_line_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_cache_line_size" title="Link to this definition">¶</a></dt>
+<dd><p>Get the size of the cache line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The size of the cache line size.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_clock_domain">
+<span class="sig-name descname"><span class="pre">get_clock_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ClockDomain</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_clock_domain" title="Link to this definition">¶</a></dt>
+<dd><p>Get the clock domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The clock domain.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_devices">
+<span class="sig-name descname"><span class="pre">get_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_devices" title="Link to this definition">¶</a></dt>
+<dd><p>Get the devices connected to the board.</p>
+<p>Currently, this is only used for GPUs by the ViperBoard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The devices connected to the board or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_dma_ports">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_dma_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_dma_ports" title="Link to this definition">¶</a></dt>
+<dd><p>Get the board’s Direct Memory Access ports.
+This abstract method must be implemented within the subclasses if they
+support DMA and/or full system simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A List of the Direct Memory Access ports.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_io_bus">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_io_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IOXBar</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_io_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Get the board’s IO Bus.</p>
+<p>This abstract method must be implemented within the subclasses if they
+support DMA and/or full system simulation.</p>
+<p>The I/O bus is a non-coherent bus (in the classic caches). On the CPU
+side, it accepts requests meant for I/O devices. On the memory side, it
+forwards these requests to the devices (e.g., the interrupt
+controllers on each core).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The I/O Bus.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_mem_ports">
+<span class="sig-name descname"><span class="pre">get_mem_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_mem_ports" title="Link to this definition">¶</a></dt>
+<dd><p>Get the memory ports exposed on this board</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ports should be returned such that the address ranges are
+in ascending order.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_mem_side_coherent_io_port">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mem_side_coherent_io_port</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_mem_side_coherent_io_port" title="Link to this definition">¶</a></dt>
+<dd><p>Get the memory-side coherent I/O port.</p>
+<p>This abstract method must be implemented if <code class="docutils literal notranslate"><span class="pre">has_coherent_io</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>This returns a <em>port</em> (not a bus) that should be connected to a
+CPU-side port for which coherent I/O (DMA) is issued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_memory">
+<span class="sig-name descname"><span class="pre">get_memory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AbstractMemory</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_memory" title="Link to this definition">¶</a></dt>
+<dd><p>Get the memory (RAM) connected to the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The memory system.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.get_processor">
+<span class="sig-name descname"><span class="pre">get_processor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor" title="gem5.components.processors.abstract_processor.AbstractProcessor"><span class="pre">AbstractProcessor</span></a></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.get_processor" title="Link to this definition">¶</a></dt>
+<dd><p>Get the processor connected to the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The processor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.has_coherent_io">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_coherent_io</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.has_coherent_io" title="Link to this definition">¶</a></dt>
+<dd><p>Determine whether the board needs coherent I/O</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board needs coherent I/O, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.has_dma_ports">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_dma_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.has_dma_ports" title="Link to this definition">¶</a></dt>
+<dd><p>Determine whether the board has DMA ports or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has DMA ports, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.has_io_bus">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">has_io_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.has_io_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Determine whether the board has an IO bus or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has an IO bus, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.is_fullsystem">
+<span class="sig-name descname"><span class="pre">is_fullsystem</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.is_fullsystem" title="Link to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the board is to be run in FS mode. Otherwise the board
+is to be run in Se mode. An exception will be thrown if this has not
+been set.</p>
+<p>This function is used by the Simulator module to setup the simulation
+correctly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.is_workload_set">
+<span class="sig-name descname"><span class="pre">is_workload_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.is_workload_set" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.set_is_workload_set">
+<span class="sig-name descname"><span class="pre">set_is_workload_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.set_is_workload_set" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.set_mem_mode">
+<span class="sig-name descname"><span class="pre">set_mem_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mem_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.boards.mem_mode.html#gem5.components.boards.mem_mode.MemMode" title="gem5.components.boards.mem_mode.MemMode"><span class="pre">MemMode</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.set_mem_mode" title="Link to this definition">¶</a></dt>
+<dd><p>Set the memory mode of the board.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mem_mode</strong> – The memory mode the board is to be set to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.abstract_board.AbstractBoard.set_workload">
+<span class="sig-name descname"><span class="pre">set_workload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.WorkloadResource" title="gem5.resources.resource.WorkloadResource"><span class="pre">WorkloadResource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.abstract_board.AbstractBoard.set_workload" title="Link to this definition">¶</a></dt>
+<dd><p>Set the workload for this board to run.</p>
+<p>This function will take the workload specified and run the correct
+workload function (e.g., <code class="docutils literal notranslate"><span class="pre">set_kernel_disk_workload</span></code>) with the correct
+parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>workload</strong> – The workload to be set to this board.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.boards.html">gem5.components.boards package</a><ul>
+      <li>Previous: <a href="gem5.components.boards.experimental.lupv_board.html" title="previous chapter">gem5.components.boards.experimental.lupv_board module</a></li>
+      <li>Next: <a href="gem5.components.boards.abstract_system_board.html" title="next chapter">gem5.components.boards.abstract_system_board module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.boards.abstract_board.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

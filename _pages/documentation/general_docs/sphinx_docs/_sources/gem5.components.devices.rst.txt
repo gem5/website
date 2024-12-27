@@ -1,0 +1,18 @@
+gem5.components.devices package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.devices.gpus
+
+Module contents
+---------------
+
+.. automodule:: gem5.components.devices
+   :members:
+   :undoc-members:
+   :show-inheritance:

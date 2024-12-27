@@ -1,0 +1,21 @@
+gem5.resources.client\_api package
+==================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.resources.client_api.abstract_client
+   gem5.resources.client_api.atlasclient
+   gem5.resources.client_api.client_query
+   gem5.resources.client_api.jsonclient
+
+Module contents
+---------------
+
+.. automodule:: gem5.resources.client_api
+   :members:
+   :undoc-members:
+   :show-inheritance:

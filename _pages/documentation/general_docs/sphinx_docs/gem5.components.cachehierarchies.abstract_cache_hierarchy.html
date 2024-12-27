@@ -1,0 +1,253 @@
+---
+title: "gem5.components.cachehierarchies.abstract_cache_hierarchy.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchies.abstract_cache_hierarchy.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.cachehierarchies.abstract_cache_hierarchy module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.cachehierarchies.abstract_three_level_cache_hierarchy module" href="gem5.components.cachehierarchies.abstract_three_level_cache_hierarchy.html" />
+    <link rel="prev" title="gem5.components.cachehierarchies.ruby.mi_example_cache_hierarchy module" href="gem5.components.cachehierarchies.ruby.mi_example_cache_hierarchy.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.cachehierarchies.abstract_cache_hierarchy">
+<span id="gem5-components-cachehierarchies-abstract-cache-hierarchy-module"></span><h1>gem5.components.cachehierarchies.abstract_cache_hierarchy module<a class="headerlink" href="#module-gem5.components.cachehierarchies.abstract_cache_hierarchy" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.abstract_cache_hierarchy.</span></span><span class="sig-name descname"><span class="pre">AbstractCacheHierarchy</span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SubSystem</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.add_root_child">
+<span class="sig-name descname"><span class="pre">add_root_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.add_root_child" title="Link to this definition">¶</a></dt>
+<dd><p>This adds the LLC to the root node</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.generateDeviceTree">
+<span class="sig-name descname"><span class="pre">generateDeviceTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.generateDeviceTree" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.get_coherence_protocol">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_coherence_protocol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="gem5.coherence_protocol.html#gem5.coherence_protocol.CoherenceProtocol" title="gem5.coherence_protocol.CoherenceProtocol"><span class="pre">CoherenceProtocol</span></a></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.get_coherence_protocol" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the coherence protocol used in the cache hierarchy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The coherence protocol used in the cache hierarchy.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.incorporate_cache">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">incorporate_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard" title="gem5.components.boards.abstract_board.AbstractBoard"><span class="pre">AbstractBoard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.incorporate_cache" title="Link to this definition">¶</a></dt>
+<dd><p>Incorporates the caches into a board.</p>
+<p>Each specific hierarchy needs to implement this function and will be
+unique for each setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>board</strong> – The board in which the cache heirarchy is to be
+incorporated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.is_ruby">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_ruby</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.is_ruby" title="Link to this definition">¶</a></dt>
+<dd><p>Specifies whether this cache hierarchy is using the Ruby memory system
+or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the cache hierarchy is ruby. Otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.traverse">
+<span class="sig-name descname"><span class="pre">traverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode"><span class="pre">CacheNode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">visit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode"><span class="pre">CacheNode</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy.traverse" title="Link to this definition">¶</a></dt>
+<dd><p>Traverse the tree in post-order. Return the level of the
+current node passed as an argument. The method accepts
+a visit function to be called at each node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – starting node for traversal</p></li>
+<li><p><strong>visit</strong> – visiting function to be called at each node</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>level of the node passed as an argument</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.abstract_cache_hierarchy.</span></span><span class="sig-name descname"><span class="pre">CacheNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SimObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode"><span class="pre">CacheNode</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">hierarchy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy"><span class="pre">AbstractCacheHierarchy</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode.add_child">
+<span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SimObject</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode"><span class="pre">CacheNode</span></a></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode.add_child" title="Link to this definition">¶</a></dt>
+<dd><p>Add a child node to the current node provided a cache object and
+its name. Because of the intrinsic topology of caches, children will be
+one level higher than their parent in the hierarchy.
+This means the chain of insertions to the tree will be something
+like:
+l3.add_child(“l2”, l2).add_child(“l1”, l1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of the cache</p></li>
+<li><p><strong>cache</strong> – The cache SimObject</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The new child node being generated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode.generate_dtb_entry">
+<span class="sig-name descname"><span class="pre">generate_dtb_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.abstract_cache_hierarchy.CacheNode.generate_dtb_entry" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.html">gem5.components.cachehierarchies package</a><ul>
+      <li>Previous: <a href="gem5.components.cachehierarchies.ruby.mi_example_cache_hierarchy.html" title="previous chapter">gem5.components.cachehierarchies.ruby.mi_example_cache_hierarchy module</a></li>
+      <li>Next: <a href="gem5.components.cachehierarchies.abstract_three_level_cache_hierarchy.html" title="next chapter">gem5.components.cachehierarchies.abstract_three_level_cache_hierarchy module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.cachehierarchies.abstract_cache_hierarchy.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

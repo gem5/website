@@ -1,0 +1,233 @@
+---
+title: "gem5.simulate.exit_event.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.simulate.exit_event.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.simulate.exit_event module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.simulate.exit_event_generators module" href="gem5.simulate.exit_event_generators.html" />
+    <link rel="prev" title="gem5.simulate package" href="gem5.simulate.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.simulate.exit_event">
+<span id="gem5-simulate-exit-event-module"></span><h1>gem5.simulate.exit_event module<a class="headerlink" href="#module-gem5.simulate.exit_event" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_event.</span></span><span class="sig-name descname"><span class="pre">ExitEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enum class holding all the supported simulator exit events.</p>
+<p>The simulator will exit in certain conditions. The simulate package has
+been designed to categorize these into sensible states of exit, listed
+below.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.CHECKPOINT">
+<span class="sig-name descname"><span class="pre">CHECKPOINT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'checkpoint'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.CHECKPOINT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.EXIT">
+<span class="sig-name descname"><span class="pre">EXIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'exit'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.EXIT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.FAIL">
+<span class="sig-name descname"><span class="pre">FAIL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fail'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.FAIL" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.KERNEL_OOPS">
+<span class="sig-name descname"><span class="pre">KERNEL_OOPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'kernel</span> <span class="pre">oops</span> <span class="pre">in</span> <span class="pre">simulated</span> <span class="pre">system'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.KERNEL_OOPS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.KERNEL_PANIC">
+<span class="sig-name descname"><span class="pre">KERNEL_PANIC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'kernel</span> <span class="pre">panic</span> <span class="pre">in</span> <span class="pre">simulated</span> <span class="pre">system'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.KERNEL_PANIC" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.MAX_INSTS">
+<span class="sig-name descname"><span class="pre">MAX_INSTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'number</span> <span class="pre">of</span> <span class="pre">instructions</span> <span class="pre">reached'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.MAX_INSTS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.MAX_TICK">
+<span class="sig-name descname"><span class="pre">MAX_TICK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'max</span> <span class="pre">tick'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.MAX_TICK" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_DISABLE">
+<span class="sig-name descname"><span class="pre">PERF_COUNTER_DISABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'performance</span> <span class="pre">counter</span> <span class="pre">disabled'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_DISABLE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_ENABLE">
+<span class="sig-name descname"><span class="pre">PERF_COUNTER_ENABLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'performance</span> <span class="pre">counter</span> <span class="pre">enabled'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_ENABLE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_INTERRUPT">
+<span class="sig-name descname"><span class="pre">PERF_COUNTER_INTERRUPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'performance</span> <span class="pre">counter</span> <span class="pre">interrupt'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_INTERRUPT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_RESET">
+<span class="sig-name descname"><span class="pre">PERF_COUNTER_RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'performance</span> <span class="pre">counter</span> <span class="pre">reset'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.PERF_COUNTER_RESET" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.SCHEDULED_TICK">
+<span class="sig-name descname"><span class="pre">SCHEDULED_TICK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'scheduled</span> <span class="pre">tick</span> <span class="pre">exit'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.SCHEDULED_TICK" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.SIMPOINT_BEGIN">
+<span class="sig-name descname"><span class="pre">SIMPOINT_BEGIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'simpoint</span> <span class="pre">begins'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.SIMPOINT_BEGIN" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.SPATTER_EXIT">
+<span class="sig-name descname"><span class="pre">SPATTER_EXIT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'spatter</span> <span class="pre">exit'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.SPATTER_EXIT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.SWITCHCPU">
+<span class="sig-name descname"><span class="pre">SWITCHCPU</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'switchcpu'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.SWITCHCPU" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.USER_INTERRUPT">
+<span class="sig-name descname"><span class="pre">USER_INTERRUPT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'user</span> <span class="pre">interupt'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.USER_INTERRUPT" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.WORKBEGIN">
+<span class="sig-name descname"><span class="pre">WORKBEGIN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'workbegin'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.WORKBEGIN" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.WORKEND">
+<span class="sig-name descname"><span class="pre">WORKEND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'workend'</span></em><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.WORKEND" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_event.ExitEvent.translate_exit_status">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">translate_exit_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exit_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#gem5.simulate.exit_event.ExitEvent" title="gem5.simulate.exit_event.ExitEvent"><span class="pre">ExitEvent</span></a></span></span><a class="headerlink" href="#gem5.simulate.exit_event.ExitEvent.translate_exit_status" title="Link to this definition">¶</a></dt>
+<dd><p>This function will translate common exit strings to their correct
+ExitEvent categorization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At present, we do not guarantee this list is complete, as
+there are no bounds on what string may be returned by the simulator
+given an exit event.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.html">gem5.components package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.simulate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.simulate.html#module-gem5.simulate">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.simulate.html">gem5.simulate package</a><ul>
+      <li>Previous: <a href="gem5.simulate.html" title="previous chapter">gem5.simulate package</a></li>
+      <li>Next: <a href="gem5.simulate.exit_event_generators.html" title="next chapter">gem5.simulate.exit_event_generators module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.simulate.exit_event.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

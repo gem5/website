@@ -1,0 +1,270 @@
+---
+title: "gem5.components.boards.kernel_disk_workload.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.kernel_disk_workload.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.boards.kernel_disk_workload module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.boards.mem_mode module" href="gem5.components.boards.mem_mode.html" />
+    <link rel="prev" title="gem5.components.boards.arm_board module" href="gem5.components.boards.arm_board.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.boards.kernel_disk_workload">
+<span id="gem5-components-boards-kernel-disk-workload-module"></span><h1>gem5.components.boards.kernel_disk_workload module<a class="headerlink" href="#module-gem5.components.boards.kernel_disk_workload" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.boards.kernel_disk_workload.</span></span><span class="sig-name descname"><span class="pre">KernelDiskWorkload</span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The purpose of this abstract class is to enable a full-system boot
+consisting of of a kernel which will then load a disk image.</p>
+<p>For this to function correctly, the KernelDiskWorkload class should be
+added as a superclass to a board and the abstract methods implemented.
+E.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">X86Board</span><span class="p">(</span><span class="n">AbstractBoard</span><span class="p">,</span> <span class="n">KernelDiskWorkload</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="nd">@overrides</span><span class="p">(</span><span class="n">KernelDiskWorkload</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_default_kernel_args</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s2">&quot;earlyprintk=ttyS0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;console=ttyS0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lpj=7999923&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;root=</span><span class="si">{root_value}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This assumes only one disk is set.</p></li>
+<li><p>This assumes the Linux kernel is used.</p></li>
+</ul>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.append_kernel_arg">
+<span class="sig-name descname"><span class="pre">append_kernel_arg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.append_kernel_arg" title="Link to this definition">¶</a></dt>
+<dd><p>Append a kernel argument to the list of kernel arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg</strong> – The kernel argument to append.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_default_kernel_args">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_default_kernel_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_default_kernel_args" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a default list of arguments for the workload kernel. We assume
+the following strings may be used as placeholders, to be replaced when
+<code class="docutils literal notranslate"><span class="pre">set_kernel_disk_workload</span></code> is executed:</p>
+<ul class="simple">
+<li><p><cite>{root_value}</cite> : set to <code class="docutils literal notranslate"><span class="pre">get_default_kernel_root_val()</span></code>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A default list of arguments for the workload kernel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_default_kernel_root_val">
+<span class="sig-name descname"><span class="pre">get_default_kernel_root_val</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.DiskImageResource" title="gem5.resources.resource.DiskImageResource"><span class="pre">DiskImageResource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_default_kernel_root_val" title="Link to this definition">¶</a></dt>
+<dd><p>Get the default kernel root value to be passed to the kernel. This is
+determined by the user-passed or board-default <code class="docutils literal notranslate"><span class="pre">disk_device</span></code>, and
+the disk image partition obtained from <code class="docutils literal notranslate"><span class="pre">get_disk_root_partition()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>disk_image</strong> – The disk image to be added to the system.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The default value for the <code class="docutils literal notranslate"><span class="pre">root</span></code> argument to be passed to the
+kernel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_disk_device">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_disk_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_disk_device" title="Link to this definition">¶</a></dt>
+<dd><p>Set a default disk device, in case user does not specify a disk device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The disk device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_disk_root_partition">
+<span class="sig-name descname"><span class="pre">get_disk_root_partition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.DiskImageResource" title="gem5.resources.resource.DiskImageResource"><span class="pre">DiskImageResource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.get_disk_root_partition" title="Link to this definition">¶</a></dt>
+<dd><p>Obtains the root partition of a disk image by inspecting the resource’s
+metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The disk image’s root partition.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.set_binary_to_run">
+<span class="sig-name descname"><span class="pre">set_binary_to_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.BinaryResource" title="gem5.resources.resource.BinaryResource"><span class="pre">BinaryResource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.set_binary_to_run" title="Link to this definition">¶</a></dt>
+<dd><p>Set the binary to run on the board.</p>
+<p>The binary could be an application or any executable script.
+Note: this will override the readfile or readfile_contents set in the
+set_kernel_disk_workload function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>application</strong> – The binary to run.</p></li>
+<li><p><strong>args</strong> – The arguments to pass to the binary.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.set_kernel_disk_workload">
+<span class="sig-name descname"><span class="pre">set_kernel_disk_workload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.KernelResource" title="gem5.resources.resource.KernelResource"><span class="pre">KernelResource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">disk_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.DiskImageResource" title="gem5.resources.resource.DiskImageResource"><span class="pre">DiskImageResource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.BootloaderResource" title="gem5.resources.resource.BootloaderResource"><span class="pre">BootloaderResource</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disk_device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readfile_contents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_on_work_items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.CheckpointResource" title="gem5.resources.resource.CheckpointResource"><span class="pre">CheckpointResource</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.kernel_disk_workload.KernelDiskWorkload.set_kernel_disk_workload" title="Link to this definition">¶</a></dt>
+<dd><p>This function allows the setting of a full-system run with a Kernel
+and a disk image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kernel</strong> – The kernel to boot.</p></li>
+<li><p><strong>disk_image</strong> – The disk image to mount.</p></li>
+<li><p><strong>bootloader</strong> – The current implementation of the ARM board requires
+three resources to operate – kernel, disk image,
+and, a bootloader.</p></li>
+<li><p><strong>readfile</strong> – An optional parameter stating the file to be read by
+by <code class="docutils literal notranslate"><span class="pre">m5</span> <span class="pre">readfile</span></code>.</p></li>
+<li><p><strong>readfile_contents</strong> – An optional parameter stating the contents of
+the readfile file. If set with <code class="docutils literal notranslate"><span class="pre">readfile</span></code>,
+the contents of <cite>readfile</cite> will be overwritten
+with <code class="docutils literal notranslate"><span class="pre">readfile_contents</span></code>, otherwise a new file
+will be created with the value of
+<code class="docutils literal notranslate"><span class="pre">readfile_contents</span></code>.</p></li>
+<li><p><strong>kernel_args</strong> – An optional parameter for setting arguments to be
+passed to the kernel. By default set to
+<code class="docutils literal notranslate"><span class="pre">get_default_kernel_args()</span></code>.</p></li>
+<li><p><strong>exit_on_work_items</strong> – Whether the simulation should exit on work
+items. <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p></li>
+<li><p><strong>checkpoint</strong> – The checkpoint directory. Used to restore the
+simulation to that checkpoint.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.boards.html">gem5.components.boards package</a><ul>
+      <li>Previous: <a href="gem5.components.boards.arm_board.html" title="previous chapter">gem5.components.boards.arm_board module</a></li>
+      <li>Next: <a href="gem5.components.boards.mem_mode.html" title="next chapter">gem5.components.boards.mem_mode module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.boards.kernel_disk_workload.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,187 @@
+---
+title: "gem5.resources.downloader.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.resources.downloader.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.resources.downloader module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.resources.elfie module" href="gem5.resources.elfie.html" />
+    <link rel="prev" title="gem5.resources.client module" href="gem5.resources.client.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.resources.downloader">
+<span id="gem5-resources-downloader-module"></span><h1>gem5.resources.downloader module<a class="headerlink" href="#module-gem5.resources.downloader" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.resources.downloader.get_resource">
+<span class="sig-prename descclassname"><span class="pre">gem5.resources.downloader.</span></span><span class="sig-name descname"><span class="pre">get_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">untar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_md5_mismatch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gem5_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'24.1.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.resources.downloader.get_resource" title="Link to this definition">¶</a></dt>
+<dd><p>Obtains a gem5 resource and stored it to a specified location. If the
+specified resource is already at the location, no action is taken.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource_name</strong> – The resource to be obtained.</p></li>
+<li><p><strong>to_path</strong> – The location in the file system the resource is to be
+stored. The filename should be included.</p></li>
+<li><p><strong>unzip</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, gzipped resources will be unzipped prior to saving
+to <code class="docutils literal notranslate"><span class="pre">to_path</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p></li>
+<li><p><strong>untar</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, tar achieve resource will be unpacked prior to
+saving to <code class="docutils literal notranslate"><span class="pre">to_path</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p></li>
+<li><p><strong>download_md5_mismatch</strong> – If a resource is present with an incorrect
+hash (e.g., an outdated version of the resource
+is present), <code class="docutils literal notranslate"><span class="pre">get_resource</span></code> will delete this
+local resource and re-download it if this parameter
+is <code class="docutils literal notranslate"><span class="pre">True</span></code>. <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p></li>
+<li><p><strong>resource_version</strong> – The version of the resource to be obtained. If
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, the latest version of the resource compatible
+with the working directory’s gem5 version will be obtained.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p></li>
+<li><p><strong>clients</strong> – A list of clients to use when obtaining the resource. If
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, all clients will be used. <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p></li>
+<li><p><strong>gem5_version</strong> – The gem5 version to use when obtaining the resource.
+By default, the version of gem5 being used is used. This
+is used primarily for testing purposes.</p></li>
+<li><p><strong>quiet</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, no output will be printed to the console (baring
+exceptions). <code class="docutils literal notranslate"><span class="pre">False</span></code> by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – An exception is thrown if a file is already present at
+<code class="docutils literal notranslate"><span class="pre">to_path</span></code> but it does not have the correct md5 sum. An
+exception will also be thrown is a directory is present
+at <code class="docutils literal notranslate"><span class="pre">to_path</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.resources.downloader.list_resources">
+<span class="sig-prename descclassname"><span class="pre">gem5.resources.downloader.</span></span><span class="sig-name descname"><span class="pre">list_resources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gem5_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.resources.downloader.list_resources" title="Link to this definition">¶</a></dt>
+<dd><p>Lists all available resources. Returns a dictionary where the key is the
+id of the resources and the value is a list of that resource’s versions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clients</strong> – A list of clients to use when listing resources. If <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+all clients will be used. <code class="docutils literal notranslate"><span class="pre">None</span></code> by default.</p></li>
+<li><p><strong>gem5_version</strong> – The gem5 version to which all resources should be
+compatible with. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, compatibility of resources
+is not considered and all resources will be returned.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is here for legacy reasons. The <code class="docutils literal notranslate"><span class="pre">list_resources</span></code>
+function was originally stored here. In order to remain backwards
+compatible, this function will call the <code class="docutils literal notranslate"><span class="pre">client_list_resources</span></code> function.</p>
+</div>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.html">gem5.components package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="gem5.resources.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.resources.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.resources.html#module-gem5.resources">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.resources.html">gem5.resources package</a><ul>
+      <li>Previous: <a href="gem5.resources.client.html" title="previous chapter">gem5.resources.client module</a></li>
+      <li>Next: <a href="gem5.resources.elfie.html" title="next chapter">gem5.resources.elfie module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.resources.downloader.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

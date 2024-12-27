@@ -1,0 +1,7 @@
+gem5.prebuilt.viper.board module
+================================
+
+.. automodule:: gem5.prebuilt.viper.board
+   :members:
+   :undoc-members:
+   :show-inheritance:

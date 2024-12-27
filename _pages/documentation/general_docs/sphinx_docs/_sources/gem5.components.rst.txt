@@ -1,0 +1,22 @@
+gem5.components package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gem5.components.boards
+   gem5.components.cachehierarchies
+   gem5.components.devices
+   gem5.components.memory
+   gem5.components.processors
+
+Module contents
+---------------
+
+.. automodule:: gem5.components
+   :members:
+   :undoc-members:
+   :show-inheritance:

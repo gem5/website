@@ -1,0 +1,330 @@
+---
+title: "gem5.components.processors.spatter_gen.spatter_kernel.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.processors.spatter_gen.spatter_kernel.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.processors.spatter_gen.spatter_kernel module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.processors.abstract_core module" href="gem5.components.processors.abstract_core.html" />
+    <link rel="prev" title="gem5.components.processors.spatter_gen.spatter_generator_core module" href="gem5.components.processors.spatter_gen.spatter_generator_core.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.processors.spatter_gen.spatter_kernel">
+<span id="gem5-components-processors-spatter-gen-spatter-kernel-module"></span><h1>gem5.components.processors.spatter_gen.spatter_kernel module<a class="headerlink" href="#module-gem5.components.processors.spatter_gen.spatter_kernel" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.processors.spatter_gen.spatter_kernel.</span></span><span class="sig-name descname"><span class="pre">SpatterKernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SpatterKernelType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices_per_stride</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_index_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_value_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_trace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl>
+<dt>This class encapsulates one kernel in a spatter trace.</dt><dd><p>A spatter trace is represented with a json file.
+An example of a spatter trace can be found here:</p>
+</dd>
+<dt><a class="reference external" href="https://github.com/hpcgarage/spatter/blob/main/standard-suite/app-traces/amg.json">https://github.com/hpcgarage/spatter/blob/main/standard-suite/app-traces/amg.json</a></dt><dd><p>Each trace may have multiple kernels.
+Each kernel represents a code execution like below</p>
+<blockquote>
+<div><p>for (int iteration = 0; iteration &lt; count; iteration++)
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>for (int i = 0; i &lt; N; i++) {</dt><dd><p>value[index[i] + iteration * delta] = rand(); // kernel: scatter
+// OR
+sum += value[index[i] + iteration * delta]; // kernel: gather</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>Where <cite>delta</cite> and <cite>count</cite> are fields in each kernel.
+<cite>kernel</cite> is another field that determines whether the accesses to value
+are loads or stores.
+The field <cite>pattern</cite> stores the index array.</p>
+<dl>
+<dt>This file provides four utility function to parse spatter traces:</dt><dd><p>parse_kernel: takes a dictionary and returns a tuple of
+delta, count, type, and trace.
+partition_trace: takes an original trace, number of partitions,
+and interleave_size.
+It returns a list of <cite>num_partitions</cite> partitions where each
+partition includes interleaved elements from <cite>original_trace</cite>.
+The elements in the <cite>original_trace</cite> are interleaved with a
+granularity of <cite>interleave_size</cite>.
+unroll_trace: takes an original trace, delta, count, and minimum
+number of elements.
+It will unroll <cite>original_trace</cite> by adding <cite>delta</cite> to the last
+<cite>og_len</cite> (len(<cite>original_trace</cite>)) elements of the trace in steps.
+In each step it will decrement <cite>count</cite> by 1.
+If the logical length of <cite>original_trace</cite> (<cite>og_len</cite> * <cite>count</cite>) is
+smaller than <cite>min_elements</cite>, it allows for filling the trace with
+zeros or elements from the pattern.
+By filling elements from the pattern, the unrolling process goes
+beyond the <cite>count</cite> limit.
+However, it will not decrements <cite>count</cite>.
+prepare_kernels: takes a trace_path, number of cores,
+interleave_size, base_index_addr, and base_value_addr.
+It will return a list of lists of kernels where each list of
+kernels represents a kernel with a length of <cite>num_cores</cite>.</p>
+</dd>
+<dt>The code snippet below shows how to use these functions to create kernels.</dt><dd><p>generator = SpatterGenerator(num_cores)</p>
+<dl>
+<dt>with open(trace_path, “r”) as trace_file:</dt><dd><p>kernels = json.load(trace_file)</p>
+</dd>
+<dt>for i, kernel in enumerate(kernels):</dt><dd><p>delta, count, type, og_trace = parse_kernel(kernel)
+traces = partition_trace(og_trace, num_cores, 128)
+kernels = [SpatterKernel(</p>
+<blockquote>
+<div><blockquote>
+<div><p>kernel_id=i,
+kernel_delta=delta,
+kernel_count=count,
+kernel_type=type,
+kernel_trace=trace,
+index_size=4,
+base_index_addr=0,
+value_size=8,
+base_value_addr=0x400000000
+)</p>
+</div></blockquote>
+<p>for trace in traces
+]</p>
+</div></blockquote>
+<p>generator.add_kernel(kernels)</p>
+</dd>
+</dl>
+</dd>
+<dt>Args:</dt><dd><p>kernel_id (int): The ID of the kernel.
+User defined, i.e. spatter traces don’t have this field.
+It’s used to identify the kernel in the simulation.
+kernel_delta (int): The delta value of the kernel.
+<cite>delta</cite> from spatter trace.
+kernel_count (int): The count value of the kernel.
+<cite>count</cite> from spatter trace.
+kernel_type (SpatterKernelType): The type of the kernel.
+<cite>kernel</cite> from spatter trace.
+base_index (int): The index from the index array to start from.
+It’s most meaningful when used in multi-generator simulations.
+User defined, i.e. spatter traces don’t have this field.
+indices_per_stride (int): The number of indices from the index
+array to read from before making a jump of size <cite>stride_size</cite>.
+User defined, i.e. spatter traces don’t have this field.
+stride_size (int): The size of the jump to make after reading
+<cite>indices_per_stride</cite> indices from the index array.
+User defined, i.e. spatter traces don’t have this field.
+kernel_trace (List[int]): The elements of the <cite>index</cite> array.
+<cite>pattern</cite> from spatter trace.
+index_size (int): The size of elements in <cite>index</cite>.
+User defined, i.e. spatter traces don’t have this field.
+It represents the size of elements in the <cite>index</cite> array in code above.
+base_index_addr (Addr): The base address of the index.
+User defined, i.e. spatter traces don’t have this field.
+It represents the pointer to the <cite>index</cite> array in the code above.
+value_size (int): The size of elements in <cite>value</cite>.
+User defined, i.e. spatter traces don’t have this field.
+It represents the size of elements in the <cite>value</cite> array in code above.
+base_value_addr (Addr): The base address of the value.
+User defined, i.e. spatter traces don’t have this field.
+It represents the pointer to the <cite>value</cite> array in the code above.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel.cxx_call_args">
+<span class="sig-name descname"><span class="pre">cxx_call_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel.cxx_call_args" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel.empty">
+<span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel.empty" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.parse_kernel">
+<span class="sig-prename descclassname"><span class="pre">gem5.components.processors.spatter_gen.spatter_kernel.</span></span><span class="sig-name descname"><span class="pre">parse_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.parse_kernel" title="Link to this definition">¶</a></dt>
+<dd><p>Function to parse a kernel from a dictionary. Each Spatter trace is
+represented as a list of dictionaries in JSON. Each dictionary in the list
+represents a kernel. This function will one kernel and return a tuple of
+delta, count, type, and trace.
+Args:</p>
+<blockquote>
+<div><p>kernel (dict): A dictionary representing a kernel.
+default_delta (int): The default delta value to use when the delta
+value is not found in the kernel dictionary.
+Returns:</p>
+<blockquote>
+<div><p>Tuple[int, int, str, List]: A tuple of delta, count, type,
+and trace extracted from the kernel.</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.partition_trace">
+<span class="sig-prename descclassname"><span class="pre">gem5.components.processors.spatter_gen.spatter_kernel.</span></span><span class="sig-name descname"><span class="pre">partition_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_trace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_partitions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interleave_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.partition_trace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.prepare_kernels">
+<span class="sig-prename descclassname"><span class="pre">gem5.components.processors.spatter_gen.spatter_kernel.</span></span><span class="sig-name descname"><span class="pre">prepare_kernels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interleave_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_index_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_value_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Addr</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel" title="gem5.components.processors.spatter_gen.spatter_kernel.SpatterKernel"><span class="pre">SpatterKernel</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.prepare_kernels" title="Link to this definition">¶</a></dt>
+<dd><p>Function to prepare kernels from a spatter trace. It will read the trace
+from the given path and prepare kernels for the given number of cores and
+interleave size. It will partition the trace into <cite>num_cores</cite> partitions
+with <cite>interleave_size</cite> elements in each partition. It will also unroll the
+trace to have at least <cite>num_cores</cite> * <cite>interleave_size</cite> elements in the
+trace using the <cite>unroll_trace</cite> function. In case the trace is too small,
+it will ask <cite>unroll_trace</cite> to fill the trace with elements from the
+pattern. It will return a list of list of kernels where each list of
+kernels represents a kernel with a length of <cite>num_cores</cite>.
+Args:</p>
+<blockquote>
+<div><p>trace_path (Path): Path to the spatter trace.
+num_cores (int): Number of cores to partition the trace.
+interleave_size (int): Number of elements to interleave the trace by.
+base_index_addr (Addr): The base address of the index array.
+base_value_addr (Addr): The base address of the value array.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>List[List[SpatterKernel]]: A list of list of kernels where each list
+of kernels represents a kernel with a length of <cite>num_cores</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.components.processors.spatter_gen.spatter_kernel.unroll_trace">
+<span class="sig-prename descclassname"><span class="pre">gem5.components.processors.spatter_gen.spatter_kernel.</span></span><span class="sig-name descname"><span class="pre">unroll_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_trace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_zero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.processors.spatter_gen.spatter_kernel.unroll_trace" title="Link to this definition">¶</a></dt>
+<dd><p>Function to unroll a trace by creating replicated elements in the trace.
+This function will add <cite>delta</cite> to the last <cite>og_len</cite> (len(<cite>original_trace</cite>))
+elements of the trace in steps. In each step it will decrement <cite>count</cite>.
+If the logical length of <cite>original_trace</cite> (<cite>og_len</cite> * <cite>count</cite>) is smaller
+than <cite>min_elements</cite>, it allows for filling the trace with zeros or elements
+from the pattern. By filling elements from the pattern, the unrolling
+process goes beyond the <cite>count</cite> limit. However, it will not decrement
+<cite>count</cite>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>original_trace (List): The original trace to unroll.
+delta (int): The delta value as provided from the kernel in JSON.
+count (int): The count value as provided from the kernel in JSON.
+min_elements (int): The minimum number of elements the trace should
+have after unrolling.
+fill_zero (bool): If True, the trace will be filled with zeros when
+the unrolling process runs out of elements from the original trace.
+fill_pattern (bool): If True, the trace will be filled with the pattern
+allowing to go over the <cite>count</cite> limit (from the kernel in JSON) when
+unrolling.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.processors.html">gem5.components.processors package</a><ul>
+  <li><a href="gem5.components.processors.spatter_gen.html">gem5.components.processors.spatter_gen package</a><ul>
+      <li>Previous: <a href="gem5.components.processors.spatter_gen.spatter_generator_core.html" title="previous chapter">gem5.components.processors.spatter_gen.spatter_generator_core module</a></li>
+      <li>Next: <a href="gem5.components.processors.abstract_core.html" title="next chapter">gem5.components.processors.abstract_core module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.processors.spatter_gen.spatter_kernel.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
