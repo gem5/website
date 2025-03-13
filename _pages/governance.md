@@ -37,7 +37,7 @@ Additionally, the gem5 community is committed to openness, transparency, and inc
 The [gem5 GitHub issue tracker](https://github.com/gem5/gem5/issues) lists known bugs, feature and improvement suggestions.
 Those wishing to work on gem5 may browse issues and request assignment to the tasks they believe they can undertake.
 Users of all types are encouraged to open their own bug reports or put forward improvement suggestions.
-While contributions to gem5 may be made without first being logged in our GitHub issue tracker, that remains the project’s primary method of prioritizing and managing work items for upcoming releases.
+While contributions to gem5 may be made without first being logged in our GitHub issue tracker, that remains the project's primary method of prioritizing and managing work items for upcoming releases.
 
 ---
 ## Roles And Responsibilities
@@ -51,7 +51,7 @@ Users are community members who have a need for the project. They are the most i
 This type of user primarily includes individuals who use gem5 for academic research.
 Examples include, but are not limited to, graduate students, research scientists, and post-graduates. This user often uses gem5 as a tool to discover and invent new computer architecture mechanisms. Academic Researchers often are first exposed to gem5 as [Students](#--students) and transition from Students to Academic Researchers over time.
 
-Because of these users’ goals, they primarily add new features to gem5. It is important to the gem5 community to encourage these users to contribute their work to the mainline gem5 repository. By encouraging these users to commit their research contributions, gem5 will make it much easier for other researchers to compare and contrast with other architectural techniques (see [Philosophy](#philosophy) section).
+Because of these users' goals, they primarily add new features to gem5. It is important to the gem5 community to encourage these users to contribute their work to the mainline gem5 repository. By encouraging these users to commit their research contributions, gem5 will make it much easier for other researchers to compare and contrast with other architectural techniques (see [Philosophy](#philosophy) section).
 
 #### - Industry Researchers
 
@@ -65,7 +65,7 @@ The project asks its users to participate in the project and community as much a
 
 *   evangelising about the project (e.g., a link on a website and word-of-mouth awareness raising)
 *   informing developers of strengths and weaknesses from a new user perspective
-*   providing moral support (a ‘thank you’ goes a long way)
+*   providing moral support (a ‘thank you' goes a long way)
 *   providing financial support (the software is open source, but its developers need to eat)
 
 Users who continue to engage with the project and its community will often become more and more involved. Such users may find themselves becoming contributors, as described in the next section.
@@ -78,7 +78,7 @@ There is only one expectation of commitment to the project: **contributors must 
 
 In addition to their actions as users, contributors may also find themselves doing one or more of the following:
 
-*   answering questions on the mailing lists, particularly the “easy” questions from new users (existing users are often the best people to support new users), or those that relate to the particular contributor’s experiences
+*   answering questions on the mailing lists, particularly the “easy” questions from new users (existing users are often the best people to support new users), or those that relate to the particular contributor's experiences
 *   reporting bugs
 *   identifying requirements
 *   providing graphics and web design
@@ -95,15 +95,15 @@ As contributors gain experience and familiarity with the project, their profile 
 
 ### Committers
 
-Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committership allows contributors to more easily carry on with their project related activities by giving them direct access to the project’s resources. That is, they can make changes directly to project outputs, although they still have to submit code changes via Review Board. Additionally, committers are expected to have an ongoing record of contributions in terms of code, reviews, and/or discussion.
+Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committership allows contributors to more easily carry on with their project related activities by giving them direct access to the project's resources. That is, they can make changes directly to project outputs, although they still have to submit code changes via Review Board. Additionally, committers are expected to have an ongoing record of contributions in terms of code, reviews, and/or discussion.
 
-Committers have no more authority over the project than contributors. While committership indicates a valued member of the community who has demonstrated a healthy respect for the project’s aims and objectives, their work continues to be reviewed by the community. The key difference between a committer and a contributor is committers have the extra responsibility of pushing patches to the mainline. Additionally, committers are expected to contribute to discussions on the gem5-dev list and review patches.
+Committers have no more authority over the project than contributors. While committership indicates a valued member of the community who has demonstrated a healthy respect for the project's aims and objectives, their work continues to be reviewed by the community. The key difference between a committer and a contributor is committers have the extra responsibility of pushing patches to the mainline. Additionally, committers are expected to contribute to discussions on the gem5-dev list and review patches.
 
 Anyone can become a committer. The only expectation is that a committer has demonstrated an ability to participate in the project as a team player. Specifically, refer to the 2nd paragraph of the [Contributors](#contributors) section.
 
 Typically, a potential committer will need to show that they have an understanding of the project, its objectives and its strategy (see [Philosophy](#philosophy) section). They will also have provided valuable contributions to the project over a period of time.
 
-New committers can be nominated by any existing committer. Once they have been nominated, there will be a vote by the project management committee (PMC; see below). Committer nomination and voting is one of the few activities that takes place on the project’s private management list. This is to allow PMC members to freely express their opinions about a nominee without causing embarrassment. Once the vote has been held, the nominee is notified of the result. The nominee is entitled to request an explanation of any ‘no’ votes against them, regardless of the outcome of the vote. This explanation will be provided by the [PMC Chair](#pmc-chair) and will be anonymous and constructive in nature.
+New committers can be nominated by any existing committer. Once they have been nominated, there will be a vote by the project management committee (PMC; see below). Committer nomination and voting is one of the few activities that takes place on the project's private management list. This is to allow PMC members to freely express their opinions about a nominee without causing embarrassment. Once the vote has been held, the nominee is notified of the result. The nominee is entitled to request an explanation of any ‘no' votes against them, regardless of the outcome of the vote. This explanation will be provided by the [PMC Chair](#pmc-chair) and will be anonymous and constructive in nature.
 
 Nominees may decline their appointment as a committer. However, this is unusual, as the project does not expect any specific time or resource commitment from its community members. The intention behind the role of committer is to allow people to contribute to the project more easily, not to tie them into the project in any formal way.
 
@@ -113,11 +113,11 @@ A committer who shows an above-average level of contribution to the project, par
 
 ### Project management committee
 
-The project management committee consists of those individuals identified as ‘project owners’ on the development site. The PMC has additional responsibilities over and above those of a committer. These responsibilities ensure the smooth running of the project. PMC members are expected to review code contributions, participate in strategic planning, approve changes to the governance model and manage how the software is distributed and licensed.
+The project management committee consists of those individuals identified as ‘project owners' on the development site. The PMC has additional responsibilities over and above those of a committer. These responsibilities ensure the smooth running of the project. PMC members are expected to review code contributions, participate in strategic planning, approve changes to the governance model and manage how the software is distributed and licensed.
 
 Some PMC members are responsible for specific components of the gem5 project. This includes gem5 source modules (e.g., classic caches, O3CPU model, etc.) and project assets (e.g., the website). A list of the current components and the responsible members can be found within the [MAINTAINERS](https://github.com/gem5/gem5/blob/stable/MAINTAINERS.yaml) document.
 
-Members of the PMC do not have significant authority over other members of the community, although it is the PMC that votes on new committers. It also makes decisions when community consensus cannot be reached. In addition, the PMC has access to the project’s private mailing list. This list is used for sensitive issues, such as votes for new committers and legal matters that cannot be discussed in public. It is never used for project management or planning.
+Members of the PMC do not have significant authority over other members of the community, although it is the PMC that votes on new committers. It also makes decisions when community consensus cannot be reached. In addition, the PMC has access to the project's private mailing list. This list is used for sensitive issues, such as votes for new committers and legal matters that cannot be discussed in public. It is never used for project management or planning.
 
 Membership of the PMC is by invitation from the existing PMC members. A nomination will result in discussion and then a vote by the existing PMC members. PMC membership votes are subject to consensus approval of the current PMC members. Additions to the PMC require unanimous agreement of the PMC members. Removing someone from the PMC requires N-1 positive votes, where N is the number of PMC members not including the individual who is being voted out.
 
@@ -156,16 +156,16 @@ The developer mailing list is the most appropriate place for a contributor to as
 
 An important part of the contribution process is providing feedback on patches that other developers submit. The purpose of reviewing patches is to weed out obvious bugs and to ensure that the code in gem5 is of sufficient quality.
 
-All users are encouraged to review the contributions that are posted on Review Board. If you are an active gem5 user, it’s a good idea to keep your eye on the contributions that are posted there (typically by subscribing to the gem5-dev mailing list) so you can speak up when you see a contribution that could impact your use of gem5\. It is far more effective to contribute your opinion in a review before a patch gets committed than to complain after the patch is committed, you update your repository, and you find that your simulations no longer work.
+All users are encouraged to review the contributions that are posted on Review Board. If you are an active gem5 user, it's a good idea to keep your eye on the contributions that are posted there (typically by subscribing to the gem5-dev mailing list) so you can speak up when you see a contribution that could impact your use of gem5\. It is far more effective to contribute your opinion in a review before a patch gets committed than to complain after the patch is committed, you update your repository, and you find that your simulations no longer work.
 
-We greatly value the efforts of reviewers to maintain gem5’s code quality and consistency. However, it is important that reviews balance the desire to maintain the quality of the code in gem5 with the need to be open to accepting contributions from a broader community. People will base their desire to contribute (or continue contributing) on how they and other contributors are received. With that in mind, here are some guidelines for reviewers:
+We greatly value the efforts of reviewers to maintain gem5's code quality and consistency. However, it is important that reviews balance the desire to maintain the quality of the code in gem5 with the need to be open to accepting contributions from a broader community. People will base their desire to contribute (or continue contributing) on how they and other contributors are received. With that in mind, here are some guidelines for reviewers:
 
-1.  Remember that submitting a contribution is a generous act, and is very rarely a requirement for the person submitting it. It’s always a good idea to start a review with something like “thank you for submitting this contribution”. A thank-you is particularly important for new or occasional submitters.
+1.  Remember that submitting a contribution is a generous act, and is very rarely a requirement for the person submitting it. It's always a good idea to start a review with something like “thank you for submitting this contribution”. A thank-you is particularly important for new or occasional submitters.
 2.  Overall, the attitude of a reviewer should be “how can we take this contribution and put it to good use”, not “what shortcomings in this work must the submitter address before the contribution can be considered worthy”.
-3.  As the saying goes, “the perfect is the enemy of the good”. While we don’t want gem5 to deteriorate, we also don’t want to bypass useful functionality or improvements simply because they are not optimal. If the optimal solution is not likely to happen, then accepting a suboptimal solution may be preferable to having no solution. A suboptimal solution can always be replaced by the optimal solution later. Perhaps the suboptimal solution can be incrementally improved to reach that point.
+3.  As the saying goes, “the perfect is the enemy of the good”. While we don't want gem5 to deteriorate, we also don't want to bypass useful functionality or improvements simply because they are not optimal. If the optimal solution is not likely to happen, then accepting a suboptimal solution may be preferable to having no solution. A suboptimal solution can always be replaced by the optimal solution later. Perhaps the suboptimal solution can be incrementally improved to reach that point.
 4.  When asking a submitter for additional changes, consider the cost-benefit ratio of those changes. In particular, reviewers should not discount the costs of requested changes just because the cost to the reviewer is near zero. Asking for extensive changes, particularly from someone who is not a long-time gem5 developer, may be imposing a significant burden on someone who is just trying to be helpful by submitting their code. If you as a reviewer really feel that some extensive reworking of a patch is necessary, consider volunteering to make the changes yourself.
-5.  Not everyone uses gem5 in the same way or has the same needs. It’s easy to reject a solution due to its flaws when it solves a problem you don’t have—so there’s no loss to you if we end up with no solution. That’s probably not an acceptable result for the person submitting the patch though. Another way to look at this point is as the flip side of the previous item: just as your cost-benefit analysis should not discount the costs to the submitter of making changes, just because the costs to you are low, it should also not discount the benefits to the submitter of accepting the submission, just because the benefits to you are low.
-6.  Be independent and unbiased while commenting on review requests. Do not support a patch just because you or your organization will benefit from it or oppose it because you will need to do more work. Whether you are an individual or someone working with an organization, think about the patch from community’s perspective.
+5.  Not everyone uses gem5 in the same way or has the same needs. It's easy to reject a solution due to its flaws when it solves a problem you don't have—so there's no loss to you if we end up with no solution. That's probably not an acceptable result for the person submitting the patch though. Another way to look at this point is as the flip side of the previous item: just as your cost-benefit analysis should not discount the costs to the submitter of making changes, just because the costs to you are low, it should also not discount the benefits to the submitter of accepting the submission, just because the benefits to you are low.
+6.  Be independent and unbiased while commenting on review requests. Do not support a patch just because you or your organization will benefit from it or oppose it because you will need to do more work. Whether you are an individual or someone working with an organization, think about the patch from community's perspective.
 7.  Try to keep the arguments technical and the language simple. If you make some claim about a patch, substantiate it.
 
 ---
