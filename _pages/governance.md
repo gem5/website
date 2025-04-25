@@ -111,7 +111,7 @@ It is important to recognise that maintainership is a privilege, not a right. Th
 
 A maintainer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become a member of the PMC. This role is described below.
 
-Note: The definitive list of maintainers is kept via a GitHub Team and lists on the website, etc. may be out of date.
+Note: The definitive list of maintainers is kept via a GitHub Team which is not publicly visible due to GitHub limitations. Lists on the website, etc. may be out of date.
 
 ### Project management committee
 
@@ -152,7 +152,7 @@ All participants in the community are encouraged to provide support for new user
 
 Anyone, capable of showing respect to others, can contribute to the project, regardless of their skills, as there are many ways to contribute. For instance, a contributor might be active on the project mailing list and issue tracker, or might supply patches. The various ways of contributing are described in more detail in a separate document [Submitting Contributions](/contributing).
 
-[GitHub discsussions](https://github.com/orgs/gem5/discussions) or [GitHub issues](https://github.com/gem5/gem5/issues) are the most appropriate place for a contributor to ask for help when making their first contribution. See the [Submitting Contributions](/contributing) page on the gem5 wiki for details of the gem5 contribution process. Each new contribution should be submitted as a patch to our GitHub site. Then, other gem5 developers will review your patch, possibly asking for minor changes. After the patch has received consensus (see [Decision Making Process](#decision-making-process)), the patch is ready to be committed to the gem5 tree. For maintainers, this is as simple as pushing the changeset. For contributors, a maintainer should approve and merge the changeset for you. If a maintainer does not merge the changeset within a reasonable window (a couple of days), send a friendly reminder email to the gem5-dev list. Before a patch is committed to gem5, it must receive at least 2 approvals. If there are no reviews on a patch, users should send follow up notes asking for reviews.
+[GitHub discsussions](https://github.com/orgs/gem5/discussions) or [GitHub issues](https://github.com/gem5/gem5/issues) are the most appropriate place for a contributor to ask for help when making their first contribution. See the [Submitting Contributions](/contributing) page on the gem5 website or the [CONTRIBUTING.md](CONTRIBUTING.md) for details of the gem5 contribution process. Each new contribution should be submitted as a patch to our GitHub site. Then, other gem5 developers will review your patch, possibly asking for changes. After the patch has received consensus (see [Decision Making Process](#decision-making-process)), the patch is ready to be committed to the gem5 tree. For contributors, a maintainer should approve and merge the changeset for you. If a maintainer does not merge the changeset within a reasonable window (a couple of days), send a friendly reminder email to the gem5-dev list. Before a patch is committed to gem5, it must receive at least 2 approvals. If there are no reviews on a patch, users should send follow up notes asking for reviews.
 
 #### Reviewing Patches
 
@@ -192,7 +192,7 @@ In general, as long as nobody explicitly opposes a proposal, it is recognised as
 
 Lazy consensus is a very important concept within the project. It is this process that allows a large group of people to efficiently reach consensus, as someone with no objections to a proposal need not spend time stating their position, and others need not spend time reading such mails.
 
-For lazy consensus to be effective, it is necessary to allow at least two weeks before assuming that there are no objections to the proposal. This requirement ensures that everyone is given enough time to read, digest and respond to the proposal. This time period is chosen so as to be as inclusive as possible of all participants, regardless of their location and time commitments. For GitHub pull requests, if there are no reviews after two weeks, the submitter should send a reminder. Reviewers may ask patch submitters to delay submitting a patch when they have a desire to review a patch and need more time to do so. As discussed in the Contributing Section, each patch should have at least approvals before it is committed.
+For lazy consensus to be effective, it is necessary to allow at least two weeks before assuming that there are no objections to the proposal. This requirement ensures that everyone is given enough time to read, digest and respond to the proposal. This time period is chosen so as to be as inclusive as possible of all participants, regardless of their location and time commitments. For GitHub pull requests, if there are no reviews after two weeks, the submitter should send a reminder. Reviewers may ask patch submitters to delay submitting a patch when they have a desire to review a patch and need more time to do so. As discussed in the Contributing Section, each patch should have at least two approvals before it is committed.
 
 #### Voting
 
