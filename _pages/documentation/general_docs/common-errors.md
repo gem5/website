@@ -8,6 +8,25 @@ permalink: /documentation/general_docs/common-errors/
 
 Here are some common issues that users run into when using gem5, and information on how to fix them on how to fix them.
 
+## Build errors
+
+If your gem5 compilation fails with the following message:
+
+```txt
+[    LINK]  -> ALL/gem5.opt
+collect2: fatal error: ld terminated with signal 9 [Killed]
+compilation terminated.
+scons: *** [build/ALL/gem5.opt] Error 1
+scons: building terminated because of errors.
+```
+
+This indicates that your machine has run out of memory while trying to build
+gem5 and has killed the process as a result.
+If this occurs, try compiling gem5 with fewer threads, as this will consume
+less memory.
+If there are other processes using large amounts of memory on your system, try
+building gem5 when more memory is available.
+
 ## Segmentation Fault
 
 A segfault error can occur and will output to the terminal like the following:

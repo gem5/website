@@ -161,6 +161,9 @@ where `{ISA}` is the target (guest) Instruction Set Architecture, and
 for parallelization of compilation with `{cpus}` specifying the number of
 threads. A single-threaded compilation from scratch can take up to 2 hours on
 some systems. We therefore strongly advise allocating more threads if possible.
+However, compilation of gem5 is compute and memory intensive and increasing the
+number of threads also increases memory usage. If using a machine with less
+memory, it is recommended to use fewer threads (e.g. `-j 1` or `-j 2`).
 
 The valid ISAs are:
 

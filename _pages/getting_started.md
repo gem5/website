@@ -22,6 +22,8 @@ git clone https://github.com/gem5/gem5
 
 After cloning the source code, you can build gem5 by using [`scons`](https://scons.org/).
 Building gem5 can take anywhere from a few minutes on a large server to 45 minutes on a laptop.
+Building gem5 is compute and memory intensive and using additional threads causes the build process to consume more memory.
+It is therefore recommended to use fewer threads if building gem5 on a lower end machine (e.g. -j 1 or -j 2).
 gem5 must be built on a Unix platform.
 Linux is tested on every commit, and some people have been able to use MacOS as well, though it is not regularly tested.
 It is strongly suggested to *not* try to compile gem5 when running on a virtual machine.
