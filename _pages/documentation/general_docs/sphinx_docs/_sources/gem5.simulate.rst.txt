@@ -9,6 +9,7 @@ Submodules
 
    gem5.simulate.exit_event
    gem5.simulate.exit_event_generators
+   gem5.simulate.exit_handler
    gem5.simulate.simulator
 
 Module contents

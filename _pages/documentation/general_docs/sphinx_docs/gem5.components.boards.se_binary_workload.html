@@ -47,12 +47,6 @@ of a binary.</p>
 <p>For this to function correctly the <cite>SEBinaryWorkload</cite> class should be added
 as a superclass to a board (i.e., something that inherits from
 <cite>AbstractBoard</cite>).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>At present this implementation is limited. A single
-process is added to all cores as the workload. Therefore, despite allowing
-for multi-core setups, multi-program workloads are not presently supported.</p>
-</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.boards.se_binary_workload.SEBinaryWorkload.get_looppoint">
 <span class="sig-name descname"><span class="pre">get_looppoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="gem5.resources.looppoint.html#gem5.resources.looppoint.Looppoint" title="gem5.resources.looppoint.Looppoint"><span class="pre">Looppoint</span></a></span></span><a class="headerlink" href="#gem5.components.boards.se_binary_workload.SEBinaryWorkload.get_looppoint" title="Link to this definition">¶</a></dt>
@@ -134,6 +128,33 @@ that will raise exit events for LoopPoints.</p></li>
 <li><p><strong>arguments</strong> – The input arguments for the binary.</p></li>
 <li><p><strong>region_id</strong> – If set, will only load the Looppoint region
 corresponding to that ID.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_multi_binary_workload">
+<span class="sig-name descname"><span class="pre">set_se_multi_binary_workload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binaries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.BinaryResource" title="gem5.resources.resource.BinaryResource"><span class="pre">BinaryResource</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_on_work_items</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.FileResource" title="gem5.resources.resource.FileResource"><span class="pre">FileResource</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_lists</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="gem5.resources.resource.html#gem5.resources.resource.CheckpointResource" title="gem5.resources.resource.CheckpointResource"><span class="pre">CheckpointResource</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_multi_binary_workload" title="Link to this definition">¶</a></dt>
+<dd><p>Set up the system to run a specific binary.</p>
+<p><strong>Limitations</strong>
+* Dynamically linked executables are partially supported when the host</p>
+<blockquote>
+<div><p>ISA and the simulated ISA are the same.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>binaries</strong> – The list of resource encapsulating the binary to be run.</p></li>
+<li><p><strong>exit_on_work_items</strong> – Whether the simulation should exit on work
+items. <code class="docutils literal notranslate"><span class="pre">True</span></code> by default.</p></li>
+<li><p><strong>stdin_files</strong> – The list of input file for the binary</p></li>
+<li><p><strong>stdout_files</strong> – The list of output file for the binary</p></li>
+<li><p><strong>stderr_files</strong> – The list of error output file for the binary</p></li>
+<li><p><strong>env_lists</strong> – The list of environment variables defined for the binary</p></li>
+<li><p><strong>arguments</strong> – The list of input arguments for the binary</p></li>
+<li><p><strong>checkpoint</strong> – The checkpoint directory. Used to restore the
+simulation to that checkpoint.</p></li>
 </ul>
 </dd>
 </dl>

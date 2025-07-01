@@ -36,8 +36,101 @@ permalink: /documentation/general_docs/stdlib_api/gem5.prebuilt.viper.board.html
 
           <div class="body" role="main">
             
-  <section id="gem5-prebuilt-viper-board-module">
-<h1>gem5.prebuilt.viper.board module<a class="headerlink" href="#gem5-prebuilt-viper-board-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.prebuilt.viper.board">
+<span id="gem5-prebuilt-viper-board-module"></span><h1>gem5.prebuilt.viper.board module<a class="headerlink" href="#module-gem5.prebuilt.viper.board" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.prebuilt.viper.board.</span></span><span class="sig-name descname"><span class="pre">ViperBoard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clk_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">processor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.abstract_processor.html#gem5.components.processors.abstract_processor.AbstractProcessor" title="gem5.components.processors.abstract_processor.AbstractProcessor"><span class="pre">AbstractProcessor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><span class="pre">AbstractMemorySystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_hierarchy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.cachehierarchies.abstract_cache_hierarchy.html#gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy" title="gem5.components.cachehierarchies.abstract_cache_hierarchy.AbstractCacheHierarchy"><span class="pre">AbstractCacheHierarchy</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.components.devices.gpus.amdgpu.html#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><span class="pre">BaseViperGPU</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board" title="gem5.components.boards.x86_board.X86Board"><code class="xref py py-class docutils literal notranslate"><span class="pre">X86Board</span></code></a></p>
+<p>A derivative of X86Board capable of full system simulation for X86 with a
+GPU device. Provides all the functionality of the X86Board with helper
+methods specific to booting a disk with GPU libraries installed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_coherence_protocol">
+<span class="sig-name descname"><span class="pre">get_coherence_protocol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_coherence_protocol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_default_kernel_args">
+<span class="sig-name descname"><span class="pre">get_default_kernel_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_default_kernel_args" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a default list of arguments for the workload kernel. We assume
+the following strings may be used as placeholders, to be replaced when
+<code class="docutils literal notranslate"><span class="pre">set_kernel_disk_workload</span></code> is executed:</p>
+<ul class="simple">
+<li><p><cite>{root_value}</cite> : set to <code class="docutils literal notranslate"><span class="pre">get_default_kernel_root_val()</span></code>.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A default list of arguments for the workload kernel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_devices">
+<span class="sig-name descname"><span class="pre">get_devices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_devices" title="Link to this definition">¶</a></dt>
+<dd><p>Get the devices connected to the board.</p>
+<p>Currently, this is only used for GPUs by the ViperBoard.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The devices connected to the board or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_disk_device">
+<span class="sig-name descname"><span class="pre">get_disk_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_disk_device" title="Link to this definition">¶</a></dt>
+<dd><p>Set a default disk device, in case user does not specify a disk device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The disk device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_pci_host">
+<span class="sig-name descname"><span class="pre">get_pci_host</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_pci_host" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.make_gpu_app">
+<span class="sig-name descname"><span class="pre">make_gpu_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.devices.gpus.amdgpu.html#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><span class="pre">BaseViperGPU</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.make_gpu_app" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

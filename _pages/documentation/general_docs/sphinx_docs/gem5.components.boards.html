@@ -73,6 +73,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.get_mem_side_coherent_io_port"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.get_mem_side_coherent_io_port()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.get_memory"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.get_memory()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.get_processor"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.get_processor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.get_workload"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.get_workload()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard.has_io_bus"><code class="docutils literal notranslate"><span class="pre">AbstractBoard.has_io_bus()</span></code></a></li>
@@ -93,6 +94,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_system_board.html#gem5.components.boards.abstract_system_board.AbstractSystemBoard.cxx_extra_bases"><code class="docutils literal notranslate"><span class="pre">AbstractSystemBoard.cxx_extra_bases</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_system_board.html#gem5.components.boards.abstract_system_board.AbstractSystemBoard.cxx_param_exports"><code class="docutils literal notranslate"><span class="pre">AbstractSystemBoard.cxx_param_exports</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_system_board.html#gem5.components.boards.abstract_system_board.AbstractSystemBoard.cxx_template_params"><code class="docutils literal notranslate"><span class="pre">AbstractSystemBoard.cxx_template_params</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.abstract_system_board.html#gem5.components.boards.abstract_system_board.AbstractSystemBoard.override_create"><code class="docutils literal notranslate"><span class="pre">AbstractSystemBoard.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -115,6 +117,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.arm_board.html#gem5.components.boards.arm_board.ArmBoard.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">ArmBoard.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.arm_board.html#gem5.components.boards.arm_board.ArmBoard.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">ArmBoard.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.arm_board.html#gem5.components.boards.arm_board.ArmBoard.has_io_bus"><code class="docutils literal notranslate"><span class="pre">ArmBoard.has_io_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.arm_board.html#gem5.components.boards.arm_board.ArmBoard.override_create"><code class="docutils literal notranslate"><span class="pre">ArmBoard.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -158,6 +161,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.riscv_board.html#gem5.components.boards.riscv_board.RiscvBoard.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">RiscvBoard.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.riscv_board.html#gem5.components.boards.riscv_board.RiscvBoard.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">RiscvBoard.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.riscv_board.html#gem5.components.boards.riscv_board.RiscvBoard.has_io_bus"><code class="docutils literal notranslate"><span class="pre">RiscvBoard.has_io_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.riscv_board.html#gem5.components.boards.riscv_board.RiscvBoard.override_create"><code class="docutils literal notranslate"><span class="pre">RiscvBoard.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -169,6 +173,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.se_binary_workload.html#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_binary_workload"><code class="docutils literal notranslate"><span class="pre">SEBinaryWorkload.set_se_binary_workload()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.se_binary_workload.html#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_elfie_workload"><code class="docutils literal notranslate"><span class="pre">SEBinaryWorkload.set_se_elfie_workload()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.se_binary_workload.html#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_looppoint_workload"><code class="docutils literal notranslate"><span class="pre">SEBinaryWorkload.set_se_looppoint_workload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.se_binary_workload.html#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_multi_binary_workload"><code class="docutils literal notranslate"><span class="pre">SEBinaryWorkload.set_se_multi_binary_workload()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.se_binary_workload.html#gem5.components.boards.se_binary_workload.SEBinaryWorkload.set_se_simpoint_workload"><code class="docutils literal notranslate"><span class="pre">SEBinaryWorkload.set_se_simpoint_workload()</span></code></a></li>
 </ul>
 </li>
@@ -187,6 +192,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.simple_board.html#gem5.components.boards.simple_board.SimpleBoard.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">SimpleBoard.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.simple_board.html#gem5.components.boards.simple_board.SimpleBoard.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">SimpleBoard.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.simple_board.html#gem5.components.boards.simple_board.SimpleBoard.has_io_bus"><code class="docutils literal notranslate"><span class="pre">SimpleBoard.has_io_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.simple_board.html#gem5.components.boards.simple_board.SimpleBoard.override_create"><code class="docutils literal notranslate"><span class="pre">SimpleBoard.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -204,6 +210,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.test_board.html#gem5.components.boards.test_board.TestBoard.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">TestBoard.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.test_board.html#gem5.components.boards.test_board.TestBoard.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">TestBoard.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.test_board.html#gem5.components.boards.test_board.TestBoard.has_io_bus"><code class="docutils literal notranslate"><span class="pre">TestBoard.has_io_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.test_board.html#gem5.components.boards.test_board.TestBoard.override_create"><code class="docutils literal notranslate"><span class="pre">TestBoard.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -223,6 +230,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.boards.html
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board.has_coherent_io"><code class="docutils literal notranslate"><span class="pre">X86Board.has_coherent_io()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board.has_dma_ports"><code class="docutils literal notranslate"><span class="pre">X86Board.has_dma_ports()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board.has_io_bus"><code class="docutils literal notranslate"><span class="pre">X86Board.has_io_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board.override_create"><code class="docutils literal notranslate"><span class="pre">X86Board.override_create</span></code></a></li>
 </ul>
 </li>
 </ul>

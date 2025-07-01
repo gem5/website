@@ -132,12 +132,24 @@ ports in the core.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.get_total_instructions">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_total_instructions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.components.processors.abstract_core.AbstractCore.get_total_instructions" title="Link to this definition">¶</a></dt>
+<dd><p>Return the number of instructions executed by this core.</p>
+<p>Note: This total is the sum since the last call to reset stats</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.is_kvm_core">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_kvm_core</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.processors.abstract_core.AbstractCore.is_kvm_core" title="Link to this definition">¶</a></dt>
 <dd><p>KVM cores need setup differently than other cores. Frequently it’s
 useful to know whether a core is a KVM core or not. This function helps
 with this.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.processors.abstract_core.AbstractCore.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.requires_send_evicts">

@@ -36,8 +36,60 @@ permalink: /documentation/general_docs/stdlib_api/gem5.prebuilt.viper.cpu_cache_
 
           <div class="body" role="main">
             
-  <section id="gem5-prebuilt-viper-cpu-cache-hierarchy-module">
-<h1>gem5.prebuilt.viper.cpu_cache_hierarchy module<a class="headerlink" href="#gem5-prebuilt-viper-cpu-cache-hierarchy-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.prebuilt.viper.cpu_cache_hierarchy">
+<span id="gem5-prebuilt-viper-cpu-cache-hierarchy-module"></span><h1>gem5.prebuilt.viper.cpu_cache_hierarchy module<a class="headerlink" href="#module-gem5.prebuilt.viper.cpu_cache_hierarchy" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.prebuilt.viper.cpu_cache_hierarchy.</span></span><span class="sig-name descname"><span class="pre">ViperCPUCacheHierarchy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l1d_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1d_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1i_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1i_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l3_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l3_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.cachehierarchies.ruby.abstract_ruby_cache_hierarchy.html#gem5.components.cachehierarchies.ruby.abstract_ruby_cache_hierarchy.AbstractRubyCacheHierarchy" title="gem5.components.cachehierarchies.ruby.abstract_ruby_cache_hierarchy.AbstractRubyCacheHierarchy"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractRubyCacheHierarchy</span></code></a></p>
+<p>The VIPER CPU cache hierarchy creates CPU-side Ruby caches and connects
+the nodes using a simple point-to-point topology.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.incorporate_cache">
+<span class="sig-name descname"><span class="pre">incorporate_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.prebuilt.viper.board.html#gem5.prebuilt.viper.board.ViperBoard" title="gem5.prebuilt.viper.board.ViperBoard"><span class="pre">ViperBoard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.incorporate_cache" title="Link to this definition">¶</a></dt>
+<dd><p>Incorporates the caches into a board.</p>
+<p>Each specific hierarchy needs to implement this function and will be
+unique for each setup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>board</strong> – The board in which the cache heirarchy is to be
+incorporated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.prebuilt.viper.cpu_cache_hierarchy.ViperCPUCacheHierarchy.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

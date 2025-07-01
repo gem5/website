@@ -36,8 +36,49 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchi
 
           <div class="body" role="main">
             
-  <section id="gem5-components-cachehierarchies-ruby-caches-viper-corepair-cache-module">
-<h1>gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache module<a class="headerlink" href="#gem5-components-cachehierarchies-ruby-caches-viper-corepair-cache-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache">
+<span id="gem5-components-cachehierarchies-ruby-caches-viper-corepair-cache-module"></span><h1>gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache module<a class="headerlink" href="#module-gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.</span></span><span class="sig-name descname"><span class="pre">CorePairCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l1i_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1i_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1d_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1d_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.processors.abstract_core.html#gem5.components.processors.abstract_core.AbstractCore" title="gem5.components.processors.abstract_core.AbstractCore"><span class="pre">AbstractCore</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">GPU_VIPER_CorePair_Controller</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.connectQueues">
+<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.connectQueues" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.corepair_cache.CorePairCache.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

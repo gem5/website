@@ -1,0 +1,406 @@
+---
+title: "gem5.simulate.exit_handler.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.simulate.exit_handler.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.simulate.exit_handler module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.simulate.simulator module" href="gem5.simulate.simulator.html" />
+    <link rel="prev" title="gem5.simulate.exit_event_generators module" href="gem5.simulate.exit_event_generators.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.simulate.exit_handler">
+<span id="gem5-simulate-exit-handler-module"></span><h1>gem5.simulate.exit_handler module<a class="headerlink" href="#module-gem5.simulate.exit_handler" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.AfterBootExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">AfterBootExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.AfterBootExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.AfterBootExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.AfterBootExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.AfterBootScriptExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">AfterBootScriptExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.AfterBootScriptExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.AfterBootScriptExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.AfterBootScriptExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.CheckpointExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">CheckpointExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.CheckpointExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ClassicGeneratorExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">ClassicGeneratorExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.ClassicGeneratorExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<p>A handler designed to be the default for the classic exit event.</p>
+<section id="on-exit-event-usage-notes">
+<h2><code class="docutils literal notranslate"><span class="pre">on_exit_event</span></code> usage notes<a class="headerlink" href="#on-exit-event-usage-notes" title="Link to this heading">¶</a></h2>
+<section id="with-generators">
+<h3>With Generators<a class="headerlink" href="#with-generators" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">on_exit_event</span></code> parameter specifies a Python generator for each
+exit event. <cite>next(&lt;generator&gt;)</cite> is run each time an exit event. The
+generator may yield a boolean. If this value of this boolean is <code class="docutils literal notranslate"><span class="pre">True</span></code>
+the Simulator run loop will exit, otherwise
+the Simulator run loop will continue execution. If the generator has
+finished (i.e. a <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exception is thrown when
+<code class="docutils literal notranslate"><span class="pre">next(&lt;generator&gt;)</span></code> is executed), then the default behavior for that
+exit event is run.</p>
+<p>As an example, a user may specify their own exit event setup like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unique_exit_event</span><span class="p">():</span>
+    <span class="n">processor</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="kc">False</span>
+    <span class="n">m5</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="kc">False</span>
+    <span class="k">yield</span> <span class="kc">True</span>
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span>
+    <span class="n">board</span><span class="o">=</span><span class="n">board</span>
+    <span class="n">on_exit_event</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">ExitEvent</span><span class="o">.</span><span class="n">Exit</span> <span class="p">:</span> <span class="n">unique_exit_event</span><span class="p">(),</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This will execute <code class="docutils literal notranslate"><span class="pre">processor.switch()</span></code> the first time an exit event is
+encountered, will dump gem5 statistics the second time an exit event is
+encountered, and will terminate the Simulator run loop the third time.</p>
+</section>
+<section id="with-a-list-of-functions">
+<h3>With a list of functions<a class="headerlink" href="#with-a-list-of-functions" title="Link to this heading">¶</a></h3>
+<p>Alternatively, instead of passing a generator per exit event, a list of
+functions may be passed. Each function must take no mandatory arguments
+and return True if the simulator is to exit after being called.</p>
+<p>An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stop_simulation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">switch_cpus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">processor</span><span class="o">.</span><span class="n">switch</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">print_hello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Here we don&#39;t explicitly return a boolean, but the simulator</span>
+    <span class="c1"># treats a None return as False. Ergo the Simulation loop is not</span>
+    <span class="c1"># terminated.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+
+
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span>
+    <span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span>
+    <span class="n">on_exit_event</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">ExitEvent</span><span class="o">.</span><span class="n">Exit</span> <span class="p">:</span> <span class="p">[</span>
+            <span class="n">print_hello</span><span class="p">,</span>
+            <span class="n">switch_cpus</span><span class="p">,</span>
+            <span class="n">print_hello</span><span class="p">,</span>
+            <span class="n">stop_simulation</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Upon each <code class="docutils literal notranslate"><span class="pre">EXIT</span></code> type exit event the list will function as a queue,
+with the top function of the list popped and executed. Therefore, in
+this example, the first <code class="docutils literal notranslate"><span class="pre">EXIT</span></code> type exit event will cause <code class="docutils literal notranslate"><span class="pre">print_hello</span></code>
+to be executed, and the second <code class="docutils literal notranslate"><span class="pre">EXIT</span></code> type exit event will cause the
+<code class="docutils literal notranslate"><span class="pre">switch_cpus</span></code> function to run. The third will execute <code class="docutils literal notranslate"><span class="pre">print_hello</span></code>
+again before finally, on the forth exit event will call
+<code class="docutils literal notranslate"><span class="pre">stop_simulation</span></code> which will stop the simulation as it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</section>
+<section id="with-a-function">
+<h3>With a function<a class="headerlink" href="#with-a-function" title="Link to this heading">¶</a></h3>
+<p>A single function can be passed. In this case every exit event of that
+type will execute that function every time. The function should not
+accept any mandatory parameters and return a boolean specifying if the
+simulation loop should end after it is executed.
+An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_hello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">Simulator</span><span class="p">(</span>
+    <span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span>
+    <span class="n">on_exit_event</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">ExitEvent</span><span class="o">.</span><span class="n">Exit</span> <span class="p">:</span> <span class="n">print_hello</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The above will print “Hello” on every <code class="docutils literal notranslate"><span class="pre">Exit</span></code> type Exit Event. As the
+function returns False, the simulation loop will not end on these
+events.</p>
+</section>
+<section id="exit-event-defaults">
+<h3>Exit Event defaults<a class="headerlink" href="#exit-event-defaults" title="Link to this heading">¶</a></h3>
+<p>Each exit event has a default behavior if none is specified by the
+user. These are as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ExitEvent.EXIT:  exit simulation</p></li>
+<li><p>ExitEvent.CHECKPOINT: take a checkpoint</p></li>
+<li><p>ExitEvent.FAIL : exit simulation</p></li>
+<li><p>ExitEvent.SWITCHCPU: call <code class="docutils literal notranslate"><span class="pre">switch</span></code> on the processor</p></li>
+<li><p>ExitEvent.WORKBEGIN: reset stats</p></li>
+<li><p>ExitEvent.WORKEND: dump stats</p></li>
+<li><p>ExitEvent.USER_INTERRUPT: exit simulation</p></li>
+<li><p>ExitEvent.MAX_TICK: exit simulation</p></li>
+<li><p>ExitEvent.SCHEDULED_TICK: exit simulation</p></li>
+<li><p>ExitEvent.SIMPOINT_BEGIN: reset stats</p></li>
+<li><p>ExitEvent.MAX_INSTS: exit simulation</p></li>
+</ul>
+</div></blockquote>
+<p>These generators can be found in the <code class="docutils literal notranslate"><span class="pre">exit_event_generator.py</span></code> module.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ClassicGeneratorExitHandler.set_exit_event_map">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_exit_event_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_exit_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.simulate.exit_event.html#gem5.simulate.exit_event.ExitEvent" title="gem5.simulate.exit_event.ExitEvent"><span class="pre">ExitEvent</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_execution_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.simulate.exit_event.html#gem5.simulate.exit_event.ExitEvent" title="gem5.simulate.exit_event.ExitEvent"><span class="pre">ExitEvent</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Board</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ClassicGeneratorExitHandler.set_exit_event_map" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">ExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandler.get_handler_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_handler_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandler.get_handler_id" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the ID of the exit handler</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandler.get_handler_map">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_handler_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><span class="pre">ExitHandler</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandler.get_handler_map" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the mapping of exit handler IDs to handler classes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandler.handle">
+<span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.simulate.simulator.html#gem5.simulate.simulator.Simulator" title="gem5.simulate.simulator.Simulator"><span class="pre">Simulator</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandler.handle" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ExitHandlerMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">ExitHandlerMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hypercall_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.ExitHandlerMeta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABCMeta</span></code></p>
+<p>Metaclass for ExitHandler that automatically registers subclasses</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.KernelBootedExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">KernelBootedExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.KernelBootedExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.KernelBootedExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.KernelBootedExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.OrchestratorExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">OrchestratorExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.OrchestratorExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ScheduledExitEventHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">ScheduledExitEventHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.ScheduledExitEventHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<p>A handler designed to be the default for  an Exit scheduled to occur
+at a specified tick. For example, these Exit exits can be triggered through be
+src/python/m5/simulate.py’s <cite>scheduleTickExitFromCurrent</cite> and
+<cite>scheduleTickExitAbsolute</cite> functions.</p>
+<p>It will exit the simulation loop by default.</p>
+<p>The <cite>justification</cite> and <cite>scheduled_at_tick</cite> methods are provided to give
+richer information about this schedule exit.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ScheduledExitEventHandler.justification">
+<span class="sig-name descname"><span class="pre">justification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ScheduledExitEventHandler.justification" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the justification for the scheduled exit event.</p>
+<p>This information may be passed to when scheduling the event event to
+remind the user why the event was scheduled, or used in cases where
+lots of scheduled events are used and there is a need to differentiate
+them.</p>
+<p>Returns “None” if this information was not set.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.ScheduledExitEventHandler.scheduled_at_tick">
+<span class="sig-name descname"><span class="pre">scheduled_at_tick</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.ScheduledExitEventHandler.scheduled_at_tick" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the tick in which the event was scheduled on (not scheduled
+to occur, but the tick the event was created).</p>
+<p>Returns “None” if this information is not available.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.WorkBeginExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">WorkBeginExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.WorkBeginExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.WorkBeginExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.WorkBeginExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.WorkEndExitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">WorkEndExitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.WorkEndExitHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExitHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.WorkEndExitHandler.get_handler_description">
+<span class="sig-name descname"><span class="pre">get_handler_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.simulate.exit_handler.WorkEndExitHandler.get_handler_description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.simulate.exit_handler.register_exit_handler">
+<span class="sig-prename descclassname"><span class="pre">gem5.simulate.exit_handler.</span></span><span class="sig-name descname"><span class="pre">register_exit_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hypercall_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.simulate.simulator.html#gem5.simulate.simulator.Simulator" title="gem5.simulate.simulator.Simulator"><span class="pre">Simulator</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#gem5.simulate.exit_handler.ExitHandler" title="gem5.simulate.exit_handler.ExitHandler"><span class="pre">ExitHandler</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.simulate.exit_handler.register_exit_handler" title="Link to this definition">¶</a></dt>
+<dd><p>This function registers a new exit handler with a specific hypercall
+number. Whenever this hypercall is encountered, the provided function will
+be called with the simulator instance and the payload of the hypercall. The
+function should return a boolean indicating whether the simulation should
+exit.</p>
+<dl>
+<dt>Args:</dt><dd><p>hypercall_num (int): The hypercall number associated with the exit handler.
+func (Callable[[“Simulator”, dict], bool]): A callable that takes a Simulator</p>
+<blockquote>
+<div><p>instance and a dictionary containing the payload of the hypercall, and
+returns a boolean indicating whether the simulation should exit.</p>
+</div></blockquote>
+<p>description (str): A description of the exit handler.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Type[ExitHandler]: A new ExitHandler class with the specified hypercall number,
+processing function, and description.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gem5.components.html">gem5.components package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.simulate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.simulate.html#module-gem5.simulate">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.simulate.html">gem5.simulate package</a><ul>
+      <li>Previous: <a href="gem5.simulate.exit_event_generators.html" title="previous chapter">gem5.simulate.exit_event_generators module</a></li>
+      <li>Next: <a href="gem5.simulate.simulator.html" title="next chapter">gem5.simulate.simulator module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.simulate.exit_handler.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -36,8 +36,90 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchi
 
           <div class="body" role="main">
             
-  <section id="gem5-components-cachehierarchies-ruby-caches-viper-dma-controller-module">
-<h1>gem5.components.cachehierarchies.ruby.caches.viper.dma_controller module<a class="headerlink" href="#gem5-components-cachehierarchies-ruby-caches-viper-dma-controller-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.components.cachehierarchies.ruby.caches.viper.dma_controller">
+<span id="gem5-components-cachehierarchies-ruby-caches-viper-dma-controller-module"></span><h1>gem5.components.cachehierarchies.ruby.caches.viper.dma_controller module<a class="headerlink" href="#module-gem5.components.cachehierarchies.ruby.caches.viper.dma_controller" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.</span></span><span class="sig-name descname"><span class="pre">ViperCPUDMAController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">GPU_VIPER_DMA_Controller</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.connectQueues">
+<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.connectQueues" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperCPUDMAController.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.</span></span><span class="sig-name descname"><span class="pre">ViperGPUDMAController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">GPU_VIPER_DMA_Controller</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.connectQueues">
+<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.connectQueues" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.caches.viper.dma_controller.ViperGPUDMAController.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

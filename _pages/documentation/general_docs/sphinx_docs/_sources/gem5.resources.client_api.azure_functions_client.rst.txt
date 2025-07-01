@@ -1,0 +1,7 @@
+gem5.resources.client\_api.azure\_functions\_client module
+==========================================================
+
+.. automodule:: gem5.resources.client_api.azure_functions_client
+   :members:
+   :undoc-members:
+   :show-inheritance:

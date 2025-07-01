@@ -36,8 +36,151 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.devices.gpus.a
 
           <div class="body" role="main">
             
-  <section id="gem5-components-devices-gpus-amdgpu-module">
-<h1>gem5.components.devices.gpus.amdgpu module<a class="headerlink" href="#gem5-components-devices-gpus-amdgpu-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.components.devices.gpus.amdgpu">
+<span id="gem5-components-devices-gpus-amdgpu-module"></span><h1>gem5.components.devices.gpus.amdgpu module<a class="headerlink" href="#module-gem5.components.devices.gpus.amdgpu" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.devices.gpus.amdgpu.</span></span><span class="sig-name descname"><span class="pre">BaseViperGPU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><span class="pre">AbstractMemorySystem</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SubSystem</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.connectGPU">
+<span class="sig-name descname"><span class="pre">connectGPU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.prebuilt.viper.board.html#gem5.prebuilt.viper.board.ViperBoard" title="gem5.prebuilt.viper.board.ViperBoard"><span class="pre">ViperBoard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.connectGPU" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.get_cpu_dma_ports">
+<span class="sig-name descname"><span class="pre">get_cpu_dma_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.get_cpu_dma_ports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.get_gpu_count">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_gpu_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.get_gpu_count" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.next_pci_dev">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">next_pci_dev</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.next_pci_dev" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.BaseViperGPU.set_shader">
+<span class="sig-name descname"><span class="pre">set_shader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.devices.gpus.viper_shader.html#gem5.components.devices.gpus.viper_shader.ViperShader" title="gem5.components.devices.gpus.viper_shader.ViperShader"><span class="pre">ViperShader</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU.set_shader" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.devices.gpus.amdgpu.</span></span><span class="sig-name descname"><span class="pre">MI210</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><span class="pre">AbstractMemorySystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cu_per_sqc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'16KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqc_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'32KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqc_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'32KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'256KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseViperGPU</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.get_driver_command">
+<span class="sig-name descname"><span class="pre">get_driver_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.get_driver_command" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI210.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI210.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.devices.gpus.amdgpu.</span></span><span class="sig-name descname"><span class="pre">MI300X</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu_memory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><span class="pre">AbstractMemorySystem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cu_per_sqc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'16KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcp_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqc_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'32KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqc_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'32KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scalar_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'256KiB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_assoc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcc_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseViperGPU</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.get_driver_command">
+<span class="sig-name descname"><span class="pre">get_driver_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.get_driver_command" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.devices.gpus.amdgpu.MI300X.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.devices.gpus.amdgpu.MI300X.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

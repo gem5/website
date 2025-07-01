@@ -1,7 +1,7 @@
 ---
-title: "gem5.resources.client_api.atlasclient.html"
+title: "gem5.resources.client_api.azure_functions_client.html"
 parent: sphinx-docs
-permalink: /documentation/general_docs/stdlib_api/gem5.resources.client_api.atlasclient.html
+permalink: /documentation/general_docs/stdlib_api/gem5.resources.client_api.azure_functions_client.html
 ---
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@ permalink: /documentation/general_docs/stdlib_api/gem5.resources.client_api.atla
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>gem5.resources.client_api.atlasclient module &#8212; gem5  documentation</title>
+    <title>gem5.resources.client_api.azure_functions_client module &#8212; gem5  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
@@ -36,15 +36,15 @@ permalink: /documentation/general_docs/stdlib_api/gem5.resources.client_api.atla
 
           <div class="body" role="main">
             
-  <section id="module-gem5.resources.client_api.atlasclient">
-<span id="gem5-resources-client-api-atlasclient-module"></span><h1>gem5.resources.client_api.atlasclient module<a class="headerlink" href="#module-gem5.resources.client_api.atlasclient" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.resources.client_api.azure_functions_client">
+<span id="gem5-resources-client-api-azure-functions-client-module"></span><h1>gem5.resources.client_api.azure_functions_client module<a class="headerlink" href="#module-gem5.resources.client_api.azure_functions_client" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="gem5.resources.client_api.atlasclient.AtlasClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.resources.client_api.atlasclient.</span></span><span class="sig-name descname"><span class="pre">AtlasClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.client_api.atlasclient.AtlasClient" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.resources.client_api.azure_functions_client.</span></span><span class="sig-name descname"><span class="pre">AzureFunctionsAPIClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gem5.resources.client_api.abstract_client.html#gem5.resources.client_api.abstract_client.AbstractClient" title="gem5.resources.client_api.abstract_client.AbstractClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractClient</span></code></a></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gem5.resources.client_api.atlasclient.AtlasClient.get_resources">
-<span class="sig-name descname"><span class="pre">get_resources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.resources.client_api.client_query.html#gem5.resources.client_api.client_query.ClientQuery" title="gem5.resources.client_api.client_query.ClientQuery"><span class="pre">ClientQuery</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.resources.client_api.atlasclient.AtlasClient.get_resources" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient.get_resources">
+<span class="sig-name descname"><span class="pre">get_resources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gem5.resources.client_api.client_query.html#gem5.resources.client_api.client_query.ClientQuery" title="gem5.resources.client_api.client_query.ClientQuery"><span class="pre">ClientQuery</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient.get_resources" title="Link to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -68,16 +68,11 @@ versions will be returned.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="gem5.resources.client_api.atlasclient.AtlasClient.get_token">
-<span class="sig-name descname"><span class="pre">get_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.client_api.atlasclient.AtlasClient.get_token" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gem5.resources.client_api.atlasclient.AtlasClientHttpJsonRequestError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.resources.client_api.atlasclient.</span></span><span class="sig-name descname"><span class="pre">AtlasClientHttpJsonRequestError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.resources.client_api.atlasclient.AtlasClient" title="gem5.resources.client_api.atlasclient.AtlasClient"><span class="pre">AtlasClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purpose_of_request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.client_api.atlasclient.AtlasClientHttpJsonRequestError" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClientHttpJsonRequestError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.resources.client_api.azure_functions_client.</span></span><span class="sig-name descname"><span class="pre">AzureFunctionsAPIClientHttpJsonRequestError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient" title="gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClient"><span class="pre">AzureFunctionsAPIClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purpose_of_request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.resources.client_api.azure_functions_client.AzureFunctionsAPIClientHttpJsonRequestError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
@@ -155,7 +150,7 @@ versions will be returned.</p></li>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/gem5.resources.client_api.atlasclient.rst.txt"
+      <a href="_sources/gem5.resources.client_api.azure_functions_client.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

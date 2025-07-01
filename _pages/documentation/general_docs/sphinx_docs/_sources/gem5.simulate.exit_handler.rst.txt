@@ -1,0 +1,7 @@
+gem5.simulate.exit\_handler module
+==================================
+
+.. automodule:: gem5.simulate.exit_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
