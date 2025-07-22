@@ -6,6 +6,8 @@ parent: moving_to_github
 permalink: /documentation/general_docs/moving_to_github/
 ---
 
+
+<!-- Should this page be deprecated at this point? -->
 # Moving Active Changes from Gerrit to GitHub
 
 As we transition to using GitHub to host the gem5 project, we need to have a way to move any active changes from Gerrit onto GitHub for review.  If your change won’t be ready to be merged by the time Gerrit becomes read-only, follow the steps below to create a pull request with your changes for review on GitHub.

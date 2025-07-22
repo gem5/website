@@ -18,7 +18,7 @@ At least two weeks prior to a release a staging branch is created from the devel
 This staging branch is rigorously tested and only bug fixes or inconsequential changes (format fixes, typo fixes, etc.) are permitted to be be submitted to this branch.
 
 The staging branch is updated with the following changes:
-
+<!-- Are all of these release procedures still up to date? -->
 * The `-werror` is removed.
 This ensures that gem5 compiles on newer compilers as new/stricter compiler warnings are incorporated.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/43425>.
@@ -28,9 +28,9 @@ For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/47079>.
 * The [`ext/testlib/configuration.py`](https://github.com/gem5/gem5/blob/stable/ext/testlib/configuration.py)  file's `default.resource_url` field is updated to point towards the correct Google Cloud release bucket (see [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)).
 For example: <https://gem5-review.googlesource.com/c/public/gem5/+/44725>.
-* The Resource downloader, `src/python/gem5/resources/downloader.py`, has a function `def _resources_json_version_required()`. This must be updated to the correct version of the `resources.json` file to use (see the [gem5 resources repository release procedures](#gem5-resources-repository)) for more information on this).
+* The Resource downloader, `src/python/gem5/resources/downloader.py`, has a function `def _resources_json_version_required()`. This must be updated to the correct version of the `resources.json` file to use (see the [gem5 resources repository release procedures](#gem5-resources-repository) for more information on this).
 * The `tests/weekly.sh`, `tests/nightly.sh`, `tests/compiler-tests.sh`, and `tests/jenkins/presubmit.sh` should be updated ensure they remain stable across different gem5 releases. This is achieved by:
-    1. Fix the docker pulls images by appending the version (example [here](https://gem5-review.googlesource.com/c/public/gem5/+/54470). This will be done after following the [docker image release procedures](#the-docker-images).
+    1. Fix the docker pulls images by appending the version (example [here](https://gem5-review.googlesource.com/c/public/gem5/+/54470)). This will be done after following the [docker image release procedures](#the-docker-images).
     2. Ensure the download links are downloading from the correct Google Cloud bucket for the release version.
 * Hardcode the `rocm_patches/ROCclr.patch` download link in `util/dockerfiles/gcn-gpu` to the correct Google bucket.
 * Update the `ext/sst/README.md` file for the current version. This simply means updating the download links.
@@ -49,6 +49,8 @@ It has been customary to create a blog post on <http://www.gem5.org> outlining t
 While appreciated, it is not mandatory.
 
 **Important notes:**
+
+<!-- This line mentions Gerrit; should be updated to the correct links for GitHub -->
 * You must a member of the "Project Owners" or "google/gem5-admins@googlegroups.com" Gerrit permission groups to push to the stable branch.
 Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing to the gem5 stable branch.
 
@@ -63,7 +65,7 @@ Unlike the gem5 repo, changes to the gem5 resources repo may be submitted to the
 As with the gem5 repository, a staging branch is created at least two weeks prior to a release.
 The purpose of this staging branch is identical to that of the main gem5 repository, and it is merged into both the stable and develop branches upon a gem5 release.
 Prior to this the following changes should be applied to the staging branch:
-
+<!-- Google Cloud bucket should be updated to Azure -->
 * A new Google Cloud Bucket directory should be created for that version (see the [the Cloud Bucket release procedures](#gem5-resources-google-cloud-bucket)), and all the resources from the staging branch must match that found within that Google Cloud Bucket directory (i.e., the compiled resources within the bucket are built from the sources in the staging branch).
 * URL download links in the resources repo should be updated to point towards the correct Google Cloud Bucket directory.
 * The `resources.json` file, found in the root of the repository, must be updated for the current release.
@@ -73,6 +75,7 @@ The `previous-version` list must be updated to support all versions prior, inclu
 Each previous version must map to a file that may be downloaded.
 * The `resources.json` `url_base` field must be updated to the correct directory from the Google Cloud Bucket.
 
+<!-- Does this link have to be updated? -->
 When merged into the develop branch, the URL download links should reverted back to `http://dist.gem5.org/dist/develop`.
 
 Immediately prior to merging, the stable branch is tagged with the previous release version ID.
@@ -80,6 +83,7 @@ For example, if the staging branch is for `v22.2,` and the content on the stable
 This is because we want users to be able to revert the gem5 resources to get sources compatible with previous gem5 releases.
 Therefore, if a user wished to get the resources sources compatible with the the v20.1 release, they'd checkout the revision tagged as `v20.1` on the stable branch.
 
+<!-- Update for Azure -->
 ### gem5 resources Google Cloud Bucket
 
 The built gem5 resources are found within the gem5 Google Cloud Bucket.
@@ -111,11 +115,11 @@ Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing resources to
 
 Currently hosted in [`util/dockerfiles`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/) in the gem5 repository, we have a series of Dockerfiles which can be built to produce environments in which gem5 can be built and run.
 These images are mostly used for testing purposes.
-The [`ubuntu-20.04_all-dependencies`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/ubuntu-20.04_all-dependencies/) Dockerfile is the one most suitable for users who wish to build and execute gem5 in a supported environment.
+The [`ubuntu-24.04_all-dependencies`](https://github.com/gem5/gem5/tree/stable/util/dockerfiles/ubuntu-24.04_all-dependencies/) Dockerfile is the one most suitable for users who wish to build and execute gem5 in a supported environment.
 
 We provide pre-built Docker images hosted at <ghcr.io> under "gem5".
 All the Dockerfiles found in `util/dockerfiles` have been built and stored there.
-For instance, `ubuntu-20.04_all-dependencies` can be found at <ghcr.io/gem5/ubuntu-20.04_all-dependencies> (and can thereby be obtained with `docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies`).
+For instance, `ubuntu-24.04_all-dependencies` can be found at <ghcr.io/gem5/ubuntu-24.04_all-dependencies> (and can thereby be obtained with `docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies`).
 
 The Docker images are continually built from the Dockerfiles found on the develop branch.
 Therefore the docker image with the `latest` tag is that in-sync with the Dockerfiles found on the gem5 repo's develop branch.
@@ -125,9 +129,11 @@ The purpose of this is so users of an older versions of gem5, may obtain images 
 I.e., a user of gem5 `v21.0` may obtain the `v21.0` version of the `ubuntu-20.04_all-dependencies` with `docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v21-0`.
 
 **Important notes:**
+
 * If changes to the Dockerfile are done on the staging branch, then these changes will need to be pushed to <ghcr.io> manually.
 * Special permissions are needed to push to the <ghcr.io>.
 Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing images.
+<!-- Is this still a goal? -->
 * It is a future goal of ours to move [the Dockerfiles from `util/dockerfiles` to gem5-resources](https://gem5.atlassian.net/browse/GEM5-1044).
 
 ## gem5 website repository
@@ -141,7 +147,9 @@ E.g., it contains the changes needed to apply to the website when the new versio
 As the stable branch may be updated at any time (as long as those updates relate to the current release), stable is merged periodically into develop.
 As with the gem5 resources, and the main gem5 repository, a staging branch is created from the develop branch at least two weeks prior to a gem5 release.
 
-The staging branch needs updated so that the documentation is up-to-date with the upcoming release.
+The staging branch needs to be updated so that the documentation is up-to-date with the upcoming release.
+
+<!-- Change Google Cloud to Azure -->
 Of particular note, references to gem5 resources, hosted on the Google Cloud bucket should be updated.
 For example, links to, say <http://dist.gem5.org/dist/v21-0/images/x86/ubuntu-18-04/parsec.img.gz>, would need to be updated to <http://dist.gem5.org/dist/v21-1/images/x86/ubuntu-18-04/parsec.img.gz> when transitioning from `v21-0` to `v21-1`.
 
@@ -162,7 +170,7 @@ doxygen
 ```
 
 The html will be output to `src/doxygen/html`.
-
+<!-- Google Cloud -->
 The gem5 Doxygen website is hosted as a static webpage in a Google Cloud Bucket.
 The directory structure is as follows:
 
@@ -204,10 +212,11 @@ gsutil -m cp -r gs://doxygen.gem5.org/release/current gs://doxygen.gem5.org/rele
 The final step is to add a link to this gem5 Doxygen version on the website, via the [`_data/documentation.yml` file](https://github.com/gem5/website/blob/stable/_data/documentation.yml).
 For example: <https://gem5-review.googlesource.com/c/public/gem5-website/+/43385>.
 
-
 **Important Notes:**
-* The gem5 develop branch Doxygen website is updated daily via an automated build process.
+
+* The gem5 develop branch Doxygen website is updated daily via an automated build process. <!-- Is this still true? -->
 The footer on the Doxygen website will state when the page was generated.
+<!-- Google Cloud -> Azure -->
 * Special permissions are needed to push to the Google Cloud Bucket.
 Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing to the Google Cloud Bucket.
 

@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/x86-full-system-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- The example at the bottom of the page, without the classic exit handlers,
+works
+ -->
+
 ## Building an x86 full-system simulation with the gem5 standard library
 
 One of the key ideas behind the gem5 standard library is to allow users to simulate, big, complex systems, with minimal effort.
@@ -19,11 +23,13 @@ This system will utilize gem5's ability to switch cores, allowing booting of the
 Without using the gem5 library this would take several hundred lines of Python, forcing the user to specify details such as every IO component and exactly how the cache hierarchy is setup.
 Here, we will demonstrate how simple this task can be with using the gem5 standard library.
 
-As we focus on X86, we must must build the gem5 X86 binary:
+First, we build the ALL binary. This will allow us to run simulations for any ISA, including X86:
 
 ```sh
-scons build/X86/gem5.opt -j <number of threads>
+scons build/ALL/gem5.opt -j <number of threads>
 ```
+
+If you are using a prebuilt gem5 binary, this step is not necessary.
 
 To start, create a new Python file.
 We will refer to this as `x86-ubuntu-run.py`.
@@ -31,17 +37,21 @@ We will refer to this as `x86-ubuntu-run.py`.
 To begin we add our import statements:
 
 ```python
-from gem5.utils.requires import requires
-from gem5.components.boards.x86_board import X86Board
-from gem5.components.memory.single_channel import SingleChannelDDR3_1600
-from gem5.components.cachehierarchies.ruby.mesi_two_level_cache_hierarchy import MESITwoLevelCacheHierarchy
-from gem5.components.processors.simple_switchable_processor import SimpleSwitchableProcessor
 from gem5.coherence_protocol import CoherenceProtocol
-from gem5.isas import ISA
+from gem5.components.boards.x86_board import X86Board
+from gem5.components.cachehierarchies.ruby.mesi_two_level_cache_hierarchy import (
+    MESITwoLevelCacheHierarchy,
+)
+from gem5.components.memory.single_channel import SingleChannelDDR3_1600
 from gem5.components.processors.cpu_types import CPUTypes
-from gem5.resources.resource import Resource
-from gem5.simulate.simulator import Simulator
+from gem5.components.processors.simple_switchable_processor import (
+    SimpleSwitchableProcessor,
+)
+from gem5.isas import ISA
+from gem5.resources.resource import obtain_resource
 from gem5.simulate.exit_event import ExitEvent
+from gem5.simulate.simulator import Simulator
+from gem5.utils.requires import requires
 ```
 
 As in other Python scripts, these are simply classes/functions needed in our script.
@@ -60,9 +70,7 @@ requires(
 Here we state that we need gem5 compiled to run the X86 ISA and support the MESI Two Level protocol.
 We also require the host system to have KVM.
 **NOTE: Please ensure your host system supports KVM. If your system does not please remove the `kvm_required` check here**.
-KVM will only work if the host platform and the simulated ISA are the same (e.g., X86 host and X86 simulation).
-
-<!-- Can we provide a link to how to know if you have kvm? Related:https://gem5.atlassian.net/browse/GEM5-684-->
+KVM will only work if the host platform and the simulated ISA are the same (e.g., X86 host and X86 simulation). You can learn more about using KVM with gem5 [here](https://www.gem5.org/documentation/general_docs/using_kvm/).
 
 This `requires` call is not required but provides a good safety net to those running the script.
 Errors that occur due to incompatible gem5 binaries may not make much sense otherwise.
@@ -102,6 +110,7 @@ Next we setup the _processor_:
 processor = SimpleSwitchableProcessor(
     starting_core_type=CPUTypes.KVM,
     switch_core_type=CPUTypes.TIMING,
+    isa=ISA.X86,
     num_cores=2,
 )
 ```
@@ -136,122 +145,124 @@ This finalizes our system design.
 Now we set the workload to run on the system:
 
 ```python
-command = "m5 exit;" \
-        + "echo 'This is running on Timing CPU cores.';" \
-        + "sleep 1;" \
-        + "m5 exit;"
-
-board.set_kernel_disk_workload(
-    kernel=Resource("x86-linux-kernel-5.4.49",),
-    disk_image=Resource("x86-ubuntu-18.04-img"),
-    readfile_contents=command,
-)
+workload = obtain_resource("x86-ubuntu-24.04-boot-with-systemd")
+board.set_workload(workload)
 ```
 
-The `X86Board`'s `set_kernel_disk_workload` function requires a `kernel` and `disk_image` to be set.
-Both these are obtainable from the gem5 resources repository.
-Therefore, via the `Resource` class, we specify `x86-linux-kernel-5.4.49` for the Kernel (a Linux kernel, version 5.4.49, compiled to X86) and `x86-ubuntu-18.04-img` for the disk image (a disk image containing Ubuntu 18.04, for X86).
-The `Resource` class will automatically retrieve these resources if they are not already present on the host system.
-**Note: If a user wishes to use their own resource (that is, a resource not prebuilt as part of gem5-resources), they may follow the tutorial [here](../general_docs/gem5_resources)**
+The `obtain_resource` function acquires an X86 Ubuntu 24.04 boot workload, which encompasses a kernel and disk image resource, as well as additional parameters to the kernel and a string indicating the underlying `set_workload` function that the workload uses. You can see these details under the [Raw](https://resources.gem5.org/resources/x86-ubuntu-24.04-boot-with-systemd/raw?database=gem5-resources&version=3.0.0) tab of of the gem5 Resources website page for this workload.
 
-The `x86-ubuntu-18.04-img` has been designed to boot the OS, automatically login, and run `m5 readfile`.
-The `m5 readfile` will read a file and execute it.
-The contents of this file are specified via the `readfile_contents` parameter.
-Therefore the value of` readfile_contents` will be executed on system startup.
-**Note: `readfile_contents` is an optional argument. If it is not specified in `set_kernel_disk_workload` the simulation will exit after boot**.
-This behavior is specific to the `x86-ubuntu-18.04-img` disk image and is not true for all disk images.
+It is also possible to use the `set_kernel_disk_workload` function instead of `set_workload` and obtain the disk image and kernel resources separately. This can be used when you want to use a combination of resources that is not provided at [the gem5 resources website](resources.gem5.org).
 
-In this tutorial the script first runs `m5 exit`.
-This temporarily exits the simulation allowing us to switch the CPUs from `KVM` to `TIMING`.
-Then, when the simulation is resumed, the echo and sleep statements are executed (on the `TIMING` CPUs) and `m5 exit` is called again, thus exiting and completing the simulation.
-Users may inspect `m5out/system.pc.com_1.device` to see the echo output.
+**Note: If a user wishes to use their own resource (that is, a resource not prebuilt as part of gem5-resources), they may follow the tutorial [here](../general_docs/gem5_resources). A tutorial is also available at the [2024 gem5 bootcamp website](https://bootcamp.gem5.org/#02-Using-gem5/02-gem5-resources)**
+
+When using the `set_kernel_disk_workload` function, you can also pass an optional `readfile_contents` argument. This will be run as a bash script after the system boots up, and can be used to launch a benchmark after the system boots if you are using a disk image with benchmarks. An example can be found [here](https://resources.gem5.org/resources/x86-ubuntu-24.04-npb-ua-b/raw?database=gem5-resources&version=2.0.0)
 
 Finally, we specify how the simulation is to be run with the following:
 
+<!-- This example should be updated for the hypercalls -->
+
 ```python
+
+# This exit handler generator is only needed in gem5 v24.1 and lower.
+# gem5 v25.0 adds hypercalls and sets default handlers, meaning that users
+# no longer have to set handlers in each configuration script to prevent 
+# simulations from exiting on kernel boot or Ubuntu boot
+def exit_event_handler():
+    print("First exit: kernel booted")
+    yield False  # gem5 is now executing systemd startup
+    print("Second exit: Started `after_boot.sh` script")
+    # The after_boot.sh script is executed after the kernel and systemd have
+    # booted.
+    # Here we switch the CPU type to Timing.
+    print("Switching to Timing CPU")
+    processor.switch()
+    yield False  # gem5 is now executing the `after_boot.sh` script
+    print("Third exit: Finished `after_boot.sh` script")
+    # The after_boot.sh script will run a script if it is passed via
+    # m5 readfile. This is the last exit event before the simulation exits.
+    yield True
+
+
 simulator = Simulator(
     board=board,
-    on_exit_event={
-        ExitEvent.EXIT : (func() for func in [processor.switch]),
-    },
+    # This line is only needed for gem5 v24.1 and below
+    # on_exit_event={
+    #     ExitEvent.EXIT: exit_event_handler(),
+    # },
 )
 simulator.run()
 ```
 
-The important thing to note here is the `on_exit_event` argument.
-Here we can override default behavior.
-The `m5 exit` command triggers an `EXIT` exit event in the `Simulator` module.
-By default this exits the simulation run completely.
-In our case we want the first `m5 exit` call to switch processors from KVM to TIMING cores.
+The `on_exit_event` argument is used to override default behavior in gem5 v24.1
+and below.
 
 The `on_exit_event` parameter is a Python dictionary of exit events and [Python generators](https://wiki.python.org/moin/Generators).
-In this tutorial we are setting `ExitEvent.Exit` to the generator `(func() for func in [processor.switch])`.
-This means the `processor.switch` function is called on the first yield of the generator (that is, on the first instance of `m5 exit`).
-After this the generator is exhausted and the `Simulator` module will return to the default `Exit` exit event behavior.
+In this tutorial we are setting `ExitEvent.Exit` to the `exit_event_handler` generator.
+There are three `EXIT` exit events in the Ubuntu 24.04 disk image resource used by the workload.
+If an exit event handler is not defined, the simulation will end after the first exit event, which takes place after the kernel finishes booting.
+Yielding `False` allows the simulation to continue, while yielding `True` ends the simulation.
+After the second exit event, we switch the cores from KVM to TIMING, then yield `False` to continue the simulation.
+After the third exit event, we yield `True`, ending the simulation.
 
+This completes the setup of our script. To execute the script we run:
 
-This completes the setup of our script, to execute the script we run:
-
+```bash
+./build/ALL/gem5.opt x86-ubuntu-run.py
 ```
-./build/X86/gem5.opt x86-ubuntu-run.py
+
+If you are using a pre-built binary, you can execute the simulation with:
+
+```sh
+gem5 x86-ubuntu-run.py
 ```
 
 You can see the output of the simulator in `m5out/system.pc.com_1.device`.
 
 Below is the configuration script in full.
-It mirrors closely the example script at `configs/example/gem5_library/x86-ubuntu-run.py` in the gem5 repository.
+It mirrors closely the example script at `configs/example/gem5_library/x86-ubuntu-run-with-kvm.py` in the gem5 repository.
 
 ```python
-from gem5.utils.requires import requires
-from gem5.components.boards.x86_board import X86Board
-from gem5.components.memory.single_channel import SingleChannelDDR3_1600
-from gem5.components.cachehierarchies.ruby.mesi_two_level_cache_hierarchy import (MESITwoLevelCacheHierarchy,)
-from gem5.components.processors.simple_switchable_processor import SimpleSwitchableProcessor
 from gem5.coherence_protocol import CoherenceProtocol
-from gem5.isas import ISA
+from gem5.components.boards.x86_board import X86Board
+from gem5.components.cachehierarchies.ruby.mesi_two_level_cache_hierarchy import (
+    MESITwoLevelCacheHierarchy,
+)
+from gem5.components.memory.single_channel import SingleChannelDDR3_1600
 from gem5.components.processors.cpu_types import CPUTypes
-from gem5.resources.resource import Resource
-from gem5.simulate.simulator import Simulator
+from gem5.components.processors.simple_switchable_processor import (
+    SimpleSwitchableProcessor,
+)
+from gem5.isas import ISA
+from gem5.resources.resource import obtain_resource
 from gem5.simulate.exit_event import ExitEvent
+from gem5.simulate.simulator import Simulator
+from gem5.utils.requires import requires
 
-# This runs a check to ensure the gem5 binary is compiled to X86 and supports
-# the MESI Two Level coherence protocol.
 requires(
     isa_required=ISA.X86,
     coherence_protocol_required=CoherenceProtocol.MESI_TWO_LEVEL,
     kvm_required=True,
 )
 
-# Here we setup a MESI Two Level Cache Hierarchy.
 cache_hierarchy = MESITwoLevelCacheHierarchy(
     l1d_size="32KiB",
     l1d_assoc=8,
     l1i_size="32KiB",
     l1i_assoc=8,
-    l2_size="256kB",
+    l2_size="256KiB",
     l2_assoc=16,
     num_l2_banks=1,
 )
 
-# Setup the system memory.
-# Note, by default DDR3_1600 defaults to a size of 8GiB. However, a current
-# limitation with the X86 board is it can only accept memory systems up to 3GB.
-# As such, we must fix the size.
-memory = SingleChannelDDR3_1600("2GiB")
+memory = SingleChannelDDR3_1600(size="2GiB")
 
-# Here we setup the processor. This is a special switchable processor in which
-# a starting core type and a switch core type must be specified. Once a
-# configuration is instantiated a user may call `processor.switch()` to switch
-# from the starting core types to the switch core types. In this simulation
-# we start with KVM cores to simulate the OS boot, then switch to the Timing
-# cores for the command we wish to run after boot.
 processor = SimpleSwitchableProcessor(
     starting_core_type=CPUTypes.KVM,
     switch_core_type=CPUTypes.TIMING,
+    isa=ISA.X86,
     num_cores=2,
 )
 
-# Here we setup the board. The X86Board allows for Full-System X86 simulations.
 board = X86Board(
     clk_freq="3GHz",
     processor=processor,
@@ -259,48 +270,43 @@ board = X86Board(
     cache_hierarchy=cache_hierarchy,
 )
 
-# This is the command to run after the system has booted. The first `m5 exit`
-# will stop the simulation so we can switch the CPU cores from KVM to timing
-# and continue the simulation to run the echo command, sleep for a second,
-# then, again, call `m5 exit` to terminate the simulation. After simulation
-# has ended you may inspect `m5out/system.pc.com_1.device` to see the echo
-# output.
-command = "m5 exit;" \
-        + "echo 'This is running on Timing CPU cores.';" \
-        + "sleep 1;" \
-        + "m5 exit;"
+workload = obtain_resource("x86-ubuntu-24.04-boot-with-systemd")
+board.set_workload(workload)
 
-# Here we set the Full System workload.
-# The `set_workload` function for the X86Board takes a kernel, a disk image,
-# and, optionally, a the contents of the "readfile". In the case of the
-# "x86-ubuntu-18.04-img", a file to be executed as a script after booting the
-# system.
-board.set_kernel_disk_workload(
-    kernel=Resource("x86-linux-kernel-5.4.49",),
-    disk_image=Resource("x86-ubuntu-18.04-img"),
-    readfile_contents=command,
-)
+
+def exit_event_handler():
+    print("First exit: kernel booted")
+    yield False  # gem5 is now executing systemd startup
+    print("Second exit: Started `after_boot.sh` script")
+    # The after_boot.sh script is executed after the kernel and systemd have
+    # booted.
+    # Here we switch the CPU type to Timing.
+    print("Switching to Timing CPU")
+    processor.switch()
+    yield False  # gem5 is now executing the `after_boot.sh` script
+    print("Third exit: Finished `after_boot.sh` script")
+    # The after_boot.sh script will run a script if it is passed via
+    # m5 readfile. This is the last exit event before the simulation exits.
+    yield True
+
 
 simulator = Simulator(
     board=board,
     on_exit_event={
-        # Here we want override the default behavior for the first m5 exit
-        # exit event. Instead of exiting the simulator, we just want to
-        # switch the processor. The 2nd 'm5 exit' after will revert to using
-        # default behavior where the simulator run will exit.
-        ExitEvent.EXIT : (func() for func in [processor.switch]),
+        ExitEvent.EXIT: exit_event_handler(),
     },
 )
 simulator.run()
+
 ```
 
 To recap what we learned in this tutorial:
 
 * The `requires` function can be used to specify the gem5 and host requirements for a script.
 * The `SimpleSwitchableProcessor` can be used to create a setup in which cores can be switched out for others.
-* The `X86Board` can be used to setup full-system simulations.
-Its `set_kernel_disk_workload` is used specify the kernel and disk image to use.
+* The `X86Board` can be used to set up full-system simulations.
+Its `set_kernel_disk_workload` is used to specify the kernel and disk image to use.
 * The `set_kernel_disk_work` accepts a `readfile_contents` argument.
 This is used to set the contents of the file to be read via gem5's `m5 readfile` function.
-With the `x86-ubuntu-18.04-img` this is processed as a script to be executed after the system boot is complete.
+This is processed as a script to be executed after the system boot is complete.
 * The `Simulator` module allows for the overriding of exit events using Python generators.

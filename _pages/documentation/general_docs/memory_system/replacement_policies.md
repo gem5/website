@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/memory_system/replacement_policies/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated (substantially) 6 years ago. I don't know enough to say if it's out of date
+at this point
+-->
+
 # Replacement Policies
 
 Gem5 has multiple implemented replacement policies. Each one uses its

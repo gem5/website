@@ -13,6 +13,12 @@ Building gem5
 This chapter covers the details of how to set up a gem5 development
 environment and build gem5.
 
+If you have a pre-built binary
+-----------------------------
+
+If you are running gem5 using a pre-built binary, you can skip this section.
+The pre-built binary uses the ALL build and can be used to run all ISAs and all Ruby coherence protocols.
+
 Requirements for gem5
 ---------------------
 
@@ -21,11 +27,11 @@ See [gem5 requirements](http://www.gem5.org/documentation/general_docs/building#
 On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
-```
+```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
 ```
 
-1.  git ([Git](https://git-scm.com/)):
+1. git ([Git](https://git-scm.com/)):
     :   The gem5 project uses [Git](https://git-scm.com/) for version
         control. [Git](https://git-scm.com/) is a distributed version
         control system. More information about
@@ -33,22 +39,23 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         Git should be installed by default on most platforms. However,
         to install Git in Ubuntu use
 
-        ```
-        sudo apt install git
-        ```
+    ```bash
+    sudo apt install git
+    ```
 
-2.  gcc 10+
+2. gcc 11+
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 
         On Ubuntu, you can install a development environment with
 
-        ```
+        ```bash
         sudo apt install build-essential
         ```
 
-       **We support GCC Versions >=10, up to GCC 13**
+       **We support GCC Versions >=11, up to GCC 14**
 
+<!-- Unsure if this is the correct SCons version for gem5 v25.0 -->
 3.  [SCons 3.0+](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
         steroids and uses Python scripts for all aspects of the build
@@ -56,18 +63,19 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
         To get SCons on Ubuntu use
 
-        ```
-        sudo apt install scons
-        ```
+    ```bash
+    sudo apt install scons
+    ```
 
-4.  Python 3.6+
+4.  Python 3.9+
     :   gem5 relies on the Python development libraries. To install
         these on Ubuntu use
 
-        ```
-        sudo apt install python3-dev
-        ```
+    ```bash
+    sudo apt install python3-dev
+    ```
 
+<!-- Unsure if protobuf version should be updated -->
 5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
@@ -77,9 +85,9 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         not a required package, unless you plan on using it for trace
         generation and playback.
 
-        ```
-        sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
-        ```
+    ```bash
+    sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
+    ```
 
 6. [Boost](https://www.boost.org/) (**Optional**)
     :   The Boost library is a set of general purpose C++ libraries. It is a
@@ -94,7 +102,7 @@ Getting the code
 Change directories to where you want to download the gem5 source. Then,
 to clone the repository, use the `git clone` command.
 
-```
+```bash
 git clone https://github.com/gem5/gem5
 ```
 
@@ -104,10 +112,10 @@ code.
 Your first gem5 build
 ---------------------
 
-Let's start by building a basic x86 system. Currently, you must compile
-gem5 separately for every ISA that you want to simulate. Additionally,
-if using ruby-intro-chapter, you have to have separate compilations for
-every cache coherence protocol.
+Let's start by building a basic x86 system. As of gem5 v22.1, you can
+compile the ALL build, which includes all ISAs. As of gem5 v24.1, the
+ALL build also includes all Ruby cache coherence protocols. This is
+relevant if you are using the ruby-intro-chapter.
 
 To build gem5, we will use SCons. SCons uses the SConstruct file
 (`gem5/SConstruct`) to set up a number of variables and then uses the
@@ -121,16 +129,15 @@ options (ISA and cache coherence protocol) that you use to compile gem5.
 
 There are a number of default compilations options in the `build_opts`
 directory. These files specify the parameters used to build gem5 which have
-non-default values. We'll use the X86 defaults and specify that we
-want to compile all of the CPU models. You can look at the file
-`build_opts/X86` to see the (kconfig) settings which have non-default values.
-For gem5 <= 23.0, You can also specify these options on the command line to
+non-default values. We'll use the ALL defaults. You can look at the file
+`build_opts/ALL` to see the (kconfig) settings which have non-default values.
+For gem5 <= 23.0, you can also specify these options on the command line to
 override any default values. For gem5 >= 23.1, You can use kconfig tools like
 setconfig, menuconfig, or guiconfig to modify these settings in an existing
 build directory.
 
-```
-python3 `which scons` build/X86/gem5.opt -j9
+```bash
+python3 `which scons` build/ALL/gem5.opt -j9
 ```
 
 > **gem5 binary types**
@@ -160,75 +167,83 @@ python3 `which scons` build/X86/gem5.opt -j9
 >     unlikely your code has major bugs.
 >
 The main argument passed to SCons is what you want to build,
-`build/X86/gem5.opt`. In this case, we are building gem5.opt (an
+`build/ALL/gem5.opt`. In this case, we are building gem5.opt (an
 optimized binary with debug symbols). We want to build gem5 in the
-directory build/X86. Since this directory currently doesn't exist, SCons
-will look in `build_opts` to find the parameters for X86. (Note:
+directory build/ALL. Since this directory currently doesn't exist, SCons
+will look in `build_opts` to find the parameters for the ALL build. (Note:
 I'm using -j9 here to execute the build on 9 of my 8 cores on my
 machine. You should choose an appropriate number for your machine,
 usually cores+1.)
 
-The output should look something like below (For gem5 >= 23.1):
+The output should look something like below (For gem5 >= 24.1):
 
+```txt
     scons: Reading SConscript files ...
-    Mkdir("/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build")
-    Checking for linker -Wl,--as-needed support... yes
-    Checking for compiler -gz support... yes
-    Checking for linker -gz support... yes
+    Mkdir("/local.chinook/gem5/gem5-tutorial/gem5/build/ALL/gem5.build")
+    Checking for linker -Wl,--as-needed support... (cached) yes
+    Checking for compiler -gz support... (cached) yes
+    Checking for linker -gz support... (cached) yes
     Info: Using Python config: python3-config
-    Checking for C header file Python.h... yes
-    Checking Python version... 3.11.5
-    Checking for accept(0,0,0) in C++ library None... yes
-    Checking for zlibVersion() in C++ library z... yes
-    Checking for pkg-config package protobuf... yes
-    Checking for clock_nanosleep(0,0,NULL,NULL) in C library None... yes
-    Checking for timer_create(CLOCK_MONOTONIC, NULL, NULL) in C library None... yes
-    Checking for C library tcmalloc_minimal... yes
-    Checking for backtrace_symbols_fd((void *)1, 0, 0) in C library None... yes
-    Checking for C header file png.h... yes
-    Checking for C header file fenv.h... yes
-    Checking for C header file capstone/capstone.h... no
-    Checking for C header file linux/kvm.h... yes
-    Checking size of struct kvm_xsave ... yes
-    Checking for member exclude_host in struct perf_event_attr...yes
-    Checking for C header file valgrind/valgrind.h... yes
-    Checking for pkg-config package hdf5-serial... no
-    Checking for pkg-config package hdf5... no
-    Checking for H5Fcreate("", 0, 0, 0) in C library hdf5... no
-    Checking for shm_open("/test", 0, 0) in C library None... yes
-    Checking for C header file linux/if_tun.h... yes
-    "ext/Kconfiglib/defconfig.py" --kconfig "/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build/Kconfig" "/local.chinook/gem5/gem5-tutorial/gem5/build_opts/X86"
-    Loaded configuration '/local.chinook/gem5/gem5-tutorial/gem5/build_opts/X86'
-    Configuration saved to '/local.chinook/gem5/gem5-tutorial/gem5/build/X86/gem5.build/config'
-    Checking whether __i386__ is declared... no
-    Checking whether __x86_64__ is declared... yes
-    Checking for compiler -Wno-self-assign-overloaded support... yes
-    Checking for linker -Wno-free-nonheap-object support... yes
+    Checking for C header file Python.h... (cached) yes
+    Checking Python version... (cached) 3.12.3
+    Checking for accept(0,0,0) in C++ library None... (cached) yes
+    Checking for zlibVersion() in C++ library z... (cached) yes
+    Checking for C library tcmalloc_minimal... (cached) yes
+    Building in /home/bees/gem5-4th-worktree/build/ALL
+    "build_tools/kconfig_base.py" "/home/bees/gem5-4th-worktree/build/ALL/gem5.build/Kconfig" "/home/bees/gem5-4th-worktree/src/Kconfig" 
+    Checking for C header file fenv.h... (cached) yes
+    Checking for C header file png.h... (cached) yes
+    Checking for clock_nanosleep(0,0,NULL,NULL) in C library None... (cached) yes
+    Checking for C header file valgrind/valgrind.h... (cached) yes
+    Checking for pkg-config package hdf5-serial... (cached) yes
+    Checking for H5Fcreate("", 0, 0, 0) in C library hdf5... (cached) yes
+    Checking for H5::H5File("", 0) in C++ library hdf5_cpp... (cached) yes
+    Checking for pkg-config package protobuf... (cached) yes
+    Checking for shm_open("/test", 0, 0) in C library None... (cached) yes
+    Checking for backtrace_symbols_fd((void *)1, 0, 0) in C library None... (cached) yes
+    Checking size of struct kvm_xsave ... (cached) yes
+    Checking for C header file capstone/capstone.h... (cached) yes
+    Checking for C header file linux/kvm.h... (cached) yes
+    Checking for timer_create(CLOCK_MONOTONIC, NULL, NULL) in C library None... (cached) yes
+    Checking for member exclude_host in struct perf_event_attr...(cached) yes
+    Checking for C header file linux/if_tun.h... (cached) yes 
+    Checking whether __i386__ is declared... (cached) no
+    Checking whether __x86_64__ is declared... (cached) yes
+    Checking for compiler -Wno-self-assign-overloaded support... (cached) yes
+    Checking for linker -Wno-free-nonheap-object support... (cached) yes
+    BUILD_TLM not set, not building CHI-TLM integration
+
     scons: done reading SConscript files.
     scons: Building targets ...
-     [ISA DESC] X86/arch/x86/isa/main.isa -> generated/inc.d
-     [NEW DEPS] X86/arch/x86/generated/inc.d -> x86-deps
-     [ENVIRONS] x86-deps -> x86-environs
-     [     CXX] X86/sim/main.cc -> .o
+    [     CXX] ALL/base/Graphics.py.cc -> .o
+    [    LINK]  -> ALL/gem5py_m5
+    [     CXX] src/base/atomicio.cc -> ALL/base/atomicio.o
+    [     CXX] src/base/bitfield.cc -> ALL/base/bitfield.o
+
      ....
      .... <lots of output>
      ....
-     [   SHCXX] nomali/lib/mali_midgard.cc -> .os
-     [   SHCXX] nomali/lib/mali_t6xx.cc -> .os
-     [   SHCXX] nomali/lib/mali_t7xx.cc -> .os
-     [      AR]  -> drampower/libdrampower.a
-     [   SHCXX] nomali/lib/addrspace.cc -> .os
-     [   SHCXX] nomali/lib/mmu.cc -> .os
-     [  RANLIB]  -> drampower/libdrampower.a
-     [   SHCXX] nomali/lib/nomali_api.cc -> .os
-     [      AR]  -> nomali/libnomali.a
-     [  RANLIB]  -> nomali/libnomali.a
-     [     CXX] X86/base/date.cc -> .o
-     [    LINK]  -> X86/gem5.opt
-    scons: done building targets.
+ [SO Param] m5.objects.Uart, Uart8250 -> ALL/params/Uart8250.hh
+ [     CXX] ALL/python/_m5/param_SimpleUart.cc -> .o
+ [     CXX] ALL/enums/TerminalDump.cc -> .o
+ [     CXX] ALL/python/_m5/param_Uart8250.cc -> .o
+ [     CXX] src/dev/serial/serial.cc -> ALL/dev/serial/serial.o
+ [     CXX] src/dev/serial/simple.cc -> ALL/dev/serial/simple.o
+ [     CXX] src/dev/serial/terminal.cc -> ALL/dev/serial/terminal.o
+ [     CXX] src/dev/serial/uart.cc -> ALL/dev/serial/uart.o
+ [     CXX] src/dev/serial/uart8250.cc -> ALL/dev/serial/uart8250.o
+ [     CXX] ALL/debug/Terminal.cc -> .o
+ [     CXX] ALL/debug/TerminalVerbose.cc -> .o
+ [     CXX] ALL/debug/Uart.cc -> .o
+ [     CXX] ALL/python/m5/defines.py.cc -> .o
+ [     CXX] ALL/python/m5/info.py.cc -> .o
+ [     CXX] src/base/date.cc -> ALL/base/date.o
+ [    LINK]  -> ALL/gem5.opt
+scons: done building targets.
+```
 
 When compilation is finished you should have a working gem5 executable
-at `build/X86/gem5.opt`. The compilation can take a very long time,
+at `build/ALL/gem5.opt`. The compilation can take a very long time,
 often 15 minutes or more, especially if you are compiling on a remote
 file system like AFS or NFS.
 
@@ -237,8 +252,10 @@ Common errors
 
 ### Wrong gcc version
 
+```txt
     Error: gcc version 5 or newer required.
            Installed version: 4.4.7
+```
 
 Update your environment variables to point to the right gcc version, or
 install a more up to date version of gcc. See
@@ -253,29 +270,33 @@ causes the issue. gem5 often builds successfully in this case, but may
 not be able to run. Below is one possible error you may see when you run
 gem5.
 
+```txt
     Traceback (most recent call last):
       File "........../gem5-stable/src/python/importer.py", line 93, in <module>
         sys.meta_path.append(importer)
     TypeError: 'dict' object is not callable
+```
 
 To fix this, you can force SCons to use your environment's Python
-version by running `` python3 `which scons` build/X86/gem5.opt `` instead
-of `scons build/X86/gem5.opt`.
+version by running `` python3 `which scons` build/ALL/gem5.opt `` instead
+of `scons build/ALL/gem5.opt`.
 
 ### M4 macro processor not installed
 
 If the M4 macro processor isn't installed you'll see an error similar to
 this:
 
+```txt
     ...
     Checking for member exclude_host in struct perf_event_attr...yes
     Error: Can't find version of M4 macro processor.  Please install M4 and try again.
+```
 
 Just installing the M4 macro package may not solve this issue. You may
 nee to also install all of the `autoconf` tools. On Ubuntu, you can use
 the following command.
 
-```
+```bash
 sudo apt-get install automake
 ```
 
@@ -283,7 +304,7 @@ sudo apt-get install automake
 
 Compiling gem5 using protobuf might result in the following error,
 
-```
+```txt
 In file included from build/X86/cpu/trace/trace_cpu.hh:53,
                  from build/X86/cpu/trace/trace_cpu.cc:38:
 build/X86/proto/inst_dep_record.pb.h:49:51: error: 'AuxiliaryParseTableField' in namespace 'google::protobuf::internal' does not name a type; did you mean 'AuxillaryParseTableField'?
@@ -293,19 +314,22 @@ build/X86/proto/inst_dep_record.pb.h:49:51: error: 'AuxiliaryParseTableField' in
 The root cause of the problem is discussed here: [https://gem5.atlassian.net/browse/GEM5-1032].
 
 To resolve this problem, you may need to update the version of ProtocolBuffer,
-```
+
+```bash
 sudo apt update
 sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
 ```
 
 After that, you may need to clean the gem5 build folder **before** recompiling gem5,
-```
+
+```bash
 python3 `which scons` --clean --no-cache        # cleaning the build folder
-python3 `which scons` build/X86/gem5.opt -j 9   # re-compiling gem5
+python3 `which scons` build/ALL/gem5.opt -j 9   # re-compiling gem5
 ```
 
 If the problem persists, you may need to completely remove the gem5 build folder **before** compiling gem5 again,
-```
+
+```bash
 rm -rf build/                                   # completely removing the gem5 build folder
-python3 `which scons` build/X86/gem5.opt -j 9   # re-compiling gem5
+python3 `which scons` build/ALL/gem5.opt -j 9   # re-compiling gem5
 ```

@@ -221,7 +221,7 @@ be run on multiple threads with the `-j` flag. E.g.: `python main.py run
 The unit tests should also pass. To run the unit tests:
 
 ```sh
-scons build/NULL/unittests.opt
+scons build/ALL/unittests.opt
 ```
 
 To compile an individual gem5 binary:

@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/debugging_and_testing/debugging/debugger_
 author: Bobby R. Bruce
 ---
 
+<!-- This page was last updated (significantly) 3-6 years ago. It could be 
+outdated in places.
+ -->
+
 # Debugger-based Debugging
 
 If traces alone are not sufficient, you'll need to inspect what gem5 is doing
@@ -24,13 +28,16 @@ You can create one or more DebugEvents when you invoke gem5 using the
 debugger prompt using the `schedBreak()` function. The following example
 session illustrates both of these approaches:
 
+<!-- Is this example correct? It references m5 instead of gem5 and also references
+a "configs/run.py" that doesn't seem to be in the configs directory as of v25.0
+-->
 ```
-% gdb m5/build/<ISA>/gem5.debug
+% gdb m5/build/ALL/gem5.debug
 GNU gdb 6.1
 Copyright 2002 Free Software Foundation, Inc.
 [...]
 (gdb) run --debug-break=2000 configs/run.py
-Starting program: /z/stever/bk/m5/build/<ISA>/gem5.debug --debug-break=2000 configs/run.py
+Starting program: /z/stever/bk/m5/build/ALL/gem5.debug --debug-break=2000 configs/run.py
 M5 Simulator System
 [...]
 warn: Entering event queue @ 0.  Starting simulation...
@@ -85,10 +92,9 @@ You can debug configuration scripts with the [Python debug (PDB)](
 https://docs.python.org/3/library/pdb.html) just as you would other Python
 scripts. You can enter PDB before your configuration script is executed by
 giving the `--pdb` argument to the gem5 binary. Another approach is to put the
-following line in your configuration script (e.g., `fs.py` or `se.py`) wherever
-you would like to enter the debugger:
+following line in your configuration script wherever you would like to enter the debugger:
 
-```
+```python
 import pdb; pdb.set_trace()
 ```
 
@@ -106,19 +112,23 @@ Valgrind is a dynamic analysis tool used (primarily) to profile a target
 application and detect the source of run-time errors, as well as detect memory
 leaks.
 
+<!-- Is the --without-tcmalloc flag still required? I don't think I used it
+when running gem5 with Valgrind, though it could be that what I was running
+just didn't run into problems
+-->
 For Valgrind to function, the target gem5 binary must have been compiled to
 include debugging information. Therefore, the `gem5.debug` binaries must be
 used. Due to difficulties with Valgrind working with tcmalloc, `gem5.debug`
 must be compiled without using the `--without-tcmalloc` flag:
 
-```
-scons --without-tcmalloc build/{ISA}/gem5.debug
+```bash
+scons --without-tcmalloc build/ALL/gem5.debug
 ```
 
 To run a check using Valgrind, execute the following:
 
-```
-valgrind --leak-check=yes --suppressions=util/valgrind-suppressions build/{Target ISA}/gem5.debug {gem5 arguments}
+```bash
+valgrind --leak-check=yes --suppressions=util/valgrind-suppressions build/ALL/gem5.debug {gem5 arguments}
 ```
 
 The above will run the gem5 and do two things:
@@ -137,7 +147,7 @@ If a run-time error is received, Valgrind will return an output which looks like
 the following (taken from the [Valgrind Quick Start Guide](
 http://valgrind.org/docs/manual/quick-start.html)):
 
-```
+```txt
 ==19182== Invalid write of size 4
 ==19182==    at 0x804838F: f (example.c:6)
 ==19182==    by 0x80483AB: main (example.c:11)
@@ -154,7 +164,7 @@ called by the `main` method at line 11 (also in `example.c`).
 
 Valgrind may also return warnings about memory leaks, such as:
 
-```
+```txt
 ==19182== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
 ==19182==    at 0x1B8FF5CD: malloc (vg_replace_malloc.c:130)
 ==19182==    by 0x8048385: f (a.c:5)

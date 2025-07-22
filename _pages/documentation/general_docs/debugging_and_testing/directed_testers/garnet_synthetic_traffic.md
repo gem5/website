@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/debugging_and_testing/directed_testers/ga
 author: Bobby R. Bruce
 ---
 
+<!-- This document was updated 20 months ago for KConfig, but the rest was
+last updated 6 years ago. It might be out of date in places
+ -->
+
 # Garnet Synthetic Traffic
 
 The Garnet Synthetic Traffic provides a framework for simulating the Garnet
@@ -40,6 +44,8 @@ scons defconfig build/NULL build_opts/NULL
 scons setconfig build/NULL RUBY_PROTOCOL_GARNET_STANDALONE=y
 scons build/NULL/gem5.debug
 ```
+
+<!-- Should this be updated with an example for v24.1+ that just uses ALL? -->
 
 Example command:
 

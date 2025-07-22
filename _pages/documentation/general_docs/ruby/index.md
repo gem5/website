@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/ruby/
 author: Jason Lowe-Power
 ---
 
+<!-- This page hasn't been updated in 4-6 years. I don't know enough about
+Ruby to say which parts are outdated/inaccurate though
+ -->
+
 # Ruby
 
 Ruby implements a detailed simulation model for the memory subsystem. It
@@ -200,6 +204,8 @@ refer to previous sections describing each component in isolation.
     hardware context of the frontend (gem5).
 
 ## Directory Structure
+
+<!-- This directory structure is definitely out of date -->
 
   - **src/mem/**
       - **protocols**: SLICC specification for coherence protocols

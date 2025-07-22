@@ -6,6 +6,8 @@ doc: gem5 documentation
 permalink: /documentation/general_docs/statistics/api
 ---
 
+<!-- Last modified 5 years ago; don't know enough to say if it's out of date -->
+
 # Statistics APIs
 
 ## Contents

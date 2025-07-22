@@ -5,6 +5,7 @@ doc: gem5 documentation
 parent: m5ops
 permalink: /documentation/general_docs/m5ops/
 ---
+<!-- Last updated 13 months ago, may be relatively up to date -->
 
 # M5ops
 

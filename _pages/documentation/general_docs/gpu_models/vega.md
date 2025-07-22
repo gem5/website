@@ -6,6 +6,10 @@ parent: gpu_models
 permalink: /documentation/general_docs/gpu_models/vega
 ---
 
+<!-- Has been updated at a few points (4 years, 20 months, 10 months ago);
+might be up to date
+ -->
+
 # **System Emulation AMD VEGA GPU model**
 
 Table of Contents

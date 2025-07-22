@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/ruby/CHI/
 author: Tiago Mück
 ---
 
+<!-- Documentation was written 4 years ago and updated for broken links 20 months ago.
+If the coherence protocol hasn't changed, this page may still be relatively up to date
+ -->
+
 # CHI
 
 The CHI ruby protocol provides a single cache controller that can be reused at multiple levels of the cache hierarchy and configured to model multiple instances of MESI and MOESI cache coherency protocols. This implementation is based of [Arm's AMBA 5 CHI specification](https://developer.arm.com/documentation/ihi0050/D/) and provides a scalable framework for the design space exploration of large SoC designs.

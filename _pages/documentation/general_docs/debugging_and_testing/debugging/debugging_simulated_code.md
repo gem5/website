@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/debugging_and_testing/debugging/debugging
 author: Bobby R. Bruce
 ---
 
+<!-- This document was last updated 4 to 6 years ago. May be out of date -->
+
 # Debugging Simulated Code
 
 gem5 has built-in support for gdb's remote debugger interface. If you are
@@ -64,7 +66,7 @@ cpus you will need to match the cpu id with the corresponding port number for
 the remote gdb session. For example, using the following sample output from
 gem5, calling the kernel debugger for cpu 3 requires the kernel debugger to be
 listening on port 7001.
-
+<!-- uses fs.py  -->
 ```
 %./build/<ISA>/gem5.debug configs/example/fs.py
 ...

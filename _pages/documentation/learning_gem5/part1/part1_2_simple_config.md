@@ -14,7 +14,7 @@ Creating a simple configuration script
 This chapter of the tutorial will walk you through how to set up a
 simple simulation script for gem5 and to run gem5 for the first time.
 It's assumed that you've completed the first chapter of the tutorial and
-have successfully built gem5 with an executable `build/X86/gem5.opt`.
+have successfully built gem5 with an executable `build/ALL/gem5.opt`.
 
 Our configuration script is going to model a very simple system. We'll
 have just one simple CPU core. This CPU core will be connected to a
@@ -24,25 +24,30 @@ also connected to the memory bus.
 gem5 configuration scripts
 --------------------------
 
-The gem5 binary takes, as a parameter, a python script which sets up and
+The gem5 binary takes, as a parameter, a Python script which sets up and
 executes the simulation. In this script, you create a system to
 simulate, create all of the components of the system, and specify all of
 the parameters for the system components. Then, from the script, you can
 begin the simulation.
 
-This script is completely user-defined. You can choose to use any valid
+<!-- This script is completely user-defined. You can choose to use any valid
 Python code in the configuration scripts. This book provides on example
 of a style that relies heavily on classes and inheritance in Python. As a
 gem5 user, it's up to you how simple or complicated to make your
-configuration scripts.
+configuration scripts. -->
 
-There are a number of example configuration scripts that ship with gem5
-in `configs/examples`. Most of these scripts are all-encompassing and
+<!--  Most of these scripts are all-encompassing and
 allow users to specify almost all options on the command line. Instead
 of starting with these complex script, in this book we are going to
 start with the most simple script that can run gem5 and build from
 there. Hopefully, by the end of this section you'll have a good idea of
-how simulation scripts work.
+how simulation scripts work. -->
+
+There are a number of example configuration scripts that ship with gem5
+in `configs/examples`.
+The scripts most relevant to a beginner to gem5 are located in `configs/examples/gem5-library`.
+These are scripts that are intended to be used with the gem5 standard library,
+which provides components that can be connected together to form a complete system.
 
 ---
 
@@ -59,13 +64,14 @@ how simulation scripts work.
 
 ---
 
+Setting up a configuration script for gem5 v24.1
+================================================
 
-Creating a config file
-----------------------
+**Notice: The content of this section is taken from part 1, section 2 of the 2024 gem5 bootcamp. The slides for the bootcamp can be found [here](https://bootcamp.gem5.org/#01-Introduction/02-getting-started)**
 
 Let's start by creating a new config file and opening it:
 
-```
+```bash
 mkdir configs/tutorial/part1/
 touch configs/tutorial/part1/simple.py
 ```
@@ -74,13 +80,120 @@ This is just a normal python file that will be executed by the embedded
 python in the gem5 executable. Therefore, you can use any features and
 libraries available in python.
 
-The first thing we'll do in this file is import the m5 library and all
-SimObjects that we've compiled.
+To set up a basic configuration script, we can start by adding our imports:
+
+```python
+from gem5.prebuilt.demo.x86_demo_board import X86DemoBoard
+from gem5.resources.resource import obtain_resource
+from gem5.simulate.simulator import Simulator
+```
+
+Next, add a board to your script:
+
+```python
+board = X86DemoBoard()
+```
+
+The X86DemoBoard is a prebuilt board that doesn't require further configuration and can be used as a complete system as-is. It is not recommended for use in research, however.
+
+The source can be found in the gem5 repository at [src/python/gem5/prebuilt/demo/x86_demo_board.py](https://github.com/gem5/gem5/blob/stable/src/python/gem5/prebuilt/demo/x86_demo_board.py)
+
+It has the following properties:
+
+* 3GiB DualChannelDDR4_2400 memory
+* A 2 core processor using gem5's `TIMING` model
+* A private L1, shared L2 cache hierarchy with 64 KiB data and instruction caches and a 8MiB L2 cache.
+
+As of gem5 v24.1, the X86DemoBoard can support both SE (system emulation) and FS (full system) simulations.
+
+Next, let's set a workload to run on the board:
+
+```python
+board.set_workload(
+    obtain_resource("x86-ubuntu-24.04-boot-no-systemd")
+)
+```
+
+The function `obtain_resource` downloads workloads and resources.
+For the `x86-ubuntu-24.04-boot-no-systemd`, it downloads a disk image and kernel, and sets default parameters.
+
+The workload boots Ubuntu without systemd.
+There are three exit events in the workload, and the simulation can exit or perform other operations at each exit event.
+To change the behavior at an exit event, we will need to set up an exit event handler.
+
+However, we will only run the simulation for 20 billion ticks, or 20 ms, in this example:
+
+```python
+sim = Simulator(board)
+sim.run(20_000_000_000) # 20 billion ticks or 20 ms
+```
+
+To run the simulation after setting up the configuration script, use the following command:
+
+```bash
+./build/ALL/gem5.opt configs/tutorial/part1/simple.py
+```
+
+If you are using a pre-built gem5 binary, use the following command:
+
+```bash
+gem5 configs/tutorial/part1/simple.py
+```
+
+The output should look something like this:
+
+```txt
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.1.0.0
+gem5 compiled Dec 13 2024 14:59:49
+gem5 started Dec 16 2024 13:07:46
+gem5 executing on amarillo, pid 543078
+command line: ./build/ALL/gem5.opt gem5-dev/testing-website-tutorial/tutorial/part1/simple.py
+
+warn: The X86DemoBoard is solely for demonstration purposes. This board is not known to be be representative of any real-world system. Use with caution.
+info: Using default config
+warn: Max ticks has already been set prior to setting it through the run call. In these cases the max ticks set through the `run` function is used
+Global frequency set at 1000000000000 ticks per second
+warn: board.workload.acpi_description_table_pointer.rsdt adopting orphan SimObject param 'entries'
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/sim/kernel_workload.cc:46: info: kernel located at: /home/bees/.cache/gem5/x86-linux-kernel-5.4.0-105-generic
+      0: board.pc.south_bridge.cmos.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
+board.pc.com_1.device: Listening for connections on port 3467
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/dev/intel_8254_timer.cc:128: warn: Reading current count from inactive timer.
+board.remote_gdb: Listening for connections on port 7003
+src/sim/simulate.cc:199: info: Entering event queue @ 0.  Starting simulation...
+build/ALL/arch/x86/generated/exec-ns.cc.inc:27: warn: instruction 'fninit' unimplemented
 
 ```
+
+Setting up a configuration script for gem5 v21.0
+==============
+
+Creating a config file
+----------------------
+
+Let's start by creating a new config file and opening it:
+
+```bash
+mkdir configs/tutorial/part1/
+touch configs/tutorial/part1/simple.py
+```
+
+This is just a normal python file that will be executed by the embedded
+python in the gem5 executable. Therefore, you can use any features and
+libraries available in python.
+
+<!-- The first thing we'll do in this file is import the m5 library and all
+SimObjects that we've compiled.
+
+```python
 import m5
 from m5.objects import *
-```
+``` -->
 
 Next, we'll create the first SimObject: the system that we are going to
 simulate. The `System` object will be the parent of all the other
@@ -90,7 +203,7 @@ ranges, the root clock domain, the root voltage domain, the kernel (in
 full-system simulation), etc. To create the system SimObject, we simply
 instantiate it like a normal python class:
 
-```
+```python
 system = System()
 ```
 
@@ -103,7 +216,7 @@ Finally, we have to specify a voltage domain for this clock domain.
 Since we don't care about system power right now, we'll just use the
 default options for the voltage domain.
 
-```
+```python
 system.clk_domain = SrcClockDomain()
 system.clk_domain.clock = '1GHz'
 system.clk_domain.voltage_domain = VoltageDomain()
@@ -120,7 +233,7 @@ like `'512MB'`. Similarly, with time you can use time units (e.g.,
 `'5ns'`). These will automatically be converted to a common
 representation, respectively.
 
-```
+```python
 system.mem_mode = 'timing'
 system.mem_ranges = [AddrRange('512MB')]
 ```
@@ -131,7 +244,7 @@ in a single clock cycle to execute, except memory requests, which flow
 through the memory system. To create the CPU you can simply just
 instantiate the object:
 
-```
+```python
 system.cpu = X86TimingSimpleCPU()
 ```
 
@@ -170,7 +283,7 @@ system.cpu.dcache_port = system.membus.cpu_side_ports
 > files. You can simply set the request port `=` to the response port
 > and they will be connected. For instance:
 >
-> ```
+> ```python
 > system.cpu.icache_port = system.l1_cache.cpu_side
 > ```
 >
@@ -185,7 +298,7 @@ system.cpu.dcache_port = system.membus.cpu_side_ports
 > configuration is that, it is allowed to have one port on one side, and an
 > array of ports on the other side. For example:
 >
-> ```
+> ```python
 > system.cpu.icache_port = system.membus.cpu_side_ports
 > ```
 >
@@ -195,7 +308,6 @@ system.cpu.dcache_port = system.membus.cpu_side_ports
 > connected to the request port.
 >
 > We will discuss ports and MemObject in more detail in the [MemObject chapter](http://www.gem5.org/documentation/learning_gem5/part2/memoryobject/).
-
 
 ---
 
@@ -323,7 +435,7 @@ one positional argument, the simulation script. So, we can simply run gem5
 from the root gem5 directory as:
 
 ```
-build/X86/gem5.opt configs/tutorial/part1/simple.py
+build/ALL/gem5.opt configs/tutorial/part1/simple.py
 ```
 
 The output should be:

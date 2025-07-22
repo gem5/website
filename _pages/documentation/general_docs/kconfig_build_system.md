@@ -6,8 +6,10 @@ parent: kconfig_build_system
 permalink: /documentation/general_docs/kconfig_build_system/
 ---
 
-This guide is intended for advanced users who need to build gem5 (>=23.1) with
-multiple ISAs or customize the build options, such as the Ruby memory protocol.
+<!-- Last updated 17 months ago, may be relatively up to date -->
+
+This guide is intended for advanced users who need to customize the build
+options, such as the Ruby memory protocol.
 Familiarity with the Kconfig system is required.
 
 ## Build gem5 with the Kconfig Build System

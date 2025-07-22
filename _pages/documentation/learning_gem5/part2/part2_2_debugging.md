@@ -30,7 +30,7 @@ following output. Note that this generates *a lot* of output to the
 console (about 7 MB).
 
 ```
-    build/X86/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50
+    build/ALL/gem5.opt --debug-flags=DRAM configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -91,7 +91,7 @@ flags shows details of how each instruction is executed by the simulated
 CPU.
 
 ```
-    build/X86/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
+    build/ALL/gem5.opt --debug-flags=Exec configs/learning_gem5/part1/simple.py | head -n 50
 ```
 
     gem5 Simulator System.  http://gem5.org
@@ -152,7 +152,7 @@ flags. You can see this, and all of the available debug flags, by
 running gem5 with the `--debug-help` parameter.
 
 ```
-    build/X86/gem5.opt --debug-help
+    build/ALL/gem5.opt --debug-help
 ```
 
     Base Flags:
@@ -239,8 +239,8 @@ Now, if you recompile gem5 and run it with the "HelloExample" debug flag, you
 get the following result.
 
 ```
-scons build/X86/gem5.opt
-build/X86/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
+scons build/ALL/gem5.opt
+build/ALL/gem5.opt --debug-flags=HelloExample configs/learning_gem5/part2/run_hello.py
 ```
 
     gem5 Simulator System.  http://gem5.org

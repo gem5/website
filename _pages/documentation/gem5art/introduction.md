@@ -6,6 +6,9 @@ parent: gem5art
 permalink: /documentation/gem5art/introduction
 ---
 
+<!-- Should a deprecation notice be added to this page?
+ -->
+
 # Zen and the art of gem5 experiments
 
 <img src="/assets/img/gem5art/gem5art.svg" alt="gem5art-logo" width="100%" style="max-width:300px;"/>

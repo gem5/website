@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/hello-world-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- The full code example at the bottom of the page works fine and 
+is up to date
+ -->
+
 ## Building a "Hello World" example with the gem5 standard library
 
 In this tutorial we will cover how to create a very basic simulation using gem5 components.
@@ -14,12 +18,14 @@ This simulation will setup a system consisting of a single-core processor, runni
 The system will run an X86 binary in syscall emulation (SE) mode.
 The binary will be obtained from gem5-resources and which will print a "Hello World!" string to stdout upon execution.
 
-To start we must compile gem5 to simulate the X86 ISA:
+To start we must compile the ALL build for gem5:
 
 ```sh
 # In the root of the gem5 directory
-scons build/X86/gem5.opt -j <number of threads>
+scons build/ALL/gem5.opt -j <number of threads>
 ```
+
+As of gem5 v24.1, the ALL build includes all Ruby protocols and all ISAs. If you are using a prebuilt gem5 binary, this step is not necessary.
 
 Then a new Python file should be created (we will refer to this as `hello-world.py` going forward).
 The first lines in this file should be the needed imports:
@@ -28,9 +34,10 @@ The first lines in this file should be the needed imports:
 from gem5.components.boards.simple_board import SimpleBoard
 from gem5.components.cachehierarchies.classic.no_cache import NoCache
 from gem5.components.memory.single_channel import SingleChannelDDR3_1600
-from gem5.components.processors.simple_processor import SimpleProcessor
 from gem5.components.processors.cpu_types import CPUTypes
-from gem5.resources.resource import Resource
+from gem5.components.processors.simple_processor import SimpleProcessor
+from gem5.isas import ISA
+from gem5.resources.resource import obtain_resource
 from gem5.simulate.simulator import Simulator
 ```
 
@@ -68,7 +75,7 @@ If not set, the `SingleChannelDDR3_1600` will default to 8 GiB.
 Then we consider the _processor_:
 
 ```python
-processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1)
+processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86)
 ```
 
 A processor in `gem5.components` is an object which contains a number of gem5 CPU cores, of a particular or varying type (`ATOMIC`, `TIMING`, `KVM`, `O3`, etc.).
@@ -95,11 +102,11 @@ Of course, in order to run a meaningful simulation, we must specify a workload f
 To do so we add the following lines:
 
 ```python
-binary = Resource("x86-hello64-static")
+binary = obtain_resource("x86-hello64-static")
 board.set_se_binary_workload(binary)
 ```
 
-The `Resource` class takes a string which specifies which resource, from [gem5-resources](/documentation/general_docs/gem5_resources), is to be obtained for the simulation.
+The `obtain_resource` function takes a string which specifies which resource, from [gem5-resources](/documentation/general_docs/gem5_resources), is to be obtained for the simulation.
 All the gem5 resources can be found on the [gem5 Resources website](https://resources.gem5.org).
 
 If the resource is not present on the host system it'll be automatically downloaded.
@@ -108,7 +115,7 @@ an x86, 64-bit, statically compiled binary which will print "Hello World!" to st
 After specifying the resource we set the workload via the board's `set_se_binary_workload` function.
 As the name suggests `set_se_binary_workload` is a function used to set a binary to be executed in Syscall Execution mode.
 
-<!-- It would be nice to describe here how to find out what resources are available -->
+You can see and search for available resources on the [gem5 resources website](https://resources.gem5.org/).
 
 This is all that is required to setup your simulation.
 From this you simply need to construct and run the `Simulator`:
@@ -118,26 +125,24 @@ simulator = Simulator(board=board)
 simulator.run()
 ```
 
-It should also be noted that **the `Simulator` module is still in a beta state, so its APIs may change upon the next release**.
-
 As a recap, your script should look like the following:
 
 ```python
 from gem5.components.boards.simple_board import SimpleBoard
 from gem5.components.cachehierarchies.classic.no_cache import NoCache
 from gem5.components.memory.single_channel import SingleChannelDDR3_1600
-from gem5.components.processors.simple_processor import SimpleProcessor
 from gem5.components.processors.cpu_types import CPUTypes
-from gem5.resources.resource import Resource
+from gem5.components.processors.simple_processor import SimpleProcessor
+from gem5.isas import ISA
+from gem5.resources.resource import obtain_resource
 from gem5.simulate.simulator import Simulator
-
 
 # Obtain the components.
 cache_hierarchy = NoCache()
 memory = SingleChannelDDR3_1600("1GiB")
-processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1)
+processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86)
 
-#Add them to the board.
+# Add them to the board.
 board = SimpleBoard(
     clk_freq="3GHz",
     processor=processor,
@@ -146,7 +151,7 @@ board = SimpleBoard(
 )
 
 # Set the workload.
-binary = Resource("x86-hello64-static")
+binary = obtain_resource("x86-hello64-static")
 board.set_se_binary_workload(binary)
 
 # Setup the Simulator and run the simulation.
@@ -157,22 +162,26 @@ simulator.run()
 It can then be executed with:
 
 ```sh
-./build/X86/gem5.opt hello-world.py
+./build/ALL/gem5.opt hello-world.py
+```
+
+If you are using a pre-built binary, you can execute the simulation with:
+
+```sh
+gem5 hello-world.py
 ```
 
 If setup correctly, the output will look something like:
 
-```
-...
-
-warn: The simulate package is still in a beta state. The gem5 project does not guarantee the APIs within this package will remain consistent across upcoming releases.
+```text
+info: Using default config
 Global frequency set at 1000000000000 ticks per second
-build/X86/mem/mem_interface.cc:791: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (1024 Mbytes)
-0: board.remote_gdb: listening for remote gdb on port 7000
-build/X86/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
-build/X86/sim/syscall_emul.hh:1014: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
-      Returning '/scr/bbruce/.cache/gem5/x86-hello64-static'
-build/X86/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (1024 Mbytes)
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+board.remote_gdb: Listening for connections on port 7005
+src/sim/simulate.cc:199: info: Entering event queue @ 0.  Starting simulation...
+src/sim/syscall_emul.hh:1117: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+src/sim/mem_state.cc:448: info: Increasing stack size by one page.
 Hello world!
 ```
 
@@ -180,7 +189,7 @@ It should be obvious from this point that a _board's_ parameters may be altered 
 For example, if we want to test a `TIMING` CPU setup we'd change our _processor_ to:
 
 ```python
-processor = SimpleProcessor(cpu_type=CPUTypes.TIMING, num_cores=1)
+processor = SimpleProcessor(cpu_type=CPUTypes.TIMING, num_cores=1, isa=ISA.X86)
 ```
 
 This is all that is required.
@@ -190,14 +199,14 @@ As another example, consider swapping out a component for another.
 In this design we decided on `NoCache` but we could use another classic cache hierarchy, such as `PrivateL1CacheHierarchy`.
 To do so we'd change our `cache_hierarchy` parameter:
 
-```
+```python
 # We import the cache hierarchy we want.
 from gem5.components.cachehierarchies.classic.private_l1_cache_hierarchy import PrivateL1CacheHierarchy
 
 ...
 
 # Then set it.
-cache_hierarchy = PrivateL1CacheHierarchy(l1d_size="32kB", l1i_size="32kB")
+cache_hierarchy = PrivateL1CacheHierarchy(l1d_size="32KiB", l1i_size="32KiB")
 ```
 
 Note here that `PrivateL1CacheHierarchy` requires the user to specify the L1 data and instruction cache sizes to be constructed.

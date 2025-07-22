@@ -234,7 +234,7 @@ The below example assumes you are using the x86 ISA, but nothing in our
 object requires an ISA so, this will work with any of gem5's ISAs.
 
 ```
-scons build/X86/gem5.opt
+scons build/ALL/gem5.opt
 ```
 
 Step 5: Create the config scripts to use your new SimObject

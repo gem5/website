@@ -7,6 +7,9 @@ permalink: /documentation/general_docs/ruby/MESI_Two_Level/
 author: Jason Lowe-Power
 ---
 
+<!-- Documentation was written 6 years ago, Hoa fixed typos 2 years ago.
+Might be reasonably up to date if protocol hasn't changed. -->
+
 # MESI Two Level
 
 ### **Protocol Overview**

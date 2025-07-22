@@ -7,6 +7,8 @@ author: Giacomo Travaglini
 * TOC
 {:toc}
 
+<!-- This document is fairly out of date; we should mention obtain_resource and the gem5 Resources website -->
+
 We provide a set of useful prebuilt binaries users can download (in case they don't want to
 recompile them from scratch).
 

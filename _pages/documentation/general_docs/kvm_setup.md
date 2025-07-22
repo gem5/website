@@ -5,6 +5,8 @@ permalink: /documentation/general_docs/using_kvm/
 author: Mahyar Samani and Bobby R. Bruce
 ---
 
+<!-- Last updated 11 months ago, may be relatively up to date -->
+
 Kernel-based Virtual Machine (KVM) is a Linux kernel module allowing creating a virtual machine managed by the kernel.
 On recent x86 and ARM processors, KVM supports hardware-assisted virtualization, enabling running the virtual machine at close to native speed.
 gem5's `KVMCPU` enables this feature in gem5, with the trade-offs being architectual statistics are not being recorded by gem5.
@@ -62,12 +64,19 @@ Now if you run the `groups` command below you should see `kvm` and `libvirt`.
 
 ## Proving KVM is working
 
-The "configs/example/gem5_library/x86-ubuntu-run.py" file is a gem5 configuration that will create a simulation which boots a Ubuntu 18.04 image using KVM.
+The "configs/example/gem5_library/x86-ubuntu-run-with-kvm.py" file is a gem5 configuration that will create a simulation which boots a Ubuntu 24.04 image using KVM.
 It can be executed with the following:
 
 ```console
-scons build/X86/gem5.opt -j`nproc`
-./build/X86/gem5.opt configs/example/gem5_library/x86-ubuntu-run-with-kvm.py
+scons build/ALL/gem5.opt -j`nproc`
+./build/ALL/gem5.opt configs/example/gem5_library/x86-ubuntu-run-with-kvm.py
+```
+
+If you are using a pre-built gem5 binary, use the following command:
+
+```console
+gem5 configs/example/gem5_library/x86-ubuntu-run-with-kvm.py
+
 ```
 
 If the simulation runs successfully, you have successfully installed KVM and can use it with gem5.

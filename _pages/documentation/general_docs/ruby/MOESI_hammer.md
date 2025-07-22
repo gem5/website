@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/ruby/MOESI_hammer/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated 6 yeaars ago, could still be reasonably up to date if the protocol hasn't changed-->
+
 # MOESI Hammer
 
 This is an implementation of AMD's Hammer protocol, which is used in
@@ -17,7 +19,7 @@ directory mode.
 
 ### Related Files
 
-  - **src/mem/protocols**
+  - **src/mem/ruby/protocol**
       - **MOESI_hammer-cache.sm**: cache controller specification
       - **MOESI_hammer-dir.sm**: directory controller specification
       - **MOESI_hammer-dma.sm**: dma controller specification

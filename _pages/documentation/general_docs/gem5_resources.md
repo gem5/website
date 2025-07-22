@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/gem5_resources/
 authors: Bobby R. Bruce, Kunal Pai, Parth Shah
 ---
 
+<!-- There are a few updates that need to be made to this page -->
+
 # gem5 Resources
 
 gem5 Resources is a repository providing sources for artifacts known and
@@ -32,6 +34,7 @@ release of gem5.
 
 To find a specific resource with the gem5 Resources, we recommend using the [gem5 Resources Website](https://resources.gem5.org). Detailed information on how searching, filtering and sorting works on this website is on this [help page](https://resources.gem5.org/help).
 
+<!-- Should update this section to Azure-->
 The gem5 Resources are hosted on our Google Cloud Bucket. Links to the
 resources can be found [gem5 resources README.md file](
 https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/README.md).
@@ -62,8 +65,10 @@ The `obtain_resource` function accepts the following parameters:
 
 When you find the Workload that you want to use in your simulation, navigate to the 'Usage' tab of that Workload.
 
+<!-- Might want to update to RISCV Ubuntu 22.04 or Ubuntu 24.04 -->
 For the purpose of this tutorial, let's assume that the Workload you are looking for is `riscv-ubuntu-20.04-boot`, found [here](https://resources.gem5.org/resources/riscv-ubuntu-20.04-boot). In the ['Usage'](https://resources.gem5.org/resources/riscv-ubuntu-20.04-boot/usage) tab of this Workload, you will find the code that can be pasted in a gem5 simulation to use this Workload.
 
+<!-- This should probably be converted to obtain_resource and/or board.set_workload(obtain_resource(...)) -->
 In this case, the code is `Workload("riscv-ubuntu-20.04-boot")`.
 
 To use the `Workload` class, you require the following import statement:
@@ -81,6 +86,7 @@ The `Workload` class accepts the following parameters:
 
 ## Using a Custom Resource in gem5
 
+<!-- Do we still support MongoDB Atlas? -->
 To use a Custom Resource in gem5, we recommend using one of the supported data sources formats in gem5. Currently, we support MongoDB Atlas, local JSON files and remote JSON files.
 
 You can use your own config file by overriding the `GEM5_DEFAULT_CONFIG` variable while running a file.
@@ -103,6 +109,7 @@ The HEAD of the `stable` branch will point towards a set of resource sources
 compatible with the latest release of gem5 (which can be obtained via
 `git clone https://github.com/gem5/gem5.git`).
 
+<!-- The links below + the content of the pages at the links may need to be updated -->
 Please consult the [README.md](
 https://gem5.googlesource.com/public/gem5-resources/+/refs/heads/stable/README.md)
 file for information on compiling individual gem5 resources. Where license
@@ -215,6 +222,7 @@ We strongly advise contributors follow our [Style Guide](
 /documentation/general_docs/development/coding_style/) where
 possible and appropriate.
 
+<!-- Remove reference to Gerrit -->
 Any change will then be reviewed via our [Gerrit code review system](
 https://gem5-review.googlesource.com). Once fully accepted and merged into
 the gem5 resources repository, please contact Bobby R. Bruce

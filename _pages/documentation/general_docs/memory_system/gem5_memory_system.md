@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/gem5_memory_system/
 author: Djordje Kovacevi
 ---
 
+<!-- The Doxygen links on this page are broken; could be due to the v25.0 release -->
+
 # The gem5 Memory System
 
 The document describes memory subsystem in gem5 with focus on program flow
@@ -17,6 +19,8 @@ during CPU’s simple memory transactions (read or write).
 Model that is used in this document consists of two out-of-order (O3) ARM v7
 CPUs with corresponding L1 data caches and Simple Memory. It is created by
 running gem5 with the following parameters:
+
+<!-- Uses fs.py -->
 
 ```
 configs/example/fs.py –-caches –-cpu-type=arm_detailed –-num-cpus=2

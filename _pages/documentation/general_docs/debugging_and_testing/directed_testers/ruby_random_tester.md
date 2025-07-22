@@ -7,6 +7,9 @@ permalink: /documentation/general_docs/debugging_and_testing/directed_testers/ru
 author: Bobby R. Bruce
 ---
 
+<!-- Originally written 6 years ago; hasn't been significantly updated
+since. -->
+
 # Ruby Random Tester
 
 A cache coherence protocol usually has several different types of state
@@ -20,9 +23,11 @@ tester are present in the directory `src/cpu/testers/rubytest`. The file
 of the test. For example, the following command can be used for testing a
 protocol:
 
+```bash
+./build/NULL/gem5.fast ./configs/example/ruby_random_test.py
 ```
-./build/X86/gem5.fast ./configs/example/ruby_random_test.py
-```
+
+Note: As of gem5 v24.1, the above command will not work if the ALL build is used.
 
 Though one can specify many different options to the random tester, some of
 them are note worthy.
@@ -34,7 +39,6 @@ them are note worthy.
 |`-m`, `--maxtick` |Number of cycles to simulate.                                     |
 |`-l`, `--checks`  |Number of loads to be performed.                                  |
 |`--random_seed`   |Seed for initialization of the random number generator.           |
-
 
 Testing a coherence protocol with the random tester is a tedious task and
 requires patience. First, build gem5 with the protocol to be tested. Then, run

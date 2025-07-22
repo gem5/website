@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/indexing_policies/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated 5-6 years ago; I don't know enough to say if it's out of date at this point -->
+
 # Indexing Policies
 
 Indexing policies determine the locations to which a block is mapped

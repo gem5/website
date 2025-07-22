@@ -6,6 +6,9 @@ parent: architecture_support
 permalink: documentation/general_docs/architecture_support/x86_microop_isa/
 ---
 
+<!-- This page was last updated 6 years ago, though there's a chance that it 
+could still have accurate information -->
+
 # Register Ops
 These microops typically take two sources and produce one result. Most have a version that operates on only registers and a version which operates on registers and an immediate value. Some optionally set flags according to their operation. Some of them can be predicated. 
 

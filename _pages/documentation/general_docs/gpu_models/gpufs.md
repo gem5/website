@@ -6,6 +6,8 @@ parent: gpu_models
 permalink: /documentation/general_docs/gpu_models/gpufs
 ---
 
+<!-- Updated 10 months ago; probably up to date -->
+
 # **Full System AMD GPU model**
 
 The Full System AMD GPU model simulates a GPU at the "gfx9" ISA level, as opposed to the intermediate language level. This page will give you a general overview of how to use this model, the software stack the model uses, and provide resources that detail the model and how it is implemented. **It is recommended to use Full System instead of System Emulation as Full System supports the latest versions of the GPU software stack.**

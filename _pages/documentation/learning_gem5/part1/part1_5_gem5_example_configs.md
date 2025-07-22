@@ -7,8 +7,42 @@ permalink: /documentation/learning_gem5/part1/example_configs/
 author: Jason Lowe-Power
 ---
 
+gem5 v24.1: Using the gem5 standard library configuration scripts
+=================================================================
 
-Using the default configuration scripts
+The introduction of the gem5 standard library has changed the way
+that gem5 configuration scripts are written. Many of the older
+configuration scripts mentioned in the gem5 v21.0 section below are
+now deprecated in favor of configuration scripts for the gem5 standard
+library, located at `configs/example/gem5_library`.
+
+A brief look at the directory structure is as follows:
+
+```txt
+gem5_library
+    |
+    |- caches       #contains a configuration script for the octopi cache
+    |
+    |- checkpoints  #scripts for taking and restoring from checkpoints
+    |
+    |- dramsys      #scripts for using gem5 with dramsys
+    |
+    |- looppoints   #scripts for taking and restoring from looppoints
+    |
+    |- multisim     #scripts for launching multiple simulations at once using multisim
+    |
+    |- spatter_gen  #scripts for SpatterGen
+    |
+    |- (various example configuration scripts not sorted into a subdirectory)
+
+```
+
+The example configuration scripts placed directly in the gem5_library directory
+are similar to what you've seen in previous parts of Learning gem5, but with more
+variety, e.g. different ISAs, boards, and workloads. The source for these scripts
+can be viewed [here](https://github.com/gem5/gem5/tree/stable/configs/example/gem5_library).
+
+gem5 v21.0: Using the default configuration scripts
 =======================================
 
 In this chapter, we'll explore using the default configuration scripts

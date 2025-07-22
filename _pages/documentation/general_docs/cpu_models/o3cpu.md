@@ -6,6 +6,8 @@ parent: cpu_models
 permalink: /documentation//general_docs/cpu_models/O3CPU
 ---
 
+<!-- This page was last updated 5 years ago. It might be out of date at this point -->
+
 # **O3CPU**
 
 Table of Contents
@@ -16,7 +18,7 @@ Table of Contents
  4. [ISA independence](##ISA-independence)
  5. [Interaction with ThreadContext](##Interaction-with-ThreadContext**)
 
-The O3CPU is our new detailed model for the v2.0 release. It is an out of order CPU model loosely based on the Alpha 21264. This page will give you a general overview of the O3CPU model, the pipeline stages and the pipeline resources. We have made efforts to keep the code well documented, so please browse the code for exact details on how each part of the O3CPU works.
+The O3CPU is <!--our new detailed model for the v2.0 release. It is--> an out of order CPU model loosely based on the Alpha 21264. This page will give you a general overview of the O3CPU model, the pipeline stages and the pipeline resources. <!--We have made efforts to keep the code well documented, so please browse the code for exact details on how each part of the O3CPU works.-->
 
 
 ## **Pipeline stages**

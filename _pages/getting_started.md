@@ -32,7 +32,7 @@ The [building gem5](/documentation/general_docs/building) provides more details 
 
 ```
 cd gem5
-scons build/X86/gem5.opt -j <NUMBER OF CPUs ON YOUR PLATFORM>
+scons build/ALL/gem5.opt -j <NUMBER OF CPUs ON YOUR PLATFORM>
 ```
 
 Now that you have a gem5 binary, you can run your first simulation!
@@ -42,7 +42,7 @@ In this example, the script creates a *very* simple system and executes a "hello
 More information about the script can be found in the [Simple Config chapter](/documentation/learning_gem5/part1/simple_config) of the [Learning gem5](/documentation/learning_gem5/introduction) book.
 
 ```
-build/X86/gem5.opt configs/learning_gem5/part1/simple.py
+build/ALL/gem5.opt configs/learning_gem5/part1/simple.py
 ```
 
 After running this command, you'll see gem5's output as well as `Hello world`, which comes from the hello world binary!

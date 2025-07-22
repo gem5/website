@@ -7,6 +7,9 @@ permalink: /documentation/general_docs/ruby/MOESI_CMP_directory/
 author: Jason Lowe-Power
 ---
 
+<!-- This page hasn't been updated in 5 years. It still has a TODO.
+It could still be up to date if the protocol hasn't changed -->
+
 # MOESI CMP Directory
 
 ### Protocol Overview
@@ -22,7 +25,7 @@ author: Jason Lowe-Power
 
 ### Related Files
 
-  - **src/mem/protocols**
+  - **src/mem/ruby/protocol**
       - **MOESI_CMP_directory-L1cache.sm**: L1 cache controller
         specification
       - **MOESI_CMP_directory-L2cache.sm**: L2 cache controller

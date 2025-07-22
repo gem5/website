@@ -9,7 +9,14 @@ author: Jason Lowe-Power
 
 # gem5 Documentation
 
+## gem5 Bootcamp 2024
+
+As of gem5 v24.0, the most comprehensive, up to date guide for learning how to use gem5 is the
+material from the [summer 2024 gem5 bootcamp](https://bootcamp.gem5.org/).
+
 ## Learning gem5
+
+**Notice: Many parts of Learning gem5 are outdated. Some sections of Learning gem5 have been updated for gem5 v24.1 based on content from the 2024 gem5 bootcamp, but others have not. Proceed with caution!**
 
 [Learning gem5](learning_gem5/introduction/) gives a prose-heavy introduction to using gem5 for computer architecture research written by Jason Lowe-Power.
 This is a great resource for junior researchers who plan on using gem5 heavily for a research project.
@@ -31,7 +38,7 @@ Please contact Jason (jason@lowepower.com) or create a PR if you find any errors
 [gem5 101](learning_gem5/gem5_101) is a set of assignments mostly from Wisconsin's graduate computer architecture classes (CS 752, CS 757, and CS 758) which will help you learn to use gem5 for research.
 
 ## gem5 API documentation
-
+<!-- Doxygen link may be broken, but it may also be a side effect of the gme5 v25.0 release -->
 You can find the doxygen-based documentation here: <http://doxygen.gem5.org/release/current/index.html>
 
 ## Other general gem5 documentation

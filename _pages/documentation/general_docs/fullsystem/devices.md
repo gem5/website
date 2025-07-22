@@ -6,6 +6,8 @@ doc: gem5 documentation
 permalink: documentation/general_docs/fullsystem/devices
 ---
 
+<!-- This document was last updated 6 years ago; most likely out of date -->
+
 # Devices in full system mode
 
 ## I/O Device Base Classes

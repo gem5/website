@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/ruby/MOESI_CMP_token/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated 6 years ago; could still be reasonably up to date if the protocol hasn't changed -->
+
 # MOESI CMP token
 
 ### Protocol Overview
@@ -23,7 +25,7 @@ author: Jason Lowe-Power
 
 ### Related Files
 
-  - **src/mem/protocols**
+  - **src/mem/ruby/protocol**
       - **MOESI_CMP_token-L1cache.sm**: L1 cache controller
         specification
       - **MOESI_CMP_token-L2cache.sm**: L2 cache controller

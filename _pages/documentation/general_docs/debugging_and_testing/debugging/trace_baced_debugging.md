@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/debugging_and_testing/debugging/trace_bas
 author: Bobby R. Bruce
 ---
 
+<!-- This document was last updated 4-6 years ago. It may be out of date in places -->
+
 # Trace-based Debugging
 
 ## Introduction
@@ -17,6 +19,8 @@ describing potentially interesting events. Each DPRINTF is associated with a
 debug flag (e.g., `Bus`, `Cache`, `Ethernet`, `Disk`, etc.). To turn on the
 messages for a particular flag, use the `--debug-flags` command line argument.
 Multiple flags can be specified by giving a list of strings, e.g.:
+
+<!-- example uses fs.py -->
 
 ```
 build/<ISA>/gem5.opt --debug-flags=Bus,Cache configs/examples/fs.py
@@ -77,7 +81,7 @@ ExecSymbol flag (e.g., `--debug-flags=Exec,-ExecSymbol`).
 
 If some supposedly innocuous change has caused gem5 to stop working correctly,
 you can compare trace outputs from before and after the change using the
-tracediff script in the `src/util` directory. Comments in the script describe
+tracediff script in the `util` directory. Comments in the script describe
 how to use it.
 
 ### Reducing trace file size
@@ -405,6 +409,8 @@ an emulator like qemu. That's likely a little slower and compares execution
 against the emulator and not real hardware, but it can still help identify
 bugs.
 
+
+<!-- Is this section still accurate? -->
 ### ISA support
 
 Currently `SPARC`, `ARM`, and `x86` support state. ARM's support is currently

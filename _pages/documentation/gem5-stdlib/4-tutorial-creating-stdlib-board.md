@@ -7,10 +7,16 @@ permalink: /documentation/gem5-stdlib/develop-stdlib-board
 author: Jasjeet Rangi, Kunal Pai
 ---
 
+<!-- I tested the completed board and config at the bottom of the script.
+The simulation runs successfully, but there's a warning that `riscv-hello`
+isn't compatible with gem5 v25.0. It looks like the resource on the resources
+website just needs to be updated to say that riscv-hello can also be used with
+v25.0
+ -->
+
 ## How to Create Your Own Board Using the gem5 Standard Library
 
-In this tutorial we will cover how to create a custom  board using the gem5 Standard Library.
-
+In this tutorial we will cover how to create a custom board using the gem5 Standard Library.
 
 This tutorial is based on the process used to make the _RiscvMatched_, a RISC-V prebuilt board that inherits from `MinorCPU`. This board can be found at `src/python/gem5/prebuilt/riscvmatched`.
 
@@ -21,18 +27,28 @@ Likewise, this tutorial will utilize the UniqueCacheHierarchy made in the [Devel
 First, we start by importing the components and stdlib features we require.
 
 ``` python
-from gem5.components.cachehierarchies.classic.unique_cache_hierarchy import UniqueCacheHierarchy
-from gem5.components.boards.abstract_system_board import AbstractSystemBoard
-from gem5.components.processors.base_cpu_processor import BaseCPUProcessor
-from gem5.components.processors.base_cpu_core import BaseCPUCore
-from gem5.components.boards.se_binary_workload import SEBinaryWorkload
-from gem5.components.memory import SingleChannelDDR4_2400
-from gem5.utils.override import overrides
-from gem5.isas import ISA
 from typing import List
-from m5.objects import AddrRange, IOXBar, Port
-from m5.objects import BaseMMU, Port, BaseCPU, Process
+
+from m5.objects import (
+    AddrRange,
+    BaseCPU,
+    BaseMMU,
+    IOXBar,
+    Port,
+    Process,
+)
 from m5.objects.RiscvCPU import RiscvMinorCPU
+
+from gem5.components.boards.abstract_system_board import AbstractSystemBoard
+from gem5.components.boards.se_binary_workload import SEBinaryWorkload
+from gem5.components.cachehierarchies.classic.unique_cache_hierarchy import (
+    UniqueCacheHierarchy,
+)
+from gem5.components.memory import SingleChannelDDR4_2400
+from gem5.components.processors.base_cpu_core import BaseCPUCore
+from gem5.components.processors.base_cpu_processor import BaseCPUProcessor
+from gem5.isas import ISA
+from gem5.utils.override import overrides
 ```
 
 We will begin development by creating a specialized CPU core for our board which inherits from an ISA-specific version of the chosen CPU.
@@ -40,7 +56,6 @@ Since our ISA is RISC-V and the CPU type we desire is a MinorCPU, we will inheri
 This is done so that we can set our own parameters to tailor the CPU it to our requirements.
 In our example will override a single parameter:  `decodeToExecuteForwardDelay` (the default is 1).
 We have called this new CPU core type `UniqueCPU`.
-
 
 ``` python
 class UniqueCPU(RiscvMinorCPU):
@@ -52,10 +67,10 @@ The `BaseCPUCore` takes the `BaseCPU` as an argument during construction.
 Ergo, we can do the following:
 
 ```python
-core = BaseCPUCore(core = UniqueCPU(core_id=0))
+core = BaseCPUCore(core=UniqueCPU(), isa=ISA.RISCV)
 ```
 
-**Note**: `BaseCPU` objects require a unique `core_id` to be specified upon construction.
+<!-- **Note**: `BaseCPU` objects require a unique `core_id` to be specified upon construction. -->
 
 Next we must define our processor.
 In the gem5 Standard Library a processor is a collection of cores.
@@ -64,7 +79,7 @@ The `BaseCPUProcessor` requires a list of `BaseCPUCore`s.
 Therefore:
 
 ```python
-processor = BaseCPUProcessor(cores = [core])
+processor = BaseCPUProcessor(cores=[core])
 ```
 
 Next we focus on the construction of the board to host our components.
@@ -84,8 +99,8 @@ class UniqueBoard(AbstractSystemBoard, SEBinaryWorkload):
         self,
         clk_freq: str,
     ) -> None:
-        core = BaseCPUCore(core = UniqueCPU(core_id=0))
-        processor = BaseCPUProcessor(cores = [core])
+        core = BaseCPUCore(core=UniqueCPU(), isa=ISA.RISCV)
+        processor = BaseCPUProcessor(cores=[core])
         memory = SingleChannelDDR4_2400("2GiB")
         cache_hierarchy = UniqueCacheHierarchy()
         super().__init__(
@@ -113,8 +128,8 @@ class UniqueBoard(AbstractSystemBoard, SEBinaryWorkload):
         self,
         clk_freq: str,
     ) -> None:
-        core = BaseCPUCore(core = UniqueCPU(core_id=0))
-        processor = BaseCPUProcessor(cores = [core])
+        core = BaseCPUCore(core=UniqueCPU(), isa=ISA.RISCV)
+        processor = BaseCPUProcessor(cores=[core])
         memory = SingleChannelDDR4_2400("2GiB")
         cache_hierarchy = UniqueCacheHierarchy()
         super().__init__(
@@ -168,19 +183,111 @@ class UniqueBoard(AbstractSystemBoard, SEBinaryWorkload):
         memory.set_memory_range(self.mem_ranges)
 ```
 
-
 This concludes the creation of your custom board for the gem5 standard library.
+The completed board is as follows:
+
+```python
+from typing import List
+
+from m5.objects import (
+    AddrRange,
+    BaseCPU,
+    BaseMMU,
+    IOXBar,
+    Port,
+    Process,
+)
+from m5.objects.RiscvCPU import RiscvMinorCPU
+
+from gem5.components.boards.abstract_system_board import AbstractSystemBoard
+from gem5.components.boards.se_binary_workload import SEBinaryWorkload
+from gem5.components.cachehierarchies.classic.unique_cache_hierarchy import (
+    UniqueCacheHierarchy,
+)
+from gem5.components.memory import SingleChannelDDR4_2400
+from gem5.components.processors.base_cpu_core import BaseCPUCore
+from gem5.components.processors.base_cpu_processor import BaseCPUProcessor
+from gem5.isas import ISA
+from gem5.utils.override import overrides
+
+
+class UniqueCPU(RiscvMinorCPU):
+    decodeToExecuteForwardDelay = 2
+
+
+class UniqueBoard(AbstractSystemBoard, SEBinaryWorkload):
+    def __init__(
+        self,
+        clk_freq: str,
+    ) -> None:
+        core = BaseCPUCore(core=UniqueCPU(), isa=ISA.RISCV)
+        processor = BaseCPUProcessor(cores=[core])
+        memory = SingleChannelDDR4_2400("2GiB")
+        cache_hierarchy = UniqueCacheHierarchy()
+        super().__init__(
+            clk_freq=clk_freq,
+            processor=processor,
+            memory=memory,
+            cache_hierarchy=cache_hierarchy,
+        )
+
+    @overrides(AbstractSystemBoard)
+    def _setup_board(self) -> None:
+        pass
+
+    @overrides(AbstractSystemBoard)
+    def has_io_bus(self) -> bool:
+        return False
+
+    @overrides(AbstractSystemBoard)
+    def get_io_bus(self) -> IOXBar:
+        raise NotImplementedError(
+            "UniqueBoard does not have an IO Bus. "
+            "Use `has_io_bus()` to check this."
+        )
+
+    @overrides(AbstractSystemBoard)
+    def has_dma_ports(self) -> bool:
+        return False
+
+    @overrides(AbstractSystemBoard)
+    def get_dma_ports(self) -> List[Port]:
+        raise NotImplementedError(
+            "UniqueBoard does not have DMA Ports. "
+            "Use `has_dma_ports()` to check this."
+        )
+
+    @overrides(AbstractSystemBoard)
+    def has_coherent_io(self) -> bool:
+        return False
+
+    @overrides(AbstractSystemBoard)
+    def get_mem_side_coherent_io_port(self) -> Port:
+        raise NotImplementedError(
+            "UniqueBoard does not have any I/O ports. Use has_coherent_io to "
+            "check this."
+        )
+
+    @overrides(AbstractSystemBoard)
+    def _setup_memory_ranges(self) -> None:
+        memory = self.get_memory()
+        self.mem_ranges = [AddrRange(memory.get_size())]
+        memory.set_memory_range(self.mem_ranges)
+
+```
+
 From this you can create a runscript and test your board:
 
 ``` python
-from .unqiue_board import UniqueBoard
-from gem5.resources.resource import Resource
+from unique_board import UniqueBoard
+
+from gem5.resources.resource import obtain_resource
 from gem5.simulate.simulator import Simulator
 
 board = UniqueBoard(clk_freq="1.2GHz")
 
-#As we are using the RISCV ISA, "riscv-hello" should work.
-board.set_se_binary_workload(Resource("riscv-hello"))
+# As we are using the RISCV ISA, "riscv-hello" should work.
+board.set_se_binary_workload(obtain_resource("riscv-hello"))
 
 simulator = Simulator(board=board)
 simulator.run()

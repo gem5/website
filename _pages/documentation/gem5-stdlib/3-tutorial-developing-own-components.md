@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/develop-own-components-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- I tested the completed unique cache hierarchy at the bottom of this page
+by adding it to stdlib and using it as a component in a hello world simulation.
+ -->
+
 ## Developing your own gem5 standard library components
 
 ![gem5 component library design](/assets/img/stdlib/gem5-components-design.png)
@@ -28,10 +32,15 @@ To begin, we should create a new Python class which inherits from the `AbstractC
 In this example we will call this `UniqueCacheHierarchy`, contained within a file `unique_cache_hierarchy.py`:
 
 ```python
-from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import AbstractClassicCacheHierarchy
-from gem5.components.boards.abstract_board import AbstractBoard
+from m5.objects import (
+    Port,
+)
 
-from m5.objects import Port
+from gem5.components.boards.abstract_board import AbstractBoard
+from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import (
+    AbstractClassicCacheHierarchy,
+)
+
 
 class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
 
@@ -66,16 +75,23 @@ This has actually already been implemented in the gem5 stdlib as the [PrivateL1C
 First we start by implementing the `get_mem_side_port` and `get_cpu_side_port` functions:
 
 ```python
-from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import AbstractClassicCacheHierarchy
-from gem5.components.boards.abstract_board import AbstractBoard
+from m5.objects import (
+    BadAddr,
+    Port,
+    SystemXBar,
+)
 
-from m5.objects import Port, SystemXBar, BadAddr
+from gem5.components.boards.abstract_board import AbstractBoard
+from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import (
+    AbstractClassicCacheHierarchy,
+)
+
 
 class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
 
     def __init__(self) -> None:
         AbstractClassicCacheHierarchy.__init__(self=self)
-        self.membus =  SystemXBar(width=64)
+        self.membus = SystemXBar(width=64)
         self.membus.badaddr_responder = BadAddr()
         self.membus.default = self.membus.badaddr_responder.pio
 
@@ -94,19 +110,27 @@ Here we have used a simple memory bus.
 Next, we implement the `incorporate_cache` function:
 
 ```python
-from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import AbstractClassicCacheHierarchy
+from m5.objects import (
+    BadAddr,
+    Cache,
+    Port,
+    SystemXBar,
+)
+
+from gem5.components.boards.abstract_board import AbstractBoard
+from gem5.components.cachehierarchies.classic.abstract_classic_cache_hierarchy import (
+    AbstractClassicCacheHierarchy,
+)
 from gem5.components.cachehierarchies.classic.caches.l1dcache import L1DCache
 from gem5.components.cachehierarchies.classic.caches.l1icache import L1ICache
 from gem5.components.cachehierarchies.classic.caches.mmu_cache import MMUCache
-from gem5.components.boards.abstract_board import AbstractBoard
 
-from m5.objects import Port, SystemXBar, BadAddr, Cache
 
 class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
 
     def __init__(self) -> None:
         AbstractClassicCacheHierarchy.__init__(self=self)
-        self.membus =  SystemXBar(width=64)
+        self.membus = SystemXBar(width=64)
         self.membus.badaddr_responder = BadAddr()
         self.membus.default = self.membus.badaddr_responder.pio
 
@@ -134,11 +158,13 @@ class UniqueCacheHierarchy(AbstractClassicCacheHierarchy):
         ]
         # ITLB Page walk caches
         self.iptw_caches = [
-            MMUCache(size="8KiB") for _ in range(board.get_processor().get_num_cores())
+            MMUCache(size="8KiB")
+            for _ in range(board.get_processor().get_num_cores())
         ]
         # DTLB Page walk caches
         self.dptw_caches = [
-            MMUCache(size="8KiB") for _ in range(board.get_processor().get_num_cores())
+            MMUCache(size="8KiB")
+            for _ in range(board.get_processor().get_num_cores())
         ]
 
         if board.has_coherent_io():
@@ -194,7 +220,7 @@ Before contributing your component, you will need to move it into the `src/` dir
 The gem5 standard library code resides in `src/python/gem5`.
 The basic directory structure is as follows:
 
-```
+```txt
 gem5/
     components/                 # All the components to build the system to simulate.
         boards/                 # The boards, typically broken down by ISA target.
@@ -216,7 +242,7 @@ We recommend putting the `unique_cache_hierarchy.py` in `src/python/gem5/compone
 
 From then you need to add the following line to `src/python/SConscript`:
 
-```
+```scons
 PySource('gem5.components.cachehierarchies.classic',
     'gem5/components/cachehierarchies/classic/unique_cache_hierarchy.py')
 ```
@@ -251,7 +277,7 @@ Please look over other source code in the stdlib to see how this is typically do
 For example, it will not reduce string lengths.
 You may have to manually reduce the length of some lines.
 
-Code will be reviewed via our [Gerrit code review system](https://gem5-review.googlesource.com/) like all other contributions.
+Code will be reviewed via [GitHub](https://github.com/gem5/gem5) like all other contributions.
 We would, however, emphasize that we will not accept patches to the library for simply being functional and tested;
 we require some persuasion that the contribution improves the library and benefits the community.
 For example, niche components may not be incorporated if they are seen to be low utility while increasing the library's maintenance overhead.

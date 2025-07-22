@@ -7,7 +7,8 @@ permalink: /documentation/general_docs/architecture_support/
 ---
 
 # Architecture Support
-
+<!-- This page already has an "outdated notice". The last time it was updated
+seems to be 6 years ago. Should it just be removed at this point? -->
 {: .outdated-notice}
 The information and hyperlinks in this page may not be accurate.
 

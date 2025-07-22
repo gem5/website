@@ -6,6 +6,8 @@ parent: fullsystem
 permalink: /documentation/general_docs/fullsystem/building_android_m
 ---
 
+<!-- This documentation was last updated 5 years ago. Would it still work with/be relevant to any of the more recent gem5 versions?  -->
+
 # Building Android Marshmallow
 
 This guide gives detailed step-by-step instructions on building an Android Marshmallow image along with a working kernel and .dtb file that work with gem5.

@@ -6,6 +6,11 @@ parent: ruby
 permalink: /documentation/general_docs/ruby/MI_example/
 author: Jason Lowe-Power
 ---
+ 
+<!-- This page hasn't been updated in 6 years, but could still be up to date 
+if protocol hasn't changed
+-->
+
 
 # MI Example
 
@@ -25,7 +30,7 @@ author: Jason Lowe-Power
 
 ### Related Files
 
-  - **src/mem/protocols**
+  - **src/mem/ruby/protocol**
       - **MI_example-cache.sm**: cache controller specification
       - **MI_example-dir.sm**: directory controller specification
       - **MI_example-dma.sm**: dma controller specification

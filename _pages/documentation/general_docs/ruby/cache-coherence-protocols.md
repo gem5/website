@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/ruby/cache-coherence-protocols/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated 6 years ago. Still a few TODO items. I don't know enough to say if it's out of date at this point -->
+
 # Cache Coherence Protocols
 
 ## Common Notations and Data Structures
