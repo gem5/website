@@ -6,6 +6,10 @@ parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/visualization/
 ---
 
+<!-- This page was last updated 6 years ago, but I don't know if there have been
+any updates to this feature that would cause this documentation to fall out of date.
+ -->
+
 # Visualization
 This page contains information about different types of information visualization that is integrated or can be used with gem5.
 

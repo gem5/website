@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/develop-own-components-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- I tested the completed unique cache hierarchy at the bottom of this page
+by adding it to stdlib and using it as a component in a hello world simulation.
+ -->
+
 ## Developing your own gem5 standard library components
 
 ![gem5 component library design](/assets/img/stdlib/gem5-components-design.png)

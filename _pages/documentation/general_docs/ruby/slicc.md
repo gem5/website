@@ -7,6 +7,11 @@ permalink: /documentation/general_docs/ruby/slicc/
 author: Jason Lowe-Power
 ---
 
+
+<!-- Last updated 6 years ago. I don't know enough to say whether it is out
+of date or not
+ -->
+
 # SLICC
 
 SLICC is a domain specific language for specifying cache coherence

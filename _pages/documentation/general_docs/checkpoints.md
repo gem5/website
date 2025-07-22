@@ -6,11 +6,15 @@ parent: checkpoints
 permalink: /documentation/general_docs/checkpoints/
 ---
 
+<!-- This document was last (substantially) updated 6 years ago; should be updated at this point -->
+
 # Checkpoints
 
 Checkpoints are essentially snapshots of a simulation. You would want to use a checkpoint when your simulation takes an extremely long time (which is almost always the case) so you can resume from that checkpoint at a later time with the DerivO3CPU.
 
 ## Creation
+
+<!-- Should add taking checkpoints through stdlib here as well -->
 
 First of all, you need to create a checkpoint. Each checkpoint as saved in a new directory named 'cpt.TICKNUMBER', where TICKNUMBER refers to the tick value at which this checkpoint was created. There are several ways in which a checkpoint can be created:
 
@@ -18,10 +22,12 @@ First of all, you need to create a checkpoint. Each checkpoint as saved in a new
 * There is a pseudo instruction that can be used for creating checkpoints. For example, one may include this pseudo instruction in an application program, so that the checkpoint is created when the application has reached a certain state.
 * The option **-****-take-checkpoints** can be provided to the python scripts (fs.py, ruby_fs.py) so that checkpoints are dumped periodically. The option **-****-checkpoint-at-end** can be used for creating the checkpoint at the end of the simulation. Take a look at the file **configs/common/Options.py** for these options.
 
+<!-- Is this still accurate? -->
 While creating checkpoints with Ruby memory model, it is necessary to use the MOESI hammer protocol. This is because checkpointing the correct memory state requires that the caches are flushed to the memory. This flushing operation is currently supported only with the MOESI hammer protocol.
 
 ## Restoring
 
+<!-- Need to remove usage of fs.py, add example of how to restore from cpt in stdlib -->
 Restoring from a checkpoint can usually be easily done from the command line, e.g.:
 
 ```console
@@ -29,6 +35,8 @@ Restoring from a checkpoint can usually be easily done from the command line, e.
   OR
   build/ALL/gem5.debug configs/example/fs.py --checkpoint-restore=N
 ```
+
+<!-- Need to update limitations on taking checkpoints: CPU type shouldn't be a limitation, but number of cores, memory size. and wkld have to be the same -->
 
 The number N is integer that represents checkpoint number which usually starts from 1 then increases incrementally to 2,3,4...
 
@@ -56,6 +64,8 @@ Due to large simulation time its not always possible to simulate whole program. 
 # Switchover/Fastforwarding
 
 ## Sampling
+
+<!-- Code snippets should be swapped out for stdlib examples -->
 
 Sampling (switching between functional and detailed models) can be implemented via your Python script. In your script you can direct the simulator to switch between two sets of CPUs. To do this, in your script setup a list of tuples of (oldCPU, newCPU). If there are multiple CPUs you wish to switch simultaneously, they can all be added to that list. For example:
 

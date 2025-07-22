@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/ruby/interconnection-network/
 author: Jason Lowe-Power
 ---
 
+<!-- Last updated 6 years ago -->
+
 # Interconnection Network
 
 The various components of the interconnection network model inside

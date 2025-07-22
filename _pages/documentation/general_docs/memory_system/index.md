@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/
 author: Jason Lowe-Power
 ---
 
+<!-- How old is this documenation? It still references M5 -->
+
 # Memory system
 
 M5's new memory system (introduced in the first 2.0 beta release) was

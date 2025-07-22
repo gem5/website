@@ -6,12 +6,24 @@ parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/execution_basics
 ---
 
+<!-- This page was last updated (substantially) 6 years ago.
+Instructions in gem5 probably haven't changed much, however, so this page may
+still be up to date
+-->
+
 # Execution basic
+
+## gem5 bootcamp 2024 module on instructions
+
+The 2024 gem5 bootcamp included a session on learning how instructions work in gem5 and how to add new instructions in gem5.
+
+The slides can be found on the [2024 bootcamp website](https://bootcamp.gem5.org/#03-Developing-gem5-models/05-modeling-cores).
 
 ## gem5 bootcamp 2022 module on instruction execution
 
 gem5 bootcamp (2022) had a session on learning how instructions work in gem5 and how to add new instructions in gem5.
-The slides presented in the session can be found [here](https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EeRIKzkdUJBDlaa9AmzERusBp28hxMfkyIOp-_2H5L9AqQ?e=RoMFUD).
+<!-- 
+The slides presented in the session can be found [here](https://ucdavis365-my.sharepoint.com/:p:/g/personal/jlowepower_ucdavis_edu/EeRIKzkdUJBDlaa9AmzERusBp28hxMfkyIOp-_2H5L9AqQ?e=RoMFUD). Broken link -->
 
 The youtube video of the recorded bootcamp module on gem5 instructions is available [here](https://youtu.be/Z5B02jkNpck).
 

@@ -28,6 +28,8 @@ reporting an issue:
 
 2. Ensure you're compiling and running the latest version of [gem5](
 https://github.com/gem5/gem5). The issue may have already been resolved.
+Also check the `develop` version of gem5, as it will have bug fixes that
+haven't been incorporated into `stable` yet.
 
 3. Check changes [currently under review on our GitHub system](
 https://github.com/gem5/gem5/pulls/). It's possible a fix to

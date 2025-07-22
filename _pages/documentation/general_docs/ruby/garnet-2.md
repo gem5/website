@@ -11,6 +11,10 @@ author: Jason Lowe-Power
 [here](/documentation/general_docs/ruby/interconnection-network/).**
 
 ### Garnet2.0: An On-Chip Network Model for Heterogeneous SoCs
+<!-- This document was added 6 years ago and updated 16 months ago. I don't know
+enough to say if it's out of date at this point
+ -->
+<!-- Is this still under active development? -->
 
 Garnet2.0 is a detailed interconnection network model inside gem5. It is
 in active development, and patches with more features will be

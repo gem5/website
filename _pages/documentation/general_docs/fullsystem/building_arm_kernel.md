@@ -6,6 +6,8 @@ parent: fullsystem
 permalink: /documentation/general_docs/fullsystem/building_arm_kernel
 ---
 
+<!-- This documentation was last updated 4-5 years ago; it is out of date and needs to mention the newer gem5 Resources method (Harshil's method) of building kernels and disk images -->
+
 # Building ARM Kernel
 
 This page contains instructions for building up-to-date kernels for gem5 running on ARM. 

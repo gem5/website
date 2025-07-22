@@ -7,6 +7,13 @@ permalink: /documentation/gem5-stdlib/develop-stdlib-board
 author: Jasjeet Rangi, Kunal Pai
 ---
 
+<!-- I tested the completed board and config at the bottom of the script.
+The simulation runs successfully, but there's a warning that `riscv-hello`
+isn't compatible with gem5 v25.0. It looks like the resource on the resources
+website just needs to be updated to say that riscv-hello can also be used with
+v25.0
+ -->
+
 ## How to Create Your Own Board Using the gem5 Standard Library
 
 In this tutorial we will cover how to create a custom board using the gem5 Standard Library.

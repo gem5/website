@@ -7,7 +7,13 @@ permalink: /documentation/general_docs/development/coding_style/
 ---
 # C/C++ Coding Style
 
-We strive to maintain a consistent coding style in the gem5 C/C++ source code to make the source more readable and maintainable. This necessarily involves compromise among the multiple developers who work on this code. We feel that we have been successful in finding such a compromise, as each of the primary M5 developers is annoyed by at least one of the rules below. We ask that you abide by these guidelines as well if you develop code that you would like to contribute back to M5. An Emacs c++-mode style embodying the indentation rules is available in the source tree at util/emacs/m5-c-style.el.
+<!-- The paragraph below mentions M5. The emacs style is still in util/emacs,
+but I don't know if anyone still uses it -->
+We strive to maintain a consistent coding style in the gem5 C/C++ source code to make the source more readable and maintainable. 
+<!-- This necessarily involves compromise among the multiple developers who work on this code. We feel that we have been successful in finding such a compromise, as each of the primary M5 developers is annoyed by at least one of the rules below.  -->
+
+We ask that you abide by these guidelines as well if you develop code that you would like to contribute back to M5.
+<!-- An Emacs c++-mode style embodying the indentation rules is available in the source tree at util/emacs/m5-c-style.el. -->
 
 ## Indentation and Line Breaks
 
@@ -18,6 +24,19 @@ Indentation will be 4 spaces per level, though namespaces should not increase th
 Indentation should use spaces only (no tabs), as tab widths are not always set consistently, and tabs make output harder to read when used with tools such as diff.
 
 Lines must be a maximum of 79 characters long.
+
+For functions with long names and/or numerous arguments that must be split over
+multiple lines, it is preferred to indent later lines so they line up with the
+first argument in the first line. However, if the file you are working in
+uses a different format, please follow the file's existing format.
+
+```c++
+if (a > 0) {
+    obnoxiously_named_function_with_lots_of_args(verbose_arg1,
+                                                 verbose_arg2,
+                                                 verbose_arg3);
+}
+```
 
 ## Braces
 
@@ -50,7 +69,10 @@ if (...) {
     ...
 }
 ```
+<!-- Jason pretty consistently requests contributors not to omit braces for
+single line statements, so it might be better to remove this block. -->
 
+<!-- 
 Blocks that consist of a single statement that fits on a single line may optionally omit the braces. Braces are still required if the single statement spans multiple lines, or if the block is part of an else/if chain where other blocks have braces.
 
 ```c++
@@ -71,7 +93,7 @@ if (a > 0) {
     underflow = true;
     warn("underflow on a");
 }
-```
+``` -->
 
 For function definitions or class declarations, the opening brace must be in the first column of the following line.
 
@@ -107,7 +129,6 @@ There should be:
 * no space between function names and opening parentheses for arguments
 * no space immediately inside parentheses, except for very complex expressions. Complex expressions are preferentially broken into multiple simpler expressions using temporary variables.
 
-
 For pointer and reference argument declarations, either of the following are acceptable:
 
 ```c++
@@ -121,6 +142,7 @@ or
 FooType* fooPtr;
 FooType& fooRef;
 ```
+
 However, style should be kept consistent within a file. If you are editing an existing file, please keep consistent with the existing code. If you are writing new code in a new file, feel free to choose the style of your preference.
 
 ## Naming
@@ -229,6 +251,7 @@ If you need to have a period in the brief description, follow it with a backslas
  * e.g.\ This is a brief description with an internal period.
  */
 ```
+
 Blank lines within these comments are interpreted as paragraph breaks to help you make the documentation more readble.
 
 ### Special commands
@@ -380,6 +403,7 @@ It remains to be seen what groups we can come up with.
 Not sure what other doxygen features we want to use.
 
 ## M5 Status Messages
+
 ### Fatal v. Panic
 
 There are two error functions defined in `src/base/logging.hh:` `panic()` and `fatal()`. While these two functions have roughly similar effects (printing an error message and terminating the simulation process), they have distinct purposes and use cases. The distinction is documented in the comments in the header file, but is repeated here for convenience because people often get confused and use the wrong one.

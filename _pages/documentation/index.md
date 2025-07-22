@@ -38,7 +38,7 @@ Please contact Jason (jason@lowepower.com) or create a PR if you find any errors
 [gem5 101](learning_gem5/gem5_101) is a set of assignments mostly from Wisconsin's graduate computer architecture classes (CS 752, CS 757, and CS 758) which will help you learn to use gem5 for research.
 
 ## gem5 API documentation
-
+<!-- Doxygen link may be broken, but it may also be a side effect of the gme5 v25.0 release -->
 You can find the doxygen-based documentation here: <http://doxygen.gem5.org/release/current/index.html>
 
 ## Other general gem5 documentation

@@ -8,6 +8,9 @@ permalink: /documentation/general_docs/architecture_support/arm_implementation/
 
 # ARM Implementation
 
+<!-- It looks like the last time the documentation on this page was updated was 4 years ago.
+This page is most likely out of date.
+ -->
 ## Supported features and modes
 
 The ARM Architecture models within gem5 support an [ARMv8.0-A](https://developer.arm.com/docs/den0024/latest/armv8-a-architecture-and-processors/armv8-a) profile of the ARM® architecture with multi-processor extensions.

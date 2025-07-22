@@ -7,7 +7,7 @@ permalink: /documentation/gem5-stdlib/local-resources-support
 author: Kunal Pai, Harshil Patel
 ---
 
-This tutorial will walk you through the process of creating a WorkloadResource in gem5 and testing it, through the new gem5 Resources infrastructure introduced in gem5 v23.0.
+This tutorial will walk you through the process of creating a WorkloadResource in gem5 and testing it, through the gem5 Resources infrastructure introduced in gem5 v23.0.
 
 A workload is set to a board in gem5 through the following line:
 
@@ -24,6 +24,7 @@ The function call specified in the `"function"` field of the Workload JSON is th
 
 ## Introduction
 
+<!-- reference to MongoDB database; probably needs to be updated -->
 The gem5 Resources infrastructure allows adding a local JSON data source that can be added to the main gem5 Resources MongoDB database.
 
 We will use the local JSON data source to add a new WorkloadResource to gem5.
@@ -41,6 +42,8 @@ In case the Resource already exists in gem5, you may skip this step.
 Let's assume that the Resource we want to wrap in a WorkloadResource is compiled for `RISC-V`, categorized as a `binary`, and has the name `my-benchmark`.
 
 We can define this Resource in a JSON object as follows:
+<!-- The local data sources documentation (7) should probably go before this page and (5) the suites page (6) -->
+<!-- The example below should contain a "url" field that either indicates a local path or indicates a link to the bucket -->
 
 ``` json
 {
@@ -67,6 +70,10 @@ Let's assume that the WorkloadResource we are building wraps `my-benchmark`, and
 
 We can define this WorkloadResource in a local JSON file as follows:
 
+<!-- In the section below, the resources/binary field had to be modified to work.
+Otherwise, gem5 would give an error about string indexes needing be be ints, not strs. -->
+<!-- "additional_parameters" was also changed to "additional_params". -->
+
 ``` json
 {
     "id": "binary-workload",
@@ -79,9 +86,12 @@ We can define this WorkloadResource in a local JSON file as follows:
         "23.0"
     ],
     "resources": {
-        "binary": "my-benchmark"
+        "binary": {
+            "id": "my-benchmark",
+            "resource_version": "1.0.0"
+        }
     },
-    "additional_parameters": {
+    "additional_params": {
         "arguments": ["arg1", "arg2"]
     }
 }
@@ -101,6 +111,9 @@ To see more about the fields required and not required by the workloads, see the
 ## Testing the Workload
 
 To test the WorkloadResource, we first have to add the local JSON file as a data source for gem5.
+<!-- This section needs to specify that the local JSON file has to have a
+specific name if you want gem5 to use it without needing to set GEM5_CONFIG
+ -->
 
 This can be done by creating a new JSON file with the following format:
 
@@ -114,6 +127,7 @@ This can be done by creating a new JSON file with the following format:
     }
 }
 ```
+
 On running gem5, if the new JSON config file you have created is present in the current working directory, it will be used as the data source for gem5.
 If the JSON file is not present in the current working directory, you can specify the path to the JSON file using the `GEM5_CONFIG` flag while building gem5.
 
@@ -126,7 +140,7 @@ Its implementation can be found in [`src/python/gem5/resources/resource.py`](htt
 From gem5 v23.1, there are a couple additional ways to define your local `resources.json` file.
 Both these ways are through environment variables and are defined through the command line while running a gem5 simulation.
 
-1. `GEM5_RESOURCE_JSON` variable: This variable substitutes all the current data sources used by gem5 with the JSON file present at the path passed in through this variable. 
+1. `GEM5_RESOURCE_JSON` variable: This variable substitutes all the current data sources used by gem5 with the JSON file present at the path passed in through this variable.
 This is equivalent to a gem5 data source configuration file as follows:
 
     ``` json
@@ -150,7 +164,7 @@ This is equivalent to a gem5 data source configuration file as follows:
                 "url": '/local/local.json',
                 "isMongo": false,
             },
-                    "my-resources-2": {
+            "my-resources-2": {
                 "url": $GEM5_RESOURCE_JSON_APPEND,
                 "isMongo": false,
             },
@@ -159,6 +173,11 @@ This is equivalent to a gem5 data source configuration file as follows:
     ```
 
 ## Support for Local Path to Resources
+<!-- This section should be incorporated into the "Defining the resource JSON"
+section, as I think most people will want to use their own resources instead of
+only creating workloads from resources already in the cloud, and this feature
+is no longer new.
+ -->
 
 From gem5 v23.1, support has been added to make a workload of local resources through the method mentioned above.
 
@@ -169,12 +188,14 @@ You can specify a path on your localhost and gem5 would be able to run it.
 
 With these changes, a JSON object for a local instance of `my-benchmark` would look like:
 
+<!-- In the example below, should the url field say "file://" instead of "file:/" (with only one slash)? -->
+
 ``` json
 {
     "category": "binary",
     "id": "my-benchmark",
     "description": "A RISCV binary used to test a specific RISCV instruction.",
-		"url": "file:/<PATH_TO_LOCAL_FILE>",
+    "url": "file:/<PATH_TO_LOCAL_FILE>",
     "architecture": "RISCV",
     "is_zipped": false,
     "resource_version": "1.1.0",

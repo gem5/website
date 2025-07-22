@@ -87,7 +87,7 @@ A resource, in the context of gem5, is something used in a simulation, or by a s
 Typically these are applications, kernels, disk images, benchmarks, or tests.
 
 As these resources can be hard to find, or hard to create, we provide pre-built resources as part of [gem5-resources](/documentation/general_docs/gem5_resources).
-For example, via gem5-resources, a user may download an Ubuntu 18.04 disk image with known compatibility with gem5.
+For example, via gem5-resources, a user may download an Ubuntu 24.04 disk image with known compatibility with gem5.
 They need not setup this themselves.
 
 A core feature of the gem5 stdlib resource package is that it allows users to _automatically obtain_ prebuilt gem5 resources for their simulation.
@@ -96,14 +96,14 @@ A user may specify in their Python config file that a specific gem5 resource is 
 The tutorials will demonstrate how to use the resource package in greater detail, but for now, a typical pattern is as follows:
 
 ```python
-from gem5.resources.resource import Resource
+from gem5.resources.resource import obtain_resource
 
-resource = Resource("riscv-disk-img")
+resource = obtain_resource("riscv-ubuntu-24.04-boot")
 
 print(f"The resources is available at {resource.get_local_path()}")
 ```
 
-This will obtain the `riscv-disk-img` resource and store it locally for use in a gem5 simulation.
+This will obtain the `riscv-ubuntu-24.04-boot` workload resource and store it locally for use in a gem5 simulation.
 
 The resources package references the resources that are available to view at the [gem5 Resources website](https://resources.gem5.org) and the [gem5 Resources repository](https://github.com/gem5/gem5-resources). The website is strongly recommended to get info on what resources are available and where they may be downloaded from.
 
@@ -112,6 +112,8 @@ The resources package references the resources that are available to view at the
 The simulate package is used to run gem5 simulations.
 While there is some boilerplate code this module handles on the users behalf, its primary purpose is to provde default behavior and APIs for what we refer to as _Exit Events_.
 Exit events are when a simulation exits for a particular reason.
+
+<!-- This section should also point toward hypercall documentation once it is up -->
 
 A typical example of an exit event would be a `Workbegin` exit event.
 This is used to specify that a Region-of-Interest (ROI) has been reached.

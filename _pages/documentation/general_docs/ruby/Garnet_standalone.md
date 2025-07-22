@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/ruby/Garnet_standalone/
 author: Jason Lowe-Power
 ---
 
+<!-- Documentation was last updated 6 years ago.
+If the coherence protocol hasn't changed, this page may still be relatively up to date
+ -->
+
 # Garnet Standalone
 
 This is a dummy cache coherence protocol that is used to operate Garnet

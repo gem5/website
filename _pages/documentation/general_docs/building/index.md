@@ -18,8 +18,8 @@ dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
 information).
 
-As of gem5 21.0, **we support building and running gem5 with Python 3.6+
-only**. gem5 20.0 was our last version of gem5 to provide support for Python
+As of gem5 v25.0, **we support building and running gem5 with Python 3.9+ only**.
+gem5 20.0 was our last version of gem5 to provide support for Python
 2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
@@ -30,14 +30,14 @@ information on this.
 ## Dependencies
 
 * **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=10 must be used**. We
-support up to gcc Version 13.
-* **Clang**: Clang can also be used. At present, we support Clang 7 to
-Clang 16 (inclusive).
+* **gcc**: GCC is used to compiled gem5. As of gem5 v25.0, we support GCC 11 to
+GCC 14 (inclusive).
+* **Clang**: Clang can also be used. As of gem5 v25.0, we support Clang 14 to
+Clang 19 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
 must be used.
-* **Python 3.6+** : gem5 relies on Python development libraries. gem5 can be
-compiled and run in environments using Python 3.6+.
+* **Python 3.9+** : gem5 relies on Python development libraries. gem5 can be
+compiled and run in environments using Python 3.9+.
 * **protobuf 2.1+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
@@ -64,7 +64,8 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config python3-tk
+    python3-dev doxygen libboost-all-dev libhdf5-serial-dev python3-pydot \
+    libpng-dev libelf-dev pkg-config pip python3-venv black python3-tk wget
 ```
 
 ### Setup on Ubuntu 20.04 (gem5 >= v21.0)
@@ -85,29 +86,29 @@ For users struggling to setup an environment to build and run gem5, we provide
 the following Docker Images:
 
 Ubuntu 24.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](
-https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0)
-([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
+[ghcr.io/gem5/ubuntu-24.04_all-dependencies:v25-0](
+https://ghcr.io/gem5/ubuntu-24.04_all-dependencies:v25-0)
+([source Dockerfile](https://github.com/gem5/gem5/blob/v25.0.0.0/util/dockerfiles/ubuntu-24.04_all-dependencies/Dockerfile)).
 
 Ubuntu 24.04 with minimum dependencies:
-[ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
-https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
-([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+[ghcr.io/gem5/ubuntu-24.04_min-dependencies:v25-0](
+https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v25-0)
+([source Dockerfile](https://github.com/gem5/gem5/blob/v25.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
 
 Ubuntu 22.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
+[ghcr.io/gem5/ubuntu-22.04_all-dependencies:v25-0](
+https://ghcr.io/gem5/ubuntu-22.04_all-dependencies:v25-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v25.0.0.0/util/dockerfiles/ubuntu-22.04_all-dependencies/Dockerfile)).
 
-Ubuntu 20.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
+Ubuntu 20.04 with all optional dependencies, which is no longer being maintained:
+[ghcr.io/gem5/ubuntu-20.04_all-dependencies:v24-0](
+https://ghcr.io/gem5/ubuntu-20.04_all-dependencies:v24-0) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-20.04_all-dependencies/Dockerfile)).
 
-Ubuntu 18.04 with all optional dependencies:
-[ghcr.io/gem5/ubuntu-18.04_all-dependencies:v23-0](
-https://ghcr.io/gem5/ubuntu-18.04_all-dependencies:v23-0) ([source Dockerfile](
-https://github.com/gem5/gem5/blob/v23.0.1.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
+Ubuntu 18.04 with all optional dependencies, which is no longer being maintained:
+[ghcr.io/gem5/ubuntu-18.04_all-dependencies:v22-1](
+https://ghcr.io/gem5/ubuntu-18.04_all-dependencies:v22-1) ([source Dockerfile](
+https://github.com/gem5/gem5/blob/v22.1.0.0/util/dockerfiles/ubuntu-18.04_all-dependencies/Dockerfile)).
 
 To obtain a docker image:
 
@@ -115,10 +116,15 @@ To obtain a docker image:
 docker pull <image>
 ```
 
-E.g., for Ubuntu 20.04 with all optional dependencies:
+E.g., for Ubuntu 24.04 with all optional dependencies:
 
 ```bash
-docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+# For the latest version
+docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:latest
+
+# For the version created for a certain gem5 release
+docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:v25-0
+
 ```
 
 Then, to work within this environment, we suggest using the following:
@@ -128,8 +134,8 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 ```
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
-`<image>` is the image pulled (e.g.,
-ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0`).
+`<image>` is the image pulled (e.g.
+`docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:latest`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.

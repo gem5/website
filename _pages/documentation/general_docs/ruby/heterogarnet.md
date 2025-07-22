@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/ruby/heterogarnet/
 author: Srikant Bharadwaj
 ---
 
+<!-- Last updated 2-3 years ago; may be relatively up to date -->
+
 **More details of the gem5 Ruby Interconnection Network are [here](/documentation/general_docs/ruby/interconnection-network "wikilink").**
 **Details about the earlier Garnet version can be found [here](/documentation/general_docs/ruby/garnet-2 "wikilink").**
 

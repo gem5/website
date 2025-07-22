@@ -6,6 +6,9 @@ parent: architecture_support
 permalink: documentation/general_docs/architecture_support/isa_parser/
 ---
 
+<!-- This page was last updated 6 years ago, though there's a chance that it 
+could still have accurate information -->
+
 # ISA Parser
 
 The gem5 ISA description language is a custom language designed specifically for generating the class definitions and decoder function needed by gem5. This section provides a practical, informal overview of the language itself. A formal grammar for the language is embedded in the "yacc" portion of the parser (look for the functions starting with p\_ in isa\_parser.py). A second major component of the parser processes C-like code specifications to extract instruction characteristics; this aspect is covered in the section [Code parsing](#code-parsing).

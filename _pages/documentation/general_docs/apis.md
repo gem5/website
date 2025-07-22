@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/gem5-apis/
 authors: Bobby R. Bruce
 ---
 
+<!-- broken link. All of the Doxygen links on this page are probably broken,
+but it could just be an issue introduced by gem5 v25.0
+-->
+
 For complete documentation of all methods and variables tagged as APIs, please
 see our [Doxygen Module page](
 http://doxygen.gem5.org/release/v20-1-0-0/modules.html).
@@ -22,6 +26,7 @@ manner between gem5 releases.
 
 ## How is the gem5 API documented?
 
+<!-- broken link -->
 We document the gem5 APIs using the [Doxygen documentation generation tool](
 https://www.doxygen.nl/index.html). This means you may see the API tagged
 at the level of source-code and via our [web-based documentation](
@@ -203,7 +208,7 @@ will be displayed to the user as a warning if `master` or `slave` are ever
 used.
 
 As with all changes to the gem5 source, these changes will have to go through
-our Gerrit code review system before being merged into the `develop` branch,
+code review on GitHub before being merged into the `develop` branch,
 and eventually making its way to our `stable` branch as part of a gem5 release.
 In line with our API policy, these deprecated APIs must exist in a
 marked-as-deprecated state for two gem5 major release cycles. After this they

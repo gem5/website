@@ -7,6 +7,15 @@ permalink: /documentation/gem5-stdlib/using-local-resources
 author: Harshil Patel
 ---
 
+<!-- This page should be updated for the migration to Azure -->
+<!-- This page and 5-local-resources-support.md might work better as 
+documentation if they were combined. -->
+
+<!-- This documentation by itself is a little unclear on what the difference is
+between "updating the gem5 resources configuration" and the 
+"utilizing or adding a local resource JSON". It would be less confusing if this
+could be incorporated into 5-local-resources-support
+ -->
 gem5 supports using local data sources in the form of a MongoDB Atlas and JSON datasource. gem5 has a default resources config in `src/python/gem5_default_config.py`. This resources config points to the MongoDB Atlas collection of gem5 resources. To utilize data sources other than the main gem5 resources database, you will need to override the gem5-resources-config.
 
 There are several ways to update the gem5 resources configuration:
@@ -55,6 +64,7 @@ JSON Config Format:
     }
 }
 ```
+<!-- Update this section for migration to Azure -->
 
 ### Setting up a MongoDB Atlas Database
 
@@ -101,17 +111,19 @@ resource = obtain_resource("id", clients=["data-source-json-1"])
 
 ### Understanding Local Resources
 
-Local resources, in the context of gem5, pertain to resources that users possess and wish to integrate into gem5 but aren't pre-existing in the gem5 resources database.
+Local resources in gem5 are resources that exist on a user's local machine, but
+have not been uploaded to the gem5 resources database.
 
-For users, This offers the flexibility to employ their own resources seamlessly within gem5, bypassing the need to create dedicated resource objects using `BinaryResource(local_path=/path/to/binary)`. Instead, they can directly utilize these local resources through `obtain_resource()`, streamlining the integration process.
+For users, the option to add a JSON data source pointing to local resources allows them to use `obtain_resource()` for their own resources.
+This bypasses the need to create dedicated resource objects using `BinaryResource(local_path=/path/to/binary)`, and streamlines the process of launching simulations.
 
 ### Using Custom Resource Configuration and Local Resources
 
-In this example, we will walk through how to set up your custom configuration and utilize your own local resources. For this illustration, we'll employ a JSON file as our resource data source.
+In this example, we will walk through how to set up your custom configuration and utilize your own local resources. For this example, we'll use a JSON file as our resource data source.
 
 #### Creating a Custom Resource Data Source
 
-Let's begin by creating a local resource. This is a bare bones resource that will serve as an example. To use local resources with `obtain_resource()`, our bare bones resource need to have a binary file. Here we use an empty binary called `fake-binary`. 
+Let's begin by creating a local resource. This is a bare bones resource that will serve as an example. To use local resources with `obtain_resource()`, our bare bones resource need to have a binary file. Here we use an empty binary called `fake-binary`.
 
 **Note**: Make sure that Gem5 binary and `fake-binary` have same ISA target (RISCV here).
 

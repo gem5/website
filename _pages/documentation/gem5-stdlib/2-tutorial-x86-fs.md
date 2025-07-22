@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/x86-full-system-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- The example at the bottom of the page, without the classic exit handlers,
+works
+ -->
+
 ## Building an x86 full-system simulation with the gem5 standard library
 
 One of the key ideas behind the gem5 standard library is to allow users to simulate, big, complex systems, with minimal effort.
@@ -155,7 +159,14 @@ When using the `set_kernel_disk_workload` function, you can also pass an optiona
 
 Finally, we specify how the simulation is to be run with the following:
 
+<!-- This example should be updated for the hypercalls -->
+
 ```python
+
+# This exit handler generator is only needed in gem5 v24.1 and lower.
+# gem5 v25.0 adds hypercalls and sets default handlers, meaning that users
+# no longer have to set handlers in each configuration script to prevent 
+# simulations from exiting on kernel boot or Ubuntu boot
 def exit_event_handler():
     print("First exit: kernel booted")
     yield False  # gem5 is now executing systemd startup
@@ -174,15 +185,16 @@ def exit_event_handler():
 
 simulator = Simulator(
     board=board,
-    on_exit_event={
-        ExitEvent.EXIT: exit_event_handler(),
-    },
+    # This line is only needed for gem5 v24.1 and below
+    # on_exit_event={
+    #     ExitEvent.EXIT: exit_event_handler(),
+    # },
 )
 simulator.run()
 ```
 
-The important thing to note here is the `on_exit_event` argument.
-Here we can override default behavior.
+The `on_exit_event` argument is used to override default behavior in gem5 v24.1
+and below.
 
 The `on_exit_event` parameter is a Python dictionary of exit events and [Python generators](https://wiki.python.org/moin/Generators).
 In this tutorial we are setting `ExitEvent.Exit` to the `exit_event_handler` generator.
@@ -201,7 +213,7 @@ This completes the setup of our script. To execute the script we run:
 If you are using a pre-built binary, you can execute the simulation with:
 
 ```sh
-gem5 hello-world.py
+gem5 x86-ubuntu-run.py
 ```
 
 You can see the output of the simulator in `m5out/system.pc.com_1.device`.

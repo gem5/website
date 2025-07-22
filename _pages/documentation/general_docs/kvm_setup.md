@@ -5,6 +5,8 @@ permalink: /documentation/general_docs/using_kvm/
 author: Mahyar Samani and Bobby R. Bruce
 ---
 
+<!-- Last updated 11 months ago, may be relatively up to date -->
+
 Kernel-based Virtual Machine (KVM) is a Linux kernel module allowing creating a virtual machine managed by the kernel.
 On recent x86 and ARM processors, KVM supports hardware-assisted virtualization, enabling running the virtual machine at close to native speed.
 gem5's `KVMCPU` enables this feature in gem5, with the trade-offs being architectual statistics are not being recorded by gem5.

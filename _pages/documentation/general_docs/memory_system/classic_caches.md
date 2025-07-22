@@ -7,6 +7,8 @@ permalink: /documentation/general_docs/memory_system/classic_caches/
 author: Jason Lowe-Power
 ---
 
+<!-- This documentation was last updated 6 years ago. I don't know enough to say if it's out of date or not -->
+
 # Classic Caches
 
 The default cache is a non-blocking cache with MSHR (miss status holding

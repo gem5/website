@@ -7,6 +7,10 @@ permalink: /documentation/gem5-stdlib/hello-world-tutorial
 author: Bobby R. Bruce
 ---
 
+<!-- The full code example at the bottom of the page works fine and 
+is up to date
+ -->
+
 ## Building a "Hello World" example with the gem5 standard library
 
 In this tutorial we will cover how to create a very basic simulation using gem5 components.

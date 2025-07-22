@@ -6,6 +6,10 @@ parent: common-errors
 permalink: /documentation/general_docs/common-errors/
 ---
 
+<!-- A few updates that need to be made on this page; there might also be more
+common errors we want to add to this page.
+-->
+
 Here are some common issues that users run into when using gem5, and information on how to fix them on how to fix them.
 
 ## Segmentation Fault
@@ -66,7 +70,6 @@ build/ALL/cpu/base.cc:186: fatal: Number of processes (cpu.workload) (0) assigne
 This type of error can cover situations such as wrong file types or invalid values being passed to gem5, or unconnected ports, just to name a couple examples.
 This should give you more information on the issue at hand, but if there still isn't enough information, using some of the [debugging techniques](https://www.gem5.org/documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging) within gem5, such as gdb or debug flags may help.
 
-
 ## Panic
 
 If you encounter a panic error, that usually indicates that something is wrong with gem5 itself.
@@ -121,6 +124,7 @@ IOError: Can't find file 'linux-bigswap2.img' on path.
 Looking within this file should give you more information to help debug, though if this isn't enough, you can look [here](https://www.gem5.org/documentation/general_docs/debugging_and_testing/debugging/trace_based_debugging) to enable trace based debugging for further information.
 
 ## PreCommit
+<!-- This section seems to be somewhat outdated. References Kokoro, Gerrit -->
 
 If you're running into errors when pushing code to the develop branch, one potential issue is that you may not be passing the precommit checks that gem5 requires before any changes are submitted.
 If you see within Gerrit that you have the following error on your verified check, you can navigate to the logs that were output by the tests.
@@ -149,6 +153,8 @@ However, if you've already committed these files, you can manually check that pr
 When running these commands, pre-commit will both detect any style issues, and automatically reformat the files for you.
 
 ## Change-ID
+
+<!-- Need to remove this section, as change ID requirement is gone -->
 
 If you're running into issues getting you continuous integration tests to pass on GitHub, you may be forgetting to add a Change-Id to your commit message.
 Though we have migrated away from using Gerrit, we still require the addition of a Change-Id.

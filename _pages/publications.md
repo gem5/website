@@ -18,7 +18,7 @@ tabs:
       * [**The gem5 Simulator**](https://dl.acm.org/doi/10.1145/2024716.2024718). Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower, Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill, and David A. Wood. ACM SIGARCH Computer Architecture News, May 2011. [ doi: [10.1145/2024716.2024718](https://dl.acm.org/doi/10.1145/2024716.2024718) ] [ [pdf](https://dl.acm.org/doi/pdf/10.1145/2024716.2024718) ]
 
 
-
+# Are there any newer papers that should be added to this page?
   - name: Special Features of gem5
     id: special-features
     content: |

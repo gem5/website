@@ -5,6 +5,11 @@ parent: cpu_models
 doc: gem5 documentation
 permalink: /documentation/general_docs/cpu_models/TraceCPU
 ---
+
+<!-- Giacomo updated part of this page 20 months ago. The rest of it was last
+updated 6 years ago, so it could still be out of date
+-->
+
 # **TraceCPU**
  Table of Contents
 

@@ -5,6 +5,9 @@ doc: gem5 documentation
 parent: fullsystem
 permalink: /documentation/general_docs/fullsystem/m5term
 ---
+
+<!-- This page should be updated to include the relatively new gem5term utility -->
+
 # m5 term
 The m5term program allows the user to connect to the simulated console interface that full-system gem5 provides. Simply change into the util/term directory and build m5term:
 ```

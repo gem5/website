@@ -7,12 +7,17 @@ permalink: /documentation/general_docs/cpu_models/minor_cpu
 author: Andrew Bardsley
 ---
 
-Minor CPU Model
+<!-- It looks like the Doxygen links on this page are broken. This could be an
+issue caused by the v25.0 release, however.
+ -->
 
+Minor CPU Model
+<!-- broken link -->
 This document contains a description of the structure and function of the
 [Minor](http://doxygen.gem5.org/release/current/namespaceMinor.html) gem5 in-order
 processor model.
 
+<!-- broken links -->
 It is recommended reading for anyone who wants to understand
 [Minor](http://doxygen.gem5.org/release/current/namespaceMinor.html)'s internal
 organisation, design decisions, C++ implementation and Python configuration. A
@@ -23,7 +28,7 @@ and to explain its general structure without being too slavish about naming
 every function and data type.
 
 ## What is Minor?
-
+<!-- broken link -->
 [Minor](http://doxygen.gem5.org/release/current/namespaceMinor.html) is an in-order
 processor model with a fixed pipeline but configurable data structures and
 execute behaviour. It is intended to be used to model processors with strict

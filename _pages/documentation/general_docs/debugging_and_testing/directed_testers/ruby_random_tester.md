@@ -7,6 +7,9 @@ permalink: /documentation/general_docs/debugging_and_testing/directed_testers/ru
 author: Bobby R. Bruce
 ---
 
+<!-- Originally written 6 years ago; hasn't been significantly updated
+since. -->
+
 # Ruby Random Tester
 
 A cache coherence protocol usually has several different types of state

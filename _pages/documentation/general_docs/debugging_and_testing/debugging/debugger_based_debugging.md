@@ -7,6 +7,10 @@ permalink: /documentation/general_docs/debugging_and_testing/debugging/debugger_
 author: Bobby R. Bruce
 ---
 
+<!-- This page was last updated (significantly) 3-6 years ago. It could be 
+outdated in places.
+ -->
+
 # Debugger-based Debugging
 
 If traces alone are not sufficient, you'll need to inspect what gem5 is doing
@@ -24,6 +28,9 @@ You can create one or more DebugEvents when you invoke gem5 using the
 debugger prompt using the `schedBreak()` function. The following example
 session illustrates both of these approaches:
 
+<!-- Is this example correct? It references m5 instead of gem5 and also references
+a "configs/run.py" that doesn't seem to be in the configs directory as of v25.0
+-->
 ```
 % gdb m5/build/ALL/gem5.debug
 GNU gdb 6.1
@@ -105,6 +112,10 @@ Valgrind is a dynamic analysis tool used (primarily) to profile a target
 application and detect the source of run-time errors, as well as detect memory
 leaks.
 
+<!-- Is the --without-tcmalloc flag still required? I don't think I used it
+when running gem5 with Valgrind, though it could be that what I was running
+just didn't run into problems
+-->
 For Valgrind to function, the target gem5 binary must have been compiled to
 include debugging information. Therefore, the `gem5.debug` binaries must be
 used. Due to difficulties with Valgrind working with tcmalloc, `gem5.debug`

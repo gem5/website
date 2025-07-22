@@ -43,7 +43,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install git
     ```
 
-2. gcc 10+
+2. gcc 11+
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 
@@ -53,8 +53,9 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install build-essential
         ```
 
-       **We support GCC Versions >=10, up to GCC 13**
+       **We support GCC Versions >=11, up to GCC 14**
 
+<!-- Unsure if this is the correct SCons version for gem5 v25.0 -->
 3.  [SCons 3.0+](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
         steroids and uses Python scripts for all aspects of the build
@@ -66,7 +67,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install scons
     ```
 
-4.  Python 3.6+
+4.  Python 3.9+
     :   gem5 relies on the Python development libraries. To install
         these on Ubuntu use
 
@@ -74,6 +75,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install python3-dev
     ```
 
+<!-- Unsure if protobuf version should be updated -->
 5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
@@ -129,7 +131,7 @@ There are a number of default compilations options in the `build_opts`
 directory. These files specify the parameters used to build gem5 which have
 non-default values. We'll use the ALL defaults. You can look at the file
 `build_opts/ALL` to see the (kconfig) settings which have non-default values.
-For gem5 <= 23.0, You can also specify these options on the command line to
+For gem5 <= 23.0, you can also specify these options on the command line to
 override any default values. For gem5 >= 23.1, You can use kconfig tools like
 setconfig, menuconfig, or guiconfig to modify these settings in an existing
 build directory.

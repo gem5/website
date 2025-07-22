@@ -6,6 +6,8 @@ parent: thermal_model
 permalink: /documentation/general_docs/thermal_model
 ---
 
+<!-- Last updated 3-5 years ago, is this still up to date? -->
+
 # Power and Thermal Model
 
 This document gives an overview of the power and thermal modelling

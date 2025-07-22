@@ -5,6 +5,11 @@ doc: gem5 documentation
 parent: cpu_models
 permalink: /documentation/general_docs/cpu_models/SimpleCPU
 ---
+
+<!-- This page was last updated 6 years ago. It may be out of date, but the 
+simple cpus also may not have changed enough to make this document fall out of date.
+ -->
+
 # **SimpleCPU**
 The SimpleCPU is a purely functional, in-order model that is suited for cases where a detailed model is not necessary. This can include warm-up periods, client systems that are driving a host, or just testing to make sure a program works.
 
