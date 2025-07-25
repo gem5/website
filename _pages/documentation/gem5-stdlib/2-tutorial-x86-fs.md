@@ -145,13 +145,18 @@ workload = obtain_resource("x86-ubuntu-24.04-boot-with-systemd")
 board.set_workload(workload)
 ```
 
-The `obtain_resource` function acquires an X86 Ubuntu 24.04 boot workload, which encompasses a kernel and disk image resource, as well as additional parameters to the kernel and a string indicating the underlying `set_workload` function that the workload uses. You can see these details under the [Raw](https://resources.gem5.org/resources/x86-ubuntu-24.04-boot-with-systemd/raw?database=gem5-resources&version=3.0.0) tab of of the gem5 Resources website page for this workload.
+The `obtain_resource` function acquires the X86 Ubuntu 24.04 boot workload.
+This workload contains a kernel resource, parameters to the kernel, a disk image resource, and a string indicating the underlying function that gem5 uses when `board.set_workload()` is called.
+You can see these details under the [Raw](https://resources.gem5.org/resources/x86-ubuntu-24.04-boot-with-systemd/raw?database=gem5-resources&version=3.0.0) tab of of the gem5 Resources website page for this workload.
 
-It is also possible to use the `set_kernel_disk_workload` function instead of `set_workload` and obtain the disk image and kernel resources separately. This can be used when you want to use a combination of resources that is not provided at [the gem5 resources website](resources.gem5.org).
+You can also use `set_kernel_disk_workload()` instead of `set_workload()` and set the disk image and kernel resources separately.
+This can be used when you want to use your own resources, or a combination of resources that is not provided as a workload on [the gem5 resources website](resources.gem5.org).
 
 **Note: If a user wishes to use their own resource (that is, a resource not prebuilt as part of gem5-resources), they may follow the tutorial [here](../general_docs/gem5_resources). A tutorial is also available at the [2024 gem5 bootcamp website](https://bootcamp.gem5.org/#02-Using-gem5/02-gem5-resources)**
 
-When using the `set_kernel_disk_workload` function, you can also pass an optional `readfile_contents` argument. This will be run as a bash script after the system boots up, and can be used to launch a benchmark after the system boots if you are using a disk image with benchmarks. An example can be found [here](https://resources.gem5.org/resources/x86-ubuntu-24.04-npb-ua-b/raw?database=gem5-resources&version=2.0.0)
+When using the `set_kernel_disk_workload()` function, you can also pass an optional `readfile_contents` argument.
+This will be run as a bash script after the system boots up, and can be used to launch a benchmark after the system boots if the disk image has benchmarks installed.
+An example can be found [here](https://resources.gem5.org/resources/x86-ubuntu-24.04-npb-ua-b/raw?database=gem5-resources&version=2.0.0)
 
 Finally, we specify how the simulation is to be run with the following:
 
@@ -168,7 +173,7 @@ def exit_event_handler():
     yield False  # gem5 is now executing the `after_boot.sh` script
     print("Third exit: Finished `after_boot.sh` script")
     # The after_boot.sh script will run a script if it is passed via
-    # m5 readfile. This is the last exit event before the simulation exits.
+    # readfile_contents. This is the last exit event before the simulation exits.
     yield True
 
 
@@ -185,7 +190,7 @@ The important thing to note here is the `on_exit_event` argument.
 Here we can override default behavior.
 
 The `on_exit_event` parameter is a Python dictionary of exit events and [Python generators](https://wiki.python.org/moin/Generators).
-In this tutorial we are setting `ExitEvent.Exit` to the `exit_event_handler` generator.
+In this tutorial we use the `exit_event_handler` generator to handle exit events of the type `ExitEvent.EXIT`.
 There are three `EXIT` exit events in the Ubuntu 24.04 disk image resource used by the workload.
 If an exit event handler is not defined, the simulation will end after the first exit event, which takes place after the kernel finishes booting.
 Yielding `False` allows the simulation to continue, while yielding `True` ends the simulation.
@@ -274,7 +279,7 @@ def exit_event_handler():
     yield False  # gem5 is now executing the `after_boot.sh` script
     print("Third exit: Finished `after_boot.sh` script")
     # The after_boot.sh script will run a script if it is passed via
-    # m5 readfile. This is the last exit event before the simulation exits.
+    # readfile_contents. This is the last exit event before the simulation exits.
     yield True
 
 
@@ -293,8 +298,7 @@ To recap what we learned in this tutorial:
 * The `requires` function can be used to specify the gem5 and host requirements for a script.
 * The `SimpleSwitchableProcessor` can be used to create a setup in which cores can be switched out for others.
 * The `X86Board` can be used to set up full-system simulations.
-Its `set_kernel_disk_workload` is used to specify the kernel and disk image to use.
-* The `set_kernel_disk_work` accepts a `readfile_contents` argument.
-This is used to set the contents of the file to be read via gem5's `m5 readfile` function.
+* Its workload can be set via either `set_workload()` for workload resources, or via `set_kernel_disk_workload()` for separate kernel and disk image resources.
+* The `set_kernel_disk_workload()` function accepts a `readfile_contents` argument.
 This is processed as a script to be executed after the system boot is complete.
 * The `Simulator` module allows for the overriding of exit events using Python generators.
