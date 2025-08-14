@@ -53,7 +53,7 @@ install all these dependencies using APT:
 sudo apt install build-essential scons python3-dev git pre-commit zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     libboost-all-dev  libhdf5-serial-dev python3-pydot python3-venv python3-tk mypy \
-    m4 libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake doxygen
+    m4 libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake doxygen clang-format
 ```
 
 ### Setup on Ubuntu 22.04 (gem5 >= v21.1)
@@ -64,7 +64,20 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config python3-tk
+    python3-dev libboost-all-dev pkg-config python3-tk clang-format-15
+```
+
+You may need to configure `clang-format-15` as the default
+`clang-format` for your system.
+
+```bash
+# Configure clang-format-15 and git-clang-format-15 as the system defaults.
+sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-15 150 \
+        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-15 \
+        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-15
+
+# [Optional] Add other alternative versions, and select version 15 as the default version.
+sudo update-alternatives --config clang-format
 ```
 
 ### Setup on Ubuntu 20.04 (gem5 >= v21.0)
@@ -76,7 +89,20 @@ install all these dependencies using APT:
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
     python3-dev python-is-python3 libboost-all-dev pkg-config gcc-10 g++-10 \
-    python3-tk
+    python3-tk clang-format-18
+```
+
+You may need to configure `clang-format-18` as the default
+`clang-format` for your system.
+
+```bash
+# Configure clang-format-18 and git-clang-format-18 as the system defaults.
+sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-18 180 \
+        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-18 \
+        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-18
+
+# [Optional] Add other alternative versions, and select version 18 as the default version.
+sudo update-alternatives --config clang-format
 ```
 
 ### Docker
