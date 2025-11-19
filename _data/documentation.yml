@@ -118,6 +118,8 @@ docs:
           url: /documentation/general_docs/fullsystem/building_android_m
         - page: Guest binaries
           url: /documentation/general_docs/fullsystem/guest_binaries
+        - page: Supported Disk-Images and Kernels
+          url: /documentation/general_docs/fullsystem/supported_disks_and_kernels
 
     - title: Memory System
       id: memory_system
