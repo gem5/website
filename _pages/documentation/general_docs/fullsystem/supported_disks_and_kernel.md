@@ -3,7 +3,7 @@ layout: documentation
 title: "Supported Kernels and Disk Images for gem5 stable"
 doc: gem5 documentation
 parent: fullsystem
-permalink: /documentation/general_docs/fullsystem/suported_disks_and_kernel.md
+permalink: /documentation/general_docs/fullsystem/supported_disks_and_kernels
 ---
 
 # Supported Kernels and Disk Images for gem5 v25.0
@@ -20,7 +20,7 @@ This document outlines the kernel and disk image combinations used in gem5 v25.0
 
 The following kernel versions are used with each base disk image:
 
-* **Ubuntu 22.04 disk images** use **kernel 5.15.168**
+* **Ubuntu 22.04 disk images** use **kernel 5.15**
 * **Ubuntu 24.04 disk images** (including `npb` and `gapbs` variants) use **kernel 6.8.12**
 
 This pairing is consistent across all three ISAs: X86, ARM, and RISC-V.
@@ -29,7 +29,7 @@ Each disk image includes the kernel modules corresponding to its kernel version 
 
 ## How Kernels Were Chosen
 
-The kernel versions used in gem5 v25.0 match the default versions shipped with Ubuntu 22.04 (5.15.168) and 24.04 (6.8.12). These were chosen to maintain compatibility with a wide variety of tools while minimizing custom maintenance overhead. Aligning with Ubuntu’s LTS distributions ensures we use stable, well-tested kernels without requiring custom patches.
+The kernel versions used in gem5 v25.0 match the default versions shipped with Ubuntu 22.04 (5.15) and 24.04 (6.8.12). These were chosen to maintain compatibility with a wide variety of tools while minimizing custom maintenance overhead. Aligning with Ubuntu’s LTS distributions ensures we use stable, well-tested kernels without requiring custom patches.
 
 ## Included Kernel Module
 
@@ -48,5 +48,5 @@ These disk images are available for X86, ARM, and RISC-V.
 
 ## Support Status
 
-* Only the combinations listed above (Ubuntu 22.04 with 5.15.168 and Ubuntu 24.04 with 6.8.12) are **regularly tested** and supported in gem5 v25.0.
+* Only the combinations listed above (Ubuntu 22.04 with 5.15 and Ubuntu 24.04 with 6.8.12) are **regularly tested** and supported in gem5 v25.0.
 * Other kernel versions or pairings **may not work** and are not guaranteed to be compatible with gem5 v25.0.
