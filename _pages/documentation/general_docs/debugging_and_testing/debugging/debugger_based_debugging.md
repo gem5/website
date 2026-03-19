@@ -108,7 +108,7 @@ leaks.
 For Valgrind to function, the target gem5 binary must have been compiled to
 include debugging information. Therefore, the `gem5.debug` binaries must be
 used. Due to difficulties with Valgrind working with tcmalloc, `gem5.debug`
-must be compiled without using the `--without-tcmalloc` flag:
+must be compiled using the `--without-tcmalloc` flag:
 
 ```bash
 scons --without-tcmalloc build/ALL/gem5.debug
