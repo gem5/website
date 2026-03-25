@@ -139,6 +139,14 @@ ports in the core.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.has_mmu">
+<span class="sig-name descname"><span class="pre">has_mmu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.processors.abstract_core.AbstractCore.has_mmu" title="Link to this definition">¶</a></dt>
+<dd><p>Return True if this core has an MMU.</p>
+<p>This is needed to check a core has a MMU before trying to get it.
+There are cores without MMUs. E.g, some generator cores.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.processors.abstract_core.AbstractCore.is_kvm_core">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_kvm_core</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.processors.abstract_core.AbstractCore.is_kvm_core" title="Link to this definition">¶</a></dt>
 <dd><p>KVM cores need setup differently than other cores. Frequently it’s

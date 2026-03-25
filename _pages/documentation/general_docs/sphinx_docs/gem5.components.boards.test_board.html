@@ -114,6 +114,21 @@ CPU-side port for which coherent I/O (DMA) is issued.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.test_board.TestBoard.get_pci_bus">
+<span class="sig-name descname"><span class="pre">get_pci_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PciBus</span></span></span><a class="headerlink" href="#gem5.components.boards.test_board.TestBoard.get_pci_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Get the board’s main PCI Bus.</p>
+<p>This abstract method must be implemented within the subclasses if they
+support PCI and/or full system simulation.</p>
+<p>The PCI bus is a non-coherent bus (in the classic caches). This bus is
+connected to the PCI host bridge and to each PCI devices of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The PCI Bus.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.boards.test_board.TestBoard.has_coherent_io">
 <span class="sig-name descname"><span class="pre">has_coherent_io</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.test_board.TestBoard.has_coherent_io" title="Link to this definition">¶</a></dt>
 <dd><p>Determine whether the board needs coherent I/O</p>
@@ -142,6 +157,17 @@ CPU-side port for which coherent I/O (DMA) is issued.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has an IO bus, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.test_board.TestBoard.has_pci_bus">
+<span class="sig-name descname"><span class="pre">has_pci_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.test_board.TestBoard.has_pci_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Determine whether the board has an PCI bus or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has an PCI bus, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.chi.nodes.l2\_cache module
+===========================================================
+
+.. automodule:: gem5.components.cachehierarchies.chi.nodes.l2_cache
+   :members:
+   :undoc-members:
+   :show-inheritance:

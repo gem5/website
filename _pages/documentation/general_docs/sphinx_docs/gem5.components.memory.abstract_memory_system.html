@@ -69,9 +69,11 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.memory.abstrac
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.abstract_memory_system.AbstractMemorySystem.get_mem_interfaces">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mem_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">MemInterface</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.abstract_memory_system.AbstractMemorySystem.get_mem_interfaces" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mem_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractMemory</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.abstract_memory_system.AbstractMemorySystem.get_mem_interfaces" title="Link to this definition">¶</a></dt>
 <dd><p>Get all memory interfaces in this memory system.
 Useful when creating physical memory objects.</p>
+<p>The “mem interface” is the object that is an AbstractMemory and
+is used to create the backing store.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -84,6 +86,8 @@ Useful when creating physical memory objects.</p>
 <dt class="sig sig-object py" id="gem5.components.memory.abstract_memory_system.AbstractMemorySystem.get_memory_controllers">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_memory_controllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">MemCtrl</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.abstract_memory_system.AbstractMemorySystem.get_memory_controllers" title="Link to this definition">¶</a></dt>
 <dd><p>Get all of the memory controllers in this memory system.</p>
+<p>The “memory controller” is the object that has a port named “port”
+that is the CPU-side port for the memory.</p>
 </dd></dl>
 
 <dl class="py method">

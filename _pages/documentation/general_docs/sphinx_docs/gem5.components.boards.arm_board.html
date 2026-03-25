@@ -158,12 +158,43 @@ in ascending order.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.arm_board.ArmBoard.get_mem_ranges">
+<span class="sig-name descname"><span class="pre">get_mem_ranges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.boards.arm_board.ArmBoard.get_mem_ranges" title="Link to this definition">¶</a></dt>
+<dd><p>Get all the mem ranges in the board, This
+tries to account for boards instantiating memories other
+than main DRAM.
+Using get_mem_ports might return some duplicate ranges
+(when not considering interleaving) when the board
+memory has multiple ports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All the memory ranges</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.boards.arm_board.ArmBoard.get_mem_side_coherent_io_port">
 <span class="sig-name descname"><span class="pre">get_mem_side_coherent_io_port</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Port</span></span></span><a class="headerlink" href="#gem5.components.boards.arm_board.ArmBoard.get_mem_side_coherent_io_port" title="Link to this definition">¶</a></dt>
 <dd><p>Get the memory-side coherent I/O port.</p>
 <p>This abstract method must be implemented if <code class="docutils literal notranslate"><span class="pre">has_coherent_io</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>This returns a <em>port</em> (not a bus) that should be connected to a
 CPU-side port for which coherent I/O (DMA) is issued.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.arm_board.ArmBoard.get_pci_bus">
+<span class="sig-name descname"><span class="pre">get_pci_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PciBus</span></span></span><a class="headerlink" href="#gem5.components.boards.arm_board.ArmBoard.get_pci_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Get the board’s main PCI Bus.</p>
+<p>This abstract method must be implemented within the subclasses if they
+support PCI and/or full system simulation.</p>
+<p>The PCI bus is a non-coherent bus (in the classic caches). This bus is
+connected to the PCI host bridge and to each PCI devices of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The PCI Bus.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -195,6 +226,17 @@ CPU-side port for which coherent I/O (DMA) is issued.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has an IO bus, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.boards.arm_board.ArmBoard.has_pci_bus">
+<span class="sig-name descname"><span class="pre">has_pci_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#gem5.components.boards.arm_board.ArmBoard.has_pci_bus" title="Link to this definition">¶</a></dt>
+<dd><p>Determine whether the board has an PCI bus or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the board has an PCI bus, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>

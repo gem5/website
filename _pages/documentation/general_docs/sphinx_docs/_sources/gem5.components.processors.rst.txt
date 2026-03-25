@@ -24,6 +24,7 @@ Submodules
    gem5.components.processors.complex_generator
    gem5.components.processors.complex_generator_core
    gem5.components.processors.cpu_types
+   gem5.components.processors.decoupled_processor
    gem5.components.processors.gups_generator
    gem5.components.processors.gups_generator_core
    gem5.components.processors.gups_generator_ep

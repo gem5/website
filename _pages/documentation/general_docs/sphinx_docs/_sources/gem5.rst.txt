@@ -20,6 +20,7 @@ Submodules
    :maxdepth: 4
 
    gem5.coherence_protocol
+   gem5.gem5_default_config
    gem5.isas
    gem5.runtime
 

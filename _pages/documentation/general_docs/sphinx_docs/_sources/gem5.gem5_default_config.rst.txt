@@ -1,0 +1,7 @@
+gem5.gem5\_default\_config module
+=================================
+
+.. automodule:: gem5.gem5_default_config
+   :members:
+   :undoc-members:
+   :show-inheritance:

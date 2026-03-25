@@ -39,9 +39,52 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchi
   <section id="module-gem5.components.cachehierarchies.chi.nodes.directory">
 <span id="gem5-components-cachehierarchies-chi-nodes-directory-module"></span><h1>gem5.components.cachehierarchies.chi.nodes.directory module<a class="headerlink" href="#module-gem5.components.cachehierarchies.chi.nodes.directory" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.SimpleDirectory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.directory.</span></span><span class="sig-name descname"><span class="pre">SimpleDirectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clk_domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ClockDomain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.SimpleDirectory" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.directory.</span></span><span class="sig-name descname"><span class="pre">BaseDirectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractNode</span></code></a></p>
+<p>BaseDirectory. Mainly providing address range generation
+capabilities (see create_addr_ranges method)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.create_addr_ranges">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_addr_ranges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_directories</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mem_ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.create_addr_ranges" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.directory.SimpleDirectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.directory.</span></span><span class="sig-name descname"><span class="pre">SimpleDirectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clk_domain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ClockDomain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr_ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.directory.SimpleDirectory" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory" title="gem5.components.cachehierarchies.chi.nodes.directory.BaseDirectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDirectory</span></code></a></p>
 <p>A directory or home node (HNF)</p>
 <p>This simple directory has no cache. It forwards all requests as directly
 as possible.</p>

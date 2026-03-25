@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.classic.two\_level\_fdp\_cache\_hierarchy module
+=================================================================================
+
+.. automodule:: gem5.components.cachehierarchies.classic.two_level_fdp_cache_hierarchy
+   :members:
+   :undoc-members:
+   :show-inheritance:

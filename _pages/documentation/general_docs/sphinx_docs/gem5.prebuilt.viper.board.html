@@ -44,7 +44,19 @@ permalink: /documentation/general_docs/stdlib_api/gem5.prebuilt.viper.board.html
 <dd><p>Bases: <a class="reference internal" href="gem5.components.boards.x86_board.html#gem5.components.boards.x86_board.X86Board" title="gem5.components.boards.x86_board.X86Board"><code class="xref py py-class docutils literal notranslate"><span class="pre">X86Board</span></code></a></p>
 <p>A derivative of X86Board capable of full system simulation for X86 with a
 GPU device. Provides all the functionality of the X86Board with helper
-methods specific to booting a disk with GPU libraries installed.</p>
+methods specific to booting a disk with GPU libraries installed, enables
+AVX on supported CPU models (KVM only right now) for PyTorch, a workaround
+for X86Board 3GiB memory limitation, and helper methods to create a
+temporary readfile which reads in a binary blob into the simulator.</p>
+<p><strong>Limitations</strong>
+* Only KVM and ATOMIC CPU models can be used due to issue CPU Ruby protocol
+* 3GiB limit workaround is a VIPER specific hack which silently creates an</p>
+<blockquote>
+<div><p>additional memory controller with 128MiB of additional memory.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>This board should not be used to measure CPU performance.</p></li>
+</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.abstract">
 <span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.abstract" title="Link to this definition">¶</a></dt>
@@ -115,13 +127,18 @@ the following strings may be used as placeholders, to be replaced when
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_low_mem_ports">
+<span class="sig-name descname"><span class="pre">get_low_mem_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_low_mem_ports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.get_pci_host">
 <span class="sig-name descname"><span class="pre">get_pci_host</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.get_pci_host" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.prebuilt.viper.board.ViperBoard.make_gpu_app">
-<span class="sig-name descname"><span class="pre">make_gpu_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.devices.gpus.amdgpu.html#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><span class="pre">BaseViperGPU</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.make_gpu_app" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">make_gpu_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.devices.gpus.amdgpu.html#gem5.components.devices.gpus.amdgpu.BaseViperGPU" title="gem5.components.devices.gpus.amdgpu.BaseViperGPU"><span class="pre">BaseViperGPU</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.prebuilt.viper.board.ViperBoard.make_gpu_app" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
