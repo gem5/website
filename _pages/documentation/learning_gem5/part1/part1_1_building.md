@@ -82,7 +82,14 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install zlib1g zlib1g-dev
     ```
 
-6.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
+6.  [GNU m4](https://www.gnu.org/software/m4/) 1.4.18+
+    :   gem5 uses GNU m4 to generate libelf sources.
+
+    ```bash
+    sudo apt install m4
+    ```
+
+7.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)
@@ -95,7 +102,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
     ```
 
-7. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
+8. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
     :   The Boost library is a set of general purpose C++ libraries. It is a
         necessary dependency if you wish to use the SystemC implementation.
         ```
