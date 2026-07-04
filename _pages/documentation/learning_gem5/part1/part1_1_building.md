@@ -28,7 +28,7 @@ On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
 ```bash
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python3-dev
 ```
 
 1. git ([Git](https://git-scm.com/)):
