@@ -32,7 +32,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 ```
 
 1. git ([Git](https://git-scm.com/)):
-    :   The gem5 project uses [Git](https://git-scm.com/) 2.34.1+ for version
+    :   The gem5 project uses [Git](https://git-scm.com/) 2.34+ for version
         control. [Git](https://git-scm.com/) is a distributed version
         control system. More information about
         [Git](https://git-scm.com/) can be found by following the link.
@@ -55,7 +55,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 
        **We support GCC major versions 11 through 16.**
 
-3.  [SCons 4.0.1+](http://www.scons.org/)
+3.  [SCons 4.0+](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
         steroids and uses Python scripts for all aspects of the build
         process. This allows for a very flexible (if slow) build system.
@@ -75,21 +75,21 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install python3-dev
     ```
 
-5.  [zlib](https://zlib.net/) 1.2.11+
+5.  [zlib](https://zlib.net/) 1.2+
     :   gem5 uses zlib for compression support.
 
     ```bash
     sudo apt install zlib1g zlib1g-dev
     ```
 
-6.  [GNU m4](https://www.gnu.org/software/m4/) 1.4.18+
+6.  [GNU m4](https://www.gnu.org/software/m4/) 1.4+
     :   gem5 uses GNU m4 to generate libelf sources.
 
     ```bash
     sudo apt install m4
     ```
 
-7.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
+7.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)

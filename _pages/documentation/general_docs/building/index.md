@@ -28,43 +28,43 @@ information on this.
 
 ## Dependencies
 
-* **git 2.34.1+** : gem5 uses git for version control.
+* **git 2.34+** : gem5 uses git for version control.
 * **gcc**: gcc is used to compile gem5. We support GCC major versions 11
 through 16.
 * **Clang**: Clang can also be used. At present, we support Clang major
 versions 14 through 22.
-* **SCons** : gem5 uses SCons as its build environment. SCons 4.0.1 or greater
+* **SCons** : gem5 uses SCons as its build environment. SCons 4.0 or greater
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
 compiled and run in environments using Python 3.10+.
 * **Python venv and Tk 3.10+** (Optional): Python virtual environment and Tk
 packages support Python tooling and optional graphical configuration tools.
-* **zlib 1.2.11+** : gem5 uses zlib for compression support.
-* **GNU m4 1.4.18+** : gem5 uses GNU m4 to generate libelf sources.
-* **pkg-config 0.29.2+** (Optional): gem5 uses pkg-config to discover optional
+* **zlib 1.2+** : gem5 uses zlib for compression support.
+* **GNU m4 1.4+** : gem5 uses GNU m4 to generate libelf sources.
+* **pkg-config 0.29+** (Optional): gem5 uses pkg-config to discover optional
 libraries when they are installed.
-* **libpng 1.6.37+** (Optional): libpng enables PNG framebuffer output.
+* **libpng 1.6+** (Optional): libpng enables PNG framebuffer output.
 * **elfutils libelf 0.186+** (Optional): libelf provides ELF development files
 on Linux distributions.
-* **Capstone 4.0.2+** (Optional): Capstone enables optional instruction
+* **Capstone 4.0+** (Optional): Capstone enables optional instruction
 disassembly support.
-* **HDF5 1.10.7+** (Optional): HDF5 enables optional HDF5 statistics output.
-* **google-perftools 2.9.1+** (Optional): google-perftools provides tcmalloc,
+* **HDF5 1.10+** (Optional): HDF5 enables optional HDF5 statistics output.
+* **google-perftools 2.9+** (Optional): google-perftools provides tcmalloc,
 which gem5 can link against for improved performance.
-* **CMake 3.22.1+** (Optional): CMake is required when building the optional
+* **CMake 3.22+** (Optional): CMake is required when building the optional
 DRAMSys integration.
-* **Doxygen 1.9.1+** (Optional): Doxygen is used to generate source
+* **Doxygen 1.9+** (Optional): Doxygen is used to generate source
 documentation.
-* **wget 1.21.2+** (Optional): wget is used by setup, Docker, and tutorial
+* **wget 1.21+** (Optional): wget is used by setup, Docker, and tutorial
 download flows.
-* **pydot 1.4.2+** (Optional): pydot enables optional dot graph generation.
+* **pydot 1.4+** (Optional): pydot enables optional dot graph generation.
 * **mypy 0.942+** (Optional): mypy is used by Python type-checking and stub
 generation tooling.
-* **pre-commit 2.17.0+** (Optional): pre-commit runs gem5's local style and
+* **pre-commit 2.17+** (Optional): pre-commit runs gem5's local style and
 commit hooks.
 * **clang-format 14+** (Optional): clang-format is used by gem5's formatting
 hook.
-* **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
+* **protobuf 3.12+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
