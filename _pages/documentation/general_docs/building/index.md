@@ -37,7 +37,7 @@ versions 14 through 22.
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
 compiled and run in environments using Python 3.10+.
-* **protobuf 2.1+** (Optional): The protobuf library is used for trace
+* **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC

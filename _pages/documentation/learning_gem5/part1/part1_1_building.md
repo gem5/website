@@ -75,7 +75,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install python3-dev
     ```
 
-5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+ (**Optional**)
+5.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)
