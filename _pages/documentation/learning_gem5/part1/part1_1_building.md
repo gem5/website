@@ -32,7 +32,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
 ```
 
 1. git ([Git](https://git-scm.com/)):
-    :   The gem5 project uses [Git](https://git-scm.com/) for version
+    :   The gem5 project uses [Git](https://git-scm.com/) 2.34.1+ for version
         control. [Git](https://git-scm.com/) is a distributed version
         control system. More information about
         [Git](https://git-scm.com/) can be found by following the link.
