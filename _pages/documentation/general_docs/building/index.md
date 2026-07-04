@@ -47,6 +47,8 @@ on Linux distributions.
 * **Capstone 4.0.2+** (Optional): Capstone enables optional instruction
 disassembly support.
 * **HDF5 1.10.7+** (Optional): HDF5 enables optional HDF5 statistics output.
+* **google-perftools 2.9.1+** (Optional): google-perftools provides tcmalloc,
+which gem5 can link against for improved performance.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
