@@ -80,31 +80,6 @@ sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/c
 sudo update-alternatives --config clang-format
 ```
 
-### Setup on Ubuntu 20.04 (gem5 >= v21.0)
-
-If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
-install all these dependencies using APT:
-
-```bash
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
-    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python-is-python3 libboost-all-dev pkg-config gcc-10 g++-10 \
-    python3-tk clang-format-18
-```
-
-You may need to configure `clang-format-18` as the default
-`clang-format` for your system.
-
-```bash
-# Configure clang-format-18 and git-clang-format-18 as the system defaults.
-sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-18 180 \
-        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-18 \
-        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-18
-
-# [Optional] Add other alternative versions, and select version 18 as the default version.
-sudo update-alternatives --config clang-format
-```
-
 ### Docker
 
 For users struggling to setup an environment to build and run gem5, we provide
@@ -119,6 +94,9 @@ Ubuntu 24.04 with minimum dependencies:
 [ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
 https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
 ([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+
+The following older images are intended for older gem5 releases whose tags
+match the image tags.
 
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
@@ -141,10 +119,10 @@ To obtain a docker image:
 docker pull <image>
 ```
 
-E.g., for Ubuntu 20.04 with all optional dependencies:
+E.g., for Ubuntu 24.04 with all optional dependencies:
 
 ```bash
-docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0
 ```
 
 Then, to work within this environment, we suggest using the following:
@@ -155,7 +133,7 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0`).
+`ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.
