@@ -37,6 +37,8 @@ versions 14 through 22.
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
 compiled and run in environments using Python 3.10+.
+* **Python venv and Tk 3.10+** (Optional): Python virtual environment and Tk
+packages support Python tooling and optional graphical configuration tools.
 * **zlib 1.2.11+** : gem5 uses zlib for compression support.
 * **GNU m4 1.4.18+** : gem5 uses GNU m4 to generate libelf sources.
 * **pkg-config 0.29.2+** (Optional): gem5 uses pkg-config to discover optional
@@ -88,7 +90,9 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config python3-tk clang-format
+    libboost-all-dev libhdf5-dev python3-pydot python3-venv python3-tk mypy \
+    python3-dev libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake \
+    doxygen pre-commit clang-format
 ```
 
 ### Docker
