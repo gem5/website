@@ -49,6 +49,8 @@ disassembly support.
 * **HDF5 1.10.7+** (Optional): HDF5 enables optional HDF5 statistics output.
 * **google-perftools 2.9.1+** (Optional): google-perftools provides tcmalloc,
 which gem5 can link against for improved performance.
+* **CMake 3.22.1+** (Optional): CMake is required when building the optional
+DRAMSys integration.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
