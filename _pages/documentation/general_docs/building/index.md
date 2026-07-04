@@ -55,6 +55,7 @@ DRAMSys integration.
 documentation.
 * **wget 1.21.2+** (Optional): wget is used by setup, Docker, and tutorial
 download flows.
+* **pydot 1.4.2+** (Optional): pydot enables optional dot graph generation.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
