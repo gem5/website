@@ -18,9 +18,8 @@ dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
 information).
 
-As of gem5 21.0, **we support building and running gem5 with Python 3.6+
-only**. gem5 20.0 was our last version of gem5 to provide support for Python
-2.
+We support building and running gem5 with Python 3.10 or newer only. gem5
+20.0 was our last version of gem5 to provide support for Python 2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
 pre-prepared [Docker](https://www.docker.com/) images which may be used to
@@ -36,8 +35,8 @@ support up to gcc Version 13.
 Clang 16 (inclusive).
 * **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
 must be used.
-* **Python 3.6+** : gem5 relies on Python development libraries. gem5 can be
-compiled and run in environments using Python 3.6+.
+* **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
+compiled and run in environments using Python 3.10+.
 * **protobuf 2.1+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost** (Optional): The Boost library is a set of general purpose C++
@@ -83,7 +82,8 @@ sudo update-alternatives --config clang-format
 ### Docker
 
 For users struggling to setup an environment to build and run gem5, we provide
-the following Docker Images:
+the following Docker images. For current gem5 checkouts, use an image with
+Python 3.10 or newer.
 
 Ubuntu 24.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](

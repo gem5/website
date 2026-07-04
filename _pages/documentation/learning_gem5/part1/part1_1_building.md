@@ -66,9 +66,10 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install scons
     ```
 
-4.  Python 3.6+
-    :   gem5 relies on the Python development libraries. To install
-        these on Ubuntu use
+4.  Python 3.10+
+    :   gem5 relies on the Python development libraries. On Ubuntu, install
+        the development headers for Python 3.10 or newer. On distributions
+        where `python3` is Python 3.10 or newer, use
 
     ```bash
     sudo apt install python3-dev

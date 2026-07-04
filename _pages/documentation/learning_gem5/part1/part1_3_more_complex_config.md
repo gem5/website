@@ -773,7 +773,7 @@ configuration script is just Python, you can use the Python libraries
 that support argument parsing. Although pyoptparse is officially
 deprecated, many of the configuration scripts that ship with gem5 use it
 instead of pyargparse since gem5's minimum Python version used to be
-2.5. The minimum Python version is now 3.6, so Python's argparse is a better
+2.5. The minimum Python version is now 3.10, so Python's argparse is a better
 option when writing new scripts that don't need to interact with the
 current gem5 scripts. To get started using :pyoptparse, you can consult
 the online Python documentation.
