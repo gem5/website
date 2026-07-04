@@ -75,7 +75,14 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install python3-dev
     ```
 
-5.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
+5.  [zlib](https://zlib.net/) 1.2.11+
+    :   gem5 uses zlib for compression support.
+
+    ```bash
+    sudo apt install zlib1g zlib1g-dev
+    ```
+
+6.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12.4+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)
@@ -88,7 +95,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
     ```
 
-6. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
+7. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
     :   The Boost library is a set of general purpose C++ libraries. It is a
         necessary dependency if you wish to use the SystemC implementation.
         ```
@@ -187,6 +194,7 @@ The output should look something like below (For gem5 >= 24.1):
     Checking Python version... (cached) 3.12.3
     Checking for accept(0,0,0) in C++ library None... (cached) yes
     Checking for zlibVersion() in C++ library z... (cached) yes
+    Checking zlib version... (cached) yes
     Checking for C library tcmalloc_minimal... (cached) yes
     Building in /home/bees/gem5-4th-worktree/build/ALL
     "build_tools/kconfig_base.py" "/home/bees/gem5-4th-worktree/build/ALL/gem5.build/Kconfig" "/home/bees/gem5-4th-worktree/src/Kconfig" 

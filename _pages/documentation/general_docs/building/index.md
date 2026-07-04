@@ -37,6 +37,7 @@ versions 14 through 22.
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
 compiled and run in environments using Python 3.10+.
+* **zlib 1.2.11+** : gem5 uses zlib for compression support.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
