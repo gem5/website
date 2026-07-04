@@ -51,6 +51,8 @@ disassembly support.
 which gem5 can link against for improved performance.
 * **CMake 3.22.1+** (Optional): CMake is required when building the optional
 DRAMSys integration.
+* **Doxygen 1.9.1+** (Optional): Doxygen is used to generate source
+documentation.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
