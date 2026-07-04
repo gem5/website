@@ -46,6 +46,7 @@ libraries when they are installed.
 on Linux distributions.
 * **Capstone 4.0.2+** (Optional): Capstone enables optional instruction
 disassembly support.
+* **HDF5 1.10.7+** (Optional): HDF5 enables optional HDF5 statistics output.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
@@ -60,7 +61,7 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential scons python3-dev git pre-commit zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    libboost-all-dev  libhdf5-serial-dev python3-pydot python3-venv python3-tk mypy \
+    libboost-all-dev libhdf5-dev python3-pydot python3-venv python3-tk mypy \
     m4 libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake doxygen clang-format
 ```
 
