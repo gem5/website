@@ -39,6 +39,8 @@ must be used.
 compiled and run in environments using Python 3.10+.
 * **zlib 1.2.11+** : gem5 uses zlib for compression support.
 * **GNU m4 1.4.18+** : gem5 uses GNU m4 to generate libelf sources.
+* **pkg-config 0.29.2+** (Optional): gem5 uses pkg-config to discover optional
+libraries when they are installed.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
