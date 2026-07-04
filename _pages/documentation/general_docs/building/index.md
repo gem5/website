@@ -44,6 +44,8 @@ libraries when they are installed.
 * **libpng 1.6.37+** (Optional): libpng enables PNG framebuffer output.
 * **elfutils libelf 0.186+** (Optional): libelf provides ELF development files
 on Linux distributions.
+* **Capstone 4.0.2+** (Optional): Capstone enables optional instruction
+disassembly support.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
