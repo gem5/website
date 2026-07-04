@@ -58,6 +58,8 @@ download flows.
 * **pydot 1.4.2+** (Optional): pydot enables optional dot graph generation.
 * **mypy 0.942+** (Optional): mypy is used by Python type-checking and stub
 generation tooling.
+* **pre-commit 2.17.0+** (Optional): pre-commit runs gem5's local style and
+commit hooks.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
