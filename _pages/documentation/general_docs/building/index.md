@@ -33,7 +33,7 @@ information on this.
 through 16.
 * **Clang**: Clang can also be used. At present, we support Clang major
 versions 14 through 22.
-* **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
+* **SCons** : gem5 uses SCons as its build environment. SCons 4.0.1 or greater
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
 compiled and run in environments using Python 3.10+.
