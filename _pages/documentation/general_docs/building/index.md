@@ -53,6 +53,8 @@ which gem5 can link against for improved performance.
 DRAMSys integration.
 * **Doxygen 1.9.1+** (Optional): Doxygen is used to generate source
 documentation.
+* **wget 1.21.2+** (Optional): wget is used by setup, Docker, and tutorial
+download flows.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
