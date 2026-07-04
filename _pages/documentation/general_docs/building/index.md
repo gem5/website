@@ -60,6 +60,8 @@ download flows.
 generation tooling.
 * **pre-commit 2.17.0+** (Optional): pre-commit runs gem5's local style and
 commit hooks.
+* **clang-format 14+** (Optional): clang-format is used by gem5's formatting
+hook.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
 * **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
@@ -86,20 +88,7 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config python3-tk clang-format-15
-```
-
-You may need to configure `clang-format-15` as the default
-`clang-format` for your system.
-
-```bash
-# Configure clang-format-15 and git-clang-format-15 as the system defaults.
-sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-15 150 \
-        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-15 \
-        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-15
-
-# [Optional] Add other alternative versions, and select version 15 as the default version.
-sudo update-alternatives --config clang-format
+    python3-dev libboost-all-dev pkg-config python3-tk clang-format
 ```
 
 ### Docker
