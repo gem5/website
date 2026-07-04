@@ -39,7 +39,7 @@ must be used.
 compiled and run in environments using Python 3.10+.
 * **protobuf 3.12.4+** (Optional): The protobuf library is used for trace
 generation and playback.
-* **Boost** (Optional): The Boost library is a set of general purpose C++
+* **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 

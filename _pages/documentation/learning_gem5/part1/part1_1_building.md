@@ -88,7 +88,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
     ```
 
-6. [Boost](https://www.boost.org/) (**Optional**)
+6. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
     :   The Boost library is a set of general purpose C++ libraries. It is a
         necessary dependency if you wish to use the SystemC implementation.
         ```
