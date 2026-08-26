@@ -6,8 +6,7 @@ permalink: /ask-a-question/
 
 If you have a question about gem5, there are multiple ways you can reach out to us:
  - **Preferably, you can post it on [GitHub discussions](https://github.com/orgs/gem5/discussions)**.
- - Alternatively, you can post it on our [gem5 Slack channel](https://join.slack.com/t/gem5-workspace/shared_invite/zt-2e2nfln38-xsIkN1aRmofRlAHOIkZaEA).
- - Lastly, you may also send an email to one of our mailing lists. Due to the high volume of emails, there may be delays in response or automated replies from AI bots. Therefore, if emailing isn't your sole preference, consider using one of the aforementioned options.
+ - Alternatively, you may send an email to one of our mailing lists. Due to the high volume of emails, there may be delays in response or automated replies from AI bots. Therefore, if emailing isn't your sole preference, consider using GitHub Discussions.
     * _gem5-dev@gem5.org_ : For discussions regarding gem5 development. <br>
         Those wishing to post to and/or receive mail from the list should subscribe by sending an email to [gem5-dev-join@gem5.org](mailto:gem5-dev-join@gem5.org) or at <https://harmonylists.io/list/gem5-dev.gem5.org>.
     * _gem5-users@gem5.org_ : For general discussions about gem5 and its use. <br>

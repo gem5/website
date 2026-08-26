@@ -97,7 +97,7 @@ memory = SingleChannelDDR3_1600(size="2GiB")
 
 This is quite simple and should be intuitive: A single channel DDR3 1600 setup of size 2GiB.
 **Note:** by default the `SingleChannelDDR3_1600` component has a size of 8GiB.
-However, due to [a known limitation with the X86Board](https://gem5.atlassian.net/browse/GEM5-1142), we cannot use a memory system greater than 3GiB.
+However, due to a known limitation with the X86Board, we cannot use a memory system greater than 3GiB.
 We therefore must set the size.
 
 Next we setup the _processor_:

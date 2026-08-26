@@ -128,7 +128,7 @@ I.e., a user of gem5 `v21.0` may obtain the `v21.0` version of the `ubuntu-20.04
 * If changes to the Dockerfile are done on the staging branch, then these changes will need to be pushed to <ghcr.io> manually.
 * Special permissions are needed to push to the <ghcr.io>.
 Please contact Bobby R. Bruce (bbruce@ucdavis.edu) for help pushing images.
-* It is a future goal of ours to move [the Dockerfiles from `util/dockerfiles` to gem5-resources](https://gem5.atlassian.net/browse/GEM5-1044).
+* It is a future goal of ours to move the Dockerfiles from `util/dockerfiles` to gem5-resources.
 
 ## gem5 website repository
 
