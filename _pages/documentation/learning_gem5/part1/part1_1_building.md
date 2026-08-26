@@ -309,7 +309,8 @@ build/X86/proto/inst_dep_record.pb.h:49:51: error: 'AuxiliaryParseTableField' in
    49 |   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
 ```
 
-The root cause of the problem is discussed here: [https://gem5.atlassian.net/browse/GEM5-1032].
+This problem can occur when gem5 is built with an incompatible version of
+Protocol Buffers.
 
 To resolve this problem, you may need to update the version of ProtocolBuffer,
 
