@@ -28,11 +28,11 @@ On Ubuntu, you can install all of the required dependencies with the
 following command. The requirements are detailed below.
 
 ```bash
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python3-dev
 ```
 
 1. git ([Git](https://git-scm.com/)):
-    :   The gem5 project uses [Git](https://git-scm.com/) for version
+    :   The gem5 project uses [Git](https://git-scm.com/) 2.34+ for version
         control. [Git](https://git-scm.com/) is a distributed version
         control system. More information about
         [Git](https://git-scm.com/) can be found by following the link.
@@ -43,7 +43,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install git
     ```
 
-2. gcc 10+
+2. GCC 11 through 16
     :   You may need to use environment variables to point to a
         non-default version of gcc.
 
@@ -53,9 +53,9 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
         sudo apt install build-essential
         ```
 
-       **We support GCC Versions >=10, up to GCC 13**
+       **We support GCC major versions 11 through 16.**
 
-3.  [SCons 3.0+](http://www.scons.org/)
+3.  [SCons 4.0+](http://www.scons.org/)
     :   gem5 uses SCons as its build environment. SCons is like make on
         steroids and uses Python scripts for all aspects of the build
         process. This allows for a very flexible (if slow) build system.
@@ -66,15 +66,30 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install scons
     ```
 
-4.  Python 3.6+
-    :   gem5 relies on the Python development libraries. To install
-        these on Ubuntu use
+4.  Python 3.10+
+    :   gem5 relies on the Python development libraries. On Ubuntu, install
+        the development headers for Python 3.10 or newer. On distributions
+        where `python3` is Python 3.10 or newer, use
 
     ```bash
     sudo apt install python3-dev
     ```
 
-5.  [protobuf](https://developers.google.com/protocol-buffers/) 2.1+ (**Optional**)
+5.  [zlib](https://zlib.net/) 1.2+
+    :   gem5 uses zlib for compression support.
+
+    ```bash
+    sudo apt install zlib1g zlib1g-dev
+    ```
+
+6.  [GNU m4](https://www.gnu.org/software/m4/) 1.4+
+    :   gem5 uses GNU m4 to generate libelf sources.
+
+    ```bash
+    sudo apt install m4
+    ```
+
+7.  [protobuf](https://developers.google.com/protocol-buffers/) 3.12+ (**Optional**)
     :   "Protocol buffers are a language-neutral, platform-neutral
         extensible mechanism for serializing structured data." In gem5,
         the [protobuf](https://developers.google.com/protocol-buffers/)
@@ -87,7 +102,7 @@ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev 
     sudo apt install libprotobuf-dev protobuf-compiler libgoogle-perftools-dev
     ```
 
-6. [Boost](https://www.boost.org/) (**Optional**)
+8. [Boost](https://www.boost.org/) 1.74+ (**Optional**)
     :   The Boost library is a set of general purpose C++ libraries. It is a
         necessary dependency if you wish to use the SystemC implementation.
         ```
@@ -186,6 +201,7 @@ The output should look something like below (For gem5 >= 24.1):
     Checking Python version... (cached) 3.12.3
     Checking for accept(0,0,0) in C++ library None... (cached) yes
     Checking for zlibVersion() in C++ library z... (cached) yes
+    Checking zlib version... (cached) yes
     Checking for C library tcmalloc_minimal... (cached) yes
     Building in /home/bees/gem5-4th-worktree/build/ALL
     "build_tools/kconfig_base.py" "/home/bees/gem5-4th-worktree/build/ALL/gem5.build/Kconfig" "/home/bees/gem5-4th-worktree/src/Kconfig" 
@@ -251,8 +267,8 @@ Common errors
 ### Wrong gcc version
 
 ```txt
-    Error: gcc version 5 or newer required.
-           Installed version: 4.4.7
+    Warning: Detected GCC version 10.5.0 is not officially supported.
+    gem5 supports GCC major versions 11 through 16.
 ```
 
 Update your environment variables to point to the right gcc version, or

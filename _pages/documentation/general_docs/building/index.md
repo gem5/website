@@ -18,9 +18,8 @@ dependencies are installed**. We ensure that gem5 is compilable with both gcc
 and clang (see [Dependencies](#dependencies)  below for compiler version
 information).
 
-As of gem5 21.0, **we support building and running gem5 with Python 3.6+
-only**. gem5 20.0 was our last version of gem5 to provide support for Python
-2.
+We support building and running gem5 with Python 3.10 or newer only. gem5
+20.0 was our last version of gem5 to provide support for Python 2.
 
 If running gem5 in a suitable OS/environment is not possible, we have provided
 pre-prepared [Docker](https://www.docker.com/) images which may be used to
@@ -29,18 +28,45 @@ information on this.
 
 ## Dependencies
 
-* **git** : gem5 uses git for version control.
-* **gcc**: gcc is used to compiled gem5. **Version >=10 must be used**. We
-support up to gcc Version 13.
-* **Clang**: Clang can also be used. At present, we support Clang 7 to
-Clang 16 (inclusive).
-* **SCons** : gem5 uses SCons as its build environment. SCons 3.0 or greater
+* **git 2.34+** : gem5 uses git for version control.
+* **gcc**: gcc is used to compile gem5. We support GCC major versions 11
+through 16.
+* **Clang**: Clang can also be used. At present, we support Clang major
+versions 14 through 22.
+* **SCons** : gem5 uses SCons as its build environment. SCons 4.0 or greater
 must be used.
-* **Python 3.6+** : gem5 relies on Python development libraries. gem5 can be
-compiled and run in environments using Python 3.6+.
-* **protobuf 2.1+** (Optional): The protobuf library is used for trace
+* **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
+compiled and run in environments using Python 3.10+.
+* **Python venv and Tk 3.10+** (Optional): Python virtual environment and Tk
+packages support Python tooling and optional graphical configuration tools.
+* **zlib 1.2+** : gem5 uses zlib for compression support.
+* **GNU m4 1.4+** : gem5 uses GNU m4 to generate libelf sources.
+* **pkg-config 0.29+** (Optional): gem5 uses pkg-config to discover optional
+libraries when they are installed.
+* **libpng 1.6+** (Optional): libpng enables PNG framebuffer output.
+* **elfutils libelf 0.186+** (Optional): libelf provides ELF development files
+on Linux distributions.
+* **Capstone 4.0+** (Optional): Capstone enables optional instruction
+disassembly support.
+* **HDF5 1.10+** (Optional): HDF5 enables optional HDF5 statistics output.
+* **google-perftools 2.9+** (Optional): google-perftools provides tcmalloc,
+which gem5 can link against for improved performance.
+* **CMake 3.25+** (Optional): CMake is required when building the optional
+DRAMSys integration.
+* **Doxygen 1.9+** (Optional): Doxygen is used to generate source
+documentation.
+* **wget 1.21+** (Optional): wget is used by setup, Docker, and tutorial
+download flows.
+* **pydot 1.4+** (Optional): pydot enables optional dot graph generation.
+* **mypy 0.942+** (Optional): mypy is used by Python type-checking and stub
+generation tooling.
+* **pre-commit 2.17+** (Optional): pre-commit runs gem5's local style and
+commit hooks.
+* **clang-format 14+** (Optional): clang-format is used by gem5's formatting
+hook.
+* **protobuf 3.12+** (Optional): The protobuf library is used for trace
 generation and playback.
-* **Boost** (Optional): The Boost library is a set of general purpose C++
+* **Boost 1.74+** (Optional): The Boost library is a set of general purpose C++
 libraries. It is a necessary dependency if you wish to use the SystemC
 implementation.
 
@@ -52,7 +78,7 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential scons python3-dev git pre-commit zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    libboost-all-dev  libhdf5-serial-dev python3-pydot python3-venv python3-tk mypy \
+    libboost-all-dev libhdf5-dev python3-pydot python3-venv python3-tk mypy \
     m4 libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake doxygen clang-format
 ```
 
@@ -64,51 +90,16 @@ install all these dependencies using APT:
 ```bash
 sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev libboost-all-dev pkg-config python3-tk clang-format-15
-```
-
-You may need to configure `clang-format-15` as the default
-`clang-format` for your system.
-
-```bash
-# Configure clang-format-15 and git-clang-format-15 as the system defaults.
-sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-15 150 \
-        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-15 \
-        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-15
-
-# [Optional] Add other alternative versions, and select version 15 as the default version.
-sudo update-alternatives --config clang-format
-```
-
-### Setup on Ubuntu 20.04 (gem5 >= v21.0)
-
-If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may
-install all these dependencies using APT:
-
-```bash
-sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
-    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
-    python3-dev python-is-python3 libboost-all-dev pkg-config gcc-10 g++-10 \
-    python3-tk clang-format-18
-```
-
-You may need to configure `clang-format-18` as the default
-`clang-format` for your system.
-
-```bash
-# Configure clang-format-18 and git-clang-format-18 as the system defaults.
-sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-18 180 \
-        --slave /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-18 \
-        --slave /usr/bin/git-clang-format git-clang-format /usr/bin/git-clang-format-18
-
-# [Optional] Add other alternative versions, and select version 18 as the default version.
-sudo update-alternatives --config clang-format
+    libboost-all-dev libhdf5-dev python3-pydot python3-venv python3-tk mypy \
+    python3-dev libcapstone-dev libpng-dev libelf-dev pkg-config wget cmake \
+    doxygen pre-commit clang-format
 ```
 
 ### Docker
 
 For users struggling to setup an environment to build and run gem5, we provide
-the following Docker Images:
+the following Docker images. For current gem5 checkouts, use an image with
+Python 3.10 or newer.
 
 Ubuntu 24.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0](
@@ -119,6 +110,9 @@ Ubuntu 24.04 with minimum dependencies:
 [ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0](
 https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
 ([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
+
+The following older images are intended for older gem5 releases whose tags
+match the image tags.
 
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
@@ -141,10 +135,10 @@ To obtain a docker image:
 docker pull <image>
 ```
 
-E.g., for Ubuntu 20.04 with all optional dependencies:
+E.g., for Ubuntu 24.04 with all optional dependencies:
 
 ```bash
-docker pull ghcr.io/gem5/ubuntu-20.04_all-dependencies:v23-0
+docker pull ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0
 ```
 
 Then, to work within this environment, we suggest using the following:
@@ -155,7 +149,7 @@ docker run -u $UID:$GID --volume <gem5 directory>:/gem5 --rm -it <image>
 
 Where `<gem5 directory>` is the full path of the gem5 in your file system, and
 `<image>` is the image pulled (e.g.,
-ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0`).
+`ghcr.io/gem5/ubuntu-24.04_all-dependencies:v24-0`).
 
 From this environment, you will be able to build and run gem5 from the `/gem5`
 directory.
