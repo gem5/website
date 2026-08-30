@@ -51,7 +51,7 @@ disassembly support.
 * **HDF5 1.10+** (Optional): HDF5 enables optional HDF5 statistics output.
 * **google-perftools 2.9+** (Optional): google-perftools provides tcmalloc,
 which gem5 can link against for improved performance.
-* **CMake 3.22+** (Optional): CMake is required when building the optional
+* **CMake 3.25+** (Optional): CMake is required when building the optional
 DRAMSys integration.
 * **Doxygen 1.9+** (Optional): Doxygen is used to generate source
 documentation.
