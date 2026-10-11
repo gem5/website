@@ -770,13 +770,11 @@ configuration script every time you want to test the system with
 different parameters. To get around this, you can add command-line
 parameters to your gem5 configuration script. Again, because the
 configuration script is just Python, you can use the Python libraries
-that support argument parsing. Although pyoptparse is officially
-deprecated, many of the configuration scripts that ship with gem5 use it
-instead of pyargparse since gem5's minimum Python version used to be
-2.5. The minimum Python version is now 3.10, so Python's argparse is a better
-option when writing new scripts that don't need to interact with the
-current gem5 scripts. To get started using :pyoptparse, you can consult
-the online Python documentation.
+that support argument parsing. Older configuration scripts may use the
+`optparse` module. For new scripts, use Python's `argparse` module, which is
+available in gem5's minimum supported Python version, 3.10. To get started,
+consult the [Python argparse documentation](
+https://docs.python.org/3/library/argparse.html).
 
 To add options to our two-level cache configuration, after importing our
 caches, let's add some options.

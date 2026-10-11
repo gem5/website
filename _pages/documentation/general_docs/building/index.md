@@ -112,7 +112,8 @@ https://ghcr.io/gem5/ubuntu-24.04_min-dependencies:v24-0)
 ([source Dockerfile](https://github.com/gem5/gem5/blob/v24.0.0.0/util/dockerfiles/ubuntu-24.04_min-dependencies/Dockerfile)).
 
 The following older images are intended for older gem5 releases whose tags
-match the image tags.
+match the image tags. The Ubuntu 20.04 and 18.04 images are historical only
+and are not recommended for current gem5 checkouts.
 
 Ubuntu 22.04 with all optional dependencies:
 [ghcr.io/gem5/ubuntu-22.04_all-dependencies:v23-0](
