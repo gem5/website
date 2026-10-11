@@ -312,7 +312,7 @@ build/X86/proto/inst_dep_record.pb.h:49:51: error: 'AuxiliaryParseTableField' in
 This problem can occur when gem5 is built with an incompatible version of
 Protocol Buffers.
 
-To resolve this problem, you may need to update the version of ProtocolBuffer,
+To resolve this problem, update the Protocol Buffers packages:
 
 ```bash
 sudo apt update

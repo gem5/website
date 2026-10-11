@@ -35,8 +35,8 @@ https://www.mail-archive.com/gem5-announce@gem5.org/).
 
 [Stack Overflow](https://stackoverflow.com) can be used to crowd-source
 solutions to gem5 related problems. The Stack Overflow `gem5` tag should be
-used: <https://stackoverflow.com/questions/tagged/gem5>). Please make sure
+used: <https://stackoverflow.com/questions/tagged/gem5>. Please make sure
 that your question complies with the [site guidelines](
 https://stackoverflow.com/help/asking) before posting. Interested users can opt
 to receive email notifications for such questions as explained at
-<https://meta.stackexchange.com/questions/25224/email-notifications-for-new-questions-matching-specific-tags>).
+<https://meta.stackexchange.com/questions/25224/email-notifications-for-new-questions-matching-specific-tags>.
