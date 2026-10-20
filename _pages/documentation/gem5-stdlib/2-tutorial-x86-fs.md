@@ -108,10 +108,13 @@ processor = SimpleSwitchableProcessor(
     switch_core_type=CPUTypes.TIMING,
     isa=ISA.X86,
     num_cores=2,
+    clk_freq="3GHz",
 )
 ```
 
 Here we are utilizing the gem5 standard library's special `SimpleSwitchableProcessor`.
+Its `clk_freq` applies to both the starting and switched cores and must be
+specified independently of the board clock in gem5 v26.0 and newer.
 This processor can be used for simulations in which a user wants to switch out one type of core for another during a simulation.
 The `starting_core_type` parameter specifies which CPU type to start a simulation with.
 In this case a KVM core.
@@ -254,6 +257,7 @@ processor = SimpleSwitchableProcessor(
     switch_core_type=CPUTypes.TIMING,
     isa=ISA.X86,
     num_cores=2,
+    clk_freq="3GHz",
 )
 
 board = X86Board(

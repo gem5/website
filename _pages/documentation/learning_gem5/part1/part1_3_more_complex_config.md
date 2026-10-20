@@ -105,11 +105,15 @@ There are also multi channel memories available. You can see [these](https://boo
 Next, let's add a processor:
 
 ```python
-processor = SimpleProcessor(cpu_type=CPUTypes.TIMING, isa=ISA.ARM, num_cores=1)
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.TIMING, isa=ISA.ARM, num_cores=1, clk_freq="3GHz"
+)
 ```
 
 The `SimpleProcessor` is a component that allows you to customize the model for the underlying cores.
 The `cpu_type` parameter specifies the type of CPU model to use.
+The required `clk_freq` sets the processor's clock independently of the board
+clock in gem5 v26.0 and newer. We use 3 GHz for both in this example.
 
 Next, let's add a board and plug in components:
 
