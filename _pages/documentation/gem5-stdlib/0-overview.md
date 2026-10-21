@@ -18,8 +18,8 @@ The [`configs/examples/gem5_library`](https://github.com/gem5/gem5/tree/stable/c
 
 The following subsections give a broad overview of the gem5 stdlib packages and what there intended purposes are.
 
-**Note: The documentation/tutorials/etc. related to the standard library have been updated for the v24.1 release.
-Please ensure you have the correct version of gem5 before proceeding.**
+**Note: These examples use the processor API in gem5 v26.0 and newer.
+Use documentation matching your gem5 version before proceeding.**
 
 As part of [gem5's 2022 Bootcamp](/events/boot-camp-2022), the stdlib was taught as a tutorial.
 Slides for this tutorial can be found [here](https://raw.githubusercontent.com/gem5bootcamp/gem5-bootcamp-env/main/assets/slides/using-gem5-02-gem5-stdlib-tutorial.pdf).
@@ -68,7 +68,9 @@ cache_hierarchy = MESITwoLevelCacheHierarchy(
 
 memory = SingleChannelDDR3_1600(size="3GB")
 
-processor = SimpleProcessor(cpu_type=CPUTypes.TIMING, num_cores=1)
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.TIMING, num_cores=1, isa=ISA.X86, clk_freq="3GHz"
+)
 
 board = X86Board(
     clk_freq="3GHz",
@@ -77,6 +79,9 @@ board = X86Board(
     cache_hierarchy=cache_hierarchy,
 )
 ```
+
+The processor and board clocks are specified independently in gem5 v26.0
+and newer. Here they are both set to 3 GHz.
 
 The following tutorials go into greater detail on how to use the components package to create gem5 simulations.
 

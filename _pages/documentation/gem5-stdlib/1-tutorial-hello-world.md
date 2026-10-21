@@ -71,12 +71,17 @@ If not set, the `SingleChannelDDR3_1600` will default to 8 GiB.
 Then we consider the _processor_:
 
 ```python
-processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86)
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86, clk_freq="3GHz"
+)
 ```
 
 A processor in `gem5.components` is an object which contains a number of gem5 CPU cores, of a particular or varying type (`ATOMIC`, `TIMING`, `KVM`, `O3`, etc.).
 The `SimpleProcessor` used in this example is a processor where all the CPU Cores are of an identical type.
-It requires two arguments: the `cpu_type`, which we set to `ATOMIC`, and `num_cores`, the number of cores, which we set to one.
+It requires `cpu_type`, `num_cores`, `isa`, and `clk_freq`.
+Here we select one atomic X86 core running at 3 GHz.
+Starting with gem5 v26.0, the processor has its own clock domain, so its
+`clk_freq` must be specified explicitly even when it matches the board clock.
 
 Finally we specify which _board_ we are using:
 
@@ -136,7 +141,9 @@ from gem5.simulate.simulator import Simulator
 # Obtain the components.
 cache_hierarchy = NoCache()
 memory = SingleChannelDDR3_1600("1GiB")
-processor = SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86)
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.X86, clk_freq="3GHz"
+)
 
 # Add them to the board.
 board = SimpleBoard(
@@ -185,7 +192,9 @@ It should be obvious from this point that a _board's_ parameters may be altered 
 For example, if we want to test a `TIMING` CPU setup we'd change our _processor_ to:
 
 ```python
-processor = SimpleProcessor(cpu_type=CPUTypes.TIMING, num_cores=1, isa=ISA.X86)
+processor = SimpleProcessor(
+    cpu_type=CPUTypes.TIMING, num_cores=1, isa=ISA.X86, clk_freq="3GHz"
+)
 ```
 
 This is all that is required.
