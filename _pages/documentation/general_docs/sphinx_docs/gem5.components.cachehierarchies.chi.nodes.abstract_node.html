@@ -39,57 +39,220 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchi
   <section id="module-gem5.components.cachehierarchies.chi.nodes.abstract_node">
 <span id="gem5-components-cachehierarchies-chi-nodes-abstract-node-module"></span><h1>gem5.components.cachehierarchies.chi.nodes.abstract_node module<a class="headerlink" href="#module-gem5.components.cachehierarchies.chi.nodes.abstract_node" title="Link to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.abstract_node.</span></span><span class="sig-name descname"><span class="pre">AbstractNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CHI_Cache_Controller</span></code></p>
-<p>A node is the abstract unit for caches in the CHI protocol.</p>
-<p>You can extend the AbstractNode to create caches (private or shared) and
-directories with or without data caches.</p>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.abstract_node.</span></span><span class="sig-name descname"><span class="pre">CHI_Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ruby_system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SubSystem</span></code></p>
+<p>Base class with common functions for setting up Cache or Memory
+controllers that are part of a CHI RNF, RNFI, HNF, or SNF nodes.
+Notice getNetworkSideControllers and getAllControllers must be implemented
+in the derived classes.</p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.abstract">
-<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.abstract" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.cxx_template_params" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.connectQueues">
-<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.connectQueues" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.getAllControllers">
+<span class="sig-name descname"><span class="pre">getAllControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.getAllControllers" title="Link to this definition">¶</a></dt>
+<dd><p>Returns all ruby controllers associated with this node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.getNetworkSideControllers">
+<span class="sig-name descname"><span class="pre">getNetworkSideControllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.getNetworkSideControllers" title="Link to this definition">¶</a></dt>
+<dd><p>Returns all ruby controllers that need to be connected to the
+network</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.setDownstream">
+<span class="sig-name descname"><span class="pre">setDownstream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cntrls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.setDownstream" title="Link to this definition">¶</a></dt>
+<dd><p>Sets cntrls as the downstream list of all controllers in this node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.setDownstreamNodes">
+<span class="sig-name descname"><span class="pre">setDownstreamNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_Node.setDownstreamNodes" title="Link to this definition">¶</a></dt>
+<dd><p>Sets cntrls as the downstream list of all controllers in this node</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.abstract_node.</span></span><span class="sig-name descname"><span class="pre">CHI_NodeType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names=&lt;not</span> <span class="pre">given&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_HNF">
+<span class="sig-name descname"><span class="pre">CHI_HNF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_HNF" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_MN">
+<span class="sig-name descname"><span class="pre">CHI_MN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_MN" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNF">
+<span class="sig-name descname"><span class="pre">CHI_RNF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNF" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNI_DMA">
+<span class="sig-name descname"><span class="pre">CHI_RNI_DMA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNI_DMA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNI_IO">
+<span class="sig-name descname"><span class="pre">CHI_RNI_IO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_RNI_IO" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_SNF_BootMem">
+<span class="sig-name descname"><span class="pre">CHI_SNF_BootMem</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_SNF_BootMem" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_SNF_MainMem">
+<span class="sig-name descname"><span class="pre">CHI_SNF_MainMem</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType.CHI_SNF_MainMem" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.abstract_node.</span></span><span class="sig-name descname"><span class="pre">CacheController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_line_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CHI_Cache_Controller</span></code></p>
+<p>A node is the abstract unit for caches in the CHI protocol.</p>
+<p>You can extend the CacheController to create caches (private or shared) and
+directories with or without data caches.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.connectQueues">
+<span class="sig-name descname"><span class="pre">connectQueues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">RubyNetwork</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.connectQueues" title="Link to this definition">¶</a></dt>
 <dd><p>Connect all of the queues for this controller.
 This may be extended in subclasses.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_exports">
-<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_exports" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_exports" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_extra_bases">
-<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_extra_bases" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_param_exports">
-<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_param_exports" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_template_params">
-<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.cxx_template_params" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.getBlockSizeBits">
-<span class="sig-name descname"><span class="pre">getBlockSizeBits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.getBlockSizeBits" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.getBlockSizeBits">
+<span class="sig-name descname"><span class="pre">getBlockSizeBits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.getBlockSizeBits" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.override_create">
-<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.override_create" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.override_create" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.versionCount">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">versionCount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.AbstractNode.versionCount" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.versionCount">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">versionCount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CacheController.versionCount" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.nodes.abstract_node.</span></span><span class="sig-name descname"><span class="pre">Node_Params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type:</span> <span class="pre">~gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_nodes_per_router:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">router_list:</span> <span class="pre">list[int]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dedicated_router:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inbound_link_latency:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outbound_link_latency:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NoC config. parameters and bindings required for CustomMesh topology.</p>
+<p>Maps ‘num_nodes_per_router’ CHI nodes to each router provided in
+‘router_list’. This assumes len(router_list)*num_nodes_per_router
+equals the number of nodes
+If ‘num_nodes_per_router’ is left undefined, we circulate around
+‘router_list’ until all nodes are mapped.
+See ‘distributeNodes’ in configs/topologies/CustomMesh.py</p>
+<p>‘inbound_link_latency` is used by custom mesh to set the Ruby
+external-link latency for the node/router connection. Ruby
+external links are bi-directional, so this link latency applies in
+both controller-&gt;router and router-&gt;controller directions, not just
+traffic incoming to the controller</p>
+<p>‘outbound_link_latency` is instead used to set enqueueing
+latencies in SLICC when the controller within the node
+is forwarding a message</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.dedicated_router">
+<span class="sig-name descname"><span class="pre">dedicated_router</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.dedicated_router" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.inbound_link_latency">
+<span class="sig-name descname"><span class="pre">inbound_link_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.inbound_link_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.node_type">
+<span class="sig-name descname"><span class="pre">node_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.CHI_NodeType"><span class="pre">CHI_NodeType</span></a></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.node_type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.num_nodes">
+<span class="sig-name descname"><span class="pre">num_nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.num_nodes" title="Link to this definition">¶</a></dt>
+<dd><p>Derive node count from Node_Params placement metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.num_nodes_per_router">
+<span class="sig-name descname"><span class="pre">num_nodes_per_router</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.num_nodes_per_router" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.outbound_link_latency">
+<span class="sig-name descname"><span class="pre">outbound_link_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.outbound_link_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.router_list">
+<span class="sig-name descname"><span class="pre">router_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params.router_list" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

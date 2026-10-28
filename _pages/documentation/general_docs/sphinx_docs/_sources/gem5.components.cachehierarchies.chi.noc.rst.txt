@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.chi.noc module
+===============================================
+
+.. automodule:: gem5.components.cachehierarchies.chi.noc
+   :members:
+   :undoc-members:
+   :show-inheritance:

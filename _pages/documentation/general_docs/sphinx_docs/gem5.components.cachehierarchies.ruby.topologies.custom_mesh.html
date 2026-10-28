@@ -1,0 +1,201 @@
+---
+title: "gem5.components.cachehierarchies.ruby.topologies.custom_mesh.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchies.ruby.topologies.custom_mesh.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.cachehierarchies.ruby.topologies.custom_mesh module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.cachehierarchies.ruby.topologies.simple_pt2pt module" href="gem5.components.cachehierarchies.ruby.topologies.simple_pt2pt.html" />
+    <link rel="prev" title="gem5.components.cachehierarchies.ruby.topologies package" href="gem5.components.cachehierarchies.ruby.topologies.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.cachehierarchies.ruby.topologies.custom_mesh">
+<span id="gem5-components-cachehierarchies-ruby-topologies-custom-mesh-module"></span><h1>gem5.components.cachehierarchies.ruby.topologies.custom_mesh module<a class="headerlink" href="#module-gem5.components.cachehierarchies.ruby.topologies.custom_mesh" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.topologies.custom_mesh.</span></span><span class="sig-name descname"><span class="pre">CustomMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ruby_system</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noc_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params" title="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params"><span class="pre">NoC_Params</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleNetwork</span></code></p>
+<p>Custom mesh topology for CHI stdlib cache hierarchies.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.connectControllers">
+<span class="sig-name descname"><span class="pre">connectControllers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rnf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hnf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">snf_boot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rni</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.connectControllers" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.distribute_nodes">
+<span class="sig-name descname"><span class="pre">distribute_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.cachehierarchies.chi.nodes.abstract_node.html#gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params" title="gem5.components.cachehierarchies.chi.nodes.abstract_node.Node_Params"><span class="pre">Node_Params</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.distribute_nodes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.CustomMesh.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.topologies.custom_mesh.</span></span><span class="sig-name descname"><span class="pre">NoC_Params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">router_link_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">node_link_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_int_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_ext_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_buffer_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">cntrl_msg_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">8,</span> <span class="pre">req_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">snp_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">rsp_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">dat_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">req_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">snp_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">rsp_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">dat_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">data_width:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">32,</span> <span class="pre">custom_links:</span> <span class="pre">dict[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">*,</span> <span class="pre">num_rows:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">num_cols:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">pairing:</span> <span class="pre">~collections.abc.Sequence[~typing.Any]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.cachehierarchies.chi.noc.html#gem5.components.cachehierarchies.chi.noc.NoC_Params" title="gem5.components.cachehierarchies.chi.noc.NoC_Params"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoC_Params</span></code></a></p>
+<p>NoC defaults specialized for the stdlib CustomMesh topology.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.num_cols">
+<span class="sig-name descname"><span class="pre">num_cols</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.num_cols" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.num_rows">
+<span class="sig-name descname"><span class="pre">num_rows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.num_rows" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.pairing">
+<span class="sig-name descname"><span class="pre">pairing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.NoC_Params.pairing" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.ruby.topologies.custom_mesh.load_topology_config">
+<span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.ruby.topologies.custom_mesh.</span></span><span class="sig-name descname"><span class="pre">load_topology_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topology_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.ruby.topologies.custom_mesh.load_topology_config" title="Link to this definition">¶</a></dt>
+<dd><p>Load a topology config Python file as a module.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.html">gem5.components.cachehierarchies package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.ruby.html">gem5.components.cachehierarchies.ruby package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.ruby.topologies.html">gem5.components.cachehierarchies.ruby.topologies package</a><ul>
+      <li>Previous: <a href="gem5.components.cachehierarchies.ruby.topologies.html" title="previous chapter">gem5.components.cachehierarchies.ruby.topologies package</a></li>
+      <li>Next: <a href="gem5.components.cachehierarchies.ruby.topologies.simple_pt2pt.html" title="next chapter">gem5.components.cachehierarchies.ruby.topologies.simple_pt2pt module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.cachehierarchies.ruby.topologies.custom_mesh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

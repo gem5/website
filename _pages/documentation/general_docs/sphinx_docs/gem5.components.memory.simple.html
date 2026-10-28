@@ -40,6 +40,104 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.memory.simple.
 <span id="gem5-components-memory-simple-module"></span><h1>gem5.components.memory.simple module<a class="headerlink" href="#module-gem5.components.memory.simple" title="Link to this heading">¶</a></h1>
 <p>Simple memory controllers</p>
 <dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.memory.simple.</span></span><span class="sig-name descname"><span class="pre">MultiChannelSimpleMemory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latency_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bandwidth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interleaving_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractMemorySystem</span></code></a></p>
+<p>A class to implement a multi-channel memory system using SimpleMemory.</p>
+<p>Each channel is a SimpleMemory SimObject with identical latency and
+bandwidth parameters. Addresses are interleaved across channels at a
+configurable granularity (default: 64 B, i.e., one cache line per
+channel at a time) using gem5’s AddrRange bit-mask interleaving.</p>
+<p>This is useful for bandwidth-scaling experiments where the modelled
+memory technology is not important, but the aggregate bandwidth is.
+The number of channels must be a power of 2.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.get_mem_interfaces">
+<span class="sig-name descname"><span class="pre">get_mem_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractMemory</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.get_mem_interfaces" title="Link to this definition">¶</a></dt>
+<dd><p>Get all memory interfaces in this memory system.
+Useful when creating physical memory objects.</p>
+<p>The “mem interface” is the object that is an AbstractMemory and
+is used to create the backing store.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.get_mem_ports">
+<span class="sig-name descname"><span class="pre">get_mem_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.get_mem_ports" title="Link to this definition">¶</a></dt>
+<dd><p>Get the ports to connect this memory system to the cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.get_memory_controllers">
+<span class="sig-name descname"><span class="pre">get_memory_controllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">MemCtrl</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.get_memory_controllers" title="Link to this definition">¶</a></dt>
+<dd><p>Get all of the memory controllers in this memory system.</p>
+<p>The “memory controller” is the object that has a port named “port”
+that is the CPU-side port for the memory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.get_size">
+<span class="sig-name descname"><span class="pre">get_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.get_size" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the total size of the memory system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.get_uninterleaved_range">
+<span class="sig-name descname"><span class="pre">get_uninterleaved_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.get_uninterleaved_range" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the range of the memory system without interleaving.
+This is useful when other components in the system want to interleave
+the memory range different to how the memory has interleaved them.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.incorporate_memory">
+<span class="sig-name descname"><span class="pre">incorporate_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">board</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gem5.components.boards.abstract_board.html#gem5.components.boards.abstract_board.AbstractBoard" title="gem5.components.boards.abstract_board.AbstractBoard"><span class="pre">AbstractBoard</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.incorporate_memory" title="Link to this definition">¶</a></dt>
+<dd><p>This function completes all of the necessary steps to add this
+memory system to the board.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.simple.MultiChannelSimpleMemory.set_memory_range">
+<span class="sig-name descname"><span class="pre">set_memory_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.memory.simple.MultiChannelSimpleMemory.set_memory_range" title="Link to this definition">¶</a></dt>
+<dd><p>Set the total range for this memory system.</p>
+<p>May pass multiple non-overlapping ranges. The total size of the ranges
+should match the size of the memory.</p>
+<p>If this memory system is incompatible with the ranges, an exception
+will be raised.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.memory.simple.</span></span><span class="sig-name descname"><span class="pre">SingleChannelSimpleMemory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latency_var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bandwidth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gem5.components.memory.abstract_memory_system.html#gem5.components.memory.abstract_memory_system.AbstractMemorySystem" title="gem5.components.memory.abstract_memory_system.AbstractMemorySystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractMemorySystem</span></code></a></p>
@@ -74,7 +172,7 @@ memory subsystem design.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_interfaces">
-<span class="sig-name descname"><span class="pre">get_mem_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractMemory</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_interfaces" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_mem_interfaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AbstractMemory</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_interfaces" title="Link to this definition">¶</a></dt>
 <dd><p>Get all memory interfaces in this memory system.
 Useful when creating physical memory objects.</p>
 <p>The “mem interface” is the object that is an AbstractMemory and
@@ -83,13 +181,13 @@ is used to create the backing store.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_ports">
-<span class="sig-name descname"><span class="pre">get_mem_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_ports" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_mem_ports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Port</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_mem_ports" title="Link to this definition">¶</a></dt>
 <dd><p>Get the ports to connect this memory system to the cache.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory.get_memory_controllers">
-<span class="sig-name descname"><span class="pre">get_memory_controllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">MemCtrl</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_memory_controllers" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_memory_controllers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">MemCtrl</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_memory_controllers" title="Link to this definition">¶</a></dt>
 <dd><p>Get all of the memory controllers in this memory system.</p>
 <p>The “memory controller” is the object that has a port named “port”
 that is the CPU-side port for the memory.</p>
@@ -103,7 +201,7 @@ that is the CPU-side port for the memory.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory.get_uninterleaved_range">
-<span class="sig-name descname"><span class="pre">get_uninterleaved_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_uninterleaved_range" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_uninterleaved_range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.get_uninterleaved_range" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the range of the memory system without interleaving.
 This is useful when other components in the system want to interleave
 the memory range different to how the memory has interleaved them.</p>
@@ -123,7 +221,7 @@ memory system to the board.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gem5.components.memory.simple.SingleChannelSimpleMemory.set_memory_range">
-<span class="sig-name descname"><span class="pre">set_memory_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.set_memory_range" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_memory_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ranges</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AddrRange</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#gem5.components.memory.simple.SingleChannelSimpleMemory.set_memory_range" title="Link to this definition">¶</a></dt>
 <dd><p>Set the total range for this memory system.</p>
 <p>May pass multiple non-overlapping ranges. The total size of the ranges
 should match the size of the memory.</p>

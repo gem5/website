@@ -1,0 +1,213 @@
+---
+title: "gem5.components.cachehierarchies.chi.noc.html"
+parent: sphinx-docs
+permalink: /documentation/general_docs/stdlib_api/gem5.components.cachehierarchies.chi.noc.html
+---
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gem5.components.cachehierarchies.chi.noc module &#8212; gem5  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=cb25574f" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gem5.components.cachehierarchies.chi.private_l1_cache_hierarchy module" href="gem5.components.cachehierarchies.chi.private_l1_cache_hierarchy.html" />
+    <link rel="prev" title="gem5.components.cachehierarchies.chi.nodes.snf module" href="gem5.components.cachehierarchies.chi.nodes.snf.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gem5.components.cachehierarchies.chi.noc">
+<span id="gem5-components-cachehierarchies-chi-noc-module"></span><h1>gem5.components.cachehierarchies.chi.noc module<a class="headerlink" href="#module-gem5.components.cachehierarchies.chi.noc" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.cachehierarchies.chi.noc.</span></span><span class="sig-name descname"><span class="pre">NoC_Params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">router_link_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">node_link_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_int_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_ext_latency:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">router_buffer_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">4,</span> <span class="pre">cntrl_msg_size:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">8,</span> <span class="pre">req_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">snp_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">rsp_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">dat_int_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">req_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">snp_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">rsp_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">dat_ext_channels:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">data_width:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">32,</span> <span class="pre">custom_links:</span> <span class="pre">dict[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int</span> <span class="pre">|</span> <span class="pre">None,</span> <span class="pre">int]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Default parameters for the interconnect. The value of data_width is
+also used to set the data_channel_size for all CHI controllers.
+(see configs/ruby/CHI.py)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.cntrl_msg_size">
+<span class="sig-name descname"><span class="pre">cntrl_msg_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.cntrl_msg_size" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.custom_links">
+<span class="sig-name descname"><span class="pre">custom_links</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.custom_links" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.dat_ext_channels">
+<span class="sig-name descname"><span class="pre">dat_ext_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.dat_ext_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.dat_int_channels">
+<span class="sig-name descname"><span class="pre">dat_int_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.dat_int_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.data_width">
+<span class="sig-name descname"><span class="pre">data_width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.data_width" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.node_link_latency">
+<span class="sig-name descname"><span class="pre">node_link_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.node_link_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.req_ext_channels">
+<span class="sig-name descname"><span class="pre">req_ext_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.req_ext_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.req_int_channels">
+<span class="sig-name descname"><span class="pre">req_int_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.req_int_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.router_buffer_size">
+<span class="sig-name descname"><span class="pre">router_buffer_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.router_buffer_size" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.router_ext_latency">
+<span class="sig-name descname"><span class="pre">router_ext_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.router_ext_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.router_int_latency">
+<span class="sig-name descname"><span class="pre">router_int_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.router_int_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.router_link_latency">
+<span class="sig-name descname"><span class="pre">router_link_latency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.router_link_latency" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.rsp_ext_channels">
+<span class="sig-name descname"><span class="pre">rsp_ext_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.rsp_ext_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.rsp_int_channels">
+<span class="sig-name descname"><span class="pre">rsp_int_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.rsp_int_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.snp_ext_channels">
+<span class="sig-name descname"><span class="pre">snp_ext_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.snp_ext_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.cachehierarchies.chi.noc.NoC_Params.snp_int_channels">
+<span class="sig-name descname"><span class="pre">snp_int_channels</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#gem5.components.cachehierarchies.chi.noc.NoC_Params.snp_int_channels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href=".">gem5</a></h1>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gem5.html">gem5 package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="gem5.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="gem5.components.html">gem5.components package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="gem5.components.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gem5.components.html#module-gem5.components">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.prebuilt.html">gem5.prebuilt package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.resources.html">gem5.resources package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.simulate.html">gem5.simulate package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gem5.utils.html">gem5.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gem5.html#module-gem5">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+<li><a href=".">Documentation overview</a><ul>  <li><a href="gem5.html">gem5 package</a><ul>
+  <li><a href="gem5.components.html">gem5.components package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.html">gem5.components.cachehierarchies package</a><ul>
+  <li><a href="gem5.components.cachehierarchies.chi.html">gem5.components.cachehierarchies.chi package</a><ul>
+      <li>Previous: <a href="gem5.components.cachehierarchies.chi.nodes.snf.html" title="previous chapter">gem5.components.cachehierarchies.chi.nodes.snf module</a></li>
+      <li>Next: <a href="gem5.components.cachehierarchies.chi.private_l1_cache_hierarchy.html" title="next chapter">gem5.components.cachehierarchies.chi.private_l1_cache_hierarchy module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/gem5.components.cachehierarchies.chi.noc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

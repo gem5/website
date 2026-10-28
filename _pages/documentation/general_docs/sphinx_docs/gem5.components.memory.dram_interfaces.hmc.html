@@ -36,8 +36,79 @@ permalink: /documentation/general_docs/stdlib_api/gem5.components.memory.dram_in
 
           <div class="body" role="main">
             
-  <section id="gem5-components-memory-dram-interfaces-hmc-module">
-<h1>gem5.components.memory.dram_interfaces.hmc module<a class="headerlink" href="#gem5-components-memory-dram-interfaces-hmc-module" title="Link to this heading">¶</a></h1>
+  <section id="module-gem5.components.memory.dram_interfaces.hmc">
+<span id="gem5-components-memory-dram-interfaces-hmc-module"></span><h1>gem5.components.memory.dram_interfaces.hmc module<a class="headerlink" href="#module-gem5.components.memory.dram_interfaces.hmc" title="Link to this heading">¶</a></h1>
+<p>Interfaces for HMC memory devices</p>
+<p>These memory “interfaces” contain the timing, energy, etc parameters for each
+memory type and are usually based on datasheets for the memory devices.</p>
+<p>You can use these interfaces in the MemCtrl object as the <code class="docutils literal notranslate"><span class="pre">dram</span></code> timing
+interface.</p>
+<p>Note that HMC is configured differently than some other DRAM interfaces.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gem5.components.memory.dram_interfaces.hmc.</span></span><span class="sig-name descname"><span class="pre">HMC_2500_1x32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gem5.components.memory.dram_interfaces.ddr3.html#gem5.components.memory.dram_interfaces.ddr3.DDR3_1600_8x8" title="gem5.components.memory.dram_interfaces.ddr3.DDR3_1600_8x8"><code class="xref py py-class docutils literal notranslate"><span class="pre">DDR3_1600_8x8</span></code></a></p>
+<p>A single HMC-2500 x32 model based on:
+[1] DRAMSpec: a high-level DRAM bank modelling tool
+developed at the University of Kaiserslautern. This high level tool
+uses RC (resistance-capacitance) and CV (capacitance-voltage) models to
+estimate the DRAM bank latency and power numbers.
+[2] High performance AXI-4.0 based interconnect for extensible smart memory
+cubes (E. Azarkhish et. al).
+Assumed for the HMC model is a 30 nm technology node.
+The modelled HMC consists of 4 Gibibit layers which sum up to 2GiB of memory
+(4 layers).
+Each layer has 16 vaults and each vault consists of 2 banks per layer.
+In order to be able to use the same controller used for 2D DRAM generations
+for HMC, the following analogy is done:</p>
+<p>Channel (DDR) =&gt; Vault (HMC)</p>
+<p>device_size (DDR) =&gt; size of a single layer in a vault</p>
+<p>ranks per channel (DDR) =&gt; number of layers</p>
+<p>banks per rank (DDR) =&gt; banks per layer</p>
+<p>devices per rank (DDR) =&gt; devices per layer ( 1 for HMC).</p>
+<p>The parameters for which no input is available are inherited from the DDR3
+configuration.</p>
+<p>This configuration includes the latencies from the DRAM to the logic layer
+of the HMC.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.abstract">
+<span class="sig-name descname"><span class="pre">abstract</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.abstract" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.controller">
+<span class="sig-name descname"><span class="pre">controller</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.controller" title="Link to this definition">¶</a></dt>
+<dd><p>Instantiate the memory controller and bind it to
+the current interface.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_exports">
+<span class="sig-name descname"><span class="pre">cxx_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_extra_bases">
+<span class="sig-name descname"><span class="pre">cxx_extra_bases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_extra_bases" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_param_exports">
+<span class="sig-name descname"><span class="pre">cxx_param_exports</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_param_exports" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_template_params">
+<span class="sig-name descname"><span class="pre">cxx_template_params</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.cxx_template_params" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.override_create">
+<span class="sig-name descname"><span class="pre">override_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#gem5.components.memory.dram_interfaces.hmc.HMC_2500_1x32.override_create" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 

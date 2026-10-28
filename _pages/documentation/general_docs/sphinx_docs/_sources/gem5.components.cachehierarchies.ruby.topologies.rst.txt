@@ -7,6 +7,7 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   gem5.components.cachehierarchies.ruby.topologies.custom_mesh
    gem5.components.cachehierarchies.ruby.topologies.simple_pt2pt
 
 Module contents
