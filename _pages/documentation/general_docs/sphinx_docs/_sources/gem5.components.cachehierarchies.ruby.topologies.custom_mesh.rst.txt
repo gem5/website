@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.ruby.topologies.custom\_mesh module
+====================================================================
+
+.. automodule:: gem5.components.cachehierarchies.ruby.topologies.custom_mesh
+   :members:
+   :undoc-members:
+   :show-inheritance:

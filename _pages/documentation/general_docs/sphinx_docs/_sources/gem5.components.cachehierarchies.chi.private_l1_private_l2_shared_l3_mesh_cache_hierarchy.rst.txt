@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.chi.private\_l1\_private\_l2\_shared\_l3\_mesh\_cache\_hierarchy module
+========================================================================================================
+
+.. automodule:: gem5.components.cachehierarchies.chi.private_l1_private_l2_shared_l3_mesh_cache_hierarchy
+   :members:
+   :undoc-members:
+   :show-inheritance:

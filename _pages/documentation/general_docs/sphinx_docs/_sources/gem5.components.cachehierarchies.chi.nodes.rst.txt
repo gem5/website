@@ -10,9 +10,12 @@ Submodules
    gem5.components.cachehierarchies.chi.nodes.abstract_node
    gem5.components.cachehierarchies.chi.nodes.directory
    gem5.components.cachehierarchies.chi.nodes.dma_requestor
+   gem5.components.cachehierarchies.chi.nodes.hnf
    gem5.components.cachehierarchies.chi.nodes.l1_cache
    gem5.components.cachehierarchies.chi.nodes.l2_cache
    gem5.components.cachehierarchies.chi.nodes.memory_controller
+   gem5.components.cachehierarchies.chi.nodes.rnf
+   gem5.components.cachehierarchies.chi.nodes.snf
 
 Module contents
 ---------------

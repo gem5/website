@@ -1,0 +1,7 @@
+gem5.components.cachehierarchies.chi.nodes.hnf module
+=====================================================
+
+.. automodule:: gem5.components.cachehierarchies.chi.nodes.hnf
+   :members:
+   :undoc-members:
+   :show-inheritance:
