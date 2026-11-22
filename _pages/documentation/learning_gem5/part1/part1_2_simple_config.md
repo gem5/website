@@ -187,13 +187,13 @@ This is just a normal python file that will be executed by the embedded
 python in the gem5 executable. Therefore, you can use any features and
 libraries available in python.
 
-<!-- The first thing we'll do in this file is import the m5 library and all
+The first thing we'll do in this file is import the m5 library and all
 SimObjects that we've compiled.
 
 ```python
 import m5
 from m5.objects import *
-``` -->
+```
 
 Next, we'll create the first SimObject: the system that we are going to
 simulate. The `System` object will be the parent of all the other
