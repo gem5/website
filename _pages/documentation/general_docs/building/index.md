@@ -37,8 +37,8 @@ newest supported LTS must also work.
 * **git 2.34+** : gem5 uses git for version control.
 * **gcc**: gcc is used to compile gem5. We support GCC major versions 11
 through 16.
-* **Clang**: Clang can also be used. At present, we support Clang major
-versions 14 through 22.
+* **Clang**: Clang can also be used. The `develop` branch supports Clang major
+versions 14 through 23. gem5 v26.0 supports Clang major versions 14 through 22.
 * **SCons** : gem5 uses SCons as its build environment. SCons 4.0 or greater
 must be used.
 * **Python 3.10+** : gem5 relies on Python development libraries. gem5 can be
